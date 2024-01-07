@@ -1,0 +1,53 @@
+/* Based on https://github.com/kevinzunigacuellar/remark-code-title */
+
+import { visit } from "unist-util-visit";
+import type * as hast from "hast";
+import type * as unified from "unified";
+
+const LANGUAGE_EXCLUSIONS: string[] = ["diff", "treeview"];
+
+export const labelCodeBlock: unified.Plugin<[], hast.Root> = () => {
+  return (tree, file) => {
+    visit(tree, "element", (node, index, parent) => {
+      if (node.tagName !== "pre") return;
+
+      let offset: number = 1;
+
+      // process the code language
+      const { className }: { className?: string[] } = node.properties;
+
+      const language = className
+        .find((x) => x.match(/language-/))
+        .replace("language-", "");
+      if (!LANGUAGE_EXCLUSIONS.some((x) => language.endsWith(x))) {
+        const languageNode: hast.Element = {
+          type: "element",
+          tagName: "h5",
+          children: [
+            {
+              type: "text",
+              value: language,
+            },
+          ],
+        };
+        node.children.splice(index, 0, languageNode);
+        offset++;
+      }
+
+      const title = `${node.properties["data-title"] ?? ""}`.trim();
+      if (title) {
+        const titleNode: hast.Element = {
+          type: "element",
+          tagName: "h4",
+          children: [{ type: "text", value: title }],
+        };
+
+        node.children.splice(index + 1, 0, titleNode);
+        offset++;
+      }
+
+      /* Skips this node (title) and the next node (code) */
+      return index + offset;
+    });
+  };
+};

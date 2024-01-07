@@ -17,6 +17,16 @@
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
 
+.markdown h4 {
+  @apply text-xl mt-8 mb-4 leading-snug;
+}
+.markdown pre > h4 {
+  @apply mt-2 leading-snug underline decoration-green-800;
+}
+.markdown pre > h5 {
+  @apply float-right;
+}
+
 .markdown ul,
 .markdown ol {
   @apply list-inside;
@@ -29,3 +39,22 @@
 .markdown ol {
   @apply list-decimal;
 }
+
+.markdown code:not([class]) { /* TODO: adjust this */
+  @apply text-orange-600;
+  @apply bg-slate-100;
+  @apply px-2;
+}
+
+.markdown a { /* TODO: adjust this */
+  @apply text-blue-700;
+  @apply hover:text-blue-500;
+}
+
+.markdown figcaption { /* TODO: adjust this */
+  @apply text-slate-500;
+  @apply text-sm;
+  @apply -mt-2;
+}
+
+/* TODO: look into enabling the button to copy the code blocks.*/
