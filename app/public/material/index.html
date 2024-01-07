@@ -14,7 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./material/style.css" />
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -120,7 +120,7 @@
                   <i class="fa fa-ellipsis-v fa-1x fa-fw"></i></span
                 >
                 <img
-                  src="./images/pandas-book-stack.jpg"
+                  src="../assets/pandas-book-stack.jpg"
                   style="height: 100%;" />
                 <a
                   class="btn-floating halfway-fab waves-effect waves-light blue-grey lighten-2"
@@ -1444,10 +1444,18 @@
     </footer>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="utils.js"></script>
     <script>
+      // keep the copyright year updated
+      document.getElementById("copyright-year").textContent = (new Date()).getFullYear().toString();
+
       var el = document.querySelector(".tabs");
       var instance = M.Tabs.init(el, {});
+
+      // set up the carousel
+      document.addEventListener('DOMContentLoaded', function() {
+          let elems = document.querySelectorAll('.carousel');
+          let instances = M.Carousel.init(elems, numVisible=2);
+      });
     </script>
   </body>
 </html>
