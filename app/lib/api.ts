@@ -1,6 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
+import readingDuration from "reading-duration";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -28,6 +29,12 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
     if (field === "content") {
       items[field] = content;
     }
+    if (field === "duration") {
+      items[field] = readingDuration(content, {
+        wordsPerMinute: 250,
+        emoji: false,
+      });
+    }
 
     if (typeof data[field] !== "undefined") {
       items[field] = data[field];
@@ -39,7 +46,6 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 
 export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs();
-  console.log(fields);
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order

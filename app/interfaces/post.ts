@@ -12,6 +12,8 @@ type PostType = {
     url: string;
   };
   content: string;
+  tags: string[];
+  duration: number;
 };
 
 export default PostType;
