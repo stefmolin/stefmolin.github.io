@@ -1,8 +1,11 @@
-import Avatar from "./avatar";
+// import Avatar from "./avatar";
 import DateFormatter from "./date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
 import type Author from "../interfaces/author";
+import PostPublicationDate from "./post-publication-date";
+import PostTags from "./post-tags";
+import TimeToRead from "./time-to-read";
 
 type Props = {
   title: string;
@@ -12,6 +15,8 @@ type Props = {
   excerpt: string;
   author: Author;
   slug: string;
+  tags: string[];
+  duration: number;
 };
 
 const PostPreview = ({
@@ -22,6 +27,8 @@ const PostPreview = ({
   excerpt,
   author,
   slug,
+  tags,
+  duration,
 }: Props) => {
   return (
     <div>
@@ -37,11 +44,21 @@ const PostPreview = ({
         </Link>
       </h3>
       <div className="text-lg mb-4">
-        <DateFormatter dateString={date} />
+        <div className="flex flex-row justify-between items-center">
+          <div>
+            <PostPublicationDate date={date} />
+          </div>
+          <div className="pl-4 float-right">
+            <TimeToRead duration={duration} />
+          </div>
+        </div>
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author.name} picture={author.picture} />
+      <div className="float-right">
+        <PostTags tags={tags} />
+      </div>
       {/* TODO: replace the avatar with tags and maybe the time to read */}
+      {/* <Avatar name={author.name} picture={author.picture} /> */}
     </div>
   );
 };

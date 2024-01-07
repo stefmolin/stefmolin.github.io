@@ -1,7 +1,9 @@
-import Avatar from "./avatar";
-import DateFormatter from "./date-formatter";
-import CoverImage from "./cover-image";
 import Link from "next/link";
+// import Avatar from "./avatar";
+import CoverImage from "./cover-image";
+import PostPublicationDate from "./post-publication-date";
+import PostTags from "./post-tags";
+import TimeToRead from "./time-to-read";
 import type Author from "../interfaces/author";
 
 type Props = {
@@ -12,6 +14,8 @@ type Props = {
   excerpt: string;
   author: Author;
   slug: string;
+  tags: string[];
+  duration: number;
 };
 
 const HeroPost = ({
@@ -22,6 +26,8 @@ const HeroPost = ({
   excerpt,
   author,
   slug,
+  tags,
+  duration,
 }: Props) => {
   return (
     <section>
@@ -39,12 +45,22 @@ const HeroPost = ({
             </Link>
           </h3>
           <div className="mb-4 md:mb-0 text-lg">
-            <DateFormatter dateString={date} />
+            <div className="flex flex-row justify-between items-center">
+              <div>
+                <PostPublicationDate date={date} />
+              </div>
+              <div className="pl-4 float-right">
+                <TimeToRead duration={duration} />
+              </div>
+            </div>
           </div>
         </div>
         <div>
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          <Avatar name={author.name} picture={author.picture} />
+          <div className="float-right">
+            <PostTags tags={tags} />
+          </div>
+          {/* <Avatar name={author.name} picture={author.picture} /> */}
         </div>
       </div>
     </section>

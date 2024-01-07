@@ -6,25 +6,28 @@ import Header from "../../components/header";
 import PostHeader from "../../components/post-header";
 import Layout from "../../components/layout";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
+import MoreStories from "../../components/more-stories";
 import PostTitle from "../../components/post-title";
 import Head from "next/head";
-import { CMS_NAME } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
 import type PostType from "../../interfaces/post";
 
 type Props = {
   post: PostType;
-  morePosts: PostType[];
+  suggestedPosts: PostType[];
   preview?: boolean;
 };
 
-export default function Post({ post, morePosts, preview }: Props) {
+// TODO: look into doing a URL pattern like posts/2024/01/01/slug
+// maybe this is overkill? but should at least have something for handling collisions
+
+export default function Post({ post, suggestedPosts, preview }: Props) {
   const router = useRouter();
   const title = `${post.title} | Stefanie Molin`;
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
-  console.log(post);
+
   return (
     <Layout preview={preview}>
       <Container>
@@ -44,9 +47,15 @@ export default function Post({ post, morePosts, preview }: Props) {
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
+                tags={post.tags}
+                duration={post.duration}
               />
               <PostBody content={post.content} />
             </article>
+            {suggestedPosts.length > 0 ? (
+              <MoreStories posts={suggestedPosts} title="You may also like" />
+            ) : null}
+            {/* add previews for related ones and also previous and next buttons */}
           </>
         )}
       </Container>
@@ -61,17 +70,38 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
+  const fields: string[] = [
     "title",
     "subtitle",
     "date",
     "slug",
     "author",
+    "tags",
+    "duration",
     "content",
     "ogImage",
     "coverImage",
-  ]);
+  ];
+  const post = getPostBySlug(params.slug, fields);
   const content = await markdownToHtml(post.content || "");
+
+  let suggestedPosts = getAllPosts([...fields, "excerpt"]).filter(
+    (x) => x.slug != post.slug
+  );
+  if (suggestedPosts.length > 0) {
+    suggestedPosts.forEach((otherPost) => {
+      let tags: string[] = otherPost.tags;
+      otherPost.similarity = tags.filter((tag) =>
+        post.tags.includes(tag)
+      ).length;
+    });
+
+    suggestedPosts = suggestedPosts
+      .sort((post1, post2) =>
+        post1.similarity > post2.similarity || post1.date > post2.date ? -1 : 1
+      )
+      .slice(0, 2); // show top results (second number)
+  }
 
   return {
     props: {
@@ -79,6 +109,7 @@ export async function getStaticProps({ params }: Params) {
         ...post,
         content,
       },
+      suggestedPosts,
     },
   };
 }
