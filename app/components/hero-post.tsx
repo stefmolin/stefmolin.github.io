@@ -13,7 +13,7 @@ type Props = {
   date: string;
   excerpt: string;
   author: Author;
-  slug: string;
+  slug: string[];
   tags: string[];
   duration: number;
 };
@@ -38,8 +38,10 @@ const HeroPost = ({
         <div>
           <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">
             <Link
-              as={`/posts/${slug}`}
-              href="/posts/[slug]"
+              href={{
+                pathname: "/posts/[...slug]",
+                query: { slug },
+              }}
               className="hover:underline">
               {title}
             </Link>

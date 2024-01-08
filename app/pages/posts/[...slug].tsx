@@ -65,7 +65,7 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
 
 type Params = {
   params: {
-    slug: string;
+    slug: string[];
   };
 };
 
