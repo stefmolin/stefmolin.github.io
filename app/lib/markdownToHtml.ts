@@ -8,11 +8,13 @@ export default async function markdownToHtml(markdown: string) {
     .use(prism, {
       plugins: [
         "autolinker",
-        "line-numbers",
         "command-line",
-        "treeview",
+        "diff-highlight",
+        "line-numbers",
         "keep-markup",
+        "treeview",
       ],
+      // transformInlineCode: true, // TODO: this is too dark for inline unless it is possible to change the theme for inline (then I can remove the custom formatting in the CSS file)
     })
     .use(labelCodeBlock)
     .use(html, { sanitize: false })
