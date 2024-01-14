@@ -37,7 +37,7 @@ const PostPreview = ({
       <h3 className="text-3xl mb-3 leading-snug">
         <Link
           href={{
-            pathname: "/posts/[...slug]",
+            pathname: "/[...slug]",
             query: { slug },
           }}
           className="hover:underline">

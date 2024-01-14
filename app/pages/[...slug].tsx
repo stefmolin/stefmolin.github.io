@@ -1,16 +1,16 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Container from "../../components/container";
-import PostBody from "../../components/post-body";
-import Header from "../../components/header";
-import PostHeader from "../../components/post-header";
-import Layout from "../../components/layout";
-import { getPostBySlug, getAllPosts } from "../../lib/api";
-import MoreStories from "../../components/more-stories";
-import PostTitle from "../../components/post-title";
+import Container from "../components/container";
+import PostBody from "../components/post-body";
+import Header from "../components/header";
+import PostHeader from "../components/post-header";
+import Layout from "../components/layout";
+import { getPostBySlug, getAllPosts } from "../lib/api";
+import MoreStories from "../components/more-stories";
+import PostTitle from "../components/post-title";
 import Head from "next/head";
-import markdownToHtml from "../../lib/markdownToHtml";
-import type PostType from "../../interfaces/post";
+import markdownToHtml from "../lib/markdownToHtml";
+import type PostType from "../interfaces/post";
 
 type Props = {
   post: PostType;
@@ -86,7 +86,7 @@ export async function getStaticProps({ params }: Params) {
   const content = await markdownToHtml(post.content || "");
 
   let suggestedPosts = getAllPosts([...fields, "excerpt"]).filter(
-    (x) => x.slug.join() != post.slug.join()
+    (x) => x.slug.join() != post.slug.join() // TODO: should this limit to the same type (ie, article only can suggest articles?)
   );
   if (suggestedPosts.length > 0) {
     suggestedPosts.forEach((otherPost) => {
