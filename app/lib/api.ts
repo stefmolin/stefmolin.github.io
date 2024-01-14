@@ -8,8 +8,9 @@ const postsDirectory = join(process.cwd(), "_posts");
 export function getPostSlugs(category: string = "") {
   return fs
     .readdirSync(join(postsDirectory, category), { recursive: true })
-    .filter((file) => file.toString().endsWith(".md"))
-    .map((x) => x.toString().split("/"));
+    .map((x) => x.toString())
+    .filter((file) => file.endsWith(".md"))
+    .map((x) => x.split("/"));
 }
 
 export function getPostBySlug(

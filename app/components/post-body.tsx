@@ -9,7 +9,8 @@ const PostBody = ({ content }: Props) => {
     <div className="max-w-2xl mx-auto">
       <div
         className={markdownStyles["markdown"]}
-        dangerouslySetInnerHTML={{ __html: content }}
+        dangerouslySetInnerHTML={{ __html: content }} // TODO: can this be done differently?
+        suppressHydrationWarning
       />
     </div>
   );

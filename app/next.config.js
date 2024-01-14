@@ -1,12 +1,15 @@
 module.exports = {
-  async rewrites() {
-    return [
-      {
-        source: "/",
-        destination: "/material/index.html",
-      },
-    ];
-  },
+  output: "export",
+  trailingSlash: true,
+
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/",
+  //       destination: "/material/index.html",
+  //     },
+  //   ];
+  // },
   images: {
     remotePatterns: [
       {
@@ -14,5 +17,6 @@ module.exports = {
         hostname: "images.unsplash.com",
       },
     ],
+    unoptimized: true,
   },
 };
