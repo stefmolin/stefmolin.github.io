@@ -304,3 +304,7 @@ pre[class*="language-"] button.copy-code-button{
 	border-radius: 5px;
 	padding: 2px 5px;
 }
+
+pre:not(:hover) button.copy-code-button{
+	visibility: hidden;
+}
