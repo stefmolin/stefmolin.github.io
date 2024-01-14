@@ -19,14 +19,28 @@ export const labelCodeBlock: unified.Plugin<[], hast.Root> = () => {
       const language = className
         .find((x) => x.match(/language-/))
         .replace("language-", "");
-      if (!LANGUAGE_EXCLUSIONS.some((x) => language.endsWith(x))) {
+      if (!LANGUAGE_EXCLUSIONS.some((x) => language.includes(x))) {
         const languageNode: hast.Element = {
           type: "element",
-          tagName: "h5",
+          tagName: "header",
           children: [
             {
-              type: "text",
-              value: language,
+              type: "element",
+              tagName: "button",
+              properties: {
+                className: "copy-code-button",
+                onclick: "copyCodeBlock(this)",
+              },
+              children: [
+                {
+                  type: "element",
+                  tagName: "i",
+                  properties: {
+                    className: "fa fa-copy",
+                  },
+                  children: [],
+                },
+              ],
             },
           ],
         };
@@ -34,17 +48,17 @@ export const labelCodeBlock: unified.Plugin<[], hast.Root> = () => {
         offset++;
       }
 
-      const title = `${node.properties["data-title"] ?? ""}`.trim();
-      if (title) {
-        const titleNode: hast.Element = {
-          type: "element",
-          tagName: "h4",
-          children: [{ type: "text", value: title }],
-        };
+      // const title = `${node.properties["data-title"] ?? ""}`.trim();
+      // if (title) {
+      //   const titleNode: hast.Element = {
+      //     type: "element",
+      //     tagName: "h4",
+      //     children: [{ type: "text", value: title }],
+      //   };
 
-        node.children.splice(index + 1, 0, titleNode);
-        offset++;
-      }
+      //   node.children.splice(index + 1, 0, titleNode);
+      //   offset++;
+      // }
 
       /* Skips this node (title) and the next node (code) */
       return index + offset;
