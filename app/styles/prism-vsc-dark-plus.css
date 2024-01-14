@@ -275,3 +275,32 @@ pre[class*="language-"] > code[class*="language-"] {
 	box-shadow: inset 5px 0 0 #f7d87c;
 	z-index: 0;
 }
+
+/*********************************************************
+/* Copy code button
+*/
+pre[class*="language-"] {
+	position: relative;
+	margin: 5px 0;
+	padding: 1.75rem 0 1.75rem 1rem;
+}
+
+pre[class*="language-"] header{
+	color: white;
+}
+
+pre[class*="language-"] header h5{
+	position: absolute;
+	top: 10px;
+	left: 15px;
+	color: white;
+}
+
+pre[class*="language-"] button.copy-code-button{
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 2px 5px;
+}
