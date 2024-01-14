@@ -13,7 +13,7 @@ export default function Index(props: Props) {
 }
 
 export const getStaticProps = async () => {
-  const category = "blog";
+  const category = "articles";
   const allPosts = getAllPosts(
     [
       "title",
@@ -33,8 +33,8 @@ export const getStaticProps = async () => {
     props: {
       allPosts,
       category,
-      title: "Blog",
-      description: "Stefanie Molin's blog.",
+      title: "Articles",
+      description: "Articles by Stefanie Molin.",
     },
   };
 };
