@@ -74,8 +74,8 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
                   {socials}
                 </div>
                 <PostBody content={post.content}>
-                  <hr className="mb-2 lg:hidden" />
-                  <div className="flex space-x-2 justify-center sticky bottom-0 bg-white py-2 lg:hidden">
+                  <hr className="lg:hidden" />
+                  <div className="flex space-x-2 justify-center content-center z-50 sticky bottom-0 bg-white pt-4 pb-2 lg:hidden">
                     {socials}
                   </div>
                   <hr className="mb-5" />
