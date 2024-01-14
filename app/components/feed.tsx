@@ -1,7 +1,7 @@
 import Container from "./container";
-import MoreStories from "./more-stories";
-import HeroPost from "./hero-post";
-import Intro from "./intro";
+import MoreStories from "./posts/more-stories";
+import HeroPost from "./posts/hero-post";
+import Intro from "./posts/intro";
 import Layout from "./layout";
 import Head from "next/head";
 import PostType from "../interfaces/post";
@@ -17,7 +17,7 @@ const Feed = ({ allPosts, description, title }: Props) => {
   const morePosts = allPosts.slice(1);
   return (
     <>
-      <Layout preview>
+      <Layout pageDescription={description} preview>
         <Head>
           <title>{title} | Stefanie Molin</title>
         </Head>

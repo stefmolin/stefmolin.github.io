@@ -3,7 +3,7 @@ import PostPublicationDate from "./post-publication-date";
 import PostTags from "./post-tags";
 import PostTitle from "./post-title";
 import TimeToRead from "./time-to-read";
-import type Author from "../interfaces/author";
+import type Author from "../../interfaces/author";
 
 type Props = {
   title: string;
@@ -40,9 +40,9 @@ const PostHeader = ({
           </div>
         </div>
       </div>
-      <div className="mb-8 md:mb-16 sm:mx-0">
+      {/* <div className="mb-8 md:mb-16 sm:mx-0">
         <CoverImage title={title} src={coverImage} />
-      </div>
+      </div> */}
     </>
   );
 };

@@ -4,7 +4,7 @@ import CoverImage from "./cover-image";
 import PostPublicationDate from "./post-publication-date";
 import PostTags from "./post-tags";
 import TimeToRead from "./time-to-read";
-import type Author from "../interfaces/author";
+import type Author from "../../interfaces/author";
 
 type Props = {
   title: string;
@@ -39,7 +39,7 @@ const HeroPost = ({
           <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">
             <Link
               href={{
-                pathname: "/posts/[...slug]",
+                pathname: "/[...slug]",
                 query: { slug },
               }}
               className="hover:underline">

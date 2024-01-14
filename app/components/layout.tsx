@@ -4,13 +4,14 @@ import Meta from "./meta";
 
 type Props = {
   preview?: boolean;
+  pageDescription: string;
   children: React.ReactNode;
 };
 
-const Layout = ({ preview, children }: Props) => {
+const Layout = ({ preview, pageDescription, children }: Props) => {
   return (
     <>
-      <Meta />
+      <Meta description={pageDescription} />
       <div className="min-h-screen">
         {/* <Alert preview={preview} /> TODO: this probably can be removed */}
         <main>{children}</main>

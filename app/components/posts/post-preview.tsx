@@ -1,7 +1,7 @@
 // import Avatar from "./avatar";
 import CoverImage from "./cover-image";
 import Link from "next/link";
-import type Author from "../interfaces/author";
+import type Author from "../../interfaces/author";
 import PostPublicationDate from "./post-publication-date";
 import PostTags from "./post-tags";
 import TimeToRead from "./time-to-read";

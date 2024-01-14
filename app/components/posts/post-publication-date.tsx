@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-solid-svg-icons";
-import DateFormatter from "./date-formatter";
+import DateFormatter from "../date-formatter";
 
 type Props = {
   date: string;
