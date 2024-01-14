@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
+import Giscus from "@giscus/react";
 import Container from "../components/container";
 import PostBody from "../components/posts/post-body";
 import Header from "../components/header";
@@ -11,6 +12,8 @@ import MoreStories from "../components/posts/more-stories";
 import PostTitle from "../components/posts/post-title";
 import markdownToHtml from "../lib/markdownToHtml";
 import type PostType from "../interfaces/post";
+import { HOME_URL } from "../lib/constants";
+import SocialShareButtons from "../components/posts/social-share";
 
 type Props = {
   post: PostType;
@@ -27,6 +30,18 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  const socials = (
+    <SocialShareButtons
+      url={`${HOME_URL}/${post.slug.join("/")}`}
+      emailSubject={post.title}
+      emailBody={`Read this ${post.slug[0]} from Stefanie Molin:`}
+      hashtags={post.tags}
+      postTitle={post.title}
+      postSummary={post.excerpt}
+      roundedIcons
+    />
+  );
 
   return (
     <Layout
@@ -52,7 +67,35 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
                 tags={post.tags}
                 duration={post.duration}
               />
-              <PostBody content={post.content} />
+              <div>
+                {/* This only shows on larger screens */}
+                <div className="hidden lg:block lg:sticky lg:top-5 lg:float-right lg:text-center">
+                  Share
+                  {socials}
+                </div>
+                <PostBody content={post.content}>
+                  <hr className="mb-2 lg:hidden" />
+                  <div className="flex space-x-2 justify-center sticky bottom-0 bg-white py-2 lg:hidden">
+                    {socials}
+                  </div>
+                  <hr className="mb-5" />
+                  <Giscus
+                    id="comments"
+                    repo="stefmolin/comments"
+                    repoId="R_kgDOLEl3Hw"
+                    category="Announcements"
+                    categoryId="DIC_kwDOLEl3H84CcaE4"
+                    mapping="pathname"
+                    strict="1"
+                    reactionsEnabled="1"
+                    emitMetadata="0"
+                    inputPosition="top"
+                    theme="light"
+                    lang="en"
+                    loading="lazy"
+                  />
+                </PostBody>
+              </div>
             </article>
             {suggestedPosts.length > 0 ? (
               <MoreStories posts={suggestedPosts} title="You may also like" />
