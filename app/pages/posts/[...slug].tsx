@@ -86,7 +86,7 @@ export async function getStaticProps({ params }: Params) {
   const content = await markdownToHtml(post.content || "");
 
   let suggestedPosts = getAllPosts([...fields, "excerpt"]).filter(
-    (x) => x.slug != post.slug
+    (x) => x.slug.join() != post.slug.join()
   );
   if (suggestedPosts.length > 0) {
     suggestedPosts.forEach((otherPost) => {
