@@ -54,7 +54,7 @@ const PostPreview = ({
           </div>
         </div>
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+      <p className="text-lg leading-relaxed mb-4 line-clamp-3">{excerpt}</p>
       <div className="float-right">
         <PostTags tags={tags} />
       </div>

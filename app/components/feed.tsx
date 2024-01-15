@@ -27,7 +27,7 @@ const Feed = ({ allPosts, description, title }: Props) => {
             <HeroPost
               title={heroPost.title}
               subtitle={heroPost.subtitle}
-              coverImage={heroPost.coverImage}
+              coverImage={heroPost.ogImage.url}
               date={heroPost.date}
               author={heroPost.author}
               slug={heroPost.slug}

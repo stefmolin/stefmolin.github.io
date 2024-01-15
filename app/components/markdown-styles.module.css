@@ -29,7 +29,8 @@
 
 .markdown ul,
 .markdown ol {
-  @apply list-inside;
+  @apply list-outside;
+  @apply mx-6;
 }
 
 .markdown ul {
@@ -55,6 +56,7 @@
   @apply text-slate-500;
   @apply text-sm;
   @apply -mt-2;
+  @apply mx-6;
 }
 .markdown img { /* TODO: adjust this */
   @apply mx-auto;

@@ -5,7 +5,6 @@ type PostType = {
   title: string;
   subtitle?: string;
   date: string;
-  coverImage: string;
   author: Author;
   excerpt: string;
   ogImage: {

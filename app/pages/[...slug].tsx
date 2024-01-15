@@ -72,7 +72,7 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
               <PostHeader
                 title={post.title}
                 subtitle={post.subtitle}
-                coverImage={post.coverImage}
+                coverImage={post.ogImage.url}
                 date={post.date}
                 author={post.author}
                 tags={post.tags}
@@ -136,7 +136,6 @@ export async function getStaticProps({ params }: Params) {
     "duration",
     "content",
     "ogImage",
-    "coverImage",
     "type",
     "canonical",
   ];

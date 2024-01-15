@@ -41,7 +41,7 @@ export function getPostBySlug(
     }
     if (field === "duration") {
       items[field] = readingDuration(content, {
-        wordsPerMinute: 200,
+        wordsPerMinute: 250,
         emoji: false,
       });
     }
@@ -53,7 +53,6 @@ export function getPostBySlug(
       items[field] = data[field];
     }
   });
-
   return items;
 }
 

@@ -14,7 +14,9 @@ const PostPublicationDate = ({ date, relative, long }: Props) => {
       dateString={date}
       relative={relative}
       long={long}
-      children={[<FontAwesomeIcon icon={faCalendar} className="pr-1" />]}
+      children={[
+        <FontAwesomeIcon icon={faCalendar} className="pr-1" key={date} />,
+      ]}
     />
   );
 };
