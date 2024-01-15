@@ -45,6 +45,9 @@ export function getPostBySlug(
         emoji: false,
       });
     }
+    if (field == "type") {
+      items[field] = realSlug.split("/")[0];
+    }
 
     if (typeof data[field] !== "undefined") {
       items[field] = data[field];
@@ -54,10 +57,10 @@ export function getPostBySlug(
   return items;
 }
 
-export function getAllPosts(fields: string[] = [], category: string = "") {
-  const slugs = getPostSlugs(category);
+export function getAllPosts(fields: string[] = [], type: string = "") {
+  const slugs = getPostSlugs(type);
   const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields, category))
+    .map((slug) => getPostBySlug(slug, fields, type))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;

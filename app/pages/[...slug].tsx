@@ -44,9 +44,7 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
   );
 
   return (
-    <Layout
-      pageDescription={`${post.title} by Stefanie Molin`}
-      preview={preview}>
+    <Layout pageDescription={post.subtitle || post.title} preview={preview}>
       <Container>
         <Header />
         {router.isFallback ? (
@@ -56,7 +54,17 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
             <article className="mb-32">
               <Head>
                 <title>{title}</title>
+                <meta property="og:title" content={title} />
+                <meta property="og:type" content="article" />
                 <meta property="og:image" content={post.ogImage.url} />
+                <meta property="article:published_time" content={post.date} />
+                {...post.tags.map((tag) => (
+                  <meta property="article:tag" content={tag} />
+                ))}
+                <meta
+                  property="article:section"
+                  content={post.type === "blog" ? "Blog" : "Technology"}
+                />
               </Head>
               <PostHeader
                 title={post.title}
@@ -100,7 +108,7 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
             {suggestedPosts.length > 0 ? (
               <MoreStories posts={suggestedPosts} title="You may also like" />
             ) : null}
-            {/* add previews for related ones and also previous and next buttons */}
+            {/* TODO: add previous/next and follow/support/subscribe buttons */}
           </>
         )}
       </Container>
@@ -126,12 +134,13 @@ export async function getStaticProps({ params }: Params) {
     "content",
     "ogImage",
     "coverImage",
+    "type",
   ];
   const post = getPostBySlug(params.slug, fields);
   const content = await markdownToHtml(post.content || "");
 
-  let suggestedPosts = getAllPosts([...fields, "excerpt"]).filter(
-    (x) => x.slug.join() != post.slug.join() // TODO: should this limit to the same type (ie, article only can suggest articles?)
+  let suggestedPosts = getAllPosts([...fields, "excerpt"], post.type).filter(
+    (x) => x.slug.join() != post.slug.join()
   );
   if (suggestedPosts.length > 0) {
     suggestedPosts.forEach((otherPost) => {
@@ -145,7 +154,7 @@ export async function getStaticProps({ params }: Params) {
       .sort((post1, post2) =>
         post1.similarity > post2.similarity || post1.date > post2.date ? -1 : 1
       )
-      .slice(0, 2); // show top results (second number)
+      .slice(0, 2); // show top x results (second number)
   }
 
   return {

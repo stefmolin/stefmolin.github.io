@@ -25,7 +25,7 @@ const CoverImage = ({ title, src, slug }: Props) => {
       {slug ? (
         <Link
           href={{
-            pathname: "/posts/[...slug]",
+            pathname: "/[...slug]",
             query: { slug },
           }}
           aria-label={title}>
