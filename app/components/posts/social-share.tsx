@@ -5,8 +5,8 @@ import {
   FacebookShareButton,
   LinkedinIcon as LinkedInIcon,
   LinkedinShareButton as LinkedInShareButton,
-  // PinterestIcon,
-  // PinterestShareButton,
+  PinterestIcon,
+  PinterestShareButton,
   RedditIcon,
   RedditShareButton,
   TwitterIcon,
@@ -19,6 +19,7 @@ import { HOME_URL, TWITTER_HANDLE } from "../../lib/constants";
 type Props = {
   iconSize?: number;
   url: string;
+  image: string;
   emailSubject: string;
   emailBody: string;
   hashtags: string[];
@@ -29,6 +30,7 @@ type Props = {
 
 const SocialShareButtons = ({
   url,
+  image,
   emailSubject,
   emailBody,
   hashtags,
@@ -41,9 +43,11 @@ const SocialShareButtons = ({
   const encodedURL = encodeURI(url);
   const cleanedHashtags = hashtags.map((x) => x.replaceAll(/(-| )/g, ""));
 
+  const buttonStyle = "hover:opacity-50";
+
   return (
     <>
-      <div>
+      <div className={buttonStyle}>
         <EmailShareButton
           url={encodedURL}
           subject={emailSubject}
@@ -51,14 +55,14 @@ const SocialShareButtons = ({
           <EmailIcon {...iconProps} />
         </EmailShareButton>
       </div>
-      <div>
+      <div className={buttonStyle}>
         <FacebookShareButton
           url={encodedURL}
           hashtag={`#${cleanedHashtags[0]}`}>
           <FacebookIcon {...iconProps} />
         </FacebookShareButton>
       </div>
-      <div>
+      <div className={buttonStyle}>
         <LinkedInShareButton
           url={encodedURL}
           title={postTitle}
@@ -67,12 +71,20 @@ const SocialShareButtons = ({
           <LinkedInIcon {...iconProps} />
         </LinkedInShareButton>
       </div>
-      <div>
+      <div className={buttonStyle}>
+        <PinterestShareButton
+          url={encodedURL}
+          description={postSummary}
+          media={image}>
+          <PinterestIcon {...iconProps} />
+        </PinterestShareButton>
+      </div>
+      <div className={buttonStyle}>
         <RedditShareButton url={encodedURL} title={postTitle}>
           <RedditIcon {...iconProps} />
         </RedditShareButton>
       </div>
-      <div>
+      <div className={buttonStyle}>
         <TwitterShareButton
           url={encodedURL}
           title={`${postTitle} by ${TWITTER_HANDLE}`}
@@ -81,7 +93,7 @@ const SocialShareButtons = ({
           <TwitterIcon {...iconProps} />
         </TwitterShareButton>
       </div>
-      <div>
+      <div className={buttonStyle}>
         <WhatsappShareButton url={encodedURL} title={postTitle}>
           <WhatsappIcon {...iconProps} />
         </WhatsappShareButton>
