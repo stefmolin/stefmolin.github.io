@@ -1,6 +1,7 @@
 module.exports = {
   output: "export",
   trailingSlash: true,
+  transpilePackages: ["react-tweet"],
 
   // async rewrites() {
   //   return [
