@@ -41,23 +41,28 @@
   @apply list-decimal;
 }
 
-.markdown code:not([class]) { /* TODO: adjust this */
+.markdown code:not([class]) { /* inline code */
   @apply text-orange-600;
   @apply bg-slate-100;
   @apply px-2;
+  @apply py-0.5;
 }
 
-.markdown a { /* TODO: adjust this */
-  @apply text-blue-700;
-  @apply hover:text-blue-500;
+.markdown a { /* links in posts */
+  @apply text-slate-500;
+  @apply hover:text-slate-400;
+  @apply underline;
 }
 
-.markdown figcaption { /* TODO: adjust this */
+.markdown figcaption { /* image/code */
   @apply text-slate-500;
   @apply text-sm;
   @apply -mt-2;
-  @apply mx-6;
+  @apply mx-5;
+  @apply text-center;
 }
-.markdown img { /* TODO: adjust this */
+
+.markdown img { /* centers the images in the posts */
   @apply mx-auto;
+  @apply bg-white;
 }
