@@ -34,6 +34,7 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
   const socials = (
     <SocialShareButtons
       url={`${HOME_URL}/${post.slug.join("/")}`}
+      image={`${HOME_URL}/${post.ogImage.url}`}
       emailSubject={post.title}
       emailBody={`Read this ${post.slug[0]} from Stefanie Molin:`}
       hashtags={post.tags}
@@ -65,6 +66,12 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
                   property="article:section"
                   content={post.type === "blog" ? "Blog" : "Technology"}
                 />
+                {post.modified ? (
+                  <meta
+                    property="article:modified_time"
+                    content={post.modified}
+                  />
+                ) : null}
                 {post.canonical ? (
                   <link rel="canonical" href={post.canonical} />
                 ) : null}
@@ -138,6 +145,7 @@ export async function getStaticProps({ params }: Params) {
     "ogImage",
     "type",
     "canonical",
+    "modified",
   ];
   const post = getPostBySlug(params.slug, fields);
   const content = await markdownToHtml(post.content || "");

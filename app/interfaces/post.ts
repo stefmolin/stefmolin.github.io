@@ -15,6 +15,7 @@ type PostType = {
   duration: number;
   type: string;
   canonical?: string;
+  modified?: string;
 };
 
 export default PostType;
