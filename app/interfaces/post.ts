@@ -15,6 +15,7 @@ type PostType = {
   tags: string[];
   duration: number;
   type: string;
+  canonical?: string;
 };
 
 export default PostType;

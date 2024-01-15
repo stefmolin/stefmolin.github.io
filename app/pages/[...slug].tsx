@@ -65,6 +65,9 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
                   property="article:section"
                   content={post.type === "blog" ? "Blog" : "Technology"}
                 />
+                {post.canonical ? (
+                  <link rel="canonical" href={post.canonical} />
+                ) : null}
               </Head>
               <PostHeader
                 title={post.title}
@@ -135,6 +138,7 @@ export async function getStaticProps({ params }: Params) {
     "ogImage",
     "coverImage",
     "type",
+    "canonical",
   ];
   const post = getPostBySlug(params.slug, fields);
   const content = await markdownToHtml(post.content || "");
