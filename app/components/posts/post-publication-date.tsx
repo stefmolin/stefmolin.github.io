@@ -10,10 +10,12 @@ type Props = {
 
 const PostPublicationDate = ({ date, relative, long }: Props) => {
   return (
-    <>
-      <FontAwesomeIcon icon={faCalendar} />{" "}
-      <DateFormatter dateString={date} relative={relative} long={long} />
-    </>
+    <DateFormatter
+      dateString={date}
+      relative={relative}
+      long={long}
+      children={[<FontAwesomeIcon icon={faCalendar} className="pr-1" />]}
+    />
   );
 };
 

@@ -28,14 +28,12 @@ const PostHeader = ({
     <>
       <PostTitle title={title} subtitle={subtitle} />
       <div className="block my-6">
-        <div className="flex flex-row items-center">
-          <div>
+        <div className="flex flex-col lg:flex-row lg:items-center">
+          <div className="space-x-4">
             <PostPublicationDate date={date} relative />
-          </div>
-          <div className="px-4">
             <TimeToRead duration={duration} />
           </div>
-          <div>
+          <div className="flex-1 lg:text-right">
             <PostTags tags={tags} />
           </div>
         </div>
