@@ -56,5 +56,6 @@
   @apply text-sm;
   @apply -mt-2;
 }
-
-/* TODO: look into enabling the button to copy the code blocks.*/
+.markdown img { /* TODO: adjust this */
+  @apply mx-auto;
+}
