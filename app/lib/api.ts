@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import readingDuration from "reading-duration";
 import { Feed as RssFeed } from "feed";
 import { DateTime } from "luxon";
-import { HOME_URL } from "./constants";
+import { COPYRIGHT_STATEMENT, HOME_URL, HOME_OG_IMAGE_URL } from "./constants";
 
 type Items = {
   [key: string]: any;
@@ -114,18 +114,19 @@ export const generateRssFeed = async (
   feedTitle: string,
   posts: Items[]
 ) => {
+  if (feedType.includes("/")) return;
+
   const rssFeed = new RssFeed({
     title: `Stefanie Molin's ${feedTitle}`,
     description: "Stay up to date with my latest posts.",
     id: `${HOME_URL}/${feedType}`,
     link: `${HOME_URL}/${feedType}`,
-    copyright: `Copyright 2019-${DateTime.now().year}, Stefanie Molin`,
+    copyright: COPYRIGHT_STATEMENT,
     language: "en",
-    // TODO: image: `${HOME_URL}/logo.png`,
+    image: HOME_OG_IMAGE_URL,
     // TODO: favicon: `${HOME_URL}/favicon.png`,
     author: {
       name: "Stefanie Molin",
-      // email: "todo@example.com",
       link: HOME_URL,
     },
     feedLinks: {
