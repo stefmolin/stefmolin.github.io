@@ -168,5 +168,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# auto-generated feeds
+# auto-generated files from website build
 app/public/feeds/
+app/public/robots.txt
+app/public/sitemap*
