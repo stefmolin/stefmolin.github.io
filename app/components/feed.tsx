@@ -6,9 +6,10 @@ import Layout from "./layout";
 import Head from "next/head";
 import FeedType from "../interfaces/feed";
 
-const Feed = ({ allPosts, description, title }: FeedType) => {
+const Feed = ({ allPosts, description, title, kind }: FeedType) => {
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
+
   return (
     <>
       <Layout pageDescription={description} preview>

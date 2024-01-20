@@ -1,8 +1,39 @@
+import { ReactElement } from "react";
 import Head from "next/head";
-import { HOME_OG_IMAGE_URL, TWITTER_HANDLE } from "../lib/constants";
+import { HOME_URL, HOME_OG_IMAGE_URL, TWITTER_HANDLE } from "../lib/constants";
 
 type Props = {
   description: string;
+};
+
+const getFeedLinks = () => {
+  const links: ReactElement[] = [];
+  ["articles", "blog"].forEach((feedType) => {
+    links.push(
+      ...["Atom", "JSON", "RSS"].map((tech) => {
+        let feedFile;
+        let headerType;
+        if (tech === "JSON") {
+          feedFile = `${feedType}.json`;
+          headerType = "json";
+        } else {
+          const lowerTech = tech.toLowerCase();
+          feedFile = `${feedType}-${lowerTech}.xml`;
+          headerType = `${lowerTech}+xml`;
+        }
+        return (
+          <link
+            href={`/feeds/${feedFile}`}
+            type={`application/${headerType}`}
+            rel="alternate"
+            title={`${tech} feed for ${HOME_URL}/${feedType}`}
+          />
+        );
+      })
+    );
+  });
+
+  return links;
 };
 
 const Meta = ({ description }: Props) => {
@@ -35,6 +66,8 @@ const Meta = ({ description }: Props) => {
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
+
+      {...getFeedLinks()}
 
       <meta name="author" content="Stefanie Molin" />
       <meta name="description" content={description} />

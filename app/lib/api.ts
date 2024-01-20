@@ -93,7 +93,7 @@ export const getFeed = (
   return {
     props: {
       allPosts,
-      type: postType,
+      kind: postType,
       title: feedTitle,
       description: feedDescription,
     },
