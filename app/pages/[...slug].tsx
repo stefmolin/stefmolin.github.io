@@ -21,9 +21,6 @@ type Props = {
   preview?: boolean;
 };
 
-// TODO: look into doing a URL pattern like posts/2024/01/01/slug
-// maybe this is overkill? but should at least have something for handling collisions
-
 export default function Post({ post, suggestedPosts, preview }: Props) {
   const router = useRouter();
   const title = `${post.title} | Stefanie Molin`;

@@ -14,7 +14,7 @@ const Feed = ({ allPosts, description, title, kind }: FeedType) => {
     <>
       <Layout pageDescription={description} preview>
         <Head>
-          <title>{title} | Stefanie Molin</title>
+          <title>{`${title} | Stefanie Molin`}</title>
         </Head>
         <Container>
           <Intro title={title} description={description} />
