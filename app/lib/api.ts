@@ -2,6 +2,13 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 import readingDuration from "reading-duration";
+import { Feed as RssFeed } from "feed";
+import { DateTime } from "luxon";
+import { HOME_URL } from "./constants";
+
+type Items = {
+  [key: string]: any;
+};
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -24,10 +31,6 @@ export function getPostBySlug(
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
-
-  type Items = {
-    [key: string]: any;
-  };
 
   const items: Items = {};
 
@@ -85,6 +88,8 @@ export const getFeed = (
     postType
   );
 
+  generateRssFeed(postType, feedTitle, allPosts);
+
   return {
     props: {
       allPosts,
@@ -93,4 +98,61 @@ export const getFeed = (
       description: feedDescription,
     },
   };
+};
+
+export const generateRssFeed = async (
+  feedType: string,
+  feedTitle: string,
+  posts: Items[]
+) => {
+  const rssFeed = new RssFeed({
+    title: `Stefanie Molin's ${feedTitle}`,
+    description: "Stay up to date with my latest posts.",
+    id: `${HOME_URL}/${feedType}`,
+    link: `${HOME_URL}/${feedType}`,
+    copyright: `Copyright 2019-${DateTime.now().year}, Stefanie Molin`,
+    language: "en",
+    // TODO: image: `${HOME_URL}/logo.png`,
+    // TODO: favicon: `${HOME_URL}/favicon.png`,
+    author: {
+      name: "Stefanie Molin",
+      // email: "todo@example.com",
+      link: HOME_URL,
+    },
+    feedLinks: {
+      atom: `${HOME_URL}/feeds/${feedType}-atom.xml`,
+      json: `${HOME_URL}/feeds/${feedType}.json`,
+    },
+  });
+
+  rssFeed.addCategory(feedType);
+  if (feedType === "articles") {
+    [
+      "technology",
+      "data science",
+      "computer science",
+      "public speaking",
+    ].forEach((category) => rssFeed.addCategory(category));
+  }
+
+  const localImageRegex = /^\/assets/;
+
+  posts.forEach((post) => {
+    const url = `${HOME_URL}/${post.slug.join("/")}`;
+    rssFeed.addItem({
+      title: post.title,
+      id: url,
+      link: url,
+      description: post.excerpt,
+      date: DateTime.fromISO(post.date).toJSDate(),
+      category: post.slug.length > 1 ? post.slug[1] : null,
+      image: localImageRegex.exec(post.ogImage.url)
+        ? post.ogImage.url.replace(localImageRegex, HOME_URL)
+        : post.ogImage.url,
+    });
+  });
+
+  fs.writeFileSync(`./public/feeds/${feedType}-rss.xml`, rssFeed.rss2());
+  fs.writeFileSync(`./public/feeds/${feedType}-atom.xml`, rssFeed.atom1());
+  fs.writeFileSync(`./public/feeds/${feedType}.json`, rssFeed.json1());
 };
