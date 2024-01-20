@@ -30,7 +30,16 @@ export function getPostBySlug(
     .replace(/\.md$/, "");
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  let { data, content } = matter(fileContents);
+
+  // allow shorthand for referencing images by using /posts-assets and the assets value in front matter
+  if (data.assets) {
+    content = content.replaceAll(
+      /\(\/post-assets(\/[\w\.-]+)\)/g,
+      `(${data.assets}$1)`
+    );
+    data.ogImage.url = data.ogImage.url.replace(/^\/post-assets/, data.assets);
+  }
 
   const items: Items = {};
 

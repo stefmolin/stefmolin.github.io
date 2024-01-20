@@ -8,8 +8,9 @@ author:
   name: Stefanie Molin
   picture: "/assets/avatar.jpeg"
 tags: ["data science", "Python", "summary statistics", "Data Morph", "simulated annealing", "open source software", "data visualization"]
+assets: "/assets/articles/introducing-data-morph"
 ogImage:
-  url: "/assets/articles/introducing-data-morph/panda-to-star.gif"
+  url: "/post-assets/panda-to-star.gif"
 canonical: "https://levelup.gitconnected.com/data-morph-moving-beyond-the-datasaurus-dozen-156927b20f8c"
 ---
 
@@ -27,7 +28,7 @@ Let's play a game. I'm thinking of a distribution with the following summary sta
 
 The mean is a measure of centrality, the standard deviation is a measure of spread from the center, and the correlation quantifies how the *x* and *y* variables move together, so it is tempting to think that this is enough to describe the data. However, these summary statistics are insufficient: there are multiple possible datasets for a given set of summary statistics. Here's a scatter plot of the data I was summarizing — did you guess right?
 
-![one possible dataset that matches the summary statistics above](/assets/articles/introducing-data-morph/music-dataset.png)
+![one possible dataset that matches the summary statistics above](/post-assets/music-dataset.png)
 
 <figcaption>
 
@@ -39,7 +40,7 @@ The music dataset provided by Data Morph.
 
 The notion that we cannot rely solely on summary statistics is not new. Researchers have illustrated this by generating many datasets that are very different visually, but share the same summary statistics. In 1973, Francis Anscombe introduced a set of four such datasets that is known as **Anscombe's Quartet**:
 
-![Anscombe's Quartet](/assets/articles/introducing-data-morph/anscombes-quartet.png)
+![Anscombe's Quartet](/post-assets/anscombes-quartet.png)
 
 <figcaption>
 
@@ -49,7 +50,7 @@ Each of these datasets is very different visually; however, they all share the s
 
 In 2017, researchers at Autodesk built upon the idea of Anscombe's Quartet to develop the [**Datasaurus Dozen**](https://damassets.autodesk.net/content/dam/autodesk/research/publications-assets/pdf/same-stats-different-graphs.pdf): they turned a set of points shaped like a dinosaur (Alberto Cairo's [Datasaurus](http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html)) into 12 distinct shapes using [**simulated annealing**](https://machinelearningmastery.com/simulated-annealing-from-scratch-in-python/), which is a technique for finding global optima, in the **Same Stats, Different Graphs** project:
 
-![Datasaurus Dozen](/assets/articles/introducing-data-morph/datasaurus-dozen.png)
+![Datasaurus Dozen](/post-assets/datasaurus-dozen.png)
 
 <figcaption>
 
@@ -65,7 +66,7 @@ In comparison to Anscombe's Quartet, there is more of a shock factor watching th
 
 I wanted to employ this shock factor in my [pandas workshop](https://github.com/stefmolin/pandas-workshop) to motivate the section on data visualization. Coming after the section on data wrangling, it's crucial to emphasize the importance of data visualization at this point because coding up visualizations can be more complicated. People are often tempted to take the shortcut and just use summary statistics to describe the data. However, using the dinosaur for the animation felt off brand for the workshop, which features panda imagery throughout — I needed to make a dataset shaped like a panda. I provide some tips on how to move from an idea to an input dataset [here](https://stefmolin.github.io/data-morph/dev/custom_datasets.html).
 
-![panda dataset](/assets/articles/introducing-data-morph/panda-dataset.png)
+![panda dataset](/post-assets/panda-dataset.png)
 
 <figcaption>
 
@@ -79,7 +80,7 @@ I quickly realized that custom, impactful visual aids would not only benefit my 
 
 There was significant refactoring required to generalize the Same Stats, Different Graphs code so it would work for a different input. All of the logic for the target shapes (think the center and radius for a circle, endpoints for a line, *etc.*) was hardcoded in the code, and was, therefore, specific to the datasets included with the Autodesk team's code. The positioning and attributes of the target shapes need to be calculated from the starting dataset, with some shapes being much simpler to encode than others. For example, to morph into the circle shape, the center of the circle can be at the mean of the *x* and *y* values; the radius can be a multiple of the standard deviation (*x* or *y*, pick one):
 
-![target shape calculation by Data Morph](/assets/articles/introducing-data-morph/shape-calculation.png)
+![target shape calculation by Data Morph](/post-assets/shape-calculation.png)
 
 <figcaption>
 
@@ -89,7 +90,7 @@ The target shape Data Morph calculates when trying to morph the panda shown prev
 
 Data Morph provides a hierarchy of shape classes to allow for creating composite shapes (*e.g.*, the circle shape is used to create a bullseye shape, which comprises two concentric circles) and centralizing the distance calculation for streamlined code. However, for some shapes, using information from the data doesn't quite work: points sometimes need to move outside the bounds of the starting dataset. To handle this logic, Data Morph includes some automatic boundary calculations that shapes and plotting functionality plug into:
 
-![bounds calculated by Data Morph](/assets/articles/introducing-data-morph/bounds-calculation.png)
+![bounds calculated by Data Morph](/post-assets/bounds-calculation.png)
 
 <figcaption>
 
@@ -99,7 +100,7 @@ Bounds are automatically calculated for use in morphing and plotting.
 
 Another big change was to decrease the maximum amount the points could move over time, rather than keep it static, which makes for a nicer visual effect as the points move. Here's an example of morphing the panda dataset into a star:
 
-![panda to star transformation](/assets/articles/introducing-data-morph/panda-to-star.gif)
+![panda to star transformation](/post-assets/panda-to-star.gif)
 
 <figcaption>
 

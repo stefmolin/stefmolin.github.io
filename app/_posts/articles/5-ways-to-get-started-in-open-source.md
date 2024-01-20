@@ -8,12 +8,13 @@ author:
   name: Stefanie Molin
   picture: "/assets/avatar.jpeg"
 tags: ["open source", "open source contribution", "open source software"]
+assets: "/assets/articles/5-ways-to-get-started-in-open-source"
 ogImage:
-  url: "/assets/articles/5-ways-to-get-started-in-open-source/journey-ahead.jpg"
+  url: "/post-assets/journey-ahead.jpg"
 canonical: "https://levelup.gitconnected.com/5-ways-to-get-started-in-open-source-4aac430828e9"
 ---
 
-![the journey ahead](/assets/articles/5-ways-to-get-started-in-open-source/journey-ahead.jpg)
+![the journey ahead](/post-assets/journey-ahead.jpg)
 
 <figcaption>
 
@@ -67,7 +68,7 @@ This is where you come in. As a user or even newcomer to the library, read throu
 
 Here's an example from my personal experience. I had used NumPy's `polyfit()` function in the past and was consulting the documentation to use it in a new project, but discovered that they had moved to a new API. After reading the [transition guide](https://numpy.org/doc/stable/reference/routines.polynomials.html#transitioning-from-numpy-poly1d-to-numpy-polynomial) and looking at the new interface, I noticed that the new API was lacking examples. [I contributed some examples](https://github.com/numpy/numpy/pull/23530) for `Polynomial.degree()` that would have answered the questions I had when learning about this new API.
 
-![contributed examples in the NumPy documentation](/assets/articles/5-ways-to-get-started-in-open-source/numpy-docs.png)
+![contributed examples in the NumPy documentation](/post-assets/numpy-docs.png)
 
 <figcaption>
 
@@ -83,7 +84,7 @@ Most open source projects have many open issues that can be picked up by anyone 
 - Look for meta-issues, which capture a change that the maintainers want to make across multiple areas of the library. There will often be examples or detailed guidance of what needs to be done and links to parts that others have already completed for reference ([the Scikit-Learn team does a great job with this](https://github.com/scikit-learn/scikit-learn/issues/23462)).
 - Make sure to read through the entire issue along with any comments, and also check for pull requests (PRs) that address what you are interested in before picking something to work on.
 
-![browsing open issues for in the scikit-learn repository](/assets/articles/5-ways-to-get-started-in-open-source/open-issues.png)
+![browsing open issues for in the scikit-learn repository](/post-assets/open-issues.png)
 
 <figcaption>
 
@@ -106,7 +107,7 @@ As a user of the software and/or reader of the documentation, finding something 
 - Working on a bug fix will likely require some more knowledge of the code base, so feel free to ask for help from the maintainers (this can also apply for other parts of the PR requirements, like adding tests or release notes).
 - Never spend time working on something until you hear back from the maintainers about whether they are interested in making the change. Sometimes a proposed change may already be in progress or is not in scope.
 
-![filing a bug report](/assets/articles/5-ways-to-get-started-in-open-source/bug-report.png)
+![filing a bug report](/post-assets/bug-report.png)
 
 <figcaption>
 
@@ -129,7 +130,7 @@ This method may require significantly more work than the previous suggestions, b
 
 After returning home, I had the idea of running this validation at commit time instead of as a separate script, so I built a `numpydoc-validation` pre-commit hook for my team at work. This hook (and our `pre-commit` setup in general) significantly improved the PR experience for both the submitter and the reviewer. I submitted an [issue](https://github.com/numpy/numpydoc/issues/450) to ask the numpydoc maintainers whether they would be interested in having a pre-commit hook for their validation logic. I then got approval from my employer to port what I had built internally into the open source project. During this process, I unfortunately discovered that the way I had built the hook would never work externally, so I had to come up with an entirely new way of doing it. After rewriting the entire thing, I was able to file [my PR](https://github.com/numpy/numpydoc/pull/454).
 
-![developing a pre-commit hook for numpydoc](/assets/articles/5-ways-to-get-started-in-open-source/numpydoc-validation-feature.png)
+![developing a pre-commit hook for numpydoc](/post-assets/numpydoc-validation-feature.png)
 
 <figcaption>
 

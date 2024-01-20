@@ -8,12 +8,13 @@ author:
   name: Stefanie Molin
   picture: "/assets/avatar.jpeg"
 tags: ["data science", "Python", "pandas", "matplotlib", "pivot table", "stacked bar plot"]
+assets: "/assets/articles/how-to-pivot-and-plot-data-with-pandas"
 ogImage:
-  url: "/assets/articles/how-to-pivot-and-plot-data-with-pandas/cover-image.jpg"
+  url: "/post-assets/cover-image.jpg"
 canonical: "https://opendatascience.com/how-to-pivot-and-plot-data-with-pandas/"
 ---
 
-![two pandas](/assets/articles/how-to-pivot-and-plot-data-with-pandas/cover-image.jpg)
+![two pandas](/post-assets/cover-image.jpg)
 
 <figcaption>
 
@@ -62,7 +63,7 @@ df = df.rename(lambda x: x.lower(), axis=1)
 df.head()
 ```
 
-![output of the previous code snippet](/assets/articles/how-to-pivot-and-plot-data-with-pandas/fig-01.png)
+![output of the previous code snippet](/post-assets/fig-01.png)
 
 For our analysis, we want to look at passenger airlines to find the 2019 market share of the top 5 carriers (based on total number of passengers in 2019). To do so, we first need to figure out which carriers were in the top 5. Remember, the data contains information on all types of flights, but we only want passenger flights, so we first query `df` for flights marked `F` in the `class` column (note that we need backticks to reference this column because `class` is a reserved keyword in Python). Then, we group by the carrier name and sum each carrier's passenger counts. Finally, we call the `nlargest()` method to return only the top 5:
 
@@ -117,7 +118,7 @@ pivot = df.query('`class` == "F"').pivot_table(
 pivot.head(10)
 ```
 
-![output of the previous code snippet](/assets/articles/how-to-pivot-and-plot-data-with-pandas/fig-02.png)
+![output of the previous code snippet](/post-assets/fig-02.png)
 
 Notice that the first row in the previous result is not a city, but rather, the subtotal by airline, so we will drop that row before selecting the first 10 rows of the sorted data:
 
@@ -131,7 +132,7 @@ Selecting the columns for the top 5 airlines now gives us the number of passenge
 pivot[top_airlines.sort_index().index]
 ```
 
-![output of the previous code snippet](/assets/articles/how-to-pivot-and-plot-data-with-pandas/fig-03.png)
+![output of the previous code snippet](/post-assets/fig-03.png)
 
 Our data is now in the right format for a stacked bar plot showing passenger counts. To make this visualization, we call the `plot()` method on the previous result and specify that we want horizontal bars (`kind='barh'`) and that the different airlines should be stacked (`stacked=True`). Note that since we have the destinations sorted in descending order, Atlanta will be plotted on the bottom, so we call `invert_yaxis()` on the `Axes` object returned by `plot()` to flip the order:
 
@@ -158,7 +159,7 @@ for spine in ['top', 'right']:
 (con)    ax.spines[spine].set_visible(False)
 ```
 
-![resulting visualization](/assets/articles/how-to-pivot-and-plot-data-with-pandas/fig-04.png)
+![resulting visualization](/post-assets/fig-04.png)
 
 One interesting thing to notice from the previous result is that Seattle is a top 10 destination, yet the top 5 carriers don't appear to be contributing as much to it as the rest of the destination cities, which are pretty much in the same order with the exception of Los Angeles. This could cause some confusion, so let's add in another stacked bar called `Other` that contains the passenger totals for all airlines not in the top 5. Since we calculated the `All` column when we created the pivot table, all we have to do here is add a column to our filtered data that contains the `All` column minus the top 5 airlines' passenger totals summed together. The plotting code only needs to be modified to shift the legend further out:
 
@@ -184,7 +185,7 @@ for spine in ['top', 'right']:
 (con)    ax.spines[spine].set_visible(False)
 ```
 
-![resulting visualization](/assets/articles/how-to-pivot-and-plot-data-with-pandas/fig-05.png)
+![resulting visualization](/post-assets/fig-05.png)
 
 We can now clearly see that Atlanta had the most passengers arriving in 2019 and that flights from Delta Air Lines were the biggest contributor. But, we can do better by representing market share as the percentage of all passengers arriving in each destination city. In order to do that, we need to modify our pivot table by dividing each airline’s passenger counts by the `All` column:
 
@@ -195,7 +196,7 @@ normalized_pivot = pivot[top_airlines.sort_index().index].apply(
 normalized_pivot
 ```
 
-![output from the above code](/assets/articles/how-to-pivot-and-plot-data-with-pandas/fig-06.png)
+![output from the above code](/post-assets/fig-06.png)
 
 Before plotting, we will also sort the bars by the total market share of the top 5 carriers. Viewing this information as percentages gives us a better idea of which carriers dominate which markets &ndash; Delta has by far the largest share of Atlanta and American Airlines has over 60% of Dallas/Fort Worth, while United has strong footholds in several markets:
 
@@ -221,7 +222,7 @@ for spine in ['top', 'right']:
 (con)    ax.spines[spine].set_visible(False)
 ```
 
-![resulting visualization](/assets/articles/how-to-pivot-and-plot-data-with-pandas/fig-07.png)
+![resulting visualization](/post-assets/fig-07.png)
 
 As we noticed earlier, Seattle sticks out. The top 5 carriers have more than 50% combined market share for 9 out of the top 10 destinations, but not for Seattle. Using our pivot table, we can see that Alaska Airlines is the top carrier for Seattle:
 
