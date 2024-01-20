@@ -4,15 +4,9 @@ import HeroPost from "./posts/hero-post";
 import Intro from "./posts/intro";
 import Layout from "./layout";
 import Head from "next/head";
-import PostType from "../interfaces/post";
+import FeedType from "../interfaces/feed";
 
-type Props = {
-  allPosts: PostType[];
-  description: string;
-  title: string;
-};
-
-const Feed = ({ allPosts, description, title }: Props) => {
+const Feed = ({ allPosts, description, title }: FeedType) => {
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
   return (

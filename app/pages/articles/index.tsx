@@ -1,40 +1,10 @@
 import Feed from "../../components/feed";
-import { getAllPosts } from "../../lib/api";
-import PostType from "../../interfaces/post";
+import { getFeed } from "../../lib/api";
+import FeedType from "../../interfaces/feed";
 
-type Props = {
-  allPosts: PostType[];
-  title: string;
-  description: string;
-};
-
-export default function Index(props: Props) {
+export default function Index(props: FeedType) {
   return <Feed {...props} />;
 }
 
-export const getStaticProps = async () => {
-  const postType = "articles";
-  const allPosts = getAllPosts(
-    [
-      "title",
-      "subtitle",
-      "date",
-      "slug",
-      "author",
-      "ogImage",
-      "excerpt",
-      "tags",
-      "duration",
-    ],
-    postType
-  );
-
-  return {
-    props: {
-      allPosts,
-      type: postType,
-      title: "Articles",
-      description: "Articles by Stefanie Molin.",
-    },
-  };
-};
+export const getStaticProps = async () =>
+  getFeed("articles", "Articles", "Articles by Stefanie Molin.");

@@ -64,3 +64,33 @@ export function getAllPosts(fields: string[] = [], type: string = "") {
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
+
+export const getFeed = (
+  postType: string,
+  feedTitle: string,
+  feedDescription: string
+) => {
+  const allPosts = getAllPosts(
+    [
+      "title",
+      "subtitle",
+      "date",
+      "slug",
+      "author",
+      "ogImage",
+      "excerpt",
+      "tags",
+      "duration",
+    ],
+    postType
+  );
+
+  return {
+    props: {
+      allPosts,
+      type: postType,
+      title: feedTitle,
+      description: feedDescription,
+    },
+  };
+};
