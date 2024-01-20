@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import Giscus from "@giscus/react";
 import Container from "../components/container";
 import PostBody from "../components/posts/post-body";
@@ -14,6 +14,7 @@ import markdownToHtml from "../lib/markdownToHtml";
 import type PostType from "../interfaces/post";
 import { HOME_URL } from "../lib/constants";
 import SocialShareButtons from "../components/posts/social-share";
+import { usePageURL } from "../lib/hooks";
 
 type Props = {
   post: PostType;
@@ -23,17 +24,23 @@ type Props = {
 
 export default function Post({ post, suggestedPosts, preview }: Props) {
   const router = useRouter();
-  const title = `${post.title} | Stefanie Molin`;
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
 
+  const pageURL = usePageURL();
+  const ogImageURL = post.ogImage.url.startsWith("/")
+    ? `${HOME_URL}${post.ogImage.url}`
+    : post.ogImage.url;
+
   const socials = (
     <SocialShareButtons
-      url={`${HOME_URL}/${post.slug.join("/")}`}
-      image={`${HOME_URL}/${post.ogImage.url}`}
+      url={pageURL}
+      image={ogImageURL}
       emailSubject={post.title}
-      emailBody={`Read this ${post.slug[0]} from Stefanie Molin:`}
+      emailBody={`Read this ${
+        post.slug[0] === "blog" ? "blog post" : "article"
+      } from Stefanie Molin:`}
       hashtags={post.tags}
       postTitle={post.title}
       postSummary={post.excerpt}
@@ -42,7 +49,7 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
   );
 
   return (
-    <Layout pageDescription={post.subtitle || post.title} preview={preview}>
+    <Layout preview={preview}>
       <Container>
         <Header />
         {router.isFallback ? (
@@ -50,29 +57,31 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
         ) : (
           <>
             <article className="mb-32">
-              <Head>
-                <title>{title}</title>
-                <meta property="og:title" content={title} />
-                <meta property="og:type" content="article" />
-                <meta property="og:image" content={post.ogImage.url} />
-                <meta property="article:published_time" content={post.date} />
-                {...post.tags.map((tag) => (
-                  <meta property="article:tag" content={tag} />
-                ))}
-                <meta
-                  property="article:section"
-                  content={post.type === "blog" ? "Blog" : "Technology"}
-                />
-                {post.modified ? (
-                  <meta
-                    property="article:modified_time"
-                    content={post.modified}
-                  />
-                ) : null}
-                {post.canonical ? (
-                  <link rel="canonical" href={post.canonical} />
-                ) : null}
-              </Head>
+              <NextSeo
+                title={post.title}
+                description={post.subtitle || post.title}
+                canonical={post.canonical}
+                openGraph={{
+                  type: "article",
+                  url: pageURL,
+                  article: {
+                    publishedTime: post.date,
+                    modifiedTime: post.modified,
+                    section: post.type === "blog" ? "Blog" : "Technology",
+                    authors: [HOME_URL],
+                    tags: post.tags,
+                  },
+                  images: [
+                    {
+                      url: ogImageURL,
+                      // TODO: consider providing these? could add to the front matter definition
+                      // width: 850,
+                      // height: 650,
+                      alt: post.ogImage.caption,
+                    },
+                  ],
+                }}
+              />
               <PostHeader
                 title={post.title}
                 subtitle={post.subtitle}

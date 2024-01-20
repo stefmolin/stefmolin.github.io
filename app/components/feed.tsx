@@ -1,10 +1,11 @@
+import { NextSeo } from "next-seo";
 import Container from "./container";
 import MoreStories from "./posts/more-stories";
 import HeroPost from "./posts/hero-post";
 import Intro from "./posts/intro";
 import Layout from "./layout";
-import Head from "next/head";
 import FeedType from "../interfaces/feed";
+import { usePageURL } from "../lib/hooks";
 
 const Feed = ({ allPosts, description, title, kind }: FeedType) => {
   const heroPost = allPosts[0];
@@ -12,10 +13,14 @@ const Feed = ({ allPosts, description, title, kind }: FeedType) => {
 
   return (
     <>
-      <Layout pageDescription={description} preview>
-        <Head>
-          <title>{`${title} | Stefanie Molin`}</title>
-        </Head>
+      <Layout preview>
+        <NextSeo
+          title={title}
+          description={description}
+          openGraph={{
+            url: usePageURL(),
+          }}
+        />
         <Container>
           <Intro title={title} description={description} />
           {heroPost && (

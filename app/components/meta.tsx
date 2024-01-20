@@ -2,10 +2,6 @@ import { ReactElement } from "react";
 import Head from "next/head";
 import { HOME_URL, HOME_OG_IMAGE_URL, TWITTER_HANDLE } from "../lib/constants";
 
-type Props = {
-  description: string;
-};
-
 const getFeedLinks = () => {
   const links: ReactElement[] = [];
   ["articles", "blog"].forEach((feedType) => {
@@ -36,9 +32,10 @@ const getFeedLinks = () => {
   return links;
 };
 
-const Meta = ({ description }: Props) => {
+const Meta = () => {
   return (
     <Head>
+      {...getFeedLinks()}
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -63,23 +60,9 @@ const Meta = ({ description }: Props) => {
         color="#000000"
       />
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
+      // TODO: these can move to the SEO config once finalized
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-      <meta name="theme-color" content="#000" />
-
-      {...getFeedLinks()}
-
-      <meta name="author" content="Stefanie Molin" />
-      <meta name="description" content={description} />
-
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
-
-      <meta name="twitter:site" content={TWITTER_HANDLE} />
-      <meta name="twitter:creator" content={TWITTER_HANDLE} />
-      <meta
-        property="article:author"
-        content="https://www.linkedin.com/in/stefanie-molin"
-      />
     </Head>
   );
 };
