@@ -1,6 +1,7 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
+import { NEWSLETTER_URL } from '../lib/constants';
 // import Avatar from "./avatar";
 
 const Header = () => {
@@ -14,13 +15,24 @@ const Header = () => {
         <Link href="/" className="hover:underline">
           Home
         </Link>
-        {" | "}
         <Link href="/articles" className="hover:underline">
           Articles
         </Link>
-        {" | "}
+        {' | '}
         <Link href="/blog" className="hover:underline">
           Blog
+        </Link>
+        {' | '}
+        <Link href={NEWSLETTER_URL} className="hover:underline">
+          Newsletter
+        </Link>
+        {' | '}
+        <Link href="/talks" className="hover:underline">
+          Talks
+        </Link>
+        {' | '}
+        <Link href="/workshops" className="hover:underline">
+          Workshops
         </Link>
         {/* <Avatar name="Stefanie Molin" picture="/assets/avatar.jpeg" /> */}
       </h2>

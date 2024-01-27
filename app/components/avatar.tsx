@@ -14,5 +14,5 @@ const Avatar = ({ name, picture }: Props) => {
 
 export default Avatar;
 
-/* TODO: could repurpose this to be a icon and name for the category? blog or article?
+/* TODO: could repurpose this to be an icon and name for the category? blog or article?
 at the very least, it could replace the tags. */
