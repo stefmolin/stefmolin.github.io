@@ -189,19 +189,19 @@ const FooterLinks = ({ className }: { className?: string }) => {
     rel: 'noopener noreferrer',
   };
   return (
-    <div className={classNames(className, 'space-x-2')}>
+    <div className={classNames(className, 'space-x-2 items-center')}>
       {/* Follow <FontAwesomeIcon icon={faUserPlus} /> */}
-      <a href="/privacy-policy" {...linkProps}>
-        <FontAwesomeIcon icon={faLock} fixedWidth /> Privacy Policy{' '}
-      </a>
-      <a href="/sitemap.xml" {...linkProps}>
-        <FontAwesomeIcon icon={faSitemap} fixedWidth /> Sitemap{' '}
-      </a>
       <a href="/feeds/articles-rss.xml" {...linkProps}>
         <FontAwesomeIcon icon={faRssSquare} fixedWidth /> Article Feed{' '}
       </a>
       <a href="/feeds/blog-rss.xml" {...linkProps}>
         <FontAwesomeIcon icon={faRssSquare} fixedWidth /> Blog Feed{' '}
+      </a>
+      <a href="/privacy-policy" {...linkProps}>
+        <FontAwesomeIcon icon={faLock} fixedWidth /> Privacy Policy{' '}
+      </a>
+      <a href="/sitemap.xml" {...linkProps}>
+        <FontAwesomeIcon icon={faSitemap} fixedWidth /> Sitemap{' '}
       </a>
     </div>
   );
@@ -261,20 +261,16 @@ const Footer = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row items-center">
-        <div className="lg:pl-4 lg:w-1/2">
+        <div className="lg:pl-4 lg:w-1/2">All opinions are my own.</div>
+        <div className="justify-center lg:justify-end text-center lg:text-right lg:pl-4 lg:w-1/2">
           Made with <FontAwesomeIcon icon={faCoffee} />, <FontAwesomeIcon icon={faCode} />, and lots
           of <FontAwesomeIcon icon={faHeart} />.
         </div>
-        <div className="justify-center lg:justify-end text-center lg:text-right lg:pl-4 lg:w-1/2">
-          All views are my own.
-        </div>
       </div>
-
-      {/* <hr /> */}
 
       <div className="pb-5 flex flex-col lg:flex-row items-center">
         <div className="lg:pl-4 lg:w-1/2">
-          &#169; 2019&ndash;{DateTime.now().year} Stefanie Molin, All rights reserved.
+          Copyright &#169; 2019&ndash;{DateTime.now().year} Stefanie Molin, All rights reserved.
         </div>
         <div className="justify-center lg:justify-end text-center lg:text-right lg:pl-4 lg:w-1/2">
           <FooterLinks />
