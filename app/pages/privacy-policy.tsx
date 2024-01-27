@@ -1,11 +1,11 @@
 import Container from '../components/container';
 import Header from '../components/header';
 import Layout from '../components/layout';
+import privacyStyles from '../components/privacy-styles.module.css';
 
 const linkProps = {
-  rel: 'external nofollow noopener',
+  rel: 'nofollow noopener',
   target: '_blank',
-  className: 'underline text-blue-500 hover:text-blue-800',
 };
 
 export default function Index() {
@@ -13,8 +13,8 @@ export default function Index() {
     <Layout preview>
       <Container>
         <Header />
-        <div className="flex flex-col space-y-3 -mt-10 mb-10">
-          <h1 className="text-3xl">Privacy Policy</h1>
+        <div className={privacyStyles['privacy-policy']}>
+          <h1>Privacy Policy</h1>
           <p>Last updated: January 27, 2024</p>
           <p>
             This Privacy Policy describes Our policies and procedures on the collection, use and
@@ -33,16 +33,16 @@ export default function Index() {
             </a>
             .
           </p>
-          <h2 className="text-2xl">Interpretation and Definitions</h2>
-          <h3 className="text-xl">Interpretation</h3>
+          <h2>Interpretation and Definitions</h2>
+          <h3>Interpretation</h3>
           <p>
             The words of which the initial letter is capitalized have meanings defined under the
             following conditions. The following definitions shall have the same meaning regardless
             of whether they appear in singular or in plural.
           </p>
-          <h3 className="text-xl">Definitions</h3>
+          <h3>Definitions</h3>
           <p>For the purposes of this Privacy Policy:</p>
-          <ul className="list-outside list-disc ml-5">
+          <ul>
             <li>
               <p>
                 <strong>Account</strong> means a unique account created for You to access our
@@ -125,15 +125,15 @@ export default function Index() {
               </p>
             </li>
           </ul>
-          <h2 className="text-2xl">Collecting and Using Your Personal Data</h2>
-          <h3 className="text-xl">Types of Data Collected</h3>
-          <h4 className="text-lg">Personal Data</h4>
+          <h2>Collecting and Using Your Personal Data</h2>
+          <h3>Types of Data Collected</h3>
+          <h4>Personal Data</h4>
           <p>
             While using Our Service, We may ask You to provide Us with certain personally
             identifiable information that can be used to contact or identify You. Personally
             identifiable information may include, but is not limited to:
           </p>
-          <ul className="list-outside list-disc ml-5">
+          <ul>
             <li>
               <span>
                 Email address (via{' '}
@@ -147,7 +147,7 @@ export default function Index() {
               <p>Usage Data</p>
             </li>
           </ul>
-          <h4 className="text-lg">Usage Data</h4>
+          <h4>Usage Data</h4>
           <p>Usage Data is collected automatically when using the Service.</p>
           <p>
             Usage Data may include information such as Your Device's Internet Protocol address (e.g.
@@ -166,14 +166,14 @@ export default function Index() {
             We may also collect information that Your browser sends whenever You visit our Service
             or when You access the Service by or through a mobile device.
           </p>
-          <h4 className="text-lg">Tracking Technologies and Cookies</h4>
+          <h4>Tracking Technologies and Cookies</h4>
           <p>
             We use Cookies and similar tracking technologies to track the activity on Our Service
             and store certain information. Tracking technologies used are beacons, tags, and scripts
             to collect and track information and to improve and analyze Our Service. The
             technologies We use may include:
           </p>
-          <ul className="list-outside list-disc ml-5">
+          <ul>
             <li>
               <strong>Cookies or Browser Cookies.</strong> A cookie is a small file placed on Your
               Device. You can instruct Your browser to refuse all Cookies or to indicate when a
@@ -204,7 +204,7 @@ export default function Index() {
             article.
           </p>
           <p>We use both Session and Persistent Cookies for the purposes set out below:</p>
-          <ul className="list-outside list-disc ml-5">
+          <ul>
             <li>
               <p>
                 <strong>Necessary / Essential Cookies</strong>
@@ -248,9 +248,9 @@ export default function Index() {
             For more information about the cookies we use and your choices regarding cookies, please
             visit our Cookies Policy or the Cookies section of our Privacy Policy.
           </p>
-          <h3 className="text-xl">Use of Your Personal Data</h3>
+          <h3>Use of Your Personal Data</h3>
           <p>The Company may use Personal Data for the following purposes:</p>
-          <ul className="list-outside list-disc ml-5">
+          <ul>
             <li>
               <p>
                 <strong>To provide and maintain our Service</strong>, including to monitor the usage
@@ -312,7 +312,7 @@ export default function Index() {
             </li>
           </ul>
           <p>We may share Your personal information in the following situations:</p>
-          <ul className="list-outside list-disc ml-5">
+          <ul>
             <li>
               <strong>With Service Providers:</strong> We may share Your personal information with
               Service Providers to monitor and analyze the use of our Service, to contact You.
@@ -343,7 +343,7 @@ export default function Index() {
               other purpose with Your consent.
             </li>
           </ul>
-          <h3 className="text-xl">Retention of Your Personal Data</h3>
+          <h3>Retention of Your Personal Data</h3>
           <p>
             The Company will retain Your Personal Data only for as long as is necessary for the
             purposes set out in this Privacy Policy. We will retain and use Your Personal Data to
@@ -357,7 +357,7 @@ export default function Index() {
             strengthen the security or to improve the functionality of Our Service, or We are
             legally obligated to retain this data for longer time periods.
           </p>
-          <h3 className="text-xl">Transfer of Your Personal Data</h3>
+          <h3>Transfer of Your Personal Data</h3>
           <p>
             Your information, including Personal Data, is processed at the Company's operating
             offices and in any other places where the parties involved in the processing are
@@ -376,7 +376,7 @@ export default function Index() {
             Data will take place to an organization or a country unless there are adequate controls
             in place including the security of Your data and other personal information.
           </p>
-          <h3 className="text-xl">Delete Your Personal Data</h3>
+          <h3>Delete Your Personal Data</h3>
           <p>
             You have the right to delete or request that We assist in deleting the Personal Data
             that We have collected about You.
@@ -395,39 +395,39 @@ export default function Index() {
             Please note, however, that We may need to retain certain information when we have a
             legal obligation or lawful basis to do so.
           </p>
-          <h3 className="text-xl">Disclosure of Your Personal Data</h3>
-          <h4 className="text-lg">Business Transactions</h4>
+          <h3>Disclosure of Your Personal Data</h3>
+          <h4>Business Transactions</h4>
           <p>
             If the Company is involved in a merger, acquisition or asset sale, Your Personal Data
             may be transferred. We will provide notice before Your Personal Data is transferred and
             becomes subject to a different Privacy Policy.
           </p>
-          <h4 className="text-lg">Law enforcement</h4>
+          <h4>Law enforcement</h4>
           <p>
             Under certain circumstances, the Company may be required to disclose Your Personal Data
             if required to do so by law or in response to valid requests by public authorities (e.g.
             a court or a government agency).
           </p>
-          <h4 className="text-lg">Other legal requirements</h4>
+          <h4>Other legal requirements</h4>
           <p>
             The Company may disclose Your Personal Data in the good faith belief that such action is
             necessary to:
           </p>
-          <ul className="list-outside list-disc ml-5">
+          <ul>
             <li>Comply with a legal obligation</li>
             <li>Protect and defend the rights or property of the Company</li>
             <li>Prevent or investigate possible wrongdoing in connection with the Service</li>
             <li>Protect the personal safety of Users of the Service or the public</li>
             <li>Protect against legal liability</li>
           </ul>
-          <h3 className="text-xl">Security of Your Personal Data</h3>
+          <h3>Security of Your Personal Data</h3>
           <p>
             The security of Your Personal Data is important to Us, but remember that no method of
             transmission over the Internet, or method of electronic storage is 100% secure. While We
             strive to use commercially acceptable means to protect Your Personal Data, We cannot
             guarantee its absolute security.
           </p>
-          <h2 className="text-2xl">Children's Privacy</h2>
+          <h2>Children's Privacy</h2>
           <p>
             Our Service does not address anyone under the age of 13. We do not knowingly collect
             personally identifiable information from anyone under the age of 13. If You are a parent
@@ -441,7 +441,7 @@ export default function Index() {
             country requires consent from a parent, We may require Your parent's consent before We
             collect and use that information.
           </p>
-          <h2 className="text-2xl">Links to Other Websites</h2>
+          <h2>Links to Other Websites</h2>
           <p>
             Our Service may contain links to other websites that are not operated by Us. If You
             click on a third party link, You will be directed to that third party's site. We
@@ -451,7 +451,7 @@ export default function Index() {
             We have no control over and assume no responsibility for the content, privacy policies
             or practices of any third party sites or services.
           </p>
-          <h2 className="text-2xl">Changes to this Privacy Policy</h2>
+          <h2>Changes to this Privacy Policy</h2>
           <p>
             We may update Our Privacy Policy from time to time. We will notify You of any changes by
             posting the new Privacy Policy on this page.
@@ -465,9 +465,9 @@ export default function Index() {
             You are advised to review this Privacy Policy periodically for any changes. Changes to
             this Privacy Policy are effective when they are posted on this page.
           </p>
-          <h2 className="text-2xl">Contact Us</h2>
+          <h2>Contact Us</h2>
           <p>If you have any questions about this Privacy Policy, You can contact us:</p>
-          <ul className="list-outside list-disc ml-5">
+          <ul>
             <li>By email: privacy@stefaniemolin.com</li>
           </ul>
         </div>

@@ -1,0 +1,32 @@
+.privacy-policy {
+  @apply flex;
+  @apply flex-col;
+  @apply space-y-3;
+  @apply -mt-10;
+  @apply mb-10;
+}
+
+.privacy-policy h1 {
+  @apply text-4xl;
+}
+.privacy-policy h2 {
+  @apply text-2xl;
+}
+.privacy-policy h3 {
+  @apply text-xl;
+}
+.privacy-policy h4 {
+  @apply text-lg;
+}
+
+.privacy-policy a {
+  @apply underline;
+  @apply text-blue-500;
+  @apply hover:text-blue-800;
+}
+
+.privacy-policy ul {
+  @apply list-outside;
+  @apply list-disc;
+  @apply ml-5;
+}
