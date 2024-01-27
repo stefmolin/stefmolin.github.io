@@ -39,10 +39,8 @@ const SitemapLinks = ({ className }: { className?: string }) => {
   return (
     <>
       {...siteLinks.map(({ name, url }) => (
-        // <a key={url} href={url} {...linkProps}>
-        //   {name}
-        // </a>
         <Link
+          key={url}
           href={url}
           className={classNames(className, 'font-bold text-slate-500 hover:text-slate-800')}
         >
@@ -109,8 +107,10 @@ const Footer = () => {
         </div>
 
         <hr className="lg:hidden my-8 w-full" />
-        <div className="px-20 md:px-44 lg:px-0 w-full lg:w-1/3 flex flex-row items-start content-center lg:justify-end xl:ml-20 lg:mr-5">
-          <SubscribeToNewsletterForm />
+        <div className="flex w-full lg:w-auto items-center justify-center">
+          <div className="w-[350px] flex flex-row items-start content-center lg:justify-end xl:ml-20 lg:mr-5">
+            <SubscribeToNewsletterForm />
+          </div>
         </div>
       </div>
       <hr className="lg:hidden mt-8 w-full" />
