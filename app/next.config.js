@@ -1,12 +1,12 @@
 module.exports = {
-  output: "export",
+  output: 'export',
   trailingSlash: true,
-  transpilePackages: ["react-tweet"],
+  transpilePackages: ['react-tweet'],
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "images.unsplash.com",
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
       },
     ],
     unoptimized: true,

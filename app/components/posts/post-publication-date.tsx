@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendar } from "@fortawesome/free-solid-svg-icons";
-import DateFormatter from "../date-formatter";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
+import DateFormatter from '../date-formatter';
 
 type Props = {
   date: string;
@@ -14,9 +14,7 @@ const PostPublicationDate = ({ date, relative, long }: Props) => {
       dateString={date}
       relative={relative}
       long={long}
-      children={[
-        <FontAwesomeIcon icon={faCalendar} className="pr-1" key={date} />,
-      ]}
+      children={[<FontAwesomeIcon icon={faCalendar} className="pr-1" key={date} />]}
     />
   );
 };

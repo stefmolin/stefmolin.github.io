@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
@@ -6,9 +6,7 @@ export default function Document() {
       <Head />
       <body>
         {/* className="dark:bg-dark-body"*/}
-        <script
-          src="https://kit.fontawesome.com/0dd30c21ea.js"
-          crossOrigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/0dd30c21ea.js" crossOrigin="anonymous"></script>
         <Main />
         <NextScript />
         <script src="/copy-code.js"></script>

@@ -1,7 +1,7 @@
-import Container from "./container";
-import classNames from "classnames";
-import { DateTime } from "luxon";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Container from './container';
+import classNames from 'classnames';
+import { DateTime } from 'luxon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCode,
   faCoffee,
@@ -10,12 +10,12 @@ import {
   faLock,
   faRssSquare,
   faSitemap,
-} from "@fortawesome/free-solid-svg-icons";
-import Avatar from "./avatar";
-import SubscribeToNewsletterForm from "./subscribe-to-newsletter";
-import SubscribeButtons from "./subscribe";
-import FollowButtons from "./follow";
-import { NEWSLETTER_URL } from "../lib/constants";
+} from '@fortawesome/free-solid-svg-icons';
+import Avatar from './avatar';
+import SubscribeToNewsletterForm from './subscribe-to-newsletter';
+import SubscribeButtons from './subscribe';
+import FollowButtons from './follow';
+import { NEWSLETTER_URL } from '../lib/constants';
 
 // const Footer = () => {
 //   return (
@@ -145,12 +145,9 @@ import { NEWSLETTER_URL } from "../lib/constants";
 
 const SitemapLinks = ({ className }: { className?: string }) => {
   const linkProps = {
-    className: classNames(
-      className,
-      "font-bold text-slate-500 hover:text-slate-800"
-    ),
-    target: "_blank",
-    rel: "noopener noreferrer",
+    className: classNames(className, 'font-bold text-slate-500 hover:text-slate-800'),
+    target: '_blank',
+    rel: 'noopener noreferrer',
   };
 
   // TODO: probably want a way to group by content and keep those together in the column
@@ -158,49 +155,53 @@ const SitemapLinks = ({ className }: { className?: string }) => {
   // should be in the same column
 
   const siteLinks = [
-    { name: "Home", url: "/" },
-    { name: "Books", url: "/books" },
-    { name: "Interviews", url: "/interviews" },
-    { name: "Articles", url: "/articles" },
-    { name: "Blog", url: "/blog" },
-    { name: "Talks", url: "/talks" },
-    { name: "Workshops", url: "/workshops" },
-    { name: "Pandas Workshop", url: "/pandas-workshop" },
-    { name: "Data Viz Workshop", url: "/python-data-viz-workshop" },
-    { name: "Data Morph", url: "/data-morph" },
-    { name: "News", url: "/news" },
-    { name: "Events", url: "/events" },
-    { name: "Contact", url: "/contact" },
+    { name: 'Home', url: '/' },
+    { name: 'Books', url: '/books' },
+    { name: 'Interviews', url: '/interviews' },
+    { name: 'Articles', url: '/articles' },
+    { name: 'Blog', url: '/blog' },
+    { name: 'Talks', url: '/talks' },
+    { name: 'Workshops', url: '/workshops' },
+    { name: 'Pandas Workshop', url: '/pandas-workshop' },
+    { name: 'Data Viz Workshop', url: '/python-data-viz-workshop' },
+    { name: 'Data Morph', url: '/data-morph' },
+    { name: 'News', url: '/news' },
+    { name: 'Events', url: '/events' },
+    { name: 'Contact', url: '/contact' },
   ];
-  return siteLinks.map(({ name, url }) => (
-    <a href={url} {...linkProps}>
-      {name}
-    </a>
-  ));
+  return (
+    <>
+      {...siteLinks.map(({ name, url }) => (
+        <a key={url} href={url} {...linkProps}>
+          {name}
+        </a>
+      ))}
+    </>
+  );
 };
 
 // TODO: take into account the page when determining what to show in the footer (tipping only on articles for example)
 
 const FooterLinks = ({ className }: { className?: string }) => {
   const linkProps = {
-    className: "text-slate-600 hover:text-slate-800",
-    target: "_blank",
-    rel: "noopener noreferrer",
+    className: 'text-slate-600 hover:text-slate-800',
+    target: '_blank',
+    rel: 'noopener noreferrer',
   };
   return (
-    <div className={classNames(className, "space-x-2")}>
+    <div className={classNames(className, 'space-x-2')}>
       {/* Follow <FontAwesomeIcon icon={faUserPlus} /> */}
       <a href="/privacy-policy" {...linkProps}>
-        <FontAwesomeIcon icon={faLock} fixedWidth /> Privacy Policy{" "}
+        <FontAwesomeIcon icon={faLock} fixedWidth /> Privacy Policy{' '}
       </a>
       <a href="/sitemap.xml" {...linkProps}>
-        <FontAwesomeIcon icon={faSitemap} fixedWidth /> Sitemap{" "}
+        <FontAwesomeIcon icon={faSitemap} fixedWidth /> Sitemap{' '}
       </a>
       <a href="/feeds/articles-rss.xml" {...linkProps}>
-        <FontAwesomeIcon icon={faRssSquare} fixedWidth /> Article Feed{" "}
+        <FontAwesomeIcon icon={faRssSquare} fixedWidth /> Article Feed{' '}
       </a>
       <a href="/feeds/blog-rss.xml" {...linkProps}>
-        <FontAwesomeIcon icon={faRssSquare} fixedWidth /> Blog Feed{" "}
+        <FontAwesomeIcon icon={faRssSquare} fixedWidth /> Blog Feed{' '}
       </a>
     </div>
   );
@@ -213,18 +214,18 @@ const Footer = () => {
         <div className="text-left lg:px-4 lg:w-1/2">
           <Avatar name="Stefanie Molin" picture="/assets/avatar.jpeg" />
           <p className="pt-5">
-            Thanks for reading! I am passionate about teaching data science and
-            software engineering skills to people of all levels. I have created
-            multiple workshops, books, and articles, as well as contributed to
-            various FOSS projects. If this or any of my other content has helped
-            you, please consider{" "}
+            Thanks for reading! I am passionate about teaching data science and software engineering
+            skills to people of all levels. I have created multiple workshops, books, and articles,
+            as well as contributed to various FOSS projects. If this or any of my other content has
+            helped you, please consider{' '}
             <a
               className="text-slate-600 hover:text-slate-800 underline"
               href="https://www.buymeacoffee.com/stefanie.molin"
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+            >
               supporting
-            </a>{" "}
+            </a>{' '}
             me.
           </p>
         </div>
@@ -261,9 +262,8 @@ const Footer = () => {
 
       <div className="flex flex-col lg:flex-row items-center">
         <div className="lg:pl-4 lg:w-1/2">
-          Made with <FontAwesomeIcon icon={faCoffee} />,{" "}
-          <FontAwesomeIcon icon={faCode} />, and lots of{" "}
-          <FontAwesomeIcon icon={faHeart} />.
+          Made with <FontAwesomeIcon icon={faCoffee} />, <FontAwesomeIcon icon={faCode} />, and lots
+          of <FontAwesomeIcon icon={faHeart} />.
         </div>
         <div className="justify-center lg:justify-end text-center lg:text-right lg:pl-4 lg:w-1/2">
           All views are my own.
@@ -274,8 +274,7 @@ const Footer = () => {
 
       <div className="pb-5 flex flex-col lg:flex-row items-center">
         <div className="lg:pl-4 lg:w-1/2">
-          &#169; 2019&ndash;{DateTime.now().year} Stefanie Molin, All rights
-          reserved.
+          &#169; 2019&ndash;{DateTime.now().year} Stefanie Molin, All rights reserved.
         </div>
         <div className="justify-center lg:justify-end text-center lg:text-right lg:pl-4 lg:w-1/2">
           <FooterLinks />

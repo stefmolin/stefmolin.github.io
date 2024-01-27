@@ -1,4 +1,4 @@
-import PostType from "./post";
+import type PostType from './post';
 
 type FeedType = {
   allPosts: PostType[];

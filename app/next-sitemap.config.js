@@ -14,23 +14,23 @@ const PAGE_CONFIGS = [
   {
     regex: /^\/articles\/\w+/,
     priority: PRIORITIES.articlePost,
-    changefreq: "yearly",
+    changefreq: 'yearly',
   },
   {
     regex: /^\/blog\/\w+/,
     priority: PRIORITIES.blogPost,
-    changefreq: "yearly",
+    changefreq: 'yearly',
   },
   {
     regex: /^\/(articles|blog)$/,
     priority: PRIORITIES.feedPage,
-    changefreq: "monthly",
+    changefreq: 'monthly',
   },
 ];
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://stefaniemolin.com",
+  siteUrl: 'https://stefaniemolin.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false, // not enough pages to warrant this
   priority: 0.5, // default priority
@@ -58,8 +58,8 @@ module.exports = {
   // TODO: remove this once the old homepage is no longer needed
   additionalPaths: async (config) => [
     {
-      loc: "/",
-      changefreq: "weekly",
+      loc: '/',
+      changefreq: 'weekly',
       priority: PRIORITIES.homePage,
       lastmod: now,
     },

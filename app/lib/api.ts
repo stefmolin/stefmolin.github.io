@@ -1,43 +1,34 @@
-import fs from "fs";
-import { join } from "path";
-import matter from "gray-matter";
-import readingDuration from "reading-duration";
-import { Feed as RssFeed } from "feed";
-import { DateTime } from "luxon";
-import { COPYRIGHT_STATEMENT, HOME_URL, HOME_OG_IMAGE_URL } from "./constants";
+import fs from 'fs';
+import { join } from 'path';
+import matter from 'gray-matter';
+import readingDuration from 'reading-duration';
+import { Feed as RssFeed } from 'feed';
+import { DateTime } from 'luxon';
+import { COPYRIGHT_STATEMENT, HOME_OG_IMAGE_URL, HOME_URL } from './constants';
 
 type Items = {
   [key: string]: any;
 };
 
-const postsDirectory = join(process.cwd(), "_posts");
+const postsDirectory = join(process.cwd(), '_posts');
 
-export function getPostSlugs(category: string = "") {
+export function getPostSlugs(category: string = '') {
   return fs
     .readdirSync(join(postsDirectory, category), { recursive: true })
     .map((x) => x.toString())
-    .filter((file) => file.endsWith(".md"))
-    .map((x) => x.split("/"));
+    .filter((file) => file.endsWith('.md'))
+    .map((x) => x.split('/'));
 }
 
-export function getPostBySlug(
-  slug: string[],
-  fields: string[] = [],
-  category: string = ""
-) {
-  const realSlug = (category ? [category, ...slug] : slug)
-    .join("/")
-    .replace(/\.md$/, "");
+export function getPostBySlug(slug: string[], fields: string[] = [], category: string = '') {
+  const realSlug = (category ? [category, ...slug] : slug).join('/').replace(/\.md$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
   let { data, content } = matter(fileContents);
 
   // allow shorthand for referencing images by using /posts-assets and the assets value in front matter
   if (data.assets) {
-    content = content.replaceAll(
-      /\(\/post-assets(\/[\w\.-]+)\)/g,
-      `(${data.assets}$1)`
-    );
+    content = content.replaceAll(/\(\/post-assets(\/[\w\.-]+)\)/g, `(${data.assets}$1)`);
     data.ogImage.url = data.ogImage.url.replace(/^\/post-assets/, data.assets);
   }
 
@@ -45,30 +36,30 @@ export function getPostBySlug(
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
-    if (field === "slug") {
-      items[field] = realSlug.split("/");
+    if (field === 'slug') {
+      items[field] = realSlug.split('/');
     }
-    if (field === "content") {
+    if (field === 'content') {
       items[field] = content;
     }
-    if (field === "duration") {
+    if (field === 'duration') {
       items[field] = readingDuration(content, {
         wordsPerMinute: 250,
         emoji: false,
       });
     }
-    if (field == "type") {
-      items[field] = realSlug.split("/")[0];
+    if (field == 'type') {
+      items[field] = realSlug.split('/')[0];
     }
 
-    if (typeof data[field] !== "undefined") {
+    if (typeof data[field] !== 'undefined') {
       items[field] = data[field];
     }
   });
   return items;
 }
 
-export function getAllPosts(fields: string[] = [], type: string = "") {
+export function getAllPosts(fields: string[] = [], type: string = '') {
   const slugs = getPostSlugs(type);
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields, type))
@@ -77,24 +68,10 @@ export function getAllPosts(fields: string[] = [], type: string = "") {
   return posts;
 }
 
-export const getFeed = (
-  postType: string,
-  feedTitle: string,
-  feedDescription: string
-) => {
+export const getFeed = (postType: string, feedTitle: string, feedDescription: string) => {
   const allPosts = getAllPosts(
-    [
-      "title",
-      "subtitle",
-      "date",
-      "slug",
-      "author",
-      "ogImage",
-      "excerpt",
-      "tags",
-      "duration",
-    ],
-    postType
+    ['title', 'subtitle', 'date', 'slug', 'author', 'ogImage', 'excerpt', 'tags', 'duration'],
+    postType,
   );
 
   generateRssFeed(postType, feedTitle, allPosts);
@@ -109,24 +86,20 @@ export const getFeed = (
   };
 };
 
-export const generateRssFeed = async (
-  feedType: string,
-  feedTitle: string,
-  posts: Items[]
-) => {
-  if (feedType.includes("/")) return;
+export const generateRssFeed = async (feedType: string, feedTitle: string, posts: Items[]) => {
+  if (feedType.includes('/')) return;
 
   const rssFeed = new RssFeed({
     title: `Stefanie Molin's ${feedTitle}`,
-    description: "Stay up to date with my latest posts.",
+    description: 'Stay up to date with my latest posts.',
     id: `${HOME_URL}/${feedType}`,
     link: `${HOME_URL}/${feedType}`,
     copyright: COPYRIGHT_STATEMENT,
-    language: "en",
+    language: 'en',
     image: HOME_OG_IMAGE_URL,
     // TODO: favicon: `${HOME_URL}/favicon.png`,
     author: {
-      name: "Stefanie Molin",
+      name: 'Stefanie Molin',
       link: HOME_URL,
     },
     feedLinks: {
@@ -136,19 +109,16 @@ export const generateRssFeed = async (
   });
 
   rssFeed.addCategory(feedType);
-  if (feedType === "articles") {
-    [
-      "technology",
-      "data science",
-      "computer science",
-      "public speaking",
-    ].forEach((category) => rssFeed.addCategory(category));
+  if (feedType === 'articles') {
+    ['technology', 'data science', 'computer science', 'public speaking'].forEach((category) =>
+      rssFeed.addCategory(category),
+    );
   }
 
   const localImageRegex = /^\/assets/;
 
   posts.forEach((post) => {
-    const url = `${HOME_URL}/${post.slug.join("/")}`;
+    const url = `${HOME_URL}/${post.slug.join('/')}`;
     rssFeed.addItem({
       title: post.title,
       id: url,

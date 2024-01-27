@@ -41,20 +41,23 @@
   @apply list-decimal;
 }
 
-.markdown code:not([class]) { /* inline code */
+.markdown code:not([class]) {
+  /* inline code */
   @apply text-orange-600;
   @apply bg-slate-100;
   @apply px-2;
   @apply py-0.5;
 }
 
-.markdown a { /* links in posts */
+.markdown a {
+  /* links in posts */
   @apply text-slate-500;
   @apply hover:text-slate-400;
   @apply underline;
 }
 
-.markdown figcaption { /* image/code */
+.markdown figcaption {
+  /* image/code */
   @apply text-slate-500;
   @apply text-sm;
   @apply -mt-2;
@@ -62,7 +65,8 @@
   @apply text-center;
 }
 
-.markdown img { /* centers the images in the posts */
+.markdown img {
+  /* centers the images in the posts */
   @apply mx-auto;
   @apply bg-white;
 }

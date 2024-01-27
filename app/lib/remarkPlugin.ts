@@ -1,51 +1,56 @@
 /* Based on https://github.com/kevinzunigacuellar/remark-code-title */
 
-import { visit } from "unist-util-visit";
-import type * as hast from "hast";
-import type * as unified from "unified";
+import { visit } from 'unist-util-visit';
+import type * as hast from 'hast';
+import type * as unified from 'unified';
 
-const LANGUAGE_EXCLUSIONS: string[] = ["diff", "treeview"];
+const LANGUAGE_EXCLUSIONS: string[] = ['diff', 'treeview'];
 
 export const labelCodeBlock: unified.Plugin<[], hast.Root> = () => {
   return (tree, file) => {
-    visit(tree, "element", (node, index, parent) => {
-      if (node.tagName !== "pre") return;
+    visit(tree, 'element', (node, index, parent) => {
+      if (node.tagName !== 'pre') return;
 
       let offset: number = 1;
+      index = index ?? 0;
 
       // process the code language
-      const { className }: { className?: string[] } = node.properties;
+      const className = node.properties?.className ?? [];
 
-      const language = className
-        .find((x) => x.match(/language-/))
-        .replace("language-", "");
-      if (!LANGUAGE_EXCLUSIONS.some((x) => language.includes(x))) {
-        const languageNode: hast.Element = {
-          type: "element",
-          tagName: "header",
-          children: [
-            {
-              type: "element",
-              tagName: "button",
-              properties: {
-                className: "copy-code-button",
-                onclick: "copyCodeBlock(this)",
-              },
-              children: [
-                {
-                  type: "element",
-                  tagName: "i",
-                  properties: {
-                    className: "fa fa-copy",
-                  },
-                  children: [],
+      if (className != null && Array.isArray(className)) {
+        const language: string =
+          className
+            .map((x) => x.toString())
+            .find((x) => x.match(/language-/))
+            ?.replace('language-', '') ?? '';
+        if (!LANGUAGE_EXCLUSIONS.some((x) => language.includes(x))) {
+          const languageNode: hast.Element = {
+            type: 'element',
+            tagName: 'header',
+            children: [
+              {
+                type: 'element',
+                tagName: 'button',
+                properties: {
+                  className: 'copy-code-button',
+                  onclick: 'copyCodeBlock(this)',
                 },
-              ],
-            },
-          ],
-        };
-        node.children.splice(index, 0, languageNode);
-        offset++;
+                children: [
+                  {
+                    type: 'element',
+                    tagName: 'i',
+                    properties: {
+                      className: 'fa fa-copy',
+                    },
+                    children: [],
+                  },
+                ],
+              },
+            ],
+          };
+          node.children.splice(index, 0, languageNode);
+          offset++;
+        }
       }
 
       // const title = `${node.properties["data-title"] ?? ""}`.trim();

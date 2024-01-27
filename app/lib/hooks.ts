@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
-import { HOME_URL } from "../lib/constants";
+import { useRouter } from 'next/router';
+import { HOME_URL } from '../lib/constants';
 
 export const usePageURL = () => {
   const router = useRouter();
