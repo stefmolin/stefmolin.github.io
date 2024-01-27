@@ -1,19 +1,19 @@
 /* adapted from https://pragmaticpineapple.com/add-newsletter-subscription-form-to-react-website/ */
 import {
+  faCircle,
   faEnvelope,
   faEnvelopeOpen,
   faEnvelopeOpenText,
-  faCircle,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
 
 const SubscribeToNewsletterForm = () => {
   const [status, setStatus] = useState<string | null>(null);
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
 
-  const FORM_URL = "https://app.convertkit.com/forms/6101302/subscriptions"; // dark form template
+  const FORM_URL = 'https://app.convertkit.com/forms/6101302/subscriptions'; // dark form template
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -22,28 +22,28 @@ const SubscribeToNewsletterForm = () => {
 
     try {
       const response = await fetch(FORM_URL, {
-        method: "post",
+        method: 'post',
         body: data,
         headers: {
-          accept: "application/json",
+          accept: 'application/json',
         },
       });
 
-      setEmail("");
+      setEmail('');
       const json = await response.json();
 
-      if (json.status === "success") {
-        setStatus("SUCCESS");
+      if (json.status === 'success') {
+        setStatus('SUCCESS');
         return;
       }
     } catch (err) {
-      setStatus("ERROR");
+      setStatus('ERROR');
       console.log(err);
     }
   };
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("email changed", event.target);
+    console.log('email changed', event.target);
     const { value } = event.target;
     setEmail(value);
   };
@@ -54,17 +54,17 @@ const SubscribeToNewsletterForm = () => {
   };
 
   const inputStyle =
-    "form-input border border-gray-900 py-1 px-4 bg-white placeholder-gray-400 text-gray-500 appearance-none w-full block pl-14 focus:outline-none";
+    'form-input border border-gray-900 py-1 px-4 bg-white placeholder-gray-400 text-gray-500 appearance-none w-full block pl-14 focus:outline-none';
 
   return (
     <div className="flex flex-col my-2 grow">
-      {status === "SUCCESS" && (
+      {status === 'SUCCESS' && (
         <>
-          <p>Welcome aboard{name ? `, ${name}` : ""}!</p>
+          <p>Welcome aboard{name ? `, ${name}` : ''}!</p>
           <p>Please check your inbox to confirm the subscription.</p>
         </>
       )}
-      {status === "ERROR" && (
+      {status === 'ERROR' && (
         <>
           <p>Oops, something went wrong...</p>
           <p>
@@ -108,11 +108,7 @@ const SubscribeToNewsletterForm = () => {
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg> */}
                 <div className="inline-flex items-center w-full pr-2">
-                  <FontAwesomeIcon
-                    icon={faEnvelope}
-                    className="absolute ml-4 my-auto"
-                    size="xl"
-                  />
+                  <FontAwesomeIcon icon={faEnvelope} className="absolute ml-4 my-auto" size="xl" />
 
                   <input
                     required
@@ -129,9 +125,7 @@ const SubscribeToNewsletterForm = () => {
               </label>
             </div>
 
-            <button
-              className="px-2 py-1 bg-slate-400 hover:bg-slate-500"
-              type="submit">
+            <button className="px-2 py-1 bg-slate-400 hover:bg-slate-500" type="submit">
               Subscribe
             </button>
           </div>
@@ -142,9 +136,7 @@ const SubscribeToNewsletterForm = () => {
               Subscribe
             </button>
           </div> */}
-          <small className="text-slate-500">
-            I respect your privacy. Unsubscribe at any time.
-          </small>
+          <small className="text-slate-500">I respect your privacy. Unsubscribe at any time.</small>
         </form>
       )}
     </div>
