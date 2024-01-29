@@ -42,7 +42,10 @@ const SitemapLinks = ({ className }: { className?: string }) => {
         <Link
           key={url}
           href={url}
-          className={classNames(className, 'font-bold text-slate-500 hover:text-slate-800')}
+          className={classNames(
+            className,
+            'font-bold text-slate-500 hover:text-slate-800 hover:underline',
+          )}
         >
           {name}
         </Link>
@@ -61,7 +64,7 @@ const FooterLinks = ({ className }: { className?: string }) => {
     // rel: 'noopener noreferrer',
   };
   return (
-    <div className={classNames(className, 'space-x-2 items-center')}>
+    <div className={classNames(className, 'space-x-1 items-center')}>
       {/* Follow <FontAwesomeIcon icon={faUserPlus} /> */}
       <Link href="/feeds/articles-rss.xml" {...linkProps}>
         <FontAwesomeIcon icon={faRssSquare} fixedWidth /> Article Feed{' '}
@@ -125,19 +128,18 @@ const Footer = () => {
         <hr className="my-8 w-full" />
       </div>
 
-      <div className="flex flex-col lg:flex-row items-center lg:px-2">
-        <div className="lg:w-1/2">All opinions are my own.</div>
-        <div className="justify-center lg:justify-end text-center lg:text-right lg:w-1/2">
-          Made with <FontAwesomeIcon icon={faCoffee} />, <FontAwesomeIcon icon={faCode} />, and lots
-          of <FontAwesomeIcon icon={faHeart} />.
+      <div className="flex flex-col lg:flex-row justify-between items-center text-center px-2 pb-5">
+        <div className="flex flex-col lg:text-left pt-4 lg:pt-0">
+          <span>All opinions are my own.</span>
+          <span>
+            Copyright &#169; 2019&ndash;{DateTime.now().year} Stefanie Molin. All rights reserved.
+          </span>
         </div>
-      </div>
-
-      <div className="pb-5 flex flex-col lg:flex-row items-center lg:px-2">
-        <div className="lg:w-1/2">
-          Copyright &#169; 2019&ndash;{DateTime.now().year} Stefanie Molin. All rights reserved.
-        </div>
-        <div className="justify-center lg:justify-end text-center lg:text-right lg:w-1/2">
+        <div className="lg:text-right flex flex-col lg:flex-col pt-4 lg:pt-0">
+          <span className="hidden lg:block">
+            Made with <FontAwesomeIcon icon={faCoffee} />, <FontAwesomeIcon icon={faCode} />, and
+            lots of <FontAwesomeIcon icon={faHeart} />.
+          </span>
           <FooterLinks />
         </div>
       </div>

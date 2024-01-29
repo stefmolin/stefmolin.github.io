@@ -120,7 +120,7 @@ const SubscribeToNewsletterForm = () => {
                     aria-label="First name"
                     name="fields[first_name]"
                     id="name"
-                    placeholder="First name"
+                    placeholder="Your name (optional)"
                     type="text"
                     onChange={handleNameChange}
                     value={name}
@@ -153,7 +153,7 @@ const SubscribeToNewsletterForm = () => {
                       name="email_address"
                       id="email"
                       aria-label="Email address"
-                      placeholder="Email address"
+                      placeholder="Your email address"
                       onChange={handleEmailChange}
                       value={email}
                       className={inputStyle}
