@@ -9,7 +9,22 @@ type Props = {
 const PostTags = ({ tags }: Props) => {
   return (
     <>
-      <FontAwesomeIcon icon={tags.length > 1 ? faTags : faTag} /> {tags.join(', ')}
+      <FontAwesomeIcon icon={tags.length > 1 ? faTags : faTag} />{' '}
+      {tags.map((tag, index) => (
+        <>
+          <Link
+            href={{
+              pathname: '/tags/[tag]',
+              query: { tag },
+            }}
+            className="hover:underline"
+            key={tag}
+          >
+            {tag}
+          </Link>
+          {tags.length > 1 && index < tags.length - 1 ? <span>, </span> : null}
+        </>
+      ))}
     </>
   );
 };
