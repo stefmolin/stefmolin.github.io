@@ -2,8 +2,6 @@ import Link from 'next/link';
 import Container from '../../components/container';
 import Header from '../../components/header';
 import Layout from '../../components/layout';
-// import { type Word } from 'react-wordcloud';
-// import ReactWordcloud from 'react-wordcloud';
 import { getAllPosts } from '../../lib/api';
 
 type TagCount = {
@@ -12,7 +10,6 @@ type TagCount = {
 };
 
 type TagListingProps = {
-  // tagCounts: Word[];
   tagCounts: TagCount[];
 };
 
@@ -22,7 +19,6 @@ export default function TagListing({ tagCounts }: TagListingProps) {
     <Layout preview={preview}>
       <Container>
         <Header />
-        {/* <ReactWordcloud words={tagCounts} /> */}
         <h1 className="text-3xl">Post Tags</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-left pt-10 px-12 mb-10 md:mb-0">
           {...tagCounts
