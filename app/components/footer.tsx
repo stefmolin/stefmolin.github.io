@@ -1,4 +1,3 @@
-import Container from './container';
 import classNames from 'classnames';
 import { DateTime } from 'luxon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,41 +15,56 @@ import FollowButtons from './follow';
 import Link from 'next/link';
 
 const SitemapLinks = ({ className }: { className?: string }) => {
-  // TODO: probably want a way to group by content and keep those together in the column
-  // since this fills rows and then columns things that are related can end up far apart when they
-  // should be in the same column
-
   const siteLinks = [
     { name: 'Home', url: '/' },
     { name: 'Books', url: '/books' },
     { name: 'Interviews', url: '/interviews' },
-    { name: 'Articles', url: '/articles' },
-    { name: 'Blog', url: '/blog' },
-    { name: 'Talks', url: '/talks' },
     { name: 'Workshops', url: '/workshops' },
     { name: 'Pandas Workshop', url: '/pandas-workshop' },
     { name: 'Data Viz Workshop', url: '/python-data-viz-workshop' },
+    { name: 'Articles', url: '/articles' },
+    { name: 'Blog', url: '/blog' },
+    { name: 'Post Search', url: '/tags' },
+    { name: 'Talks', url: '/talks' },
     { name: 'Data Morph', url: '/data-morph' },
-    { name: 'News', url: '/news' },
+    {
+      name: 'OSS Contributions',
+      url: 'https://github.com/search?q=is%3Apr+author%3Astefmolin+-user%3Astefmolin++is%3Amerged&type=pullrequests&state=closed&s=created&o=desc',
+    },
     { name: 'Events', url: '/events' },
+    { name: 'News', url: '/news' },
     { name: 'Contact', url: '/contact' },
     // { name: 'Buy Me a Coffee', url: 'https://www.buymeacoffee.com/stefanie.molin' },
   ];
+
   return (
-    <>
+    <div
+      className={classNames(
+        'grid',
+        'grid-rows-9 md:grid-rows-6 lg:grid-rows-4 xl:grid-rows-3',
+        'grid-flow-col',
+        'text-center',
+        'pt-10',
+        'px-4',
+        'auto-cols-fr',
+      )}
+    >
       {...siteLinks.map(({ name, url }) => (
         <Link
           key={url}
           href={url}
           className={classNames(
             className,
-            'font-bold text-slate-500 hover:text-slate-800 hover:underline',
+            'font-bold',
+            'text-slate-500 hover:text-slate-800',
+            'hover:underline px-5',
           )}
+          {...(url.startsWith('https://') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         >
           {name}
         </Link>
       ))}
-    </>
+    </div>
   );
 };
 
@@ -60,12 +74,9 @@ const SitemapLinks = ({ className }: { className?: string }) => {
 const FooterLinks = ({ className }: { className?: string }) => {
   const linkProps = {
     className: 'text-slate-600 hover:text-slate-800',
-    // target: '_blank',
-    // rel: 'noopener noreferrer',
   };
   return (
     <div className={classNames(className, 'space-x-1 items-center')}>
-      {/* Follow <FontAwesomeIcon icon={faUserPlus} /> */}
       <Link href="/feeds/articles-rss.xml" {...linkProps}>
         <FontAwesomeIcon icon={faRssSquare} fixedWidth /> Article Feed{' '}
       </Link>
@@ -93,10 +104,10 @@ const Footer = () => {
         <div className="text-left lg:pl-4 lg:pr-10 lg:w-2/3 xl:mr-20">
           <Avatar name="Stefanie Molin" picture="/assets/avatar.jpeg" />
           <p className="pt-5">
-            Thanks for visiting my website! I am passionate about teaching data science and software
-            engineering skills to people of all levels. I have created multiple workshops, books,
-            and articles, as well as contributed to various FOSS projects. If any of my other
-            content has helped you, please consider{' '}
+            Thank you for visiting my website! I am passionate about teaching data science and
+            software engineering skills to people of all levels. I have created multiple workshops,
+            books, and articles, as well as contributed to various open source projects. If any of
+            my content has helped you, please consider{' '}
             <a
               className="text-slate-500 hover:text-slate-800 underline"
               href="https://www.buymeacoffee.com/stefanie.molin"
@@ -118,9 +129,7 @@ const Footer = () => {
       </div>
       <hr className="lg:hidden mt-8 w-full" />
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 text-center pt-10 px-4">
-        <SitemapLinks className="px-5" />
-      </div>
+      <SitemapLinks className="px-5" />
 
       <div className="flex flex-row items-center justify-center pt-10">
         <hr className="my-8 w-full" />
