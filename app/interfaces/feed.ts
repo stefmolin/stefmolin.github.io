@@ -1,10 +1,10 @@
 import type PostType from './post';
 
-type FeedType = {
+interface FeedType {
   allPosts: PostType[];
   description: string;
   title: string;
   kind: string;
-};
+}
 
 export default FeedType;
