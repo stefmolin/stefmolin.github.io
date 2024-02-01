@@ -1,6 +1,6 @@
-import Feed from '../../components/feed';
+import Feed from '../../components/feeds/feed';
 import FeedType from '../../interfaces/feed';
-import { getAllPosts, getPostsByTag } from '../../lib/api';
+import { getAllPosts, getPostsByTag } from '../../lib/posts';
 
 type Params = {
   params: {
