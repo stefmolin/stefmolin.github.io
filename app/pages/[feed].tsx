@@ -1,6 +1,6 @@
-import Feed from '../components/feed';
+import Feed from '../components/feeds/feed';
 import FeedType from '../interfaces/feed';
-import { getFeed } from '../lib/api';
+import { getFeed } from '../lib/posts';
 
 const feeds = {
   articles: { title: 'Articles', description: 'Articles by Stefanie Molin.' },
