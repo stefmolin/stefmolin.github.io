@@ -13,7 +13,17 @@ export default function TagSearch(props: FeedType) {
 }
 
 export const getStaticProps = async ({ params }: Params) => {
-  const fields = ['tags', 'title', 'subtitle', 'date', 'slug', 'duration', 'ogImage', 'type'];
+  const fields = [
+    'tags',
+    'title',
+    'subtitle',
+    'date',
+    'slug',
+    'duration',
+    'ogImage',
+    'type',
+    'excerpt',
+  ];
   const { props } = getPostsByTag(params.tag, fields);
   props.allPosts = props.allPosts
     .filter((x) => x.tags.includes(params.tag))
