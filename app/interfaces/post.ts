@@ -1,6 +1,6 @@
 import type Author from './author';
 
-type PostType = {
+interface PostType {
   slug: string[];
   title: string;
   subtitle?: string;
@@ -9,6 +9,7 @@ type PostType = {
   excerpt: string;
   ogImage: {
     url: string;
+    caption?: string;
   };
   content: string;
   tags: string[];
@@ -16,6 +17,6 @@ type PostType = {
   type: string;
   canonical?: string;
   modified?: string;
-};
+}
 
 export default PostType;
