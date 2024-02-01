@@ -19,7 +19,10 @@ const TagListing = ({ tagCounts, className }: TagListingProps) => {
         .map(({ text, value }) => (
           <Link
             key={text}
-            href={`/tags/${text}`}
+            href={{
+              pathname: '/tags/[tag]',
+              query: { tag: text },
+            }}
             className="font-bold text-slate-500 hover:text-slate-800 hover:underline"
           >
             {text} ({value})
