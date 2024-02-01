@@ -7,9 +7,10 @@ type Props = {
 
 const TimeToRead = ({ duration }: Props) => {
   return (
-    <>
-      <FontAwesomeIcon icon={faClock} /> {duration}
-    </>
+    <div className="flex flex-row items-center space-x-1">
+      <FontAwesomeIcon icon={faClock} />
+      <span>{duration}</span>
+    </div>
   );
 };
 

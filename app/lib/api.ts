@@ -59,6 +59,18 @@ export function getPostBySlug(slug: string[], fields: string[] = [], category: s
   return items;
 }
 
+export function getPostsByTag(tag: string, fields: string[] = []) {
+  const posts = getAllPosts(fields);
+  return {
+    props: {
+      allPosts: posts.filter((post) => post.tags.includes(tag)),
+      kind: 'tag',
+      title: tag,
+      description: 'Searching by tag.',
+    },
+  };
+}
+
 export function getAllPosts(fields: string[] = [], type: string = '') {
   const slugs = getPostSlugs(type);
   const posts = slugs

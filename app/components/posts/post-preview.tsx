@@ -16,6 +16,7 @@ type Props = {
   slug: string[];
   tags: string[];
   duration: number;
+  coverImageCaption?: string;
 };
 
 const PostPreview = ({
@@ -28,39 +29,53 @@ const PostPreview = ({
   slug,
   tags,
   duration,
+  coverImageCaption,
 }: Props) => {
+  const postTitle = (
+    <h3 className="text-2xl md:text-3xl mb-3 leading-snug w-full">
+      <Link
+        href={{
+          pathname: '/[...slug]',
+          query: { slug },
+        }}
+        className="hover:underline"
+      >
+        {title}
+      </Link>
+    </h3>
+  );
+
+  const readTime = (
+    <div className="mb-4 whitespace-nowrap text-sm md:text-base">
+      <TimeToRead duration={duration} />
+    </div>
+  );
+
+  const image = (
+    <div className="flex items-center justify-center w-full lg:w-1/3 lg:mb-0 mb-4">
+      <CoverImage slug={slug} title={title} src={coverImage} caption={coverImageCaption} />
+    </div>
+  );
+
+  const postExcerpt = (
+    <p className="md:text-lg leading-relaxed mb-4 line-clamp-3 md:line-clamp-4">{excerpt}</p>
+  );
+
+  const linkedTags = <PostTags tags={tags} className="flex flex-row pb-1 text-sm md:text-base" />;
+
   return (
-    <div>
-      <div className="mb-5">
-        <CoverImage slug={slug} title={title} src={coverImage} />
+    <div className="shadow-sm hover:shadow-lg transition-shadow duration-200 p-6 flex flex-col m-5">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-5">
+        {postTitle}
+        {readTime}
       </div>
-      <h3 className="text-3xl mb-3 leading-snug">
-        <Link
-          href={{
-            pathname: '/[...slug]',
-            query: { slug },
-          }}
-          className="hover:underline"
-        >
-          {title}
-        </Link>
-      </h3>
-      <div className="text-lg mb-4">
-        <div className="flex flex-row justify-between items-center">
-          <div>
-            <PostPublicationDate date={date} />
-          </div>
-          <div className="pl-4 float-right">
-            <TimeToRead duration={duration} />
-          </div>
+      <div className="flex flex-col lg:flex-row items-center justify-end">
+        {image}
+        <div className="flex flex-col w-full h-full lg:w-2/3 pr-4 justify-between">
+          {postExcerpt}
+          {linkedTags}
         </div>
       </div>
-      <p className="text-lg leading-relaxed mb-4 line-clamp-3">{excerpt}</p>
-      <div className="float-right">
-        <PostTags tags={tags} />
-      </div>
-      {/* TODO: replace the avatar with tags and maybe the time to read */}
-      {/* <Avatar name={author.name} picture={author.picture} /> */}
     </div>
   );
 };

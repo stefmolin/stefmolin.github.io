@@ -1,27 +1,19 @@
 import cn from 'classnames';
 import Link from 'next/link';
-import Image from 'next/image';
 
 type Props = {
   title: string;
   src: string;
   slug?: string[];
+  caption?: string;
 };
 
-const CoverImage = ({ title, src, slug }: Props) => {
+const CoverImage = ({ title, src, slug, caption }: Props) => {
   const image = (
-    <Image
-      src={src}
-      alt={`Cover image for ${title}`} // TODO: add caption for cover image
-      className={cn('shadow-sm w-full', {
-        'hover:shadow-lg transition-shadow duration-200': slug,
-      })}
-      width={1200}
-      height={600}
-    />
+    <img src={src} alt={caption ?? `Cover image for ${title}`} className="w-96 h-48 object-cover" />
   );
   return (
-    <div className="sm:mx-0">
+    <div className="mr-5">
       {slug ? (
         <Link
           href={{
