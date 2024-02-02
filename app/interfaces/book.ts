@@ -5,7 +5,7 @@ export default interface Book {
   coverImage: string;
   publicationDate: string;
   pageCount: number;
-  description: string;
+  description: React.ReactNode[];
   amazonLink: string;
   repoLink: string;
   isbn: string;
