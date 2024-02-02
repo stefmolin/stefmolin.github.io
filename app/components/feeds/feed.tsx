@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
 import Container from '../container';
-import PostListing from '../posts/post-listing';
+import PostListing from './post-listing';
 import Intro from '../posts/intro';
 import Layout from '../layout';
 import FeedType from '../../interfaces/feed';
