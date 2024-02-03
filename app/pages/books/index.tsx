@@ -3,29 +3,55 @@ import { NextSeo } from 'next-seo';
 import Container from '../../components/container';
 import Header from '../../components/header';
 import Layout from '../../components/layout';
-import { BOOK_PAGES } from '../../data/books';
-import Book, { TranslatedBook, RelatedContentLink, FAQ } from '../../interfaces/book';
-import { generateBookPageLink, generateBookPageTitle } from '../../lib/books';
+import {
+  generateBookCoverAltText,
+  generateBookPageLink,
+  generateBookPageTitle,
+} from '../../lib/books';
 import { usePageURL } from '../../lib/hooks';
 import { HOME_URL } from '../../lib/constants';
 import SectionSeparator from '../../components/section-separator';
+import { BOOK_PAGES, GENERAL_FAQS } from '../../data/books';
+import RelatedContentLink from '../../interfaces/related-content';
+import BookOutline from '../../components/books/book-outline';
 
-interface BookProps {
-  book: Book;
-  reviews?: string[];
-  translations?: TranslatedBook[];
-  relatedContent: RelatedContentLink[];
-  faqs: FAQ[];
-}
+// TODO: placeholder data for now
+const relatedContent: RelatedContentLink[] = [
+  {
+    link: '/interviews',
+    contentClass: 'page',
+    image: '/assets/articles/how-to-pivot-and-plot-data-with-pandas/cover-image.jpg',
+    title: 'Interviews',
+  },
+  {
+    link: '/workshops',
+    contentClass: 'page',
+    image: '/assets/articles/how-to-pivot-and-plot-data-with-pandas/cover-image.jpg',
+    title: 'Workshops',
+  },
+  {
+    link: '/articles',
+    contentClass: 'page',
+    image: '/assets/articles/how-to-pivot-and-plot-data-with-pandas/cover-image.jpg',
+    title: 'Articles',
+  },
+  {
+    link: '/events',
+    contentClass: 'page',
+    image: '/assets/articles/how-to-pivot-and-plot-data-with-pandas/cover-image.jpg',
+    title: 'Events',
+  },
+];
 
-export default function Index({ pages }: { pages: BookProps[] }) {
+export default function Index() {
   const preview = false;
+  const pageTitle = 'Bookshelf';
   return (
     <Layout preview={preview}>
       <Container>
         <Header />
         <NextSeo
-          title="Books"
+          title={pageTitle}
           description="A listing of books written by Stefanie Molin."
           openGraph={{
             url: usePageURL(),
@@ -40,34 +66,37 @@ export default function Index({ pages }: { pages: BookProps[] }) {
             ],
           }}
         />
-        <h1 className="text-5xl">Books</h1>
-
-        {pages.map((page, index) => {
-          const book = generateBookPageLink(page.book);
-          return (
-            <>
-              <h3 className="text-2xl md:text-3xl mb-3 leading-snug w-full" key={book}>
-                <Link
-                  href={{
-                    pathname: '/books/[book]',
-                    query: { book },
-                  }}
-                  className="hover:underline"
-                >
-                  {generateBookPageTitle(page.book)}
-                </Link>
-              </h3>
-              {pages.length > 1 && index < pages.length - 1 ? <SectionSeparator /> : null}
-            </>
-          );
-        })}
+        <BookOutline
+          pageTitle={pageTitle}
+          pageSubtitle="A collection of books I have written."
+          faqs={GENERAL_FAQS}
+          relatedContent={relatedContent}
+        >
+          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 xl:px-4 pt-10">
+            {BOOK_PAGES.map(({ book }) => {
+              return (
+                <div className="flex items-center justify-center">
+                  <Link
+                    href={{
+                      pathname: '/books/[book]',
+                      query: { book: generateBookPageLink(book) },
+                    }}
+                    className="text-slate-800"
+                  >
+                    <img
+                      key={generateBookPageTitle(book)}
+                      src={book.coverImage}
+                      alt={generateBookCoverAltText(book)}
+                      className="h-48 sm:h-64 object-contain"
+                    />
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+          <SectionSeparator className="my-10" />
+        </BookOutline>
       </Container>
     </Layout>
   );
 }
-
-export const getStaticProps = async () => {
-  return {
-    props: { pages: BOOK_PAGES },
-  };
-};
