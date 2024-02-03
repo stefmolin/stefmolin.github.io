@@ -7,3 +7,6 @@ export const generateBookPageLink = (book: Book) =>
   generateBookPageTitle(book)
     .replaceAll(' ', '-')
     .replaceAll(/[\(\)]/g, '');
+
+export const generateBookCoverAltText = (book: Book) =>
+  `Cover image of ${generateBookPageTitle(book)}`;
