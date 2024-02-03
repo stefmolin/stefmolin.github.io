@@ -9,6 +9,8 @@ export default interface Book {
   amazonLink: string;
   repoLink: string;
   isbn: string;
+  tags: string[];
+  translations?: TranslatedBook[];
 }
 export interface TranslatedBook extends Pick<Book, 'publicationDate' | 'coverImage'> {
   language: string;

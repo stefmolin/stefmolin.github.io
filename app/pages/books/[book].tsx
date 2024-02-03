@@ -14,7 +14,7 @@ import BookOutline from '../../components/books/book-outline';
 import { getImageLink } from '../../lib/images';
 
 export default function BookPage({ bookKey }: { bookKey: string }) {
-  const { book, reviews, translations, relatedContent, faqs } = BOOK_PAGE_MAPPING[bookKey];
+  const { book, reviews, relatedContent, faqs } = BOOK_PAGE_MAPPING[bookKey];
 
   const preview = false;
   const bookCoverImage = getImageLink(book.coverImage);
@@ -62,12 +62,8 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
               <SectionSeparator className="my-10" />
             </>
           ) : null}
-          {translations != null ? (
-            <>
-              <BookTranslationsSection translations={translations} />
-              <SectionSeparator className="my-10" />
-            </>
-          ) : null}
+          <BookTranslationsSection book={book} />
+          {book.translations != null ? <SectionSeparator className="my-10" /> : null}
         </BookOutline>
       </Container>
     </Layout>

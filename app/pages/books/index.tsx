@@ -3,17 +3,14 @@ import { NextSeo } from 'next-seo';
 import Container from '../../components/container';
 import Header from '../../components/header';
 import Layout from '../../components/layout';
-import {
-  generateBookCoverAltText,
-  generateBookPageLink,
-  generateBookPageTitle,
-} from '../../lib/books';
+import { generateBookPageLink } from '../../lib/books';
 import { usePageURL } from '../../lib/hooks';
-import { HOME_URL } from '../../lib/constants';
 import SectionSeparator from '../../components/section-separator';
 import { BOOK_PAGES, GENERAL_FAQS } from '../../data/books';
 import RelatedContentLink from '../../interfaces/related-content';
 import BookOutline from '../../components/books/book-outline';
+import { getImageLink } from '../../lib/images';
+import BookCover from '../../components/books/book-cover';
 
 // TODO: placeholder data for now
 const relatedContent: RelatedContentLink[] = [
@@ -57,7 +54,7 @@ export default function Index() {
             url: usePageURL(),
             images: [
               {
-                url: `${HOME_URL}/assets/books/pandas-book-stack.jpg`,
+                url: getImageLink('/assets/books/pandas-book-stack.jpg'),
                 // TODO: consider providing these?
                 // width: 850,
                 // height: 650,
@@ -83,12 +80,7 @@ export default function Index() {
                     }}
                     className="text-slate-800"
                   >
-                    <img
-                      key={generateBookPageTitle(book)}
-                      src={book.coverImage}
-                      alt={generateBookCoverAltText(book)}
-                      className="h-48 sm:h-64 object-contain"
-                    />
+                    <BookCover book={book} className="h-48 sm:h-64 object-contain" />
                   </Link>
                 </div>
               );

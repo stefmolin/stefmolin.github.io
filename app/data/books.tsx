@@ -22,14 +22,14 @@ export const BOOK_PAGES: BookPage[] = [
       publicationDate: '2021-04-29',
       pageCount: 788,
       description: [
-        <p>
+        <p key={1}>
           Data analysis has become an essential skill in a variety of domains where knowing how to
           work with data and extract insights can generate significant value.{' '}
           <em>Hands-On Data Analysis with Pandas</em> will show you how to analyze your data, get
           started with machine learning, and work effectively with the Python libraries often used
           for data science, such as pandas, NumPy, matplotlib, seaborn, and scikit-learn.
         </p>,
-        <p>
+        <p key={2}>
           Using real-world datasets, you will learn how to use the pandas library to perform data
           wrangling to reshape, clean, and aggregate your data. Then, you will learn how to conduct
           exploratory data analysis by calculating summary statistics and visualizing the data to
@@ -37,7 +37,7 @@ export const BOOK_PAGES: BookPage[] = [
           detection, regression, clustering, and classification using scikit-learn to make
           predictions based on past data.
         </p>,
-        <p>
+        <p key={3}>
           This updated edition will equip you with the skills you need to use pandas 1.x to
           efficiently perform various data manipulation tasks, reliably reproduce analyses, and
           visualize your data for effective decision making—valuable knowledge that can be applied
@@ -46,21 +46,22 @@ export const BOOK_PAGES: BookPage[] = [
       ],
       amazonLink: 'https://amzn.to/3u6v21u',
       repoLink: 'https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition',
+      tags: ['pandas', 'data analysis', 'data science', 'Python'],
+      translations: [
+        {
+          publicationDate: '2022-11-30',
+          coverImage:
+            '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition/korean-cover.jpeg',
+          language: 'Korean',
+        },
+        {
+          publicationDate: '2023-06-30',
+          coverImage:
+            '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition/chinese-cover.jpeg',
+          language: 'Chinese',
+        },
+      ],
     },
-    translations: [
-      {
-        publicationDate: '2022-11-30',
-        coverImage:
-          '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition/korean-cover.jpeg',
-        language: 'Korean',
-      },
-      {
-        publicationDate: '2023-06-30',
-        coverImage:
-          '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition/chinese-cover.jpeg',
-        language: 'Chinese',
-      },
-    ],
     relatedContent: [
       {
         link: '/workshops/pandas-workshop',
@@ -114,11 +115,11 @@ export const BOOK_PAGES: BookPage[] = [
       publicationDate: '2019-07-26',
       pageCount: 740,
       description: [
-        <p>
+        <p key={1}>
           Data analysis has become an essential skill in a variety of domains where knowing how to
           work with data and extract insights can generate significant value.
         </p>,
-        <p>
+        <p key={2}>
           <em>Hands-On Data Analysis with Pandas</em> will show you how to analyze your data, get
           started with machine learning, and work effectively with Python libraries often used for
           data science, such as pandas, NumPy, matplotlib, seaborn, and scikit-learn. Using
@@ -129,7 +130,7 @@ export const BOOK_PAGES: BookPage[] = [
           detection, regression, clustering, and classification, using scikit-learn, to make
           predictions based on past data.
         </p>,
-        <p>
+        <p key={3}>
           By the end of this book, you will be equipped with the skills you need to use pandas to
           ensure the veracity of your data, visualize it for effective decision-making, and reliably
           reproduce analysis across multiple domains.
@@ -137,6 +138,7 @@ export const BOOK_PAGES: BookPage[] = [
       ],
       amazonLink: 'https://amzn.to/4bkJBiq',
       repoLink: 'https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas',
+      tags: ['pandas', 'data analysis', 'data science', 'Python'],
     },
     relatedContent: [
       { link: 'TODO', contentClass: 'post', image: 'TODO', title: 'TODO' },
