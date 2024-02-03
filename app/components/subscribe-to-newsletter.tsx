@@ -106,8 +106,8 @@ const SubscribeToNewsletterForm = () => {
                 </div>
               </fieldset>
             </div> */}
-          <div className="flex flex-row items-center space-x-2">
-            <div className="mt-5 lg:mt-2 grow flex flex-col space-y-2 justify-left pr-2 lg:pr-0">
+          <div className="flex flex-row items-center justify-center">
+            <div className="mt-5 lg:mt-2 grow flex flex-col space-y-2 justify-left sm:pr-2 lg:pr-0">
               <label className="relative text-gray-400 focus-within:text-gray-600 block">
                 <div className="inline-flex items-center w-full">
                   <FontAwesomeIcon
