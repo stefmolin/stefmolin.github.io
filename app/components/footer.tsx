@@ -20,17 +20,17 @@ const SitemapLinks = ({ className }: { className?: string }) => {
     { name: 'Books', url: '/books' },
     { name: 'Interviews', url: '/interviews' },
     { name: 'Workshops', url: '/workshops' },
-    { name: 'Pandas Workshop', url: '/pandas-workshop' },
-    { name: 'Data Viz Workshop', url: '/python-data-viz-workshop' },
+    // { name: 'Pandas Workshop', url: '/pandas-workshop' },
+    // { name: 'Data Viz Workshop', url: '/python-data-viz-workshop' },
     { name: 'Articles', url: '/articles' },
     { name: 'Blog', url: '/blog' },
     { name: 'Post Search', url: '/tags' },
     { name: 'Talks', url: '/talks' },
     { name: 'Data Morph', url: '/data-morph' },
-    {
-      name: 'OSS Contributions',
-      url: 'https://github.com/search?q=is%3Apr+author%3Astefmolin+-user%3Astefmolin++is%3Amerged&type=pullrequests&state=closed&s=created&o=desc',
-    },
+    // {
+    //   name: 'OSS Contributions',
+    //   url: 'https://github.com/search?q=is%3Apr+author%3Astefmolin+-user%3Astefmolin++is%3Amerged&type=pullrequests&state=closed&s=created&o=desc',
+    // },
     { name: 'Events', url: '/events' },
     { name: 'News', url: '/news' },
     { name: 'Contact', url: '/contact' },
@@ -41,7 +41,7 @@ const SitemapLinks = ({ className }: { className?: string }) => {
     <div
       className={classNames(
         'grid',
-        'grid-rows-9 md:grid-rows-6 lg:grid-rows-4 xl:grid-rows-3',
+        'grid-rows-6 md:grid-rows-4 lg:grid-rows-3 xl:grid-rows-2',
         'grid-flow-col',
         'text-center',
         'pt-10',
@@ -49,21 +49,28 @@ const SitemapLinks = ({ className }: { className?: string }) => {
         'auto-cols-fr',
       )}
     >
-      {...siteLinks.map(({ name, url }) => (
-        <Link
-          key={url}
-          href={url}
-          className={classNames(
-            className,
-            'font-bold',
-            'text-slate-500 hover:text-slate-800',
-            'hover:underline px-5',
-          )}
-          {...(url.startsWith('https://') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-        >
-          {name}
-        </Link>
-      ))}
+      {...siteLinks.map(
+        (
+          { name, url }, // TODO: only use <Link> for external links
+        ) => (
+          <Link
+            key={url}
+            href={url}
+            className={classNames(
+              className,
+              'font-bold',
+              'text-slate-500 hover:text-slate-800',
+              'hover:underline px-5',
+              'text-nowrap',
+            )}
+            {...(url.startsWith('https://')
+              ? { target: '_blank', rel: 'noopener noreferrer' }
+              : {})}
+          >
+            {name}
+          </Link>
+        ),
+      )}
     </div>
   );
 };
@@ -78,16 +85,24 @@ const FooterLinks = ({ className }: { className?: string }) => {
   return (
     <div className={classNames(className, 'space-x-1 items-center')}>
       <Link href="/feeds/articles-rss.xml" {...linkProps}>
-        <FontAwesomeIcon icon={faRssSquare} fixedWidth /> Article Feed{' '}
+        <span className="text-nowrap">
+          <FontAwesomeIcon icon={faRssSquare} fixedWidth /> Article Feed
+        </span>{' '}
       </Link>
       <Link href="/feeds/blog-rss.xml" {...linkProps}>
-        <FontAwesomeIcon icon={faRssSquare} fixedWidth /> Blog Feed{' '}
+        <span className="text-nowrap">
+          <FontAwesomeIcon icon={faRssSquare} fixedWidth /> Blog Feed
+        </span>{' '}
       </Link>
       <Link href="/privacy-policy" {...linkProps}>
-        <FontAwesomeIcon icon={faLock} fixedWidth /> Privacy Policy{' '}
+        <span className="text-nowrap">
+          <FontAwesomeIcon icon={faLock} fixedWidth /> Privacy Policy
+        </span>{' '}
       </Link>
       <Link href="/sitemap.xml" {...linkProps}>
-        <FontAwesomeIcon icon={faSitemap} fixedWidth /> Sitemap{' '}
+        <span className="text-nowrap">
+          <FontAwesomeIcon icon={faSitemap} fixedWidth /> Sitemap
+        </span>
       </Link>
     </div>
   );
@@ -105,9 +120,28 @@ const Footer = () => {
           <Avatar name="Stefanie Molin" picture="/assets/avatar.jpeg" />
           <p className="pt-5">
             Thank you for visiting my website! I am passionate about teaching data science and
-            software engineering skills to people of all levels. I have created multiple workshops,
-            books, and articles, as well as contributed to various open source projects. If any of
-            my content has helped you, please consider{' '}
+            software engineering skills to people of all levels. I have created multiple{' '}
+            <Link href="/workshops" className="text-slate-500 hover:text-slate-800 underline">
+              workshops
+            </Link>
+            ,{' '}
+            <Link href="/books" className="text-slate-500 hover:text-slate-800 underline">
+              books
+            </Link>
+            , and{' '}
+            <Link href="/articles" className="text-slate-500 hover:text-slate-800 underline">
+              articles
+            </Link>
+            , as well as contributed to various{' '}
+            <a
+              className="text-slate-500 hover:text-slate-800 underline"
+              href="https://github.com/search?q=is%3Apr+author%3Astefmolin+-user%3Astefmolin++is%3Amerged&type=pullrequests&state=closed&s=created&o=desc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              open source projects
+            </a>
+            . If any of my content has helped you, please consider{' '}
             <a
               className="text-slate-500 hover:text-slate-800 underline"
               href="https://www.buymeacoffee.com/stefanie.molin"
@@ -141,7 +175,11 @@ const Footer = () => {
         <div className="flex flex-col lg:text-left pt-4 lg:pt-0">
           <span>All opinions are my own.</span>
           <span>
-            Copyright &#169; 2019&ndash;{DateTime.now().year} Stefanie Molin. All rights reserved.
+            <span className="text-nowrap">
+              Copyright &#169; 2019&ndash;
+              {DateTime.now().year} Stefanie Molin.
+            </span>{' '}
+            <span className="text-nowrap">All rights reserved.</span>
           </span>
         </div>
         <div className="lg:text-right flex flex-col lg:flex-col pt-4 lg:pt-0">
