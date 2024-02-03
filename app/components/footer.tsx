@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import classNames from 'classnames';
 import { DateTime } from 'luxon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,29 +13,24 @@ import {
 import Avatar from './avatar';
 import SubscribeToNewsletterForm from './subscribe-to-newsletter';
 import FollowButtons from './follow';
-import Link from 'next/link';
+import { EXTERNAL_LINK_PROPS } from '../lib/constants';
+import { LinkWithIcon } from '../interfaces/link';
 
 const SitemapLinks = ({ className }: { className?: string }) => {
+  // Internal links only
   const siteLinks = [
     { name: 'Home', url: '/' },
     { name: 'Books', url: '/books' },
     { name: 'Interviews', url: '/interviews' },
     { name: 'Workshops', url: '/workshops' },
-    // { name: 'Pandas Workshop', url: '/pandas-workshop' },
-    // { name: 'Data Viz Workshop', url: '/python-data-viz-workshop' },
     { name: 'Articles', url: '/articles' },
     { name: 'Blog', url: '/blog' },
     { name: 'Post Search', url: '/tags' },
     { name: 'Talks', url: '/talks' },
     { name: 'Data Morph', url: '/data-morph' },
-    // {
-    //   name: 'OSS Contributions',
-    //   url: 'https://github.com/search?q=is%3Apr+author%3Astefmolin+-user%3Astefmolin++is%3Amerged&type=pullrequests&state=closed&s=created&o=desc',
-    // },
     { name: 'Events', url: '/events' },
     { name: 'News', url: '/news' },
     { name: 'Contact', url: '/contact' },
-    // { name: 'Buy Me a Coffee', url: 'https://www.buymeacoffee.com/stefanie.molin' },
   ];
 
   return (
@@ -49,28 +45,21 @@ const SitemapLinks = ({ className }: { className?: string }) => {
         'auto-cols-fr',
       )}
     >
-      {...siteLinks.map(
-        (
-          { name, url }, // TODO: only use <Link> for external links
-        ) => (
-          <Link
-            key={url}
-            href={url}
-            className={classNames(
-              className,
-              'font-bold',
-              'text-slate-500 hover:text-slate-800',
-              'hover:underline px-5',
-              'text-nowrap',
-            )}
-            {...(url.startsWith('https://')
-              ? { target: '_blank', rel: 'noopener noreferrer' }
-              : {})}
-          >
-            {name}
-          </Link>
-        ),
-      )}
+      {siteLinks.map(({ name, url }) => (
+        <Link
+          key={url}
+          href={url}
+          className={classNames(
+            className,
+            'font-bold',
+            'text-slate-500 hover:text-slate-800',
+            'hover:underline px-5',
+            'text-nowrap',
+          )}
+        >
+          {name}
+        </Link>
+      ))}
     </div>
   );
 };
@@ -79,31 +68,23 @@ const SitemapLinks = ({ className }: { className?: string }) => {
 // (tipping only on articles for example)
 
 const FooterLinks = ({ className }: { className?: string }) => {
-  const linkProps = {
-    className: 'text-slate-600 hover:text-slate-800',
-  };
+  const links: LinkWithIcon[] = [
+    { href: '/feeds/articles-rss.xml', icon: faRssSquare, text: 'Article Feed' },
+    { href: '/feeds/blog-rss.xml', icon: faRssSquare, text: 'Blog Feed' },
+    { href: '/privacy-policy', icon: faLock, text: 'Privacy Policy' },
+    { href: '/sitemap.xml', icon: faSitemap, text: 'Sitemap' },
+  ];
+
+  const makeLink = ({ href, icon, text }: LinkWithIcon) => (
+    <Link key={href} href={href} className="text-slate-600 hover:text-slate-800 px-1">
+      <span className="text-nowrap">
+        <FontAwesomeIcon icon={icon} fixedWidth /> {text}
+      </span>
+    </Link>
+  );
   return (
-    <div className={classNames(className, 'space-x-1 items-center')}>
-      <Link href="/feeds/articles-rss.xml" {...linkProps}>
-        <span className="text-nowrap">
-          <FontAwesomeIcon icon={faRssSquare} fixedWidth /> Article Feed
-        </span>{' '}
-      </Link>
-      <Link href="/feeds/blog-rss.xml" {...linkProps}>
-        <span className="text-nowrap">
-          <FontAwesomeIcon icon={faRssSquare} fixedWidth /> Blog Feed
-        </span>{' '}
-      </Link>
-      <Link href="/privacy-policy" {...linkProps}>
-        <span className="text-nowrap">
-          <FontAwesomeIcon icon={faLock} fixedWidth /> Privacy Policy
-        </span>{' '}
-      </Link>
-      <Link href="/sitemap.xml" {...linkProps}>
-        <span className="text-nowrap">
-          <FontAwesomeIcon icon={faSitemap} fixedWidth /> Sitemap
-        </span>
-      </Link>
+    <div className={classNames(className, 'items-center')}>
+      {links.map((link) => makeLink(link))}
     </div>
   );
 };
@@ -113,6 +94,7 @@ const FooterLinks = ({ className }: { className?: string }) => {
 // or at least the text overwritten?
 
 const Footer = () => {
+  const underlinedLinkClassName = 'text-slate-500 hover:text-slate-800 underline';
   return (
     <footer className="bg-neutral-50 border-t border-neutral-200 mx-auto px-10">
       <div className="mt-5 flex flex-col lg:flex-row items-start">
@@ -121,32 +103,30 @@ const Footer = () => {
           <p className="pt-5">
             Thank you for visiting my website! I am passionate about teaching data science and
             software engineering skills to people of all levels. I have created multiple{' '}
-            <Link href="/workshops" className="text-slate-500 hover:text-slate-800 underline">
+            <Link href="/workshops" className={underlinedLinkClassName}>
               workshops
             </Link>
             ,{' '}
-            <Link href="/books" className="text-slate-500 hover:text-slate-800 underline">
+            <Link href="/books" className={underlinedLinkClassName}>
               books
             </Link>
             , and{' '}
-            <Link href="/articles" className="text-slate-500 hover:text-slate-800 underline">
+            <Link href="/articles" className={underlinedLinkClassName}>
               articles
             </Link>
             , as well as contributed to various{' '}
             <a
-              className="text-slate-500 hover:text-slate-800 underline"
+              className={underlinedLinkClassName}
               href="https://github.com/search?q=is%3Apr+author%3Astefmolin+-user%3Astefmolin++is%3Amerged&type=pullrequests&state=closed&s=created&o=desc"
-              target="_blank"
-              rel="noopener noreferrer"
+              {...EXTERNAL_LINK_PROPS}
             >
               open source projects
             </a>
             . If any of my content has helped you, please consider{' '}
             <a
-              className="text-slate-500 hover:text-slate-800 underline"
+              className={underlinedLinkClassName}
               href="https://www.buymeacoffee.com/stefanie.molin"
-              target="_blank"
-              rel="noopener noreferrer"
+              {...EXTERNAL_LINK_PROPS}
             >
               supporting
             </a>{' '}
