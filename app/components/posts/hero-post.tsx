@@ -49,9 +49,9 @@ const HeroPost = ({
           </h3>
           <div className="mb-4 md:mb-0 text-lg">
             <div className="flex flex-row justify-between items-center">
-              <div>
+              {/* <div>
                 <PostPublicationDate date={date} />
-              </div>
+              </div> */}
               <div className="pl-4 float-right">
                 <TimeToRead duration={duration} />
               </div>
@@ -60,9 +60,7 @@ const HeroPost = ({
         </div>
         <div>
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          <div className="float-right">
-            <PostTags tags={tags} />
-          </div>
+          <PostTags tags={tags} className="float-right" />
           {/* <Avatar name={author.name} picture={author.picture} /> */}
         </div>
       </div>

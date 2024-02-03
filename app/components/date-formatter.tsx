@@ -13,7 +13,7 @@ const DateFormatter = ({ dateString, relative, format, long, children }: Props) 
   const date = DateTime.fromISO(dateString);
   return (
     <time dateTime={dateString}>
-      {...children ?? []}
+      {children}
       {date > DateTime.now().minus({ days: 2 }) && relative
         ? date.toRelative()
         : typeof format === 'string'

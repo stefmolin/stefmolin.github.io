@@ -14,7 +14,7 @@ export interface TagListingProps {
 const TagListing = ({ tagCounts, className }: TagListingProps) => {
   return (
     <div className={classNames(className)}>
-      {...tagCounts
+      {tagCounts
         .sort((tag1, tag2) => (tag1.value > tag2.value ? -1 : 1))
         .map(({ text, value }) => (
           <Link

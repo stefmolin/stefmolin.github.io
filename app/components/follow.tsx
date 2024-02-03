@@ -6,7 +6,7 @@ import {
   faLinkedin,
   faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import { NEWSLETTER_URL, TWITTER_HANDLE } from '../lib/constants';
+import { EXTERNAL_LINK_PROPS, NEWSLETTER_URL, TWITTER_HANDLE } from '../lib/constants';
 import { SizeProp } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
 
@@ -32,19 +32,19 @@ type Props = {
 };
 
 const FollowButtons = ({ className, size = 'lg' }: Props) => {
-  const linkProps = {
-    className: 'text-slate-600 hover:text-slate-800',
-    target: '_blank',
-    rel: 'noopener noreferrer',
-  };
   const makeLink = (url: string, icon: IconDefinition) => (
-    <a key={url} href={url} {...linkProps}>
+    <a
+      key={url}
+      href={url}
+      {...EXTERNAL_LINK_PROPS}
+      className="text-slate-600 hover:text-slate-800"
+    >
       <FontAwesomeIcon icon={icon} size={size} fixedWidth />
     </a>
   );
   return (
     <div className={classNames(className, 'space-x-2 flex items-center justify-center')}>
-      {...FOLLOW_LINKS.map(({ url, icon }) => makeLink(url, icon))}
+      {FOLLOW_LINKS.map(({ url, icon }) => makeLink(url, icon))}
     </div>
   );
 };

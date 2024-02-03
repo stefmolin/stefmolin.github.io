@@ -9,7 +9,7 @@ type Props = {
 
 const PostBody = ({ content, children }: Props) => {
   const tweetEmbedPlaceholder = /(\{TWEET_ID="(?:\d+)"\})/g;
-  const contents = content.split(tweetEmbedPlaceholder).map((content) => {
+  const contents = content.split(tweetEmbedPlaceholder).map((content, index) => {
     const tweet = tweetEmbedPlaceholder.exec(content);
     if (tweet)
       return (
@@ -19,6 +19,7 @@ const PostBody = ({ content, children }: Props) => {
       );
     return (
       <div
+        key={index}
         className={markdownStyles['markdown']}
         dangerouslySetInnerHTML={{ __html: content }} // TODO: can this be done differently?
         suppressHydrationWarning
@@ -30,8 +31,8 @@ const PostBody = ({ content, children }: Props) => {
     <div className="max-w-2xl mx-auto">
       {/* The first value here determines the width of the text in the article
       https://tailwindcss.com/docs/max-width */}
-      {...contents}
-      {...children ?? []}
+      {contents}
+      {children}
     </div>
   );
 };

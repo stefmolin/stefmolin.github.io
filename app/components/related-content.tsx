@@ -23,7 +23,7 @@ const RelatedContentSection = ({
       }
     >
       {relatedContent.map(({ link, contentClass, image, title }, index) => (
-        <div className="flex items-center justify-center">
+        <div key={link} className="flex items-center justify-center">
           <Link href={link} className="text-slate-500 hover:text-slate-800">
             <div
               key={index}

@@ -17,9 +17,11 @@ const getFeedLinks = () => {
           feedFile = `${feedType}-${lowerTech}.xml`;
           headerType = `${lowerTech}+xml`;
         }
+        const href = `/feeds/${feedFile}`;
         return (
           <link
-            href={`/feeds/${feedFile}`}
+            key={href}
+            href={href}
             type={`application/${headerType}`}
             rel="alternate"
             title={`${tech} feed for ${HOME_URL}/${feedType}`}
@@ -35,7 +37,7 @@ const getFeedLinks = () => {
 const Meta = () => {
   return (
     <Head>
-      {...getFeedLinks()}
+      {getFeedLinks()}
       <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
