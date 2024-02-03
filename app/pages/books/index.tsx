@@ -71,12 +71,13 @@ export default function Index() {
         >
           <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 xl:px-4 pt-10">
             {BOOK_PAGES.map(({ book }) => {
+              const bookPageLink = generateBookPageLink(book);
               return (
-                <div className="flex items-center justify-center">
+                <div key={bookPageLink} className="flex items-center justify-center">
                   <Link
                     href={{
                       pathname: '/books/[book]',
-                      query: { book: generateBookPageLink(book) },
+                      query: { book: bookPageLink },
                     }}
                     className="text-slate-800"
                   >
