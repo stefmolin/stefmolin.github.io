@@ -1,13 +1,23 @@
 import { generateBookPageLink } from '../lib/books';
+import FAQ from '../interfaces/faq';
+import BookPage from '../interfaces/book-page';
 
-export const BOOK_PAGES = [
+export const GENERAL_FAQS: FAQ[] = [
+  { question: 'What was the hardest part about writing a book?', answer: 'TODO' },
+  {
+    question: 'Are you planning to write any other books?',
+    answer: "Yes! I'm not ready to share what I'm working on, but I do want to write another book.",
+  },
+];
+
+export const BOOK_PAGES: BookPage[] = [
   {
     book: {
       title: 'Hands-On Data Analysis with Pandas',
       subtitle:
         'A Python data science handbook for data collection, wrangling, analysis, and visualization',
       edition: '2nd',
-      coverImage: '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition.png',
+      coverImage: '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition/cover.png',
       isbn: '978-1800563452',
       publicationDate: '2021-04-29',
       pageCount: 788,
@@ -36,17 +46,18 @@ export const BOOK_PAGES = [
       ],
       amazonLink: 'https://amzn.to/3u6v21u',
       repoLink: 'https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition',
-      tags: ['pandas', 'TODO'],
     },
     translations: [
       {
         publicationDate: '2022-11-30',
-        coverImage: '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition-korean.jpeg',
+        coverImage:
+          '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition/korean-cover.jpeg',
         language: 'Korean',
       },
       {
         publicationDate: '2023-06-30',
-        coverImage: '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition-chinese.jpeg',
+        coverImage:
+          '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition/chinese-cover.jpeg',
         language: 'Chinese',
       },
     ],
@@ -88,6 +99,7 @@ export const BOOK_PAGES = [
         answer:
           'The first edition took nearly a year, and the second edition took around nine months.',
       },
+      ...GENERAL_FAQS,
     ],
     reviews: [{ author: 'Anonymous', text: "It's fantastic!" }],
   },
@@ -97,7 +109,7 @@ export const BOOK_PAGES = [
       subtitle:
         'Efficiently perform data collection, wrangling, analysis, and visualization using Python',
       edition: '1st',
-      coverImage: '/assets/books/hands-on-data-analysis-with-pandas-1st-edition.png',
+      coverImage: '/assets/books/hands-on-data-analysis-with-pandas-1st-edition/cover.png',
       isbn: '1789615321',
       publicationDate: '2019-07-26',
       pageCount: 740,
@@ -125,17 +137,23 @@ export const BOOK_PAGES = [
       ],
       amazonLink: 'https://amzn.to/4bkJBiq',
       repoLink: 'https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas',
-      tags: ['pandas', 'TODO'],
     },
     relatedContent: [
-      { link: 'TODO', contentClass: 'post', image: 'TODO' },
-      { link: 'TODO', contentClass: 'workshop', image: 'TODO' },
+      { link: 'TODO', contentClass: 'post', image: 'TODO', title: 'TODO' },
+      { link: 'TODO', contentClass: 'workshop', image: 'TODO', title: 'TODO' },
     ],
-    faqs: [{ question: 'TODO', answer: 'TODO' }],
+    faqs: [
+      {
+        question: 'How long did it take you to write the book?',
+        answer: 'It took nearly a year. It was a labor of love.',
+      },
+      { question: 'TODO', answer: 'TODO' },
+      ...GENERAL_FAQS,
+    ],
   },
 ];
 
-export const BOOK_MAPPING = BOOK_PAGES.reduce(
+export const BOOK_PAGE_MAPPING: Record<string, BookPage> = BOOK_PAGES.reduce(
   (accum, value) => ({ ...accum, [generateBookPageLink(value.book)]: value }),
   {},
 );
