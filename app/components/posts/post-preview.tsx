@@ -2,9 +2,9 @@
 import CoverImage from './cover-image';
 import Link from 'next/link';
 import type Author from '../../interfaces/author';
-import PostPublicationDate from './post-publication-date';
+import PostPublicationDate from '../publication-date';
 import PostTags from './post-tags';
-import TimeToRead from './time-to-read';
+import TimeToRead from '../duration-indicator';
 
 type Props = {
   title: string;
@@ -15,7 +15,7 @@ type Props = {
   author: Author;
   slug: string[];
   tags: string[];
-  duration: number;
+  duration: string;
   coverImageCaption?: string;
 };
 

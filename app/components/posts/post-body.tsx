@@ -13,7 +13,7 @@ const PostBody = ({ content, children }: Props) => {
     const tweet = tweetEmbedPlaceholder.exec(content);
     if (tweet)
       return (
-        <div className="flex justify-center -my-6">
+        <div key={index} className="flex justify-center -my-6">
           <Tweet id={(/\d+/.exec(tweet[1]) ?? '')[0]} />
         </div>
       );

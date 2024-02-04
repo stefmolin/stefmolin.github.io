@@ -1,14 +1,14 @@
-import PostPublicationDate from './post-publication-date';
+import PostPublicationDate from '../publication-date';
 import PostTags from './post-tags';
 import PostTitle from './post-title';
-import TimeToRead from './time-to-read';
+import TimeToRead from '../duration-indicator';
 
 type Props = {
   title: string;
   subtitle?: string;
   date: string;
   tags: string[];
-  duration: number;
+  duration: string;
 };
 
 const PostHeader = ({ title, subtitle, date, tags, duration }: Props) => {

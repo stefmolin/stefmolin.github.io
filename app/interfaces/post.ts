@@ -13,7 +13,7 @@ interface PostType {
   };
   content: string;
   tags: string[];
-  duration: number;
+  duration: string;
   type: string;
   canonical?: string;
   modified?: string;
