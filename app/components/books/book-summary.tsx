@@ -5,6 +5,8 @@ import { EXTERNAL_LINK_PROPS } from '../../lib/constants';
 import BookPublicationDate from './book-publication-date';
 import PageCount from './page-count';
 import BookCover from './book-cover';
+import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 type BookSummaryProps = {
   book: Book;
@@ -45,7 +47,9 @@ const BookSummarySection = ({ book, coverImageAltText, divClassName }: BookSumma
           </a>
         </div>
       </div>
-      <div className="space-y-2 text-justify text-pretty">{book.description}</div>
+      <div className="space-y-2 text-justify text-pretty">
+        <Markdown remarkPlugins={[remarkGfm]}>{book.description}</Markdown>
+      </div>
     </div>
   </div>
 );
