@@ -14,7 +14,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { EXTERNAL_LINK_PROPS } from '../lib/constants';
 import PostPublicationDate from '../components/publication-date';
-import TimeToRead from '../components/duration-indicator';
+import DurationIndicator from '../components/duration-indicator';
 
 const INTERVIEWS: Interview[] = [
   {
@@ -199,9 +199,9 @@ export default function Interviews() {
                   key={title}
                   className="shadow-sm hover:shadow-lg transition-shadow duration-200 px-6 py-4 flex flex-col m-5"
                 >
-                  <a href={link} {...EXTERNAL_LINK_PROPS}>
-                    <div className="flex flex-col justify-evenly space-y-5">
-                      <div className="flex flex-col items-start">
+                  <div className="flex flex-col justify-evenly space-y-5">
+                    <div className="flex flex-col items-start">
+                      <a href={link} {...EXTERNAL_LINK_PROPS}>
                         <h3 className="text-xl hover:underline text-pretty">
                           {title}
                           <FontAwesomeIcon
@@ -211,67 +211,69 @@ export default function Interviews() {
                             className="pl-2"
                           />
                         </h3>
-                        <div className="flex flex-row items-center">
-                          <FontAwesomeIcon
-                            icon={format === 'podcast' ? faPodcast : faNewspaper}
-                            fixedWidth
-                            className="pr-1"
-                          />
-                          <h4 className="text-slate-600">{host}</h4>
-                        </div>
+                      </a>
+                      <div className="flex flex-row items-center">
+                        <FontAwesomeIcon
+                          icon={format === 'podcast' ? faPodcast : faNewspaper}
+                          fixedWidth
+                          className="pr-1"
+                        />
+                        <h4 className="text-slate-600">{host}</h4>
                       </div>
-                      <div>
+                    </div>
+                    <div>
+                      <a href={link} {...EXTERNAL_LINK_PROPS}>
                         <img
                           src={coverImage}
                           alt={title}
                           className="md:float-left md:mr-5 mb-2 mx-auto sm:h-60 object-cover"
                         />
-                        <div className="md:-mt-1">{insertBookLinks(description, date)}</div>
-                        {seeAlso != null ? (
-                          <>
-                            <br />
-                            <p>
-                              See also:
-                              {seeAlso.map(({ title, link }) => {
-                                const linkClassName = 'text-slate-500 pl-1';
-                                if (link.startsWith('/')) {
-                                  return (
-                                    <Link
-                                      key={title}
-                                      href={{
-                                        pathname: link,
-                                      }}
-                                      className={linkClassName}
-                                    >
-                                      {title}
-                                    </Link>
-                                  );
-                                }
+                      </a>
+                      <div className="md:-mt-1">{insertBookLinks(description, date)}</div>
+                      {seeAlso != null ? (
+                        <>
+                          <br />
+                          <p>
+                            See also:
+                            {seeAlso.map(({ title, link }) => {
+                              const linkClassName = 'text-slate-500 pl-1';
+                              if (link.startsWith('/')) {
                                 return (
-                                  <a
+                                  <Link
                                     key={title}
-                                    href={link}
+                                    href={{
+                                      pathname: link,
+                                    }}
                                     className={linkClassName}
-                                    {...EXTERNAL_LINK_PROPS}
                                   >
                                     {title}
-                                  </a>
+                                  </Link>
                                 );
-                              })}
-                            </p>
-                          </>
-                        ) : null}
-                      </div>
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between w-full">
-                        <PostPublicationDate date={date} />
-                        <div className="flex flex-row items-center">
-                          <TimeToRead
-                            duration={`${duration} ${format === 'podcast' ? 'listen' : 'read'}`}
-                          />
-                        </div>
+                              }
+                              return (
+                                <a
+                                  key={title}
+                                  href={link}
+                                  className={linkClassName}
+                                  {...EXTERNAL_LINK_PROPS}
+                                >
+                                  {title}
+                                </a>
+                              );
+                            })}
+                          </p>
+                        </>
+                      ) : null}
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between w-full">
+                      <PostPublicationDate date={date} />
+                      <div className="flex flex-row items-center">
+                        <DurationIndicator
+                          duration={`${duration} ${format === 'podcast' ? 'listen' : 'read'}`}
+                        />
                       </div>
                     </div>
-                  </a>
+                  </div>
                 </div>
               ),
             )}
