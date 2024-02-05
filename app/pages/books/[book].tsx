@@ -26,7 +26,7 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
         <Header />
         <NextSeo
           title={bookTitle}
-          description="A listing of books I've written."
+          description={`${book.subtitle ?? 'A book'} by Stefanie Molin.`}
           openGraph={{
             type: 'book',
             url: usePageURL(),

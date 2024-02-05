@@ -58,7 +58,7 @@ export default function Index() {
                 // TODO: consider providing these?
                 // width: 850,
                 // height: 650,
-                alt: "Books I've written.",
+                alt: 'Books written by Stefanie Molin.',
               },
             ],
           }}
@@ -81,7 +81,10 @@ export default function Index() {
                     }}
                     className="text-slate-800"
                   >
-                    <BookCover book={book} className="h-48 sm:h-64 object-contain" />
+                    <BookCover
+                      book={book}
+                      className="h-48 sm:h-64 object-contain hover:scale-110"
+                    />
                   </Link>
                 </div>
               );
