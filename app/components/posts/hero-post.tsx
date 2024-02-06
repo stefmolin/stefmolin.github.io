@@ -1,10 +1,9 @@
 import Link from 'next/link';
 // import Avatar from "./avatar";
 import CoverImage from './cover-image';
-import PostPublicationDate from '../publication-date';
 import PostTags from './post-tags';
-import TimeToRead from '../duration-indicator';
 import type Author from '../../interfaces/author';
+import DurationIndicator from '../datetime/duration-indicator';
 
 type Props = {
   title: string;
@@ -15,7 +14,7 @@ type Props = {
   author: Author;
   slug: string[];
   tags: string[];
-  duration: number;
+  duration: string;
 };
 
 const HeroPost = ({
@@ -53,7 +52,7 @@ const HeroPost = ({
                 <PostPublicationDate date={date} />
               </div> */}
               <div className="pl-4 float-right">
-                <TimeToRead duration={duration} />
+                <DurationIndicator duration={duration} />
               </div>
             </div>
           </div>

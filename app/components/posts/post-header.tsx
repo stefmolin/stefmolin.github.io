@@ -1,7 +1,7 @@
-import PostPublicationDate from '../publication-date';
+import PostPublicationDate from '../datetime/publication-date';
 import PostTags from './post-tags';
 import PostTitle from './post-title';
-import TimeToRead from '../duration-indicator';
+import TimeToRead from '../datetime/duration-indicator';
 
 type Props = {
   title: string;

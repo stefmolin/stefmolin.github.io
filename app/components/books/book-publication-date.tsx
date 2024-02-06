@@ -1,6 +1,6 @@
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import DateFormatter from '../date-formatter';
+import DateFormatter from '../datetime/date-formatter';
 
 type BookPublicationDateProps = {
   publicationDate: string;

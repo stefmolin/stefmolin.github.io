@@ -10,12 +10,9 @@ type Props = {
 
 const PublicationDate = ({ date, relative, long }: Props) => {
   return (
-    <DateFormatter
-      dateString={date}
-      relative={relative}
-      long={long}
-      children={[<FontAwesomeIcon icon={faCalendar} className="pr-1" key={date} />]}
-    />
+    <DateFormatter dateString={date} relative={relative} long={long}>
+      <FontAwesomeIcon icon={faCalendar} className="pr-1" key={date} />
+    </DateFormatter>
   );
 };
 

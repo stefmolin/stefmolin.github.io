@@ -5,7 +5,7 @@ import Header from '../../components/header';
 import Layout from '../../components/layout';
 import { usePageURL } from '../../lib/hooks';
 import { getImageLink } from '../../lib/images';
-import DurationIndicator from '../../components/duration-indicator';
+import DurationIndicator from '../../components/datetime/duration-indicator';
 import WORKSHOP_PAGES from '../../data/workshops';
 import Workshop from '../../interfaces/workshop';
 

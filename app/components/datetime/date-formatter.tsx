@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import { DateTime } from 'luxon';
 
 type Props = {
@@ -6,7 +5,7 @@ type Props = {
   relative?: boolean;
   format?: string | typeof DateTime.DATETIME_FULL;
   long?: boolean;
-  children?: ReactNode[];
+  children?: React.ReactNode | React.ReactNode[];
 };
 
 const DateFormatter = ({ dateString, relative, format, long, children }: Props) => {

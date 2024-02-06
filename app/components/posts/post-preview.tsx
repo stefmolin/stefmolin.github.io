@@ -2,9 +2,9 @@
 import CoverImage from './cover-image';
 import Link from 'next/link';
 import type Author from '../../interfaces/author';
-import PostPublicationDate from '../publication-date';
+import PostPublicationDate from '../datetime/publication-date';
 import PostTags from './post-tags';
-import TimeToRead from '../duration-indicator';
+import TimeToRead from '../datetime/duration-indicator';
 
 type Props = {
   title: string;
