@@ -1,4 +1,4 @@
-import markdownStyles from '../markdown-styles.module.css';
+import markdownStyles from './markdown-styles.module.css';
 import { ReactNode } from 'react';
 import { Tweet } from 'react-tweet';
 
