@@ -1,6 +1,6 @@
 export default interface RelatedContentLink {
   link: string;
-  contentClass: 'book' | 'interview' | 'page' | 'post' | 'workshop'; // TODO: might not be necessary
+  contentClass: 'articles' | 'book' | 'page' | 'post' | 'workshop';
   image: string;
   title: string;
 }
