@@ -61,8 +61,10 @@ export const BOOK_PAGES: BookPage[] = [
     relatedContent: [
       CONTENT_LINKS.PANDAS_WORKSHOP,
       CONTENT_LINKS.DATA_VIZ_WORKSHOP,
+      CONTENT_LINKS.EVENTS,
       CONTENT_LINKS.PIVOT_AND_PLOT_WITH_PANDAS_ARTICLE,
-      CONTENT_LINKS.TODO, // TODO: replace this
+      CONTENT_LINKS.INTERVIEWS,
+      CONTENT_LINKS.DATA_SCIENCE_ARTICLES,
     ],
     faqs: [
       {
@@ -144,6 +146,29 @@ export const BOOK_PAGES: BookPage[] = [
         source: 'https://x.com/johnniewalker/status/1658259975196622848?s=20',
       },
       {
+        author: 'MLEngineer (via Amazon)',
+        text: dedent`After reading this book, you will get far more than expected. The book is very thorough,
+        going into novel details in regards to Financial Analysis, Data Analysis, and Data Wrangling.
+        I would recommend it to both beginners and experts.
+
+        Additionally, the book has great insight into Python Software Engineering & Product Prototyping
+        which is the underlying base of quick analysis, data processing, and engineering. Awesome book.`,
+        source:
+          'https://www.amazon.com/gp/customer-reviews/R2G6VD8MUEYCYF/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=1800563450',
+      },
+      {
+        author: 'Ali (via Amazon)',
+        text: `This is a good book for aspiring data scientists. My initial impression from the book
+        title “Data Analysis with Pandas” that this was going to a book that was all about the ins
+        and outs of Pandas. I was wrong, as the book covered a broad range of concepts (software
+        engineering, statistics, and machine learning). The chapters were well structured and start
+        with concepts, followed by the application of techniques with code examples, exercises, and
+        a list of references for further reading. It is the book I wish I had read earlier on my
+        learning, and I highly recommend it.`,
+        source:
+          'https://www.amazon.com/gp/customer-reviews/R1BA4D3NENJQJE/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=1800563450',
+      },
+      {
         author: 'Florian Paolo (via Amazon)',
         text: `Ottimo libro. Livello intermedio, teoria e ottimi esempi, il capitolo sulla classe per
         l'analisi dati di borsa è veramente ben fatto. Uso proficuo del chaining e delle classi.
@@ -207,10 +232,12 @@ export const BOOK_PAGES: BookPage[] = [
       tags: ['pandas', 'data analysis', 'data science', 'Python'],
     },
     relatedContent: [
+      { ...CONTENT_LINKS.PANDAS_BOOK, title: '2nd edition' },
       CONTENT_LINKS.PANDAS_WORKSHOP,
       CONTENT_LINKS.DATA_VIZ_WORKSHOP,
+      CONTENT_LINKS.EVENTS,
       CONTENT_LINKS.PIVOT_AND_PLOT_WITH_PANDAS_ARTICLE,
-      CONTENT_LINKS.TODO, // TODO: replace this
+      CONTENT_LINKS.INTERVIEWS,
     ],
     faqs: [
       {
@@ -227,6 +254,28 @@ export const BOOK_PAGES: BookPage[] = [
         seen, with a section on git and another on the importance of setting up a separate environment
         for each project. I recommend it for any of your future students.`,
         source: 'https://x.com/SaenzScott/status/1175031439253024768?s=20',
+      },
+      {
+        author: 'Adam (via Amazon)',
+        text: `Great foundational book. Amazing read. Very thorough, covering a broad range of topics
+        in the data science space. I would highly recommend starting with this book for anyone interested
+        in building a foundation in Data Science.`,
+        source:
+          'https://www.amazon.com/gp/customer-reviews/R1DMWTMYW7KFUD/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&ASIN=1789615321',
+      },
+      {
+        author: 'Nikolaos Antimisiaris (via Amazon)',
+        text: `Better approach to data science learning. Very good resource. Does a great job in
+        providing the fundamentals and guiding you to learn. After 2 other book purchases (and returns)
+        on Python / Data Science topics that disappointed me, this one is spot on.`,
+        source:
+          'https://www.amazon.com/gp/customer-reviews/R14X0YO4BEP5FY/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&ASIN=1789615321',
+      },
+      {
+        author: 'Hugo Paulo (via Amazon)',
+        text: `Muito Bom. É um livro com muito conteúdo, tanto técnico quanto prático. Tem uma pequena
+        introdução sobre Análise de Dados e Revisão de Tópicos de Estatística. E, em seguida, inicia
+        um amplo e detalhado curso de Pandas. Tem teoria, exercícios e exemplos de aplicações práticas.`,
       },
     ],
   },
