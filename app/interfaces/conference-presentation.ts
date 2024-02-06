@@ -1,4 +1,4 @@
-import type { AnnotatedLocation } from './location';
+import type { AnnotatedLocation } from './map-location';
 
 type ConferencePresentation = AnnotatedLocation<string[]>;
 export default ConferencePresentation;

@@ -1,12 +1,12 @@
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from 'react-simple-maps';
 import { MAP_PIN } from '../../data/constants';
-import type Location from '../../interfaces/location';
+import type MapLocation from '../../interfaces/map-location';
 
 // TODO: make the zoomable part optional bc it is annoying that when you zoom in the most possible and
 // it scrolls the page down (for events pages); same thing with zooming out and going up
 
 export interface PushPinMapProps {
-  locations: Location[];
+  locations: MapLocation[];
   highlightedCountries: string[];
   countryHighlightColor?: string;
   countryFadeColor?: string;
@@ -20,7 +20,7 @@ export interface PushPinMapProps {
   projectionCenter?: [number, number];
   projectionScale?: number;
   geography?: string;
-  onPinClick?: (Location) => void;
+  onPinClick?: (location: MapLocation) => void;
   className?: string;
 }
 

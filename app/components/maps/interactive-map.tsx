@@ -1,15 +1,13 @@
 import { useState } from 'react';
-import Location, { AnnotatedLocation } from '../../interfaces/location';
+import classNames from 'classnames';
+import type MapLocation from '../../interfaces/map-location';
 import PushPinInfo from './push-pin-info';
 import PushPinMap, { type PushPinMapProps } from './push-pin-map';
-import classNames from 'classnames';
-
-type AnnotatedPin = AnnotatedLocation<any>;
 
 interface InteractiveMapProps {
-  locations: Location[];
+  locations: MapLocation[];
   highlightedCountries: PushPinMapProps['highlightedCountries'];
-  getDisplayInfo: (AnnotatedLocation: AnnotatedPin) => React.ReactNode;
+  getDisplayInfo: (location: MapLocation) => React.ReactNode;
   pushPinMapClassName?: string;
   pushPinInfoClassName?: string;
 }
@@ -21,7 +19,7 @@ export default function InteractiveMap({
   pushPinMapClassName,
   pushPinInfoClassName,
 }: InteractiveMapProps) {
-  const [selectedMapPin, setSelectedMapPin] = useState<AnnotatedPin>();
+  const [selectedMapPin, setSelectedMapPin] = useState<MapLocation>();
   return (
     <div
       className={classNames(
