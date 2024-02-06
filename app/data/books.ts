@@ -2,6 +2,7 @@ import dedent from 'dedent';
 import { generateBookPageLink } from '../lib/books';
 import FAQ from '../interfaces/faq';
 import BookPage from '../interfaces/book-page';
+import CONTENT_LINKS from './content-links';
 
 export const GENERAL_FAQS: FAQ[] = [
   { question: 'What was the hardest part about writing a book?', answer: 'TODO' },
@@ -58,37 +59,10 @@ export const BOOK_PAGES: BookPage[] = [
       ],
     },
     relatedContent: [
-      {
-        link: '/workshops/pandas-workshop',
-        contentClass: 'workshop',
-        image:
-          'https://hips.hearstapps.com/elleuk.cdnds.net/16/36/3200x1599/gallery-1473083573-pandas.jpg',
-        title: 'Pandas Workshop',
-      },
-      {
-        link: '/workshops/python-data-viz-workshop',
-        contentClass: 'workshop',
-        image: '/assets/workshops/python-data-viz-workshop/cover-image.avif', // TODO: change to just the image name and then use the link to find it (i.e. prepend "/assets")
-        title: 'Python Data Visualization Workshop',
-      },
-      {
-        link: '/articles/how-to-pivot-and-plot-data-with-pandas',
-        contentClass: 'post',
-        image: '/assets/articles/how-to-pivot-and-plot-data-with-pandas/cover-image.jpg',
-        title: 'TBD',
-      },
-      {
-        link: 'TODO',
-        contentClass: 'interview',
-        image: '/assets/articles/introducing-data-morph/panda-to-star.gif',
-        title: 'TBD interview',
-      },
-      // {
-      //   link: 'TODO',
-      //   contentClass: 'interview',
-      //   image: '/assets/articles/introducing-data-morph/panda-to-star.gif',
-      //   title: 'Events',
-      // },
+      CONTENT_LINKS.PANDAS_WORKSHOP,
+      CONTENT_LINKS.DATA_VIZ_WORKSHOP,
+      CONTENT_LINKS.PIVOT_AND_PLOT_WITH_PANDAS_ARTICLE,
+      CONTENT_LINKS.TODO, // TODO: replace this
     ],
     faqs: [
       {
@@ -233,8 +207,10 @@ export const BOOK_PAGES: BookPage[] = [
       tags: ['pandas', 'data analysis', 'data science', 'Python'],
     },
     relatedContent: [
-      { link: 'TODO', contentClass: 'post', image: 'TODO', title: 'TODO' },
-      { link: 'TODO', contentClass: 'workshop', image: 'TODO', title: 'TODO' },
+      CONTENT_LINKS.PANDAS_WORKSHOP,
+      CONTENT_LINKS.DATA_VIZ_WORKSHOP,
+      CONTENT_LINKS.PIVOT_AND_PLOT_WITH_PANDAS_ARTICLE,
+      CONTENT_LINKS.TODO, // TODO: replace this
     ],
     faqs: [
       {

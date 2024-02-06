@@ -11,33 +11,13 @@ import RelatedContentLink from '../../interfaces/related-content';
 import BookOutline from '../../components/books/book-outline';
 import { getImageLink } from '../../lib/images';
 import BookCover from '../../components/books/book-cover';
+import CONTENT_LINKS from '../../data/content-links';
 
-// TODO: placeholder data for now
 const relatedContent: RelatedContentLink[] = [
-  {
-    link: '/interviews',
-    contentClass: 'page',
-    image: '/assets/articles/how-to-pivot-and-plot-data-with-pandas/cover-image.jpg',
-    title: 'Interviews',
-  },
-  {
-    link: '/workshops',
-    contentClass: 'page',
-    image: '/assets/articles/how-to-pivot-and-plot-data-with-pandas/cover-image.jpg',
-    title: 'Workshops',
-  },
-  {
-    link: '/articles',
-    contentClass: 'page',
-    image: '/assets/articles/how-to-pivot-and-plot-data-with-pandas/cover-image.jpg',
-    title: 'Articles',
-  },
-  {
-    link: '/events',
-    contentClass: 'page',
-    image: '/assets/articles/how-to-pivot-and-plot-data-with-pandas/cover-image.jpg',
-    title: 'Events',
-  },
+  CONTENT_LINKS.INTERVIEWS,
+  CONTENT_LINKS.WORKSHOPS,
+  CONTENT_LINKS.ARTICLES,
+  CONTENT_LINKS.EVENTS,
 ];
 
 export default function Index() {

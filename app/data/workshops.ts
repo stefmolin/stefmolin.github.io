@@ -1,4 +1,5 @@
 import { type WorkshopPage } from '../interfaces/workshop';
+import CONTENT_LINKS from './content-links';
 import LOCATIONS from './locations';
 
 const WORKSHOP_PAGES: WorkshopPage[] = [
@@ -61,41 +62,45 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       }, // ODSC West 2021
     ],
     relatedContent: [
-      { link: 'TODO1', contentClass: 'post', image: 'TODO', title: 'TODO' },
-      { link: 'TODO2', contentClass: 'workshop', image: 'TODO', title: 'TODO' },
+      CONTENT_LINKS.DATA_VIZ_WORKSHOP,
+      CONTENT_LINKS.DATA_SCIENCE_ARTICLES,
+      CONTENT_LINKS.PIVOT_AND_PLOT_WITH_PANDAS_ARTICLE,
+      CONTENT_LINKS.PANDAS_BOOK,
+      CONTENT_LINKS.EVENTS,
+      CONTENT_LINKS.INTERVIEWS,
     ],
     pastSessions: [
       {
         ...LOCATIONS.LONDON,
-        conferences: ['ODSC Europe 2021', 'ODSC Europe 2023'],
+        annotation: ['ODSC Europe 2021', 'ODSC Europe 2023'],
       },
       {
         ...LOCATIONS.TORONTO,
-        conferences: ['Toronto Machine Learning Summit (TMLS) 2021'],
+        annotation: ['Toronto Machine Learning Summit (TMLS) 2021'],
       },
       {
         ...LOCATIONS.SLC,
-        conferences: ['PyCon US 2022'],
+        annotation: ['PyCon US 2022'],
       },
       {
         ...LOCATIONS.PRAGUE,
-        conferences: ['PyCon CZ 2023'],
+        annotation: ['PyCon CZ 2023'],
       },
       {
         ...LOCATIONS.CARDIFF,
-        conferences: ['PyCon UK 2022', 'PyCon UK 2023'],
+        annotation: ['PyCon UK 2022', 'PyCon UK 2023'],
       },
       {
         ...LOCATIONS.PORTO,
-        conferences: ['PyCon PT 2022'],
+        annotation: ['PyCon PT 2022'],
       },
       {
         ...LOCATIONS.BASEL,
-        conferences: ['EuroSciPy 2023'],
+        annotation: ['EuroSciPy 2023'],
       },
       {
         ...LOCATIONS.DUBAI,
-        conferences: ['PyCon MEA 2023'],
+        annotation: ['PyCon MEA 2023'],
       },
     ],
   },
@@ -171,41 +176,45 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       },
     ],
     relatedContent: [
-      { link: 'TODO1', contentClass: 'post', image: 'TODO', title: 'TODO' },
-      { link: 'TODO2', contentClass: 'workshop', image: 'TODO', title: 'TODO' },
+      CONTENT_LINKS.PANDAS_WORKSHOP,
+      CONTENT_LINKS.PANDAS_BOOK,
+      CONTENT_LINKS.PIVOT_AND_PLOT_WITH_PANDAS_ARTICLE,
+      CONTENT_LINKS.DATA_VIZ_ARTICLES,
+      CONTENT_LINKS.EVENTS,
+      CONTENT_LINKS.INTERVIEWS,
     ],
     pastSessions: [
       {
         ...LOCATIONS.SF,
-        conferences: ['ODSC West 2021', 'ODSC West 2022'],
+        annotation: ['ODSC West 2021', 'ODSC West 2022'],
       },
       {
         ...LOCATIONS.TORONTO,
-        conferences: ['Toronto Machine Learning Summit (TMLS) 2022'],
+        annotation: ['Toronto Machine Learning Summit (TMLS) 2022'],
       },
       {
         ...LOCATIONS.BOSTON,
-        conferences: ['ODSC East 2022', 'ODSC East 2023'],
+        annotation: ['ODSC East 2022', 'ODSC East 2023'],
       },
       {
         ...LOCATIONS.FLORENCE,
-        conferences: ['PyCon IT 2022', 'PyCon IT 2023'],
+        annotation: ['PyCon IT 2022', 'PyCon IT 2023'],
       },
       {
         ...LOCATIONS.LONDON,
-        conferences: ['ODSC Europe 2022'],
+        annotation: ['ODSC Europe 2022'],
       },
       {
         ...LOCATIONS.DUBLIN,
-        conferences: ['EuroPython 2022'],
+        annotation: ['EuroPython 2022'],
       },
       {
         ...LOCATIONS.SLC,
-        conferences: ['PyCon US 2023'],
+        annotation: ['PyCon US 2023'],
       },
       {
         ...LOCATIONS.COIMBRA,
-        conferences: ['PyCon PT 2023'],
+        annotation: ['PyCon PT 2023'],
       },
     ],
   },
