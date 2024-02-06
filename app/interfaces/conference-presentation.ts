@@ -1,8 +1,4 @@
-import type Location from './location';
+import type { AnnotatedLocation } from './location';
 
-export default interface ConferencePresentation extends Location {
-  coordinates: number[];
-  city: string;
-  country: string;
-  conferences: string[];
-}
+type ConferencePresentation = AnnotatedLocation<string[]>;
+export default ConferencePresentation;
