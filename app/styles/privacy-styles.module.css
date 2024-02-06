@@ -3,20 +3,27 @@
   @apply flex-col;
   @apply space-y-3;
   @apply -mt-10;
-  @apply mb-10;
+  @apply mb-20;
+  @apply max-w-4xl;
+  @apply mx-auto;
 }
 
 .privacy-policy h1 {
   @apply text-4xl;
+  @apply pb-2;
 }
 .privacy-policy h2 {
   @apply text-2xl;
+  @apply pt-4;
+  @apply pb-2;
 }
 .privacy-policy h3 {
   @apply text-xl;
+  @apply pb-2;
 }
 .privacy-policy h4 {
   @apply text-lg;
+  @apply pb-2;
 }
 
 .privacy-policy a {
