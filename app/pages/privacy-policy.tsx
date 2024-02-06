@@ -1,7 +1,7 @@
 import Container from '../components/container';
 import Header from '../components/header';
 import Layout from '../components/layout';
-import privacyStyles from '../components/privacy-styles.module.css';
+import privacyStyles from '../styles/privacy-styles.module.css';
 
 const linkProps = {
   rel: 'nofollow noopener noreferrer',
