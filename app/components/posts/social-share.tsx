@@ -14,7 +14,7 @@ import {
   WhatsappIcon,
   WhatsappShareButton,
 } from 'react-share';
-import { HOME_URL, TWITTER_HANDLE } from '../../lib/constants';
+import { HOME_URL, TWITTER_HANDLE } from '../../data/constants';
 
 type Props = {
   iconSize?: number;

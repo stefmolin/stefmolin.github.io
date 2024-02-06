@@ -5,7 +5,7 @@ import Layout from '../../components/layout';
 import { BOOK_PAGE_MAPPING } from '../../data/books';
 import { generateBookCoverAltText, generateBookPageTitle } from '../../lib/books';
 import { usePageURL } from '../../lib/hooks';
-import { HOME_URL } from '../../lib/constants';
+import { HOME_URL } from '../../data/constants';
 import SectionSeparator from '../../components/section-separator';
 import BookTranslationsSection from '../../components/books/translations';
 import ReviewsSection from '../../components/reviews';
@@ -26,7 +26,7 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
         <Header />
         <NextSeo
           title={bookTitle}
-          description={`${book.subtitle ?? 'A book'} by Stefanie Molin.`}
+          description="A book by Stefanie Molin."
           openGraph={{
             type: 'book',
             url: usePageURL(),

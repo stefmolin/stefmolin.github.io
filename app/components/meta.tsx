@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import Head from 'next/head';
-import { HOME_OG_IMAGE_URL, HOME_URL, TWITTER_HANDLE } from '../lib/constants';
+import { HOME_OG_IMAGE_URL, HOME_URL, TWITTER_HANDLE } from '../data/constants';
 
 const getFeedLinks = () => {
   const links: ReactElement[] = [];

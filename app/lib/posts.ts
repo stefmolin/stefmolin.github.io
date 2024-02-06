@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import readingDuration from 'reading-duration';
 import { Feed as RssFeed } from 'feed';
 import { DateTime } from 'luxon';
-import { COPYRIGHT_STATEMENT, HOME_OG_IMAGE_URL, HOME_URL } from './constants';
+import { COPYRIGHT_STATEMENT, HOME_OG_IMAGE_URL, HOME_URL } from '../data/constants';
 
 type Items = {
   [key: string]: any;

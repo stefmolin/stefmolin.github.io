@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type Book from '../../interfaces/book';
 import { faAmazon, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { EXTERNAL_LINK_PROPS } from '../../lib/constants';
+import { EXTERNAL_LINK_PROPS } from '../../data/constants';
 import BookPublicationDate from './book-publication-date';
 import PageCount from './page-count';
 import BookCover from './book-cover';

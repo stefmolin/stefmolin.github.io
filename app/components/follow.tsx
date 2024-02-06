@@ -6,7 +6,7 @@ import {
   faLinkedin,
   faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import { EXTERNAL_LINK_PROPS, NEWSLETTER_URL, TWITTER_HANDLE } from '../lib/constants';
+import { EXTERNAL_LINK_PROPS, NEWSLETTER_URL, TWITTER_HANDLE } from '../data/constants';
 import { SizeProp } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
 
