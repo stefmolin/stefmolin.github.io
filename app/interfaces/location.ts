@@ -3,3 +3,7 @@ export default interface Location {
   city: string;
   country: string;
 }
+
+export interface AnnotatedLocation<Annotation> extends Location {
+  annotation: Annotation;
+}
