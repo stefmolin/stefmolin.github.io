@@ -12,9 +12,9 @@ import {
   faPodcast,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { EXTERNAL_LINK_PROPS } from '../lib/constants';
-import PostPublicationDate from '../components/publication-date';
-import DurationIndicator from '../components/duration-indicator';
+import { EXTERNAL_LINK_PROPS } from '../data/constants';
+import PublicationDate from '../components/datetime/publication-date';
+import DurationIndicator from '../components/datetime/duration-indicator';
 
 const INTERVIEWS: Interview[] = [
   {
@@ -266,7 +266,7 @@ export default function Interviews() {
                       ) : null}
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between w-full">
-                      <PostPublicationDate date={date} />
+                      <PublicationDate date={date} />
                       <div className="flex flex-row items-center">
                         <DurationIndicator
                           duration={`${duration} ${format === 'podcast' ? 'listen' : 'read'}`}
