@@ -29,6 +29,7 @@
     "react-dom": "^18.2.0",
     "react-markdown": "^9.0.1",
     "react-share": "^5.0.3",
+    "react-simple-maps": "^3.0.0",
     "react-tweet": "^3.2.0",
     "reading-duration": "^1.1.2",
     "remark": "^14.0.2",
