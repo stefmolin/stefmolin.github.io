@@ -81,8 +81,8 @@ export default function PushPinMap({
               ))
             }
           </Geographies>
-          {locations.map((location) => (
-            <Marker key={location} coordinates={location.coordinates}>
+          {locations.map((location, index) => (
+            <Marker key={index} coordinates={location.coordinates}>
               <text
                 textAnchor="middle"
                 style={{ cursor: 'pointer', fontSize: pinSize }}

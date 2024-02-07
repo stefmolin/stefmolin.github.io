@@ -1,11 +1,11 @@
 import { type WorkshopPage } from '../interfaces/workshop';
 import CONTENT_LINKS from './content-links';
-import LOCATIONS from './locations';
+import { PRESENTATIONS } from './events';
 
 const WORKSHOP_PAGES: WorkshopPage[] = [
   {
     workshop: {
-      title: 'Introduction to Data Analysis Using Pandas',
+      title: PRESENTATIONS.PANDAS_WORKSHOP.title,
       subtitle:
         'An introductory training designed to provide initial hands-on experience with the pandas library.',
       repo: 'pandas-workshop',
@@ -69,44 +69,10 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       CONTENT_LINKS.EVENTS,
       CONTENT_LINKS.INTERVIEWS,
     ],
-    pastSessions: [
-      {
-        ...LOCATIONS.LONDON,
-        annotation: ['ODSC Europe 2021', 'ODSC Europe 2023'],
-      },
-      {
-        ...LOCATIONS.TORONTO,
-        annotation: ['Toronto Machine Learning Summit (TMLS) 2021'],
-      },
-      {
-        ...LOCATIONS.SLC,
-        annotation: ['PyCon US 2022'],
-      },
-      {
-        ...LOCATIONS.PRAGUE,
-        annotation: ['PyCon CZ 2023'],
-      },
-      {
-        ...LOCATIONS.CARDIFF,
-        annotation: ['PyCon UK 2022', 'PyCon UK 2023'],
-      },
-      {
-        ...LOCATIONS.PORTO,
-        annotation: ['PyCon PT 2022'],
-      },
-      {
-        ...LOCATIONS.BASEL,
-        annotation: ['EuroSciPy 2023'],
-      },
-      {
-        ...LOCATIONS.DUBAI,
-        annotation: ['PyCon MEA 2023'],
-      },
-    ],
   },
   {
     workshop: {
-      title: 'Beyond the Basics: Data Visualization in Python',
+      title: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP.title,
       subtitle:
         'A workshop on creating static, animated, and interactive data visualizations in Python.',
       repo: 'python-data-viz-workshop',
@@ -165,7 +131,7 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
         source: 'https://x.com/mobileLarson/status/1537052051259146241?s=20',
       }, // ODSC Europe 2022
       {
-        text: `huge thanks to @StefanieMolin for the great workshop on #dataviz w/ #pandas, #matplotlib,
+        text: `[H]uge thanks to @StefanieMolin for the great workshop on #dataviz w/ #pandas, #matplotlib,
         #pyplot and #holoviz and for the very kind gift 😍 to better code!`,
         author: 'Sho (@shoyip)',
         source: 'https://x.com/shoyip/status/1534060759516385281?s=20',
@@ -183,48 +149,9 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       CONTENT_LINKS.EVENTS,
       CONTENT_LINKS.INTERVIEWS,
     ],
-    pastSessions: [
-      {
-        ...LOCATIONS.SF,
-        annotation: ['ODSC West 2021', 'ODSC West 2022'],
-      },
-      {
-        ...LOCATIONS.TORONTO,
-        annotation: ['Toronto Machine Learning Summit (TMLS) 2022'],
-      },
-      {
-        ...LOCATIONS.BOSTON,
-        annotation: ['ODSC East 2022', 'ODSC East 2023'],
-      },
-      {
-        ...LOCATIONS.FLORENCE,
-        annotation: ['PyCon IT 2022', 'PyCon IT 2023'],
-      },
-      {
-        ...LOCATIONS.LONDON,
-        annotation: ['ODSC Europe 2022'],
-      },
-      {
-        ...LOCATIONS.DUBLIN,
-        annotation: ['EuroPython 2022'],
-      },
-      {
-        ...LOCATIONS.SLC,
-        annotation: ['PyCon US 2023'],
-      },
-      {
-        ...LOCATIONS.COIMBRA,
-        annotation: ['PyCon PT 2023'],
-      },
-    ],
   },
 ];
 export default WORKSHOP_PAGES;
-
-export const WORKSHOP_COUNTRIES = WORKSHOP_PAGES.reduce(
-  (accum, page) => [...accum, ...page.pastSessions.map((session) => session.country)],
-  [],
-);
 
 export const WORKSHOP_PAGE_MAPPING: Record<string, WorkshopPage> = WORKSHOP_PAGES.reduce(
   (accum, page) => ({ ...accum, [page.workshop.repo]: page }),

@@ -1,4 +1,6 @@
-const LOCATIONS = {
+import type MapLocation from '../interfaces/map-location';
+
+const LOCATIONS: Record<string, MapLocation> = {
   BOSTON: {
     coordinates: [-71.08365893164562, 42.34821109879717],
     city: 'Boston',

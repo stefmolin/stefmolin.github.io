@@ -1,7 +1,7 @@
 import dedent from 'dedent';
 import { generateBookPageLink } from '../lib/books';
-import FAQ from '../interfaces/faq';
-import BookPage from '../interfaces/book-page';
+import type FAQ from '../interfaces/faq';
+import type BookPage from '../interfaces/book-page';
 import CONTENT_LINKS from './content-links';
 
 export const GENERAL_FAQS: FAQ[] = [

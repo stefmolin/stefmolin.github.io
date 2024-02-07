@@ -7,7 +7,7 @@ import { usePageURL } from '../../lib/hooks';
 import { getImageLink } from '../../lib/images';
 import DurationIndicator from '../../components/datetime/duration-indicator';
 import WORKSHOP_PAGES from '../../data/workshops';
-import Workshop from '../../interfaces/workshop';
+import type Workshop from '../../interfaces/workshop';
 
 // TODO: decide on the featured topic/technology at the bottom left of the card
 // TODO: decide whether to put a combined version of the map at the bottom (could maybe highlight the workshops when clicking on a pin for a spot they were presented at)

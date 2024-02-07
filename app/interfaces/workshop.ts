@@ -1,5 +1,4 @@
-import ConferencePresentation from './conference-presentation';
-import RelatedContentLink from './related-content';
+import type RelatedContentLink from './related-content';
 import type Review from './review';
 
 export default interface Workshop {
@@ -18,5 +17,4 @@ export interface WorkshopPage {
   workshop: Workshop;
   reviews?: Review[];
   relatedContent: RelatedContentLink[];
-  pastSessions: ConferencePresentation[];
 }

@@ -2,22 +2,22 @@ import { FLAGS } from '../../data/constants';
 import type MapLocation from '../../interfaces/map-location';
 
 interface PushPinInfoProps {
-  annotation: MapLocation | null | undefined;
+  selectedMapPin: MapLocation | null | undefined;
   className?: string;
   children?: React.ReactNode;
 }
 
-export default function PushPinInfo({ annotation, className, children }: PushPinInfoProps) {
+export default function PushPinInfo({ selectedMapPin, className, children }: PushPinInfoProps) {
   return (
     <div className={className}>
-      {annotation != null ? (
+      {selectedMapPin != null ? (
         <>
           <p className="text-bold text-center text-4xl md:text-5xl -mb-2">
-            {FLAGS[annotation.country]}
+            {FLAGS[selectedMapPin.country]}
           </p>
           <p className="text-bold text-center text-xl md:text-2xl">
-            {annotation.city},{' '}
-            {annotation.country === 'United States of America' ? 'USA' : annotation.country}
+            {selectedMapPin.city},{' '}
+            {selectedMapPin.country === 'United States of America' ? 'USA' : selectedMapPin.country}
           </p>
           {children}
         </>

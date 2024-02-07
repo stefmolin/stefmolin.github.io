@@ -34,7 +34,7 @@ export default function InteractiveMap({
         onPinClick={setSelectedMapPin}
       />
       <PushPinInfo
-        annotation={selectedMapPin}
+        selectedMapPin={selectedMapPin}
         className={classNames('flex flex-col items-center', pushPinInfoClassName)}
       >
         {selectedMapPin != null ? getDisplayInfo(selectedMapPin) : null}

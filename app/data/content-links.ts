@@ -1,4 +1,4 @@
-import RelatedContentLink from '../interfaces/related-content';
+import type RelatedContentLink from '../interfaces/related-content';
 
 const CONTENT_LINKS: Record<string, RelatedContentLink> = {
   PANDAS_WORKSHOP: {
