@@ -1,4 +1,4 @@
-export interface Interview {
+interface Interview {
   title: string;
   link: string;
   coverImage: string;
@@ -15,3 +15,4 @@ export interface Interview {
     link: string;
   }[];
 }
+export default Interview;

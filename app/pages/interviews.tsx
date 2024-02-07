@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
-import Container from '../components/container';
-import Header from '../components/header';
-import Layout from '../components/layout';
-import { usePageURL } from '../lib/hooks';
-import { getImageLink } from '../lib/images';
-import { Interview } from '../lib/interview';
 import {
   faArrowUpRightFromSquare,
   faNewspaper,
   faPodcast,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Container from '../components/container';
+import Header from '../components/header';
+import Layout from '../components/layout';
+import { usePageURL } from '../lib/hooks';
+import { getImageLink } from '../lib/images';
+import type Interview from '../interfaces/interview';
 import { EXTERNAL_LINK_PROPS } from '../data/constants';
 import PublicationDate from '../components/datetime/publication-date';
 import DurationIndicator from '../components/datetime/duration-indicator';
