@@ -14,7 +14,7 @@ import Avatar from './avatar';
 import SubscribeToNewsletterForm from './subscribe-to-newsletter';
 import FollowButtons from './follow';
 import { EXTERNAL_LINK_PROPS } from '../data/constants';
-import { LinkWithIcon } from '../interfaces/link';
+import { type LinkWithIcon } from '../interfaces/link';
 
 const SitemapLinks = ({ className }: { className?: string }) => {
   // Internal links only

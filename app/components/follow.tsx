@@ -1,5 +1,7 @@
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { type SizeProp } from '@fortawesome/fontawesome-svg-core';
+import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
 import {
   IconDefinition,
   faGithub,
@@ -7,8 +9,6 @@ import {
   faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { EXTERNAL_LINK_PROPS, NEWSLETTER_URL, TWITTER_HANDLE } from '../data/constants';
-import { SizeProp } from '@fortawesome/fontawesome-svg-core';
-import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
 
 const FOLLOW_LINKS: { icon: IconDefinition; url: string }[] = [
   {

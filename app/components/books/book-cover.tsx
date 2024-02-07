@@ -1,4 +1,5 @@
-import Book, { TranslatedBook } from '../../interfaces/book';
+import type Book from '../../interfaces/book';
+import { type TranslatedBook } from '../../interfaces/book';
 import { generateBookCoverAltText, generateBookPageTitle } from '../../lib/books';
 
 type BookCoverProps = {

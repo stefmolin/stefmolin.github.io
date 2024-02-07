@@ -1,5 +1,5 @@
 import Feed from '../components/feeds/feed';
-import FeedType from '../interfaces/feed';
+import type FeedType from '../interfaces/feed';
 import { getFeed } from '../lib/posts';
 
 const feeds = {

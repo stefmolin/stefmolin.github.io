@@ -1,7 +1,7 @@
 import { faChevronRight, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Collapsible from 'react-collapsible';
-import FAQ from '../interfaces/faq';
+import type FAQ from '../interfaces/faq';
 
 type FAQSectionProps = {
   faqs: FAQ[];

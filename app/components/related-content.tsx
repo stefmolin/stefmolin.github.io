@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import RelatedContentLink from '../interfaces/related-content';
+import type RelatedContentLink from '../interfaces/related-content';
 
 type RelatedContentSectionProps = {
   relatedContent: RelatedContentLink[];

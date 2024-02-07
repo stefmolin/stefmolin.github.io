@@ -1,4 +1,5 @@
 /* adapted from https://pragmaticpineapple.com/add-newsletter-subscription-form-to-react-website/ */
+import { useState } from 'react';
 import {
   faEnvelope,
   faHeart,
@@ -6,7 +7,6 @@ import {
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
 
 const SubscribeToNewsletterForm = () => {
   const [status, setStatus] = useState<string | null>(null);

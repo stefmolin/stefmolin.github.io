@@ -7,7 +7,7 @@ import { generateBookPageLink } from '../../lib/books';
 import { usePageURL } from '../../lib/hooks';
 import SectionSeparator from '../../components/section-separator';
 import { BOOK_PAGES, GENERAL_FAQS } from '../../data/books';
-import RelatedContentLink from '../../interfaces/related-content';
+import type RelatedContentLink from '../../interfaces/related-content';
 import BookOutline from '../../components/books/book-outline';
 import { getImageLink } from '../../lib/images';
 import BookCover from '../../components/books/book-cover';

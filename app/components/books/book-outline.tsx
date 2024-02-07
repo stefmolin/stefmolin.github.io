@@ -1,8 +1,8 @@
 import FAQSection from '../faq';
-import FAQ from '../../interfaces/faq';
+import type FAQ from '../../interfaces/faq';
 import SectionSeparator from '../section-separator';
 import RelatedContentSection from '../related-content';
-import RelatedContentLink from '../../interfaces/related-content';
+import type RelatedContentLink from '../../interfaces/related-content';
 
 type BookOutlineProps = {
   pageTitle: string;

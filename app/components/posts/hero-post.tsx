@@ -1,5 +1,4 @@
 import Link from 'next/link';
-// import Avatar from "./avatar";
 import CoverImage from './cover-image';
 import PostTags from './post-tags';
 import type Author from '../../interfaces/author';
@@ -48,9 +47,6 @@ const HeroPost = ({
           </h3>
           <div className="mb-4 md:mb-0 text-lg">
             <div className="flex flex-row justify-between items-center">
-              {/* <div>
-                <PostPublicationDate date={date} />
-              </div> */}
               <div className="pl-4 float-right">
                 <DurationIndicator duration={duration} />
               </div>
@@ -60,7 +56,6 @@ const HeroPost = ({
         <div>
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
           <PostTags tags={tags} className="float-right" />
-          {/* <Avatar name={author.name} picture={author.picture} /> */}
         </div>
       </div>
     </section>
