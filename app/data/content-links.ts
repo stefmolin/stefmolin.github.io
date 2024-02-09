@@ -44,6 +44,12 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     image: '/assets/books/pandas-book-stack.jpg',
     title: 'Hands-On Data Analysis with Pandas',
   },
+  BOOKS: {
+    link: '/books/',
+    contentClass: 'page',
+    image: '/assets/books/pandas-book-stack.jpg',
+    title: 'Books',
+  },
   EVENTS: {
     link: '/events',
     contentClass: 'page',
