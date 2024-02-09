@@ -1,5 +1,5 @@
 import type MapLocation from './map-location';
-import type { AnnotatedLocation } from './map-location';
+import { type AnnotatedLocation } from './map-location';
 
 export type ConferenceLocation = AnnotatedLocation<string[]>;
 
@@ -10,7 +10,7 @@ export interface Event {
   virtual: boolean;
 }
 export interface Presentation {
-  contentClass: 'lighting talk' | 'talk' | 'workshop';
+  contentClass: 'book signing' | 'lightning talk' | 'talk' | 'workshop';
   title: string;
   link: string;
 }

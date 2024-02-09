@@ -27,7 +27,7 @@ const SAME_LOCATION_EVENTS: Record<string, Pick<Event, 'name' | 'location'>> = {
     location: LOCATIONS.CARDIFF,
   },
   TMLS: {
-    name: 'Toronto Machine Learning Summit',
+    name: 'TMLS',
     location: LOCATIONS.TORONTO,
   },
 };
@@ -47,6 +47,11 @@ export const PRESENTATIONS: Record<string, Presentation> = {
     contentClass: 'talk',
     title: 'Data Morph: A Cautionary Tale of Summary Statistics',
     link: '/talks/data-morph/', // TODO
+  },
+  BOOK_SIGNING_PANDAS_2: {
+    title: 'Hands-On Data Analysis with Pandas (2nd edition)',
+    contentClass: 'book signing',
+    link: '/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/',
   },
 };
 
@@ -72,6 +77,11 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     date: '2022-04-19',
   },
   {
+    event: { ...SAME_LOCATION_EVENTS['ODSC East'], virtual: false },
+    presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
+    date: '2022-04-20',
+  },
+  {
     event: { name: 'PyCon US', location: LOCATIONS.SLC, virtual: false },
     presentation: PRESENTATIONS.PANDAS_WORKSHOP,
     date: '2022-04-28',
@@ -84,6 +94,11 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
   {
     event: { ...SAME_LOCATION_EVENTS['ODSC Europe'], virtual: false },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
+    date: '2022-06-15',
+  },
+  {
+    event: { ...SAME_LOCATION_EVENTS['ODSC Europe'], virtual: false },
+    presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
     date: '2022-06-15',
   },
   {
@@ -107,9 +122,19 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     date: '2022-11-01',
   },
   {
+    event: { ...SAME_LOCATION_EVENTS['ODSC West'], virtual: false },
+    presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
+    date: '2022-11-02',
+  },
+  {
     event: { ...SAME_LOCATION_EVENTS.TMLS, virtual: false },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2022-11-28',
+  },
+  {
+    event: { ...SAME_LOCATION_EVENTS.TMLS, virtual: false },
+    presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
+    date: '2022-11-30',
   },
   {
     event: { name: 'PyCon US', location: LOCATIONS.SLC, virtual: false },
@@ -122,6 +147,11 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     date: '2023-05-09',
   },
   {
+    event: { ...SAME_LOCATION_EVENTS['ODSC East'], virtual: false },
+    presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
+    date: '2023-05-10',
+  },
+  {
     event: { ...SAME_LOCATION_EVENTS['PyCon IT'], virtual: false },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2023-05-28',
@@ -129,6 +159,11 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
   {
     event: { ...SAME_LOCATION_EVENTS['ODSC Europe'], virtual: false },
     presentation: PRESENTATIONS.PANDAS_WORKSHOP,
+    date: '2023-06-14',
+  },
+  {
+    event: { ...SAME_LOCATION_EVENTS['ODSC Europe'], virtual: false },
+    presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
     date: '2023-06-14',
   },
   {
@@ -160,5 +195,15 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     event: { ...SAME_LOCATION_EVENTS['PyCon MEA'], virtual: false },
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2023-10-17',
+  },
+  {
+    event: { ...SAME_LOCATION_EVENTS['ODSC West'], virtual: false },
+    presentation: PRESENTATIONS.DATA_MORPH,
+    date: '2023-11-02',
+  },
+  {
+    event: { ...SAME_LOCATION_EVENTS['ODSC West'], virtual: false },
+    presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
+    date: '2023-11-02',
   },
 ];
