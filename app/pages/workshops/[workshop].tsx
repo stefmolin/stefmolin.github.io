@@ -14,12 +14,10 @@ import ReviewsSection from '../../components/reviews';
 import { getImageLink } from '../../lib/images';
 import { WORKSHOP_PAGE_MAPPING } from '../../data/workshops';
 import RelatedContentSection from '../../components/related-content';
-import { type ConferencePresentation } from '../../interfaces/event';
 import WorkshopOutline from '../../components/workshops/workshop-outline';
-import InteractiveMap from '../../components/maps/interactive-map';
 import DurationIndicator from '../../components/datetime/duration-indicator';
 import markdownStyles from '../../styles/markdown-styles.module.css';
-import { getConferenceEventMapAnnotations, getLivePresentations } from '../../lib/events';
+import WorkshopMap from '../../components/workshops/workshop-map';
 
 // TODO: WorkshopHeader/Title component for the title and links below it + potentially another one to encapsulate everything
 // TODO: WorkshopSummary component for image and description (with short option for use on /workshops)
@@ -32,12 +30,6 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
 
   const preview = false;
   const workshopCoverImage = getImageLink(workshop.coverImage);
-
-  const pastSessions = getLivePresentations({
-    contentClass: 'workshop',
-    title: workshop.title,
-  });
-  const locationToEvents = getConferenceEventMapAnnotations(pastSessions);
 
   return (
     <Layout preview={preview}>
@@ -82,13 +74,12 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
             </div>
             <DurationIndicator duration={workshop.duration} />
           </div>
-          {/* <h2 className="text-xl pt-2">{subtitle}</h2> */}
           <SectionSeparator className="my-3" />
-          <div>
+          <div className="mx-4">
             <img
               src={workshop.coverImage}
               alt={workshop.title}
-              className="md:float-left md:mr-5 mb-2 mx-auto max-w-64 object-cover"
+              className="md:float-left md:mr-5 my-2 mx-auto max-w-64 object-cover"
             />
 
             <div>
@@ -106,21 +97,7 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
           <SectionSeparator className="my-5" />
           <WorkshopOutline workshop={workshop} />
           <SectionSeparator className="my-10" />
-          <div>
-            <h2 className="text-3xl mb-5">Past sessions</h2>
-            <p>Click a pin on the map to see the conferences I have presented this workshop at.</p>
-            <InteractiveMap
-              locations={locationToEvents}
-              highlightedCountries={locationToEvents.map(({ country }) => country)}
-              getDisplayInfo={(pin: ConferencePresentation) => (
-                <ul className="mx-4 text-sm lg:text-lg text-center">
-                  {pin.annotation.map(({ event, date }) => (
-                    <li key={date}>{`${event.name} ${date.slice(0, 4)}`}</li>
-                  ))}
-                </ul>
-              )}
-            />
-          </div>
+          <WorkshopMap workshop={workshop} />
           <SectionSeparator className="my-10" />
           {reviews != null ? (
             <>
