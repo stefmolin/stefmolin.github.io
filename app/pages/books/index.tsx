@@ -34,7 +34,7 @@ export default function Index() {
             url: usePageURL(),
             images: [
               {
-                url: getImageLink('/assets/books/pandas-book-stack.jpg'),
+                url: getImageLink(CONTENT_LINKS.BOOKS.image),
                 // TODO: consider providing these?
                 // width: 850,
                 // height: 650,

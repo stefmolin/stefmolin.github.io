@@ -24,7 +24,7 @@ export default function Index() {
             url: usePageURL(),
             images: [
               {
-                url: getImageLink(CONTENT_LINKS.EVENTS.link),
+                url: getImageLink(CONTENT_LINKS.EVENTS.image),
                 // TODO: consider providing these?
                 // width: 850,
                 // height: 650,
