@@ -1,7 +1,7 @@
 import Container from '../../components/container';
 import Header from '../../components/header';
 import Layout from '../../components/layout';
-import TagListing, { TagListingProps } from '../../components/feeds/tag-listing';
+import TagListing, { type TagListingProps } from '../../components/feeds/tag-listing';
 import { getAllPosts } from '../../lib/posts';
 
 export default function Index({ tagCounts }: Pick<TagListingProps, 'tagCounts'>) {
