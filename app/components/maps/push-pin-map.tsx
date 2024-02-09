@@ -1,6 +1,7 @@
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from 'react-simple-maps';
 import { MAP_PIN } from '../../data/constants';
 import type MapLocation from '../../interfaces/map-location';
+import { useState } from 'react';
 
 // TODO: make the zoomable part optional bc it is annoying that when you zoom in the most possible and
 // it scrolls the page down (for events pages); same thing with zooming out and going up
@@ -15,7 +16,9 @@ export interface PushPinMapProps {
   countryOutlineColor?: string;
   mapOutlineColor?: string;
   mapBackgroundColor?: string;
-  pinSize?: string;
+  usePinEmoji: boolean;
+  maxPinSize?: number;
+  pinColor?: string;
   projection?: string;
   projectionCenter?: [number, number];
   projectionScale?: number;
@@ -34,7 +37,9 @@ export default function PushPinMap({
   countryOutlineColor = 'black',
   mapOutlineColor = '#eee',
   mapBackgroundColor = 'transparent',
-  pinSize = '25px',
+  usePinEmoji = true,
+  maxPinSize = 25,
+  pinColor = '#FF5533',
   projection = 'geoMercator',
   projectionCenter = [-50, 50],
   projectionScale = 200,
@@ -42,6 +47,19 @@ export default function PushPinMap({
   onPinClick,
   className,
 }: PushPinMapProps) {
+  const minZoom = 1;
+  const maxZoom = 8;
+  const [zoomLevel, updateZoomLevel] = useState<number>(minZoom);
+  const minPinSize = Math.ceil(maxPinSize / maxZoom);
+
+  const [minPinStickSize, maxPinStickSize] = [3, 16];
+
+  const scalePin = (zoomLevel, zoomedOutValue, zoomedInValue) => {
+    const b = (zoomedInValue - zoomedOutValue) / (maxZoom - minZoom);
+    const a = zoomedInValue - b * maxZoom;
+    return a + b * zoomLevel;
+  };
+
   return (
     <div className={className}>
       <ComposableMap
@@ -52,9 +70,9 @@ export default function PushPinMap({
         }}
         fill={mapBackgroundColor}
         stroke={mapOutlineColor}
-        strokeWidth={1}
+        strokeWidth={0.5}
       >
-        <ZoomableGroup>
+        <ZoomableGroup onMoveEnd={({ zoom }) => updateZoomLevel(zoom)}>
           <Geographies geography={geography}>
             {({ geographies }) =>
               geographies.map((geo) => (
@@ -81,15 +99,60 @@ export default function PushPinMap({
               ))
             }
           </Geographies>
-          {locations.map((location, index) => (
-            <Marker key={index} coordinates={location.coordinates}>
-              <text
-                textAnchor="middle"
-                style={{ cursor: 'pointer', fontSize: pinSize }}
-                onClick={onPinClick != null ? () => onPinClick(location) : undefined}
+
+          {locations.map((location) => (
+            <Marker
+              key={`${location.city}, ${location.country}`}
+              coordinates={location.coordinates}
+            >
+              {usePinEmoji ? (
+                <text
+                  textAnchor="middle"
+                  style={{
+                    cursor: 'pointer',
+                    fontSize: scalePin(zoomLevel, maxPinSize, minPinSize),
+                  }}
+                  onClick={onPinClick != null ? () => onPinClick(location) : undefined}
+                >
+                  {MAP_PIN}
+                </text>
+              ) : (
+                <g
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  transform={`translate(0, -${scalePin(zoomLevel, maxPinStickSize, minPinStickSize)})`}
+                  style={{ cursor: 'pointer' }}
+                  onClick={onPinClick != null ? () => onPinClick(location) : undefined}
+                >
+                  <line
+                    x1="0"
+                    y1="0"
+                    x2="0"
+                    y2={scalePin(zoomLevel, maxPinStickSize, minPinStickSize)}
+                    stroke="#4F5156"
+                    strokeWidth={scalePin(zoomLevel, 2, 0.5)}
+                  />
+                  <circle
+                    cx="0"
+                    cy="0"
+                    r={scalePin(zoomLevel, maxPinSize / 5, minPinSize / 4)}
+                    fill={pinColor}
+                    stroke={pinColor}
+                  />
+                </g>
+              )}
+              {/* <g
+                fill="none"
+                stroke="#FF5533"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                transform="translate(-12, -22)"
               >
-                {MAP_PIN}
-              </text>
+                <circle cx="12" cy="10" r="3" />
+                <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
+              </g> */}
             </Marker>
           ))}
         </ZoomableGroup>
