@@ -51,19 +51,19 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     title: 'Books',
   },
   EVENTS: {
-    link: '/events',
+    link: '/events/',
     contentClass: 'page',
     image: '/assets/events/events-thumbnail.jpg',
     title: 'Events',
   },
   INTERVIEWS: {
-    link: '/interviews',
+    link: '/interviews/',
     contentClass: 'page',
     image: '/assets/interviews/portrait.jpg',
     title: 'Interviews',
   },
   WORKSHOPS: {
-    link: '/workshops',
+    link: '/workshops/',
     contentClass: 'page',
     image: '/assets/workshops/j1vnusMbXTuyRn8CZWZT--4--6d4uz.jpg', // TODO: finalize this and rename appropriately
     title: 'Workshops',

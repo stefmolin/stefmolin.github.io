@@ -6,7 +6,7 @@ import PushPinMap, { type PushPinMapProps } from './push-pin-map';
 interface InteractiveMapProps {
   locations: MapLocation[];
   highlightedCountries: PushPinMapProps['highlightedCountries'];
-  getDisplayInfo: (location: MapLocation) => React.ReactNode;
+  getDisplayInfo: (location: MapLocation | undefined) => React.ReactNode | null;
   containerClassName?: string;
   pushPinMapClassName?: string;
   pushPinInfoClassName?: string;
@@ -31,7 +31,7 @@ export default function InteractiveMap({
         usePinEmoji
       />
       <PushPinInfo selectedMapPin={selectedMapPin} className={pushPinInfoClassName}>
-        {selectedMapPin != null ? getDisplayInfo(selectedMapPin) : null}
+        {getDisplayInfo(selectedMapPin)}
       </PushPinInfo>
     </div>
   );

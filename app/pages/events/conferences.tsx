@@ -1,4 +1,5 @@
 import { NextSeo } from 'next-seo';
+import _ from 'lodash';
 import Container from '../../components/container';
 import Header from '../../components/header';
 import Layout from '../../components/layout';
@@ -8,38 +9,39 @@ import EventMap from '../../components/events/event-map';
 import CONTENT_LINKS from '../../data/content-links';
 import { getImageLink } from '../../lib/images';
 import { LIVE_PRESENTATIONS } from '../../data/events';
-import RelatedContentLink from '../../interfaces/related-content';
+import type RelatedContentLink from '../../interfaces/related-content';
 import RelatedContentSection from '../../components/related-content';
 import EventStatsGrid from '../../components/events/event-stats-grid';
+import CollapsibleSection from '../../components/collapsible-section';
 
 const relatedContent: RelatedContentLink[] = [
-  CONTENT_LINKS.CONFERENCES,
-  CONTENT_LINKS.BOOK_SIGNINGS,
   CONTENT_LINKS.WORKSHOPS,
   CONTENT_LINKS.BOOKS,
+  CONTENT_LINKS.BOOK_SIGNINGS,
   CONTENT_LINKS.TALKS,
-  CONTENT_LINKS.BLOG,
 ];
 
 // TODO: add photo highlights?
 // TODO: add CTA to invite me to speak (could link to /contact)
-// TODO: incorporate the non-conference, non-signing events?
 
-export default function Index() {
+export default function Conferences() {
   const preview = false;
-  const pageTitle = 'Events';
+  const pageTitle = 'Conferences';
+  const presentations = LIVE_PRESENTATIONS.filter(
+    (x) => x.presentation.contentClass !== 'book signing',
+  );
   return (
     <Layout preview={preview}>
       <Container>
         <Header />
         <NextSeo
           title={pageTitle}
-          description="" // TODO
+          description="Conferences Stefanie Molin has presented at."
           openGraph={{
             url: usePageURL(),
             images: [
               {
-                url: getImageLink(CONTENT_LINKS.EVENTS.image),
+                url: getImageLink(CONTENT_LINKS.EVENTS.image), // TODO: use one specific to conferences
                 // TODO: consider providing these?
                 // width: 850,
                 // height: 650,
@@ -51,40 +53,21 @@ export default function Index() {
         <div className="mt-4 mb-20 max-w-5xl mx-auto">
           <h1 className="text-5xl mb-2">{pageTitle}</h1>
           <EventMap
-            introText="Click a pin on the map to see the events I have participated in."
-            liveEvents={LIVE_PRESENTATIONS}
+            introText={`To date, I have presented ${presentations.length} times at conferences around the
+          world. Click a pin on the map for more information.`}
+            liveEvents={presentations}
           />
           <SectionSeparator className="my-10" />
-          <div>
-            <h2 className="text-3xl mb-5">Statistics</h2>
-            <p className="mb-5">Click blue text for more information.</p>
-            <EventStatsGrid sessions={LIVE_PRESENTATIONS} />
+          <div className="space-y-5">
+            <h2 className="text-3xl">Statistics</h2>
+            <p>Click blue text for more information.</p>
+            <EventStatsGrid sessions={presentations} includeYearsActive />
+            <CollapsibleSection prompt="Yearly breakdown">
+              <EventStatsGrid sessions={presentations} yearlyCountsOnly />
+            </CollapsibleSection>
           </div>
           <SectionSeparator className="my-10" />
           <RelatedContentSection relatedContent={relatedContent} />
-          {/* <div className="grid grid-cols-2 gap-10">
-            <div className="flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-200 p-5">
-              <Link
-                href={{
-                  pathname: '/events/conferences',
-                }}
-                className="text-slate-800"
-              >
-                <h2 className="text-3xl mb-5">Conferences</h2>
-              </Link>
-              short decriptions for conferences and book signing pages with links out
-            </div>
-            <div className="flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-200 p-5">
-              <Link
-                href={{
-                  pathname: '/events/book-signings',
-                }}
-                className="text-slate-800"
-              >
-                <h2 className="text-3xl mb-5">Book Signings</h2>
-              </Link>
-            </div>
-          </div> */}
         </div>
       </Container>
     </Layout>

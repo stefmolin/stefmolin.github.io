@@ -19,9 +19,9 @@ export default function PushPinInfo({ selectedMapPin, className, children }: Pus
             {selectedMapPin.city},{' '}
             {selectedMapPin.country === 'United States of America' ? 'USA' : selectedMapPin.country}
           </p>
-          {children}
         </>
       ) : null}
+      {children}
     </div>
   );
 }

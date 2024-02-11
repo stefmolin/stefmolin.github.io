@@ -1,4 +1,4 @@
-import { type Event, LivePresentation, Presentation } from '../interfaces/event';
+import { type Event, type LivePresentation, type Presentation } from '../interfaces/event';
 import LOCATIONS from './locations';
 
 const SAME_LOCATION_EVENTS: Record<string, Pick<Event, 'name' | 'location'>> = {
@@ -124,7 +124,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
   {
     event: { ...SAME_LOCATION_EVENTS['ODSC West'], virtual: false },
     presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
-    date: '2022-11-02',
+    date: '2022-11-01',
   },
   {
     event: { ...SAME_LOCATION_EVENTS.TMLS, virtual: false },
