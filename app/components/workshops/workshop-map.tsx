@@ -19,15 +19,18 @@ export default function WorkshopMap({ workshop }: { workshop: Workshop }) {
         containerClassName="grid lg:grid-cols-3 mt-2 md:mx-10 gap-x-10 gap-y-10 items-center"
         pushPinMapClassName="lg:col-span-2"
         pushPinInfoClassName="flex flex-col items-center"
-        getDisplayInfo={(pin: ConferencePresentation) => (
-          <ul className="mx-4 text-sm lg:text-lg text-center">
-            {pin.annotation.map(({ event, date, presentation }) => (
-              <li
-                key={`${date}-${presentation.title}`}
-              >{`${event.name} ${date.slice(0, 4)}${event.virtual ? ' (virtual)' : ''}`}</li>
-            ))}
-          </ul>
-        )}
+        getDisplayInfo={(pin: ConferencePresentation | undefined) => {
+          if (pin == null) return null;
+          return (
+            <ul className="mx-4 text-sm lg:text-lg text-center">
+              {pin.annotation.map(({ event, date, presentation }) => (
+                <li
+                  key={`${date}-${presentation.title}`}
+                >{`${event.name} ${date.slice(0, 4)}${event.virtual ? ' (virtual)' : ''}`}</li>
+              ))}
+            </ul>
+          );
+        }}
       />
     </div>
   );
