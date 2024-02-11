@@ -135,8 +135,8 @@ const Footer = () => {
         </div>
 
         <hr className="lg:hidden my-8 w-full" />
-        <div className="flex w-full lg:w-auto items-center justify-center">
-          <div className="w-[350px] flex flex-row items-start content-center lg:justify-end xl:ml-20 lg:mr-5">
+        <div className="flex w-full lg:w-auto items-center justify-center lg:justify-end">
+          <div className="w-[350px] flex flex-row items-start content-center lg:justify-end xl:ml-20">
             <SubscribeToNewsletterForm />
           </div>
         </div>
