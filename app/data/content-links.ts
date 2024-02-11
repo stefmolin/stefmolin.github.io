@@ -68,11 +68,35 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     image: '/assets/workshops/j1vnusMbXTuyRn8CZWZT--4--6d4uz.jpg', // TODO: finalize this and rename appropriately
     title: 'Workshops',
   },
+  TALKS: {
+    link: '/data-morph-talk', // TODO: change this when the /talks page is available
+    contentClass: 'page',
+    image: '/assets/articles/introducing-data-morph/panda-to-star.gif', // TODO: finalize this and rename appropriately
+    title: 'Talks',
+  },
   ARTICLES: {
     link: '/articles',
     contentClass: 'page',
     image: '/assets/articles/desk.jpg',
     title: 'Articles',
+  },
+  BLOG: {
+    link: '/blog',
+    contentClass: 'page',
+    image: '/assets/articles/desk.jpg', // TODO: should be travel related probably
+    title: 'Travel Blog',
+  },
+  BOOK_SIGNINGS: {
+    link: '/events/book-signings/',
+    contentClass: 'page',
+    image: '/assets/books/pandas-book-stack.jpg', // TODO: should be something from a signing
+    title: 'Book Signings',
+  },
+  CONFERENCES: {
+    link: '/events/conferences/',
+    contentClass: 'page',
+    image: '/assets/events/events-thumbnail.jpg', // TODO: should be something conference specific
+    title: 'Conferences',
   },
 };
 export default CONTENT_LINKS;
