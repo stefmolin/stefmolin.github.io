@@ -10,6 +10,8 @@ import { getImageLink } from '../../lib/images';
 import { LIVE_PRESENTATIONS } from '../../data/events';
 import type RelatedContentLink from '../../interfaces/related-content';
 import RelatedContentSection from '../../components/related-content';
+import { BOOK_SIGNING_IMAGES } from '../../data/photo-gallery';
+import PhotoGallery from '../../components/photo-gallery';
 
 const relatedContent: RelatedContentLink[] = [
   CONTENT_LINKS.INTERVIEWS,
@@ -33,27 +35,27 @@ export default function BookSignings() {
             url: usePageURL(),
             images: [
               {
-                url: getImageLink(CONTENT_LINKS.EVENTS.image), // TODO: use one specific to conferences
+                url: getImageLink(CONTENT_LINKS.BOOK_SIGNINGS.image),
                 // TODO: consider providing these?
                 // width: 850,
                 // height: 650,
-                alt: '', // TODO
+                alt: "Line from Stefanie Molin's first book signing.",
               },
             ],
           }}
         />
         <div className="mt-4 mb-20 max-w-5xl mx-auto">
           <h1 className="text-5xl mb-2">{pageTitle}</h1>
-          <EventMap
-            introText={`To date, I have done ${signings.length} book signings at conferences around the
-          world. Click a pin on the map for more information.`}
-            liveEvents={signings}
-            excludeTypeColumn
-          />
+          <PhotoGallery photos={BOOK_SIGNING_IMAGES} title={null} shufflePhotos />
           <SectionSeparator className="my-10" />
-          <div>
-            <h2 className="text-3xl">Highlights</h2>
-            pictures go here
+          <div className="space-y-5">
+            <h2 className="text-3xl">Event map</h2>
+            <EventMap
+              introText={`To date, I have done ${signings.length} book signings at conferences around
+              the world. Click a pin on the map for more information.`}
+              liveEvents={signings}
+              excludeTypeColumn
+            />
           </div>
           <SectionSeparator className="my-10" />
           <RelatedContentSection relatedContent={relatedContent} />

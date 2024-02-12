@@ -13,6 +13,8 @@ import type RelatedContentLink from '../../interfaces/related-content';
 import RelatedContentSection from '../../components/related-content';
 import EventStatsGrid from '../../components/events/event-stats-grid';
 import CollapsibleSection from '../../components/collapsible-section';
+import { CONFERENCE_IMAGES } from '../../data/photo-gallery';
+import PhotoGallery from '../../components/photo-gallery';
 
 const relatedContent: RelatedContentLink[] = [
   CONTENT_LINKS.WORKSHOPS,
@@ -21,7 +23,6 @@ const relatedContent: RelatedContentLink[] = [
   CONTENT_LINKS.TALKS,
 ];
 
-// TODO: add photo highlights?
 // TODO: add CTA to invite me to speak (could link to /contact)
 
 export default function Conferences() {
@@ -41,30 +42,35 @@ export default function Conferences() {
             url: usePageURL(),
             images: [
               {
-                url: getImageLink(CONTENT_LINKS.EVENTS.image), // TODO: use one specific to conferences
+                url: getImageLink(CONTENT_LINKS.CONFERENCES.image),
                 // TODO: consider providing these?
                 // width: 850,
                 // height: 650,
-                alt: '', // TODO
+                alt: 'Assorted conference badges',
               },
             ],
           }}
         />
         <div className="mt-4 mb-20 max-w-5xl mx-auto">
           <h1 className="text-5xl mb-2">{pageTitle}</h1>
-          <EventMap
-            introText={`To date, I have presented ${presentations.length} times at conferences around the
-          world. Click a pin on the map for more information.`}
-            liveEvents={presentations}
-          />
+          <PhotoGallery photos={CONFERENCE_IMAGES} title={null} shufflePhotos />
           <SectionSeparator className="my-10" />
           <div className="space-y-5">
-            <h2 className="text-3xl">Statistics</h2>
+            <h2 className="text-3xl">Event statistics</h2>
             <p>Click blue text for more information.</p>
             <EventStatsGrid sessions={presentations} includeYearsActive />
             <CollapsibleSection prompt="Yearly breakdown">
               <EventStatsGrid sessions={presentations} yearlyCountsOnly />
             </CollapsibleSection>
+          </div>
+          <SectionSeparator className="my-10" />
+          <div className="space-y-5">
+            <h2 className="text-3xl">Event map</h2>
+            <EventMap
+              introText={`To date, I have presented ${presentations.length} times at conferences around
+              the world. Click a pin on the map for more information.`}
+              liveEvents={presentations}
+            />
           </div>
           <SectionSeparator className="my-10" />
           <RelatedContentSection relatedContent={relatedContent} />

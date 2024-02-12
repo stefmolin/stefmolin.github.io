@@ -11,6 +11,8 @@ import { LIVE_PRESENTATIONS } from '../../data/events';
 import RelatedContentLink from '../../interfaces/related-content';
 import RelatedContentSection from '../../components/related-content';
 import EventStatsGrid from '../../components/events/event-stats-grid';
+import { EVENT_IMAGES } from '../../data/photo-gallery';
+import PhotoGallery from '../../components/photo-gallery';
 
 const relatedContent: RelatedContentLink[] = [
   CONTENT_LINKS.CONFERENCES,
@@ -21,7 +23,6 @@ const relatedContent: RelatedContentLink[] = [
   CONTENT_LINKS.BLOG,
 ];
 
-// TODO: add photo highlights?
 // TODO: add CTA to invite me to speak (could link to /contact)
 // TODO: incorporate the non-conference, non-signing events?
 
@@ -50,41 +51,23 @@ export default function Index() {
         />
         <div className="mt-4 mb-20 max-w-5xl mx-auto">
           <h1 className="text-5xl mb-2">{pageTitle}</h1>
-          <EventMap
-            introText="Click a pin on the map to see the events I have participated in."
-            liveEvents={LIVE_PRESENTATIONS}
-          />
+          <PhotoGallery photos={EVENT_IMAGES} title={null} shufflePhotos />
           <SectionSeparator className="my-10" />
           <div>
-            <h2 className="text-3xl mb-5">Statistics</h2>
+            <h2 className="text-3xl mb-5">Event statistics</h2>
             <p className="mb-5">Click blue text for more information.</p>
             <EventStatsGrid sessions={LIVE_PRESENTATIONS} />
           </div>
           <SectionSeparator className="my-10" />
+          <div className="space-y-5">
+            <h2 className="text-3xl">Event map</h2>
+            <EventMap
+              introText="Click a pin on the map to see the events I have participated in."
+              liveEvents={LIVE_PRESENTATIONS}
+            />
+          </div>
+          <SectionSeparator className="my-10" />
           <RelatedContentSection relatedContent={relatedContent} />
-          {/* <div className="grid grid-cols-2 gap-10">
-            <div className="flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-200 p-5">
-              <Link
-                href={{
-                  pathname: '/events/conferences',
-                }}
-                className="text-slate-800"
-              >
-                <h2 className="text-3xl mb-5">Conferences</h2>
-              </Link>
-              short decriptions for conferences and book signing pages with links out
-            </div>
-            <div className="flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-200 p-5">
-              <Link
-                href={{
-                  pathname: '/events/book-signings',
-                }}
-                className="text-slate-800"
-              >
-                <h2 className="text-3xl mb-5">Book Signings</h2>
-              </Link>
-            </div>
-          </div> */}
         </div>
       </Container>
     </Layout>
