@@ -22,7 +22,7 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
   const { workshop, reviews, relatedContent } = WORKSHOP_PAGE_MAPPING[workshopKey];
 
   const preview = false;
-  const workshopCoverImage = getImageLink(workshop.coverImage);
+  const workshopCoverImage = workshop.coverImage;
 
   return (
     <Layout preview={preview}>
@@ -35,10 +35,9 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
             url: usePageURL(),
             images: [
               {
-                url: workshopCoverImage,
-                // TODO: consider providing these?
-                // width: 850,
-                // height: 650,
+                url: getImageLink(workshopCoverImage.src),
+                width: workshopCoverImage.width,
+                height: workshopCoverImage.height,
                 alt: workshop.title,
               },
             ],

@@ -27,6 +27,7 @@ const relatedContent: RelatedContentLink[] = [
 
 export default function Conferences() {
   const preview = false;
+  const seoImage = CONTENT_LINKS.CONFERENCES.image;
   const pageTitle = 'Conferences';
   const presentations = LIVE_PRESENTATIONS.filter(
     (x) => x.presentation.contentClass !== 'book signing',
@@ -42,11 +43,10 @@ export default function Conferences() {
             url: usePageURL(),
             images: [
               {
-                url: getImageLink(CONTENT_LINKS.CONFERENCES.image),
-                // TODO: consider providing these?
-                // width: 850,
-                // height: 650,
-                alt: 'Assorted conference badges',
+                url: getImageLink(seoImage.src),
+                width: seoImage.width,
+                height: seoImage.height,
+                alt: 'Assorted badges from conferences Stefanie Molin has spoken at.',
               },
             ],
           }}

@@ -1,8 +1,10 @@
+import type SEOImage from './seoImage';
+
 export default interface Book {
   title: string;
   subtitle?: string;
   edition?: string;
-  coverImage: string;
+  coverImage: SEOImage;
   publicationDate: string;
   pageCount: number;
   description: string;

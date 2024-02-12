@@ -28,6 +28,7 @@ const relatedContent: RelatedContentLink[] = [
 
 export default function Index() {
   const preview = false;
+  const seoImage = CONTENT_LINKS.EVENTS.image;
   const pageTitle = 'Events';
   return (
     <Layout preview={preview}>
@@ -35,16 +36,15 @@ export default function Index() {
         <Header />
         <NextSeo
           title={pageTitle}
-          description="" // TODO
+          description="Conferences, book signings, and other events with Stefanie Molin."
           openGraph={{
             url: usePageURL(),
             images: [
               {
-                url: getImageLink(CONTENT_LINKS.EVENTS.image),
-                // TODO: consider providing these?
-                // width: 850,
-                // height: 650,
-                alt: '', // TODO
+                url: getImageLink(seoImage.src),
+                width: seoImage.width,
+                height: seoImage.height,
+                alt: 'Picture of Stefanie Molin presenting a workshop at EuroPython 2022.',
               },
             ],
           }}

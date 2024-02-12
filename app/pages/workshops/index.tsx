@@ -14,6 +14,7 @@ import WorkshopPreview from '../../components/workshops/workshop-preview';
 
 export default function Index() {
   const preview = false;
+  const seoImage = CONTENT_LINKS.WORKSHOPS.image;
   const pageTitle = 'Workshops';
   return (
     <Layout preview={preview}>
@@ -26,10 +27,9 @@ export default function Index() {
             url: usePageURL(),
             images: [
               {
-                url: getImageLink(CONTENT_LINKS.WORKSHOPS.image),
-                // TODO: consider providing these?
-                // width: 850,
-                // height: 650,
+                url: getImageLink(seoImage.src),
+                width: seoImage.width,
+                height: seoImage.height,
                 alt: 'Workshops created by Stefanie Molin',
               },
             ],

@@ -9,8 +9,7 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       subtitle:
         'An introductory training designed to provide initial hands-on experience with the pandas library.',
       repo: 'pandas-workshop',
-      coverImage:
-        'https://hips.hearstapps.com/elleuk.cdnds.net/16/36/3200x1599/gallery-1473083573-pandas.jpg',
+      coverImage: CONTENT_LINKS.PANDAS_WORKSHOP.image,
       description: [
         `Working with data can be challenging: it often doesn't come in the best format for analysis,
       and understanding it well enough to extract insights requires both time and the skills to filter,
@@ -76,7 +75,7 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       subtitle:
         'A workshop on creating static, animated, and interactive data visualizations in Python.',
       repo: 'python-data-viz-workshop',
-      coverImage: '/assets/workshops/python-data-viz-workshop/cover-image.avif',
+      coverImage: CONTENT_LINKS.DATA_VIZ_WORKSHOP.image,
       description: [
         `The human brain excels at finding patterns in visual representations, which is why data
       visualizations are essential to any analysis. Done right, they bridge the gap between those

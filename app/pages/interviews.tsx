@@ -16,10 +16,12 @@ import { EXTERNAL_LINK_PROPS } from '../data/constants';
 import PublicationDate from '../components/datetime/publication-date';
 import DurationIndicator from '../components/datetime/duration-indicator';
 import INTERVIEWS from '../data/interviews';
+import CONTENT_LINKS from '../data/content-links';
 
 export default function Interviews() {
   const preview = false;
   const pageTitle = 'Interviews';
+  const seoImage = CONTENT_LINKS.INTERVIEWS.image;
 
   const insertBookLinks = ({ text, source }: Interview['description'], dateString: string) => {
     const pTagClassName = 'text-left text-pretty';
@@ -61,10 +63,9 @@ export default function Interviews() {
             url: usePageURL(),
             images: [
               {
-                url: getImageLink('/assets/interviews/portrait.jpg'),
-                // TODO: consider providing these?
-                // width: 850,
-                // height: 650,
+                url: getImageLink(seoImage.src),
+                width: seoImage.width,
+                height: seoImage.height,
                 alt: 'Photo of Stefanie Molin taken by Alex Guevara (@agnyphoto on Instagram) after her first book came out.',
               },
             ],

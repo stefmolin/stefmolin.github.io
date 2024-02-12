@@ -23,6 +23,7 @@ const relatedContent: RelatedContentLink[] = [
 export default function Index() {
   const preview = false;
   const pageTitle = 'Bookshelf';
+  const seoImage = CONTENT_LINKS.BOOKS.image;
   return (
     <Layout preview={preview}>
       <Container>
@@ -34,10 +35,9 @@ export default function Index() {
             url: usePageURL(),
             images: [
               {
-                url: getImageLink(CONTENT_LINKS.BOOKS.image),
-                // TODO: consider providing these?
-                // width: 850,
-                // height: 650,
+                url: getImageLink(seoImage.src),
+                width: seoImage.width,
+                height: seoImage.height,
                 alt: 'Books written by Stefanie Molin.',
               },
             ],

@@ -15,7 +15,7 @@ export default function WorkshopPreview({ workshop }: { workshop: Workshop }) {
         <div>
           <LinkToWorkshop workshop={workshop}>
             <img
-              src={workshop.coverImage}
+              src={workshop.coverImage.src}
               alt={workshop.title}
               className="md:float-left md:mr-5 mb-2 mx-auto max-w-64 object-cover"
             />

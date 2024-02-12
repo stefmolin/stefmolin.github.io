@@ -19,7 +19,7 @@ export const BOOK_PAGES: BookPage[] = [
       subtitle:
         'A Python data science handbook for data collection, wrangling, analysis, and visualization',
       edition: '2nd',
-      coverImage: '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition/cover.png',
+      coverImage: CONTENT_LINKS.PANDAS_BOOK_2.image,
       isbn: '978-1800563452',
       publicationDate: '2021-04-29',
       pageCount: 788,
@@ -46,14 +46,20 @@ export const BOOK_PAGES: BookPage[] = [
       translations: [
         {
           publicationDate: '2022-11-30',
-          coverImage:
-            '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition/korean-cover.jpeg',
+          coverImage: {
+            src: '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition/korean-cover.jpeg',
+            width: 458,
+            height: 573,
+          },
           language: 'Korean',
         },
         {
           publicationDate: '2023-06-30',
-          coverImage:
-            '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition/chinese-cover.jpeg',
+          coverImage: {
+            src: '/assets/books/hands-on-data-analysis-with-pandas-2nd-edition/chinese-cover.jpeg',
+            width: 643,
+            height: 800,
+          },
           language: 'Chinese',
         },
       ],
@@ -207,7 +213,7 @@ export const BOOK_PAGES: BookPage[] = [
       subtitle:
         'Efficiently perform data collection, wrangling, analysis, and visualization using Python',
       edition: '1st',
-      coverImage: '/assets/books/hands-on-data-analysis-with-pandas-1st-edition/cover.png',
+      coverImage: CONTENT_LINKS.PANDAS_BOOK_1.image,
       isbn: '1789615321',
       publicationDate: '2019-07-26',
       pageCount: 740,

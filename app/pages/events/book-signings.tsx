@@ -22,6 +22,7 @@ const relatedContent: RelatedContentLink[] = [
 
 export default function BookSignings() {
   const preview = false;
+  const seoImage = CONTENT_LINKS.BOOK_SIGNINGS.image;
   const pageTitle = 'Book Signings';
   const signings = LIVE_PRESENTATIONS.filter((x) => x.presentation.contentClass === 'book signing');
   return (
@@ -30,15 +31,14 @@ export default function BookSignings() {
         <Header />
         <NextSeo
           title={pageTitle}
-          description="A list of Stefanie Molin's book signing events."
+          description="Stefanie Molin's book signing events."
           openGraph={{
             url: usePageURL(),
             images: [
               {
-                url: getImageLink(CONTENT_LINKS.BOOK_SIGNINGS.image),
-                // TODO: consider providing these?
-                // width: 850,
-                // height: 650,
+                url: getImageLink(seoImage.src),
+                width: seoImage.width,
+                height: seoImage.height,
                 alt: "Line from Stefanie Molin's first book signing.",
               },
             ],

@@ -17,7 +17,7 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
   const { book, reviews, relatedContent, faqs } = BOOK_PAGE_MAPPING[bookKey];
 
   const preview = false;
-  const bookCoverImage = getImageLink(book.coverImage);
+  const bookCoverImage = book.coverImage;
   const bookTitle = generateBookPageTitle(book);
   const imageAltText = generateBookCoverAltText(book);
   return (
@@ -38,10 +38,9 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
             },
             images: [
               {
-                url: bookCoverImage,
-                // TODO: consider providing these?
-                // width: 850,
-                // height: 650,
+                url: getImageLink(bookCoverImage.src),
+                width: bookCoverImage.width,
+                height: bookCoverImage.height,
                 alt: imageAltText,
               },
             ],

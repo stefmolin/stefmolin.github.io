@@ -1,4 +1,5 @@
 import { type Event, type LivePresentation, type Presentation } from '../interfaces/event';
+import CONTENT_LINKS from './content-links';
 import LOCATIONS from './locations';
 
 const SAME_LOCATION_EVENTS: Record<string, Pick<Event, 'name' | 'location'>> = {
@@ -36,22 +37,27 @@ export const PRESENTATIONS: Record<string, Presentation> = {
   PANDAS_WORKSHOP: {
     contentClass: 'workshop',
     title: 'Introduction to Data Analysis Using Pandas',
-    link: '/workshops/pandas-workshop/',
+    link: CONTENT_LINKS.PANDAS_WORKSHOP.link,
   },
   PYTHON_DATA_VIZ_WORKSHOP: {
     contentClass: 'workshop',
     title: 'Beyond the Basics: Data Visualization in Python',
-    link: '/workshops/python-data-viz-workshop/',
+    link: CONTENT_LINKS.DATA_VIZ_WORKSHOP.link,
   },
   DATA_MORPH: {
     contentClass: 'talk',
     title: 'Data Morph: A Cautionary Tale of Summary Statistics',
     link: '/talks/data-morph/', // TODO
   },
-  BOOK_SIGNING_PANDAS_2: {
-    title: 'Hands-On Data Analysis with Pandas (2nd edition)',
+  BOOK_SIGNING_PANDAS_1: {
     contentClass: 'book signing',
-    link: '/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/',
+    title: CONTENT_LINKS.PANDAS_BOOK_1.title,
+    link: CONTENT_LINKS.PANDAS_BOOK_1.link,
+  },
+  BOOK_SIGNING_PANDAS_2: {
+    contentClass: 'book signing',
+    title: CONTENT_LINKS.PANDAS_BOOK_2.title,
+    link: CONTENT_LINKS.PANDAS_BOOK_2.link,
   },
 };
 
@@ -123,7 +129,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
   },
   {
     event: { ...SAME_LOCATION_EVENTS['ODSC West'], virtual: false },
-    presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
+    presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_1,
     date: '2022-11-01',
   },
   {

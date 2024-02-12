@@ -12,7 +12,7 @@ const BookCover = ({ book, translation, className }: BookCoverProps) => {
   return (
     <img
       key={generateBookPageTitle(book, translation?.language)}
-      src={translation?.coverImage || book.coverImage}
+      src={(translation?.coverImage || book.coverImage).src}
       alt={generateBookCoverAltText(book, translation?.language)}
       className={className}
     />
