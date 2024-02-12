@@ -32,7 +32,7 @@ export default function EventMap({
         pushPinMapClassName="mx-auto w-full sm:w-5/6 md:w-2/3 lg:w-1/2"
         pushPinInfoClassName="flex flex-col items-center"
         getDisplayInfo={(pin: ConferencePresentation | undefined) => {
-          if (pin == null) return null;
+          if (pin == null) return <p>Click a pin on the map for more information.</p>;
           return (
             <table className="mx-4 mb-4 text-sm w-full xl:w-5/6 lg:text-lg text-left table-auto border-collapse">
               <caption className="caption-top">

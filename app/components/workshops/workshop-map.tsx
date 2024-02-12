@@ -20,7 +20,7 @@ export default function WorkshopMap({ workshop }: { workshop: Workshop }) {
         pushPinMapClassName="lg:col-span-2"
         pushPinInfoClassName="flex flex-col items-center"
         getDisplayInfo={(pin: ConferencePresentation | undefined) => {
-          if (pin == null) return null;
+          if (pin == null) return <p>Click a pin on the map for more information.</p>;
           return (
             <ul className="mx-4 text-sm lg:text-lg text-center">
               {pin.annotation.map(({ event, date, presentation }) => (
