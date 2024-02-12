@@ -97,7 +97,7 @@ const Footer = () => {
   const underlinedLinkClassName = 'text-slate-500 hover:text-slate-800 underline';
   return (
     <footer className="bg-neutral-50 border-t border-neutral-200 mx-auto px-10">
-      <div className="mt-5 flex flex-col lg:flex-row items-start">
+      <div className="mt-5 flex flex-col lg:flex-row items-start lg:justify-between">
         <div className="text-left lg:pl-4 lg:pr-10 lg:w-2/3 xl:mr-20">
           <Avatar name="Stefanie Molin" picture="/assets/avatar.jpeg" />
           <p className="pt-5">
