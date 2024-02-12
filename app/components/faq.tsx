@@ -1,4 +1,3 @@
-import { faChevronRight, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import type FAQ from '../interfaces/faq';
 import CollapsibleSection from './collapsible-section';
 
