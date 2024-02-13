@@ -20,17 +20,17 @@ const SitemapLinks = ({ className }: { className?: string }) => {
   // Internal links only
   const siteLinks = [
     { name: 'Home', url: '/' },
-    { name: 'Books', url: '/books' },
-    { name: 'Interviews', url: '/interviews' },
-    { name: 'Workshops', url: '/workshops' },
-    { name: 'Articles', url: '/articles' },
-    { name: 'Blog', url: '/blog' },
-    { name: 'Post Search', url: '/tags' },
-    { name: 'Talks', url: '/talks' },
-    { name: 'Data Morph', url: '/data-morph' },
-    { name: 'Events', url: '/events' },
-    { name: 'News', url: '/news' },
-    { name: 'Contact', url: '/contact' },
+    { name: 'Books', url: '/books/' },
+    { name: 'Interviews', url: '/interviews/' },
+    { name: 'Workshops', url: '/workshops/' },
+    { name: 'Articles', url: '/articles/' },
+    { name: 'Blog', url: '/blog/' },
+    { name: 'Post Search', url: '/tags/' },
+    { name: 'Talks', url: '/talks/' },
+    { name: 'Data Morph', url: '/data-morph/' },
+    { name: 'Events', url: '/events/' },
+    { name: 'About', url: '/about/' },
+    { name: 'Contact', url: '/contact/' },
   ];
 
   return (
@@ -97,8 +97,8 @@ const Footer = () => {
   const underlinedLinkClassName = 'text-slate-500 hover:text-slate-800 underline';
   return (
     <footer className="bg-neutral-50 border-t border-neutral-200 mx-auto px-10">
-      <div className="mt-5 flex flex-col lg:flex-row items-start lg:justify-between">
-        <div className="text-left lg:pl-4 lg:pr-10 lg:w-2/3 xl:mr-20">
+      <div className="mt-5 flex flex-col lg:flex-row items-start lg:justify-between lg:px-4">
+        <div className="text-left lg:pr-10 lg:w-2/3 xl:mr-20">
           <Avatar name="Stefanie Molin" picture="/assets/avatar.jpeg" />
           <p className="pt-5">
             Thank you for visiting my website! I am passionate about teaching data science and
