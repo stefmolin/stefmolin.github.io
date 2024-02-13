@@ -2,6 +2,7 @@ import { type ConferencePresentation } from '../../interfaces/event';
 import type Workshop from '../../interfaces/workshop';
 import { getLivePresentations, getConferenceEventMapAnnotations } from '../../lib/events';
 import InteractiveMap from '../maps/interactive-map';
+import PushPinClickPrompt from '../maps/push-pin-click-prompt';
 
 export default function WorkshopMap({ workshop }: { workshop: Workshop }) {
   const pastSessions = getLivePresentations({
@@ -20,7 +21,7 @@ export default function WorkshopMap({ workshop }: { workshop: Workshop }) {
         pushPinMapClassName="lg:col-span-2"
         pushPinInfoClassName="flex flex-col items-center"
         getDisplayInfo={(pin: ConferencePresentation | undefined) => {
-          if (pin == null) return <p>Click a pin on the map for more information.</p>;
+          if (pin == null) return <PushPinClickPrompt />;
           return (
             <ul className="mx-4 text-sm lg:text-lg text-center">
               {pin.annotation.map(({ event, date, presentation }) => (

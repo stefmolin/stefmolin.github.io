@@ -4,6 +4,7 @@ import { type ConferencePresentation, type LivePresentation } from '../../interf
 import { getConferenceEventMapAnnotations } from '../../lib/events';
 import InteractiveMap from '../maps/interactive-map';
 import CONTENT_LINKS from '../../data/content-links';
+import PushPinClickPrompt from '../maps/push-pin-click-prompt';
 
 export default function EventMap({
   liveEvents,
@@ -32,7 +33,7 @@ export default function EventMap({
         pushPinMapClassName="mx-auto w-full sm:w-5/6 md:w-2/3 lg:w-1/2"
         pushPinInfoClassName="flex flex-col items-center"
         getDisplayInfo={(pin: ConferencePresentation | undefined) => {
-          if (pin == null) return <p>Click a pin on the map for more information.</p>;
+          if (pin == null) return <PushPinClickPrompt />;
           return (
             <table className="mx-4 mb-4 text-sm w-full xl:w-5/6 lg:text-lg text-left table-auto border-collapse">
               <caption className="caption-top">
