@@ -2,34 +2,41 @@ import { type Event, type LivePresentation, type Presentation } from '../interfa
 import CONTENT_LINKS from './content-links';
 import LOCATIONS from './locations';
 
-const SAME_LOCATION_EVENTS: Record<string, Pick<Event, 'name' | 'location'>> = {
+const SAME_LOCATION_EVENTS: Record<string, Pick<Event, 'name' | 'location' | 'eventClass'>> = {
   'ODSC East': {
     name: 'ODSC East',
     location: LOCATIONS.BOSTON,
+    eventClass: 'conference',
   },
   'ODSC Europe': {
     name: 'ODSC Europe',
     location: LOCATIONS.LONDON,
+    eventClass: 'conference',
   },
   'ODSC West': {
     name: 'ODSC West',
     location: LOCATIONS.SF,
+    eventClass: 'conference',
   },
   'PyCon IT': {
     name: 'PyCon IT',
     location: LOCATIONS.FLORENCE,
+    eventClass: 'conference',
   },
   'PyCon MEA': {
     name: 'PyCon MEA',
     location: LOCATIONS.DUBAI,
+    eventClass: 'conference',
   },
   'PyCon UK': {
     name: 'PyCon UK',
     location: LOCATIONS.CARDIFF,
+    eventClass: 'conference',
   },
   TMLS: {
     name: 'TMLS',
     location: LOCATIONS.TORONTO,
+    eventClass: 'conference',
   },
 };
 
@@ -63,67 +70,125 @@ export const PRESENTATIONS: Record<string, Presentation> = {
 
 export const LIVE_PRESENTATIONS: LivePresentation[] = [
   {
-    event: { ...SAME_LOCATION_EVENTS['ODSC Europe'], virtual: true },
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC Europe'],
+      virtual: true,
+      link: 'https://odsc.com/speakers/introduction-to-data-analysis-using-pandas/',
+    },
     presentation: PRESENTATIONS.PANDAS_WORKSHOP,
     date: '2021-06-10',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['ODSC West'], virtual: true },
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC West'],
+      virtual: true,
+      link: 'https://odsc.com/speakers/introduction-to-data-visualization-in-python/',
+    },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2021-11-15',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS.TMLS, virtual: true },
+    event: {
+      ...SAME_LOCATION_EVENTS.TMLS,
+      virtual: true,
+      link: 'https://www.torontomachinelearning.com/',
+    },
     presentation: PRESENTATIONS.PANDAS_WORKSHOP,
     date: '2021-11-16',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['ODSC East'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC East'],
+      virtual: false,
+      link: 'https://odsc.com/speakers/introduction-to-data-visualization-in-python/',
+    },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2022-04-19',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['ODSC East'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC East'],
+      virtual: false,
+      link: 'https://www.linkedin.com/feed/update/urn:li:activity:6924326271451582465/',
+    },
     presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
     date: '2022-04-20',
   },
   {
-    event: { name: 'PyCon US', location: LOCATIONS.SLC, virtual: false },
+    event: {
+      name: 'PyCon US',
+      location: LOCATIONS.SLC,
+      virtual: false,
+      eventClass: 'conference',
+      link: 'https://us.pycon.org/2022/schedule/presentation/24/',
+    },
     presentation: PRESENTATIONS.PANDAS_WORKSHOP,
     date: '2022-04-28',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['PyCon IT'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['PyCon IT'],
+      virtual: false,
+      link: 'https://pycon.it/en/talk/beyond-the-basics-data-visualization-in-python?day=2022-06-03',
+    },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2022-06-03',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['ODSC Europe'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC Europe'],
+      virtual: false,
+      link: 'https://odsc.com/speakers/introduction-to-data-visualization-in-python/',
+    },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2022-06-15',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['ODSC Europe'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC Europe'],
+      virtual: false,
+      link: 'https://twitter.com/search?q=(%22book%20signing%22%20OR%20%22signed%22)%20(%40StefanieMolin)%20until%3A2022-06-23%20since%3A2022-06-15&src=typed_query&f=top',
+    },
     presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
     date: '2022-06-15',
   },
   {
-    event: { name: 'EuroPython', location: LOCATIONS.DUBLIN, virtual: false },
+    event: {
+      name: 'EuroPython',
+      location: LOCATIONS.DUBLIN,
+      virtual: false,
+      eventClass: 'conference',
+      link: 'https://ep2022.europython.eu/session/beyond-the-basics-data-visualization-in-python',
+    },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2022-07-12',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['PyCon UK'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['PyCon UK'],
+      virtual: false,
+      link: 'https://pretalx.com/pycon-uk-2022/talk/LZKN7F/',
+    },
     presentation: PRESENTATIONS.PANDAS_WORKSHOP,
     date: '2022-09-16',
   },
   {
-    event: { name: 'PyCon PT', location: LOCATIONS.PORTO, virtual: false },
+    event: {
+      name: 'PyCon PT',
+      location: LOCATIONS.PORTO,
+      virtual: false,
+      eventClass: 'conference',
+      link: 'https://pretalx.evolutio.pt/pyconpt2022/talk/TUZZMY/',
+    },
     presentation: PRESENTATIONS.PANDAS_WORKSHOP,
     date: '2022-09-24',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['ODSC West'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC West'],
+      virtual: false,
+      link: 'https://odsc.com/speakers/introduction-to-data-visualization-in-python/',
+    },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2022-11-01',
   },
@@ -133,82 +198,153 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     date: '2022-11-01',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS.TMLS, virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS.TMLS,
+      virtual: false,
+      link: 'https://www.torontomachinelearning.com/',
+    },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2022-11-28',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS.TMLS, virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS.TMLS,
+      virtual: false,
+    },
     presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
     date: '2022-11-30',
   },
   {
-    event: { name: 'PyCon US', location: LOCATIONS.SLC, virtual: false },
+    event: {
+      name: 'PyCon US',
+      location: LOCATIONS.SLC,
+      virtual: false,
+      eventClass: 'conference',
+      link: 'https://us.pycon.org/2023/schedule/presentation/17/',
+    },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2023-04-19',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['ODSC East'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC East'],
+      virtual: false,
+      link: 'https://odsc.com/speakers/introduction-to-data-visualization-in-python/',
+    },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2023-05-09',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['ODSC East'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC East'],
+      virtual: false,
+      link: 'https://twitter.com/_odsc/status/1656394525365919747',
+    },
     presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
     date: '2023-05-10',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['PyCon IT'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['PyCon IT'],
+      virtual: false,
+      link: 'https://pycon.it/en/event/beyond-the-basics-data-visualization-in-python-2',
+    },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2023-05-28',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['ODSC Europe'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC Europe'],
+      virtual: false,
+      link: 'https://odsc.com/speakers/introduction-to-data-analysis-using-pandas/',
+    },
     presentation: PRESENTATIONS.PANDAS_WORKSHOP,
     date: '2023-06-14',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['ODSC Europe'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC Europe'],
+      virtual: false,
+      link: 'https://twitter.com/_odsc/status/1669301867086503938',
+    },
     presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
     date: '2023-06-14',
   },
   {
-    event: { name: 'EuroSciPy', location: LOCATIONS.BASEL, virtual: false },
+    event: {
+      name: 'EuroSciPy',
+      location: LOCATIONS.BASEL,
+      virtual: false,
+      eventClass: 'conference',
+      link: 'https://pretalx.com/euroscipy-2023/talk/PWER3Z/',
+    },
     presentation: PRESENTATIONS.PANDAS_WORKSHOP,
     date: '2023-08-14',
   },
   {
-    event: { name: 'PyCon PT', location: LOCATIONS.COIMBRA, virtual: false },
+    event: {
+      name: 'PyCon PT',
+      location: LOCATIONS.COIMBRA,
+      virtual: false,
+      eventClass: 'conference',
+      link: 'https://pretalx.evolutio.pt/pycon-pt-2023/talk/STX8K3/',
+    },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2023-09-09',
   },
   {
-    event: { name: 'PyCon CZ', location: LOCATIONS.PRAGUE, virtual: false },
+    event: {
+      name: 'PyCon CZ',
+      location: LOCATIONS.PRAGUE,
+      virtual: false,
+      eventClass: 'conference',
+      link: 'https://cz.pycon.org/2023/program/workshops/26/',
+    },
     presentation: PRESENTATIONS.PANDAS_WORKSHOP,
     date: '2023-09-17',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['PyCon UK'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['PyCon UK'],
+      virtual: false,
+      link: 'https://pretalx.com/pyconuk-2023/talk/YLGFCE/',
+    },
     presentation: PRESENTATIONS.PANDAS_WORKSHOP,
     date: '2023-09-22',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['PyCon MEA'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['PyCon MEA'],
+      virtual: false,
+      link: 'https://globaldevslam.com/Agenda2023.aspx?trackname=WORKSHOPS',
+    },
     presentation: PRESENTATIONS.PANDAS_WORKSHOP,
     date: '2023-10-16',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['PyCon MEA'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['PyCon MEA'],
+      virtual: false,
+      link: 'https://globaldevslam.com/Agenda2023.aspx?trackname=PYCON-MEA-DATA-SCIENCE',
+    },
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2023-10-17',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['ODSC West'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC West'],
+      virtual: false,
+      link: 'https://odsc.com/speakers/data-morph-a-cautionary-tale-of-summary-statistics/',
+    },
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2023-11-02',
   },
   {
-    event: { ...SAME_LOCATION_EVENTS['ODSC West'], virtual: false },
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC West'],
+      virtual: false,
+      link: 'https://x.com/_odsc/status/1720142320564416749?s=20',
+    },
     presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
     date: '2023-11-02',
   },

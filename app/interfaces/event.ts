@@ -8,6 +8,7 @@ export interface Event {
   name: string;
   location: MapLocation;
   virtual: boolean;
+  eventClass: 'conference' | 'meetup';
 }
 export interface Presentation {
   contentClass: 'book signing' | 'lightning talk' | 'talk' | 'workshop';
@@ -16,7 +17,7 @@ export interface Presentation {
 }
 export interface LivePresentation {
   presentation: Presentation;
-  event: Event;
+  event: Event & { link?: string };
   date: string;
 }
 export type ConferencePresentation = AnnotatedLocation<LivePresentation[]>;

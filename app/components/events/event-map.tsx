@@ -5,6 +5,7 @@ import { getConferenceEventMapAnnotations } from '../../lib/events';
 import InteractiveMap from '../maps/interactive-map';
 import CONTENT_LINKS from '../../data/content-links';
 import PushPinClickPrompt from '../maps/push-pin-click-prompt';
+import { EXTERNAL_LINK_PROPS } from '../../data/constants';
 
 export default function EventMap({
   liveEvents,
@@ -16,7 +17,7 @@ export default function EventMap({
   excludeTypeColumn?: boolean;
 }) {
   const locationToEvents = getConferenceEventMapAnnotations(liveEvents);
-  const linkeClassName = 'text-slate-900 hover:underline hover:text-slate-600';
+  const linkClassName = 'text-slate-900 hover:underline hover:text-slate-600';
   const tableClassName = 'border-b border-slate-600 px-2 text-base';
   const contentClassLinks = {
     workshop: CONTENT_LINKS.WORKSHOPS.link,
@@ -48,42 +49,51 @@ export default function EventMap({
                 </tr>
               </thead>
               <tbody>
-                {pin.annotation.reverse().map(({ event, date, presentation }) => (
-                  <tr
-                    key={`${date}-${event.location.city}-${event.location.country}-${presentation.title}`}
-                  >
-                    <td className={classNames(tableClassName, 'text-nowrap')}>{date}</td>
-                    {excludeTypeColumn ? null : (
+                {pin.annotation.reverse().map(({ event, date, presentation }) => {
+                  const eventName = `${event.name}${event.virtual ? ' (virtual)' : ''}`;
+                  return (
+                    <tr
+                      key={`${date}-${event.location.city}-${event.location.country}-${presentation.title}`}
+                    >
+                      <td className={classNames(tableClassName, 'text-nowrap')}>{date}</td>
+                      {excludeTypeColumn ? null : (
+                        <td className={tableClassName}>
+                          <Link
+                            href={{
+                              pathname: contentClassLinks[presentation.contentClass],
+                            }}
+                            className={linkClassName}
+                          >
+                            {presentation.contentClass}
+                          </Link>
+                        </td>
+                      )}
                       <td className={tableClassName}>
                         <Link
                           href={{
-                            pathname: contentClassLinks[presentation.contentClass],
+                            pathname: presentation.link,
                           }}
-                          className={linkeClassName}
+                          className={linkClassName}
                         >
-                          {presentation.contentClass}
+                          {presentation.contentClass === 'book signing' ? (
+                            <em>{presentation.title}</em>
+                          ) : (
+                            presentation.title
+                          )}
                         </Link>
                       </td>
-                    )}
-                    <td className={tableClassName}>
-                      <Link
-                        href={{
-                          pathname: presentation.link,
-                        }}
-                        className={linkeClassName}
-                      >
-                        {presentation.contentClass === 'book signing' ? (
-                          <em>{presentation.title}</em>
+                      <td className={tableClassName}>
+                        {event.link != null ? (
+                          <a href={event.link} className={linkClassName} {...EXTERNAL_LINK_PROPS}>
+                            {eventName}
+                          </a>
                         ) : (
-                          <>{presentation.title}</>
+                          eventName
                         )}
-                      </Link>
-                    </td>
-                    <td
-                      className={tableClassName}
-                    >{`${event.name}${event.virtual ? ' (virtual)' : ''}`}</td>
-                  </tr>
-                ))}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           );
