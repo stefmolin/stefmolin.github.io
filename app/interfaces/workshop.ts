@@ -1,6 +1,6 @@
 import type RelatedContentLink from './related-content';
 import type Review from './review';
-import type SEOImage from './seoImage';
+import type SEOImage from './seo-image';
 
 export default interface Workshop {
   title: string;

@@ -1,4 +1,4 @@
-import type SEOImage from './seoImage';
+import type SEOImage from './seo-image';
 
 export default interface RelatedContentLink {
   link: string;
