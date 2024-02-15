@@ -11,7 +11,7 @@ export interface Event {
   eventClass: 'conference' | 'meetup';
 }
 export interface Presentation {
-  contentClass: 'book signing' | 'lightning talk' | 'talk' | 'workshop';
+  contentClass: 'book signing' | 'talk' | 'workshop';
   title: string;
   link: string;
 }
