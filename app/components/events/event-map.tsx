@@ -49,7 +49,7 @@ export default function EventMap({
                 </tr>
               </thead>
               <tbody>
-                {pin.annotation.reverse().map(({ event, date, presentation }) => {
+                {[...pin.annotation].reverse().map(({ event, date, presentation }) => {
                   const eventName = `${event.name}${event.virtual ? ' (virtual)' : ''}`;
                   return (
                     <tr
