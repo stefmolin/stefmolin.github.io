@@ -7,6 +7,7 @@ import { getImageLink } from '../../lib/images';
 import WORKSHOP_PAGES from '../../data/workshops';
 import CONTENT_LINKS from '../../data/content-links';
 import WorkshopPreview from '../../components/workshops/workshop-preview';
+import { getLivePresentations } from '../../lib/events';
 
 // TODO: decide on the featured topic/technology at the bottom left of the card
 // TODO: decide whether to put a combined version of the map at the bottom (could maybe highlight the workshops when clicking on a pin for a spot they were presented at)
@@ -16,6 +17,11 @@ export default function Index() {
   const preview = false;
   const seoImage = CONTENT_LINKS.WORKSHOPS.image;
   const pageTitle = 'Workshops';
+  const pastSessions = getLivePresentations({
+    contentClass: 'workshop',
+  })
+    .sort((a, b) => (a.date > b.date ? -1 : 1))
+    .map(({ presentation }) => presentation.title);
   return (
     <Layout preview={preview}>
       <Container>
@@ -39,7 +45,10 @@ export default function Index() {
           <h1 className="text-4xl">{pageTitle}</h1>
           <h2 className="text-xl py-2">A listing of workshops I've developed.</h2>
           <div className="grid grid-cols-1 sm:gap-y-10 pb-5">
-            {WORKSHOP_PAGES.map(({ workshop }) => (
+            {WORKSHOP_PAGES.sort(
+              (a, b) =>
+                pastSessions.indexOf(a.workshop.title) - pastSessions.indexOf(b.workshop.title),
+            ).map(({ workshop }) => (
               <WorkshopPreview key={workshop.title} workshop={workshop} />
             ))}
           </div>
