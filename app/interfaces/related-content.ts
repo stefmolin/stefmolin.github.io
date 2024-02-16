@@ -6,3 +6,7 @@ export default interface RelatedContentLink {
   image: SEOImage;
   title: string;
 }
+
+export interface SeeAlso extends Pick<RelatedContentLink, 'title' | 'contentClass'> {
+  slug: string;
+}

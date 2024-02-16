@@ -1,18 +1,11 @@
 import type RelatedContentLink from './related-content';
 import type Review from './review';
-import type SEOImage from './seo-image';
+import type Talk from './talk';
 
-export default interface Workshop {
-  title: string;
-  subtitle: string;
-  coverImage: SEOImage;
-  duration: string;
-  description: string[];
+export default interface Workshop extends Required<Talk> {
   outline: Record<string, string>;
   repo: string;
-  slidesLink: string;
 }
-// TODO: probably want to add an outline? reviews? images?
 
 export interface WorkshopPage {
   workshop: Workshop;
