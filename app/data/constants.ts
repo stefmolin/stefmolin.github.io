@@ -7,6 +7,7 @@ export const TWITTER_HANDLE = '@StefanieMolin';
 export const COPYRIGHT_STATEMENT = `Copyright 2019-${DateTime.now().year}, Stefanie Molin`;
 export const EXTERNAL_LINK_PROPS = { target: '_blank', rel: 'noopener noreferrer' };
 export const GITHUB_PROFILE = 'https://github.com/stefmolin';
+export const GITHUB_API = 'https://api.github.com/repos/stefmolin/';
 
 export const MAP_PIN = '📍';
 

@@ -43,7 +43,7 @@ const FollowButtons = ({ className, size = 'lg' }: Props) => {
     </a>
   );
   return (
-    <div className={classNames(className, 'space-x-2 flex items-center justify-center')}>
+    <div className={classNames('space-x-2 flex items-center justify-center', className)}>
       {FOLLOW_LINKS.map(({ url, icon }) => makeLink(url, icon))}
     </div>
   );

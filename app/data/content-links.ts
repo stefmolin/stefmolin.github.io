@@ -23,7 +23,7 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
   },
   PIVOT_AND_PLOT_WITH_PANDAS_ARTICLE: {
     link: '/articles/how-to-pivot-and-plot-data-with-pandas',
-    contentClass: 'post',
+    contentClass: 'article',
     image: {
       src: '/assets/articles/how-to-pivot-and-plot-data-with-pandas/cover-image.jpg',
       width: 2880,
@@ -33,7 +33,7 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
   },
   DATA_MORPH_ARTICLE: {
     link: '/articles/introducing-data-morph/',
-    contentClass: 'post',
+    contentClass: 'article',
     image: {
       src: '/assets/articles/introducing-data-morph/panda-to-star.gif',
       width: 774,
@@ -43,7 +43,7 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
   },
   DATA_SCIENCE_ARTICLES: {
     link: '/tags/data%20science/',
-    contentClass: 'articles',
+    contentClass: 'page',
     image: {
       src: '/assets/articles/introducing-data-morph/panda-to-star.gif',
       width: 774,
@@ -53,7 +53,7 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
   },
   DATA_VIZ_ARTICLES: {
     link: '/tags/data%20visualization/',
-    contentClass: 'articles',
+    contentClass: 'page',
     image: {
       src: '/assets/articles/introducing-data-morph/panda-to-star.gif',
       width: 774,
@@ -116,7 +116,7 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     title: 'Workshops',
   },
   TALKS: {
-    link: '/data-morph-talk', // TODO: change this when the /talks page is available
+    link: '/talks/',
     contentClass: 'page',
     image: {
       src: '/assets/articles/introducing-data-morph/panda-to-star.gif',
