@@ -71,7 +71,7 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
           <SectionSeparator className="mt-5 lg:mt-24 mb-10" />
           {reviews != null ? (
             <>
-              <ReviewsSection reviews={reviews} />
+              <ReviewsSection reviews={reviews} cardSize="md" />
               <SectionSeparator className="my-10" />
             </>
           ) : null}

@@ -7,12 +7,13 @@ import { faQuoteLeft, faQuoteRight, faCaretDown } from '@fortawesome/free-solid-
 import { EXTERNAL_LINK_PROPS } from '../../data/constants';
 import type Review from '../../interfaces/review';
 
-interface ReviewCardProps {
+export interface ReviewCardProps {
   review: Review;
+  cardSize: 'xs' | 'sm' | 'md' | 'lg';
   className?: string;
 }
 
-export default function ReviewCard({ review, className }: ReviewCardProps) {
+export default function ReviewCard({ review, cardSize, className }: ReviewCardProps) {
   const reviewTextRef = useRef<HTMLDivElement | null>(null);
   const [showMore, setShowMore] = useState<boolean>(false);
   const [atBottom, setAtBottom] = useState(false);
@@ -31,15 +32,31 @@ export default function ReviewCard({ review, className }: ReviewCardProps) {
   const showArrow = showMore && !atBottom;
 
   return (
-    <div className="flex flex-row items-start justify-between p-8 shadow mx-5 mb-12 h-80">
+    <div
+      className={classNames(
+        'flex flex-row items-start justify-between p-8 shadow-sm mx-5 mt-4 mb-12',
+        {
+          'h-40': cardSize === 'xs',
+          'h-64': cardSize === 'sm',
+          'h-80': cardSize === 'md',
+          'h-96': cardSize === 'lg',
+        },
+      )}
+    >
       <FontAwesomeIcon icon={faQuoteLeft} size="xl" fixedWidth />
       <div className={classNames(className, 'pl-4 mb-3')}>
         <div
           ref={reviewTextRef}
           className={classNames(
             'space-y-3 text-pretty pr-4',
-            'h-56 overflow-y-auto',
+            'overflow-y-auto',
             '[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]',
+            {
+              'max-h-24': cardSize === 'xs',
+              'max-h-40': cardSize === 'sm',
+              'max-h-56': cardSize === 'md',
+              'max-h-72': cardSize === 'lg',
+            },
           )}
           onScroll={handleScroll}
         >

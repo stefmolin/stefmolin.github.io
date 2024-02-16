@@ -1,33 +1,30 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import type Review from '../../interfaces/review';
-import ReviewCard from './review-card';
+import ReviewCard, { type ReviewCardProps } from './review-card';
 
 // TODO: add pagination here (~4 per page as default?)
 // TODO: apply the markdown styles here too???
 
-type ReviewsSectionProps = {
-  reviews: Review[];
+interface ReviewsSectionProps {
+  reviews: ReviewCardProps['review'][];
+  cardSize: ReviewCardProps['cardSize'];
   titleClassName?: string;
   reviewsClassName?: string;
   divClassName?: string;
-};
+}
 
 const ReviewsSection = ({
   reviews,
+  cardSize,
   titleClassName,
   reviewsClassName,
   divClassName,
 }: ReviewsSectionProps) => {
   const responsive = {
-    xl: {
+    desktop: {
       breakpoint: { max: Infinity, min: 1024 },
       items: 2,
     },
-    // desktop: {
-    //   breakpoint: { max: 3000, min: 1024 },
-    //   items: 1,
-    // },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 1,
@@ -55,7 +52,12 @@ const ReviewsSection = ({
         rewind={true}
       >
         {reviews.map((review) => (
-          <ReviewCard key={review.author} className={reviewsClassName} review={review} />
+          <ReviewCard
+            key={review.author}
+            className={reviewsClassName}
+            review={review}
+            cardSize={cardSize}
+          />
         ))}
       </Carousel>
     </div>

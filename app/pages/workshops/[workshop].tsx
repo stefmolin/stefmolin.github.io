@@ -54,7 +54,10 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
           <SectionSeparator className="my-10" />
           {reviews != null ? (
             <>
-              <ReviewsSection reviews={reviews} />
+              <ReviewsSection
+                reviews={reviews}
+                cardSize={reviews.map(({ text }) => text.length).some((x) => x > 150) ? 'sm' : 'xs'}
+              />
               <SectionSeparator className="my-10" />
             </>
           ) : null}
