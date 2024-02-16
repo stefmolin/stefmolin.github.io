@@ -4,7 +4,7 @@ import Header from '../../components/header';
 import Layout from '../../components/layout';
 import { usePageURL } from '../../lib/hooks';
 import SectionSeparator from '../../components/section-separator';
-import ReviewsSection from '../../components/reviews';
+import ReviewsSection from '../../components/reviews/reviews-section';
 import { getImageLink } from '../../lib/images';
 import { WORKSHOP_PAGE_MAPPING } from '../../data/workshops';
 import RelatedContentSection from '../../components/related-content';

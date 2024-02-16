@@ -8,7 +8,7 @@ import { usePageURL } from '../../lib/hooks';
 import { HOME_URL } from '../../data/constants';
 import SectionSeparator from '../../components/section-separator';
 import BookTranslationsSection from '../../components/books/translations';
-import ReviewsSection from '../../components/reviews';
+import ReviewsSection from '../../components/reviews/reviews-section';
 import BookSummarySection from '../../components/books/book-summary';
 import BookOutline from '../../components/books/book-outline';
 import { getImageLink } from '../../lib/images';
