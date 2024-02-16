@@ -41,7 +41,7 @@ export const BOOK_PAGES: BookPage[] = [
       visualize your data for effective decision making—valuable knowledge that can be applied
       across multiple domains.`,
       amazonLink: 'https://amzn.to/3u6v21u',
-      repoLink: 'https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition',
+      repo: 'Hands-On-Data-Analysis-with-Pandas-2nd-edition',
       tags: ['pandas', 'data analysis', 'data science', 'Python'],
       translations: [
         {
@@ -182,13 +182,13 @@ export const BOOK_PAGES: BookPage[] = [
         source:
           'https://www.amazon.it/review/R3RPKJAC1FLLKF/ref=cm_cr_srp_d_rdp_perm?ie=UTF8&ASIN=1800563450',
       },
-      // {
-      //   author: 'João (via Amazon)',
-      //   text: `Hands-On Data Analysis with Pandas: A Python data science handbook for data collection,
-      //   wrangling, analysis, and visualization, 2nd Edition by Stefanie Molin is one of the best books
-      //   for data science beginners, data analysts, and Python! This is my reference book and for sure
-      //   I would like to recommend it for anyone interested in these topics.`,
-      // },
+      {
+        author: 'João (via Amazon)',
+        text: `Hands-On Data Analysis with Pandas: A Python data science handbook for data collection,
+        wrangling, analysis, and visualization, 2nd Edition by Stefanie Molin is one of the best books
+        for data science beginners, data analysts, and Python! This is my reference book and for sure
+        I would like to recommend it for anyone interested in these topics.`,
+      },
       // {
       //   author: 'Sandeep Pawar (@PawarBI)',
       //   text: `For Data Analysis, I recommend @StefanieMolin's book.`,
@@ -234,7 +234,7 @@ export const BOOK_PAGES: BookPage[] = [
       ensure the veracity of your data, visualize it for effective decision-making, and reliably
       reproduce analysis across multiple domains.`,
       amazonLink: 'https://amzn.to/4bkJBiq',
-      repoLink: 'https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas',
+      repo: 'Hands-On-Data-Analysis-with-Pandas',
       tags: ['pandas', 'data analysis', 'data science', 'Python'],
     },
     relatedContent: [
@@ -256,7 +256,7 @@ export const BOOK_PAGES: BookPage[] = [
     reviews: [
       {
         author: 'Scott Saenz (@SaenzScott)',
-        text: `Stefanie Molin's "[Hands-On ]Data Analysis with Pandas" has one of the best intro chapters I've
+        text: `Stefanie Molin's '[Hands-On ]Data Analysis with Pandas' has one of the best intro chapters I've
         seen, with a section on git and another on the importance of setting up a separate environment
         for each project. I recommend it for any of your future students.`,
         source: 'https://x.com/SaenzScott/status/1175031439253024768?s=20',

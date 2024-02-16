@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type Book from '../../interfaces/book';
-import { faAmazon, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faAmazon } from '@fortawesome/free-brands-svg-icons';
 import { EXTERNAL_LINK_PROPS } from '../../data/constants';
 import BookPublicationDate from './book-publication-date';
 import PageCount from './page-count';
@@ -10,11 +10,10 @@ import remarkGfm from 'remark-gfm';
 
 type BookSummaryProps = {
   book: Book;
-  coverImageAltText: string;
   divClassName?: string;
 };
 
-const BookSummarySection = ({ book, coverImageAltText, divClassName }: BookSummaryProps) => (
+const BookSummarySection = ({ book, divClassName }: BookSummaryProps) => (
   <div className={divClassName}>
     <div className="float-left mr-5 flex flex-col justify-center space-y-2 w-48 md:w-64">
       <BookCover book={book} />
@@ -33,20 +32,6 @@ const BookSummarySection = ({ book, coverImageAltText, divClassName }: BookSumma
       </small>
     </div>
     <div className="space-y-4 min-h-48 md:min-h-64 lg:min-h-80">
-      <div className="flex flex-row items-center space-x-4">
-        <PageCount pageCount={book.pageCount} />
-
-        <div className="flex flex-row items-center">
-          <BookPublicationDate publicationDate={book.publicationDate} />
-        </div>
-
-        <div className="flex flex-row items-center">
-          <a href={book.repoLink} {...EXTERNAL_LINK_PROPS} className="hover:underline">
-            <FontAwesomeIcon icon={faGithub} className="pr-1" fixedWidth />
-            View repository
-          </a>
-        </div>
-      </div>
       <div className="space-y-2 text-justify text-pretty">
         <Markdown remarkPlugins={[remarkGfm]}>{book.description}</Markdown>
       </div>

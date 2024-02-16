@@ -12,6 +12,9 @@ import ReviewsSection from '../../components/reviews';
 import BookSummarySection from '../../components/books/book-summary';
 import BookOutline from '../../components/books/book-outline';
 import { getImageLink } from '../../lib/images';
+import RepoStats from '../../components/repo-stats';
+import PageCount from '../../components/books/page-count';
+import BookPublicationDate from '../../components/books/book-publication-date';
 
 export default function BookPage({ bookKey }: { bookKey: string }) {
   const { book, reviews, relatedContent, faqs } = BOOK_PAGE_MAPPING[bookKey];
@@ -52,9 +55,20 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
           faqs={faqs}
           relatedContent={relatedContent}
         >
+          <div className="mt-4 flex flex-col-reverse lg:flex-row lg:items-center justify-between">
+            <RepoStats
+              repoName={book.repo}
+              className="flex flex-col md:flex-row md:items-center md:space-x-2"
+            />
+
+            <div className="flex flex-row items-center space-x-2">
+              <PageCount pageCount={book.pageCount} />
+              <BookPublicationDate publicationDate={book.publicationDate} />
+            </div>
+          </div>
           <hr className="border-neutral-200 my-4" />
-          <BookSummarySection book={book} coverImageAltText={imageAltText} />
-          <SectionSeparator className="mt-5 lg:mt-20 mb-10" />
+          <BookSummarySection book={book} />
+          <SectionSeparator className="mt-5 lg:mt-24 mb-10" />
           {reviews != null ? (
             <>
               <ReviewsSection reviews={reviews} />

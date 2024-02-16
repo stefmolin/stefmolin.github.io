@@ -7,7 +7,7 @@ type PageCountProps = {
 
 const PageCount = ({ pageCount }: PageCountProps) => (
   <div className="flex flex-row items-center">
-    <FontAwesomeIcon icon={faBook} className="pr-1 -ml-1" fixedWidth />
+    <FontAwesomeIcon icon={faBook} className="pr-1" fixedWidth />
     <span>{pageCount} pages</span>
   </div>
 );

@@ -9,7 +9,7 @@ export default interface Book {
   pageCount: number;
   description: string;
   amazonLink: string;
-  repoLink: string;
+  repo: string;
   isbn: string;
   tags: string[];
   translations?: TranslatedBook[];
