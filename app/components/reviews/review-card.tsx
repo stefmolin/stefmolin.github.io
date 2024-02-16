@@ -72,7 +72,7 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
           bounce
           fixedWidth
         />
-        <div className="text-bold text-right py-2 text-pretty">
+        <div className="text-right py-2 text-pretty">
           &mdash;{' '}
           {source != null ? (
             <a href={source} {...EXTERNAL_LINK_PROPS} className="text-slate-600 hover:underline">
