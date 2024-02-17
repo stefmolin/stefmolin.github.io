@@ -10,6 +10,7 @@ import {
   faCaretDown,
   faStar,
   faTrophy,
+  faCaretUp,
 } from '@fortawesome/free-solid-svg-icons';
 import FancyDivider from '../fancy-divider';
 import reviewStyles from '../../styles/review-styles.module.css';
@@ -38,7 +39,6 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
   }, [showMore]);
 
   const { author, rating, source, text } = review;
-  const showArrow = showMore && !atBottom;
 
   return (
     <div
@@ -58,7 +58,7 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
           ref={reviewTextRef}
           className={classNames(
             'pr-4',
-            'overflow-y-auto',
+            'overflow-y-auto overscroll-contain',
             '[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]',
             {
               'max-h-24': cardSize === 'xs',
@@ -74,10 +74,10 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
         </div>
         <FontAwesomeIcon
           className={classNames('float-right relative bottom-2 -right-5', {
-            visible: showArrow,
-            invisible: !showArrow,
+            visible: showMore,
+            invisible: !showMore,
           })}
-          icon={faCaretDown}
+          icon={atBottom ? faCaretUp : faCaretDown}
           size="sm"
           bounce
           fixedWidth
