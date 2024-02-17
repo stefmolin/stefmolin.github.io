@@ -92,7 +92,7 @@ export const BOOK_PAGES: BookPage[] = [
         The datasets are intuitive. \[...\] lots of example code appears on every
         single page, illustrating the features. The story and example code flow together, not skipping
         around or showing disjointed points. The chapters follow your workflow, from data ingest and
-        EDA to data cleaning, data wrangling, visualizataion, and finally to applications.
+        EDA to data cleaning, data wrangling, visualization, and finally to applications.
 
         Thorough treatments are given to data cleaning, data wrangling, and data enrichment as separate
         topics, going into deep details on how to reshape and reindex data frames, how to do proper
@@ -100,6 +100,7 @@ export const BOOK_PAGES: BookPage[] = [
         and wrangling steps.\[...\]
 
         This is the first and best book you should buy for Pandas.`,
+        rating: 5,
         source:
           'https://www.amazon.com/gp/customer-reviews/R14LQVKOF0M2BX/ref=cm_cr_arp_d_rvw_ttl?ie=UTF8&ASIN=1800563450',
       },
@@ -135,13 +136,14 @@ export const BOOK_PAGES: BookPage[] = [
         in some cases missing. Accessing real world data with APIs is a tool I appreciate leaning and
         then seeing the shortcomings of the real world data has been what most other books are missing.
         This book will better allow me to translate the lessons to my own needs. Well done!`,
+        rating: 5,
         source:
           'https://www.amazon.com/gp/customer-reviews/R1UJCL8CPVR1JM/ref=cm_cr_arp_d_rvw_ttl?ie=UTF8&ASIN=1800563450',
       },
       {
         author: 'Darrel Robinson (@darrob22)',
-        text: `Thanks for writing it! It's honestly the best python book I've come across, and the
-        only one I recommend to people.`,
+        text: `Thanks for writing it! It's honestly the best \[P\]ython book I've come across, and
+        the only one I recommend to people.`,
         source: 'https://x.com/darrob22/status/1402971418963361792?s=20',
       },
       {
@@ -159,18 +161,20 @@ export const BOOK_PAGES: BookPage[] = [
 
         Additionally, the book has great insight into Python Software Engineering & Product Prototyping
         which is the underlying base of quick analysis, data processing, and engineering. Awesome book.`,
+        rating: 5,
         source:
           'https://www.amazon.com/gp/customer-reviews/R2G6VD8MUEYCYF/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=1800563450',
       },
       {
         author: 'Ali (via Amazon)',
         text: `This is a good book for aspiring data scientists. My initial impression from the book
-        title “Data Analysis with Pandas” that this was going to a book that was all about the ins
+        title "Data Analysis with Pandas" that this was going to a book that was all about the ins
         and outs of Pandas. I was wrong, as the book covered a broad range of concepts (software
         engineering, statistics, and machine learning). The chapters were well structured and start
         with concepts, followed by the application of techniques with code examples, exercises, and
         a list of references for further reading. It is the book I wish I had read earlier on my
         learning, and I highly recommend it.`,
+        rating: 5,
         source:
           'https://www.amazon.com/gp/customer-reviews/R1BA4D3NENJQJE/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=1800563450',
       },
@@ -179,6 +183,7 @@ export const BOOK_PAGES: BookPage[] = [
         text: `Ottimo libro. Livello intermedio, teoria e ottimi esempi, il capitolo sulla classe per
         l'analisi dati di borsa è veramente ben fatto. Uso proficuo del chaining e delle classi.
         Uno dei migliori testi su python e le librerie per l'analisi dei dati. Consiglio`,
+        rating: 5,
         source:
           'https://www.amazon.it/review/R3RPKJAC1FLLKF/ref=cm_cr_srp_d_rdp_perm?ie=UTF8&ASIN=1800563450',
       },
@@ -188,23 +193,88 @@ export const BOOK_PAGES: BookPage[] = [
         wrangling, analysis, and visualization, 2nd Edition by Stefanie Molin is one of the best books
         for data science beginners, data analysts, and Python! This is my reference book and for sure
         I would like to recommend it for anyone interested in these topics.`,
+        rating: 5,
       },
-      // {
-      //   author: 'Sandeep Pawar (@PawarBI)',
-      //   text: `For Data Analysis, I recommend @StefanieMolin's book.`,
-      //   source: 'https://x.com/PawarBI/status/1620474899008749568?s=20',
-      // },
-      // {
-      //   author: 'Physicstodata (@angelmcarr)',
-      //   text: `For pandas I recommend @StefanieMolin's book, I learned a lot from that one.`,
-      //   source: 'https://x.com/angelmcarr/status/1619307784285335552?s=20',
-      // },
-      // {
-      //   author: `nebelgrau/Michal 🐍🦀🤖 💙💛🌻`,
-      //   text: `I just want to say that... "Hands-on Data Analysis with Pandas" by @StefanieMolin
-      //   @PacktPub is GREAT!!! 🐼🐍`,
-      //   source: 'https://x.com/nebelgrau77/status/1502600093232476164?s=20',
-      // },
+      {
+        author: 'Sara (via Towards Data Science)',
+        text: dedent`5 Books to Help You Master the Pandas Library (#1):
+
+        Stefanie wrote this book to help beginners build a solid foundation of the fundamentals of
+        Pandas and how they can be used to deal with different sizes of datasets. This book is my
+        favorite if you're just getting into data science but have some Python knowledge.
+
+        The book covers all basic data manipulation topics such as EDA (exploratory data analysis),
+        statistics fundamentals, dealing with data points, applying some machine learning algorithms,
+        and visualizing your data. The author of this book, Stefanie, also sometimes offers
+        [training](/workshops) to people who want to be guided and supported through the information.
+        The end of the book gets into some advanced topics, and addresses Git and GitHub as well.`,
+        source:
+          'https://towardsdatascience.com/5-books-to-help-you-master-the-pandas-library-acb5c305159b',
+      },
+      {
+        author: 'script spark (via YouTube)',
+        text: dedent`"Hands on Data Analysis with Pandas" is one of the best books I have read
+        recently. What I like the most about it is the structure: combine chapters explaining the
+        different parts of pandas with chapters that have complete practical examples of analysis.
+        This allows you to see detailed examples of the functionality but also see how they fit in
+        with the larger picture of a full analysis. Also, it approaches the teaching of pandas with
+        both a data analyst perspective and a software engineer perspective. To be successful in
+        data science today we need to wear both of those hats, so for someone coming from an analysis
+        background without formal software engineering training, the book helps demystify concepts
+        like virtualenv, simulations, source control, etc.`,
+        source: 'https://www.youtube.com/watch?v=SGDh9PvO1FM&t=125s',
+      },
+      {
+        author: 'Jesper Dramsch',
+        text: `Don't Sleep On These 3 Books For Learning Data Analytics (#3): Truly \[h\]ands-on
+        from pandas to machine learning.`,
+        source:
+          'https://dramsch.net/articles/dont-sleep-on-these-3-books-for-learning-data-analytics/',
+      },
+      {
+        author: 'Srujana (via Geekflare)',
+        text: dedent`11 Best Data Science Books to Learn from Theory to Practical Applications
+        \[2024 Edition\]: #9
+
+        Whether you are a novice or a skilled data wizard, this hands-on data analysis with Pandas
+        book shows every single trick you need to explore, analyze, and manipulate data using Pandas.
+        \[...\] By working on end-chapter exercises, you'll gradually develop skills to handle
+        real-world data in your professional work.`,
+        source: 'https://geekflare.com/best-data-science-books/',
+      },
+      {
+        author: 'Physicstodata (@angelmcarr)',
+        text: `For pandas I recommend @StefanieMolin's book, I learned a lot from that one.`,
+        source: 'https://x.com/angelmcarr/status/1619307784285335552?s=20',
+      },
+      {
+        author: `nebelgrau/Michal 🐍🦀🤖 💙💛🌻`,
+        text: `I just want to say that... "Hands-on Data Analysis with Pandas" by @StefanieMolin
+        @PacktPub is GREAT!!! 🐼🐍`,
+        source: 'https://x.com/nebelgrau77/status/1502600093232476164?s=20',
+      },
+      {
+        author: 'Manjiri (via Analytics Drift)',
+        text: dedent`Top data analytics book #4:
+
+        With this book, you can learn to use Pandas in different real-world problems with the help
+        of step-by-step explanations. This book helps you analyze data, start with machine learning
+        algorithms, and work with Python libraries \[...\]. This book is suitable for data science
+        beginners, Python developers, and data analysts who want to explore every data analysis
+        stage with various datasets.`,
+        source: 'https://analyticsdrift.com/top-data-analytics-books/',
+      },
+      {
+        author: 'ODSC Team',
+        text: `Top Data Science Books to Get as Gifts for the Holidays \[2022 Edition\]: #2`,
+        source:
+          'https://opendatascience.com/top-data-science-books-to-get-as-gifts-for-the-holidays/',
+      },
+      {
+        author: 'Sandeep Pawar (@PawarBI)',
+        text: `For Data Analysis, I recommend @StefanieMolin's book.`,
+        source: 'https://x.com/PawarBI/status/1620474899008749568?s=20',
+      },
     ],
   },
   {
@@ -256,7 +326,7 @@ export const BOOK_PAGES: BookPage[] = [
     reviews: [
       {
         author: 'Scott Saenz (@SaenzScott)',
-        text: `Stefanie Molin's '[Hands-On ]Data Analysis with Pandas' has one of the best intro chapters I've
+        text: `Stefanie Molin's "\[Hands-On \]Data Analysis with Pandas" has one of the best intro chapters I've
         seen, with a section on git and another on the importance of setting up a separate environment
         for each project. I recommend it for any of your future students.`,
         source: 'https://x.com/SaenzScott/status/1175031439253024768?s=20',
@@ -266,6 +336,7 @@ export const BOOK_PAGES: BookPage[] = [
         text: `Great foundational book. Amazing read. Very thorough, covering a broad range of topics
         in the data science space. I would highly recommend starting with this book for anyone interested
         in building a foundation in Data Science.`,
+        rating: 5,
         source:
           'https://www.amazon.com/gp/customer-reviews/R1DMWTMYW7KFUD/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&ASIN=1789615321',
       },
@@ -274,6 +345,7 @@ export const BOOK_PAGES: BookPage[] = [
         text: `Better approach to data science learning. Very good resource. Does a great job in
         providing the fundamentals and guiding you to learn. After 2 other book purchases (and returns)
         on Python / Data Science topics that disappointed me, this one is spot on.`,
+        rating: 5,
         source:
           'https://www.amazon.com/gp/customer-reviews/R14X0YO4BEP5FY/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&ASIN=1789615321',
       },
@@ -282,6 +354,7 @@ export const BOOK_PAGES: BookPage[] = [
         text: `Muito Bom. É um livro com muito conteúdo, tanto técnico quanto prático. Tem uma pequena
         introdução sobre Análise de Dados e Revisão de Tópicos de Estatística. E, em seguida, inicia
         um amplo e detalhado curso de Pandas. Tem teoria, exercícios e exemplos de aplicações práticas.`,
+        rating: 5,
       },
     ],
   },

@@ -1,0 +1,12 @@
+.review {
+  @apply flex;
+  @apply flex-col;
+  @apply space-y-3;
+  @apply text-pretty;
+}
+
+.review a {
+  @apply text-slate-500;
+  @apply hover:text-slate-400;
+  @apply underline;
+}

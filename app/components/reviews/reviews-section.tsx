@@ -2,9 +2,6 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import ReviewCard, { type ReviewCardProps } from './review-card';
 
-// TODO: add pagination here (~4 per page as default?)
-// TODO: apply the markdown styles here too???
-
 interface ReviewsSectionProps {
   reviews: ReviewCardProps['review'][];
   cardSize: ReviewCardProps['cardSize'];

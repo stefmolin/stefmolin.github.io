@@ -2,8 +2,17 @@ import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import _ from 'lodash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuoteLeft, faQuoteRight, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import {
+  faQuoteLeft,
+  faQuoteRight,
+  faCaretDown,
+  faStar,
+  faTrophy,
+} from '@fortawesome/free-solid-svg-icons';
+import FancyDivider from '../fancy-divider';
+import reviewStyles from '../../styles/review-styles.module.css';
 import { EXTERNAL_LINK_PROPS } from '../../data/constants';
 import type Review from '../../interfaces/review';
 
@@ -28,7 +37,7 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
     else setShowMore(reviewTextRef.current.offsetHeight < reviewTextRef.current.scrollHeight);
   }, [showMore]);
 
-  const { author, source, text } = review;
+  const { author, rating, source, text } = review;
   const showArrow = showMore && !atBottom;
 
   return (
@@ -48,7 +57,7 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
         <div
           ref={reviewTextRef}
           className={classNames(
-            'space-y-3 text-pretty pr-4',
+            'pr-4',
             'overflow-y-auto',
             '[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]',
             {
@@ -57,6 +66,7 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
               'max-h-56': cardSize === 'md',
               'max-h-72': cardSize === 'lg',
             },
+            reviewStyles['review'],
           )}
           onScroll={handleScroll}
         >
@@ -72,15 +82,29 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
           bounce
           fixedWidth
         />
-        <div className="text-right py-2 text-pretty">
-          &mdash;{' '}
-          {source != null ? (
-            <a href={source} {...EXTERNAL_LINK_PROPS} className="text-slate-600 hover:underline">
-              {author}
-            </a>
-          ) : (
-            author
-          )}
+        <div className="flex flex-col items-center justify-center text-pretty text-center">
+          <FancyDivider className="my-2">
+            <div
+              className={classNames('flex flex-row items-center justify-center px-5', {
+                'text-yellow-400': rating != null,
+              })}
+            >
+              {rating ? (
+                _.range(rating).map(() => <FontAwesomeIcon icon={faStar} size="xs" fixedWidth />)
+              ) : (
+                <FontAwesomeIcon icon={faTrophy} size="xs" fixedWidth />
+              )}
+            </div>
+          </FancyDivider>
+          <div>
+            {source != null ? (
+              <a href={source} {...EXTERNAL_LINK_PROPS} className="text-slate-600 hover:underline">
+                {author}
+              </a>
+            ) : (
+              author
+            )}
+          </div>
         </div>
       </div>
       <FontAwesomeIcon icon={faQuoteRight} size="xl" fixedWidth />
