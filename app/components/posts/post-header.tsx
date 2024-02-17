@@ -2,10 +2,14 @@ import PostPublicationDate from '../datetime/publication-date';
 import PostTags from './post-tags';
 import PostTitle from './post-title';
 import TimeToRead from '../datetime/duration-indicator';
-import FeaturedIn from './featured';
+import Featured from './featured';
 import type PostType from '../../interfaces/post';
 
-const PostHeader = ({ post }: { post: PostType }) => {
+const PostHeader = ({
+  post,
+}: {
+  post: Pick<PostType, 'title' | 'subtitle' | 'date' | 'duration' | 'featured' | 'tags'>;
+}) => {
   const { title, subtitle, date, tags, duration, featured } = post;
   return (
     <>
@@ -15,7 +19,7 @@ const PostHeader = ({ post }: { post: PostType }) => {
           <div className="flex flex-row space-x-4 pr-4">
             <PostPublicationDate date={date} relative />
             <TimeToRead duration={duration} />
-            {featured && <FeaturedIn contentClass="Article" features={featured} />}
+            {featured && <Featured contentClass="Article" features={featured} />}
           </div>
           <PostTags tags={tags} className="flex-1 lg:text-right" />
         </div>

@@ -4,17 +4,13 @@ import remarkGfm from 'remark-gfm';
 import Markdown from 'react-markdown';
 import Tooltip from '../tooltip';
 
-interface FeaturedInProps {
+interface FeaturedProps {
   title?: string;
   contentClass: string;
   features: string[];
 }
 
-export default function FeaturedIn({
-  contentClass,
-  features,
-  title = 'Featured',
-}: FeaturedInProps) {
+export default function Featured({ contentClass, features, title = 'Featured' }: FeaturedProps) {
   let featuresText;
   if (features.length === 1) featuresText = `${features[0]}.`;
   else if (features.length === 2) featuresText = `${features.join(' and ')}.`;
