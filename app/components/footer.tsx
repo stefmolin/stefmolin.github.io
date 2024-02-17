@@ -15,6 +15,7 @@ import SubscribeToNewsletterForm from './subscribe-to-newsletter';
 import FollowButtons from './follow';
 import { EXTERNAL_LINK_PROPS } from '../data/constants';
 import { type LinkWithIcon } from '../interfaces/link';
+import FancyDivider from './fancy-divider';
 
 const SitemapLinks = ({ className }: { className?: string }) => {
   // Internal links only
@@ -145,11 +146,9 @@ const Footer = () => {
 
       <SitemapLinks className="px-5" />
 
-      <div className="flex flex-row items-center justify-center pt-10">
-        <hr className="my-8 w-full" />
+      <FancyDivider className="py-10">
         <FollowButtons size="3x" className="px-5" />
-        <hr className="my-8 w-full" />
-      </div>
+      </FancyDivider>
 
       <div className="flex flex-col lg:flex-row justify-between items-center text-center px-2 pb-5">
         <div className="flex flex-col lg:text-left pt-4 lg:pt-0">
