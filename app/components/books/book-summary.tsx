@@ -28,7 +28,7 @@ const BookSummarySection = ({ book, divClassName }: BookSummaryProps) => (
         </button>
       </div>
       <small className="text-pretty -indent-1 pl-2">
-        *As an Amazon Associate, I earn from qualifying purchases.
+        *As an Amazon Associate, I earn from qualifying purchases at no cost to you.
       </small>
     </div>
     <div className="space-y-4 min-h-48 md:min-h-64 lg:min-h-80">
