@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import classNames from 'classnames';
 import type MapLocation from '../../interfaces/map-location';
 import PushPinInfo from './push-pin-info';
 import PushPinMap, { type PushPinMapProps } from './push-pin-map';
@@ -22,7 +23,7 @@ export default function InteractiveMap({
 }: InteractiveMapProps) {
   const [selectedMapPin, setSelectedMapPin] = useState<MapLocation>();
   return (
-    <div className={containerClassName}>
+    <div className={classNames('overscroll-contain', containerClassName)}>
       <PushPinMap
         className={pushPinMapClassName}
         locations={locations}
