@@ -1,5 +1,6 @@
 import { faInfo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { MAP_PIN } from '../../data/constants';
 
 export default function PushPinClickPrompt() {
   return (
@@ -11,7 +12,7 @@ export default function PushPinClickPrompt() {
         className="border-2 border-black rounded-full py-0.5 mr-2"
         bounce
       />{' '}
-      <p className="text-lg">Click a pin on the map to see more information.</p>
+      <p className="text-lg">Click a {MAP_PIN} on the map to see more information.</p>
     </div>
   );
 }

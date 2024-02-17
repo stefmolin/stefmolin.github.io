@@ -11,10 +11,10 @@ import { getImageLink } from '../../lib/images';
 import { LIVE_PRESENTATIONS } from '../../data/events';
 import type RelatedContentLink from '../../interfaces/related-content';
 import RelatedContentSection from '../../components/related-content';
-import EventStatsGrid from '../../components/events/event-stats-grid';
-import CollapsibleSection from '../../components/collapsible-section';
 import { CONFERENCE_IMAGES } from '../../data/photo-gallery';
 import PhotoGallery from '../../components/photo-gallery';
+import EventStatsSection from '../../components/events/event-stats-section';
+import { MAP_PIN } from '../../data/constants';
 
 const relatedContent: RelatedContentLink[] = [
   CONTENT_LINKS.WORKSHOPS,
@@ -55,23 +55,13 @@ export default function Conferences() {
           <h1 className="text-5xl mb-2">{pageTitle}</h1>
           <PhotoGallery photos={CONFERENCE_IMAGES} title={null} shufflePhotos />
           <SectionSeparator className="my-10" />
-          <div className="space-y-5">
-            <h2 className="text-3xl">Event statistics</h2>
-            <p>Click blue text for more information.</p>
-            <EventStatsGrid sessions={presentations} includeYearsActive />
-            <CollapsibleSection prompt="Yearly breakdown">
-              <EventStatsGrid sessions={presentations} yearlyCountsOnly />
-            </CollapsibleSection>
-          </div>
+          <EventStatsSection sessions={presentations} includeYearsActive />
           <SectionSeparator className="my-10" />
-          <div className="space-y-5">
-            <h2 className="text-3xl">Event map</h2>
-            <EventMap
-              introText={`To date, I have presented ${presentations.length} times at conferences around
-              the world. Click a pin on the map for more information.`}
-              liveEvents={presentations}
-            />
-          </div>
+          <EventMap
+            introText={`To date, I have presented ${presentations.length} times at conferences around
+              the world. Click a ${MAP_PIN} on the map for more information.`}
+            liveEvents={presentations}
+          />
           <SectionSeparator className="my-10" />
           <RelatedContentSection relatedContent={relatedContent} />
         </div>

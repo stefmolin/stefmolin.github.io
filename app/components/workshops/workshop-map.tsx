@@ -1,3 +1,4 @@
+import { MAP_PIN } from '../../data/constants';
 import { type ConferencePresentation } from '../../interfaces/event';
 import type Workshop from '../../interfaces/workshop';
 import { getLivePresentations, getConferenceEventMapAnnotations } from '../../lib/events';
@@ -13,7 +14,7 @@ export default function WorkshopMap({ workshop }: { workshop: Workshop }) {
   return (
     <div>
       <h2 className="text-3xl mb-5">Past sessions</h2>
-      <p>Click a pin on the map to see the conferences I have presented this workshop at.</p>
+      <p>Click a {MAP_PIN} on the map to see the conferences I have presented this workshop at.</p>
       <InteractiveMap
         locations={locationToEvents}
         highlightedCountries={locationToEvents.map(({ country }) => country)}

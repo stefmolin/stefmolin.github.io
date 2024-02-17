@@ -10,9 +10,10 @@ import { getImageLink } from '../../lib/images';
 import { LIVE_PRESENTATIONS } from '../../data/events';
 import RelatedContentLink from '../../interfaces/related-content';
 import RelatedContentSection from '../../components/related-content';
-import EventStatsGrid from '../../components/events/event-stats-grid';
 import { EVENT_IMAGES } from '../../data/photo-gallery';
 import PhotoGallery from '../../components/photo-gallery';
+import EventStatsSection from '../../components/events/event-stats-section';
+import { MAP_PIN } from '../../data/constants';
 
 const relatedContent: RelatedContentLink[] = [
   CONTENT_LINKS.CONFERENCES,
@@ -51,21 +52,15 @@ export default function Index() {
         />
         <div className="mt-4 mb-20 max-w-5xl mx-auto">
           <h1 className="text-5xl mb-2">{pageTitle}</h1>
-          <PhotoGallery photos={EVENT_IMAGES} title={null} shufflePhotos />
           <SectionSeparator className="my-10" />
-          <div>
-            <h2 className="text-3xl mb-5">Event statistics</h2>
-            <p className="mb-5">Click blue text for more information.</p>
-            <EventStatsGrid sessions={LIVE_PRESENTATIONS} />
-          </div>
+          <PhotoGallery photos={EVENT_IMAGES} title="Photo gallery 📷" shufflePhotos />
           <SectionSeparator className="my-10" />
-          <div className="space-y-5">
-            <h2 className="text-3xl">Event map</h2>
-            <EventMap
-              introText="Click a pin on the map to see the events I have participated in."
-              liveEvents={LIVE_PRESENTATIONS}
-            />
-          </div>
+          <EventStatsSection sessions={LIVE_PRESENTATIONS} />
+          <SectionSeparator className="my-10" />
+          <EventMap
+            introText={`Click a ${MAP_PIN} on the map to see the events I have participated in around the world.`}
+            liveEvents={LIVE_PRESENTATIONS}
+          />
           <SectionSeparator className="my-10" />
           <RelatedContentSection relatedContent={relatedContent} />
         </div>

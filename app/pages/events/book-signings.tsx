@@ -12,6 +12,7 @@ import type RelatedContentLink from '../../interfaces/related-content';
 import RelatedContentSection from '../../components/related-content';
 import { BOOK_SIGNING_IMAGES } from '../../data/photo-gallery';
 import PhotoGallery from '../../components/photo-gallery';
+import { MAP_PIN } from '../../data/constants';
 
 const relatedContent: RelatedContentLink[] = [
   CONTENT_LINKS.INTERVIEWS,
@@ -48,15 +49,12 @@ export default function BookSignings() {
           <h1 className="text-5xl mb-2">{pageTitle}</h1>
           <PhotoGallery photos={BOOK_SIGNING_IMAGES} title={null} shufflePhotos />
           <SectionSeparator className="my-10" />
-          <div className="space-y-5">
-            <h2 className="text-3xl">Event map</h2>
-            <EventMap
-              introText={`To date, I have done ${signings.length} book signings at conferences around
-              the world. Click a pin on the map for more information.`}
-              liveEvents={signings}
-              excludeTypeColumn
-            />
-          </div>
+          <EventMap
+            introText={`To date, I have done ${signings.length} book signings at conferences around
+              the world. Click a ${MAP_PIN} on the map for more information.`}
+            liveEvents={signings}
+            excludeTypeColumn
+          />
           <SectionSeparator className="my-10" />
           <RelatedContentSection relatedContent={relatedContent} />
         </div>

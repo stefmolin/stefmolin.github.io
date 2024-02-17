@@ -5,9 +5,14 @@ import { usePathname } from 'next/navigation';
 export interface StatsGridProps {
   stats: { title: string; value: number | string | undefined; link?: string }[];
   className?: string;
+  linkClassName?: string;
 }
 
-export default function StatsGrid({ stats, className }: StatsGridProps) {
+export default function StatsGrid({
+  stats,
+  className,
+  linkClassName = 'text-blue-800',
+}: StatsGridProps) {
   return (
     <div className={classNames('flex justify-center', className)}>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
@@ -33,7 +38,7 @@ export default function StatsGrid({ stats, className }: StatsGridProps) {
                   href={{
                     pathname: link,
                   }}
-                  className="text-blue-800 hover:scale-110"
+                  className={classNames('hover:scale-110', linkClassName)}
                 >
                   {stat}
                 </Link>

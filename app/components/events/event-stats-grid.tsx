@@ -15,11 +15,13 @@ import { FLAGS } from '../../data/constants';
 export default function EventStatsGrid({
   sessions,
   className,
+  linkClassName = 'text-blue-800',
   includeYearsActive = false,
   yearlyCountsOnly = false,
 }: {
   sessions: LivePresentation[];
   className?: string;
+  linkClassName?: string;
   includeYearsActive?: boolean;
   yearlyCountsOnly?: boolean;
 }) {
@@ -70,5 +72,11 @@ export default function EventStatsGrid({
     if (includeYearsActive) stats.splice(stats.length - 3, 0, yearsActive);
   }
 
-  return <StatsGrid className={classNames('mx-6 my-2', className)} stats={stats} />;
+  return (
+    <StatsGrid
+      className={classNames('mx-6 my-2', className)}
+      linkClassName={linkClassName}
+      stats={stats}
+    />
+  );
 }
