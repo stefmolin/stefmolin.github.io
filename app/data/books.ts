@@ -196,7 +196,7 @@ export const BOOK_PAGES: BookPage[] = [
         rating: 5,
       },
       {
-        author: 'Sara (via Towards Data Science)',
+        author: 'Sara A. Metwalli (via Towards Data Science)',
         text: dedent`5 Books to Help You Master the Pandas Library (#1):
 
         Stefanie wrote this book to help beginners build a solid foundation of the fundamentals of
@@ -223,6 +223,13 @@ export const BOOK_PAGES: BookPage[] = [
         background without formal software engineering training, the book helps demystify concepts
         like virtualenv, simulations, source control, etc.`,
         source: 'https://www.youtube.com/watch?v=SGDh9PvO1FM&t=125s',
+      },
+      {
+        author: 'Chanin Nantasenamat (via Towards Data Science)',
+        text: `The book covers the entire span of the data science process from data wrangling with
+        Pandas to data visualization with Matplotlib and Seaborn as well as model building with
+        Scikit-learn.`,
+        source: 'https://towardsdatascience.com/how-to-master-pandas-for-data-science-b8ab0a9b1042',
       },
       {
         author: 'Jesper Dramsch',
@@ -355,6 +362,37 @@ export const BOOK_PAGES: BookPage[] = [
         introdução sobre Análise de Dados e Revisão de Tópicos de Estatística. E, em seguida, inicia
         um amplo e detalhado curso de Pandas. Tem teoria, exercícios e exemplos de aplicações práticas.`,
         rating: 5,
+      },
+      {
+        author: 'Chanin Nantasenamat (via Towards Data Science)',
+        text: `The book covers the entire span of the data science process from data wrangling with
+        Pandas to data visualization with Matplotlib and Seaborn as well as model building with
+        Scikit-learn.`,
+        source: 'https://towardsdatascience.com/how-to-master-pandas-for-data-science-b8ab0a9b1042',
+      },
+      {
+        author: 'RealToughCandy',
+        text: dedent`11 Best Data Analysis Books in 2021 (#10)
+
+        Hands-On Data Analysis with Pandas by Stefanie Molin is one of the best data analysis books
+        for using Python to collect, wrangle, analyze, visualize, and more with data.`,
+        source: 'https://realtoughcandy.com/data-analysis-books/',
+      },
+      {
+        author: 'Data Courses',
+        text: dedent`Essential Books for Learning Pandas (#2)
+
+        It ramps up nicely going from basic topics into in-depth tutorials on exploratory data
+        analysis, statistics, and machine learning problems.
+
+        The book is highly rated on Amazon largely due to its practical approach to solving business
+        problems with the library. \[...\]
+
+        We think the advanced techniques provided at the end of the book are extremely useful. The
+        GitHub repository provided in the book help you to understand Git a little better as a
+        beginner as well as provide the actual source code for the book in a compatible way to
+        reproduce the examples yourself.`,
+        source: 'https://www.datacourses.com/essential-books-for-learning-pandas-1481/',
       },
     ],
   },
