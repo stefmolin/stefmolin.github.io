@@ -2,7 +2,6 @@
   @apply flex;
   @apply flex-col;
   @apply space-y-3;
-  @apply text-pretty;
 }
 
 .review a {
