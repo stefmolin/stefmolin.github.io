@@ -22,6 +22,7 @@ export default function Pagination({
     if (scrollRef.current != null) scrollRef.current.scrollIntoView();
   };
   const numberClassName = 'px-3 md:px-5 py-2';
+  const disabledClassName = 'hover:no-underline cursor-not-allowed';
   return (
     <ReactPaginate
       breakLabel={
@@ -49,10 +50,11 @@ export default function Pagination({
         'text-base md:text-xl font-bold text-slate-800 py-5 md:px-5',
       )}
       pageLinkClassName={classNames(numberClassName, 'hover:underline')}
-      activeLinkClassName="text-blue-700 shadow-inner bg-slate-100 rounded-full"
-      breakLinkClassName={numberClassName}
-      nextLinkClassName={numberClassName}
-      previousLinkClassName={numberClassName}
+      activeLinkClassName={classNames('shadow-inner bg-slate-100 rounded-full', disabledClassName)}
+      breakLinkClassName={classNames(numberClassName, 'hover:text-blue-700')}
+      nextLinkClassName={classNames(numberClassName, 'hover:text-blue-700')}
+      previousLinkClassName={classNames(numberClassName, 'hover:text-blue-700')}
+      disabledClassName={classNames(disabledClassName, 'invisible')}
     />
   );
 }
