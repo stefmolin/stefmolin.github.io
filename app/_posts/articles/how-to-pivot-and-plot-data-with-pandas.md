@@ -12,6 +12,10 @@ assets: "/assets/articles/how-to-pivot-and-plot-data-with-pandas"
 ogImage:
   url: "/post-assets/cover-image.jpg"
 canonical: "https://opendatascience.com/how-to-pivot-and-plot-data-with-pandas/"
+featured:
+  - "[The Real Python Podcast #68 (at 19:42)](https://realpython.com/podcasts/rpp/68/)"
+  - "[PyCoder's Weekly Issue #478](https://pycoders.com/issues/478)"
+  - '"[These Are the Top Blogs on OpenDataScience in 2021](https://opendatascience.com/these-are-the-top-blogs-on-opendatascience-in-2021/)," where it earned the top spot'
 ---
 
 ![two pandas](/post-assets/cover-image.jpg)

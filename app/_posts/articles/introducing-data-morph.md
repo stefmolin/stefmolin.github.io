@@ -13,6 +13,8 @@ ogImage:
   url: "/post-assets/panda-to-star.gif"
   caption: "Data Morph transforms a panda to a star, while preserving summary statistics."
 canonical: "https://levelup.gitconnected.com/data-morph-moving-beyond-the-datasaurus-dozen-156927b20f8c"
+featured:
+  - "[PyCoder's Weekly Issue #572](https://pycoders.com/issues/572) (via mention of the [stefmolin/data-morph](https://github.com/stefmolin/data-morph) repository)"
 ---
 
 This article introduces [Data Morph](https://github.com/stefmolin/data-morph), a new open source Python package that can be used to morph an input dataset of 2D points into select shapes, while preserving the summary statistics to a given number of decimal points through simulated annealing. Data Morph extends research from Autodesk to create the [Datasaurus Dozen](https://damassets.autodesk.net/content/dam/autodesk/research/publications-assets/pdf/same-stats-different-graphs.pdf), and is intended to be used as a teaching tool for illustrating why you can't rely solely on summary statistics.

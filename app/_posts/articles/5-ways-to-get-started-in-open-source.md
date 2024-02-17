@@ -12,6 +12,10 @@ assets: "/assets/articles/5-ways-to-get-started-in-open-source"
 ogImage:
   url: "/post-assets/journey-ahead.jpg"
 canonical: "https://levelup.gitconnected.com/5-ways-to-get-started-in-open-source-4aac430828e9"
+featured:
+  - "[The Real Python Podcast Episode #190 (all)](https://realpython.com/podcasts/rpp/190/)"
+  - "[The Real Python Podcast Episode #173 (at 26:31)](https://realpython.com/podcasts/rpp/173/)"
+  - "[PyCoder's Weekly Issue #593](https://pycoders.com/issues/593)"
 ---
 
 ![the journey ahead](/post-assets/journey-ahead.jpg)

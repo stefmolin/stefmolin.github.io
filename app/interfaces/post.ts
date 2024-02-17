@@ -17,6 +17,7 @@ interface PostType {
   type: string;
   canonical?: string;
   modified?: string;
+  featured?: string[];
 }
 
 export default PostType;
