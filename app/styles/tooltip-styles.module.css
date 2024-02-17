@@ -1,0 +1,17 @@
+.tooltip-message a {
+  @apply underline;
+}
+.tooltip-message ul,
+.tooltip-message ol {
+  @apply list-outside;
+  @apply mx-3;
+  @apply mt-1;
+}
+
+.tooltip-message ul {
+  @apply list-disc;
+}
+
+.tooltip-message ol {
+  @apply list-decimal;
+}
