@@ -26,7 +26,7 @@ export default function EventMap({
     talk: CONTENT_LINKS.TALKS.link,
   };
   return (
-    <div className="space-y-5">
+    <div id="event-map" className="space-y-5">
       <h2 className="text-3xl">Event map 🗺️</h2>
       <div>
         <p>{introText}</p>
