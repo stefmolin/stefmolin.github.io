@@ -54,7 +54,7 @@ export const PRESENTATIONS: Record<string, Presentation> = {
   DATA_MORPH: {
     contentClass: 'talk',
     title: 'Data Morph: A Cautionary Tale of Summary Statistics',
-    link: '/talks/data-morph/', // TODO
+    link: '/talks/#data-morph-a-cautionary-tale-of-summary-statistics',
   },
   BOOK_SIGNING_PANDAS_1: {
     contentClass: 'book signing',
@@ -65,6 +65,11 @@ export const PRESENTATIONS: Record<string, Presentation> = {
     contentClass: 'book signing',
     title: CONTENT_LINKS.PANDAS_BOOK_2.title,
     link: CONTENT_LINKS.PANDAS_BOOK_2.link,
+  },
+  GETTING_STARTED_IN_OPEN_SOURCE: {
+    contentClass: 'talk',
+    title: 'Getting Started with Open Source Contributions',
+    link: '/talks/#getting-started-with-open-source-contributions',
   },
 };
 
@@ -347,5 +352,23 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     },
     presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
     date: '2023-11-02',
+  },
+  {
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC East'],
+      virtual: false,
+      link: 'https://odsc.com/speakers/data-morph-a-cautionary-tale-of-summary-statistics/',
+    },
+    presentation: PRESENTATIONS.DATA_MORPH,
+    date: '2024-04-2?',
+  },
+  {
+    event: {
+      ...SAME_LOCATION_EVENTS['PyCon IT'],
+      virtual: false,
+      link: 'TBD',
+    },
+    presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
+    date: '2024-05-24',
   },
 ];
