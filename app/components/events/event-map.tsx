@@ -6,6 +6,7 @@ import InteractiveMap from '../maps/interactive-map';
 import CONTENT_LINKS from '../../data/content-links';
 import PushPinClickPrompt from '../maps/push-pin-click-prompt';
 import ExternalLink from '../links/external-link';
+import PageSection from '../sections/page-section';
 
 export default function EventMap({
   liveEvents,
@@ -26,8 +27,7 @@ export default function EventMap({
     talk: CONTENT_LINKS.TALKS.link,
   };
   return (
-    <div key="id-map" id="event-map" className="space-y-5">
-      <h2 className="text-3xl">Event map 🗺️</h2>
+    <PageSection id="event-map" divClassName="space-y-5" title="Event map 🗺️">
       <div>
         <p>{introText}</p>
         <InteractiveMap
@@ -112,6 +112,6 @@ export default function EventMap({
           }}
         />
       </div>
-    </div>
+    </PageSection>
   );
 }

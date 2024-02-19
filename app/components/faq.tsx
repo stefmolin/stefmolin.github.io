@@ -1,12 +1,11 @@
 import type FAQ from '../interfaces/faq';
 import CollapsibleSection from './sections/collapsible-section';
+import PageSection, { type PageSectionProps } from './sections/page-section';
 
-type FAQSectionProps = {
+interface FAQSectionProps extends Omit<PageSectionProps, 'children'> {
   faqs: FAQ[];
-  titleClassName?: string;
   questionsClassName?: string;
-  divClassName?: string;
-};
+}
 
 const FAQSection = ({
   faqs,
@@ -14,14 +13,13 @@ const FAQSection = ({
   questionsClassName,
   divClassName,
 }: FAQSectionProps) => (
-  <div className={divClassName}>
-    <h2 className={titleClassName ?? 'text-3xl mb-5'}>FAQ</h2>
+  <PageSection id="faq" divClassName={divClassName} title="FAQ" titleClassName={titleClassName}>
     <div className={questionsClassName ?? 'flex flex-col space-y-2 items-start pl-6'}>
       {faqs.map(({ question, answer }, index) => (
         <CollapsibleSection key={index} prompt={question} contents={answer} />
       ))}
     </div>
-  </div>
+  </PageSection>
 );
 
 export default FAQSection;

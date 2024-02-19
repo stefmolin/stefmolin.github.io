@@ -4,6 +4,7 @@ import type Workshop from '../../interfaces/workshop';
 import { getLivePresentations, getConferenceEventMapAnnotations } from '../../lib/events';
 import InteractiveMap from '../maps/interactive-map';
 import PushPinClickPrompt from '../maps/push-pin-click-prompt';
+import PageSection from '../sections/page-section';
 
 export default function WorkshopMap({ workshop }: { workshop: Workshop }) {
   const pastSessions = getLivePresentations({
@@ -12,8 +13,7 @@ export default function WorkshopMap({ workshop }: { workshop: Workshop }) {
   });
   const locationToEvents = getConferenceEventMapAnnotations(pastSessions);
   return (
-    <div>
-      <h2 className="text-3xl mb-5">Past sessions</h2>
+    <PageSection id="workshop-map" title="Past sessions">
       <p>Click a {MAP_PIN} on the map to see the conferences I have presented this workshop at.</p>
       <InteractiveMap
         locations={locationToEvents}
@@ -34,6 +34,6 @@ export default function WorkshopMap({ workshop }: { workshop: Workshop }) {
           );
         }}
       />
-    </div>
+    </PageSection>
   );
 }

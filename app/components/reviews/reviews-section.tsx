@@ -1,13 +1,12 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import ReviewCard, { type ReviewCardProps } from './review-card';
+import PageSection, { type PageSectionProps } from '../sections/page-section';
 
-interface ReviewsSectionProps {
+interface ReviewsSectionProps extends Omit<PageSectionProps, 'children'> {
   reviews: ReviewCardProps['review'][];
   cardSize: ReviewCardProps['cardSize'];
-  titleClassName?: string;
   reviewsClassName?: string;
-  divClassName?: string;
 }
 
 const ReviewsSection = ({
@@ -32,8 +31,12 @@ const ReviewsSection = ({
     },
   };
   return (
-    <div className={divClassName}>
-      <h2 className={titleClassName ?? 'text-3xl mb-5'}>Reviews</h2>
+    <PageSection
+      id="reviews"
+      divClassName={divClassName}
+      title="Reviews"
+      titleClassName={titleClassName}
+    >
       <Carousel
         swipeable={true}
         draggable={false}
@@ -57,7 +60,7 @@ const ReviewsSection = ({
           />
         ))}
       </Carousel>
-    </div>
+    </PageSection>
   );
 };
 

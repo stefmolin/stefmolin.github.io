@@ -1,13 +1,11 @@
 import Link from 'next/link';
 import type RelatedContentLink from '../interfaces/related-content';
+import PageSection, { type PageSectionProps } from './sections/page-section';
 
-type RelatedContentSectionProps = {
+interface RelatedContentSectionProps extends Omit<PageSectionProps, 'children'> {
   relatedContent: RelatedContentLink[];
-  title?: React.ReactNode | string | null;
-  titleClassName?: string;
   relatedContentClassName?: string;
-  divClassName?: string;
-};
+}
 
 const RelatedContentSection = ({
   relatedContent,
@@ -16,8 +14,12 @@ const RelatedContentSection = ({
   relatedContentClassName,
   divClassName,
 }: RelatedContentSectionProps) => (
-  <div key="related-content" className={divClassName}>
-    {title && <h2 className={titleClassName ?? 'text-3xl mb-5'}>{title}</h2>}
+  <PageSection
+    id="related-content"
+    divClassName={divClassName}
+    title={title}
+    titleClassName={titleClassName}
+  >
     <div
       className={
         relatedContentClassName ??
@@ -46,7 +48,7 @@ const RelatedContentSection = ({
         </div>
       ))}
     </div>
-  </div>
+  </PageSection>
 );
 
 export default RelatedContentSection;

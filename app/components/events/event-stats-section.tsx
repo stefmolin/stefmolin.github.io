@@ -1,5 +1,6 @@
 import { type LivePresentation } from '../../interfaces/event';
 import CollapsibleSection from '../sections/collapsible-section';
+import PageSection from '../sections/page-section';
 import EventStatsGrid from './event-stats-grid';
 
 export default function EventStatsSection({
@@ -11,8 +12,7 @@ export default function EventStatsSection({
 }) {
   const statCardLinkClassName = 'text-blue-800';
   return (
-    <div key="stats" id="stats">
-      <h2 className="text-3xl mb-5">Event statistics</h2>
+    <PageSection id="stats" title="Event statistics">
       <p className="mb-5">
         Click <span className={statCardLinkClassName}>blue</span> text for more information.
       </p>
@@ -20,12 +20,12 @@ export default function EventStatsSection({
         <>
           <EventStatsGrid className="pb-4" sessions={sessions} includeYearsActive />
           <CollapsibleSection prompt="Yearly breakdown">
-            <EventStatsGrid sessions={sessions} yearlyCountsOnly />
+            <EventStatsGrid sessions={sessions} yearlyCountsOnly className="mx-2" />
           </CollapsibleSection>
         </>
       ) : (
         <EventStatsGrid sessions={sessions} linkClassName={statCardLinkClassName} />
       )}
-    </div>
+    </PageSection>
   );
 }

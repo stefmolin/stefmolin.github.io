@@ -1,13 +1,12 @@
 import type Book from '../../interfaces/book';
+import PageSection, { type PageSectionProps } from '../sections/page-section';
 import BookCover from './book-cover';
 import BookPublicationDate from './book-publication-date';
 
-type BookTranslationsProps = {
+interface BookTranslationsProps extends Omit<PageSectionProps, 'children'> {
   book: Book;
-  titleClassName?: string;
   translationsClassName?: string;
-  divClassName?: string;
-};
+}
 
 const BookTranslationsSection = ({
   book,
@@ -17,8 +16,7 @@ const BookTranslationsSection = ({
 }: BookTranslationsProps) => {
   if (book.translations == null) return null;
   return (
-    <div className={divClassName}>
-      <h2 className={titleClassName ?? 'text-3xl mb-5'}>Translations</h2>
+    <PageSection divClassName={divClassName} title="Translations" titleClassName={titleClassName}>
       <div className={translationsClassName ?? 'flex flex-row space-x-10 items-center pl-6'}>
         {book.translations.map((translation) => (
           <div key={translation.language} className="flex flex-col items-center space-y-1">
@@ -28,7 +26,7 @@ const BookTranslationsSection = ({
           </div>
         ))}
       </div>
-    </div>
+    </PageSection>
   );
 };
 

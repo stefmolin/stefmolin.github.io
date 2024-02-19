@@ -11,20 +11,20 @@ import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/captions.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 import Pagination from './pagination';
+import PageSection, { type PageSectionProps } from './sections/page-section';
 
-interface PhotoGalleryProps {
+interface PhotoGalleryProps extends Omit<PageSectionProps, 'children'> {
   photos: Photo[];
   shufflePhotos?: boolean;
-  className?: string;
-  title?: string | null;
   padding?: number;
 }
 
 export default function PhotoGallery({
-  className,
+  divClassName,
   photos,
   shufflePhotos = false,
   title = 'Photo gallery 📷',
+  titleClassName,
   padding = 0,
 }: PhotoGalleryProps) {
   const photoGalleryRef = useRef<null | HTMLDivElement>(null);
@@ -42,8 +42,13 @@ export default function PhotoGallery({
   );
 
   return (
-    <div key="photos" id="photos" ref={photoGalleryRef} className={className}>
-      {title != null ? <h2 className="text-3xl mb-5">{title}</h2> : null}
+    <PageSection
+      id="photos"
+      anchorRef={photoGalleryRef}
+      divClassName={divClassName}
+      title={title}
+      titleClassName={titleClassName}
+    >
       <p className="mb-5">Click on a photo to learn more about it.</p>
       <PhotoAlbum
         layout="rows"
@@ -66,6 +71,6 @@ export default function PhotoGallery({
         setOffset={setOffset}
         totalItems={photoArray.length}
       />
-    </div>
+    </PageSection>
   );
 }
