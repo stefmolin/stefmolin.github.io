@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbTack } from '@fortawesome/free-solid-svg-icons';
-import FancyDivider from '../fancy-divider';
 import classNames from 'classnames';
+import FancyDivider from '../dividers/fancy-divider';
 
 interface AnnouncementProps {
   children: React.ReactNode | React.ReactNode[];

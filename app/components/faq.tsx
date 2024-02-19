@@ -1,5 +1,5 @@
 import type FAQ from '../interfaces/faq';
-import CollapsibleSection from './collapsible-section';
+import CollapsibleSection from './sections/collapsible-section';
 
 type FAQSectionProps = {
   faqs: FAQ[];

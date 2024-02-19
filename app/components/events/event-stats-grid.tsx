@@ -9,7 +9,7 @@ import {
   getContentClassCounts,
   getConferenceCounts,
 } from '../../lib/events';
-import StatsGrid, { type StatsGridProps } from '../stats-grid';
+import StatsGrid, { type StatsGridProps } from '../cards/stats-grid';
 import { FLAGS } from '../../data/constants';
 
 export default function EventStatsGrid({

@@ -1,5 +1,5 @@
 import { type LivePresentation } from '../../interfaces/event';
-import CollapsibleSection from '../collapsible-section';
+import CollapsibleSection from '../sections/collapsible-section';
 import EventStatsGrid from './event-stats-grid';
 
 export default function EventStatsSection({

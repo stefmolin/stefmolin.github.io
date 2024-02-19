@@ -12,7 +12,7 @@ import {
   faTrophy,
   faCaretUp,
 } from '@fortawesome/free-solid-svg-icons';
-import FancyDivider from '../fancy-divider';
+import FancyDivider from '../dividers/fancy-divider';
 import reviewStyles from '../../styles/review-styles.module.css';
 import { EXTERNAL_LINK_PROPS } from '../../data/constants';
 import type Review from '../../interfaces/review';
