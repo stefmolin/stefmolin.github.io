@@ -61,6 +61,7 @@ export default function EventMap({
                 <tbody>
                   {[...pin.annotation].reverse().map(({ event, date, presentation }) => {
                     const eventName = `${event.name}${event.virtual ? ' (virtual)' : ''}`;
+                    const [pathname, hash] = presentation.link.split('#');
                     return (
                       <tr
                         key={`${date}-${event.location.city}-${event.location.country}-${presentation.title}`}
@@ -81,7 +82,8 @@ export default function EventMap({
                         <td className={tableClassName}>
                           <Link
                             href={{
-                              pathname: presentation.link,
+                              pathname,
+                              hash,
                             }}
                             className={linkClassName}
                           >
