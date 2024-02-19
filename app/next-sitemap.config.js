@@ -55,13 +55,14 @@ module.exports = {
     };
   },
 
-  // TODO: remove this once the old homepage is no longer needed
+  // TODO: add slides?
   additionalPaths: async (config) => [
-    {
-      loc: '/',
-      changefreq: 'weekly',
-      priority: PRIORITIES.homePage,
-      lastmod: now,
-    },
+    // {
+    //   loc: '/',
+    //   changefreq: 'weekly',
+    //   priority: PRIORITIES.homePage,
+    //   lastmod: now,
+    // },
   ],
+  exclude: ['/coming-soonish/'],
 };
