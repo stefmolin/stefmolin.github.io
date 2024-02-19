@@ -1,3 +1,4 @@
+import dedent from 'dedent';
 import { type WorkshopPage } from '../interfaces/workshop';
 import CONTENT_LINKS from './content-links';
 import { PRESENTATIONS } from './events';
@@ -14,7 +15,7 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
         `Working with data can be challenging: it often doesn't come in the best format for analysis,
       and understanding it well enough to extract insights requires both time and the skills to filter,
       aggregate, reshape, and visualize it. This session will equip you with the knowledge you need
-      to effectively use pandas – a powerful library for data analysis in Python – to make
+      to effectively use pandas &ndash; a powerful library for data analysis in Python &ndash; to make
       this process easier.`,
         `Pandas makes it possible to work with tabular data and perform all parts of the analysis from
       collection and manipulation through aggregation and visualization. While most of this session
@@ -59,6 +60,15 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
         text: 'Thank you again for my favorite workshop so far at ODSC West.',
         author: 'ODSC West 2021 attendee',
       }, // ODSC West 2021
+      {
+        text: dedent`10 Best pandas Courses to Take in 2024 (#8)
+
+        Looking to learn through hands-on experience with Jupyter notebooks and exercises as you go?
+        If so, Stefanie Molin's Pandas Workshop is the perfect fit for you! This course has been
+        delivered at \[several\] different conferences and is completely **free**.`,
+        author: 'Elham (Class Central)',
+        source: 'https://www.classcentral.com/report/best-pandas-courses/#anchor-8',
+      },
     ],
     relatedContent: [
       CONTENT_LINKS.DATA_VIZ_WORKSHOP,
