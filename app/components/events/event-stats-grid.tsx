@@ -35,7 +35,7 @@ export default function EventStatsGrid({
 
   const completedSessions = sessions.filter(({ date }) => date < DateTime.now().toISODate());
   const latestSession = completedSessions.slice(-1)[0];
-  const nextSession = sessions.find((event) => DateTime.fromISO(event.date) > DateTime.now());
+  const nextSession = sessions.filter(({ date }) => date >= DateTime.now().toISODate())[0];
 
   const yearCounts = getYearCounts(completedSessions);
   const yearsActive = { title: 'years active', value: Object.keys(yearCounts).length };
