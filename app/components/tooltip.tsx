@@ -31,7 +31,6 @@ export default function Tooltip({
           className={classNames(
             'flex max-w-xs flex-col items-center shadow-lg',
             tooltipStyles['tooltip-message'],
-            backgroundClassName,
           )}
         >
           <div
