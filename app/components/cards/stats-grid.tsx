@@ -14,7 +14,7 @@ export default function StatsGrid({
   linkClassName = 'text-blue-800',
 }: StatsGridProps) {
   return (
-    <div className={classNames('flex justify-center', className)}>
+    <div className={classNames('flex items-center justify-center mx-auto', className)}>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
         {stats.map(({ title, value, link }) => {
           if (value == null || value === 0) return null;
