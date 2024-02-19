@@ -29,7 +29,7 @@ export default function Tooltip({
       >
         <div
           className={classNames(
-            'flex max-w-xs flex-col items-center shadow-lg',
+            'flex max-w-xs flex-col items-center',
             tooltipStyles['tooltip-message'],
           )}
         >
