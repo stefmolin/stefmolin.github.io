@@ -33,12 +33,11 @@ export default function EventStatsGrid({
     events: '/events/',
   };
 
-  const latestSession = [...sessions]
-    .reverse()
-    .find((event) => DateTime.fromISO(event.date) <= DateTime.now()) as LivePresentation;
+  const completedSessions = sessions.filter(({ date }) => date < DateTime.now().toISODate());
+  const latestSession = completedSessions.slice(-1)[0];
   const nextSession = sessions.find((event) => DateTime.fromISO(event.date) > DateTime.now());
 
-  const yearCounts = getYearCounts(sessions);
+  const yearCounts = getYearCounts(completedSessions);
   const yearsActive = { title: 'years active', value: Object.keys(yearCounts).length };
 
   const stats: StatsGridProps['stats'] = [];
@@ -53,19 +52,22 @@ export default function EventStatsGrid({
     );
   } else {
     stats.push(
-      { title: 'total events', value: sessions.length, link: linkMapping.events },
-      ...Object.entries(getContentClassCounts(sessions))
+      { title: 'total events', value: completedSessions.length, link: linkMapping.events },
+      ...Object.entries(getContentClassCounts(completedSessions))
         .sort(([, a], [, b]) => b - a)
         .map(([key, value]) => ({ title: `${key}s`, value, link: linkMapping[key] })),
       {
         title: `${nextSession == null ? 'last event' : 'up next'}: ${(nextSession ?? latestSession).event.name}`,
         value: FLAGS[(nextSession ?? latestSession).event.location.country],
       },
-      { title: 'countries visited', value: Object.keys(getCountryCounts(sessions)).length },
-      { title: 'cities visited', value: Object.keys(getCityCounts(sessions)).length },
+      {
+        title: 'countries visited',
+        value: Object.keys(getCountryCounts(completedSessions)).length,
+      },
+      { title: 'cities visited', value: Object.keys(getCityCounts(completedSessions)).length },
       {
         title: 'conferences',
-        value: Object.keys(getConferenceCounts(sessions)).length,
+        value: Object.keys(getConferenceCounts(completedSessions)).length,
         link: linkMapping.conferences,
       },
     );
