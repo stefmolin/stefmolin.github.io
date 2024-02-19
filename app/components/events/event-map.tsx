@@ -5,7 +5,7 @@ import { getConferenceEventMapAnnotations } from '../../lib/events';
 import InteractiveMap from '../maps/interactive-map';
 import CONTENT_LINKS from '../../data/content-links';
 import PushPinClickPrompt from '../maps/push-pin-click-prompt';
-import { EXTERNAL_LINK_PROPS } from '../../data/constants';
+import ExternalLink from '../links/external-link';
 
 export default function EventMap({
   liveEvents,
@@ -26,7 +26,7 @@ export default function EventMap({
     talk: CONTENT_LINKS.TALKS.link,
   };
   return (
-    <div id="event-map" className="space-y-5">
+    <div key="id-map" id="event-map" className="space-y-5">
       <h2 className="text-3xl">Event map 🗺️</h2>
       <div>
         <p>{introText}</p>
@@ -94,9 +94,9 @@ export default function EventMap({
                         </td>
                         <td className={tableClassName}>
                           {event.link != null ? (
-                            <a href={event.link} className={linkClassName} {...EXTERNAL_LINK_PROPS}>
+                            <ExternalLink href={event.link} className={linkClassName}>
                               {eventName}
-                            </a>
+                            </ExternalLink>
                           ) : (
                             eventName
                           )}

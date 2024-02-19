@@ -4,7 +4,8 @@ import { faCodeFork } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import numeral from 'numeral';
-import { GITHUB_PROFILE, EXTERNAL_LINK_PROPS, GITHUB_API } from '../data/constants';
+import { GITHUB_PROFILE, GITHUB_API } from '../data/constants';
+import ExternalLink from './links/external-link';
 
 export default function RepoStats({
   repoName,
@@ -33,13 +34,12 @@ export default function RepoStats({
   const repoLink = (
     <span>
       <FontAwesomeIcon icon={faGithub} className="pr-1" fixedWidth />
-      <a
+      <ExternalLink
         href={`${GITHUB_PROFILE}/${repoName}`}
-        {...EXTERNAL_LINK_PROPS}
         className="hover:underline text-slate-600"
       >
         {info?.name || repoName}
-      </a>
+      </ExternalLink>
     </span>
   );
 

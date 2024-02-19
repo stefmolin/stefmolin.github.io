@@ -1,5 +1,4 @@
 import Container from '../../components/container';
-import Header from '../../components/header';
 import Layout from '../../components/layout';
 import TagListing, { type TagListingProps } from '../../components/feeds/tag-listing';
 import { getAllPosts } from '../../lib/posts';
@@ -9,7 +8,6 @@ export default function Index({ tagCounts }: Pick<TagListingProps, 'tagCounts'>)
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
         <h1 className="text-3xl">Search posts by tag</h1>
         <TagListing
           tagCounts={tagCounts}

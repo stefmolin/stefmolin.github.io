@@ -1,12 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import type Book from '../../interfaces/book';
 import { faAmazon } from '@fortawesome/free-brands-svg-icons';
-import { EXTERNAL_LINK_PROPS } from '../../data/constants';
-import BookPublicationDate from './book-publication-date';
-import PageCount from './page-count';
-import BookCover from './book-cover';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import type Book from '../../interfaces/book';
+import ExternalLink from '../links/external-link';
+import BookCover from './book-cover';
 
 type BookSummaryProps = {
   book: Book;
@@ -19,12 +17,12 @@ const BookSummarySection = ({ book, divClassName }: BookSummaryProps) => (
       <BookCover book={book} />
       <div className="flex flex-row items-center justify-center">
         <button className="px-2 py-1 bg-orange-400 hover:bg-orange-500 grow">
-          <a href={book.amazonLink} className="font-bold" {...EXTERNAL_LINK_PROPS}>
+          <ExternalLink href={book.amazonLink} className="font-bold">
             <div className="flex flex-row items-center justify-center">
               <FontAwesomeIcon icon={faAmazon} className="pr-1" size="sm" fixedWidth />
               Buy on Amazon*
             </div>
-          </a>
+          </ExternalLink>
         </button>
       </div>
       <small className="text-pretty -indent-1 pl-2">

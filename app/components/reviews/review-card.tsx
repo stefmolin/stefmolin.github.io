@@ -14,8 +14,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import FancyDivider from '../dividers/fancy-divider';
 import reviewStyles from '../../styles/review-styles.module.css';
-import { EXTERNAL_LINK_PROPS } from '../../data/constants';
 import type Review from '../../interfaces/review';
+import ExternalLink from '../links/external-link';
 
 export interface ReviewCardProps {
   review: Review;
@@ -98,9 +98,9 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
           </FancyDivider>
           <div>
             {source != null ? (
-              <a href={source} {...EXTERNAL_LINK_PROPS} className="text-slate-600 hover:underline">
+              <ExternalLink href={source} className="text-slate-600 hover:underline">
                 {author}
-              </a>
+              </ExternalLink>
             ) : (
               author
             )}

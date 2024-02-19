@@ -1,6 +1,6 @@
 import FAQSection from '../faq';
 import type FAQ from '../../interfaces/faq';
-import SectionSeparator from '../section-separator';
+import SectionSeparator from '../dividers/section-separator';
 import RelatedContentSection from '../related-content';
 import type RelatedContentLink from '../../interfaces/related-content';
 

@@ -42,7 +42,7 @@ export default function PhotoGallery({
   );
 
   return (
-    <div id="photos" ref={photoGalleryRef} className={className}>
+    <div key="photos" id="photos" ref={photoGalleryRef} className={className}>
       {title != null ? <h2 className="text-3xl mb-5">{title}</h2> : null}
       <p className="mb-5">Click on a photo to learn more about it.</p>
       <PhotoAlbum

@@ -11,11 +11,11 @@ import Layout from '../components/layout';
 import { usePageURL } from '../lib/hooks';
 import { getImageLink } from '../lib/images';
 import type Interview from '../interfaces/interview';
-import { EXTERNAL_LINK_PROPS } from '../data/constants';
 import PublicationDate from '../components/datetime/publication-date';
 import DurationIndicator from '../components/datetime/duration-indicator';
 import INTERVIEWS from '../data/interviews';
 import CONTENT_LINKS from '../data/content-links';
+import ExternalLink from '../components/links/external-link';
 
 export default function Interviews() {
   const preview = false;
@@ -81,7 +81,7 @@ export default function Interviews() {
                 >
                   <div className="flex flex-col justify-evenly space-y-5">
                     <div className="flex flex-col items-start">
-                      <a href={link} {...EXTERNAL_LINK_PROPS}>
+                      <ExternalLink href={link}>
                         <h3 className="text-xl hover:underline text-pretty">
                           {title}
                           <FontAwesomeIcon
@@ -91,7 +91,7 @@ export default function Interviews() {
                             className="pl-2"
                           />
                         </h3>
-                      </a>
+                      </ExternalLink>
                       <div className="flex flex-row items-center">
                         <FontAwesomeIcon
                           icon={format === 'podcast' ? faPodcast : faNewspaper}
@@ -102,13 +102,13 @@ export default function Interviews() {
                       </div>
                     </div>
                     <div>
-                      <a href={link} {...EXTERNAL_LINK_PROPS}>
+                      <ExternalLink href={link}>
                         <img
                           src={coverImage}
                           alt={title}
                           className="md:float-left md:mr-5 mb-2 mx-auto sm:h-60 object-cover"
                         />
-                      </a>
+                      </ExternalLink>
                       <div className="md:-mt-1">{insertBookLinks(description, date)}</div>
                       {seeAlso != null ? (
                         <>
@@ -131,14 +131,9 @@ export default function Interviews() {
                                 );
                               }
                               return (
-                                <a
-                                  key={title}
-                                  href={link}
-                                  className={linkClassName}
-                                  {...EXTERNAL_LINK_PROPS}
-                                >
+                                <ExternalLink key={title} href={link} className={linkClassName}>
                                   {title}
-                                </a>
+                                </ExternalLink>
                               );
                             })}
                           </p>

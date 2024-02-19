@@ -8,7 +8,8 @@ import {
   faLinkedin,
   faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import { EXTERNAL_LINK_PROPS, NEWSLETTER_URL, TWITTER_HANDLE } from '../data/constants';
+import { NEWSLETTER_URL, TWITTER_HANDLE } from '../data/constants';
+import ExternalLink from './links/external-link';
 
 const FOLLOW_LINKS: { icon: IconDefinition; url: string }[] = [
   {
@@ -33,14 +34,9 @@ type Props = {
 
 const FollowButtons = ({ className, size = 'lg' }: Props) => {
   const makeLink = (url: string, icon: IconDefinition) => (
-    <a
-      key={url}
-      href={url}
-      {...EXTERNAL_LINK_PROPS}
-      className="text-slate-600 hover:text-slate-800"
-    >
+    <ExternalLink key={url} href={url} className="text-slate-600 hover:text-slate-800">
       <FontAwesomeIcon icon={icon} size={size} fixedWidth />
-    </a>
+    </ExternalLink>
   );
   return (
     <div className={classNames('space-x-2 flex items-center justify-center', className)}>

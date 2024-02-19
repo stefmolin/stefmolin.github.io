@@ -8,6 +8,7 @@ import ExternalLink from '../components/links/external-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Tooltip from '../components/tooltip';
+import { NEWSLETTER_URL } from '../data/constants';
 
 const relatedContent: RelatedContentLink[] = [
   CONTENT_LINKS.ARTICLES,
@@ -59,7 +60,7 @@ export default function ComingSoonish() {
             )}{' '}
             not completed yet. Check back soon, or better yet,{' '}
             <ExternalLink
-              url="https://newsletter.stefaniemolin.com"
+              href={NEWSLETTER_URL}
               className="p-px font-bold underline decoration-yellow-400 hover:text-slate-700"
             >
               sign up for my newsletter
@@ -73,7 +74,7 @@ export default function ComingSoonish() {
               <>
                 And as Camila Cabello once said, "
                 <ExternalLink
-                  url="https://www.youtube.com/watch?v=KDFWEPYwDpU"
+                  href="https://www.youtube.com/watch?v=KDFWEPYwDpU"
                   className="underline font-bold decoration-yellow-400 hover:text-slate-700"
                 >
                   Don't Go Yet!

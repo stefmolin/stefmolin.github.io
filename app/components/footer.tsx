@@ -13,9 +13,9 @@ import {
 import Avatar from './avatar';
 import SubscribeToNewsletterForm from './subscribe-to-newsletter';
 import FollowButtons from './follow';
-import { EXTERNAL_LINK_PROPS } from '../data/constants';
 import { type LinkWithIcon } from '../interfaces/link';
-import FancyDivider from './fancy-divider';
+import FancyDivider from './dividers/fancy-divider';
+import ExternalLink from './links/external-link';
 
 const SitemapLinks = ({ className }: { className?: string }) => {
   // Internal links only
@@ -116,21 +116,19 @@ const Footer = () => {
               articles
             </Link>
             , as well as contributed to various{' '}
-            <a
+            <ExternalLink
               className={underlinedLinkClassName}
               href="https://github.com/search?q=is%3Apr+author%3Astefmolin+-user%3Astefmolin++is%3Amerged&type=pullrequests&state=closed&s=created&o=desc"
-              {...EXTERNAL_LINK_PROPS}
             >
               open source projects
-            </a>
+            </ExternalLink>
             . If any of my content has helped you, please consider{' '}
-            <a
+            <ExternalLink
               className={underlinedLinkClassName}
               href="https://www.buymeacoffee.com/stefanie.molin"
-              {...EXTERNAL_LINK_PROPS}
             >
               supporting
-            </a>{' '}
+            </ExternalLink>{' '}
             me.
           </p>
         </div>
