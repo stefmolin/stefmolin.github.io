@@ -11,7 +11,7 @@ export default function EventStatsSection({
 }) {
   const statCardLinkClassName = 'text-blue-800';
   return (
-    <div>
+    <div id="stats">
       <h2 className="text-3xl mb-5">Event statistics</h2>
       <p className="mb-5">
         Click <span className={statCardLinkClassName}>blue</span> text for more information.
