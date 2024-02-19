@@ -18,7 +18,7 @@ const BookTranslationsSection = ({
   if (book.translations == null) return null;
   return (
     <div className={divClassName}>
-      <h2 className={titleClassName ?? 'text-2xl mb-5'}>Translations</h2>
+      <h2 className={titleClassName ?? 'text-3xl mb-5'}>Translations</h2>
       <div className={translationsClassName ?? 'flex flex-row space-x-10 items-center pl-6'}>
         {book.translations.map((translation) => (
           <div key={translation.language} className="flex flex-col items-center space-y-1">

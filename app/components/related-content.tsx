@@ -3,6 +3,7 @@ import type RelatedContentLink from '../interfaces/related-content';
 
 type RelatedContentSectionProps = {
   relatedContent: RelatedContentLink[];
+  title?: React.ReactNode | string | null;
   titleClassName?: string;
   relatedContentClassName?: string;
   divClassName?: string;
@@ -10,12 +11,13 @@ type RelatedContentSectionProps = {
 
 const RelatedContentSection = ({
   relatedContent,
+  title = 'Related content',
   titleClassName,
   relatedContentClassName,
   divClassName,
 }: RelatedContentSectionProps) => (
-  <div className={divClassName}>
-    <h2 className={titleClassName ?? 'text-2xl mb-5'}>Related content</h2>
+  <div key="related-content" className={divClassName}>
+    {title && <h2 className={titleClassName ?? 'text-3xl mb-5'}>{title}</h2>}
     <div
       className={
         relatedContentClassName ??

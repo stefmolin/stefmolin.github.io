@@ -15,7 +15,7 @@ const FAQSection = ({
   divClassName,
 }: FAQSectionProps) => (
   <div className={divClassName}>
-    <h2 className={titleClassName ?? 'text-2xl mb-5'}>FAQ</h2>
+    <h2 className={titleClassName ?? 'text-3xl mb-5'}>FAQ</h2>
     <div className={questionsClassName ?? 'flex flex-col space-y-2 items-start pl-6'}>
       {faqs.map(({ question, answer }, index) => (
         <CollapsibleSection key={index} prompt={question} contents={answer} />
