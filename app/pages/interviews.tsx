@@ -7,7 +7,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Container from '../components/container';
-import Header from '../components/header';
 import Layout from '../components/layout';
 import { usePageURL } from '../lib/hooks';
 import { getImageLink } from '../lib/images';
@@ -55,7 +54,6 @@ export default function Interviews() {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
         <NextSeo
           title={pageTitle}
           description="A listing of interviews with Stefanie Molin."

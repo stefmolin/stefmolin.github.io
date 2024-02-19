@@ -1,6 +1,5 @@
 import { NextSeo } from 'next-seo';
 import Container from '../../components/container';
-import Header from '../../components/header';
 import Layout from '../../components/layout';
 import { usePageURL } from '../../lib/hooks';
 import { getImageLink } from '../../lib/images';
@@ -25,7 +24,6 @@ export default function Index() {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
         <NextSeo
           title={pageTitle}
           description="A listing of workshops created by Stefanie Molin."

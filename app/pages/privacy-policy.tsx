@@ -1,5 +1,4 @@
 import Container from '../components/container';
-import Header from '../components/header';
 import Layout from '../components/layout';
 import privacyStyles from '../styles/privacy-styles.module.css';
 
@@ -12,7 +11,6 @@ export default function Index() {
   return (
     <Layout preview>
       <Container>
-        <Header />
         <div className={privacyStyles['privacy-policy']}>
           <h1>Privacy Policy</h1>
           <p>Last updated: January 27, 2024</p>

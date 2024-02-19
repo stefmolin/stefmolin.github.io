@@ -1,12 +1,11 @@
 import { NextSeo } from 'next-seo';
 import Container from '../../components/container';
-import Header from '../../components/header';
 import Layout from '../../components/layout';
 import { BOOK_PAGE_MAPPING } from '../../data/books';
 import { generateBookCoverAltText, generateBookPageTitle } from '../../lib/books';
 import { usePageURL } from '../../lib/hooks';
 import { HOME_URL } from '../../data/constants';
-import SectionSeparator from '../../components/section-separator';
+import SectionSeparator from '../../components/dividers/section-separator';
 import BookTranslationsSection from '../../components/books/translations';
 import ReviewsSection from '../../components/reviews/reviews-section';
 import BookSummarySection from '../../components/books/book-summary';
@@ -26,7 +25,6 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
         <NextSeo
           title={bookTitle}
           description="A book by Stefanie Molin."

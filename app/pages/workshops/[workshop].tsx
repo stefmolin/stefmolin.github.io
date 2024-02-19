@@ -1,9 +1,8 @@
 import { NextSeo } from 'next-seo';
 import Container from '../../components/container';
-import Header from '../../components/header';
 import Layout from '../../components/layout';
 import { usePageURL } from '../../lib/hooks';
-import SectionSeparator from '../../components/section-separator';
+import SectionSeparator from '../../components/dividers/section-separator';
 import ReviewsSection from '../../components/reviews/reviews-section';
 import { getImageLink } from '../../lib/images';
 import { WORKSHOP_PAGE_MAPPING } from '../../data/workshops';
@@ -15,7 +14,6 @@ import WorkshopSummary from '../../components/workshops/workshop-summary';
 
 // TODO: potentially another one to encapsulate everything
 // TODO: link to setup instructions and prereqs
-// TODO: decide on whether to include event images or save for the other page
 // TODO: read descriptions from READMEs in GitHub for consistency? this will hardly be updated so it can wait
 
 export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
@@ -27,7 +25,6 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
         <NextSeo
           title={workshop.title}
           description={workshop.subtitle}

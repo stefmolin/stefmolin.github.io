@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import Container from '../../components/container';
-import Header from '../../components/header';
 import Layout from '../../components/layout';
 import { generateBookPageLink } from '../../lib/books';
 import { usePageURL } from '../../lib/hooks';
-import SectionSeparator from '../../components/section-separator';
+import SectionSeparator from '../../components/dividers/section-separator';
 import { BOOK_PAGES, GENERAL_FAQS } from '../../data/books';
 import type RelatedContentLink from '../../interfaces/related-content';
 import BookOutline from '../../components/books/book-outline';
@@ -27,7 +26,6 @@ export default function Index() {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
         <NextSeo
           title={pageTitle}
           description="A listing of books written by Stefanie Molin."
