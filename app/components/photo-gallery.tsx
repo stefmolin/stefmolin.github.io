@@ -24,7 +24,7 @@ export default function PhotoGallery({
   className,
   photos,
   shufflePhotos = false,
-  title = 'Photo gallery',
+  title = 'Photo gallery 📷',
   padding = 0,
 }: PhotoGalleryProps) {
   const photoGalleryRef = useRef<null | HTMLDivElement>(null);
@@ -42,7 +42,7 @@ export default function PhotoGallery({
   );
 
   return (
-    <div ref={photoGalleryRef} className={className}>
+    <div id="photos" ref={photoGalleryRef} className={className}>
       {title != null ? <h2 className="text-3xl mb-5">{title}</h2> : null}
       <p className="mb-5">Click on a photo to learn more about it.</p>
       <PhotoAlbum
