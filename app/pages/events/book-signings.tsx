@@ -9,7 +9,7 @@ import CONTENT_LINKS from '../../data/content-links';
 import { getImageLink } from '../../lib/images';
 import { LIVE_PRESENTATIONS } from '../../data/events';
 import type RelatedContentLink from '../../interfaces/related-content';
-import RelatedContentSection from '../../components/related-content';
+import RelatedContentSection from '../../components/related-content/related-content';
 import { BOOK_SIGNING_IMAGES } from '../../data/photo-gallery';
 import PhotoGallery from '../../components/photo-gallery';
 import { MAP_PIN } from '../../data/constants';
@@ -116,7 +116,7 @@ export default function BookSignings() {
               </p>
               <MysteryCards cards={FUN_FACTS} color={'bg-orange-100'} />
             </div>
-            <RelatedContentSection relatedContent={relatedContent} />
+            <RelatedContentSection carouselClassName="pt-2" relatedContent={relatedContent} />
           </EvenlySpacedSections>
         </div>
       </Container>

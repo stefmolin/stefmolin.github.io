@@ -1,18 +1,19 @@
 import { useSearchParams } from 'next/navigation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Container from '../components/container';
 import Layout from '../components/layout';
 import CONTENT_LINKS from '../data/content-links';
-import RelatedContentLink from '../interfaces/related-content';
-import RelatedContentSection from '../components/related-content';
+import type RelatedContentLink from '../interfaces/related-content';
+import RelatedContentSection from '../components/related-content/related-content';
 import ExternalLink from '../components/links/external-link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Tooltip from '../components/tooltip';
 import { NEWSLETTER_URL } from '../data/constants';
 
 const relatedContent: RelatedContentLink[] = [
   CONTENT_LINKS.ARTICLES,
   CONTENT_LINKS.BOOKS,
+  CONTENT_LINKS.EVENTS,
   CONTENT_LINKS.TALKS,
   CONTENT_LINKS.WORKSHOPS,
 ];
@@ -68,7 +69,9 @@ export default function ComingSoonish() {
             .
           </div>
           <RelatedContentSection
-            divClassName="mt-5 mb-10"
+            carouselClassName="pt-5"
+            divClassName="mt-5"
+            inset
             relatedContent={relatedContent.sort((a, b) => (a.title > b.title ? 1 : -1))}
             title={
               <>
@@ -82,7 +85,7 @@ export default function ComingSoonish() {
                 "
               </>
             }
-            titleClassName="text-lg md:text-xl mb-5"
+            titleClassName="text-lg md:text-xl"
           />
         </div>
       </Container>

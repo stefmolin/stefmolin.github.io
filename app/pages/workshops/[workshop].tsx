@@ -6,7 +6,7 @@ import SectionSeparator from '../../components/dividers/section-separator';
 import ReviewsSection from '../../components/reviews/reviews-section';
 import { getImageLink } from '../../lib/images';
 import { WORKSHOP_PAGE_MAPPING } from '../../data/workshops';
-import RelatedContentSection from '../../components/related-content';
+import RelatedContentSection from '../../components/related-content/related-content';
 import WorkshopOutline from '../../components/workshops/workshop-outline';
 import WorkshopMap from '../../components/workshops/workshop-map';
 import WorkshopHeader from '../../components/workshops/workshop-header';
@@ -58,7 +58,7 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
               <SectionSeparator className="my-10" />
             </>
           ) : null}
-          <RelatedContentSection relatedContent={relatedContent} />
+          <RelatedContentSection carouselClassName="pt-2" relatedContent={relatedContent} />
         </div>
       </Container>
     </Layout>

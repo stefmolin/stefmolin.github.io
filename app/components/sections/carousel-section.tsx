@@ -4,12 +4,14 @@ import { useWindowSize } from '../../lib/hooks/window-size';
 
 interface CarouselSectionProps {
   autoPlaySpeed: number;
+  carouselClassName?: string;
   children: React.ReactNode[];
   responsive: ResponsiveType;
 }
 
 export default function CarouselSection({
   autoPlaySpeed,
+  carouselClassName,
   children,
   responsive,
 }: CarouselSectionProps) {
@@ -37,6 +39,7 @@ export default function CarouselSection({
       arrows={false}
       rewind={true}
       rewindWithAnimation={true}
+      className={carouselClassName}
     >
       {children}
     </Carousel>

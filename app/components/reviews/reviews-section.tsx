@@ -18,7 +18,7 @@ const ReviewsSection = ({
   const responsive = {
     desktop: {
       breakpoint: { max: Infinity, min: 1024 },
-      items: 2,
+      items: Math.min(2, reviews.length),
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },

@@ -1,7 +1,7 @@
 import FAQSection from '../faq';
 import type FAQ from '../../interfaces/faq';
 import SectionSeparator from '../dividers/section-separator';
-import RelatedContentSection from '../related-content';
+import RelatedContentSection from '../related-content/related-content';
 import type RelatedContentLink from '../../interfaces/related-content';
 
 type BookOutlineProps = {
@@ -25,7 +25,7 @@ const BookOutline = ({
     {children}
     <FAQSection faqs={faqs} />
     <SectionSeparator className="my-10" />
-    <RelatedContentSection relatedContent={relatedContent} />
+    <RelatedContentSection carouselClassName="pt-2" relatedContent={relatedContent} />
   </div>
 );
 
