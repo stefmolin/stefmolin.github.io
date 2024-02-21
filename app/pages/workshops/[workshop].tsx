@@ -1,12 +1,13 @@
 import { NextSeo } from 'next-seo';
 import Container from '../../components/container';
 import Layout from '../../components/layout';
-import { usePageURL } from '../../lib/hooks/page-url';
+import EvenlySpacedSections from '../../components/sections/evenly-spaced-sections';
 import SectionSeparator from '../../components/dividers/section-separator';
-import ReviewsSection from '../../components/reviews/reviews-section';
-import { getImageLink } from '../../lib/images';
-import { WORKSHOP_PAGE_MAPPING } from '../../data/workshops';
 import RelatedContentSection from '../../components/related-content/related-content';
+import ReviewsSection from '../../components/reviews/reviews-section';
+import { WORKSHOP_PAGE_MAPPING } from '../../data/workshops';
+import { usePageURL } from '../../lib/hooks/page-url';
+import { getImageLink } from '../../lib/images';
 import WorkshopOutline from '../../components/workshops/workshop-outline';
 import WorkshopMap from '../../components/workshops/workshop-map';
 import WorkshopHeader from '../../components/workshops/workshop-header';
@@ -45,20 +46,17 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
           <SectionSeparator className="my-3" />
           <WorkshopSummary workshop={workshop} />
           <SectionSeparator className="my-5" />
-          <WorkshopOutline workshop={workshop} />
-          <SectionSeparator className="my-10" />
-          <WorkshopMap workshop={workshop} />
-          <SectionSeparator className="my-10" />
-          {reviews != null ? (
-            <>
+          <EvenlySpacedSections className="my-10">
+            <WorkshopOutline workshop={workshop} />
+            <WorkshopMap workshop={workshop} />
+            {reviews != null ? (
               <ReviewsSection
                 reviews={reviews}
                 cardSize={reviews.map(({ text }) => text.length).some((x) => x > 150) ? 'sm' : 'xs'}
               />
-              <SectionSeparator className="my-10" />
-            </>
-          ) : null}
-          <RelatedContentSection carouselClassName="pt-2" relatedContent={relatedContent} />
+            ) : null}
+            <RelatedContentSection carouselClassName="pt-2" relatedContent={relatedContent} />
+          </EvenlySpacedSections>
         </div>
       </Container>
     </Layout>
