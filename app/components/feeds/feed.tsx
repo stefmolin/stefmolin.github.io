@@ -4,7 +4,7 @@ import PostListing from './post-listing';
 import Intro from '../posts/intro';
 import Layout from '../layout';
 import type FeedType from '../../interfaces/feed';
-import { usePageURL } from '../../lib/hooks';
+import { usePageURL } from '../../lib/hooks/page-url';
 
 // TODO: the div that sets the max-width is needed to stop it from getting too long on large screens
 // maybe that means something could go on the side bar in that case?

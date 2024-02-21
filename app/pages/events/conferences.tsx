@@ -1,10 +1,9 @@
 import { NextSeo } from 'next-seo';
 import _ from 'lodash';
 import Container from '../../components/container';
-import Header from '../../components/header';
 import Layout from '../../components/layout';
-import { usePageURL } from '../../lib/hooks';
-import SectionSeparator from '../../components/section-separator';
+import { usePageURL } from '../../lib/hooks/page-url';
+import SectionSeparator from '../../components/dividers/section-separator';
 import EventMap from '../../components/events/event-map';
 import CONTENT_LINKS from '../../data/content-links';
 import { getImageLink } from '../../lib/images';
@@ -32,10 +31,18 @@ export default function Conferences() {
   const presentations = LIVE_PRESENTATIONS.filter(
     (x) => x.presentation.contentClass !== 'book signing',
   );
+  const presentationsGivenAlready = presentations.filter(
+    ({ date }) => date < DateTime.now().toISODate(),
+  ).length;
+  const linkClassName = 'text-slate-700 hover:text-slate-500 underline';
+  const anchorLink = (fragment: string, text: string | React.ReactNode) => (
+    <Link href={fragment} className={linkClassName}>
+      {text}
+    </Link>
+  );
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
         <NextSeo
           title={pageTitle}
           description="Conferences Stefanie Molin has presented at."

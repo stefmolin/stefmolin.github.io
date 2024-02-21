@@ -3,7 +3,7 @@ import Container from '../../components/container';
 import Layout from '../../components/layout';
 import { BOOK_PAGE_MAPPING } from '../../data/books';
 import { generateBookCoverAltText, generateBookPageTitle } from '../../lib/books';
-import { usePageURL } from '../../lib/hooks';
+import { usePageURL } from '../../lib/hooks/page-url';
 import { HOME_URL } from '../../data/constants';
 import SectionSeparator from '../../components/dividers/section-separator';
 import BookTranslationsSection from '../../components/books/translations';

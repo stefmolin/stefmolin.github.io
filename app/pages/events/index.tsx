@@ -1,9 +1,8 @@
 import { NextSeo } from 'next-seo';
 import Container from '../../components/container';
-import Header from '../../components/header';
 import Layout from '../../components/layout';
-import { usePageURL } from '../../lib/hooks';
-import SectionSeparator from '../../components/section-separator';
+import { usePageURL } from '../../lib/hooks/page-url';
+import SectionSeparator from '../../components/dividers/section-separator';
 import EventMap from '../../components/events/event-map';
 import CONTENT_LINKS from '../../data/content-links';
 import { getImageLink } from '../../lib/images';
@@ -34,7 +33,6 @@ export default function Index() {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
         <NextSeo
           title={pageTitle}
           description="Conferences, book signings, and other events with Stefanie Molin."

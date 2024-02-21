@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo';
 import Container from '../../components/container';
 import Layout from '../../components/layout';
-import { usePageURL } from '../../lib/hooks';
+import { usePageURL } from '../../lib/hooks/page-url';
 import { getImageLink } from '../../lib/images';
 import WORKSHOP_PAGES from '../../data/workshops';
 import CONTENT_LINKS from '../../data/content-links';

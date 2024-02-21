@@ -8,7 +8,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Container from '../components/container';
 import Layout from '../components/layout';
-import { usePageURL } from '../lib/hooks';
+import { usePageURL } from '../lib/hooks/page-url';
 import { getImageLink } from '../lib/images';
 import type Interview from '../interfaces/interview';
 import PublicationDate from '../components/datetime/publication-date';

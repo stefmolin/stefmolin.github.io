@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo';
 import Container from '../../components/container';
 import Layout from '../../components/layout';
 import { generateBookPageLink } from '../../lib/books';
-import { usePageURL } from '../../lib/hooks';
+import { usePageURL } from '../../lib/hooks/page-url';
 import SectionSeparator from '../../components/dividers/section-separator';
 import { BOOK_PAGES, GENERAL_FAQS } from '../../data/books';
 import type RelatedContentLink from '../../interfaces/related-content';
