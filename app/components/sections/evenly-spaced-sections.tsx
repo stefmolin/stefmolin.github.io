@@ -10,7 +10,7 @@ export default function EvenlySpacedSections({ children, className }: EvenlySpac
   return (
     <>
       {children.map((child, index) => {
-        if (index === children.length - 1) return child;
+        if (index === children.length - 1 || child == null) return child;
         return (
           <Fragment key={index}>
             {child}
