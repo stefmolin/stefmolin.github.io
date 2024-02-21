@@ -1,7 +1,6 @@
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import ReviewCard, { type ReviewCardProps } from './review-card';
+import CarouselSection from '../sections/carousel-section';
 import PageSection, { type PageSectionProps } from '../sections/page-section';
+import ReviewCard, { type ReviewCardProps } from './review-card';
 
 interface ReviewsSectionProps extends Omit<PageSectionProps, 'children'> {
   reviews: ReviewCardProps['review'][];
@@ -37,20 +36,7 @@ const ReviewsSection = ({
       title="Reviews"
       titleClassName={titleClassName}
     >
-      <Carousel
-        swipeable={true}
-        draggable={false}
-        showDots={true}
-        responsive={responsive}
-        ssr={false}
-        infinite={false}
-        autoPlay={true}
-        autoPlaySpeed={5_000}
-        keyBoardControl={true}
-        transitionDuration={500}
-        arrows={false}
-        rewind={true}
-      >
+      <CarouselSection autoPlaySpeed={5_000} responsive={responsive}>
         {reviews.map((review) => (
           <ReviewCard
             key={review.author}
@@ -59,7 +45,7 @@ const ReviewsSection = ({
             cardSize={cardSize}
           />
         ))}
-      </Carousel>
+      </CarouselSection>
     </PageSection>
   );
 };
