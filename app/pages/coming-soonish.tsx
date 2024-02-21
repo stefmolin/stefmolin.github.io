@@ -1,7 +1,7 @@
 import { useSearchParams } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import Container from '../components/container';
+import Container from '../components/sections/container';
 import Layout from '../components/layout';
 import CONTENT_LINKS from '../data/content-links';
 import type RelatedContentLink from '../interfaces/related-content';

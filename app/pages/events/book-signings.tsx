@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import { DateTime } from 'luxon';
-import Container from '../../components/container';
+import Container from '../../components/sections/container';
 import Layout from '../../components/layout';
 import { usePageURL } from '../../lib/hooks/page-url';
 import EventMap from '../../components/events/event-map';

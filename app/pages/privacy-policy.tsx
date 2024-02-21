@@ -1,4 +1,4 @@
-import Container from '../components/container';
+import Container from '../components/sections/container';
 import Layout from '../components/layout';
 import privacyStyles from '../styles/privacy-styles.module.css';
 

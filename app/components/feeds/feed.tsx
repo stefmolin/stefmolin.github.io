@@ -1,5 +1,5 @@
 import { NextSeo } from 'next-seo';
-import Container from '../container';
+import Container from '../sections/container';
 import PostListing from './post-listing';
 import Intro from '../posts/intro';
 import Layout from '../layout';
