@@ -1,7 +1,5 @@
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import type Workshop from '../../interfaces/workshop';
-import markdownStyles from '../../styles/markdown-styles.module.css';
+import MarkdownSection from '../sections/markdown-section';
 
 export default function WorkshopSummary({ workshop }: { workshop: Workshop }) {
   return (
@@ -14,9 +12,7 @@ export default function WorkshopSummary({ workshop }: { workshop: Workshop }) {
 
       <div>
         {workshop.description.map((text, index) => (
-          <Markdown key={index} className={markdownStyles['markdown']} remarkPlugins={[remarkGfm]}>
-            {text}
-          </Markdown>
+          <MarkdownSection key={index}>{text}</MarkdownSection>
         ))}
       </div>
     </div>

@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import _ from 'lodash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -14,6 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import FancyDivider from '../dividers/fancy-divider';
 import reviewStyles from '../../styles/review-styles.module.css';
+import MarkdownSection from '../sections/markdown-section';
 import type Review from '../../interfaces/review';
 import ExternalLink from '../links/external-link';
 
@@ -70,7 +69,7 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
           )}
           onScroll={handleScroll}
         >
-          <Markdown remarkPlugins={[remarkGfm]}>{text}</Markdown>
+          <MarkdownSection className={reviewStyles['review']}>{text}</MarkdownSection>
         </div>
         <FontAwesomeIcon
           className={classNames('float-right relative bottom-2 -right-5', {
