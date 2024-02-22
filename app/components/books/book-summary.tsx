@@ -1,10 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAmazon } from '@fortawesome/free-brands-svg-icons';
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import type Book from '../../interfaces/book';
 import ExternalLink from '../links/external-link';
 import BookCover from './book-cover';
+import MarkdownSection from '../sections/markdown-section';
 
 type BookSummaryProps = {
   book: Book;
@@ -31,7 +30,7 @@ const BookSummarySection = ({ book, divClassName }: BookSummaryProps) => (
     </div>
     <div className="space-y-4 min-h-48 md:min-h-64 lg:min-h-80">
       <div className="space-y-2 text-justify text-pretty">
-        <Markdown remarkPlugins={[remarkGfm]}>{book.description}</Markdown>
+        <MarkdownSection>{book.description}</MarkdownSection>
       </div>
     </div>
   </div>

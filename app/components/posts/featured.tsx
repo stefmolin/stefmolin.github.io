@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import remarkGfm from 'remark-gfm';
 import Markdown from 'react-markdown';
 import Tooltip from '../tooltip';
+import MarkdownSection from '../sections/markdown-section';
 
 interface FeaturedProps {
   title?: string;
@@ -22,9 +23,7 @@ export default function Featured({ contentClass, features, title = 'Featured' }:
       <h1 className="text-lg text-blue-400 text-center">
         <FontAwesomeIcon icon={faAward} fixedWidth /> {title} {contentClass}
       </h1>
-      <Markdown className="text-slate-500" remarkPlugins={[remarkGfm]}>
-        {message}
-      </Markdown>
+      <MarkdownSection className="text-slate-500">{message}</MarkdownSection>
     </div>
   );
   return (
