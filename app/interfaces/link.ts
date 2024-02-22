@@ -1,7 +1,8 @@
 import { type IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { type LinkProps } from 'next/link';
 
 export interface Link {
-  href: string;
+  href: LinkProps['href'] | string;
   text: string;
 }
 

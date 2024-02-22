@@ -77,7 +77,7 @@ const FooterLinks = ({ className }: { className?: string }) => {
   ];
 
   const makeLink = ({ href, icon, text }: LinkWithIcon) => (
-    <Link key={href} href={href} className="text-slate-600 hover:text-slate-800 px-1">
+    <Link key={text} href={href} className="text-slate-600 hover:text-slate-800 px-1">
       <span className="text-nowrap">
         <FontAwesomeIcon icon={icon} fixedWidth /> {text}
       </span>
