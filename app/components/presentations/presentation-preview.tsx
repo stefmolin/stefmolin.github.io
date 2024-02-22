@@ -51,22 +51,24 @@ export default function PresentationPreview({
         ) : null
       }
       coverImage={coverImage}
+      coverImageAltText={title}
       description={description}
       duration={duration}
+      id={title}
       linkClass="internal"
       resourceLink={{ contentClass, slug }}
       subtitle={
         subtitle ?? (
-          <>
+          <h3 className="text-slate-600">
             <FontAwesomeIcon icon={faMicrophoneLines} fixedWidth className="pr-1" />
             {pastSessions
               .sort((a, b) => (a.date > b.date ? -1 : 1))
               .map(({ date, event }) => `${event.name} ${date.slice(0, 4)}`)
               .join(', ')}
-          </>
+          </h3>
         )
       }
-      title={title}
+      title={<h2 className="text-2xl hover:underline">{title}</h2>}
     />
   );
 }

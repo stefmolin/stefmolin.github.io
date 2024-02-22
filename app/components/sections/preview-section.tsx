@@ -2,42 +2,49 @@ import DurationIndicator, { type DurationIndicatorProps } from '../datetime/dura
 import ResourceLink, { type ResourceLinkProps } from '../links/resource-link';
 import type SEOImage from '../../interfaces/seo-image';
 import MarkdownSection from './markdown-section';
+import PreviewCard, { type PreviewCardProps } from '../cards/preview-card';
 
-interface PreviewSectionProps extends Omit<ResourceLinkProps, 'children'>, DurationIndicatorProps {
+interface PreviewSectionProps
+  extends Omit<ResourceLinkProps, 'children'>,
+    DurationIndicatorProps,
+    Pick<PreviewCardProps, 'id'> {
   bottomLeft?: React.ReactNode;
-  coverImage: SEOImage;
+  coverImage: SEOImage | string;
+  coverImageAltText: string;
   description: string[];
   subtitle: React.ReactNode;
-  title: string;
+  title: React.ReactNode;
 }
 
 export default function PreviewSection({
   bottomLeft,
   coverImage,
+  coverImageAltText,
   description,
   duration,
+  id,
   linkClass,
   resourceLink,
   subtitle,
   title,
 }: PreviewSectionProps) {
   return (
-    <div
-      id={title.replaceAll(':', '').replaceAll(' ', '-').toLowerCase()}
-      className="shadow-sm hover:shadow-lg transition-shadow duration-200 p-6 flex flex-col m-5"
-    >
-      <div className="flex flex-col justify-evenly space-y-5">
-        <div className="flex flex-col items-start">
+    <PreviewCard
+      id={id}
+      header={
+        <>
           <ResourceLink linkClass={linkClass} resourceLink={resourceLink}>
-            <h2 className="text-2xl hover:underline">{title}</h2>
+            {title}
           </ResourceLink>
-          <h3 className="text-slate-600">{subtitle}</h3>
-        </div>
+          {subtitle}
+        </>
+      }
+      body={
         <div className="lg:pr-5">
           <ResourceLink linkClass={linkClass} resourceLink={resourceLink}>
             <img
-              src={coverImage.src}
-              alt={title}
+              src={typeof coverImage === 'string' ? coverImage : coverImage.src}
+              alt={coverImageAltText}
               className="md:float-left md:mr-5 mb-2 mx-auto max-w-64 object-cover"
             />
           </ResourceLink>
@@ -48,14 +55,17 @@ export default function PreviewSection({
             ))}
           </div>
         </div>
-        <div className="flex flex-col-reverse md:flex-row items-center md:justify-between w-full">
+      }
+      footer={
+        <>
           <div className="flex flex-row items-center">{bottomLeft}</div>
           <div className="flex flex-row items-center pt-6 pb-2 md:py-0">
             <DurationIndicator duration={duration} />
           </div>
           <hr className="w-3/4 items-center md:hidden" />
-        </div>
-      </div>
-    </div>
+        </>
+      }
+      footerClassName="md:flex-row w-full"
+    />
   );
 }

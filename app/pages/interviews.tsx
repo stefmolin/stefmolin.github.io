@@ -16,6 +16,7 @@ import DurationIndicator from '../components/datetime/duration-indicator';
 import INTERVIEWS from '../data/interviews';
 import CONTENT_LINKS from '../data/content-links';
 import ExternalLink from '../components/links/external-link';
+import PreviewCard from '../components/cards/preview-card';
 
 export default function Interviews() {
   const preview = false;
@@ -72,15 +73,14 @@ export default function Interviews() {
         <div className="mt-4 mb-20 max-w-5xl mx-auto">
           <h1 className="text-4xl">{pageTitle}</h1>
           {/* {pageSubtitle != null ? <h2 className="text-xl pt-2">{pageSubtitle}</h2> : null} */}
-          <div className="grid grid-cols-1 sm:gap-y-10">
+          <div className="space-y-20">
             {INTERVIEWS.map(
               ({ link, coverImage, format, host, date, title, description, duration, seeAlso }) => (
-                <div
+                <PreviewCard
+                  id={title}
                   key={title}
-                  className="shadow-sm hover:shadow-lg transition-shadow duration-200 px-6 py-4 flex flex-col m-5"
-                >
-                  <div className="flex flex-col justify-evenly space-y-5">
-                    <div className="flex flex-col items-start">
+                  header={
+                    <>
                       <ExternalLink href={link}>
                         <h3 className="text-xl hover:underline text-pretty">
                           {title}
@@ -100,8 +100,10 @@ export default function Interviews() {
                         />
                         <h4 className="text-slate-600">{host}</h4>
                       </div>
-                    </div>
-                    <div>
+                    </>
+                  }
+                  body={
+                    <>
                       <ExternalLink href={link}>
                         <img
                           src={coverImage}
@@ -139,17 +141,20 @@ export default function Interviews() {
                           </p>
                         </>
                       ) : null}
-                    </div>
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between w-full">
+                    </>
+                  }
+                  footer={
+                    <>
                       <PublicationDate date={date} />
                       <div className="flex flex-row items-center">
                         <DurationIndicator
                           duration={`${duration} ${format === 'podcast' ? 'listen' : 'read'}`}
                         />
                       </div>
-                    </div>
-                  </div>
-                </div>
+                    </>
+                  }
+                  footerClassName="flex-col-reverse sm:flex-row"
+                />
               ),
             )}
           </div>
