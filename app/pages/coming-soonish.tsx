@@ -54,7 +54,7 @@ export default function ComingSoonish() {
             <br />I spend a lot of time crafting my content, and the{' '}
             {slides ? (
               <>
-                <span className="capitalize">"{slides}"</span> slides are
+                <span>"{slides}"</span> slides are
               </>
             ) : (
               'resource you requested is'
