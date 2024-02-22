@@ -1,12 +1,12 @@
 import { NextSeo } from 'next-seo';
-import Container from '../../components/sections/container';
 import Layout from '../../components/layout';
+import PresentationPreview from '../../components/presentations/presentation-preview';
+import Container from '../../components/sections/container';
+import CONTENT_LINKS from '../../data/content-links';
+import WORKSHOP_PAGES from '../../data/workshops';
+import { getLivePresentations } from '../../lib/events';
 import { usePageURL } from '../../lib/hooks/page-url';
 import { getImageLink } from '../../lib/images';
-import WORKSHOP_PAGES from '../../data/workshops';
-import CONTENT_LINKS from '../../data/content-links';
-import WorkshopPreview from '../../components/workshops/workshop-preview';
-import { getLivePresentations } from '../../lib/events';
 
 // TODO: decide on the featured topic/technology at the bottom left of the card
 // TODO: decide whether to put a combined version of the map at the bottom (could maybe highlight the workshops when clicking on a pin for a spot they were presented at)
@@ -47,7 +47,17 @@ export default function Index() {
               (a, b) =>
                 pastSessions.indexOf(a.workshop.title) - pastSessions.indexOf(b.workshop.title),
             ).map(({ workshop }) => (
-              <WorkshopPreview key={workshop.title} workshop={workshop} />
+              <PresentationPreview
+                key={workshop.title}
+                slug={workshop.repo}
+                title={workshop.title}
+                subtitle={workshop.subtitle}
+                coverImage={workshop.coverImage}
+                description={[workshop.description[0]]}
+                duration={workshop.duration}
+                repo={workshop.repo}
+                contentClass="workshop"
+              />
             ))}
           </div>
         </div>

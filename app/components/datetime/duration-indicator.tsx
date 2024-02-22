@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 
-type Props = {
+export interface DurationIndicatorProps {
   duration: string;
-};
+}
 
-const DurationIndicator = ({ duration }: Props) => {
+const DurationIndicator = ({ duration }: DurationIndicatorProps) => {
   return (
     <div className="flex flex-row items-center space-x-1">
       <FontAwesomeIcon icon={faClock} fixedWidth />
