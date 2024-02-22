@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrophoneLines } from '@fortawesome/free-solid-svg-icons';
-import Link from 'next/link';
 import { type Presentation } from '../../interfaces/event';
 import { type SeeAlso } from '../../interfaces/related-content';
 import type Talk from '../../interfaces/talk';
@@ -8,8 +7,6 @@ import { getLivePresentations } from '../../lib/events';
 import RepoStats from '../repo-stats';
 import PreviewSection from '../sections/preview-section';
 import ResourceLink from '../links/resource-link';
-
-// TODO: this card is also very similar to the ones I use for /interviews --> try to make a component
 
 export default function PresentationPreview({
   slug,
