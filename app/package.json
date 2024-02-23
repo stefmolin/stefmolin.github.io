@@ -18,6 +18,7 @@
     "dedent": "^1.5.1",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
+    "hamburger-react": "^2.5.0",
     "lodash": "^4.17.21",
     "luxon": "^3.4.4",
     "next": "^14.1.0",
