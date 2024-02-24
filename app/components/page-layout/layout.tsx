@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useState } from 'react';
-import Alert from './alert';
+import Alert from '../alert';
 import Footer from './footer';
 import Header from './header';
 import Meta from './meta';

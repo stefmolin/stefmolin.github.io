@@ -10,12 +10,12 @@ import {
   faRssSquare,
   faSitemap,
 } from '@fortawesome/free-solid-svg-icons';
-import Avatar from './avatar';
-import SubscribeToNewsletterForm from './subscribe-to-newsletter';
-import FollowButtons from './follow';
-import { type LinkWithIcon } from '../interfaces/link';
-import FancyDivider from './dividers/fancy-divider';
-import ExternalLink from './links/external-link';
+import Avatar from '../avatar';
+import SubscribeToNewsletterForm from '../subscribe-to-newsletter';
+import FollowButtons from '../follow';
+import { type LinkWithIcon } from '../../interfaces/link';
+import FancyDivider from '../dividers/fancy-divider';
+import ExternalLink from '../links/external-link';
 
 const SitemapLinks = ({ className }: { className?: string }) => {
   // Internal links only
@@ -31,7 +31,7 @@ const SitemapLinks = ({ className }: { className?: string }) => {
     { name: 'Data Morph', url: '/data-morph/' },
     { name: 'Events', url: '/events/' },
     { name: 'About', url: '/about/' },
-    { name: 'Contact', url: '/contact/' },
+    { name: 'Contact', url: '/contact/' }, // TODO: put placeholder pages for these so they fill out the footer
   ];
 
   return (
@@ -162,7 +162,7 @@ const Footer = () => {
         <div className="lg:text-right flex flex-col lg:flex-col pt-4 lg:pt-0">
           <span className="hidden lg:block">
             Made with <FontAwesomeIcon icon={faCoffee} />, <FontAwesomeIcon icon={faCode} />, and
-            lots of <FontAwesomeIcon icon={faHeart} />.
+            lots of <FontAwesomeIcon icon={faHeart} beatFade />.
           </span>
           <FooterLinks />
         </div>
