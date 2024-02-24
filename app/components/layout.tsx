@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { useState } from 'react';
 import Alert from './alert';
 import Footer from './footer';
 import Header from './header';
@@ -12,15 +13,17 @@ type Props = {
 };
 
 const Layout = ({ preview, children, className, styleProps }: Props) => {
+  const [showMenuOverlay, setShowMenuOverlay] = useState(false);
+
   return (
     <>
       <Meta />
       <div className={classNames('min-h-screen', className)} style={styleProps}>
-        <Header />
         {/* <Alert preview={preview} /> TODO: this probably can be removed */}
-        <main>{children}</main>
+        <Header isOpen={showMenuOverlay} setIsOpen={setShowMenuOverlay} />
+        {!showMenuOverlay && <main>{children}</main>}
       </div>
-      <Footer />
+      {!showMenuOverlay && <Footer />}
     </>
   );
 };

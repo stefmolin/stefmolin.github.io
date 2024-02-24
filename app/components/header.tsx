@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import Hamburger from 'hamburger-react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { NEWSLETTER_URL } from '../data/constants';
 
 function NavigationLinks({
@@ -44,18 +44,22 @@ function NavigationLinks({
   );
 }
 
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function Header({
+  isOpen,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}) {
   return (
     <div
       className={classNames(
         'relative transition-height duration-500 ease-in-out',
         'bg-neutral-50 border-b border-neutral-200',
-        'mb-20 sticky top-0 z-50 w-full',
+        'sticky top-0 z-50 w-full',
         {
           'h-screen': isOpen,
-          'h-16': !isOpen,
+          'h-16 mb-20': !isOpen,
         },
       )}
     >
