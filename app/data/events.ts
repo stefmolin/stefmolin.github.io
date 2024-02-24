@@ -366,7 +366,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     event: {
       ...SAME_LOCATION_EVENTS['PyCon IT'],
       virtual: false,
-      link: 'TBD',
+      link: 'https://2024.pycon.it/en/event/getting-started-with-open-source-contributions',
     },
     presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
     date: '2024-05-24',
