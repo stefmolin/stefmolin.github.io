@@ -16,6 +16,7 @@ import FollowButtons from '../follow';
 import { type LinkWithIcon } from '../../interfaces/link';
 import FancyDivider from '../dividers/fancy-divider';
 import ExternalLink from '../links/external-link';
+import { HEADSHOT } from '../../data/constants';
 
 const SitemapLinks = ({ className }: { className?: string }) => {
   // Internal links only
@@ -31,7 +32,7 @@ const SitemapLinks = ({ className }: { className?: string }) => {
     { name: 'Data Morph', url: '/data-morph/' },
     { name: 'Events', url: '/events/' },
     { name: 'About', url: '/about/' },
-    { name: 'Contact', url: '/contact/' }, // TODO: put placeholder pages for these so they fill out the footer
+    { name: 'Contact', url: '/contact/' },
   ];
 
   return (
@@ -100,7 +101,7 @@ const Footer = () => {
     <footer className="bg-neutral-50 border-t border-neutral-200 mx-auto px-10">
       <div className="mt-5 flex flex-col lg:flex-row items-start lg:justify-between lg:px-4">
         <div className="text-left lg:pr-10 lg:w-2/3 xl:mr-20">
-          <Avatar name="Stefanie Molin" picture="/assets/avatar.jpeg" />
+          <Avatar name="Stefanie Molin" picture={HEADSHOT} />
           <p className="pt-5">
             Thank you for visiting my website! I am passionate about teaching data science and
             software engineering skills to people of all levels. I have created multiple{' '}
