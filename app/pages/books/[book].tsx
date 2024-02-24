@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
 import Container from '../../components/sections/container';
-import Layout from '../../components/layout';
+import Layout from '../../components/page-layout/layout';
 import { BOOK_PAGE_MAPPING } from '../../data/books';
 import { generateBookCoverAltText, generateBookPageTitle } from '../../lib/books';
 import { usePageURL } from '../../lib/hooks/page-url';

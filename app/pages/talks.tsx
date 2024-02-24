@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
 import Container from '../components/sections/container';
-import Layout from '../components/layout';
+import Layout from '../components/page-layout/layout';
 import { usePageURL } from '../lib/hooks/page-url';
 import { getImageLink } from '../lib/images';
 import CONTENT_LINKS from '../data/content-links';

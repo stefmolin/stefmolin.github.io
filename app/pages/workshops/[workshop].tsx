@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
 import Container from '../../components/sections/container';
-import Layout from '../../components/layout';
+import Layout from '../../components/page-layout/layout';
 import EvenlySpacedSections from '../../components/sections/evenly-spaced-sections';
 import SectionSeparator from '../../components/dividers/section-separator';
 import RelatedContentSection from '../../components/related-content/related-content';

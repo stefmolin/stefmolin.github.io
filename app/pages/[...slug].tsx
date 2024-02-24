@@ -51,7 +51,6 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
         {router.isFallback ? (
           <PostTitle title="Loading…" />
         ) : (
@@ -62,12 +61,12 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
                 description={post.subtitle || post.title}
                 canonical={post.canonical}
                 openGraph={{
-                  type: "article",
+                  type: 'article',
                   url: pageURL,
                   article: {
                     publishedTime: post.date,
                     modifiedTime: post.modified,
-                    section: post.type === "blog" ? "Blog" : "Technology",
+                    section: post.type === 'blog' ? 'Blog' : 'Technology',
                     authors: [HOME_URL],
                     tags: post.tags,
                   },

@@ -1,5 +1,5 @@
 import Container from '../../components/sections/container';
-import Layout from '../../components/layout';
+import Layout from '../../components/page-layout/layout';
 import TagListing, { type TagListingProps } from '../../components/feeds/tag-listing';
 import { getAllPosts } from '../../lib/posts';
 
