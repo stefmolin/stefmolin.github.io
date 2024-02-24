@@ -31,12 +31,11 @@ export default function PresentationListing({
   seoImage,
   seoImageAltTextFallback,
 }: PresentationListingProps) {
-  const preview = false;
   const pastSessions = getLivePresentations({ contentClass })
     .sort((a, b) => (a.date > b.date ? -1 : 1))
     .map(({ presentation }) => presentation.title);
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <NextSeo
           title={pageTitle}

@@ -49,7 +49,7 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
   );
 
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         {router.isFallback ? (
           <PostTitle title="Loading…" />

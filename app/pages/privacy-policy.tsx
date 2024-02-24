@@ -9,7 +9,7 @@ const linkProps = {
 
 export default function Index() {
   return (
-    <Layout preview>
+    <Layout>
       <Container>
         <div className={privacyStyles['privacy-policy']}>
           <h1>Privacy Policy</h1>

@@ -27,11 +27,10 @@ const relatedContent: RelatedContentLink[] = [
 // TODO: incorporate the non-conference, non-signing events?
 
 export default function Index() {
-  const preview = false;
   const seoImage = CONTENT_LINKS.EVENTS.image;
   const pageTitle = 'Events';
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <NextSeo
           title={pageTitle}

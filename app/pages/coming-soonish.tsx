@@ -19,13 +19,11 @@ const relatedContent: RelatedContentLink[] = [
 ];
 
 export default function ComingSoonish() {
-  const preview = false;
   const searchParams = useSearchParams();
   const slides = searchParams.get('slides')?.replaceAll('-', ' ');
 
   return (
     <Layout
-      preview={preview}
       className="bg-contain bg-scroll pb-20"
       styleProps={{
         backgroundImage: 'url(/assets/under-construction.jpg)',

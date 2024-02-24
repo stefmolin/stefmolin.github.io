@@ -12,7 +12,7 @@ import { usePageURL } from '../../lib/hooks/page-url';
 const Feed = ({ allPosts, description, title }: Omit<FeedType, 'kind'>) => {
   return (
     <>
-      <Layout preview>
+      <Layout>
         <NextSeo
           title={title}
           description={description}

@@ -20,11 +20,10 @@ const relatedContent: RelatedContentLink[] = [
 ];
 
 export default function Index() {
-  const preview = false;
   const pageTitle = 'Bookshelf';
   const seoImage = CONTENT_LINKS.BOOKS.image;
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <NextSeo
           title={pageTitle}

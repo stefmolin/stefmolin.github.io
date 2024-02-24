@@ -19,7 +19,6 @@ import ExternalLink from '../components/links/external-link';
 import PreviewCard from '../components/cards/preview-card';
 
 export default function Interviews() {
-  const preview = false;
   const pageTitle = 'Interviews';
   const seoImage = CONTENT_LINKS.INTERVIEWS.image;
 
@@ -53,7 +52,7 @@ export default function Interviews() {
   };
 
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <NextSeo
           title={pageTitle}

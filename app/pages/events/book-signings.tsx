@@ -27,7 +27,6 @@ const relatedContent: RelatedContentLink[] = [
 // TODO: revisit the card color(s) once color palette is finalized
 
 export default function BookSignings() {
-  const preview = false;
   const seoImage = CONTENT_LINKS.BOOK_SIGNINGS.image;
   const pageTitle = 'Book Signings';
   const signings = LIVE_PRESENTATIONS.filter((x) => x.presentation.contentClass === 'book signing');
@@ -60,7 +59,7 @@ export default function BookSignings() {
     </>,
   ];
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <NextSeo
           title={pageTitle}

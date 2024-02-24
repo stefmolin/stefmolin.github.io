@@ -19,12 +19,10 @@ import WorkshopSummary from '../../components/workshops/workshop-summary';
 
 export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
   const { workshop, reviews, relatedContent } = WORKSHOP_PAGE_MAPPING[workshopKey];
-
-  const preview = false;
   const workshopCoverImage = workshop.coverImage;
 
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <NextSeo
           title={workshop.title}

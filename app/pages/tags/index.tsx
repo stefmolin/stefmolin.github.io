@@ -4,9 +4,8 @@ import TagListing, { type TagListingProps } from '../../components/feeds/tag-lis
 import { getAllPosts } from '../../lib/posts';
 
 export default function Index({ tagCounts }: Pick<TagListingProps, 'tagCounts'>) {
-  const preview = false;
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <h1 className="text-3xl">Search posts by tag</h1>
         <TagListing

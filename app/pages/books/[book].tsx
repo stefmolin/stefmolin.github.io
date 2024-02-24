@@ -18,12 +18,11 @@ import BookPublicationDate from '../../components/books/book-publication-date';
 export default function BookPage({ bookKey }: { bookKey: string }) {
   const { book, reviews, relatedContent, faqs } = BOOK_PAGE_MAPPING[bookKey];
 
-  const preview = false;
   const bookCoverImage = book.coverImage;
   const bookTitle = generateBookPageTitle(book);
   const imageAltText = generateBookCoverAltText(book);
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <NextSeo
           title={bookTitle}

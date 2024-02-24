@@ -25,7 +25,6 @@ const relatedContent: RelatedContentLink[] = [
 // TODO: add CTA to invite me to speak (could link to /contact)
 
 export default function Conferences() {
-  const preview = false;
   const seoImage = CONTENT_LINKS.CONFERENCES.image;
   const pageTitle = 'Conferences';
   const presentations = LIVE_PRESENTATIONS.filter(
@@ -41,7 +40,7 @@ export default function Conferences() {
     </Link>
   );
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <NextSeo
           title={pageTitle}
