@@ -8,17 +8,22 @@ import {
   faLinkedin,
   faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import { NEWSLETTER_URL, TWITTER_HANDLE } from '../data/constants';
+import {
+  GITHUB_PROFILE,
+  LINKEDIN_PROFILE,
+  NEWSLETTER_URL,
+  TWITTER_HANDLE,
+} from '../data/constants';
 import ExternalLink from './links/external-link';
 
 const FOLLOW_LINKS: { icon: IconDefinition; url: string }[] = [
   {
     icon: faGithub,
-    url: 'https://github.com/stefmolin',
+    url: GITHUB_PROFILE,
   },
   {
     icon: faLinkedin,
-    url: 'https://linkedin.com/in/stefanie-molin',
+    url: LINKEDIN_PROFILE,
   },
   {
     icon: faXTwitter,
@@ -30,9 +35,10 @@ const FOLLOW_LINKS: { icon: IconDefinition; url: string }[] = [
 type Props = {
   className?: string;
   size?: SizeProp;
+  withoutNewsletter?: boolean;
 };
 
-const FollowButtons = ({ className, size = 'lg' }: Props) => {
+const FollowButtons = ({ className, size = 'lg', withoutNewsletter = false }: Props) => {
   const makeLink = (url: string, icon: IconDefinition) => (
     <ExternalLink key={url} href={url} className="text-slate-600 hover:text-slate-800">
       <FontAwesomeIcon icon={icon} size={size} fixedWidth />
@@ -40,7 +46,9 @@ const FollowButtons = ({ className, size = 'lg' }: Props) => {
   );
   return (
     <div className={classNames('space-x-2 flex items-center justify-center', className)}>
-      {FOLLOW_LINKS.map(({ url, icon }) => makeLink(url, icon))}
+      {(withoutNewsletter ? FOLLOW_LINKS.slice(0, 3) : FOLLOW_LINKS).map(({ url, icon }) =>
+        makeLink(url, icon),
+      )}
     </div>
   );
 };
