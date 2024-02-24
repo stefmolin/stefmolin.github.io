@@ -3,7 +3,7 @@ import CONTENT_LINKS from '../../data/content-links';
 import { getLivePresentations } from '../../lib/events';
 import { usePageURL } from '../../lib/hooks/page-url';
 import { getImageLink } from '../../lib/images';
-import Layout from '../layout';
+import Layout from '../page-layout/layout';
 import Container from '../sections/container';
 import PresentationPreview from './presentation-preview';
 import type SEOImage from '../../interfaces/seo-image';

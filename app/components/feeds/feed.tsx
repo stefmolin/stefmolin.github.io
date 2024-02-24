@@ -2,7 +2,7 @@ import { NextSeo } from 'next-seo';
 import Container from '../sections/container';
 import PostListing from './post-listing';
 import Intro from '../posts/intro';
-import Layout from '../layout';
+import Layout from '../page-layout/layout';
 import type FeedType from '../../interfaces/feed';
 import { usePageURL } from '../../lib/hooks/page-url';
 

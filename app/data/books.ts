@@ -272,6 +272,11 @@ export const BOOK_PAGES: BookPage[] = [
         source: 'https://analyticsdrift.com/top-data-analytics-books/',
       },
       {
+        author: 'DataTalks.Club',
+        text: 'Book of the week from 18 Jul 2022 to 22 Jul 2022',
+        source: 'https://datatalks.club/books/20220718-hands-on-data-analysis-with-pandas.html',
+      },
+      {
         author: 'ODSC Team',
         text: `Top Data Science Books to Get as Gifts for the Holidays \[2022 Edition\]: #2`,
         source:
