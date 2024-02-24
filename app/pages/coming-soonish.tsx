@@ -60,7 +60,7 @@ export default function ComingSoonish() {
             not completed yet. Check back soon, or better yet,{' '}
             <ExternalLink
               href={NEWSLETTER_URL}
-              className="p-px font-bold underline decoration-yellow-400 hover:text-slate-700"
+              className="py-px font-bold underline decoration-yellow-400 hover:text-slate-700"
             >
               sign up for my newsletter
             </ExternalLink>
@@ -76,7 +76,7 @@ export default function ComingSoonish() {
                 And as Camila Cabello once said, "
                 <ExternalLink
                   href="https://www.youtube.com/watch?v=KDFWEPYwDpU"
-                  className="underline font-bold decoration-yellow-400 hover:text-slate-700"
+                  className="py-px underline font-bold decoration-yellow-400 hover:text-slate-700"
                 >
                   Don't Go Yet!
                 </ExternalLink>
