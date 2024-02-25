@@ -20,7 +20,7 @@ export default function StatsGrid({
           if (value == null || value === 0) return null;
           const stat = (
             <>
-              <h3 className="text-6xl md:text-7xl text-center px-2">{value}</h3>
+              <h3 className="text-6xl sm:text-7xl text-center px-2 -my-4">{value}</h3>
               <h3 className="text-center px-2">{title}</h3>
             </>
           );

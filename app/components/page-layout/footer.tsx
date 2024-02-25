@@ -14,7 +14,6 @@ import Avatar from '../avatar';
 import SubscribeToNewsletterForm from '../subscribe-to-newsletter';
 import FollowButtons from '../follow';
 import { type LinkWithIcon } from '../../interfaces/link';
-import FancyDivider from '../dividers/fancy-divider';
 import ExternalLink from '../links/external-link';
 import { HEADSHOT } from '../../data/constants';
 
@@ -145,9 +144,7 @@ const Footer = () => {
 
       <SitemapLinks className="px-5" />
 
-      <FancyDivider className="py-10">
-        <FollowButtons size="3x" className="px-5" />
-      </FancyDivider>
+      <FollowButtons size="3x" className="px-5" withDivider dividerClassName="py-10" />
 
       <div className="flex flex-col lg:flex-row justify-between items-center text-center px-2 pb-5">
         <div className="flex flex-col lg:text-left pt-4 lg:pt-0">

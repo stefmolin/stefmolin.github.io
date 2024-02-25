@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import _ from 'lodash';
 import { DateTime } from 'luxon';
+import { FLAGS } from '../../data/constants';
 import { type LivePresentation } from '../../interfaces/event';
 import {
   getYearCounts,
@@ -8,9 +9,10 @@ import {
   getCountryCounts,
   getContentClassCounts,
   getConferenceCounts,
+  getCompletedSessions,
+  getNextSessions,
 } from '../../lib/events';
 import StatsGrid, { type StatsGridProps } from '../cards/stats-grid';
-import { FLAGS } from '../../data/constants';
 
 export default function EventStatsGrid({
   sessions,
@@ -33,9 +35,9 @@ export default function EventStatsGrid({
     events: '/events/',
   };
 
-  const completedSessions = sessions.filter(({ date }) => date < DateTime.now().toISODate());
+  const completedSessions = getCompletedSessions(sessions);
   const latestSession = completedSessions.slice(-1)[0];
-  const nextSession = sessions.filter(({ date }) => date >= DateTime.now().toISODate())[0];
+  const nextSession = getNextSessions(sessions)[0];
 
   const yearCounts = getYearCounts(completedSessions);
   const yearsActive = { title: 'years active', value: Object.keys(yearCounts).length };

@@ -21,7 +21,7 @@ import Container from '../components/sections/container';
 import { HEADSHOT } from '../data/constants';
 import CONTENT_LINKS from '../data/content-links';
 
-const relatedContent: RelatedContentLink[] = [
+const relatedContent = [
   CONTENT_LINKS.ARTICLES,
   CONTENT_LINKS.BLOG,
   CONTENT_LINKS.BOOKS,
