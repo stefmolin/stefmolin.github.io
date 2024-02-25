@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import Container from '../components/sections/container';
 import Layout from '../components/page-layout/layout';
 import ExternalLink from '../components/links/external-link';
@@ -6,6 +7,7 @@ import FancyDivider from '../components/dividers/fancy-divider';
 import FollowButtons from '../components/follow';
 
 export default function Index() {
+  const pageTitle = 'Contact Me';
   return (
     <Layout
       className="bg-cover bg-fixed bg-center"
@@ -13,10 +15,11 @@ export default function Index() {
         backgroundImage: 'url(/assets/events/conferences/conference-badges.jpg)',
       }}
     >
+      <NextSeo title={pageTitle} description="Contact Stefanie Molin." />
       <Container>
         <div className="mt-4 max-w-3xl mx-auto p-10 bg-white rounded-lg shadow-lg">
           <div className="flex flex-col items-center mb-2 space-y-4">
-            <h1 className="text-4xl">Contact Me</h1>
+            <h1 className="text-4xl">{pageTitle}</h1>
             <img src={HEADSHOT} className="h-48 w-48 rounded-full" />
           </div>
 

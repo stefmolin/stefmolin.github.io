@@ -1,9 +1,15 @@
 import { DateTime } from 'luxon';
+import type SEOImage from '../interfaces/seo-image';
 
 export const HEADSHOT = '/assets/avatar.jpeg';
 export const HOME_URL = 'https://stefaniemolin.com';
 export const NEWSLETTER_URL = 'https://newsletter.stefaniemolin.com';
-export const HOME_OG_IMAGE_URL = ''; // TODO: should the home OG image be my avatar?
+export const HOME_OG_IMAGE: SEOImage = {
+  src: `${HOME_URL}${HEADSHOT}`,
+  width: 800,
+  height: 800,
+  alt: 'Portrait of Stefanie Molin',
+};
 export const TWITTER_HANDLE = '@StefanieMolin';
 export const COPYRIGHT_STATEMENT = `Copyright 2019-${DateTime.now().year}, Stefanie Molin`;
 export const GITHUB_PROFILE = 'https://github.com/stefmolin';

@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import readingDuration from 'reading-duration';
 import { Feed as RssFeed } from 'feed';
 import { DateTime } from 'luxon';
-import { COPYRIGHT_STATEMENT, HOME_OG_IMAGE_URL, HOME_URL } from '../data/constants';
+import { COPYRIGHT_STATEMENT, HOME_OG_IMAGE, HOME_URL } from '../data/constants';
 
 type Items = {
   [key: string]: any;
@@ -108,7 +108,7 @@ export const generateRssFeed = async (feedType: string, feedTitle: string, posts
     link: `${HOME_URL}/${feedType}`,
     copyright: COPYRIGHT_STATEMENT,
     language: 'en',
-    image: HOME_OG_IMAGE_URL,
+    image: HOME_OG_IMAGE.src,
     // TODO: favicon: `${HOME_URL}/favicon.png`,
     author: {
       name: 'Stefanie Molin',

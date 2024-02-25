@@ -1,5 +1,5 @@
 import { DefaultSeoProps } from 'next-seo';
-import { HOME_OG_IMAGE_URL, HOME_URL, TWITTER_HANDLE } from './data/constants';
+import { HOME_OG_IMAGE, HOME_URL, TWITTER_HANDLE } from './data/constants';
 
 const config: DefaultSeoProps = {
   openGraph: {
@@ -11,6 +11,14 @@ const config: DefaultSeoProps = {
       firstName: 'Stefanie',
       lastName: 'Molin',
     },
+    images: [
+      {
+        url: HOME_OG_IMAGE.src,
+        width: HOME_OG_IMAGE.width,
+        height: HOME_OG_IMAGE.height,
+        alt: HOME_OG_IMAGE.alt,
+      },
+    ],
   },
   themeColor: '#000',
   titleTemplate: '%s | Stefanie Molin',
