@@ -360,7 +360,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
       link: 'https://odsc.com/speakers/data-morph-a-cautionary-tale-of-summary-statistics/',
     },
     presentation: PRESENTATIONS.DATA_MORPH,
-    date: '2024-04-2?',
+    date: '2024-04-25',
   },
   {
     event: {
