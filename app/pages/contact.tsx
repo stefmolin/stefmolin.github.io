@@ -3,7 +3,6 @@ import Container from '../components/sections/container';
 import Layout from '../components/page-layout/layout';
 import ExternalLink from '../components/links/external-link';
 import { HEADSHOT, LINKEDIN_PROFILE } from '../data/constants';
-import FancyDivider from '../components/dividers/fancy-divider';
 import FollowButtons from '../components/follow';
 
 export default function ContactMe() {
@@ -39,9 +38,7 @@ export default function ContactMe() {
               .
             </p>
           </div>
-          <FancyDivider className="py-5">
-            <FollowButtons size="3x" className="px-5" withoutNewsletter />
-          </FancyDivider>
+          <FollowButtons size="3x" className="px-5" withDivider dividerClassName="py-5" />
         </div>
       </Container>
     </Layout>

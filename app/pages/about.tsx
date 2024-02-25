@@ -20,7 +20,6 @@ import RelatedContentSection from '../components/related-content/related-content
 import Container from '../components/sections/container';
 import { HEADSHOT } from '../data/constants';
 import CONTENT_LINKS from '../data/content-links';
-import type RelatedContentLink from '../interfaces/related-content';
 
 const relatedContent: RelatedContentLink[] = [
   CONTENT_LINKS.ARTICLES,
@@ -104,15 +103,17 @@ export default function AboutMe() {
         <div className="-mt-10 mb-20 max-w-5xl mx-auto bg-white">
           <div className="mx-5 lg:mx-10">
             <div className="flex flex-col items-center justify-center">
-              <img src={HEADSHOT} className="w-48 h-48 rounded-full object-cover mb-2" alt="TODO" />
+              <img
+                src={HEADSHOT}
+                className="w-48 h-48 rounded-full object-cover mb-2"
+                alt="Picture of Stefanie Molin."
+              />
             </div>
             <div className="space-y-5 text-center">
               <p className="text-3xl">
                 My name is <b className="text-nowrap">Stefanie Molin</b>.
               </p>
-              <FancyDivider className="py-0">
-                <FollowButtons size="2x" className="px-5" />
-              </FancyDivider>
+              <FollowButtons size="2x" className="px-5" withDivider />
               <p className="text-2xl text-center mx-2">
                 I am a <b>full-stack software engineer</b> and <b>content creator</b>, passionate
                 about helping people of all levels improve their data science and computer science

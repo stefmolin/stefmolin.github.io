@@ -15,6 +15,7 @@ import {
   TWITTER_HANDLE,
 } from '../data/constants';
 import ExternalLink from './links/external-link';
+import FancyDivider from './dividers/fancy-divider';
 
 const FOLLOW_LINKS: { icon: IconDefinition; url: string }[] = [
   {
@@ -34,23 +35,35 @@ const FOLLOW_LINKS: { icon: IconDefinition; url: string }[] = [
 
 type Props = {
   className?: string;
+  dividerClassName?: string;
   size?: SizeProp;
+  withDivider?: boolean;
   withoutNewsletter?: boolean;
 };
 
-const FollowButtons = ({ className, size = 'lg', withoutNewsletter = false }: Props) => {
+const FollowButtons = ({
+  className,
+  dividerClassName,
+  size = 'lg',
+  withDivider = false,
+  withoutNewsletter = false,
+}: Props) => {
   const makeLink = (url: string, icon: IconDefinition) => (
     <ExternalLink key={url} href={url} className="text-slate-600 hover:text-slate-800">
       <FontAwesomeIcon icon={icon} size={size} fixedWidth />
     </ExternalLink>
   );
-  return (
+  const buttons = (
     <div className={classNames('space-x-2 flex items-center justify-center', className)}>
       {(withoutNewsletter ? FOLLOW_LINKS.slice(0, 3) : FOLLOW_LINKS).map(({ url, icon }) =>
         makeLink(url, icon),
       )}
     </div>
   );
+  if (withDivider) {
+    return <FancyDivider className={dividerClassName}>{buttons}</FancyDivider>;
+  }
+  return buttons;
 };
 
 export default FollowButtons;

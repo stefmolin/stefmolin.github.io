@@ -8,14 +8,13 @@ import EventMap from '../../components/events/event-map';
 import CONTENT_LINKS from '../../data/content-links';
 import { getImageLink } from '../../lib/images';
 import { LIVE_PRESENTATIONS } from '../../data/events';
-import type RelatedContentLink from '../../interfaces/related-content';
 import RelatedContentSection from '../../components/related-content/related-content';
 import { CONFERENCE_IMAGES } from '../../data/photo-gallery';
 import PhotoGallery from '../../components/photo-gallery';
 import EventStatsSection from '../../components/events/event-stats-section';
 import { MAP_PIN } from '../../data/constants';
 
-const relatedContent: RelatedContentLink[] = [
+const relatedContent = [
   CONTENT_LINKS.WORKSHOPS,
   CONTENT_LINKS.BOOKS,
   CONTENT_LINKS.BOOK_SIGNINGS,

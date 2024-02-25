@@ -8,7 +8,6 @@ import EventMap from '../../components/events/event-map';
 import CONTENT_LINKS from '../../data/content-links';
 import { getImageLink } from '../../lib/images';
 import { LIVE_PRESENTATIONS } from '../../data/events';
-import type RelatedContentLink from '../../interfaces/related-content';
 import RelatedContentSection from '../../components/related-content/related-content';
 import { BOOK_SIGNING_IMAGES } from '../../data/photo-gallery';
 import PhotoGallery from '../../components/photo-gallery';
@@ -17,7 +16,7 @@ import MysteryCards, { type MysteryCardsProps } from '../../components/cards/mys
 import EvenlySpacedSections from '../../components/sections/evenly-spaced-sections';
 import ExternalLink from '../../components/links/external-link';
 
-const relatedContent: RelatedContentLink[] = [
+const relatedContent = [
   CONTENT_LINKS.INTERVIEWS,
   CONTENT_LINKS.BOOKS,
   CONTENT_LINKS.CONFERENCES,

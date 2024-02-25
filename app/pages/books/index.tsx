@@ -6,13 +6,12 @@ import { generateBookPageLink } from '../../lib/books';
 import { usePageURL } from '../../lib/hooks/page-url';
 import SectionSeparator from '../../components/dividers/section-separator';
 import { BOOK_PAGES, GENERAL_FAQS } from '../../data/books';
-import type RelatedContentLink from '../../interfaces/related-content';
 import BookOutline from '../../components/books/book-outline';
 import { getImageLink } from '../../lib/images';
 import BookCover from '../../components/books/book-cover';
 import CONTENT_LINKS from '../../data/content-links';
 
-const relatedContent: RelatedContentLink[] = [
+const relatedContent = [
   CONTENT_LINKS.INTERVIEWS,
   CONTENT_LINKS.WORKSHOPS,
   CONTENT_LINKS.ARTICLES,

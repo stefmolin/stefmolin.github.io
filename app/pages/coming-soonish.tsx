@@ -4,13 +4,12 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Container from '../components/sections/container';
 import Layout from '../components/page-layout/layout';
 import CONTENT_LINKS from '../data/content-links';
-import type RelatedContentLink from '../interfaces/related-content';
 import RelatedContentSection from '../components/related-content/related-content';
 import ExternalLink from '../components/links/external-link';
 import Tooltip from '../components/tooltip';
 import { NEWSLETTER_URL } from '../data/constants';
 
-const relatedContent: RelatedContentLink[] = [
+const relatedContent = [
   CONTENT_LINKS.ARTICLES,
   CONTENT_LINKS.BOOKS,
   CONTENT_LINKS.EVENTS,
