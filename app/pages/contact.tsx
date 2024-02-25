@@ -6,7 +6,7 @@ import { HEADSHOT, LINKEDIN_PROFILE } from '../data/constants';
 import FancyDivider from '../components/dividers/fancy-divider';
 import FollowButtons from '../components/follow';
 
-export default function Index() {
+export default function ContactMe() {
   const pageTitle = 'Contact Me';
   return (
     <Layout
