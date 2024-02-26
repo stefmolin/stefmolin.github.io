@@ -7,5 +7,5 @@ a {
 }
 div {
   /* the amount of margin to leave at the top with scrolling with anchor links */
-  @apply scroll-mt-16;
+  @apply scroll-mt-20;
 }
