@@ -91,7 +91,9 @@ const Footer = () => {
     <footer className="bg-neutral-50 border-t border-neutral-200 mx-auto px-10">
       <div className="mt-5 flex flex-col lg:flex-row items-start lg:justify-between lg:px-4">
         <div className="text-left lg:pr-10 lg:w-2/3 xl:mr-20">
-          <Avatar name="Stefanie Molin" picture={HEADSHOT} />
+          <div className="flex flex-row items-center justify-center lg:justify-start">
+            <Avatar name="Stefanie Molin" picture={HEADSHOT} />
+          </div>
           <p className="pt-5">
             Thank you for visiting my website! I am passionate about teaching data science and
             software engineering skills to people of all levels. I have created multiple{' '}
