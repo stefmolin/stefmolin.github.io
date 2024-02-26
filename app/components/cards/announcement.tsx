@@ -20,7 +20,7 @@ export default function Announcement({ children, className, hrClassName }: Annou
         className,
       )}
     >
-      <div className="space-y-4 px-10 w-full">
+      <div className="space-y-4 px-6 sm:px-10 w-full h-full">
         <FancyDivider hrClassName={hrClassName}>
           <FontAwesomeIcon icon={faThumbTack} className="px-5" fixedWidth />
         </FancyDivider>
