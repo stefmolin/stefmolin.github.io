@@ -112,7 +112,8 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
       src: '/assets/workshops/j1vnusMbXTuyRn8CZWZT--4--6d4uz.jpg',
       width: 1152,
       height: 896,
-    }, // TODO: finalize this and rename appropriately
+      alt: 'Conference talks developed by Stefanie Molin.',
+    }, // TODO: finalize this image and rename appropriately
     title: 'Workshops',
   },
   TALKS: {
@@ -122,17 +123,18 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
       src: '/assets/articles/introducing-data-morph/panda-to-star.gif',
       width: 774,
       height: 379,
-    }, // TODO: finalize this and rename appropriately
+      alt: 'Conference talks developed by Stefanie Molin.',
+    }, // TODO: finalize this image and rename appropriately
     title: 'Talks',
   },
   ARTICLES: {
-    link: '/articles',
+    link: '/articles/',
     contentClass: 'page',
     image: { src: '/assets/articles/desk.jpg', width: 1152, height: 896 },
     title: 'Articles',
   },
   BLOG: {
-    link: '/blog',
+    link: '/blog/',
     contentClass: 'page',
     image: { src: '/assets/articles/desk.jpg', width: 1152, height: 896 }, // TODO: should be travel related probably
     title: 'Travel Blog',
