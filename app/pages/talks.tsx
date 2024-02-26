@@ -1,13 +1,7 @@
-import { NextSeo } from 'next-seo';
-import Container from '../components/sections/container';
-import Layout from '../components/page-layout/layout';
-import { usePageURL } from '../lib/hooks/page-url';
-import { getImageLink } from '../lib/images';
 import CONTENT_LINKS from '../data/content-links';
-import PresentationPreview from '../components/presentations/presentation-preview';
 import TALK_PAGES from '../data/talks';
-import { getLivePresentations } from '../lib/events';
 import PresentationListing from '../components/presentations/presentation-listing';
+import PresentationPreview from '../components/presentations/presentation-preview';
 import { type TalkCard } from '../interfaces/talk';
 
 export default function Talks() {
