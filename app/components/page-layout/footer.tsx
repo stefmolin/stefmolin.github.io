@@ -37,13 +37,11 @@ const SitemapLinks = ({ className }: { className?: string }) => {
   return (
     <div
       className={classNames(
-        'grid',
-        'grid-rows-6 md:grid-rows-4 lg:grid-rows-3 xl:grid-rows-2',
-        'grid-flow-col',
+        'grid grid-cols-1 grid-rows-none',
+        'sm:grid-cols-none sm:grid-rows-6 md:grid-rows-4 lg:grid-rows-3 xl:grid-rows-2',
+        'sm:grid-flow-col sm:auto-cols-fr',
         'text-center',
-        'pt-10',
-        'px-4',
-        'auto-cols-fr',
+        'pt-6 sm:pt-10 sm:px-4',
       )}
     >
       {siteLinks.map(({ name, url }) => (
@@ -54,7 +52,7 @@ const SitemapLinks = ({ className }: { className?: string }) => {
             className,
             'font-bold',
             'text-slate-500 hover:text-slate-800',
-            'hover:underline px-5',
+            'hover:underline px-5 sm:px-0',
             'text-nowrap',
           )}
         >
@@ -64,9 +62,6 @@ const SitemapLinks = ({ className }: { className?: string }) => {
     </div>
   );
 };
-
-// TODO: take into account the page when determining what to show in the footer
-// (tipping only on articles for example)
 
 const FooterLinks = ({ className }: { className?: string }) => {
   const links: LinkWithIcon[] = [
@@ -89,10 +84,6 @@ const FooterLinks = ({ className }: { className?: string }) => {
     </div>
   );
 };
-
-// TODO: on the privacy page, it doesn't really make sense to have the blurb about me
-// or the newsletter signup really.., maybe allow that to be turned off on demand?
-// or at least the text overwritten?
 
 const Footer = () => {
   const underlinedLinkClassName = 'text-slate-500 hover:text-slate-800 underline';
@@ -135,22 +126,26 @@ const Footer = () => {
 
         <hr className="lg:hidden my-8 w-full" />
         <div className="flex w-full lg:w-auto items-center justify-center lg:justify-end">
-          <div className="w-[350px] flex flex-row items-start content-center lg:justify-end xl:ml-20">
+          <div className="flex flex-row items-start content-center lg:justify-end xl:ml-20">
             <SubscribeToNewsletterForm />
           </div>
         </div>
       </div>
       <hr className="lg:hidden mt-8 w-full" />
 
-      <SitemapLinks className="px-5" />
+      <SitemapLinks className="sm:px-5" />
 
-      <FollowButtons size="3x" className="px-5" withDivider dividerClassName="py-10" />
+      <FollowButtons
+        className="text-xl sm:text-3xl px-2 sm:px-5"
+        withDivider
+        dividerClassName="pt-6 pb-4 sm:py-10"
+      />
 
       <div className="flex flex-col lg:flex-row justify-between items-center text-center px-2 pb-5">
-        <div className="flex flex-col lg:text-left pt-4 lg:pt-0">
+        <div className="flex flex-col lg:text-left pt-2 sm:pt-4 lg:pt-0">
           <span>All opinions are my own.</span>
           <span>
-            <span className="text-nowrap">
+            <span className="sm:text-nowrap">
               Copyright &#169; 2019&ndash;
               {DateTime.now().year} Stefanie Molin.
             </span>{' '}
