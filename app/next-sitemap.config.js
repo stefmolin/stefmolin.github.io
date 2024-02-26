@@ -1,11 +1,14 @@
 const now = new Date().toISOString();
 
 const PRIORITIES = {
-  newsPage: 0.1,
+  aboutPages: 0.1,
+  tagPages: 0.2,
+  interviewsPage: 0.3,
+  eventsPages: 0.4,
   feedPage: 0.5,
   blogPost: 0.6,
-  workshopsPage: 0.7,
-  booksPage: 0.8,
+  workshopsPages: 0.7,
+  booksPages: 0.8,
   homePage: 0.9,
   articlePost: 1.0,
 };
@@ -26,6 +29,31 @@ const PAGE_CONFIGS = [
     priority: PRIORITIES.feedPage,
     changefreq: 'monthly',
   },
+  {
+    regex: /^\/(about|contact)$/,
+    priority: PRIORITIES.aboutPages,
+    changefreq: 'yearly',
+  },
+  {
+    regex: /^\/(talks|workshops)\/?/,
+    priority: PRIORITIES.workshopsPages,
+    changefreq: 'monthly',
+  },
+  {
+    regex: /^\/books\/?\w*/,
+    priority: PRIORITIES.booksPages,
+    changefreq: 'yearly',
+  },
+  {
+    regex: /^\/tags\/?\w*/,
+    priority: PRIORITIES.tagPages,
+    changefreq: 'yearly',
+  },
+  {
+    regex: /^\/events\/?/,
+    priority: PRIORITIES.eventsPages,
+    changefreq: 'weekly',
+  },
 ];
 
 /** @type {import('next-sitemap').IConfig} */
@@ -45,12 +73,26 @@ module.exports = {
         break;
       }
     }
+    switch (path) {
+      case '/':
+        pagePriority = PRIORITIES.homePage;
+        pageChangefreq = 'weekly';
+        break;
+      case '/privacy-policy':
+        pagePriority = 0;
+        pageChangefreq = 'yearly';
+        break;
+      case '/interviews':
+        pagePriority = PRIORITIES.interviewsPage;
+        pageChangefreq = 'yearly';
+        break;
+    }
 
     // Use default transformation for all other cases
     return {
       loc: path,
-      changefreq: pageChangefreq ?? config.changefreq,
-      priority: pagePriority ?? config.priority,
+      changefreq: pageChangefreq == null ? config.changefreq : pageChangefreq,
+      priority: pagePriority == null ? config.priority : pagePriority,
       lastmod: now,
     };
   },
@@ -64,5 +106,5 @@ module.exports = {
     //   lastmod: now,
     // },
   ],
-  exclude: ['/coming-soonish/'],
+  exclude: ['/coming-soonish'],
 };
