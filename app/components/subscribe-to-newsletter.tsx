@@ -56,7 +56,7 @@ const SubscribeToNewsletterForm = () => {
     'form-input border border-gray-900 py-1 px-4 bg-white placeholder-gray-400 text-gray-500 appearance-none w-full block pl-14 focus:outline-none';
 
   return (
-    <div className="flex flex-col my-2 grow text-center">
+    <div className="flex flex-col my-2 grow text-center sm:w-[350px]">
       {status === 'SUCCESS' && (
         <div>
           <p className="text-xl font-bold">Welcome{name ? `, ${name}` : ''}!</p>
@@ -82,7 +82,7 @@ const SubscribeToNewsletterForm = () => {
       )}
       {status === null && (
         <form onSubmit={handleSubmit} action={FORM_URL}>
-          <div className="text-xl font-bold">Subscribe to my newsletter</div>
+          <div className="text-lg sm:text-xl font-bold">Subscribe to my newsletter</div>
           {/* <div>
               <fieldset className="flex flex-row justify-around items-center">
                 <legend>Select which kinds of content you would like to hear about:</legend>
