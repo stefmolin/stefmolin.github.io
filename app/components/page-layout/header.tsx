@@ -118,7 +118,7 @@ export default function Header({
         >
           <h2
             className={classNames('transition-[font-size] duration-1000 ease-in-out', {
-              'text-5xl py-2': isOpen,
+              'sm:text-5xl py-2': isOpen,
             })}
           >
             <Link href="/" className="hover:underline font-bold text-nowrap">
