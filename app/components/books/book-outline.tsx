@@ -25,7 +25,7 @@ const BookOutline = ({
     {children}
     <FAQSection faqs={faqs} />
     <SectionSeparator className="my-10" />
-    <RelatedContentSection carouselClassName="pt-2" relatedContent={relatedContent} />
+    <RelatedContentSection relatedContent={relatedContent} />
   </div>
 );
 

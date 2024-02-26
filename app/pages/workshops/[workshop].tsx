@@ -53,7 +53,7 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
                 cardSize={reviews.map(({ text }) => text.length).some((x) => x > 150) ? 'sm' : 'xs'}
               />
             ) : null}
-            <RelatedContentSection carouselClassName="pt-2" relatedContent={relatedContent} />
+            <RelatedContentSection relatedContent={relatedContent} />
           </EvenlySpacedSections>
         </div>
       </Container>

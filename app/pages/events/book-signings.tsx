@@ -114,7 +114,7 @@ export default function BookSignings() {
               </p>
               <MysteryCards cards={FUN_FACTS} color={'bg-orange-100'} />
             </div>
-            <RelatedContentSection carouselClassName="pt-2" relatedContent={relatedContent} />
+            <RelatedContentSection relatedContent={relatedContent} />
           </EvenlySpacedSections>
         </div>
       </Container>

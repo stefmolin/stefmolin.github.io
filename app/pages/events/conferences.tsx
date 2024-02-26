@@ -127,7 +127,7 @@ export default function Conferences() {
 
               <br />
             </div>
-            <RelatedContentSection carouselClassName="pt-2" relatedContent={relatedContent} />
+            <RelatedContentSection relatedContent={relatedContent} />
           </EvenlySpacedSections>
         </div>
       </Container>

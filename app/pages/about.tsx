@@ -216,7 +216,6 @@ export default function AboutMe() {
               title="Suggested Links"
               titleClassName="text-3xl text-center my-5"
               relatedContent={relatedContent}
-              relatedContentClassName="pt-2"
             />
           </div>
         </div>

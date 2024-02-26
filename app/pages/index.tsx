@@ -150,7 +150,6 @@ export default function Home({
               <RelatedContentSection
                 relatedContent={relatedContent.sort((a, b) => (a.title > b.title ? 1 : -1))}
                 title={null}
-                relatedContentClassName="pt-2"
               />
             </div>
             {nextSessions.length > 0 && (

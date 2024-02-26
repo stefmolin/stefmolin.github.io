@@ -12,7 +12,7 @@ interface RelatedContentSectionProps extends Omit<PageSectionProps, 'children'> 
 }
 
 const RelatedContentSection = ({
-  carouselClassName,
+  carouselClassName = 'pt-2',
   divClassName,
   inset = false,
   relatedContent,
