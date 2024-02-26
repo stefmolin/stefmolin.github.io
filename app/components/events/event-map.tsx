@@ -11,10 +11,12 @@ import PageSection from '../sections/page-section';
 export default function EventMap({
   liveEvents,
   introText,
+  titleClassName,
   excludeTypeColumn = false,
 }: {
   liveEvents: LivePresentation[];
   introText: string;
+  titleClassName?: string;
   excludeTypeColumn?: boolean;
 }) {
   const locationToEvents = getConferenceEventMapAnnotations(liveEvents);
@@ -27,7 +29,12 @@ export default function EventMap({
     talk: CONTENT_LINKS.TALKS.link,
   };
   return (
-    <PageSection id="event-map" divClassName="space-y-5" title="Event map 🗺️">
+    <PageSection
+      id="event-map"
+      divClassName="space-y-5"
+      title="Event map 🗺️"
+      titleClassName={titleClassName}
+    >
       <div>
         <p>{introText}</p>
         <InteractiveMap

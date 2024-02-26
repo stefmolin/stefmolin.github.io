@@ -5,14 +5,16 @@ import EventStatsGrid from './event-stats-grid';
 
 export default function EventStatsSection({
   sessions,
+  titleClassName,
   includeYearsActive = false,
 }: {
   sessions: LivePresentation[];
+  titleClassName?: string;
   includeYearsActive?: boolean;
 }) {
   const statCardLinkClassName = 'text-blue-800';
   return (
-    <PageSection id="stats" title="Event statistics">
+    <PageSection id="stats" title="Event statistics" titleClassName={titleClassName}>
       <p className="mb-5">
         Click <span className={statCardLinkClassName}>blue</span> text for more information.
       </p>
