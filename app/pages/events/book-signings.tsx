@@ -28,6 +28,7 @@ const relatedContent = [
 export default function BookSignings() {
   const seoImage = CONTENT_LINKS.BOOK_SIGNINGS.image;
   const pageTitle = 'Book Signings';
+  const subsectionTitleClassName = 'text-center md:text-left text-3xl mb-5';
   const signings = LIVE_PRESENTATIONS.filter((x) => x.presentation.contentClass === 'book signing');
   const pastSignings = signings.filter(({ date }) => date < DateTime.now().toISODate()).length;
   const linkClassName = 'text-slate-700 hover:text-slate-500 underline';
@@ -81,7 +82,7 @@ export default function BookSignings() {
             <div className="flex flex-col items-center mt-10 md:mt-0">
               <img
                 src="/assets/events/book-signings/first-book-signing.png"
-                className="w-20 h-20 md:w-48 md:h-48 rounded-full ml-auto mr-5 md:mx-auto -mb-24 z-10 object-cover"
+                className="hidden md:block w-48 h-48 rounded-full mx-auto -mb-24 z-10 object-cover"
                 alt="Signing a book at my first book signing event."
               />
               <div className="text-lg border-2 border-slate-100 rounded-lg px-4 lg:w-2/3 bg-slate-50 shadow-lg">
@@ -100,21 +101,29 @@ export default function BookSignings() {
                 <br />
               </div>
             </div>
-            <PhotoGallery photos={BOOK_SIGNING_IMAGES} shufflePhotos />
+            <PhotoGallery
+              photos={BOOK_SIGNING_IMAGES}
+              shufflePhotos
+              titleClassName={subsectionTitleClassName}
+            />
             <EventMap
               introText={`To date, I have done ${pastSignings} book signings at conferences around
               the world. Click a ${MAP_PIN} on the map for more information.`}
               liveEvents={signings}
               excludeTypeColumn
+              titleClassName={subsectionTitleClassName}
             />
             <div id="fun-facts">
-              <h2 className="text-3xl mb-5">Fun facts</h2>
+              <h2 className={subsectionTitleClassName}>Fun facts</h2>
               <p className="mb-5">
                 Hover over each of the cards to reveal a fun fact about my book signing events.
               </p>
               <MysteryCards cards={FUN_FACTS} color={'bg-orange-100'} />
             </div>
-            <RelatedContentSection relatedContent={relatedContent} />
+            <RelatedContentSection
+              relatedContent={relatedContent}
+              titleClassName={subsectionTitleClassName}
+            />
           </EvenlySpacedSections>
         </div>
       </Container>

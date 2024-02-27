@@ -30,6 +30,7 @@ const relatedContent = [
 export default function Conferences() {
   const seoImage = CONTENT_LINKS.CONFERENCES.image;
   const pageTitle = 'Conferences';
+  const subsectionTitleClassName = 'text-center md:text-left text-3xl mb-5';
   const presentations = LIVE_PRESENTATIONS.filter(
     (x) => x.presentation.contentClass !== 'book signing',
   );
@@ -84,18 +85,27 @@ export default function Conferences() {
                 .
               </p>
             </div>
-            <PhotoGallery photos={CONFERENCE_IMAGES} shufflePhotos />
-            <EventStatsSection sessions={presentations} includeYearsActive />
+            <PhotoGallery
+              photos={CONFERENCE_IMAGES}
+              shufflePhotos
+              titleClassName={subsectionTitleClassName}
+            />
+            <EventStatsSection
+              sessions={presentations}
+              includeYearsActive
+              titleClassName={subsectionTitleClassName}
+            />
             <EventMap
               introText={`To date, I have presented ${presentationsGivenAlready} times at conferences around
               the world. Click a ${MAP_PIN} on the map for more information.`}
               liveEvents={presentations}
+              titleClassName={subsectionTitleClassName}
             />
             <div
               id="origin-story"
               className="text-lg border-2 border-slate-100 rounded-lg px-4 bg-slate-50 shadow-lg xl:w-5/6 mx-auto"
             >
-              <p className="pt-10 px-10 text-2xl">My origin story</p>
+              <p className={classNames('pt-10 px-10', subsectionTitleClassName)}>My origin story</p>
               <div className="mt-5 px-10 py-5 text-justify space-y-4">
                 <p>
                   I used to be TERRIFIED of public speaking. After writing my{' '}
@@ -127,7 +137,10 @@ export default function Conferences() {
 
               <br />
             </div>
-            <RelatedContentSection relatedContent={relatedContent} />
+            <RelatedContentSection
+              relatedContent={relatedContent}
+              titleClassName={subsectionTitleClassName}
+            />
           </EvenlySpacedSections>
         </div>
       </Container>
