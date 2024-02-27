@@ -14,7 +14,7 @@ const PostListing = ({ posts, title }: Props) => {
           {title}
         </h2>
       ) : null}
-      <div className="grid grid-cols-1 mb-32">
+      <div className="grid grid-cols-1">
         {posts.map((post) => (
           <PostPreview
             key={post.slug.join('/')}

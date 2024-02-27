@@ -23,7 +23,7 @@ export default function Pagination({
   };
   const numberClassName = 'px-3 md:px-5 py-2';
   const disabledClassName = 'hover:no-underline cursor-not-allowed';
-  return (
+  return totalItems > itemsPerPage ? (
     <ReactPaginate
       breakLabel={
         <>
@@ -56,5 +56,5 @@ export default function Pagination({
       previousLinkClassName={classNames(numberClassName, 'hover:text-blue-700')}
       disabledClassName={classNames(disabledClassName, 'invisible')}
     />
-  );
+  ) : null;
 }
