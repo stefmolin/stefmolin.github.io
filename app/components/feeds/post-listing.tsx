@@ -22,8 +22,6 @@ const PostListing = ({ posts, title }: Props) => {
             subtitle={post.subtitle}
             coverImage={post.ogImage.url}
             coverImageCaption={post.ogImage.caption}
-            date={post.date}
-            author={post.author}
             tags={post.tags}
             duration={post.duration}
             slug={post.slug}

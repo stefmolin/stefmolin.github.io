@@ -1,7 +1,5 @@
-// import Avatar from "./avatar";
 import CoverImage from './cover-image';
 import Link from 'next/link';
-import type Author from '../../interfaces/author';
 import PostTags from './post-tags';
 import TimeToRead from '../datetime/duration-indicator';
 
@@ -9,9 +7,7 @@ type Props = {
   title: string;
   subtitle?: string;
   coverImage: string;
-  date: string;
   excerpt: string;
-  author: Author;
   slug: string[];
   tags: string[];
   duration: string;
@@ -22,9 +18,7 @@ const PostPreview = ({
   title,
   subtitle,
   coverImage,
-  date,
   excerpt,
-  author,
   slug,
   tags,
   duration,
