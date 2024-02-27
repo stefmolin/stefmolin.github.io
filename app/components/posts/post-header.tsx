@@ -1,5 +1,4 @@
 import PostPublicationDate from '../datetime/publication-date';
-import PostTags from './post-tags';
 import PostTitle from './post-title';
 import TimeToRead from '../datetime/duration-indicator';
 import Featured from './featured';
@@ -21,7 +20,6 @@ const PostHeader = ({
             <TimeToRead duration={duration} />
             {featured && <Featured contentClass="Article" features={featured} />}
           </div>
-          <PostTags tags={tags} className="flex-1 lg:text-right" />
         </div>
       </div>
     </>
