@@ -1,4 +1,4 @@
-# stefmolin.github.io
+# [stefaniemolin.com](https://stefaniemolin.com)
 ![GitHub repo size](https://img.shields.io/github/repo-size/stefmolin/stefmolin.github.io)
 
 My personal website.
