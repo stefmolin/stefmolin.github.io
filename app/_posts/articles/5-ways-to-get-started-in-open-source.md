@@ -4,9 +4,7 @@ subtitle: "Ideas for finding and making your first of many open source contribut
 excerpt: "Everyone can and should get involved in open source. Not sure how to find something to work on? Here are 5 strategies that I have used to get started."
 date: "2023-08-29T15:08:47.161Z"
 modified: "2024-01-15T22:30:00.000Z"
-author:
-  name: Stefanie Molin
-  picture: "/assets/avatar.jpeg"
+author: Stefanie Molin
 tags: ["open source", "open source contribution", "open source software"]
 assets: "/assets/articles/5-ways-to-get-started-in-open-source"
 ogImage:

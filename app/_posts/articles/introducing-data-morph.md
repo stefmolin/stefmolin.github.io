@@ -4,9 +4,7 @@ subtitle: "A reminder of why you can't rely solely on summary statistics."
 excerpt: "This article introduces Data Morph, a new open source Python package that can be used to morph an input dataset of 2D points into select shapes, while preserving the summary statistics to a given number of decimal points through simulated annealing."
 date: "2023-04-20T22:03:47.508Z"
 modified: "2024-01-31T23:58:00.000Z"
-author:
-  name: Stefanie Molin
-  picture: "/assets/avatar.jpeg"
+author: Stefanie Molin
 tags: ["data science", "Python", "open source software", "data visualization"]
 assets: "/assets/articles/introducing-data-morph"
 ogImage:
