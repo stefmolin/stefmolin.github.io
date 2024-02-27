@@ -1,11 +1,9 @@
-import type Author from './author';
-
 interface PostType {
   slug: string[];
   title: string;
   subtitle?: string;
   date: string;
-  author: Author;
+  author: 'Stefanie Molin';
   excerpt: string;
   ogImage: {
     url: string;
