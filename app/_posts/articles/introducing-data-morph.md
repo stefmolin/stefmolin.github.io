@@ -3,7 +3,7 @@ title: "Data Morph: Moving Beyond the Datasaurus Dozen"
 subtitle: "A reminder of why you can't rely solely on summary statistics."
 excerpt: "This article introduces Data Morph, a new open source Python package that can be used to morph an input dataset of 2D points into select shapes, while preserving the summary statistics to a given number of decimal points through simulated annealing."
 date: "2023-04-20T22:03:47.508Z"
-modified: "2024-01-31T23:58:00.000Z"
+modified: "2024-02-27T23:42:00.000Z"
 author: Stefanie Molin
 tags: ["data science", "Python", "open source software", "data visualization"]
 assets: "/assets/articles/introducing-data-morph"
@@ -65,7 +65,7 @@ To generate the Datasaurus Dozen, the algorithm repeatedly selects a point from 
 
 In comparison to Anscombe's Quartet, there is more of a shock factor watching the Datasaurus transform into a set of slanted lines, while preserving summary statistics. I believe that this shock factor is more effective when it comes to explaining why data visualization is essential — just take a look at the reactions to this [LinkedIn post](https://www.linkedin.com/posts/stefanie-molin_datascience-python-statistics-activity-7050814610899099648-kTra/).
 
-I wanted to employ this shock factor in my [pandas workshop](https://github.com/stefmolin/pandas-workshop) to motivate the section on data visualization. Coming after the section on data wrangling, it's crucial to emphasize the importance of data visualization at this point because coding up visualizations can be more complicated. People are often tempted to take the shortcut and just use summary statistics to describe the data. However, using the dinosaur for the animation felt off brand for the workshop, which features panda imagery throughout — I needed to make a dataset shaped like a panda. I provide some tips on how to move from an idea to an input dataset [here](https://stefmolin.github.io/data-morph/dev/custom_datasets.html).
+I wanted to employ this shock factor in my [pandas workshop](/workshops/pandas-workshop) to motivate the section on data visualization. Coming after the section on data wrangling, it's crucial to emphasize the importance of data visualization at this point because coding up visualizations can be more complicated. People are often tempted to take the shortcut and just use summary statistics to describe the data. However, using the dinosaur for the animation felt off brand for the workshop, which features panda imagery throughout — I needed to make a dataset shaped like a panda. I provide some tips on how to move from an idea to an input dataset [here](https://stefaniemolin.com/data-morph/stable/custom_datasets.html).
 
 ![panda dataset](/post-assets/panda-dataset.png)
 
@@ -75,7 +75,7 @@ A new starting dataset shaped like a panda.
 
 </figcaption>
 
-I quickly realized that custom, impactful visual aids would not only benefit my workshop, but also those learning and teaching data analysis. So in 2023, I explored how [the code from the Autodesk researchers](https://github.com/jmatejka/same-stats-different-graphs) could be generalized to an arbitrary dataset, *i.e.*, instead of the Datasaurus or the panda. This led me to create [**Data Morph**](http://stefmolin.github.io/data-morph/), an open source Python package that can be used to morph an input dataset of 2D points into select shapes, while preserving the summary statistics to a given number of decimal points using the same technique of simulated annealing.
+I quickly realized that custom, impactful visual aids would not only benefit my workshop, but also those learning and teaching data analysis. So in 2023, I explored how [the code from the Autodesk researchers](https://github.com/jmatejka/same-stats-different-graphs) could be generalized to an arbitrary dataset, *i.e.*, instead of the Datasaurus or the panda. This led me to create [**Data Morph**](https://stefaniemolin.com/data-morph/stable/index.html), an open source Python package that can be used to morph an input dataset of 2D points into select shapes, while preserving the summary statistics to a given number of decimal points using the same technique of simulated annealing.
 
 ---
 
@@ -115,14 +115,14 @@ However, there are some limitations: you can't always morph a dataset into all t
 
 ---
 
-At the time of writing, Data Morph comes with 6 [built-in starter shapes](https://stefmolin.github.io/data-morph/stable/api/data_morph.data.loader.html#data_morph.data.loader.DataLoader) and 15 [target shapes](https://stefmolin.github.io/data-morph/stable/api/data_morph.shapes.factory.html#data_morph.shapes.factory.ShapeFactory) with more of each to come. Morphing is as simple as this:
+At the time of writing, Data Morph comes with 6 [built-in starter shapes](https://stefaniemolin.com/data-morph/stable/api/data_morph.data.loader.html#data_morph.data.loader.DataLoader) and 15 [target shapes](https://stefaniemolin.com/data-morph/stable/api/data_morph.shapes.factory.html#data_morph.shapes.factory.ShapeFactory) with more of each to come. Morphing is as simple as this:
 
 ```bash[class="command-line"][data-prompt="$"]
 pip install data-morph-ai
 data-morph --start-shape panda --target-shape star
 ```
 
-Arbitrary/custom starting shapes can be provided via CSV files, such as this one (see the documentation [here](https://stefmolin.github.io/data-morph/dev/custom_datasets.html) for tips on making your own):
+Arbitrary/custom starting shapes can be provided via CSV files, such as this one (see the documentation [here](https://stefaniemolin.com/data-morph/stable/custom_datasets.html) for tips on making your own):
 
 {TWEET_ID="1645046652971933696"}
 
@@ -132,7 +132,7 @@ An example created using a CSV file.
 
 </figcaption>
 
-Data Morph also provides [documentation](https://stefmolin.github.io/data-morph/stable/index.html) for both CLI and Python interpreter usage, a test suite, modular code, and a flexible class hierarchy for adding new target shapes. More information on the core improvements can be found in the release notes [here](https://stefmolin.github.io/data-morph/stable/release_notes.html#april-1-2023).
+Data Morph also provides [documentation](https://stefaniemolin.com/data-morph/stable/index.html) for both CLI and Python interpreter usage, a test suite, modular code, and a flexible class hierarchy for adding new target shapes. More information on the core improvements can be found in the release notes [here](https://stefaniemolin.com/data-morph/stable/release_notes.html#april-1-2023).
 
 ---
 

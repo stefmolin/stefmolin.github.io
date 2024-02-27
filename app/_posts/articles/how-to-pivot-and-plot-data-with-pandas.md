@@ -3,7 +3,7 @@ title: "How to Pivot and Plot Data with Pandas"
 subtitle: "Analyzing 2019 airline market share."
 excerpt: "In this article, we will discuss how to create a pivot table of aggregated data in order to make a stacked bar visualization of the 2019 airline market share for the top 10 destination cities."
 date: "2021-05-27T17:11:12.000Z"
-modified: "2024-02-01T00:44:00.000Z"
+modified: "2024-02-27T23:28:00.000Z"
 author: Stefanie Molin
 tags: ["data science", "Python", "pandas", "matplotlib", "data visualization"]
 assets: "/assets/articles/how-to-pivot-and-plot-data-with-pandas"
@@ -246,6 +246,6 @@ Now, it’s your turn.
 
 In this article, we explored just a few of the many powerful features in the `pandas` library that make data analysis easier. While we only used a small subset of the columns, this dataset is packed with information that can be analyzed using a pivot table: try looking into origin cities, freight/mail carriers, or even flight distance.
 
-Be sure to check out my [pandas workshop](https://github.com/stefmolin/pandas-workshop) for an in-depth introduction to `pandas`. Or pick up my book, "[Hands-On Data Analysis with Pandas](https://www.amazon.com/gp/mpc/A1NG59J1NC11LE)," for a thorough exploration of the `pandas` library using real-world datasets, along with `matplotlib`, `seaborn`, and `scikit-learn`. For more advanced data visualizations, including animations and interactivity, check out my [Beyond the Basics: Data Visualization in Python](https://github.com/stefmolin/python-data-viz-workshop) workshop.
+Be sure to check out my [pandas workshop](/workshops/pandas-workshop) for an in-depth introduction to `pandas`. Or pick up my book, "[Hands-On Data Analysis with Pandas](/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/)," for a thorough exploration of the `pandas` library using real-world datasets, along with `matplotlib`, `seaborn`, and `scikit-learn`. For more advanced data visualizations, including animations and interactivity, check out my [Beyond the Basics: Data Visualization in Python](/workshops/python-data-viz-workshop) workshop.
 
 <small><em>Originally posted on May 27, 2021 at [OpenDataScience.com](https://opendatascience.com/how-to-pivot-and-plot-data-with-pandas/).</em></small>
