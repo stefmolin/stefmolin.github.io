@@ -357,6 +357,14 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     event: {
       ...SAME_LOCATION_EVENTS['ODSC East'],
       virtual: false,
+    },
+    presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
+    date: '2024-04-24',
+  },
+  {
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC East'],
+      virtual: false,
       link: 'https://odsc.com/speakers/data-morph-a-cautionary-tale-of-summary-statistics/',
     },
     presentation: PRESENTATIONS.DATA_MORPH,
