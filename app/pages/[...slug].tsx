@@ -1,52 +1,57 @@
-import { useRouter } from "next/router";
-import ErrorPage from "next/error";
-import { NextSeo } from "next-seo";
-import Giscus from "@giscus/react";
-import Container from "../components/container";
-import PostBody from "../components/posts/post-body";
-import Header from "../components/header";
-import PostHeader from "../components/posts/post-header";
-import Layout from "../components/layout";
-import { getPostBySlug, getAllPosts } from "../lib/api";
-import MoreStories from "../components/posts/more-stories";
-import PostTitle from "../components/posts/post-title";
-import markdownToHtml from "../lib/markdownToHtml";
-import type PostType from "../interfaces/post";
-import { HOME_URL } from "../lib/constants";
-import SocialShareButtons from "../components/posts/social-share";
-import { usePageURL } from "../lib/hooks";
+import classNames from 'classnames';
+import { useRouter } from 'next/router';
+import ErrorPage from 'next/error';
+import { NextSeo } from 'next-seo';
+import { faBell } from '@fortawesome/free-regular-svg-icons';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Giscus from '@giscus/react';
+import PostListing from '../components/feeds/post-listing';
+import FollowButtons from '../components/follow';
+import ExternalLink from '../components/links/external-link';
+import Layout from '../components/page-layout/layout';
+import PostBody from '../components/posts/post-body';
+import PostHeader from '../components/posts/post-header';
+import PostTags from '../components/posts/post-tags';
+import PostTitle from '../components/posts/post-title';
+import SocialShareButtons from '../components/posts/social-share';
+import Container from '../components/sections/container';
+import { HOME_URL, NEWSLETTER_URL } from '../data/constants';
+import type PostType from '../interfaces/post';
+import { usePageURL } from '../lib/hooks/page-url';
+import { useWindowSize } from '../lib/hooks/window-size';
+import { getImageLink } from '../lib/images';
+import markdownToHtml from '../lib/markdownToHtml';
+import { getAllPosts, getPostBySlug } from '../lib/posts';
 
 type Props = {
   post: PostType;
   suggestedPosts: PostType[];
-  preview?: boolean;
 };
 
-export default function Post({ post, suggestedPosts, preview }: Props) {
+export default function Post({ post, suggestedPosts }: Props) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
 
-  const pageURL = usePageURL();
-  const ogImageURL = post.ogImage.url.startsWith("/")
-    ? `${HOME_URL}${post.ogImage.url}`
-    : post.ogImage.url;
+  const { width } = useWindowSize();
 
-  const socials = (
-    <SocialShareButtons
-      url={pageURL}
-      image={ogImageURL}
-      emailSubject={post.title}
-      emailBody={`Read this ${
-        post.slug[0] === "blog" ? "blog post" : "article"
-      } from Stefanie Molin:`}
-      hashtags={post.tags}
-      postTitle={post.title}
-      postSummary={post.excerpt}
-      roundedIcons
-    />
-  );
+  const pageURL = usePageURL();
+  const ogImageURL = getImageLink(post.ogImage.url);
+
+  const socialButtonsProps = {
+    url: pageURL,
+    image: ogImageURL,
+    emailSubject: post.title,
+    emailBody: `Read this ${
+      post.slug[0] === 'blog' ? 'blog post' : 'article'
+    } from Stefanie Molin:`,
+    hashtags: post.tags,
+    postTitle: post.title,
+    postSummary: post.excerpt,
+    roundedIcons: true,
+  };
 
   return (
     <Layout>
@@ -73,35 +78,50 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
                   images: [
                     {
                       url: ogImageURL,
-                      // TODO: consider providing these? could add to the front matter definition
-                      // width: 850,
-                      // height: 650,
-                      alt: post.ogImage.caption,
+                      width: post.ogImage.width,
+                      height: post.ogImage.height,
+                      alt:
+                        post.ogImage.caption ??
+                        `Cover image for "${post.title}" by Stefanie Molin.`,
                     },
                   ],
                 }}
               />
-              <PostHeader
-                title={post.title}
-                subtitle={post.subtitle}
-                coverImage={post.ogImage.url}
-                date={post.date}
-                author={post.author}
-                tags={post.tags}
-                duration={post.duration}
-              />
+              <PostHeader post={post} />
               <div>
                 {/* This only shows on larger screens */}
-                <div className="hidden lg:block lg:sticky lg:top-5 lg:float-right lg:text-center">
+                <div className="hidden lg:block lg:sticky lg:top-1/3 lg:float-right lg:text-center">
                   Share
-                  {socials}
+                  <SocialShareButtons {...socialButtonsProps} iconSize={35} />
                 </div>
                 <PostBody content={post.content}>
-                  <hr className="lg:hidden" />
-                  <div className="flex space-x-2 justify-center content-center z-50 sticky bottom-0 bg-white pt-4 pb-2 lg:hidden">
-                    {socials}
+                  <PostTags tags={post.tags} />
+                  <div
+                    className={classNames(
+                      'flex flex-row items-center justify-center space-x-2',
+                      'text-xl sm:text-3xl md:text-4xl',
+                      'opacity-10',
+                    )}
+                  >
+                    <FontAwesomeIcon icon={faUserPlus} />
                   </div>
-                  <hr className="mb-5" />
+                  <div className="flex flex-col items-center justify-center mt-5 mb-10">
+                    <p className="md:text-lg lg:text-xl mb-5 text-center">
+                      <FontAwesomeIcon icon={faBell} shake className="pr-2" />
+                      Never miss a post:{' '}
+                      <ExternalLink
+                        href={NEWSLETTER_URL}
+                        className="font-bold underline decoration-yellow-400 hover:text-slate-700"
+                      >
+                        sign up for my newsletter
+                      </ExternalLink>
+                      .
+                    </p>
+                    <FollowButtons
+                      withDivider
+                      className="text-lg sm:text-2xl md:text-3xl mx-5 sm:mx-3"
+                    />
+                  </div>
                   <Giscus
                     id="comments"
                     repo="stefmolin/comments"
@@ -117,13 +137,20 @@ export default function Post({ post, suggestedPosts, preview }: Props) {
                     lang="en"
                     loading="lazy"
                   />
+                  <div className="flex space-x-2 justify-center content-center z-50 sticky bottom-0 bg-white pt-4 pb-2 lg:hidden">
+                    <SocialShareButtons
+                      {...socialButtonsProps}
+                      iconSize={width == null || width < 350 ? 25 : 30}
+                    />
+                  </div>
                 </PostBody>
               </div>
             </article>
             {suggestedPosts.length > 0 ? (
-              <MoreStories posts={suggestedPosts} title="You may also like" />
+              <div className="mb-32">
+                <PostListing posts={suggestedPosts} title="You may also like" />
+              </div>
             ) : null}
-            {/* TODO: add previous/next and follow/support/subscribe buttons */}
           </>
         )}
       </Container>
@@ -139,36 +166,35 @@ type Params = {
 
 export async function getStaticProps({ params }: Params) {
   const fields: string[] = [
-    "title",
-    "subtitle",
-    "date",
-    "slug",
-    "author",
-    "tags",
-    "duration",
-    "content",
-    "ogImage",
-    "type",
-    "canonical",
-    "modified",
+    'title',
+    'subtitle',
+    'date',
+    'slug',
+    'author',
+    'tags',
+    'duration',
+    'content',
+    'ogImage',
+    'type',
+    'canonical',
+    'modified',
+    'featured',
   ];
   const post = getPostBySlug(params.slug, fields);
-  const content = await markdownToHtml(post.content || "");
+  const content = await markdownToHtml(post.content || '');
 
-  let suggestedPosts = getAllPosts([...fields, "excerpt"], post.type).filter(
-    (x) => x.slug.join() != post.slug.join()
+  let suggestedPosts = getAllPosts([...fields, 'excerpt'], post.type).filter(
+    (x) => x.slug.join() != post.slug.join(),
   );
   if (suggestedPosts.length > 0) {
     suggestedPosts.forEach((otherPost) => {
-      let tags: string[] = otherPost.tags;
-      otherPost.similarity = tags.filter((tag) =>
-        post.tags.includes(tag)
-      ).length;
+      const tags: string[] = otherPost.tags;
+      otherPost.similarity = tags.filter((tag) => post.tags.includes(tag)).length;
     });
 
     suggestedPosts = suggestedPosts
       .sort((post1, post2) =>
-        post1.similarity > post2.similarity || post1.date > post2.date ? -1 : 1
+        post1.similarity > post2.similarity || post1.date > post2.date ? -1 : 1,
       )
       .slice(0, 2); // show top x results (second number)
   }
@@ -185,7 +211,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"]);
+  const posts = getAllPosts(['slug']);
 
   return {
     paths: posts.map((post) => {
