@@ -7,8 +7,13 @@ import {
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell } from '@fortawesome/free-regular-svg-icons';
 
-const SubscribeToNewsletterForm = () => {
+const SubscribeToNewsletterForm = ({
+  title = 'Subscribe to my newsletter',
+}: {
+  title?: string | null;
+}) => {
   const [status, setStatus] = useState<string | null>(null);
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -82,7 +87,12 @@ const SubscribeToNewsletterForm = () => {
       )}
       {status === null && (
         <form onSubmit={handleSubmit} action={FORM_URL}>
-          <div className="text-lg sm:text-xl font-bold">Subscribe to my newsletter</div>
+          {title && (
+            <div className="text-lg sm:text-xl font-bold">
+              <FontAwesomeIcon icon={faBell} shake className="pr-1" />
+              {title}
+            </div>
+          )}
           {/* <div>
               <fieldset className="flex flex-row justify-around items-center">
                 <legend>Select which kinds of content you would like to hear about:</legend>
