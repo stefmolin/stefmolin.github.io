@@ -7,7 +7,7 @@ import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Giscus from '@giscus/react';
 import PostListing from '../components/feeds/post-listing';
-import FollowButtons from '../components/follow';
+import FollowButtons, { type FollowButtonsProps } from '../components/follow';
 import ExternalLink from '../components/links/external-link';
 import Layout from '../components/page-layout/layout';
 import PostBody from '../components/posts/post-body';
@@ -100,6 +100,7 @@ export default function Post({ post, suggestedPosts }: Props) {
                     className={classNames(
                       'flex flex-row items-center justify-center space-x-2',
                       'text-xl sm:text-3xl md:text-4xl',
+                      'mt-5',
                       'opacity-10',
                     )}
                   >
@@ -118,8 +119,9 @@ export default function Post({ post, suggestedPosts }: Props) {
                       .
                     </p>
                     <FollowButtons
-                      withDivider
                       className="text-lg sm:text-2xl md:text-3xl mx-5 sm:mx-3"
+                      feed={post.slug[0] as FollowButtonsProps['feed']}
+                      withDivider
                     />
                   </div>
                   <Giscus
