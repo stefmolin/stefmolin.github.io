@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { type SizeProp } from '@fortawesome/fontawesome-svg-core';
-import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelopeOpenText, faHandHoldingDollar, faRss } from '@fortawesome/free-solid-svg-icons';
 import {
   IconDefinition,
   faGithub,
@@ -14,40 +14,28 @@ import {
   NEWSLETTER_URL,
   TWITTER_HANDLE,
 } from '../data/constants';
-import ExternalLink from './links/external-link';
 import FancyDivider from './dividers/fancy-divider';
+import ExternalLink from './links/external-link';
 
-const FOLLOW_LINKS: { icon: IconDefinition; url: string }[] = [
-  {
-    icon: faGithub,
-    url: GITHUB_PROFILE,
-  },
-  {
-    icon: faLinkedin,
-    url: LINKEDIN_PROFILE,
-  },
-  {
-    icon: faXTwitter,
-    url: `https://twitter.com/${TWITTER_HANDLE.replace('@', '')}`,
-  },
-  { icon: faEnvelopeOpenText, url: NEWSLETTER_URL },
-];
-
-type Props = {
+export interface FollowButtonsProps {
   className?: string;
   dividerClassName?: string;
+  feed?: 'article' | 'blog';
   size?: SizeProp;
   withDivider?: boolean;
   withoutNewsletter?: boolean;
-};
+  withSupport?: boolean;
+}
 
 const FollowButtons = ({
   className,
   dividerClassName,
+  feed,
   size = 'lg',
   withDivider = false,
   withoutNewsletter = false,
-}: Props) => {
+  withSupport = false,
+}: FollowButtonsProps) => {
   const makeLink = (url: string, icon: IconDefinition) => (
     <ExternalLink key={url} href={url} className="text-slate-600 hover:text-slate-800">
       <FontAwesomeIcon icon={icon} size={size} fixedWidth />
@@ -55,11 +43,15 @@ const FollowButtons = ({
   );
   const buttons = (
     <div className={classNames('space-x-2 flex items-center justify-center', className)}>
-      {(withoutNewsletter ? FOLLOW_LINKS.slice(0, 3) : FOLLOW_LINKS).map(({ url, icon }) =>
-        makeLink(url, icon),
-      )}
+      {makeLink(GITHUB_PROFILE, faGithub)}
+      {makeLink(LINKEDIN_PROFILE, faLinkedin)}
+      {makeLink(`https://twitter.com/${TWITTER_HANDLE.replace('@', '')}`, faXTwitter)}
+      {!withoutNewsletter && makeLink(NEWSLETTER_URL, faEnvelopeOpenText)}
+      {feed && makeLink(`/feeds/${feed}-rss.xml`, faRss)}
+      {withSupport && makeLink('https://www.buymeacoffee.com/stefanie.molin', faHandHoldingDollar)}
     </div>
   );
+
   if (withDivider) {
     return <FancyDivider className={dividerClassName}>{buttons}</FancyDivider>;
   }
