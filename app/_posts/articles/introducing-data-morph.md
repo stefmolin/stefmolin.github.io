@@ -10,6 +10,8 @@ assets: "/assets/articles/introducing-data-morph"
 ogImage:
   url: "/post-assets/panda-to-star.gif"
   caption: "Data Morph transforms a panda to a star, while preserving summary statistics."
+  width: 774
+  height: 379
 canonical: "https://levelup.gitconnected.com/data-morph-moving-beyond-the-datasaurus-dozen-156927b20f8c"
 featured:
   - "[PyCoder's Weekly Issue #572](https://pycoders.com/issues/572) (via mention of the [stefmolin/data-morph](https://github.com/stefmolin/data-morph) repository)"

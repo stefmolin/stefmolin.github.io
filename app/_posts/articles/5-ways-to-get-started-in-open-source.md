@@ -9,6 +9,8 @@ tags: ["open source", "open source contribution", "open source software"]
 assets: "/assets/articles/5-ways-to-get-started-in-open-source"
 ogImage:
   url: "/post-assets/journey-ahead.jpg"
+  width: 2160
+  height: 1440
 canonical: "https://levelup.gitconnected.com/5-ways-to-get-started-in-open-source-4aac430828e9"
 featured:
   - "[The Real Python Podcast Episode #190 (all)](https://realpython.com/podcasts/rpp/190/)"

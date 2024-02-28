@@ -9,6 +9,8 @@ tags: ["data science", "Python", "pandas", "matplotlib", "data visualization"]
 assets: "/assets/articles/how-to-pivot-and-plot-data-with-pandas"
 ogImage:
   url: "/post-assets/cover-image.jpg"
+  width: 2880
+  height: 1920
 canonical: "https://opendatascience.com/how-to-pivot-and-plot-data-with-pandas/"
 featured:
   - "[The Real Python Podcast #68 (at 19:42)](https://realpython.com/podcasts/rpp/68/)"

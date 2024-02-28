@@ -6,8 +6,10 @@ interface PostType {
   author: 'Stefanie Molin';
   excerpt: string;
   ogImage: {
-    url: string;
     caption?: string;
+    height: number;
+    url: string;
+    width: number;
   };
   content: string;
   tags: string[];
