@@ -41,7 +41,7 @@ export default function PreviewSection({
         </>
       }
       body={
-        <div className={classNames({ 'lg:pr-5': coverImage != null })}>
+        <div>
           {coverImage && (
             <ResourceLink linkClass={linkClass} resourceLink={resourceLink}>
               <img
