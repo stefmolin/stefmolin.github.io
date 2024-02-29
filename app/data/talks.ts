@@ -1,4 +1,5 @@
 import { type TalkCard } from '../interfaces/talk';
+import { COVER_IMAGE_PENDING } from './constants';
 import CONTENT_LINKS from './content-links';
 import { PRESENTATIONS } from './events';
 
@@ -26,6 +27,28 @@ const TALK_CARDS: TalkCard[] = [
     seeAlso: {
       title: 'Data Morph: Moving Beyond the Datasaurus Dozen',
       slug: 'introducing-data-morph',
+      contentClass: 'article',
+    },
+  },
+  {
+    talk: {
+      title: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE.title,
+      coverImage: COVER_IMAGE_PENDING,
+      description: [
+        `The open source community is all about giving back and learning from one another. No matter
+        how small, every contribution is valuable. And everyone can contribute something with a
+        little bit of help. The hardest part is finding something to work on that fits your interests
+        and skills.`,
+        `In this talk, I will provide five ways that I used to get started contributing to different
+        open source projects. I also share some guidance on selecting projects to contribute to and
+        how to set yourself up for success. Get ready to start your open source journey!`,
+      ],
+      slidesLink: '/coming-soonish/?slides=Getting-Started-with-Open-Source-Contributions',
+      duration: '30 minutes',
+    },
+    seeAlso: {
+      title: '5 Ways to Get Started in Open Source',
+      slug: '5-ways-to-get-started-in-open-source',
       contentClass: 'article',
     },
   },
