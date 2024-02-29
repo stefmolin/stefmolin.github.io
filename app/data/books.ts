@@ -5,10 +5,54 @@ import type BookPage from '../interfaces/book-page';
 import CONTENT_LINKS from './content-links';
 
 export const GENERAL_FAQS: FAQ[] = [
-  { question: 'What was the hardest part about writing a book?', answer: 'TODO' },
+  {
+    question: 'Have you always wanted to write a book?',
+    answer: dedent`Not at all. However, while I was reading a lot of books to learn Python data
+    science, I often thought about how I would do things differently (*e.g.*, not use random data,
+      show more realistic outcomes, incorporate computer science concepts, *etc.*). One day Packt
+      reached out to me about writing [*Hands-On Data Analysis with Pandas*](
+      ${CONTENT_LINKS.PANDAS_BOOK_1.link}), and I signed on &ndash; it was a way to give back
+      to the community. I wrote the book that I would have wanted when I was learning.`,
+  },
+  {
+    question: 'What is the hardest part about writing a book?',
+    answer: dedent`I think the hardest part is organizing yourself and creating a detailed outline
+    of the book. Early on in the writing process for [my first book](
+      ${CONTENT_LINKS.PANDAS_BOOK_1.link}
+    ), I learned that a list of 3-5 main concepts for a chapter was nowhere near enough to come up
+    with 30+ pages of content. I needed to further break down each of those concepts to make a
+    detailed outline for each chapter. I also set micro-deadlines for each of those subsections to
+    make sure I would make the deadlines I had set with my publisher.`,
+  },
+  {
+    question: 'What were the biggest lessons you learned from writing your first book?',
+    answer: dedent`I learned to work efficiently and to quickly switch focus between my full-time
+    job and working on my book. This was something that I found really helpful while pursuing my
+    Master's degree, as well.
+
+    I also learned when to ask for and accept help &ndash; I could not have finished this book
+    by myself. A big part of this help was asking for feedback. I had to learn to accept criticism
+    and not take it personally, which can be difficult, especially when you've spent so much time
+    working on something.`,
+  },
   {
     question: 'Are you planning to write any other books?',
     answer: "Yes! I'm not ready to share what I'm working on, but I do want to write another book.",
+  },
+];
+
+const GENERAL_PANDAS_BOOK_FAQS: FAQ[] = [
+  {
+    question: 'What sets this book apart from its competitors?',
+    answer: dedent`This is the book I would have wanted when I was learning. Many books use
+    randomly-generated data, which makes it hard for the reader understand *why* the action shown
+    is necessary and recognize when to use it on their own data. Using real-world datasets, this
+    book covers data collection, data wrangling, data analysis, data visualization (with
+    Matplotlib and Seaborn), and introduces machine learning concepts (with Scikit-Learn), all
+    while focusing on writing quality code. You will learn not only how to use the pandas
+    library, but also how to use Python in both a functional and object-oriented capacity, collect
+    data from APIs, document code, set up a virtual environment, use \`git\` for version control,
+    build Python packages, and create scripts that accept command line arguments.`,
   },
 ];
 
@@ -73,10 +117,11 @@ export const BOOK_PAGES: BookPage[] = [
       CONTENT_LINKS.DATA_SCIENCE_ARTICLES,
     ],
     faqs: [
+      ...GENERAL_PANDAS_BOOK_FAQS,
       {
-        question: 'How long did it take you to write the book?',
-        answer:
-          'The first edition took nearly a year, and the second edition took around nine months.',
+        question: 'How long did it take you to write this book?',
+        answer: dedent`The [first edition](${CONTENT_LINKS.PANDAS_BOOK_1.link}) took nearly a year,
+        and the second edition took around nine months.`,
       },
       ...GENERAL_FAQS,
     ],
@@ -314,7 +359,9 @@ export const BOOK_PAGES: BookPage[] = [
 
       By the end of this book, you will be equipped with the skills you need to use pandas to
       ensure the veracity of your data, visualize it for effective decision-making, and reliably
-      reproduce analysis across multiple domains.`,
+      reproduce analysis across multiple domains.
+
+      See also: [*Hands-On Data Analysis with Pandas (2nd edition)*](${CONTENT_LINKS.PANDAS_BOOK_2.link})`,
       amazonLink: 'https://amzn.to/4bkJBiq',
       repo: 'Hands-On-Data-Analysis-with-Pandas',
       tags: ['pandas', 'data analysis', 'data science', 'Python'],
@@ -328,11 +375,13 @@ export const BOOK_PAGES: BookPage[] = [
       CONTENT_LINKS.INTERVIEWS,
     ],
     faqs: [
+      ...GENERAL_PANDAS_BOOK_FAQS,
       {
-        question: 'How long did it take you to write the book?',
-        answer: 'It took nearly a year. It was a labor of love.',
+        question: 'How long did it take you to write this book?',
+        answer: dedent`It took nearly a year. I mostly worked on the book during weekends. I started
+        the outline in August 2018 and worked about 20 hours a week on average. As the publication
+        date approached, this grew to about 40 hours a week. It was a labor of love.`,
       },
-      { question: 'TODO', answer: 'TODO' },
       ...GENERAL_FAQS,
     ],
     reviews: [
