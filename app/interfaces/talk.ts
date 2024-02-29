@@ -4,7 +4,7 @@ import type SEOImage from './seo-image';
 export default interface Talk {
   title: string;
   subtitle?: string;
-  coverImage: SEOImage;
+  coverImage: SEOImage | null;
   duration: string;
   description: string[];
   repo?: string;

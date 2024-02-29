@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import DurationIndicator, { type DurationIndicatorProps } from '../datetime/duration-indicator';
 import ResourceLink, { type ResourceLinkProps } from '../links/resource-link';
 import type SEOImage from '../../interfaces/seo-image';
@@ -40,14 +41,16 @@ export default function PreviewSection({
         </>
       }
       body={
-        <div className="lg:pr-5">
-          <ResourceLink linkClass={linkClass} resourceLink={resourceLink}>
-            <img
-              src={typeof coverImage === 'string' ? coverImage : coverImage.src}
-              alt={coverImageAltText}
-              className="md:float-left md:mr-5 mb-2 mx-auto max-w-64 object-cover"
-            />
-          </ResourceLink>
+        <div className={classNames({ 'lg:pr-5': coverImage != null })}>
+          {coverImage && (
+            <ResourceLink linkClass={linkClass} resourceLink={resourceLink}>
+              <img
+                src={typeof coverImage === 'string' ? coverImage : coverImage.src}
+                alt={coverImageAltText}
+                className="md:float-left md:mr-5 mb-2 mx-auto max-w-64 object-cover"
+              />
+            </ResourceLink>
+          )}
           {/* TODO: should I float right here since the image is less important? also make it smaller*/}
           <div className="md:-mt-7 -mb-4">
             {description.map((paragraph, index) => (
