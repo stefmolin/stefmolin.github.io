@@ -54,7 +54,7 @@ const PostPreview = ({
     <p className="md:text-lg leading-relaxed mb-4 line-clamp-3 md:line-clamp-4">{excerpt}</p>
   );
 
-  const linkedTags = <PostTags tags={tags} className="flex flex-row pb-1 text-sm md:text-base" />;
+  const linkedTags = <PostTags tags={tags} className="flex flex-row text-sm md:text-base" />;
 
   return (
     <div className="shadow-sm hover:shadow-lg transition-shadow duration-200 p-6 flex flex-col my-5 sm:m-5">
