@@ -10,6 +10,11 @@ export const HOME_OG_IMAGE: SEOImage = {
   height: 800,
   alt: 'Portrait of Stefanie Molin',
 };
+export const COVER_IMAGE_PENDING: SEOImage = {
+  src: '/assets/coming-soon.png',
+  width: 1075,
+  height: 647,
+};
 export const TWITTER_HANDLE = '@StefanieMolin';
 export const COPYRIGHT_STATEMENT = `Copyright 2019-${DateTime.now().year}, Stefanie Molin`;
 export const GITHUB_PROFILE = 'https://github.com/stefmolin';
