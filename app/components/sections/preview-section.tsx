@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import DurationIndicator, { type DurationIndicatorProps } from '../datetime/duration-indicator';
 import ResourceLink, { type ResourceLinkProps } from '../links/resource-link';
 import type SEOImage from '../../interfaces/seo-image';
@@ -10,7 +9,7 @@ interface PreviewSectionProps
     DurationIndicatorProps,
     Pick<PreviewCardProps, 'id'> {
   bottomLeft?: React.ReactNode;
-  coverImage: SEOImage | string;
+  coverImage: SEOImage | string | null;
   coverImageAltText: string;
   description: string[];
   subtitle: React.ReactNode;
