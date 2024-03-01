@@ -1,6 +1,6 @@
 import { type TalkCard } from '../interfaces/talk';
 import { COVER_IMAGE_PENDING } from './constants';
-import CONTENT_LINKS from './content-links';
+import CONTENT_LINKS, { SEE_ALSO_LINKS } from './content-links';
 import { PRESENTATIONS } from './events';
 
 const TALK_CARDS: TalkCard[] = [
@@ -46,11 +46,7 @@ const TALK_CARDS: TalkCard[] = [
       slidesLink: '/coming-soonish/?slides=Getting-Started-with-Open-Source-Contributions',
       duration: '30 minutes',
     },
-    seeAlso: {
-      title: '5 Ways to Get Started in Open Source',
-      slug: '5-ways-to-get-started-in-open-source',
-      contentClass: 'article',
-    },
+    seeAlso: SEE_ALSO_LINKS.GET_STARTED_IN_OPEN_SOURCE_ARTICLE,
   },
 ];
 export default TALK_CARDS;

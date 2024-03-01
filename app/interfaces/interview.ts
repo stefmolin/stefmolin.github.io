@@ -1,3 +1,5 @@
+import { type SeeAlso } from './related-content';
+
 interface Interview {
   title: string;
   link: string;
@@ -10,9 +12,6 @@ interface Interview {
     source?: string;
   };
   duration: string;
-  seeAlso?: {
-    title: string;
-    link: string;
-  }[];
+  seeAlso?: SeeAlso[];
 }
 export default Interview;

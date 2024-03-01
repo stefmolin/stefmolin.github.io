@@ -1,4 +1,5 @@
 import type RelatedContentLink from '../interfaces/related-content';
+import { type SeeAlso } from '../interfaces/related-content';
 
 const CONTENT_LINKS: Record<string, RelatedContentLink> = {
   PANDAS_WORKSHOP: {
@@ -161,3 +162,11 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
   },
 };
 export default CONTENT_LINKS;
+
+export const SEE_ALSO_LINKS: Record<string, SeeAlso> = {
+  GET_STARTED_IN_OPEN_SOURCE_ARTICLE: {
+    title: '5 Ways to Get Started in Open Source',
+    slug: '/articles/open-source/5-ways-to-get-started-in-open-source',
+    contentClass: 'article',
+  },
+};

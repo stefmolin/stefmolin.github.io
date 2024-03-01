@@ -17,6 +17,7 @@ import INTERVIEWS from '../data/interviews';
 import CONTENT_LINKS from '../data/content-links';
 import ExternalLink from '../components/links/external-link';
 import PreviewCard from '../components/cards/preview-card';
+import ResourceLink from '../components/links/resource-link';
 
 export default function Interviews() {
   const pageTitle = 'Interviews';
@@ -116,25 +117,17 @@ export default function Interviews() {
                           <br />
                           <p>
                             See also:
-                            {seeAlso.map(({ title, link }) => {
+                            {seeAlso.map(({ contentClass, title, slug: link }) => {
                               const linkClassName = 'text-slate-500 pl-1';
-                              if (link.startsWith('/')) {
-                                return (
-                                  <Link
-                                    key={title}
-                                    href={{
-                                      pathname: link,
-                                    }}
-                                    className={linkClassName}
-                                  >
-                                    {title}
-                                  </Link>
-                                );
-                              }
                               return (
-                                <ExternalLink key={title} href={link} className={linkClassName}>
+                                <ResourceLink
+                                  key={title}
+                                  className={linkClassName}
+                                  linkClass="internal"
+                                  resourceLink={link}
+                                >
                                   {title}
-                                </ExternalLink>
+                                </ResourceLink>
                               );
                             })}
                           </p>

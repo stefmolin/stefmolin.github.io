@@ -1,4 +1,11 @@
 import Interview from '../interfaces/interview';
+import type RelatedContentLink from '../interfaces/related-content';
+import CONTENT_LINKS, { SEE_ALSO_LINKS } from './content-links';
+
+const toSeeAlso = (contentLink: RelatedContentLink) => {
+  const { contentClass, link: slug, title } = contentLink;
+  return { contentClass, slug, title };
+};
 
 const INTERVIEWS: Interview[] = [
   {
@@ -17,12 +24,7 @@ const INTERVIEWS: Interview[] = [
       source: 'episode summary',
     },
     duration: '1h 19m',
-    seeAlso: [
-      {
-        link: '/articles/5-ways-to-get-started-in-open-source/',
-        title: '5 Ways to Get Started in Open Source',
-      },
-    ],
+    seeAlso: [SEE_ALSO_LINKS.GET_STARTED_IN_OPEN_SOURCE_ARTICLE],
   },
   {
     title: 'SDS 675: Pandas for Data Analysis and Visualization',
@@ -39,12 +41,7 @@ const INTERVIEWS: Interview[] = [
       source: 'episode summary',
     },
     duration: '1h 09m',
-    seeAlso: [
-      {
-        link: '/articles/introducing-data-morph/',
-        title: 'Data Morph: Moving Beyond the Datasaurus Dozen',
-      },
-    ],
+    seeAlso: [toSeeAlso(CONTENT_LINKS.DATA_MORPH_ARTICLE)],
   },
   {
     title: 'PyDev of the Week: Stefanie Molin',
@@ -59,12 +56,7 @@ const INTERVIEWS: Interview[] = [
     the top 3 lessons she learned while writing Hands-On Data Analysis with Pandas.`,
     },
     duration: '6 min',
-    seeAlso: [
-      {
-        link: '/workshops',
-        title: 'Workshops',
-      },
-    ],
+    seeAlso: [toSeeAlso(CONTENT_LINKS.WORKSHOPS)],
   },
   {
     title: 'Writing the Book on Pandas - KNN Ep. 58',
