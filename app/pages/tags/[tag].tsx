@@ -25,9 +25,7 @@ export const getStaticProps = async ({ params }: Params) => {
     'excerpt',
   ];
   const { props } = getPostsByTag(params.tag, fields);
-  props.allPosts = props.allPosts
-    .filter((x) => x.tags.includes(params.tag))
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  props.allPosts = props.allPosts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return { props };
 };
 
