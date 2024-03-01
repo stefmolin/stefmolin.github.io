@@ -6,7 +6,7 @@ date: "2023-08-29T15:08:47.161Z"
 modified: "2024-01-15T22:30:00.000Z"
 author: Stefanie Molin
 tags: ["open source", "open source contribution", "open source software"]
-assets: "/assets/articles/5-ways-to-get-started-in-open-source"
+assets: "/assets/articles/open-source/5-ways-to-get-started-in-open-source"
 ogImage:
   url: "/post-assets/journey-ahead.jpg"
   width: 2160
