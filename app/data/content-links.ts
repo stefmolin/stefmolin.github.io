@@ -23,30 +23,30 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     title: 'Python Data Visualization Workshop',
   },
   PIVOT_AND_PLOT_WITH_PANDAS_ARTICLE: {
-    link: '/articles/how-to-pivot-and-plot-data-with-pandas',
+    link: '/articles/data-science/how-to-pivot-and-plot-data-with-pandas',
     contentClass: 'article',
     image: {
-      src: '/assets/articles/how-to-pivot-and-plot-data-with-pandas/cover-image.jpg',
+      src: '/assets/articles/data-science/how-to-pivot-and-plot-data-with-pandas/cover-image.jpg',
       width: 2880,
       height: 1920,
     },
     title: 'How to Pivot and Plot Data with Pandas',
   },
   DATA_MORPH_ARTICLE: {
-    link: '/articles/introducing-data-morph/',
+    link: '/articles/data-science/introducing-data-morph/',
     contentClass: 'article',
     image: {
-      src: '/assets/articles/introducing-data-morph/panda-to-star.gif',
+      src: '/assets/articles/data-science/introducing-data-morph/panda-to-star.gif',
       width: 774,
       height: 379,
     },
-    title: 'Data Morph',
+    title: 'Introducing Data Morph',
   },
   DATA_SCIENCE_ARTICLES: {
     link: '/tags/data%20science/',
     contentClass: 'page',
     image: {
-      src: '/assets/articles/introducing-data-morph/panda-to-star.gif',
+      src: '/assets/articles/data-science/introducing-data-morph/panda-to-star.gif',
       width: 774,
       height: 379,
     },
@@ -56,7 +56,7 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     link: '/tags/data%20visualization/',
     contentClass: 'page',
     image: {
-      src: '/assets/articles/introducing-data-morph/panda-to-star.gif',
+      src: '/assets/articles/data-science/introducing-data-morph/panda-to-star.gif',
       width: 774,
       height: 379,
     },

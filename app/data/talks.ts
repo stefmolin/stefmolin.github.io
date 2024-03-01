@@ -25,9 +25,9 @@ const TALK_CARDS: TalkCard[] = [
       duration: '45 minutes',
     },
     seeAlso: {
-      title: 'Data Morph: Moving Beyond the Datasaurus Dozen',
-      slug: 'introducing-data-morph',
-      contentClass: 'article',
+      title: CONTENT_LINKS.DATA_MORPH_ARTICLE.title,
+      slug: CONTENT_LINKS.DATA_MORPH_ARTICLE.link,
+      contentClass: CONTENT_LINKS.DATA_MORPH_ARTICLE.contentClass,
     },
   },
   {
