@@ -50,11 +50,13 @@ const RelatedContentSection = ({
         carouselClassName={carouselClassName}
         responsive={responsive}
       >
-        {relatedContent.map((content) => (
-          <div key={content.link} className={classNames('mb-10', relatedContentClassName)}>
-            <RelatedContentCard relatedContent={content} />
-          </div>
-        ))}
+        {relatedContent
+          .sort((a, b) => (a.title < b.title ? -1 : 1))
+          .map((content) => (
+            <div key={content.link} className={classNames('mb-10', relatedContentClassName)}>
+              <RelatedContentCard relatedContent={content} />
+            </div>
+          ))}
       </CarouselSection>
     </PageSection>
   );

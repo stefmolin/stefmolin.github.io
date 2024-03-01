@@ -69,7 +69,7 @@ export default function ComingSoonish() {
             carouselClassName="pt-5"
             divClassName="mt-5"
             inset
-            relatedContent={relatedContent.sort((a, b) => (a.title > b.title ? 1 : -1))}
+            relatedContent={relatedContent}
             title={
               <>
                 And as Camila Cabello once said, "

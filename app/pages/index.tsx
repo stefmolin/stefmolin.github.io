@@ -147,10 +147,7 @@ export default function Home({
               <p className=" sm:text-xl md:text-2xl">
                 I help people of all levels improve their data science and computer science skills.
               </p>
-              <RelatedContentSection
-                relatedContent={relatedContent.sort((a, b) => (a.title > b.title ? 1 : -1))}
-                title={null}
-              />
+              <RelatedContentSection relatedContent={relatedContent} title={null} />
             </div>
             {nextSessions.length > 0 && (
               <PageSection

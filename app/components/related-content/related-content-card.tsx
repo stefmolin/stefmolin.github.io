@@ -19,7 +19,7 @@ export default function RelatedContentCard({ relatedContent }: RelatedContentCar
             />
           </div>
           <div className="flex flex-col h-full justify-center">
-            <h3 className="text-center px-2">{title}</h3>
+            <h3 className="text-center px-2 line-clamp-2">{title}</h3>
           </div>
         </div>
       </Link>
