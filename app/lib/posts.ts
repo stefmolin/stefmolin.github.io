@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
@@ -51,6 +52,15 @@ export function getPostBySlug(slug: string[], fields: string[] = [], category: s
     if (field == 'type') {
       items[field] = realSlug.split('/')[0];
     }
+    if (field == 'theme') {
+      const [, theme, ...slug] = realSlug.split('/');
+      if (slug.length === 0) items[field] = null;
+      else {
+        const parts = [theme];
+        if (slug.length > 1) parts.push(...slug.slice(0, slug.length - 1));
+        items[field] = parts.join('/');
+      }
+    }
 
     if (typeof data[field] !== 'undefined') {
       items[field] = data[field];
@@ -67,6 +77,20 @@ export function getPostsByTag(tag: string, fields: string[] = []) {
       kind: 'tag',
       title: tag,
       description: 'Searching by tag.',
+    },
+  };
+}
+
+export function getPostsByTheme(theme: string[], fields: string[] = []) {
+  const posts = getAllPosts(fields);
+  return {
+    props: {
+      allPosts: posts.filter((post) =>
+        _.isEqual(post.theme?.split('/').slice(0, theme.length), theme),
+      ),
+      kind: 'theme',
+      title: theme,
+      description: 'Searching by theme.',
     },
   };
 }
