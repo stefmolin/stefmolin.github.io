@@ -7,10 +7,10 @@ export default function Index({ tagCounts }: Pick<TagListingProps, 'tagCounts'>)
   return (
     <Layout>
       <Container>
-        <h1 className="text-3xl">Search posts by tag</h1>
+        <h1 className="text-2xl sm:text-3xl">Search posts by tag</h1>
         <TagListing
           tagCounts={tagCounts}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-left pt-10 px-12 mb-10 md:mb-0"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 text-left pt-10 gap-1"
         />
       </Container>
     </Layout>
