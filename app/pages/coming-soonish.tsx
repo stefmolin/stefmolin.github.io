@@ -29,9 +29,9 @@ export default function ComingSoonish() {
       }}
     >
       <Container>
-        <div className="mt-4 max-w-5xl mx-auto p-10 bg-white rounded-lg">
-          <h1 className="text-3xl md:text-4xl">Coming Soon(ish)</h1>
-          <div className="text-lg md:text-xl py-2">
+        <div className="-mt-8 sm:mt-4 max-w-5xl mx-auto p-6 sm:p-10 bg-white rounded-lg">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl text-center mb-2">Coming Soon(ish)</h1>
+          <div className="sm:text-lg md:text-xl py-2">
             <Tooltip
               message={
                 <FontAwesomeIcon
@@ -66,7 +66,7 @@ export default function ComingSoonish() {
             .
           </div>
           <RelatedContentSection
-            carouselClassName="pt-5"
+            carouselClassName="pt-5 -mx-4"
             divClassName="mt-5"
             inset
             relatedContent={relatedContent}
@@ -82,7 +82,7 @@ export default function ComingSoonish() {
                 "
               </>
             }
-            titleClassName="text-lg md:text-xl"
+            titleClassName="sm:text-lg md:text-xl"
           />
         </div>
       </Container>
