@@ -71,7 +71,7 @@ const AboutMeSection = ({
         </FancyDivider>
         <div className="hidden mx-5 lg:flex">{symbol}</div>
         <div
-          className={classNames('text-xl space-y-2 mx-2', {
+          className={classNames('sm:text-lg md:text-xl space-y-2 mx-2', {
             'lg:ml-4 lg:mr-2': flip,
             'lg:ml-2 lg:mr-4': !flip,
           })}
@@ -101,7 +101,7 @@ export default function AboutMe() {
       <NextSeo title={pageTitle} description="About Stefanie Molin." />
       <Container>
         <div className="-mt-10 mb-20 max-w-5xl mx-auto bg-white">
-          <div className="mx-5 lg:mx-10">
+          <div className="sm:mx-5 lg:mx-10">
             <div className="flex flex-col items-center justify-center">
               <img
                 src={HEADSHOT}
@@ -110,13 +110,13 @@ export default function AboutMe() {
               />
             </div>
             <div className="space-y-5 text-center">
-              <p className="text-3xl">
+              <p className="text-2xl sm:text-3xl">
                 My name is <b className="text-nowrap">Stefanie Molin</b>.
               </p>
               <FollowButtons size="2x" className="px-5" withDivider />
-              <p className="text-2xl text-center mx-2">
+              <p className="text-xl sm:text-2xl text-center mx-2">
                 I am a <b>full-stack software engineer</b> and <b>content creator</b>, passionate
-                about helping people of all levels improve their data science and computer science
+                about helping people of all levels improve their computer science and data science
                 skills. I write {internalLink('/books', 'books')} and{' '}
                 {internalLink('/articles', 'articles')}, develop free{' '}
                 {internalLink('/workshops', 'workshops')}, and speak internationally at technology{' '}
@@ -124,7 +124,7 @@ export default function AboutMe() {
               </p>
             </div>
 
-            <div className="text-xl space-y-5 mt-5">
+            <div className="space-y-5 mt-5">
               <div className="space-y-10">
                 <AboutMeSection icon="travel" flip>
                   <p>
@@ -213,9 +213,10 @@ export default function AboutMe() {
             </div>
 
             <RelatedContentSection
-              title="Suggested Links"
-              titleClassName="text-3xl text-center my-5"
+              carouselClassName="-mx-4"
               relatedContent={relatedContent}
+              title="Suggested Links"
+              titleClassName="text-2xl sm:text-3xl text-center my-5"
             />
           </div>
         </div>
