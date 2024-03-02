@@ -24,7 +24,7 @@ export default function Interviews() {
   const seoImage = CONTENT_LINKS.INTERVIEWS.image;
 
   const insertBookLinks = ({ text, source }: Interview['description'], dateString: string) => {
-    const pTagClassName = 'text-left text-pretty';
+    const pTagClassName = 'text-left text-pretty sm:text-lg';
 
     const sourceText = source != null ? ` (This description comes from the ${source}.)` : '';
     const description = `${text}${sourceText}`;
@@ -70,10 +70,10 @@ export default function Interviews() {
             ],
           }}
         />
-        <div className="mt-4 mb-20 max-w-5xl mx-auto">
-          <h1 className="text-4xl">{pageTitle}</h1>
+        <div className="-mt-8 mb-20 max-w-5xl mx-auto">
+          <h1 className="text-5xl md:text-6xl text-center">{pageTitle}</h1>
           {/* {pageSubtitle != null ? <h2 className="text-xl pt-2">{pageSubtitle}</h2> : null} */}
-          <div className="space-y-20">
+          <div className="space-y-10 -mx-10 sm:-mx-5 lg:mx-auto">
             {INTERVIEWS.map(
               ({ link, coverImage, format, host, date, title, description, duration, seeAlso }) => (
                 <PreviewCard
@@ -81,24 +81,28 @@ export default function Interviews() {
                   key={title}
                   header={
                     <>
-                      <ExternalLink href={link}>
-                        <h3 className="text-xl hover:underline text-pretty">
-                          {title}
+                      <div className="w-full text-center lg:text-left">
+                        <ExternalLink href={link}>
+                          <h3 className="text-lg sm:text-xl md:text-2xl hover:underline text-pretty">
+                            {title}
+                            <FontAwesomeIcon
+                              icon={faArrowUpRightFromSquare}
+                              size="sm"
+                              fixedWidth
+                              className="pl-2"
+                            />
+                          </h3>
+                        </ExternalLink>
+                      </div>
+                      <div className="text-sm sm:text-base md:text-lg w-full text-center lg:text-left">
+                        <h4 className="text-slate-600">
                           <FontAwesomeIcon
-                            icon={faArrowUpRightFromSquare}
-                            size="sm"
+                            icon={format === 'podcast' ? faPodcast : faNewspaper}
                             fixedWidth
-                            className="pl-2"
+                            className="pr-1"
                           />
-                        </h3>
-                      </ExternalLink>
-                      <div className="flex flex-row items-center">
-                        <FontAwesomeIcon
-                          icon={format === 'podcast' ? faPodcast : faNewspaper}
-                          fixedWidth
-                          className="pr-1"
-                        />
-                        <h4 className="text-slate-600">{host}</h4>
+                          {host}
+                        </h4>
                       </div>
                     </>
                   }
@@ -108,16 +112,16 @@ export default function Interviews() {
                         <img
                           src={coverImage}
                           alt={title}
-                          className="md:float-left md:mr-5 mb-2 mx-auto sm:h-60 object-cover"
+                          className="lg:float-left lg:mr-5 mb-2 mx-auto sm:h-60 object-cover"
                         />
                       </ExternalLink>
-                      <div className="md:-mt-1">{insertBookLinks(description, date)}</div>
+                      <div className="lg:-mt-1">{insertBookLinks(description, date)}</div>
                       {seeAlso != null ? (
                         <>
                           <br />
-                          <p>
+                          <p className="text-sm sm:text-base">
                             See also:
-                            {seeAlso.map(({ contentClass, title, slug: link }) => {
+                            {seeAlso.map(({ title, slug: link }) => {
                               const linkClassName = 'text-slate-500 pl-1';
                               return (
                                 <ResourceLink
