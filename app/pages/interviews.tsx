@@ -72,7 +72,6 @@ export default function Interviews() {
         />
         <div className="-mt-8 mb-20 max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-6xl text-center">{pageTitle}</h1>
-          {/* {pageSubtitle != null ? <h2 className="text-xl pt-2">{pageSubtitle}</h2> : null} */}
           <div className="space-y-10 -mx-10 sm:-mx-5 lg:mx-auto">
             {INTERVIEWS.map(
               ({ link, coverImage, format, host, date, title, description, duration, seeAlso }) => (
