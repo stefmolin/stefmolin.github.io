@@ -28,7 +28,7 @@ export default function ComingSoonish() {
         backgroundImage: 'url(/assets/under-construction.jpg)',
       }}
     >
-      <Container>
+      <Container className="px-4 sm:px-10">
         <div className="-mt-8 sm:mt-4 max-w-5xl mx-auto p-6 sm:p-10 bg-white rounded-lg">
           <h1 className="text-2xl sm:text-3xl md:text-4xl text-center mb-2">Coming Soon(ish)</h1>
           <div className="sm:text-lg md:text-xl py-2">
