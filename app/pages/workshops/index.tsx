@@ -3,7 +3,6 @@ import PresentationPreview from '../../components/presentations/presentation-pre
 import CONTENT_LINKS from '../../data/content-links';
 import WORKSHOP_PAGES from '../../data/workshops';
 
-// TODO: decide on the featured topic/technology at the bottom left of the card
 // TODO: decide whether to put a combined version of the map at the bottom (could maybe highlight the workshops when clicking on a pin for a spot they were presented at)
 // in which case I can include a custom version of the map component in components/workshops/ which embeds the label logic
 
@@ -28,7 +27,7 @@ export default function Index() {
       )}
       pages={WORKSHOP_PAGES}
       pageTitle="Workshops"
-      pageSubtitle="A listing of my conference talks."
+      pageSubtitle=""
       seoImage={CONTENT_LINKS.WORKSHOPS.image}
       seoImageAltTextFallback="Workshops created by Stefanie Molin."
     />
