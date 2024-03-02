@@ -33,7 +33,7 @@ export default function PresentationPreview({
     <PreviewSection
       bottomLeft={
         seeAlso ? (
-          <p>
+          <p className="text-sm sm:text-base text-center sm:text-left">
             See also:{' '}
             <ResourceLink
               className="text-slate-500 hover:underline"
@@ -47,7 +47,7 @@ export default function PresentationPreview({
           <RepoStats repoName={repo} statsOnly />
         ) : null
       }
-      coverImage={coverImage}
+      coverImage={coverImage ?? null}
       coverImageAltText={title}
       description={description}
       duration={duration}
@@ -56,7 +56,7 @@ export default function PresentationPreview({
       resourceLink={{ contentClass, slug }}
       subtitle={
         subtitle ?? (
-          <h3 className="text-slate-600">
+          <h3 className="text-sm sm:text-base text-slate-600">
             <FontAwesomeIcon icon={faMicrophoneLines} fixedWidth className="pr-1" />
             {pastSessions
               .sort((a, b) => (a.date > b.date ? -1 : 1))
@@ -65,7 +65,7 @@ export default function PresentationPreview({
           </h3>
         )
       }
-      title={<h2 className="text-2xl hover:underline">{title}</h2>}
+      title={<h2 className="text-xl sm:text-2xl hover:underline">{title}</h2>}
     />
   );
 }

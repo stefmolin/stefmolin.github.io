@@ -1,11 +1,9 @@
 import { NextSeo } from 'next-seo';
-import CONTENT_LINKS from '../../data/content-links';
 import { getLivePresentations } from '../../lib/events';
 import { usePageURL } from '../../lib/hooks/page-url';
 import { getImageLink } from '../../lib/images';
 import Layout from '../page-layout/layout';
 import Container from '../sections/container';
-import PresentationPreview from './presentation-preview';
 import type SEOImage from '../../interfaces/seo-image';
 import { type TalkCard } from '../../interfaces/talk';
 import { type WorkshopPage } from '../../interfaces/workshop';
@@ -52,10 +50,10 @@ export default function PresentationListing({
             ],
           }}
         />
-        <div className="mt-4 mb-20 max-w-5xl mx-auto">
-          <h1 className="text-4xl">{pageTitle}</h1>
-          <h2 className="text-xl py-2">{pageSubtitle}</h2>
-          <div className="grid grid-cols-1 sm:gap-y-10 pb-5">
+        <div className="-mt-6 mb-20 max-w-5xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl text-center">{pageTitle}</h1>
+          <h2 className="text-lg md:text-xl py-2 text-center">{pageSubtitle}</h2>
+          <div className="grid grid-cols-1 sm:gap-y-10 pb-5 -mx-10 sm:-mx-5 lg:mx-auto">
             {pages
               .sort((a, b) => {
                 const presentationA = a[contentClass];

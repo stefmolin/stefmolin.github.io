@@ -36,7 +36,7 @@ export default function PreviewSection({
           <ResourceLink linkClass={linkClass} resourceLink={resourceLink}>
             {title}
           </ResourceLink>
-          {subtitle}
+          <div className="line-clamp-2">{subtitle}</div>
         </>
       }
       body={
@@ -46,12 +46,12 @@ export default function PreviewSection({
               <img
                 src={typeof coverImage === 'string' ? coverImage : coverImage.src}
                 alt={coverImageAltText}
-                className="md:float-left md:mr-5 mb-2 mx-auto max-w-64 object-cover"
+                className="md:float-left md:mr-5 mb-2 mx-auto max-w-40 sm:max-w-64 object-cover"
               />
             </ResourceLink>
           )}
           {/* TODO: should I float right here since the image is less important? also make it smaller*/}
-          <div className="md:-mt-7 -mb-4">
+          <div className="md:-mt-7 sm:-mb-4 line-clamp-6 sm:line-clamp-none">
             {description.map((paragraph, index) => (
               <MarkdownSection key={index}>{paragraph}</MarkdownSection>
             ))}
