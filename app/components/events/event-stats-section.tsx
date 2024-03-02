@@ -22,7 +22,7 @@ export default function EventStatsSection({
         <>
           <EventStatsGrid className="pb-4" sessions={sessions} includeYearsActive />
           <CollapsibleSection prompt="Yearly breakdown">
-            <EventStatsGrid sessions={sessions} yearlyCountsOnly className="mx-2" />
+            <EventStatsGrid sessions={sessions} yearlyCountsOnly className="px-2" />
           </CollapsibleSection>
         </>
       ) : (
