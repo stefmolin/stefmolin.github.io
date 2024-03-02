@@ -4,6 +4,8 @@ This is the code that generates [my website](https://stefaniemolin.com). It is b
 
 Markdown files are turned into new blog posts or articles on the website. This is done with [`remark`](https://github.com/remarkjs/remark) and [`remark-html`](https://github.com/remarkjs/remark-html) to convert the Markdown files into an HTML string, and [`remark-prism`](https://github.com/sergioramos/remark-prism) along with a [custom plugin](./lib/remarkPlugin.ts) to handle code blocks. The metadata from the Markdown files is handled by [`gray-matter`](https://github.com/jonschlinkert/gray-matter). All of this gets passed down as props to the React components.
 
+The non-post parts of the website were designed and built from scratch.
+
 ## Comments
 Comments are powered by [giscus](https://giscus.app/) via the [provided React component](https://github.com/giscus/giscus-component).
 
@@ -15,3 +17,7 @@ Icons are from [Font Awesome](https://fontawesome.com/v6/docs/web/use-with/react
 
 ## Tweet Embeds
 Tweet embeds are done with [`react-tweet`](https://vercel.com/blog/introducing-react-tweet).
+
+## Images
+
+The images distributed in this repository are a combination of my own images, free images from [Unsplash.com](https://unsplash.com), and AI-generated images I created on [NightCafe](https://creator.nightcafe.studio/?ru=2MN1aDPMECSkEmpzKUuMHvvxqlY2).
