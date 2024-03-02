@@ -93,7 +93,7 @@ export default function Home({
   const subsectionHeaderClassName = 'text-2xl sm:text-3xl md:text-5xl';
   const inviteMeToSpeakCTA = (
     <Announcement>
-      <div className="flex flex-col items-center justify-between space-y-4">
+      <div className="flex flex-col items-center justify-between space-y-4 pb-2 lg:pb-0">
         <h3 className="text-lg text-center sm:text-xl font-bold mt-2">
           Invite me to speak at your event
         </h3>
@@ -119,10 +119,10 @@ export default function Home({
   return (
     <Layout>
       <Container>
-        <div className="-mt-8 mb-20 max-w-5xl mx-auto">
+        <div className="-mt-6 mb-20 max-w-5xl mx-auto">
           <EvenlySpacedSections className="my-10">
             <div className="text-center">
-              <h1 className="text-3xl sm:text-5xl md:text-7xl mb-4 md:mb-8">
+              <h1 className="text-6xl sm:text-7xl mb-2">
                 <Link className="hover:underline" href="/about">
                   Stefanie Molin
                 </Link>
@@ -136,16 +136,16 @@ export default function Home({
                   />
                 </Link>
               </div>
-              <h2 className="text-lg sm:text-2xl md:text-4xl mt-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-4">
                 Software Engineer | Author | International Speaker
               </h2>
               <FollowButtons
-                className="text-xl md:text-3xl px-5"
+                className="text-xl sm:text-2xl md:text-3xl px-5"
                 withDivider
                 dividerClassName="py-5"
               />
-              <p className=" sm:text-xl md:text-2xl">
-                I help people of all levels improve their data science and computer science skills.
+              <p className="text-lg sm:text-xl md:text-2xl">
+                I help people of all levels improve their computer science and data science skills.
               </p>
               <RelatedContentSection relatedContent={relatedContent} title={null} />
             </div>
@@ -160,7 +160,7 @@ export default function Home({
                 titleClassName={classNames('text-center', subsectionHeaderClassName)}
               >
                 <div className="flex w-full place-content-around mt-2">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {nextSessions.map((session) => {
                       const eventDate = DateTime.fromISO(session.date);
                       const relativeEventDate = eventDate.toRelative({ unit: ['days', 'hours'] });
@@ -168,7 +168,7 @@ export default function Home({
                         <div
                           key={`${session.date}-${session.presentation.title}`}
                           className={classNames(
-                            'h-auto lg:h-48 w-auto lg:w-96',
+                            'h-auto lg:h-48 max-w-96',
                             'flex flex-col items-center justify-between space-y-4',
                             'bg-white border-2 border-slate-700',
                             'shadow-sm rounded-lg',
@@ -201,7 +201,7 @@ export default function Home({
                               <div>({relativeEventDate})</div>
                             </div>
                           </h3>
-                          <div className="flex flex-col-reverse sm:flex-row items-center justify-between w-full">
+                          <div className="flex flex-col-reverse sm:flex-row md:flex-col-reverse lg:flex-row items-center justify-between w-full">
                             <div className="flex flex-col sm:flex-row items-center justify-center space-x-1 text-center">
                               <div>
                                 <span className="pr-1">
@@ -221,6 +221,9 @@ export default function Home({
                                 fixedWidth
                               />{' '}
                               {session.presentation.contentClass}
+                              <span className="pl-1 inline-flex sm:hidden md:inline-flex lg:hidden">
+                                @
+                              </span>
                             </p>
                           </div>
                         </div>
