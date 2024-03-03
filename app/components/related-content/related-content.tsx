@@ -30,11 +30,11 @@ const RelatedContentSection = ({
       items: Math.min(3, relatedContent.length),
     },
     sm: {
-      breakpoint: { max: inset ? 1020 : 800, min: 464 },
+      breakpoint: { max: inset ? 1020 : 800, min: inset ? 600 : 464 },
       items: Math.min(2, relatedContent.length),
     },
     xs: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: inset ? 600 : 464, min: 0 },
       items: 1,
     },
   };
