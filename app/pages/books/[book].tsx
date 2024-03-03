@@ -1,19 +1,21 @@
+import classNames from 'classnames';
 import { NextSeo } from 'next-seo';
-import Container from '../../components/sections/container';
+import BookOutline from '../../components/books/book-outline';
+import BookPublicationDate from '../../components/books/book-publication-date';
+import BookSummarySection from '../../components/books/book-summary';
+import PageCount from '../../components/books/page-count';
+import BookTranslationsSection from '../../components/books/translations';
+import RepoStats from '../../components/repo-stats';
+import SectionSeparator from '../../components/dividers/section-separator';
 import Layout from '../../components/page-layout/layout';
+import ReviewsSection from '../../components/reviews/reviews-section';
+import Container from '../../components/sections/container';
 import { BOOK_PAGE_MAPPING } from '../../data/books';
+import { HOME_URL } from '../../data/constants';
 import { generateBookCoverAltText, generateBookPageTitle } from '../../lib/books';
 import { usePageURL } from '../../lib/hooks/page-url';
-import { HOME_URL } from '../../data/constants';
-import SectionSeparator from '../../components/dividers/section-separator';
-import BookTranslationsSection from '../../components/books/translations';
-import ReviewsSection from '../../components/reviews/reviews-section';
-import BookSummarySection from '../../components/books/book-summary';
-import BookOutline from '../../components/books/book-outline';
+import { useWindowSize } from '../../lib/hooks/window-size';
 import { getImageLink } from '../../lib/images';
-import RepoStats from '../../components/repo-stats';
-import PageCount from '../../components/books/page-count';
-import BookPublicationDate from '../../components/books/book-publication-date';
 
 export default function BookPage({ bookKey }: { bookKey: string }) {
   const { book, reviews, relatedContent, faqs } = BOOK_PAGE_MAPPING[bookKey];
@@ -21,6 +23,10 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
   const bookCoverImage = book.coverImage;
   const bookTitle = generateBookPageTitle(book);
   const imageAltText = generateBookCoverAltText(book);
+
+  const { width } = useWindowSize();
+  const subsectionHeaderClassName =
+    'text-2xl sm:text-3xl md:text-4xl mb-5 text-center sm:text-left';
   return (
     <Layout>
       <Container>
@@ -52,27 +58,42 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
           faqs={faqs}
           relatedContent={relatedContent}
         >
-          <div className="mt-4 flex flex-col-reverse lg:flex-row lg:items-center justify-between">
+          <div className="mt-7 flex flex-col-reverse lg:flex-row lg:items-center justify-between">
             <RepoStats
               repoName={book.repo}
-              className="flex flex-col md:flex-row md:items-center md:space-x-2"
+              className="flex flex-col md:flex-row items-center md:space-x-2 text-center"
             />
 
-            <div className="flex flex-row items-center space-x-2">
+            <div
+              className={classNames(
+                'flex',
+                'items-center justify-center md:justify-start',
+                'space-x-2',
+                { 'flex-col space-x-0': width && width < 375 },
+              )}
+            >
               <PageCount pageCount={book.pageCount} />
               <BookPublicationDate publicationDate={book.publicationDate} />
             </div>
           </div>
-          <hr className="border-neutral-200 my-4" />
+          <SectionSeparator className="my-4" />
           <BookSummarySection book={book} />
           <SectionSeparator className="mt-5 lg:mt-24 mb-10" />
           {reviews != null ? (
             <>
-              <ReviewsSection reviews={reviews} cardSize="md" />
+              <ReviewsSection
+                reviews={reviews}
+                cardSize="md"
+                titleClassName={subsectionHeaderClassName}
+              />
               <SectionSeparator className="my-10" />
             </>
           ) : null}
-          <BookTranslationsSection book={book} />
+          <BookTranslationsSection
+            book={book}
+            divClassName="-mx-2 sm:mx-auto"
+            titleClassName={subsectionHeaderClassName}
+          />
           {book.translations != null ? <SectionSeparator className="my-10" /> : null}
         </BookOutline>
       </Container>
