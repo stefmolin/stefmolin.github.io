@@ -42,7 +42,9 @@ const FollowButtons = ({
     </ExternalLink>
   );
   const buttons = (
-    <div className={classNames('space-x-2 flex items-center justify-center', className)}>
+    <div
+      className={classNames('space-x-1 sm:space-x-2 flex items-center justify-center', className)}
+    >
       {makeLink(GITHUB_PROFILE, faGithub)}
       {makeLink(LINKEDIN_PROFILE, faLinkedin)}
       {makeLink(`https://twitter.com/${TWITTER_HANDLE.replace('@', '')}`, faXTwitter)}
