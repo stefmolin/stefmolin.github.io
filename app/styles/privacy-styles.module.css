@@ -9,7 +9,7 @@
 }
 
 .privacy-policy h1 {
-  @apply text-4xl;
+  @apply text-3xl sm:text-4xl;
   @apply pb-2;
 }
 .privacy-policy h2 {
