@@ -53,7 +53,12 @@ export default function RepoStats({
   ) : null;
 
   return (
-    <div className={className ?? 'flex flex-row items-center justify-center space-x-2'}>
+    <div
+      className={
+        className ??
+        'flex flex-col sm:flex-row items-center text-center sm:justify-center sm:space-x-2'
+      }
+    >
       {info === undefined ? null : (
         <>
           {((statsOnly && stats == null) || !statsOnly) && repoLink}

@@ -7,8 +7,10 @@ import RepoStats from '../repo-stats';
 export default function WorkshopHeader({ workshop }: { workshop: Workshop }) {
   return (
     <>
-      <h1 className="text-5xl mb-2">{workshop.title}</h1>
-      <div className="flex flex-col md:flex-row items-start justify-between md:space-x-2">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl mb-2 text-center sm:text-left">
+        {workshop.title}
+      </h1>
+      <div className="flex flex-col-reverse md:flex-row items-center sm:items-start justify-between md:space-x-2">
         <RepoStats repoName={workshop.repo} />
         <div className="flex flex-row items-center justify-center space-x-2">
           <span>

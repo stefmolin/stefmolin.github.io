@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { NextSeo } from 'next-seo';
 import Container from '../../components/sections/container';
 import Layout from '../../components/page-layout/layout';
@@ -13,13 +14,15 @@ import WorkshopMap from '../../components/workshops/workshop-map';
 import WorkshopHeader from '../../components/workshops/workshop-header';
 import WorkshopSummary from '../../components/workshops/workshop-summary';
 
-// TODO: potentially another one to encapsulate everything
 // TODO: link to setup instructions and prereqs
 // TODO: read descriptions from READMEs in GitHub for consistency? this will hardly be updated so it can wait
 
 export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
   const { workshop, reviews, relatedContent } = WORKSHOP_PAGE_MAPPING[workshopKey];
   const workshopCoverImage = workshop.coverImage;
+
+  const sectionHeaderClassName = 'text-2xl sm:text-3xl md:text-4xl mb-5 text-center sm:text-left';
+  const separatorClassName = '-mx-2 sm:mx-auto';
 
   return (
     <Layout>
@@ -39,21 +42,25 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
             ],
           }}
         />
-        <div className="mt-4 mb-20 max-w-5xl mx-auto">
+        <div className="mb-20 max-w-5xl mx-auto">
           <WorkshopHeader workshop={workshop} />
-          <SectionSeparator className="my-3" />
+          <SectionSeparator className={classNames('my-3', separatorClassName)} />
           <WorkshopSummary workshop={workshop} />
-          <SectionSeparator className="my-5" />
-          <EvenlySpacedSections className="my-10">
+          <SectionSeparator className={classNames('my-5', separatorClassName)} />
+          <EvenlySpacedSections className={classNames('my-10', separatorClassName)}>
             <WorkshopOutline workshop={workshop} />
             <WorkshopMap workshop={workshop} />
             {reviews != null ? (
               <ReviewsSection
                 reviews={reviews}
                 cardSize={reviews.map(({ text }) => text.length).some((x) => x > 150) ? 'sm' : 'xs'}
+                titleClassName={sectionHeaderClassName}
               />
             ) : null}
-            <RelatedContentSection relatedContent={relatedContent} />
+            <RelatedContentSection
+              relatedContent={relatedContent}
+              titleClassName={sectionHeaderClassName}
+            />
           </EvenlySpacedSections>
         </div>
       </Container>

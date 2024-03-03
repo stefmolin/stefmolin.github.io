@@ -13,8 +13,14 @@ export default function WorkshopMap({ workshop }: { workshop: Workshop }) {
   });
   const locationToEvents = getConferenceEventMapAnnotations(pastSessions);
   return (
-    <PageSection id="workshop-map" title="Past sessions">
-      <p>Click a {MAP_PIN} on the map to see the conferences I have presented this workshop at.</p>
+    <PageSection
+      id="workshop-map"
+      title="Past sessions"
+      titleClassName="text-2xl sm:text-3xl md:text-4xl mb-5 text-center sm:text-left"
+    >
+      <p className="md:text-lg">
+        Click a {MAP_PIN} on the map to see the conferences I have presented this workshop at.
+      </p>
       <InteractiveMap
         locations={locationToEvents}
         highlightedCountries={locationToEvents.map(({ country }) => country)}
