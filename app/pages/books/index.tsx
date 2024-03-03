@@ -1,15 +1,17 @@
+import classNames from 'classnames';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
-import Container from '../../components/sections/container';
+import BookCover from '../../components/books/book-cover';
+import BookOutline from '../../components/books/book-outline';
+import SectionSeparator from '../../components/dividers/section-separator';
 import Layout from '../../components/page-layout/layout';
+import Container from '../../components/sections/container';
+import { BOOK_PAGES, GENERAL_FAQS } from '../../data/books';
+import CONTENT_LINKS from '../../data/content-links';
 import { generateBookPageLink } from '../../lib/books';
 import { usePageURL } from '../../lib/hooks/page-url';
-import SectionSeparator from '../../components/dividers/section-separator';
-import { BOOK_PAGES, GENERAL_FAQS } from '../../data/books';
-import BookOutline from '../../components/books/book-outline';
+import { useWindowSize } from '../../lib/hooks/window-size';
 import { getImageLink } from '../../lib/images';
-import BookCover from '../../components/books/book-cover';
-import CONTENT_LINKS from '../../data/content-links';
 
 const relatedContent = [
   CONTENT_LINKS.INTERVIEWS,
@@ -21,6 +23,7 @@ const relatedContent = [
 export default function Index() {
   const pageTitle = 'Bookshelf';
   const seoImage = CONTENT_LINKS.BOOKS.image;
+  const { width } = useWindowSize();
   return (
     <Layout>
       <Container>
@@ -45,11 +48,18 @@ export default function Index() {
           faqs={GENERAL_FAQS}
           relatedContent={relatedContent}
         >
-          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 xl:px-4 pt-10">
+          <div
+            className={classNames('grid lg:grid-cols-3 xl:grid-cols-4 gap-y-10', 'xl:px-4 pt-10', {
+              'grid-cols-2': width && width > 370,
+            })}
+          >
             {BOOK_PAGES.map(({ book }) => {
               const bookPageLink = generateBookPageLink(book);
               return (
-                <div key={bookPageLink} className="flex items-center justify-center">
+                <div
+                  key={bookPageLink}
+                  className="flex items-center justify-center -mx-2 sm:mx-auto"
+                >
                   <Link
                     href={{
                       pathname: '/books/[book]',
@@ -59,7 +69,7 @@ export default function Index() {
                   >
                     <BookCover
                       book={book}
-                      className="h-48 sm:h-64 object-contain hover:scale-110"
+                      className="h-48 sm:h-64 mx-2 object-contain hover:scale-110"
                     />
                   </Link>
                 </div>

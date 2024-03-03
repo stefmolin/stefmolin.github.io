@@ -18,15 +18,27 @@ const BookOutline = ({
   children,
   faqs,
   relatedContent,
-}: BookOutlineProps) => (
-  <div className="mt-4 mb-20 max-w-5xl mx-auto">
-    <h1 className="text-4xl">{pageTitle}</h1>
-    {pageSubtitle != null ? <h2 className="text-xl pt-2">{pageSubtitle}</h2> : null}
-    {children}
-    <FAQSection faqs={faqs} />
-    <SectionSeparator className="my-10" />
-    <RelatedContentSection relatedContent={relatedContent} />
-  </div>
-);
+}: BookOutlineProps) => {
+  const sectionHeaderClassName = 'text-2xl sm:text-3xl md:text-4xl mb-5 text-center sm:text-left';
+  return (
+    <div className="-mt-6 mb-20 max-w-5xl -mx-4 sm:mx-auto">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl text-center md:text-left">{pageTitle}</h1>
+      {pageSubtitle != null ? (
+        <h2 className="text-lg md:text-xl text-center md:text-left pt-2 -mb-4">{pageSubtitle}</h2>
+      ) : null}
+      {children}
+      <FAQSection
+        faqs={faqs}
+        titleClassName={sectionHeaderClassName}
+        divClassName="-mt-5 sm:mt-auto mx-2 sm:mx-auto"
+      />
+      <SectionSeparator className="my-5 sm:my-10" />
+      <RelatedContentSection
+        relatedContent={relatedContent}
+        titleClassName={sectionHeaderClassName}
+      />
+    </div>
+  );
+};
 
 export default BookOutline;
