@@ -19,13 +19,13 @@ const CollapsibleSection = ({
       trigger={
         <>
           <FontAwesomeIcon icon={faChevronRight} className="pr-1" fixedWidth />
-          <span className="text-xl cursor-pointer">{prompt}</span>
+          <span className="text-lg sm:text-xl cursor-pointer">{prompt}</span>
         </>
       }
       triggerWhenOpen={
         <>
           <FontAwesomeIcon icon={faChevronDown} className="pr-1" fixedWidth />
-          <span className="text-xl cursor-pointer">{prompt}</span>
+          <span className="text-lg sm:text-xl cursor-pointer">{prompt}</span>
         </>
       }
     >
