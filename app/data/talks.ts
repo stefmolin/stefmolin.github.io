@@ -7,7 +7,7 @@ const TALK_CARDS: TalkCard[] = [
   {
     talk: {
       title: PRESENTATIONS.DATA_MORPH.title,
-      coverImage: CONTENT_LINKS.TALKS.image,
+      coverImage: CONTENT_LINKS.DATA_MORPH_ARTICLE.image,
       description: [
         `Statistics do not come intuitively to humans; they always try to find simple ways to
         describe complex things. Given a complex dataset, they may feel tempted to use simple
@@ -25,7 +25,7 @@ const TALK_CARDS: TalkCard[] = [
       duration: '45 minutes',
     },
     seeAlso: {
-      title: CONTENT_LINKS.DATA_MORPH_ARTICLE.title,
+      title: 'Data Morph: Moving Beyond the Datasaurus Dozen',
       slug: CONTENT_LINKS.DATA_MORPH_ARTICLE.link,
       contentClass: CONTENT_LINKS.DATA_MORPH_ARTICLE.contentClass,
     },
