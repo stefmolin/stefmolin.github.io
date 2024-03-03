@@ -24,11 +24,14 @@ export default function CarouselSection({
         (value) => value.breakpoint.min <= width && width <= value.breakpoint.max,
       )?.items || 1;
   }
+
+  const dotsWillOverflow = slots === 1 && children.length > 16 && width && width < 500;
+
   return (
     <Carousel
       swipeable={true}
       draggable={false}
-      showDots={slots < children.length}
+      showDots={slots < children.length && !dotsWillOverflow}
       responsive={responsive}
       ssr={false}
       infinite={false}

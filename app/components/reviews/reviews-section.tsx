@@ -36,7 +36,7 @@ const ReviewsSection = ({
       title="Reviews"
       titleClassName={titleClassName}
     >
-      <CarouselSection autoPlaySpeed={5_000} responsive={responsive}>
+      <CarouselSection autoPlaySpeed={5_000} responsive={responsive} carouselClassName="-mx-4">
         {reviews.map((review) => (
           <ReviewCard
             key={review.author}

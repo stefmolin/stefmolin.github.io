@@ -39,10 +39,15 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
 
   const { author, rating, source, text } = review;
 
+  const iconClassName = 'text-lg md:text-xl';
+
   return (
     <div
       className={classNames(
-        'flex flex-row items-start justify-between p-8 shadow-sm mx-5 mt-4 mb-12',
+        'flex flex-col items-start justify-center sm:justify-start',
+        'px-6 py-4 sm:p-8',
+        'mx-2 sm:mx-5 mt-4 mb-12',
+        'shadow-sm',
         {
           'h-40': cardSize === 'xs',
           'h-64': cardSize === 'sm',
@@ -51,62 +56,68 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
         },
       )}
     >
-      <FontAwesomeIcon icon={faQuoteLeft} size="xl" fixedWidth />
-      <div className={classNames(className, 'pl-4 mb-3')}>
-        <div
-          ref={reviewTextRef}
-          className={classNames(
-            'pr-4',
-            'overflow-y-auto overscroll-contain',
-            '[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]',
-            {
-              'max-h-24': cardSize === 'xs',
-              'max-h-40': cardSize === 'sm',
-              'max-h-56': cardSize === 'md',
-              'max-h-72': cardSize === 'lg',
-            },
-            reviewStyles['review'],
-          )}
-          onScroll={handleScroll}
-        >
-          <MarkdownSection className={reviewStyles['review']}>{text}</MarkdownSection>
+      <div className="w-full flex flex-row">
+        <div className="hidden sm:flex">
+          <FontAwesomeIcon icon={faQuoteLeft} fixedWidth className={iconClassName} />
         </div>
-        <FontAwesomeIcon
-          className={classNames('float-right relative bottom-2 -right-5', {
-            visible: showMore,
-            invisible: !showMore,
-          })}
-          icon={atBottom ? faCaretUp : faCaretDown}
-          size="sm"
-          bounce
-          fixedWidth
-        />
-        <div className="flex flex-col items-center justify-center text-pretty text-center">
-          <FancyDivider className="my-2">
-            <div
-              className={classNames('flex flex-row items-center justify-center px-5', {
-                'text-yellow-400': rating != null,
-              })}
-            >
-              {rating ? (
-                _.range(rating).map(() => <FontAwesomeIcon icon={faStar} size="xs" fixedWidth />)
-              ) : (
-                <FontAwesomeIcon icon={faTrophy} size="xs" fixedWidth />
-              )}
-            </div>
-          </FancyDivider>
-          <div>
-            {source != null ? (
-              <ExternalLink href={source} className="text-slate-600 hover:underline">
-                {author}
-              </ExternalLink>
-            ) : (
-              author
+        <div className={classNames(className, 'sm:pl-4')}>
+          <div
+            ref={reviewTextRef}
+            className={classNames(
+              'pr-4',
+              'overflow-y-auto overscroll-contain',
+              '[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]',
+              {
+                'max-h-20': cardSize === 'xs',
+                'max-h-36': cardSize === 'sm',
+                'max-h-52': cardSize === 'md',
+                'max-h-64': cardSize === 'lg',
+              },
+              reviewStyles['review'],
             )}
+            onScroll={handleScroll}
+          >
+            <MarkdownSection className={reviewStyles['review']}>{text}</MarkdownSection>
           </div>
+          <FontAwesomeIcon
+            className={classNames('float-right relative bottom-2 -right-2 sm:-right-5', {
+              visible: showMore,
+              invisible: !showMore,
+            })}
+            icon={atBottom ? faCaretUp : faCaretDown}
+            size="sm"
+            bounce
+            fixedWidth
+          />
+        </div>
+        <div className="grow hidden sm:flex justify-end">
+          <FontAwesomeIcon icon={faQuoteRight} fixedWidth className={iconClassName} />
         </div>
       </div>
-      <FontAwesomeIcon icon={faQuoteRight} size="xl" fixedWidth />
+      <div className="w-full flex flex-col items-center justify-center text-pretty text-center -mt-2">
+        <FancyDivider className="my-2 sm:px-8">
+          <div
+            className={classNames('flex flex-row items-center justify-center px-5', {
+              'text-yellow-400': rating != null,
+            })}
+          >
+            {rating ? (
+              _.range(rating).map(() => <FontAwesomeIcon icon={faStar} size="xs" fixedWidth />)
+            ) : (
+              <FontAwesomeIcon icon={faTrophy} size="xs" fixedWidth />
+            )}
+          </div>
+        </FancyDivider>
+        <div className="md:text-lg line-clamp-2">
+          {source != null ? (
+            <ExternalLink href={source} className="text-slate-600 hover:underline">
+              {author}
+            </ExternalLink>
+          ) : (
+            author
+          )}
+        </div>
+      </div>
     </div>
   );
 }

@@ -2,10 +2,12 @@
   @apply flex;
   @apply flex-col;
   @apply space-y-3;
+  @apply md:text-lg;
 }
 
 .review a {
   @apply text-slate-500;
   @apply hover:text-slate-400;
   @apply underline;
+  @apply sm:text-xl;
 }
