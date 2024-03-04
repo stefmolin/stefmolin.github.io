@@ -25,7 +25,7 @@ const PostPreview = ({
   coverImageCaption,
 }: Props) => {
   const postTitle = (
-    <h3 className="text-2xl md:text-3xl mb-3 leading-snug w-full">
+    <h3 className="text-2xl md:text-3xl mb-3 leading-snug w-full text-center sm:text-left">
       <Link
         href={{
           pathname: '/[...slug]',
@@ -39,20 +39,18 @@ const PostPreview = ({
   );
 
   const readTime = (
-    <div className="mb-4 whitespace-nowrap text-sm md:text-base">
+    <div className="mb-4 whitespace-nowrap text-sm md:text-base flex items-center justify-center sm:justify-start">
       <TimeToRead duration={duration} />
     </div>
   );
 
   const image = (
-    <div className="flex items-center justify-center w-full lg:w-1/3 lg:mb-0 mb-4">
+    <div className="flex flex-row items-center justify-center w-full md:w-2/3 lg:w-1/3 md:mb-0 mb-4">
       <CoverImage slug={slug} title={title} src={coverImage} caption={coverImageCaption} />
     </div>
   );
 
-  const postExcerpt = (
-    <p className="md:text-lg leading-relaxed mb-4 line-clamp-3 md:line-clamp-4">{excerpt}</p>
-  );
+  const postExcerpt = <p className="md:text-lg leading-relaxed mb-4 line-clamp-5">{excerpt}</p>;
 
   const linkedTags = <PostTags tags={tags} className="flex flex-row text-sm md:text-base" />;
 
@@ -62,9 +60,9 @@ const PostPreview = ({
         {postTitle}
         {readTime}
       </div>
-      <div className="flex flex-col lg:flex-row items-center justify-end">
+      <div className="flex flex-col md:flex-row items-center justify-end">
         {image}
-        <div className="flex flex-col w-full h-full lg:w-2/3 pr-4 justify-between">
+        <div className="flex flex-col w-full h-full lg:w-2/3 justify-between">
           {postExcerpt}
           {linkedTags}
         </div>

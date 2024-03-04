@@ -12,7 +12,7 @@ const CoverImage = ({ title, src, slug, caption }: Props) => {
     <img src={src} alt={caption ?? `Cover image for ${title}`} className="w-96 h-48 object-cover" />
   );
   return (
-    <div className="mr-5">
+    <div className="md:mr-5">
       {slug ? (
         <Link
           href={{

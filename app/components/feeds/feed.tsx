@@ -1,33 +1,45 @@
+import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import { useRef, useState } from 'react';
-import Container from '../sections/container';
-import Intro from '../posts/intro';
-import Layout from '../page-layout/layout';
 import type FeedType from '../../interfaces/feed';
 import { usePageURL } from '../../lib/hooks/page-url';
+import { useWindowSize } from '../../lib/hooks/window-size';
+import Layout from '../page-layout/layout';
 import Pagination from '../pagination';
+import Container from '../sections/container';
 import PostListing from './post-listing';
 
-// TODO: the div that sets the max-width is needed to stop it from getting too long on large screens
-// maybe that means something could go on the side bar in that case?
-
-const Feed = ({ allPosts, description, title }: Omit<FeedType, 'kind'>) => {
+const Feed = ({
+  allPosts,
+  description,
+  title,
+  subtitle,
+}: Omit<FeedType, 'kind'> & { subtitle?: string }) => {
   const feedRef = useRef<null | HTMLDivElement>(null);
-  const postsPerPage = 5;
+  const { width } = useWindowSize();
+  const postsPerPage = width && width < 465 ? 3 : 5;
   const [offset, setOffset] = useState(0);
   return (
     <>
       <Layout>
         <NextSeo
-          title={title}
+          title={subtitle ?? title}
           description={description}
           openGraph={{
             url: usePageURL(),
           }}
         />
         <Container>
-          <div ref={feedRef} className="max-w-5xl mx-auto mb-32">
-            <Intro title={title} description={description} />
+          <div ref={feedRef} className="-mt-4 max-w-5xl -mx-4 sm:mx-auto mb-32">
+            <h1 className="text-6xl md:text-7xl mb-2 text-center">{title}</h1>
+            {subtitle ? (
+              <div className="text-center py-2">
+                <h2 className="text-lg md:text-xl">{subtitle}</h2>
+                <Link href="/tags" className="text-slate-700 hover:underline">
+                  <small>click here for the tag listing</small>
+                </Link>
+              </div>
+            ) : null}
             <PostListing posts={allPosts.slice(offset, offset + postsPerPage)} />
             <Pagination
               itemsPerPage={postsPerPage}

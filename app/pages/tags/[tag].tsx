@@ -9,7 +9,8 @@ type Params = {
 };
 
 export default function TagSearch(props: FeedType) {
-  return <Feed {...props} />;
+  const { title } = props;
+  return <Feed {...props} title="Search Results" subtitle={`Posts tagged "${title}"`} />;
 }
 
 export const getStaticProps = async ({ params }: Params) => {
