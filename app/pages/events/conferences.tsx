@@ -6,13 +6,10 @@ import { NextSeo } from 'next-seo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
 import FancyDivider from '../../components/dividers/fancy-divider';
-import EventMap from '../../components/events/event-map';
-import EventStatsSection from '../../components/events/event-stats-section';
+import anchorLink, { linkClassName } from '../../components/events/event-anchor-link';
+import EventPage, { sectionTitleClassName } from '../../components/events/event-page';
 import Layout from '../../components/page-layout/layout';
-import PhotoGallery from '../../components/photo-gallery';
-import RelatedContentSection from '../../components/related-content/related-content';
 import Container from '../../components/sections/container';
-import EvenlySpacedSections from '../../components/sections/evenly-spaced-sections';
 import { MAP_PIN } from '../../data/constants';
 import CONTENT_LINKS from '../../data/content-links';
 import { LIVE_PRESENTATIONS } from '../../data/events';
@@ -30,19 +27,12 @@ const relatedContent = [
 export default function Conferences() {
   const seoImage = CONTENT_LINKS.CONFERENCES.image;
   const pageTitle = 'Conferences';
-  const subsectionTitleClassName = 'text-center md:text-left text-3xl mb-5';
   const presentations = LIVE_PRESENTATIONS.filter(
     (x) => x.presentation.contentClass !== 'book signing',
   );
   const presentationsGivenAlready = presentations.filter(
     ({ date }) => date < DateTime.now().toISODate(),
   ).length;
-  const linkClassName = 'text-slate-700 hover:text-slate-500 underline';
-  const anchorLink = (fragment: string, text: string | React.ReactNode) => (
-    <Link href={fragment} className={linkClassName}>
-      {text}
-    </Link>
-  );
   return (
     <Layout>
       <Container>
@@ -61,10 +51,16 @@ export default function Conferences() {
             ],
           }}
         />
-        <div className="-mt-4 mb-20 max-w-5xl -mx-4 sm:mx-auto">
-          <h1 className="text-5xl md:text-7xl mb-2 text-center">{pageTitle}</h1>
-
-          <EvenlySpacedSections className="my-10">
+        <EventPage
+          pageTitle={pageTitle}
+          presentations={presentations}
+          images={CONFERENCE_IMAGES}
+          mapIntroText={`To date, I have presented ${presentationsGivenAlready} times at conferences around
+          the world. Click a ${MAP_PIN} on the map for more information.`}
+          relatedContent={relatedContent}
+          showStats
+          statsProps={{ includeYearsActive: true }}
+          header={
             <div className="flex flex-col items-center">
               <FancyDivider className="w-1/2 mx-auto pb-5">
                 <FontAwesomeIcon icon={faLightbulb} className="px-5" fixedWidth />
@@ -85,28 +81,13 @@ export default function Conferences() {
                 .
               </p>
             </div>
-            <PhotoGallery
-              photos={CONFERENCE_IMAGES}
-              shufflePhotos
-              titleClassName={subsectionTitleClassName}
-              promptClassName="text-center md:text-left"
-            />
-            <EventStatsSection
-              sessions={presentations}
-              includeYearsActive
-              titleClassName={subsectionTitleClassName}
-            />
-            <EventMap
-              introText={`To date, I have presented ${presentationsGivenAlready} times at conferences around
-              the world. Click a ${MAP_PIN} on the map for more information.`}
-              liveEvents={presentations}
-              titleClassName={subsectionTitleClassName}
-            />
+          }
+          footer={
             <div
               id="origin-story"
               className="sm:text-lg border-2 border-slate-100 rounded-lg px-4 bg-slate-50 shadow-lg xl:w-5/6 -mx-2 sm:mx-auto"
             >
-              <p className={classNames('pt-10 px-2 sm:px-10', subsectionTitleClassName)}>
+              <p className={classNames('pt-10 px-2 sm:px-10', sectionTitleClassName)}>
                 My origin story
               </p>
               <div className="mt-5 px-2 sm:px-10 py-5 sm:text-justify space-y-4">
@@ -140,12 +121,8 @@ export default function Conferences() {
 
               <br />
             </div>
-            <RelatedContentSection
-              relatedContent={relatedContent}
-              titleClassName={subsectionTitleClassName}
-            />
-          </EvenlySpacedSections>
-        </div>
+          }
+        />
       </Container>
     </Layout>
   );

@@ -14,19 +14,21 @@ import {
 } from '../../lib/events';
 import StatsGrid, { type StatsGridProps } from '../cards/stats-grid';
 
+export interface EventStatsGridProps {
+  sessions: LivePresentation[];
+  className?: string;
+  linkClassName?: string;
+  includeYearsActive?: boolean;
+  yearlyCountsOnly?: boolean;
+}
+
 export default function EventStatsGrid({
   sessions,
   className,
   linkClassName = 'text-blue-800',
   includeYearsActive = false,
   yearlyCountsOnly = false,
-}: {
-  sessions: LivePresentation[];
-  className?: string;
-  linkClassName?: string;
-  includeYearsActive?: boolean;
-  yearlyCountsOnly?: boolean;
-}) {
+}: EventStatsGridProps) {
   const linkMapping = {
     workshop: '/workshops/',
     talk: '/talks/',

@@ -1,20 +1,18 @@
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import { DateTime } from 'luxon';
-import Container from '../../components/sections/container';
-import Layout from '../../components/page-layout/layout';
-import { usePageURL } from '../../lib/hooks/page-url';
-import EventMap from '../../components/events/event-map';
-import CONTENT_LINKS from '../../data/content-links';
-import { getImageLink } from '../../lib/images';
-import { LIVE_PRESENTATIONS } from '../../data/events';
-import RelatedContentSection from '../../components/related-content/related-content';
-import { BOOK_SIGNING_IMAGES } from '../../data/photo-gallery';
-import PhotoGallery from '../../components/photo-gallery';
-import { MAP_PIN } from '../../data/constants';
-import MysteryCards, { type MysteryCardsProps } from '../../components/cards/mystery-cards';
-import EvenlySpacedSections from '../../components/sections/evenly-spaced-sections';
+import { type MysteryCardsProps } from '../../components/cards/mystery-cards';
+import anchorLink, { linkClassName } from '../../components/events/event-anchor-link';
+import EventPage from '../../components/events/event-page';
 import ExternalLink from '../../components/links/external-link';
+import Layout from '../../components/page-layout/layout';
+import Container from '../../components/sections/container';
+import { MAP_PIN } from '../../data/constants';
+import CONTENT_LINKS from '../../data/content-links';
+import { LIVE_PRESENTATIONS } from '../../data/events';
+import { BOOK_SIGNING_IMAGES } from '../../data/photo-gallery';
+import { usePageURL } from '../../lib/hooks/page-url';
+import { getImageLink } from '../../lib/images';
 
 const relatedContent = [
   CONTENT_LINKS.INTERVIEWS,
@@ -28,15 +26,9 @@ const relatedContent = [
 export default function BookSignings() {
   const seoImage = CONTENT_LINKS.BOOK_SIGNINGS.image;
   const pageTitle = 'Book Signings';
-  const subsectionTitleClassName = 'text-center md:text-left text-3xl mb-5';
   const signings = LIVE_PRESENTATIONS.filter((x) => x.presentation.contentClass === 'book signing');
   const pastSignings = signings.filter(({ date }) => date < DateTime.now().toISODate()).length;
-  const linkClassName = 'text-slate-700 hover:text-slate-500 underline';
-  const anchorLink = (fragment: string, text: string | React.ReactNode) => (
-    <Link href={fragment} className={linkClassName}>
-      {text}
-    </Link>
-  );
+
   const FUN_FACTS: MysteryCardsProps['cards'] = [
     <>
       At my first signing,{' '}
@@ -76,9 +68,15 @@ export default function BookSignings() {
             ],
           }}
         />
-        <div className="-mt-4 mb-20 max-w-5xl -mx-4 sm:mx-auto">
-          <h1 className="text-5xl md:text-7xl mb-2 text-center">{pageTitle}</h1>
-          <EvenlySpacedSections className="my-10">
+        <EventPage
+          pageTitle={pageTitle}
+          presentations={signings}
+          images={BOOK_SIGNING_IMAGES}
+          mapIntroText={`To date, I have done ${pastSignings} book signings at conferences around
+          the world. Click a ${MAP_PIN} on the map for more information.`}
+          relatedContent={relatedContent}
+          funFacts={FUN_FACTS}
+          header={
             <div className="flex flex-col items-center mt-10 md:mt-0">
               <img
                 src="/assets/events/book-signings/first-book-signing.png"
@@ -101,32 +99,8 @@ export default function BookSignings() {
                 <br />
               </div>
             </div>
-            <PhotoGallery
-              photos={BOOK_SIGNING_IMAGES}
-              shufflePhotos
-              titleClassName={subsectionTitleClassName}
-              promptClassName="text-center md:text-left"
-            />
-            <EventMap
-              introText={`To date, I have done ${pastSignings} book signings at conferences around
-              the world. Click a ${MAP_PIN} on the map for more information.`}
-              liveEvents={signings}
-              excludeTypeColumn
-              titleClassName={subsectionTitleClassName}
-            />
-            <div id="fun-facts">
-              <h2 className={subsectionTitleClassName}>Fun facts</h2>
-              <p className="text-center md:text-left mb-5">
-                Hover over each of the cards to reveal a fun fact about my book signing events.
-              </p>
-              <MysteryCards cards={FUN_FACTS} color={'bg-orange-100'} />
-            </div>
-            <RelatedContentSection
-              relatedContent={relatedContent}
-              titleClassName={subsectionTitleClassName}
-            />
-          </EvenlySpacedSections>
-        </div>
+          }
+        />
       </Container>
     </Layout>
   );

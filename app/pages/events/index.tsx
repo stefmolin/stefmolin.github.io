@@ -4,13 +4,10 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import FancyDivider from '../../components/dividers/fancy-divider';
-import EventMap from '../../components/events/event-map';
-import EventStatsSection from '../../components/events/event-stats-section';
+import anchorLink, { linkClassName } from '../../components/events/event-anchor-link';
+import EventPage from '../../components/events/event-page';
 import Layout from '../../components/page-layout/layout';
-import PhotoGallery from '../../components/photo-gallery';
-import RelatedContentSection from '../../components/related-content/related-content';
 import Container from '../../components/sections/container';
-import EvenlySpacedSections from '../../components/sections/evenly-spaced-sections';
 import { MAP_PIN } from '../../data/constants';
 import CONTENT_LINKS from '../../data/content-links';
 import { LIVE_PRESENTATIONS } from '../../data/events';
@@ -32,13 +29,7 @@ const relatedContent = [
 export default function Index() {
   const seoImage = CONTENT_LINKS.EVENTS.image;
   const pageTitle = 'Events';
-  const subsectionTitleClassName = 'text-center md:text-left text-3xl mb-5';
-  const linkClassName = 'text-slate-700 hover:text-slate-500 underline';
-  const anchorLink = (fragment: string, text: string | React.ReactNode) => (
-    <Link href={fragment} className={linkClassName}>
-      {text}
-    </Link>
-  );
+
   return (
     <Layout>
       <Container>
@@ -57,9 +48,15 @@ export default function Index() {
             ],
           }}
         />
-        <div className="-mt-4 mb-20 max-w-5xl -mx-4 sm:mx-auto">
-          <h1 className="text-6xl md:text-7xl mb-2 text-center">{pageTitle}</h1>
-          <EvenlySpacedSections className="my-10">
+        <EventPage
+          pageTitle={pageTitle}
+          presentations={LIVE_PRESENTATIONS}
+          images={EVENT_IMAGES}
+          mapIntroText={`Click a ${MAP_PIN} on the map to see the events I have participated in
+          around the world.`}
+          relatedContent={relatedContent}
+          showStats
+          header={
             <div className="flex flex-col items-center">
               <FancyDivider className="w-1/2 mx-auto pb-5">
                 <FontAwesomeIcon icon={faLightbulb} className="px-5" fixedWidth />
@@ -78,28 +75,8 @@ export default function Index() {
                 .
               </p>
             </div>
-            <PhotoGallery
-              photos={EVENT_IMAGES}
-              shufflePhotos
-              titleClassName={subsectionTitleClassName}
-              promptClassName="text-center md:text-left"
-            />
-            <EventStatsSection
-              sessions={LIVE_PRESENTATIONS}
-              titleClassName={subsectionTitleClassName}
-            />
-            <EventMap
-              introText={`Click a ${MAP_PIN} on the map to see the events I have participated in
-              around the world.`}
-              liveEvents={LIVE_PRESENTATIONS}
-              titleClassName={subsectionTitleClassName}
-            />
-            <RelatedContentSection
-              relatedContent={relatedContent}
-              titleClassName={subsectionTitleClassName}
-            />
-          </EvenlySpacedSections>
-        </div>
+          }
+        />
       </Container>
     </Layout>
   );
