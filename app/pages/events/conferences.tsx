@@ -61,7 +61,7 @@ export default function Conferences() {
             ],
           }}
         />
-        <div className="mt-4 mb-20 max-w-5xl mx-auto">
+        <div className="-mt-4 mb-20 max-w-5xl -mx-4 sm:mx-auto">
           <h1 className="text-5xl md:text-7xl mb-2 text-center">{pageTitle}</h1>
 
           <EvenlySpacedSections className="my-10">
@@ -89,6 +89,7 @@ export default function Conferences() {
               photos={CONFERENCE_IMAGES}
               shufflePhotos
               titleClassName={subsectionTitleClassName}
+              promptClassName="text-center md:text-left"
             />
             <EventStatsSection
               sessions={presentations}
@@ -103,10 +104,12 @@ export default function Conferences() {
             />
             <div
               id="origin-story"
-              className="text-lg border-2 border-slate-100 rounded-lg px-4 bg-slate-50 shadow-lg xl:w-5/6 mx-auto"
+              className="sm:text-lg border-2 border-slate-100 rounded-lg px-4 bg-slate-50 shadow-lg xl:w-5/6 -mx-2 sm:mx-auto"
             >
-              <p className={classNames('pt-10 px-10', subsectionTitleClassName)}>My origin story</p>
-              <div className="mt-5 px-10 py-5 text-justify space-y-4">
+              <p className={classNames('pt-10 px-2 sm:px-10', subsectionTitleClassName)}>
+                My origin story
+              </p>
+              <div className="mt-5 px-2 sm:px-10 py-5 sm:text-justify space-y-4">
                 <p>
                   I used to be TERRIFIED of public speaking. After writing my{' '}
                   <Link href={CONTENT_LINKS.PANDAS_BOOK_1.link} className={linkClassName}>
@@ -121,7 +124,7 @@ export default function Conferences() {
 
                 <img
                   src="/assets/events/conferences/conference-badges.jpg"
-                  className="w-48 h-48 rounded-full mx-auto z-10 object-cover"
+                  className="hidden sm:block sm:w-48 sm:h-48 rounded-full mx-auto z-10 object-cover"
                   alt="Signing a book at my first book signing event."
                 />
                 <p>

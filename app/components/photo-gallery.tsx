@@ -12,11 +12,13 @@ import 'yet-another-react-lightbox/plugins/captions.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 import Pagination from './pagination';
 import PageSection, { type PageSectionProps } from './sections/page-section';
+import classNames from 'classnames';
 
 interface PhotoGalleryProps extends Omit<PageSectionProps, 'children'> {
   photos: Photo[];
   shufflePhotos?: boolean;
   padding?: number;
+  promptClassName?: string;
 }
 
 export default function PhotoGallery({
@@ -25,6 +27,7 @@ export default function PhotoGallery({
   shufflePhotos = false,
   title = 'Photo gallery 📷',
   titleClassName,
+  promptClassName,
   padding = 0,
 }: PhotoGalleryProps) {
   const photoGalleryRef = useRef<null | HTMLDivElement>(null);
@@ -49,7 +52,9 @@ export default function PhotoGallery({
       title={title}
       titleClassName={titleClassName}
     >
-      <p className="mb-5">Click on a photo to learn more about it.</p>
+      <p className={classNames('mb-5', promptClassName)}>
+        Click on a photo to learn more about it.
+      </p>
       <PhotoAlbum
         layout="rows"
         photos={photoArray.slice(offset, offset + photosPerPage)}

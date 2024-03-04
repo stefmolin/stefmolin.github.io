@@ -1,11 +1,12 @@
-import Link from 'next/link';
 import classNames from 'classnames';
+import Link from 'next/link';
+import CONTENT_LINKS from '../../data/content-links';
 import { type ConferencePresentation, type LivePresentation } from '../../interfaces/event';
 import { getConferenceEventMapAnnotations } from '../../lib/events';
-import InteractiveMap from '../maps/interactive-map';
-import CONTENT_LINKS from '../../data/content-links';
-import PushPinClickPrompt from '../maps/push-pin-click-prompt';
+import { useWindowSize } from '../../lib/hooks/window-size';
 import ExternalLink from '../links/external-link';
+import InteractiveMap from '../maps/interactive-map';
+import PushPinClickPrompt from '../maps/push-pin-click-prompt';
 import PageSection from '../sections/page-section';
 
 export default function EventMap({
@@ -19,6 +20,9 @@ export default function EventMap({
   titleClassName?: string;
   excludeTypeColumn?: boolean;
 }) {
+  const { width } = useWindowSize();
+  const xsScreen = width && width < 464;
+  const noDateColumn = width && width < 350;
   const locationToEvents = getConferenceEventMapAnnotations(liveEvents);
   const linkClassName = 'text-slate-900 hover:underline hover:text-slate-600';
   const tableHeaderClassName = 'border-b border-slate-600 px-2 text-base';
@@ -31,18 +35,18 @@ export default function EventMap({
   return (
     <PageSection
       id="event-map"
-      divClassName="space-y-5"
+      divClassName="space-y-5 -mx-2 sm:mx-auto"
       title="Event map 🗺️"
       titleClassName={titleClassName}
     >
       <div>
-        <p>{introText}</p>
+        <p className="text-center md:text-left">{introText}</p>
         <InteractiveMap
           locations={locationToEvents}
           highlightedCountries={locationToEvents.map(({ country }) => country)}
           containerClassName="grid grid-row-2 gap-y-10 items-center mt-2"
-          pushPinMapClassName="mx-auto w-full sm:w-5/6 md:w-2/3 lg:w-1/2"
-          pushPinInfoClassName="flex flex-col items-center lg:px-6 xl:px-0"
+          pushPinMapClassName="mx-auto w-full md:w-5/6 lg:w-2/3"
+          pushPinInfoClassName="flex flex-col items-center px-2 sm:px-0 lg:px-6 xl:px-0"
           getDisplayInfo={(pin: ConferencePresentation | undefined) => {
             if (pin == null) return <PushPinClickPrompt />;
             return (
@@ -59,8 +63,10 @@ export default function EventMap({
                 </caption>
                 <thead>
                   <tr>
-                    <th className={tableHeaderClassName}>Date</th>
-                    {excludeTypeColumn ? null : <th className={tableHeaderClassName}>Type</th>}
+                    {noDateColumn ? null : <th className={tableHeaderClassName}>Date</th>}
+                    {excludeTypeColumn || xsScreen ? null : (
+                      <th className={tableHeaderClassName}>Type</th>
+                    )}
                     <th className={tableHeaderClassName}>Title</th>
                     <th className={tableHeaderClassName}>Event</th>
                   </tr>
@@ -73,8 +79,10 @@ export default function EventMap({
                       <tr
                         key={`${date}-${event.location.city}-${event.location.country}-${presentation.title}`}
                       >
-                        <td className={classNames(tableClassName, 'text-nowrap')}>{date}</td>
-                        {excludeTypeColumn ? null : (
+                        {noDateColumn ? null : (
+                          <td className={classNames(tableClassName, 'text-nowrap')}>{date}</td>
+                        )}
+                        {excludeTypeColumn || xsScreen ? null : (
                           <td className={tableClassName}>
                             <Link
                               href={{
@@ -109,6 +117,20 @@ export default function EventMap({
                           ) : (
                             eventName
                           )}
+                          {noDateColumn && <> {date.slice(0, 4)}</>}
+                          {xsScreen && !excludeTypeColumn ? (
+                            <>
+                              {' '}
+                              <Link
+                                href={{
+                                  pathname: contentClassLinks[presentation.contentClass],
+                                }}
+                                className={linkClassName}
+                              >
+                                {presentation.contentClass}
+                              </Link>
+                            </>
+                          ) : null}
                         </td>
                       </tr>
                     );

@@ -3,6 +3,7 @@ import { faCaretLeft, faCaretRight, faEllipsis } from '@fortawesome/free-solid-s
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import ReactPaginate from 'react-paginate';
+import { useWindowSize } from '../lib/hooks/window-size';
 
 interface PaginationProps {
   itemsPerPage: number;
@@ -17,6 +18,7 @@ export default function Pagination({
   setOffset,
   totalItems,
 }: PaginationProps) {
+  const { width } = useWindowSize();
   const onPageChange = ({ selected }) => {
     setOffset((selected * itemsPerPage) % totalItems);
     if (scrollRef.current != null) scrollRef.current.scrollIntoView();
@@ -41,8 +43,8 @@ export default function Pagination({
         </>
       }
       onPageChange={onPageChange}
-      pageRangeDisplayed={2}
-      marginPagesDisplayed={2}
+      pageRangeDisplayed={width && width < 300 ? 1 : 2}
+      marginPagesDisplayed={width && width < 300 ? 1 : 2}
       pageCount={Math.ceil(totalItems / itemsPerPage)}
       renderOnZeroPageCount={null}
       className={classNames(

@@ -3,8 +3,7 @@ import { MAP_PIN } from '../../data/constants';
 import type MapLocation from '../../interfaces/map-location';
 import { useState } from 'react';
 
-// TODO: make the zoomable part optional bc it is annoying that when you zoom in the most possible and
-// it scrolls the page down (for events pages); same thing with zooming out and going up
+// TopoJSON files can be downloaded from https://github.com/topojson/world-atlas if needed
 
 export interface PushPinMapProps {
   locations: MapLocation[];
@@ -30,8 +29,8 @@ export interface PushPinMapProps {
 export default function PushPinMap({
   locations,
   highlightedCountries,
-  countryHighlightColor = '#ffd7a6', // TODO: when color scheme is chosen, the highlight color needs to be used here (should call it `highlight` in tailwind so i can easily change later)
-  countryFadeColor = '#000',
+  countryHighlightColor = '#FFD7A6', // TODO: when color scheme is chosen, the highlight color needs to be used here (should call it `highlight` in tailwind so i can easily change later)
+  countryFadeColor = '#454955',
   countryHighlightOpacity = 0.5,
   countryFadeOpacity = 0.1,
   countryOutlineColor = 'black',
@@ -41,8 +40,8 @@ export default function PushPinMap({
   maxPinSize = 25,
   pinColor = '#FF5533',
   projection = 'geoMercator',
-  projectionCenter = [-50, 50],
-  projectionScale = 200,
+  projectionCenter = [-20, 35],
+  projectionScale = 130,
   geography = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json', // TODO: include the geographies file in this repo to avoid the issues those examples had?
   onPinClick,
   className,
@@ -50,7 +49,7 @@ export default function PushPinMap({
   const minZoom = 1;
   const maxZoom = 8;
   const [zoomLevel, updateZoomLevel] = useState<number>(minZoom);
-  const minPinSize = Math.ceil(maxPinSize / maxZoom);
+  const minPinSize = Math.max(2, Math.ceil(maxPinSize / maxZoom));
 
   const [minPinStickSize, maxPinStickSize] = [3, 16];
 

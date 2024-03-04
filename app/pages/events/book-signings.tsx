@@ -76,7 +76,7 @@ export default function BookSignings() {
             ],
           }}
         />
-        <div className="mt-4 mb-20 max-w-5xl mx-auto">
+        <div className="-mt-4 mb-20 max-w-5xl -mx-4 sm:mx-auto">
           <h1 className="text-5xl md:text-7xl mb-2 text-center">{pageTitle}</h1>
           <EvenlySpacedSections className="my-10">
             <div className="flex flex-col items-center mt-10 md:mt-0">
@@ -85,9 +85,9 @@ export default function BookSignings() {
                 className="hidden md:block w-48 h-48 rounded-full mx-auto -mb-24 z-10 object-cover"
                 alt="Signing a book at my first book signing event."
               />
-              <div className="text-lg border-2 border-slate-100 rounded-lg px-4 lg:w-2/3 bg-slate-50 shadow-lg">
-                <p className="pt-10 px-5 md:px-10">Dear reader,</p>
-                <p className="mt-5 px-5 md:px-10 py-5 md:text-justify">
+              <div className="sm:text-lg border-2 border-slate-100 rounded-lg px-4 lg:w-2/3 bg-slate-50 shadow-lg">
+                <p className="pt-10 px-2 sm:px-5 md:px-10">Dear reader,</p>
+                <p className="mt-5 px-2 sm:px-5 md:px-10 py-5 md:text-justify">
                   Book signings have given me several memories that I will cherish forever. I love
                   hearing about everyone's journeys, providing (solicited) advice, and hearing from
                   readers. On this page you will find {anchorLink('#photos', 'photos')} from past
@@ -95,7 +95,7 @@ export default function BookSignings() {
                   events, along with some {anchorLink('#fun-facts', 'fun facts')} about these
                   events. I hope to see <em>you</em> at a future event!
                 </p>
-                <p className="px-5 md:px-10 pb-5 text-right">
+                <p className="px-2 sm:px-5 md:px-10 pb-5 text-right">
                   &ndash; <em>Stefanie</em>
                 </p>
                 <br />
@@ -105,6 +105,7 @@ export default function BookSignings() {
               photos={BOOK_SIGNING_IMAGES}
               shufflePhotos
               titleClassName={subsectionTitleClassName}
+              promptClassName="text-center md:text-left"
             />
             <EventMap
               introText={`To date, I have done ${pastSignings} book signings at conferences around
@@ -115,7 +116,7 @@ export default function BookSignings() {
             />
             <div id="fun-facts">
               <h2 className={subsectionTitleClassName}>Fun facts</h2>
-              <p className="mb-5">
+              <p className="text-center md:text-left mb-5">
                 Hover over each of the cards to reveal a fun fact about my book signing events.
               </p>
               <MysteryCards cards={FUN_FACTS} color={'bg-orange-100'} />

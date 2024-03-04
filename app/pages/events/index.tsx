@@ -57,7 +57,7 @@ export default function Index() {
             ],
           }}
         />
-        <div className="mt-4 mb-20 max-w-5xl mx-auto">
+        <div className="-mt-4 mb-20 max-w-5xl -mx-4 sm:mx-auto">
           <h1 className="text-6xl md:text-7xl mb-2 text-center">{pageTitle}</h1>
           <EvenlySpacedSections className="my-10">
             <div className="flex flex-col items-center">
@@ -82,6 +82,7 @@ export default function Index() {
               photos={EVENT_IMAGES}
               shufflePhotos
               titleClassName={subsectionTitleClassName}
+              promptClassName="text-center md:text-left"
             />
             <EventStatsSection
               sessions={LIVE_PRESENTATIONS}

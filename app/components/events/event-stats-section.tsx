@@ -1,4 +1,6 @@
+import classNames from 'classnames';
 import { type LivePresentation } from '../../interfaces/event';
+import { useWindowSize } from '../../lib/hooks/window-size';
 import CollapsibleSection from '../sections/collapsible-section';
 import PageSection from '../sections/page-section';
 import EventStatsGrid from './event-stats-grid';
@@ -12,21 +14,29 @@ export default function EventStatsSection({
   titleClassName?: string;
   includeYearsActive?: boolean;
 }) {
+  const { width } = useWindowSize();
   const statCardLinkClassName = 'text-blue-800';
   return (
     <PageSection id="stats" title="Event statistics" titleClassName={titleClassName}>
-      <p className="mb-5">
-        Click <span className={statCardLinkClassName}>blue</span> text for more information.
+      <p className="text-center md:text-left mb-5">
+        The statistics below are for past events only. Click{' '}
+        <span className={statCardLinkClassName}>blue</span> text for more information.
       </p>
-      {includeYearsActive ? (
-        <>
-          <EventStatsGrid className="pb-4" sessions={sessions} includeYearsActive />
-          <CollapsibleSection prompt="Yearly breakdown">
-            <EventStatsGrid sessions={sessions} yearlyCountsOnly className="px-2" />
-          </CollapsibleSection>
-        </>
-      ) : (
-        <EventStatsGrid sessions={sessions} linkClassName={statCardLinkClassName} />
+      <EventStatsGrid
+        className={classNames({ 'pb-4': includeYearsActive })}
+        sessions={sessions}
+        linkClassName={statCardLinkClassName}
+        includeYearsActive={includeYearsActive}
+      />
+      {includeYearsActive && width && width > 1024 && (
+        <CollapsibleSection prompt="Yearly breakdown">
+          <EventStatsGrid
+            sessions={sessions}
+            yearlyCountsOnly
+            className="mx-2"
+            linkClassName={statCardLinkClassName}
+          />
+        </CollapsibleSection>
       )}
     </PageSection>
   );
