@@ -1,5 +1,7 @@
 import classNames from 'classnames';
+import Script from 'next/script';
 import { useState } from 'react';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import Footer from './footer';
 import Header from './header';
 import Meta from './meta';
@@ -21,6 +23,9 @@ const Layout = ({ children, className, styleProps }: Props) => {
         {!showMenuOverlay && <main>{children}</main>}
       </div>
       {!showMenuOverlay && <Footer />}
+      <Script src="https://kit.fontawesome.com/0dd30c21ea.js" crossOrigin="anonymous" />
+      <Script src="/copy-code.js" />
+      <GoogleAnalytics gaId="G-25389D1SR4" />
     </>
   );
 };
