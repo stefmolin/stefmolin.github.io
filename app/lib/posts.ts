@@ -76,7 +76,7 @@ export function getPostsByTag(tag: string, fields: string[] = []) {
       allPosts: posts.filter((post) => post.tags.includes(tag)),
       kind: 'tag',
       title: tag,
-      description: 'Searching by tag.',
+      description: "Searching Stefanie Molin's posts by tag.",
     },
   };
 }
@@ -90,7 +90,7 @@ export function getPostsByTheme(theme: string[], fields: string[] = []) {
       ),
       kind: 'theme',
       title: theme,
-      description: 'Searching by theme.',
+      description: `Posts by Stefanie Molin categorized as '${theme}'`,
     },
   };
 }
