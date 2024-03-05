@@ -147,8 +147,8 @@ const Footer = () => {
         <div className="flex flex-col lg:text-left pt-2 sm:pt-4 lg:pt-0">
           <span>All opinions are my own.</span>
           <span>
-            <span className="sm:text-nowrap">
-              Copyright &#169; 2019&ndash;
+            <span className="text-nowrap">
+              <span className="hidden sm:inline-flex pr-1">Copyright</span>&#169; 2019&ndash;
               {DateTime.now().year} Stefanie Molin.
             </span>{' '}
             <span className="text-nowrap">All rights reserved.</span>
