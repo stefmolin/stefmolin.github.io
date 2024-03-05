@@ -60,96 +60,100 @@ export default function Post({ post, suggestedPosts }: Props) {
           <PostTitle title="Loading…" />
         ) : (
           <>
-            <article className="mb-32">
-              <NextSeo
-                title={post.title}
-                description={post.subtitle || post.title}
-                canonical={post.canonical}
-                openGraph={{
-                  type: 'article',
-                  url: pageURL,
-                  article: {
-                    publishedTime: post.date,
-                    modifiedTime: post.modified,
-                    section: post.type === 'blog' ? 'Blog' : 'Technology',
-                    authors: [HOME_URL],
-                    tags: post.tags,
+            <NextSeo
+              title={post.title}
+              description={post.subtitle || post.title}
+              canonical={post.canonical}
+              openGraph={{
+                type: 'article',
+                url: pageURL,
+                article: {
+                  publishedTime: post.date,
+                  modifiedTime: post.modified,
+                  section: post.type === 'blog' ? 'Blog' : 'Technology',
+                  authors: [HOME_URL],
+                  tags: post.tags,
+                },
+                images: [
+                  {
+                    url: ogImageURL,
+                    width: post.ogImage.width,
+                    height: post.ogImage.height,
+                    alt:
+                      post.ogImage.caption ?? `Cover image for "${post.title}" by Stefanie Molin.`,
                   },
-                  images: [
-                    {
-                      url: ogImageURL,
-                      width: post.ogImage.width,
-                      height: post.ogImage.height,
-                      alt:
-                        post.ogImage.caption ??
-                        `Cover image for "${post.title}" by Stefanie Molin.`,
-                    },
-                  ],
-                }}
-              />
+                ],
+              }}
+            />
+            <article
+              className={classNames('-mt-4 -mx-5 sm:mx-auto', {
+                'mb-32': suggestedPosts.length === 0,
+                'mb-20': suggestedPosts.length > 0,
+              })}
+            >
               <PostHeader post={post} />
-              <div>
-                {/* This only shows on larger screens */}
-                <div className="hidden lg:block lg:sticky lg:top-1/3 lg:float-right lg:text-center">
+              {/* This only shows on larger screens */}
+              <div className="hidden lg:flex sticky top-20 float-right text-center items-start justify-center">
+                <div>
                   Share
                   <SocialShareButtons {...socialButtonsProps} iconSize={35} />
                 </div>
-                <PostBody content={post.content}>
-                  <PostTags tags={post.tags} />
-                  <div
-                    className={classNames(
-                      'flex flex-row items-center justify-center space-x-2',
-                      'text-xl sm:text-3xl md:text-4xl',
-                      'mt-5',
-                      'opacity-10',
-                    )}
-                  >
-                    <FontAwesomeIcon icon={faUserPlus} />
-                  </div>
-                  <div className="flex flex-col items-center justify-center mt-5 mb-10">
-                    <p className="md:text-lg lg:text-xl mb-5 text-center">
-                      <FontAwesomeIcon icon={faBell} shake className="pr-2" />
-                      Never miss a post:{' '}
-                      <ExternalLink
-                        href={NEWSLETTER_URL}
-                        className="font-bold underline decoration-yellow-400 hover:text-slate-700"
-                      >
-                        sign up for my newsletter
-                      </ExternalLink>
-                      .
-                    </p>
-                    <FollowButtons
-                      className="text-lg sm:text-2xl md:text-3xl mx-5 sm:mx-3"
-                      feed={post.slug[0] as FollowButtonsProps['feed']}
-                      withDivider
-                    />
-                  </div>
-                  <Giscus
-                    id="comments"
-                    repo="stefmolin/comments"
-                    repoId="R_kgDOLEl3Hw"
-                    category="Announcements"
-                    categoryId="DIC_kwDOLEl3H84CcaE4"
-                    mapping="pathname"
-                    strict="1"
-                    reactionsEnabled="1"
-                    emitMetadata="0"
-                    inputPosition="top"
-                    theme="light"
-                    lang="en"
-                    loading="lazy"
-                  />
-                  <div className="flex space-x-2 justify-center content-center z-50 sticky bottom-0 bg-white pt-4 pb-2 lg:hidden">
-                    <SocialShareButtons
-                      {...socialButtonsProps}
-                      iconSize={width == null || width < 350 ? 25 : 30}
-                    />
-                  </div>
-                </PostBody>
               </div>
+              <PostBody content={post.content}>
+                <PostTags tags={post.tags} />
+                <div
+                  className={classNames(
+                    'flex flex-row items-center justify-center space-x-2',
+                    'text-xl sm:text-3xl md:text-4xl',
+                    'mt-5',
+                    'opacity-10',
+                  )}
+                >
+                  <FontAwesomeIcon icon={faUserPlus} />
+                </div>
+                <div className="flex flex-col items-center justify-center mt-5 mb-10">
+                  <p className="md:text-lg lg:text-xl mb-5 text-center">
+                    <FontAwesomeIcon icon={faBell} shake className="pr-2" />
+                    Never miss a post:{' '}
+                    <ExternalLink
+                      href={NEWSLETTER_URL}
+                      className="font-bold underline decoration-yellow-400 hover:text-slate-700"
+                    >
+                      sign up for my newsletter
+                    </ExternalLink>
+                    .
+                  </p>
+                  <FollowButtons
+                    className="text-lg sm:text-2xl md:text-3xl mx-2 sm:mx-3"
+                    feed={post.slug[0] as FollowButtonsProps['feed']}
+                    withDivider
+                  />
+                </div>
+                <Giscus
+                  id="comments"
+                  repo="stefmolin/comments"
+                  repoId="R_kgDOLEl3Hw"
+                  category="Announcements"
+                  categoryId="DIC_kwDOLEl3H84CcaE4"
+                  mapping="pathname"
+                  strict="1"
+                  reactionsEnabled="1"
+                  emitMetadata="0"
+                  inputPosition="top"
+                  theme="light"
+                  lang="en"
+                  loading="lazy"
+                />
+                <div className="absolute flex space-x-2 justify-center content-center z-40 sticky bottom-0 bg-white pt-4 pb-2 lg:hidden -mx-px">
+                  <SocialShareButtons
+                    {...socialButtonsProps}
+                    iconSize={width == null || width < 350 ? 25 : 30}
+                  />
+                </div>
+              </PostBody>
             </article>
             {suggestedPosts.length > 0 ? (
-              <div className="mb-32">
+              <div className="lg:max-w-5xl -mx-5 sm:mx-auto mb-32">
                 <PostListing posts={suggestedPosts} title="You may also like" />
               </div>
             ) : null}

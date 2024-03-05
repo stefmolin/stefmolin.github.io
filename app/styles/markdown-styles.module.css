@@ -7,6 +7,7 @@
 .markdown ol,
 .markdown blockquote {
   @apply my-6;
+  @apply text-pretty;
 }
 
 .markdown h2 {

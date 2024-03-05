@@ -7,6 +7,7 @@ interface TooltipProps {
   backgroundClassName: string;
   borderClassName: string;
   tooltipArrowClassName: string;
+  positionClassName?: string;
 }
 
 export default function Tooltip({
@@ -15,6 +16,7 @@ export default function Tooltip({
   backgroundClassName,
   borderClassName,
   tooltipArrowClassName,
+  positionClassName = 'left-1/2',
 }: TooltipProps) {
   // based on https://codesandbox.io/p/devbox/tailwind-react-tooltip-with-arrow-dfr22j?file=%2Fsrc%2FTooltip.js%3A10%2C17
   // dark theme: dark:bg-gray-800 dark:text-white
@@ -23,8 +25,9 @@ export default function Tooltip({
       {children}
       <div
         className={classNames(
-          'z-50 absolute left-1/2 top-4 mx-auto min-w-max -translate-x-1/2 scale-0 transform',
+          'z-50 absolute top-4 mx-auto min-w-min sm:min-w-max -translate-x-1/2 scale-0 transform',
           'rounded-lg px-3 py-2 text-xs font-medium transition-all duration-500 group-hover:scale-100',
+          positionClassName,
         )}
       >
         <div

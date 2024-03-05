@@ -10,7 +10,7 @@ const PostListing = ({ posts, title }: Props) => {
   return (
     <section>
       {title ? (
-        <h2 className="mb-8 text-3xl md:text-5xl font-bold tracking-tighter leading-tight">
+        <h2 className="mb-2 md:mb-8 text-3xl md:text-5xl font-bold tracking-tighter leading-tight text-center">
           {title}
         </h2>
       ) : null}
