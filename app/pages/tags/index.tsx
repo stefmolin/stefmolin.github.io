@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import Container from '../../components/sections/container';
 import Layout from '../../components/page-layout/layout';
 import TagListing, { type TagListingProps } from '../../components/feeds/tag-listing';
@@ -6,6 +7,7 @@ import { getAllPosts } from '../../lib/posts';
 export default function Index({ tagCounts }: Pick<TagListingProps, 'tagCounts'>) {
   return (
     <Layout>
+      <NextSeo title="Post Search" />
       <Container>
         <h1 className="text-2xl sm:text-3xl">Search posts by tag</h1>
         <TagListing

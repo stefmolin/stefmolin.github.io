@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import Container from '../components/sections/container';
 import Layout from '../components/page-layout/layout';
 import privacyStyles from '../styles/privacy-styles.module.css';
@@ -10,6 +11,7 @@ const linkProps = {
 export default function Index() {
   return (
     <Layout>
+      <NextSeo title="Privacy Policy" />
       <Container>
         <div className={privacyStyles['privacy-policy']}>
           <h1>Privacy Policy</h1>

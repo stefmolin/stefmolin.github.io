@@ -1,4 +1,5 @@
 import { useSearchParams } from 'next/navigation';
+import { NextSeo } from 'next-seo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Container from '../components/sections/container';
@@ -28,6 +29,7 @@ export default function ComingSoonish() {
         backgroundImage: 'url(/assets/under-construction.jpg)',
       }}
     >
+      <NextSeo title="Coming Soon" />
       <Container className="px-4 sm:px-10">
         <div className="-mt-8 sm:mt-4 max-w-5xl mx-auto p-6 sm:p-10 bg-white rounded-lg">
           <h1 className="text-2xl sm:text-3xl md:text-4xl text-center mb-2">Coming Soon(ish)</h1>

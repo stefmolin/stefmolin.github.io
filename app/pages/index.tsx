@@ -9,6 +9,7 @@ import { faBell, faCalendarCheck, faNewspaper } from '@fortawesome/free-regular-
 import classNames from 'classnames';
 import { DateTime } from 'luxon';
 import Link from 'next/link';
+import { NextSeo } from 'next-seo';
 import seedrandom from 'seedrandom';
 import Announcement from '../components/cards/announcement';
 import FollowButtons from '../components/follow';
@@ -118,6 +119,7 @@ export default function Home({
   );
   return (
     <Layout>
+      <NextSeo title="Stefanie Molin" titleTemplate="%s" />
       <Container>
         <div className="-mt-6 mb-20 max-w-5xl mx-auto">
           <EvenlySpacedSections className="my-10">
