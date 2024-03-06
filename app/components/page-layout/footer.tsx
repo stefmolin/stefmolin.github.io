@@ -89,77 +89,78 @@ const Footer = () => {
   const underlinedLinkClassName = 'text-slate-500 hover:text-slate-800 underline';
   return (
     <footer className="bg-neutral-50 border-t border-neutral-200 mx-auto px-10">
-      <div className="mt-5 flex flex-col lg:flex-row items-start lg:justify-between lg:px-4">
-        <div className="text-left lg:pr-10 lg:w-2/3 xl:mr-20">
-          <div className="flex flex-row items-center justify-center lg:justify-start">
-            <Avatar name="Stefanie Molin" picture={HEADSHOT} />
+      <div className="xl:max-w-screen-xl mx-auto">
+        <div className="mt-5 flex flex-col lg:flex-row items-start lg:justify-between lg:px-4">
+          <div className="text-left lg:pr-10 lg:w-2/3 xl:mr-20">
+            <div className="flex flex-row items-center justify-center lg:justify-start">
+              <Avatar name="Stefanie Molin" picture={HEADSHOT} />
+            </div>
+            <p className="pt-5">
+              Thank you for visiting my website! I am passionate about teaching data science and
+              software engineering skills to people of all levels. I have created multiple{' '}
+              <Link href="/workshops" className={underlinedLinkClassName}>
+                workshops
+              </Link>
+              ,{' '}
+              <Link href="/books" className={underlinedLinkClassName}>
+                books
+              </Link>
+              , and{' '}
+              <Link href="/articles" className={underlinedLinkClassName}>
+                articles
+              </Link>
+              , as well as contributed to various{' '}
+              <ExternalLink
+                className={underlinedLinkClassName}
+                href="https://github.com/search?q=is%3Apr+author%3Astefmolin+-user%3Astefmolin++is%3Amerged&type=pullrequests&state=closed&s=created&o=desc"
+              >
+                open source projects
+              </ExternalLink>
+              . If any of my content has helped you, please consider{' '}
+              <ExternalLink
+                className={underlinedLinkClassName}
+                href="https://www.buymeacoffee.com/stefanie.molin"
+              >
+                supporting
+              </ExternalLink>{' '}
+              me.
+            </p>
           </div>
-          <p className="pt-5">
-            Thank you for visiting my website! I am passionate about teaching data science and
-            software engineering skills to people of all levels. I have created multiple{' '}
-            <Link href="/workshops" className={underlinedLinkClassName}>
-              workshops
-            </Link>
-            ,{' '}
-            <Link href="/books" className={underlinedLinkClassName}>
-              books
-            </Link>
-            , and{' '}
-            <Link href="/articles" className={underlinedLinkClassName}>
-              articles
-            </Link>
-            , as well as contributed to various{' '}
-            <ExternalLink
-              className={underlinedLinkClassName}
-              href="https://github.com/search?q=is%3Apr+author%3Astefmolin+-user%3Astefmolin++is%3Amerged&type=pullrequests&state=closed&s=created&o=desc"
-            >
-              open source projects
-            </ExternalLink>
-            . If any of my content has helped you, please consider{' '}
-            <ExternalLink
-              className={underlinedLinkClassName}
-              href="https://www.buymeacoffee.com/stefanie.molin"
-            >
-              supporting
-            </ExternalLink>{' '}
-            me.
-          </p>
-        </div>
 
-        <hr className="lg:hidden my-8 w-full" />
-        <div className="flex w-full lg:w-auto items-center justify-center lg:justify-end">
-          <div className="flex flex-row items-start content-center lg:justify-end xl:ml-20">
-            <SubscribeToNewsletterForm />
+          <hr className="lg:hidden my-8 w-full" />
+          <div className="flex w-full lg:w-auto items-center justify-center lg:justify-end">
+            <div className="flex flex-row items-start content-center lg:justify-end xl:ml-20">
+              <SubscribeToNewsletterForm />
+            </div>
           </div>
         </div>
-      </div>
-      <hr className="lg:hidden mt-8 w-full" />
+        <hr className="lg:hidden mt-8 w-full" />
 
-      <SitemapLinks className="sm:px-5" />
+        <SitemapLinks className="sm:px-5" />
+        <FollowButtons
+          className="text-xl sm:text-3xl px-2 sm:px-5"
+          withDivider
+          dividerClassName="pt-6 pb-4 sm:py-10"
+        />
 
-      <FollowButtons
-        className="text-xl sm:text-3xl px-2 sm:px-5"
-        withDivider
-        dividerClassName="pt-6 pb-4 sm:py-10"
-      />
-
-      <div className="flex flex-col lg:flex-row justify-between items-center text-center px-2 pb-5">
-        <div className="flex flex-col lg:text-left pt-2 sm:pt-4 lg:pt-0">
-          <span>All opinions are my own.</span>
-          <span>
-            <span className="text-nowrap">
-              <span className="hidden sm:inline-flex pr-1">Copyright</span>&#169; 2019&ndash;
-              {DateTime.now().year} Stefanie Molin.
-            </span>{' '}
-            <span className="text-nowrap">All rights reserved.</span>
-          </span>
-        </div>
-        <div className="lg:text-right flex flex-col lg:flex-col pt-4 lg:pt-0">
-          <span className="hidden lg:block">
-            Made with <FontAwesomeIcon icon={faCoffee} />, <FontAwesomeIcon icon={faCode} />, and
-            lots of <FontAwesomeIcon icon={faHeart} beatFade />.
-          </span>
-          <FooterLinks />
+        <div className="flex flex-col lg:flex-row justify-between items-center text-center px-2 pb-5">
+          <div className="flex flex-col lg:text-left pt-2 sm:pt-4 lg:pt-0">
+            <span>All opinions are my own.</span>
+            <span>
+              <span className="text-nowrap">
+                <span className="hidden sm:inline-flex pr-1">Copyright</span>&#169; 2019&ndash;
+                {DateTime.now().year} Stefanie Molin.
+              </span>{' '}
+              <span className="text-nowrap">All rights reserved.</span>
+            </span>
+          </div>
+          <div className="lg:text-right flex flex-col lg:flex-col pt-4 lg:pt-0">
+            <span className="hidden lg:block">
+              Made with <FontAwesomeIcon icon={faCoffee} />, <FontAwesomeIcon icon={faCode} />, and
+              lots of <FontAwesomeIcon icon={faHeart} beatFade />.
+            </span>
+            <FooterLinks />
+          </div>
         </div>
       </div>
     </footer>

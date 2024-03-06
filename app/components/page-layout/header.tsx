@@ -106,9 +106,12 @@ export default function Header({
       )}
     >
       <div
-        className={classNames('py-2 text-2xl px-5 flex flex-row justify-between h-16', {
-          'items-center': !isOpen,
-        })}
+        className={classNames(
+          'xl:max-w-screen-xl mx-auto py-2 text-2xl px-5 flex flex-row justify-between h-16',
+          {
+            'items-center': !isOpen,
+          },
+        )}
       >
         <div
           className={classNames('flex flex-row justify-between w-full', {
