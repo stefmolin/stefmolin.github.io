@@ -17,4 +17,4 @@ export default function ArticleTheme(props: FeedType) {
 }
 
 export const getStaticProps = getPostThemeProps;
-export const getStaticPaths = getPostThemePaths;
+export const getStaticPaths = getPostThemePaths('articles');

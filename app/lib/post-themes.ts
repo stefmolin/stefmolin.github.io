@@ -25,8 +25,10 @@ export const getPostThemeProps = async ({ params }: Params) => {
   return { props };
 };
 
-export async function getPostThemePaths() {
-  const posts = getAllPosts(['theme', 'type']).filter((x) => x.theme && x.theme.length);
+export const getPostThemePaths = (category: 'articles' | 'blog') => async () => {
+  const posts = getAllPosts(['theme', 'type']).filter(
+    (x) => x.theme && x.theme.length && x.type === category,
+  );
   const themes = new Set<string>();
 
   posts.forEach((post) => {
@@ -40,4 +42,4 @@ export async function getPostThemePaths() {
     paths: Array.from(themes).map((theme) => ({ params: { theme: theme.split('/') } })),
     fallback: false,
   };
-}
+};
