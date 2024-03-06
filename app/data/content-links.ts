@@ -121,11 +121,12 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     link: '/talks/',
     contentClass: 'page',
     image: {
-      src: '/assets/articles/introducing-data-morph/panda-to-star.gif',
-      width: 774,
-      height: 379,
+      // TODO: should this be the SEO image also?
+      src: '/assets/talks/thumbnail.jpg',
+      width: 300,
+      height: 225,
       alt: 'Conference talks developed by Stefanie Molin.',
-    }, // TODO: finalize this image and rename appropriately
+    },
     title: 'Talks',
   },
   ARTICLES: {
