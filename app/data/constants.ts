@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 import type SEOImage from '../interfaces/seo-image';
 
-export const HEADSHOT = '/assets/avatar.jpeg';
+export const HEADSHOT = '/assets/portrait.jpeg';
 export const HOME_URL = 'https://stefaniemolin.com';
 export const NEWSLETTER_URL = 'https://newsletter.stefaniemolin.com';
 export const HOME_OG_IMAGE: SEOImage = {
