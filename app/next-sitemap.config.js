@@ -76,10 +76,10 @@ module.exports = {
     switch (path) {
       case '/':
         pagePriority = PRIORITIES.homePage;
-        pageChangefreq = 'weekly';
+        pageChangefreq = 'daily';
         break;
       case '/privacy-policy':
-        pagePriority = 0;
+        pagePriority = 0.01;
         pageChangefreq = 'yearly';
         break;
       case '/interviews':
