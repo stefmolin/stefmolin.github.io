@@ -10,6 +10,7 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       subtitle:
         'An introductory training designed to provide initial hands-on experience with the pandas library.',
       repo: 'pandas-workshop',
+      slidesLink: '/pandas-workshop/',
       coverImage: CONTENT_LINKS.PANDAS_WORKSHOP.image,
       description: [
         `Working with data can be challenging: it often doesn't come in the best format for analysis,
@@ -24,8 +25,6 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       directly makes it possible to create custom layouts, add annotations, *etc.*) and Seaborn (another
       plotting library, which features additional plot types and the ability to visualize long-format data).`,
       ],
-      slidesLink:
-        'https://stefaniemolin.com/pandas-workshop/slides/html/workshop.slides.html#/intro',
       duration: '3-4 hours',
       outline: {
         'Section 1: Getting Started With Pandas': `We will begin by introducing the \`Series\`, \`DataFrame\`,
@@ -85,6 +84,7 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       subtitle:
         'A workshop on creating static, animated, and interactive data visualizations in Python.',
       repo: 'python-data-viz-workshop',
+      slidesLink: '/python-data-viz-workshop/', // TODO: rework this to automatically be `/${repo}/`?
       coverImage: CONTENT_LINKS.DATA_VIZ_WORKSHOP.image,
       description: [
         `The human brain excels at finding patterns in visual representations, which is why data
@@ -100,8 +100,6 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       using Matplotlib and Bokeh (a Python library for generating interactive, JavaScript-powered
       visualizations) under the hood.`,
       ],
-      slidesLink:
-        'https://stefaniemolin.com/python-data-viz-workshop/slides/html/workshop.slides.html#/intro',
       duration: '4-6 hours',
       outline: {
         'Section 1: Getting Started With Matplotlib': `We will begin by familiarizing ourselves with
