@@ -138,8 +138,8 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
   BLOG: {
     link: '/blog/',
     contentClass: 'page',
-    image: { src: '/assets/articles/desk.jpg', width: 1152, height: 896 }, // TODO: should be travel related probably
-    title: 'Travel Blog',
+    image: { src: '/assets/blog/thumbnail.jpg', width: 400, height: 311 },
+    title: 'Blog',
   },
   BOOK_SIGNINGS: {
     link: '/events/book-signings/',
