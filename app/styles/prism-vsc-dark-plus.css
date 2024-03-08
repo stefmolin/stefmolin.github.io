@@ -308,3 +308,13 @@ pre[class*='language-'] button.copy-code-button {
 pre:not(:hover) button.copy-code-button {
   visibility: hidden;
 }
+
+/*********************************************************
+/* Make sure TOML is formatted correctly.
+By default the `table` class causes TOML tables to be
+incorrectly formatted as they become `display: table`.
+*/
+
+.token.table.class-name {
+  display: unset;
+}
