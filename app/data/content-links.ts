@@ -110,11 +110,11 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     link: '/workshops/',
     contentClass: 'page',
     image: {
-      src: '/assets/workshops/j1vnusMbXTuyRn8CZWZT--4--6d4uz.jpg',
+      src: '/assets/workshops/thumbnail.jpg',
       width: 1152,
       height: 896,
       alt: 'Conference talks developed by Stefanie Molin.',
-    }, // TODO: finalize this image and rename appropriately
+    },
     title: 'Workshops',
   },
   TALKS: {
