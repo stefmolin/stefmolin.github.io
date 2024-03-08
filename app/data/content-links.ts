@@ -132,7 +132,12 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
   ARTICLES: {
     link: '/articles/',
     contentClass: 'page',
-    image: { src: '/assets/articles/desk.jpg', width: 1152, height: 896 },
+    image: {
+      // TODO: should this be the SEO image also?
+      src: 'https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?q=80&w=2673&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      width: 400,
+      height: 311,
+    },
     title: 'Articles',
   },
   BLOG: {
