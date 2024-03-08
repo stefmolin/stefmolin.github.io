@@ -16,7 +16,7 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     link: '/workshops/python-data-viz-workshop',
     contentClass: 'workshop',
     image: {
-      src: '/assets/workshops/python-data-viz-workshop/cover-image.avif',
+      src: 'https://images.unsplash.com/photo-1517783999520-f068d7431a60?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2340&q=80',
       width: 2340,
       height: 1560,
     }, // TODO: change to just the image name and then use the link to find it (i.e. prepend "/assets")
