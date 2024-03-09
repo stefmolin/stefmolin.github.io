@@ -7,7 +7,6 @@ import SectionSeparator from '../../components/dividers/section-separator';
 import RelatedContentSection from '../../components/related-content/related-content';
 import ReviewsSection from '../../components/reviews/reviews-section';
 import { WORKSHOP_PAGE_MAPPING } from '../../data/workshops';
-import { usePageURL } from '../../lib/hooks/page-url';
 import { getImageLink } from '../../lib/images';
 import WorkshopOutline from '../../components/workshops/workshop-outline';
 import WorkshopMap from '../../components/workshops/workshop-map';
@@ -31,7 +30,6 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
           title={workshop.title}
           description={workshop.subtitle}
           openGraph={{
-            url: usePageURL(),
             images: [
               {
                 url: getImageLink(workshopCoverImage.src),

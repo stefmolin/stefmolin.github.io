@@ -1,6 +1,5 @@
 import { NextSeo } from 'next-seo';
 import { getLivePresentations } from '../../lib/events';
-import { usePageURL } from '../../lib/hooks/page-url';
 import { getImageLink } from '../../lib/images';
 import Layout from '../page-layout/layout';
 import Container from '../sections/container';
@@ -39,7 +38,6 @@ export default function PresentationListing({
           title={pageTitle}
           description={description}
           openGraph={{
-            url: usePageURL(),
             images: [
               {
                 url: getImageLink(seoImage.src),

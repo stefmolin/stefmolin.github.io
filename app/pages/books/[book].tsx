@@ -13,7 +13,6 @@ import Container from '../../components/sections/container';
 import { BOOK_PAGE_MAPPING } from '../../data/books';
 import { HOME_URL } from '../../data/constants';
 import { generateBookCoverAltText, generateBookPageTitle } from '../../lib/books';
-import { usePageURL } from '../../lib/hooks/page-url';
 import { useWindowSize } from '../../lib/hooks/window-size';
 import { getImageLink } from '../../lib/images';
 
@@ -35,7 +34,6 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
           description="A book by Stefanie Molin."
           openGraph={{
             type: 'book',
-            url: usePageURL(),
             book: {
               releaseDate: book.publicationDate,
               isbn: book.isbn,

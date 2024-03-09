@@ -8,7 +8,6 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Container from '../components/sections/container';
 import Layout from '../components/page-layout/layout';
-import { usePageURL } from '../lib/hooks/page-url';
 import { getImageLink } from '../lib/images';
 import type Interview from '../interfaces/interview';
 import PublicationDate from '../components/datetime/publication-date';
@@ -59,7 +58,6 @@ export default function Interviews() {
           title={pageTitle}
           description="A listing of interviews with Stefanie Molin."
           openGraph={{
-            url: usePageURL(),
             images: [
               {
                 url: getImageLink(seoImage.src),

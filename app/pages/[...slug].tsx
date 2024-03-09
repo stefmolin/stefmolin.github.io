@@ -37,11 +37,10 @@ export default function Post({ post, suggestedPosts }: Props) {
 
   const { width } = useWindowSize();
 
-  const pageURL = usePageURL();
   const ogImageURL = getImageLink(post.ogImage.url);
 
   const socialButtonsProps = {
-    url: pageURL,
+    url: usePageURL(),
     image: ogImageURL,
     emailSubject: post.title,
     emailBody: `Read this ${
@@ -66,7 +65,6 @@ export default function Post({ post, suggestedPosts }: Props) {
               canonical={post.canonical}
               openGraph={{
                 type: 'article',
-                url: pageURL,
                 article: {
                   publishedTime: post.date,
                   modifiedTime: post.modified,

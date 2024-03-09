@@ -57,7 +57,6 @@ export default function BookSignings() {
           title={pageTitle}
           description="Stefanie Molin's book signing events."
           openGraph={{
-            url: usePageURL(),
             images: [
               {
                 url: getImageLink(seoImage.src),

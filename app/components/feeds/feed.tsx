@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import { useRef, useState } from 'react';
 import type FeedType from '../../interfaces/feed';
-import { usePageURL } from '../../lib/hooks/page-url';
 import { useWindowSize } from '../../lib/hooks/window-size';
 import Layout from '../page-layout/layout';
 import Pagination from '../pagination';
@@ -22,13 +21,7 @@ const Feed = ({
   return (
     <>
       <Layout>
-        <NextSeo
-          title={subtitle ?? title}
-          description={description}
-          openGraph={{
-            url: usePageURL(),
-          }}
-        />
+        <NextSeo title={subtitle ?? title} description={description} />
         <Container>
           <div ref={feedRef} className="-mt-4 max-w-5xl -mx-4 sm:mx-auto mb-32">
             <h1 className="text-6xl md:text-7xl mb-2 text-center">{title}</h1>

@@ -9,7 +9,6 @@ import Container from '../../components/sections/container';
 import { BOOK_PAGES, GENERAL_FAQS } from '../../data/books';
 import CONTENT_LINKS from '../../data/content-links';
 import { generateBookPageLink } from '../../lib/books';
-import { usePageURL } from '../../lib/hooks/page-url';
 import { useWindowSize } from '../../lib/hooks/window-size';
 import { getImageLink } from '../../lib/images';
 
@@ -31,7 +30,6 @@ export default function Index() {
           title={pageTitle}
           description="A listing of books written by Stefanie Molin."
           openGraph={{
-            url: usePageURL(),
             images: [
               {
                 url: getImageLink(seoImage.src),

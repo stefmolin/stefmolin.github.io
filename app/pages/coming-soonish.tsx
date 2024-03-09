@@ -3,12 +3,12 @@ import { useSearchParams } from 'next/navigation';
 import { NextSeo } from 'next-seo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import Container from '../components/sections/container';
-import Layout from '../components/page-layout/layout';
-import CONTENT_LINKS from '../data/content-links';
-import RelatedContentSection from '../components/related-content/related-content';
 import ExternalLink from '../components/links/external-link';
+import Layout from '../components/page-layout/layout';
+import RelatedContentSection from '../components/related-content/related-content';
+import Container from '../components/sections/container';
 import Tooltip from '../components/tooltip';
+import CONTENT_LINKS from '../data/content-links';
 
 const relatedContent = [
   CONTENT_LINKS.ARTICLES,

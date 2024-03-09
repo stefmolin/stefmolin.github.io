@@ -2,6 +2,8 @@ import classNames from 'classnames';
 import Script from 'next/script';
 import { useState } from 'react';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { NextSeo } from 'next-seo';
+import { usePageURL } from '../../lib/hooks/page-url';
 import Footer from './footer';
 import Header from './header';
 import Meta from './meta';
@@ -19,6 +21,7 @@ const Layout = ({ children, className, isIFrame = false, styleProps }: Props) =>
   return (
     <>
       <Meta />
+      <NextSeo openGraph={{ url: usePageURL() }} />
       <div className={classNames('min-h-screen', className)} style={styleProps}>
         {!isIFrame && <Header isOpen={showMenuOverlay} setIsOpen={setShowMenuOverlay} />}
         {!showMenuOverlay && <main>{children}</main>}
