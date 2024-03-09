@@ -8,14 +8,10 @@ import {
   faLinkedin,
   faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import {
-  GITHUB_PROFILE,
-  LINKEDIN_PROFILE,
-  NEWSLETTER_URL,
-  TWITTER_HANDLE,
-} from '../data/constants';
+import { GITHUB_PROFILE, LINKEDIN_PROFILE, TWITTER_HANDLE } from '../data/constants';
 import FancyDivider from './dividers/fancy-divider';
 import ExternalLink from './links/external-link';
+import ResourceLink from './links/resource-link';
 
 export interface FollowButtonsProps {
   className?: string;
@@ -36,10 +32,15 @@ const FollowButtons = ({
   withoutNewsletter = false,
   withSupport = false,
 }: FollowButtonsProps) => {
-  const makeLink = (url: string, icon: IconDefinition) => (
-    <ExternalLink key={url} href={url} className="text-slate-600 hover:text-slate-800">
+  const makeLink = (url: string, icon: IconDefinition, isExternal: boolean = true) => (
+    <ResourceLink
+      key={url}
+      resourceLink={url}
+      className="text-slate-600 hover:text-slate-800"
+      linkClass={isExternal ? 'external' : 'internal'}
+    >
       <FontAwesomeIcon icon={icon} size={size} fixedWidth />
-    </ExternalLink>
+    </ResourceLink>
   );
   const buttons = (
     <div
@@ -48,7 +49,7 @@ const FollowButtons = ({
       {makeLink(GITHUB_PROFILE, faGithub)}
       {makeLink(LINKEDIN_PROFILE, faLinkedin)}
       {makeLink(`https://twitter.com/${TWITTER_HANDLE.replace('@', '')}`, faXTwitter)}
-      {!withoutNewsletter && makeLink(NEWSLETTER_URL, faEnvelopeOpenText)}
+      {!withoutNewsletter && makeLink('/newsletter', faEnvelopeOpenText, false)}
       {feed && makeLink(`/feeds/${feed}-rss.xml`, faRss)}
       {withSupport && makeLink('https://www.buymeacoffee.com/stefanie.molin', faHandHoldingDollar)}
     </div>

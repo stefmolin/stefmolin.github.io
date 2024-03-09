@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { NextSeo } from 'next-seo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +9,6 @@ import CONTENT_LINKS from '../data/content-links';
 import RelatedContentSection from '../components/related-content/related-content';
 import ExternalLink from '../components/links/external-link';
 import Tooltip from '../components/tooltip';
-import { NEWSLETTER_URL } from '../data/constants';
 
 const relatedContent = [
   CONTENT_LINKS.ARTICLES,
@@ -59,12 +59,12 @@ export default function ComingSoonish() {
               'resource you requested is'
             )}{' '}
             not completed yet. Check back soon, or better yet,{' '}
-            <ExternalLink
-              href={NEWSLETTER_URL}
+            <Link
+              href="/newsletter"
               className="py-px font-bold underline decoration-yellow-400 hover:text-slate-700"
             >
               sign up for my newsletter
-            </ExternalLink>
+            </Link>
             .
           </div>
           <RelatedContentSection

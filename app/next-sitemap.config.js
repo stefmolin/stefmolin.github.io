@@ -6,6 +6,7 @@ const PRIORITIES = {
   interviewsPage: 0.3,
   slidesAndProjects: 0.3,
   eventsPages: 0.4,
+  newsletterPages: 0.4,
   feedPage: 0.5,
   blogPost: 0.6,
   workshopsPages: 0.7,
@@ -48,6 +49,11 @@ const PAGE_CONFIGS = [
   {
     regex: /^\/tags\/?\w*/,
     priority: PRIORITIES.tagPages,
+    changefreq: 'yearly',
+  },
+  {
+    regex: /^\/newsletter\/?\w*/,
+    priority: PRIORITIES.newsletterPages,
     changefreq: 'yearly',
   },
   {

@@ -1,6 +1,7 @@
 import classNames from 'classnames';
-import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
@@ -8,7 +9,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Giscus from '@giscus/react';
 import PostListing from '../components/feeds/post-listing';
 import FollowButtons, { type FollowButtonsProps } from '../components/follow';
-import ExternalLink from '../components/links/external-link';
 import Layout from '../components/page-layout/layout';
 import PostBody from '../components/posts/post-body';
 import PostHeader from '../components/posts/post-header';
@@ -16,7 +16,7 @@ import PostTags from '../components/posts/post-tags';
 import PostTitle from '../components/posts/post-title';
 import SocialShareButtons from '../components/posts/social-share';
 import Container from '../components/sections/container';
-import { HOME_URL, NEWSLETTER_URL } from '../data/constants';
+import { HOME_URL } from '../data/constants';
 import type PostType from '../interfaces/post';
 import { usePageURL } from '../lib/hooks/page-url';
 import { useWindowSize } from '../lib/hooks/window-size';
@@ -115,12 +115,12 @@ export default function Post({ post, suggestedPosts }: Props) {
                   <p className="md:text-lg lg:text-xl mb-5 text-center">
                     <FontAwesomeIcon icon={faBell} shake className="pr-2" />
                     Never miss a post:{' '}
-                    <ExternalLink
-                      href={NEWSLETTER_URL}
+                    <Link
+                      href="/newsletter"
                       className="font-bold underline decoration-yellow-400 hover:text-slate-700"
                     >
                       sign up for my newsletter
-                    </ExternalLink>
+                    </Link>
                     .
                   </p>
                   <FollowButtons

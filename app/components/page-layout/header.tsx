@@ -4,7 +4,6 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import Hamburger from 'hamburger-react';
 import Link from 'next/link';
 import { Dispatch, SetStateAction } from 'react';
-import { NEWSLETTER_URL } from '../../data/constants';
 
 function HeaderDropdown({
   children,
@@ -81,7 +80,7 @@ function NavigationLinks({
       {separator}
       {makeLink('Events', '/events', 'delay-300', transition)}
       {separator}
-      {makeLink('Newsletter', NEWSLETTER_URL, 'delay-500', transition)}
+      {makeLink('Newsletter', '/newsletter', 'delay-500', transition)}
     </div>
   );
 }
