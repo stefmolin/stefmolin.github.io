@@ -10,19 +10,20 @@ type Props = {
   children: React.ReactNode;
   className?: string;
   styleProps?: Record<string, string | number>;
+  isIFrame?: boolean;
 };
 
-const Layout = ({ children, className, styleProps }: Props) => {
+const Layout = ({ children, className, isIFrame = false, styleProps }: Props) => {
   const [showMenuOverlay, setShowMenuOverlay] = useState(false);
 
   return (
     <>
       <Meta />
       <div className={classNames('min-h-screen', className)} style={styleProps}>
-        <Header isOpen={showMenuOverlay} setIsOpen={setShowMenuOverlay} />
+        {!isIFrame && <Header isOpen={showMenuOverlay} setIsOpen={setShowMenuOverlay} />}
         {!showMenuOverlay && <main>{children}</main>}
       </div>
-      {!showMenuOverlay && <Footer />}
+      {!isIFrame && !showMenuOverlay && <Footer />}
       <Script src="https://kit.fontawesome.com/0dd30c21ea.js" crossOrigin="anonymous" />
       <Script src="/copy-code.js" />
       <GoogleAnalytics gaId="G-25389D1SR4" />
