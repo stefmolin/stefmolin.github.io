@@ -1,10 +1,18 @@
 import { NextSeo } from 'next-seo';
 import Layout from '../../components/page-layout/layout';
 
-export default function EmbeddedPage({ pageTitle, src }: { pageTitle: string; src: string }) {
+export default function EmbeddedPage({
+  description,
+  pageTitle,
+  src,
+}: {
+  description: string;
+  pageTitle: string;
+  src: string;
+}) {
   return (
     <Layout isIFrame>
-      <NextSeo title={pageTitle} />
+      <NextSeo title={pageTitle} description={description} />
       <iframe
         src={src}
         allow="same-site"
