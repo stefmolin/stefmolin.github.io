@@ -4,6 +4,7 @@ const PRIORITIES = {
   aboutPages: 0.1,
   tagPages: 0.2,
   interviewsPage: 0.3,
+  slidesAndProjects: 0.3,
   eventsPages: 0.4,
   feedPage: 0.5,
   blogPost: 0.6,
@@ -97,14 +98,31 @@ module.exports = {
     };
   },
 
-  // TODO: add slides?
   additionalPaths: async (config) => [
-    // {
-    //   loc: '/',
-    //   changefreq: 'weekly',
-    //   priority: PRIORITIES.homePage,
-    //   lastmod: now,
-    // },
+    {
+      loc: '/data-morph',
+      changefreq: 'yearly',
+      priority: PRIORITIES.slidesAndProjects,
+      lastmod: now,
+    },
+    {
+      loc: '/data-morph-talk',
+      changefreq: 'yearly',
+      priority: PRIORITIES.slidesAndProjects,
+      lastmod: now,
+    },
+    {
+      loc: '/pandas-workshop',
+      changefreq: 'yearly',
+      priority: PRIORITIES.slidesAndProjects,
+      lastmod: now,
+    },
+    {
+      loc: '/python-data-viz-workshop',
+      changefreq: 'yearly',
+      priority: PRIORITIES.slidesAndProjects,
+      lastmod: now,
+    },
   ],
   exclude: ['/coming-soonish'],
 };
