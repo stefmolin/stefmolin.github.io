@@ -26,12 +26,7 @@ export default function EmbeddedPage({
           ],
         }}
       />
-      <iframe
-        src={src}
-        allow="same-site"
-        className="h-screen w-screen"
-        referrerPolicy="same-origin"
-      />
+      <iframe src={src} className="h-screen w-screen" referrerPolicy="same-origin" />
     </Layout>
   );
 }
