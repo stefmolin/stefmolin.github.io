@@ -15,6 +15,7 @@ import SubscribeToNewsletterForm from '../subscribe-to-newsletter';
 import FollowButtons from '../follow';
 import { type LinkWithIcon } from '../../interfaces/link';
 import ExternalLink from '../links/external-link';
+import ResourceLink from '../links/resource-link';
 import { HEADSHOT } from '../../data/constants';
 
 const SitemapLinks = ({ className }: { className?: string }) => {
@@ -72,11 +73,16 @@ const FooterLinks = ({ className }: { className?: string }) => {
   ];
 
   const makeLink = ({ href, icon, text }: LinkWithIcon) => (
-    <Link key={text} href={href} className="text-slate-600 hover:text-slate-800 px-1">
+    <ResourceLink
+      key={text}
+      resourceLink={href as string}
+      linkClass={href === '/privacy-policy' ? 'internal' : 'external'}
+      className="text-slate-600 hover:text-slate-800 px-1"
+    >
       <span className="text-nowrap">
         <FontAwesomeIcon icon={icon} fixedWidth /> {text}
       </span>
-    </Link>
+    </ResourceLink>
   );
   return (
     <div className={classNames(className, 'items-center')}>
