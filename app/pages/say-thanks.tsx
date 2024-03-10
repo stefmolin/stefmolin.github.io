@@ -8,6 +8,7 @@ import {
   faCoffee,
   faEnvelopeOpenText,
   faHeart,
+  faMobileScreen,
   faPaintBrush,
   faPen,
   faPodcast,
@@ -15,7 +16,7 @@ import {
   faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
-import { GITHUB_PROFILE, LINKEDIN_PROFILE, TWITTER_PROFILE } from '../data/constants';
+import { AMAZON_LINKS, GITHUB_PROFILE, LINKEDIN_PROFILE, TWITTER_PROFILE } from '../data/constants';
 import classNames from 'classnames';
 import SectionSeparator from '../components/dividers/section-separator';
 
@@ -32,7 +33,7 @@ const LinkSection = ({ links, title }: LinkSectionProps) => (
         <li
           key={index}
           className={classNames(
-            'flex flex-col sm:flex-row',
+            'flex flex-col sm:flex-row w-full',
             'items-center justify-center sm:justify-start',
             'text-center sm:text-left',
             'space-x-2',
@@ -67,7 +68,7 @@ export default function SayThanks() {
               title="Help me grow my audience"
               links={[
                 <>
-                  <FontAwesomeIcon icon={faUserPlus} fixedWidth className="pl-px -pr-px" />
+                  <FontAwesomeIcon icon={faUserPlus} fixedWidth className="sm:pl-px sm:-pr-px" />
                   <span>
                     <b>Follow me</b> on social media:{' '}
                     <ExternalLink className={underlinedLinkClassName} href={GITHUB_PROFILE}>
@@ -104,7 +105,7 @@ export default function SayThanks() {
                   <span>
                     <ExternalLink
                       className={underlinedLinkClassName}
-                      href="https://amzn.to/3u6v21u"
+                      href={AMAZON_LINKS.PANDAS_BOOK_2}
                     >
                       Write an Amazon review
                     </ExternalLink>{' '}
@@ -144,7 +145,20 @@ export default function SayThanks() {
                     >
                       NightCafe Studio
                     </ExternalLink>
-                    .
+                    . All AI-generated art on my website was made with NightCafe.
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faMobileScreen} fixedWidth className="sm:px-1" />
+                  <span>
+                    Having reliable cell service when I travel is a must. I use{' '}
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://g.co/fi/r/7K4887"
+                    >
+                      Google Fi Wireless
+                    </ExternalLink>
+                    . We both get a $20 credit when you sign up with code <b>7K4887</b>.
                   </span>
                 </>,
               ]}
@@ -158,7 +172,7 @@ export default function SayThanks() {
                   <span>
                     <ExternalLink
                       className={underlinedLinkClassName}
-                      href="https://amzn.to/3u6v21u"
+                      href={AMAZON_LINKS.PANDAS_BOOK_2}
                     >
                       Buy my book
                     </ExternalLink>
@@ -181,7 +195,7 @@ export default function SayThanks() {
             />
           </div>
           <SectionSeparator className="my-10 sm:hidden" />
-          <div className="text-2xl md:text-5xl md:mt-20 flex flex-col items-center justify-center text-center">
+          <div className="text-2xl md:text-5xl sm:mt-20 flex flex-col items-center justify-center text-center tracking-tight">
             <h2 className="mb-2 sm:mb-4">Thank you for your support!</h2>
             <FontAwesomeIcon icon={faHeart} beat className="text-slate-500" />
           </div>

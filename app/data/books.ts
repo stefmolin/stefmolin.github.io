@@ -3,6 +3,7 @@ import { generateBookPageLink } from '../lib/books';
 import type FAQ from '../interfaces/faq';
 import type BookPage from '../interfaces/book-page';
 import CONTENT_LINKS from './content-links';
+import { AMAZON_LINKS } from './constants';
 
 export const GENERAL_FAQS: FAQ[] = [
   {
@@ -84,7 +85,7 @@ export const BOOK_PAGES: BookPage[] = [
       efficiently perform various data manipulation tasks, reliably reproduce analyses, and
       visualize your data for effective decision making—valuable knowledge that can be applied
       across multiple domains.`,
-      amazonLink: 'https://amzn.to/3u6v21u',
+      amazonLink: AMAZON_LINKS.PANDAS_BOOK_2,
       repo: 'Hands-On-Data-Analysis-with-Pandas-2nd-edition',
       tags: ['pandas', 'data analysis', 'data science', 'Python'],
       translations: [
@@ -362,7 +363,7 @@ export const BOOK_PAGES: BookPage[] = [
       reproduce analysis across multiple domains.
 
       See also: [*Hands-On Data Analysis with Pandas (2nd edition)*](${CONTENT_LINKS.PANDAS_BOOK_2.link})`,
-      amazonLink: 'https://amzn.to/4bkJBiq',
+      amazonLink: AMAZON_LINKS.PANDAS_BOOK_1,
       repo: 'Hands-On-Data-Analysis-with-Pandas',
       tags: ['pandas', 'data analysis', 'data science', 'Python'],
     },

@@ -18,7 +18,7 @@ import ExternalLink from '../components/links/external-link';
 import Layout from '../components/page-layout/layout';
 import RelatedContentSection from '../components/related-content/related-content';
 import Container from '../components/sections/container';
-import { HEADSHOT } from '../data/constants';
+import { AMAZON_LINKS, HEADSHOT } from '../data/constants';
 import CONTENT_LINKS from '../data/content-links';
 
 const relatedContent = [
@@ -140,7 +140,7 @@ export default function AboutMe() {
                     I <span className="line-through">like</span> love a good <b>espresso</b>{' '}
                     (particularly, black, in a flat white, or in an espresso martini). My{' '}
                     {externalLink(
-                      'https://amzn.to/3OR5FaR',
+                      AMAZON_LINKS.NESPRESSO_MACHINE,
                       'Nespresso machine',
                       'underline text-slate-500 hover:text-black font-normal',
                     )}{' '}

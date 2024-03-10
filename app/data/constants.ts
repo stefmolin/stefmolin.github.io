@@ -35,3 +35,9 @@ export const FLAGS = {
   'United Kingdom': '🇬🇧',
   'United States of America': '🇺🇸',
 };
+
+export const AMAZON_LINKS = {
+  NESPRESSO_MACHINE: 'https://amzn.to/3OR5FaR',
+  PANDAS_BOOK_1: 'https://amzn.to/4bkJBiq',
+  PANDAS_BOOK_2: 'https://amzn.to/3u6v21u',
+};
