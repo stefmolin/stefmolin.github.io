@@ -19,7 +19,6 @@ import ResourceLink from '../links/resource-link';
 import { HEADSHOT } from '../../data/constants';
 
 const SitemapLinks = ({ className }: { className?: string }) => {
-  // Internal links only
   const siteLinks = [
     { name: 'Home', url: '/' },
     { name: 'Books', url: '/books/' },
@@ -46,9 +45,10 @@ const SitemapLinks = ({ className }: { className?: string }) => {
       )}
     >
       {siteLinks.map(({ name, url }) => (
-        <Link
+        <ResourceLink
           key={url}
-          href={url}
+          resourceLink={url as string}
+          linkClass={name === 'Data Morph' ? 'external' : 'internal'}
           className={classNames(
             className,
             'font-bold',
@@ -58,7 +58,7 @@ const SitemapLinks = ({ className }: { className?: string }) => {
           )}
         >
           {name}
-        </Link>
+        </ResourceLink>
       ))}
     </div>
   );

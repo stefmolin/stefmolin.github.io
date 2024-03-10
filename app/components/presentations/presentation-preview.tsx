@@ -52,7 +52,7 @@ export default function PresentationPreview({
       description={description}
       duration={duration}
       id={title}
-      linkClass="internal"
+      linkClass={contentClass === 'talk' ? 'external' : 'internal'}
       resourceLink={{ contentClass, slug }}
       subtitle={
         subtitle ?? (
