@@ -46,13 +46,12 @@ const LinkSection = ({ links, title }: LinkSectionProps) => (
 );
 
 export default function SayThanks() {
-  const pageTitle = 'Say Thanks';
   const underlinedLinkClassName =
     'py-px underline font-bold decoration-yellow-400 hover:text-slate-700';
   return (
-    <Layout>
+    <Layout seoPageTitle="Want to let me know that you appreciate my content?">
       <NextSeo
-        title={pageTitle}
+        title="Say Thanks"
         description="Ways to show appreciation for any content that has helped you."
       />
       <Container>

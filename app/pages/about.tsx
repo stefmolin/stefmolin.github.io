@@ -97,7 +97,7 @@ export default function AboutMe() {
   );
 
   return (
-    <Layout>
+    <Layout seoPageTitle="About Me">
       <NextSeo title={pageTitle} description="About Stefanie Molin." />
       <Container>
         <div className="-mt-10 mb-20 max-w-5xl mx-auto bg-white">

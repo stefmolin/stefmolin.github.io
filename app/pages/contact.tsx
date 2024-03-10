@@ -13,6 +13,7 @@ export default function ContactMe() {
       styleProps={{
         backgroundImage: 'url(/assets/events/conferences/conference-badges.jpg)',
       }}
+      seoPageTitle={pageTitle}
     >
       <NextSeo title={pageTitle} description="Contact Stefanie Molin." />
       <Container className="px-4 sm:px-10">

@@ -12,6 +12,7 @@ import CONTENT_LINKS from '../../data/content-links';
 import { LIVE_PRESENTATIONS } from '../../data/events';
 import { BOOK_SIGNING_IMAGES } from '../../data/photo-gallery';
 import { getImageLink } from '../../lib/images';
+import { getSeoImageLink } from '../../lib/seo';
 
 const relatedContent = [
   CONTENT_LINKS.INTERVIEWS,
@@ -25,6 +26,7 @@ const relatedContent = [
 export default function BookSignings() {
   const seoImage = CONTENT_LINKS.BOOK_SIGNINGS.image;
   const pageTitle = 'Book Signings';
+  const pageDescription = "Stefanie Molin's book signing events.";
   const signings = LIVE_PRESENTATIONS.filter((x) => x.presentation.contentClass === 'book signing');
   const pastSignings = signings.filter(({ date }) => date < DateTime.now().toISODate()).length;
 
@@ -54,13 +56,16 @@ export default function BookSignings() {
       <Container>
         <NextSeo
           title={pageTitle}
-          description="Stefanie Molin's book signing events."
+          description={pageDescription}
           openGraph={{
             images: [
               {
-                url: getImageLink(seoImage.src),
-                width: seoImage.width,
-                height: seoImage.height,
+                url: getSeoImageLink(
+                  getImageLink(seoImage.src),
+                  'Boston',
+                  'Book Signings',
+                  pageDescription,
+                ),
                 alt: "Line from Stefanie Molin's first book signing.",
               },
             ],

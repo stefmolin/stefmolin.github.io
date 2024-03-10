@@ -12,6 +12,7 @@ import WorkshopOutline from '../../components/workshops/workshop-outline';
 import WorkshopMap from '../../components/workshops/workshop-map';
 import WorkshopHeader from '../../components/workshops/workshop-header';
 import WorkshopSummary from '../../components/workshops/workshop-summary';
+import { getSeoImageLink } from '../../lib/seo';
 
 // TODO: link to setup instructions and prereqs
 // TODO: read descriptions from READMEs in GitHub for consistency? this will hardly be updated so it can wait
@@ -32,7 +33,11 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
           openGraph={{
             images: [
               {
-                url: getImageLink(workshopCoverImage.src),
+                url: getSeoImageLink(
+                  getImageLink(workshopCoverImage.src),
+                  'New York',
+                  workshop.title,
+                ),
                 width: workshopCoverImage.width,
                 height: workshopCoverImage.height,
                 alt: workshop.title,

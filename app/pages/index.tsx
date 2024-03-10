@@ -118,7 +118,7 @@ export default function Home({
     </Announcement>
   );
   return (
-    <Layout>
+    <Layout seoPageTitle="Stefanie Molin's website">
       <NextSeo title="Stefanie Molin" titleTemplate="%s" />
       <Container>
         <div className="-mt-6 mb-20 max-w-5xl mx-auto">

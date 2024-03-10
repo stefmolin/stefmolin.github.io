@@ -9,9 +9,10 @@ const linkProps = {
 };
 
 export default function Index() {
+  const pageTitle = 'Privacy Policy';
   return (
-    <Layout>
-      <NextSeo title="Privacy Policy" />
+    <Layout seoPageTitle={pageTitle}>
+      <NextSeo title={pageTitle} />
       <Container>
         <div className={privacyStyles['privacy-policy']}>
           <h1>Privacy Policy</h1>

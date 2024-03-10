@@ -21,6 +21,7 @@ const relatedContent = [
 export default function ComingSoonish() {
   const searchParams = useSearchParams();
   const slides = searchParams.get('slides')?.replaceAll('-', ' ');
+  const pageTitle = 'Coming Soon';
 
   return (
     <Layout
@@ -28,8 +29,9 @@ export default function ComingSoonish() {
       styleProps={{
         backgroundImage: 'url(/assets/under-construction.jpg)',
       }}
+      seoPageTitle={pageTitle}
     >
-      <NextSeo title="Coming Soon" />
+      <NextSeo title={pageTitle} />
       <Container className="px-4 sm:px-10">
         <div className="-mt-8 sm:mt-4 max-w-5xl mx-auto p-6 sm:p-10 bg-white rounded-lg">
           <h1 className="text-2xl sm:text-3xl md:text-4xl text-center mb-2">Coming Soon(ish)</h1>

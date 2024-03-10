@@ -18,10 +18,13 @@ const Feed = ({
   const { width } = useWindowSize();
   const postsPerPage = width && width < 465 ? 3 : 5;
   const [offset, setOffset] = useState(0);
+  const pageTitle = subtitle ?? title;
   return (
     <>
-      <Layout>
-        <NextSeo title={subtitle ?? title} description={description} />
+      <Layout
+        seoPageTitle={`${pageTitle}${subtitle == null && pageTitle !== 'Articles' ? ' posts' : ''} by Stefanie Molin`}
+      >
+        <NextSeo title={pageTitle} description={description} />
         <Container>
           <div ref={feedRef} className="-mt-4 max-w-5xl -mx-4 sm:mx-auto mb-32">
             <h1 className="text-6xl md:text-7xl mb-2 text-center">{title}</h1>
