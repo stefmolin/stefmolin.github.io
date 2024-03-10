@@ -469,7 +469,7 @@ export default function Index() {
           <h2>Contact Us</h2>
           <p>If you have any questions about this Privacy Policy, You can contact us:</p>
           <ul>
-            <li>By email: privacy@stefaniemolin.com</li>
+            <li>By email: privacy at stefaniemolin dot com</li>
           </ul>
         </div>
       </Container>
