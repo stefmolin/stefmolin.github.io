@@ -17,13 +17,25 @@ export default function ResourceLink({
   if (linkClass === 'internal' || typeof resourceLink !== 'string') {
     let href: LinkProps['href'];
     if (typeof resourceLink === 'string') href = resourceLink;
-    else if (resourceLink.slug.startsWith('/')) href = resourceLink.slug;
+    else if (
+      resourceLink.slug.startsWith('/') &&
+      !['article', 'post'].includes(resourceLink.contentClass)
+    )
+      href = resourceLink.slug;
     else {
       const { contentClass, slug } = resourceLink;
-      href = {
-        pathname: `/${contentClass.endsWith('s') ? contentClass : `${contentClass}s`}/[slug]`,
-        query: { slug },
-      };
+      if (['article', 'post'].includes(resourceLink.contentClass)) {
+        const pathParts = slug.split('/');
+        href = {
+          pathname: '/[...slug]',
+          query: { slug: pathParts.slice(1, pathParts.length) },
+        };
+      } else {
+        href = {
+          pathname: `/${contentClass.endsWith('s') ? contentClass : `${contentClass}s`}/[slug]`,
+          query: { slug },
+        };
+      }
     }
 
     return (
