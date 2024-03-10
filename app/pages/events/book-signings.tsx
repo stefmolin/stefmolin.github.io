@@ -11,7 +11,6 @@ import { MAP_PIN } from '../../data/constants';
 import CONTENT_LINKS from '../../data/content-links';
 import { LIVE_PRESENTATIONS } from '../../data/events';
 import { BOOK_SIGNING_IMAGES } from '../../data/photo-gallery';
-import { usePageURL } from '../../lib/hooks/page-url';
 import { getImageLink } from '../../lib/images';
 
 const relatedContent = [
