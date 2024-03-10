@@ -121,14 +121,14 @@ export default function Interviews() {
                           <br />
                           <p className="text-sm sm:text-base">
                             See also:
-                            {seeAlso.map(({ title, slug: link }) => {
+                            {seeAlso.map(({ title, slug, contentClass }) => {
                               const linkClassName = 'text-slate-500 pl-1';
                               return (
                                 <ResourceLink
                                   key={title}
                                   className={linkClassName}
                                   linkClass="internal"
-                                  resourceLink={link}
+                                  resourceLink={{ contentClass, slug }}
                                 >
                                   {title}
                                 </ResourceLink>
