@@ -133,7 +133,7 @@ export const generateRssFeed = async (feedType: string, feedTitle: string, posts
     copyright: COPYRIGHT_STATEMENT,
     language: 'en',
     image: HOME_OG_IMAGE.src,
-    // TODO: favicon: `${HOME_URL}/favicon.png`,
+    favicon: `${HOME_URL}/favicon/favicon.ico`,
     author: {
       name: 'Stefanie Molin',
       link: HOME_URL,
@@ -168,7 +168,12 @@ export const generateRssFeed = async (feedType: string, feedTitle: string, posts
     });
   });
 
-  fs.writeFileSync(`./public/feeds/${feedType}-rss.xml`, rssFeed.rss2());
-  fs.writeFileSync(`./public/feeds/${feedType}-atom.xml`, rssFeed.atom1());
-  fs.writeFileSync(`./public/feeds/${feedType}.json`, rssFeed.json1());
+  const dir = './public/feeds';
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+
+  fs.writeFileSync(`${dir}/${feedType}-rss.xml`, rssFeed.rss2());
+  fs.writeFileSync(`${dir}/${feedType}-atom.xml`, rssFeed.atom1());
+  fs.writeFileSync(`${dir}/${feedType}.json`, rssFeed.json1());
 };
