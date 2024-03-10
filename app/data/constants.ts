@@ -16,6 +16,7 @@ export const COVER_IMAGE_PENDING: SEOImage = {
   height: 647,
 };
 export const TWITTER_HANDLE = '@StefanieMolin';
+export const TWITTER_PROFILE = `https://twitter.com/${TWITTER_HANDLE.replace('@', '')}`;
 export const COPYRIGHT_STATEMENT = `Copyright 2019-${DateTime.now().year}, Stefanie Molin`;
 export const GITHUB_PROFILE = 'https://github.com/stefmolin';
 export const GITHUB_API = 'https://api.github.com/repos/stefmolin/';

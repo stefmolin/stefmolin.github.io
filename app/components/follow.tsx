@@ -8,9 +8,8 @@ import {
   faLinkedin,
   faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import { GITHUB_PROFILE, LINKEDIN_PROFILE, TWITTER_HANDLE } from '../data/constants';
+import { GITHUB_PROFILE, LINKEDIN_PROFILE, TWITTER_PROFILE } from '../data/constants';
 import FancyDivider from './dividers/fancy-divider';
-import ExternalLink from './links/external-link';
 import ResourceLink from './links/resource-link';
 
 export interface FollowButtonsProps {
@@ -48,7 +47,7 @@ const FollowButtons = ({
     >
       {makeLink(GITHUB_PROFILE, faGithub)}
       {makeLink(LINKEDIN_PROFILE, faLinkedin)}
-      {makeLink(`https://twitter.com/${TWITTER_HANDLE.replace('@', '')}`, faXTwitter)}
+      {makeLink(TWITTER_PROFILE, faXTwitter)}
       {!withoutNewsletter && makeLink('/newsletter', faEnvelopeOpenText, false)}
       {feed && makeLink(`/feeds/${feed}-rss.xml`, faRss)}
       {withSupport && makeLink('https://www.buymeacoffee.com/stefanie.molin', faHandHoldingDollar)}
