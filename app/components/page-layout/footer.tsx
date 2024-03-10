@@ -116,14 +116,11 @@ const Footer = () => {
               >
                 open source projects
               </ExternalLink>
-              . If any of my content has helped you, please consider{' '}
-              <ExternalLink
-                className={underlinedLinkClassName}
-                href="https://www.buymeacoffee.com/stefanie.molin"
-              >
-                supporting
-              </ExternalLink>{' '}
-              me.
+              . If any of my content has helped you, please{' '}
+              <Link className={underlinedLinkClassName} href="/say-thanks">
+                let me know
+              </Link>
+              .
             </p>
           </div>
 

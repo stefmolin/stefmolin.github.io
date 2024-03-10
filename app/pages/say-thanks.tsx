@@ -1,0 +1,193 @@
+import { NextSeo } from 'next-seo';
+import Container from '../components/sections/container';
+import Layout from '../components/page-layout/layout';
+import ExternalLink from '../components/links/external-link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBook,
+  faCoffee,
+  faEnvelopeOpenText,
+  faHeart,
+  faPaintBrush,
+  faPen,
+  faPodcast,
+  faShare,
+  faUserPlus,
+} from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
+import { GITHUB_PROFILE, LINKEDIN_PROFILE, TWITTER_PROFILE } from '../data/constants';
+import classNames from 'classnames';
+import SectionSeparator from '../components/dividers/section-separator';
+
+interface LinkSectionProps {
+  title: string;
+  links: React.ReactNode[];
+}
+
+const LinkSection = ({ links, title }: LinkSectionProps) => (
+  <div className="space-y-4">
+    <h2 className="text-2xl text-center md:text-left">{title}</h2>
+    <ul className="md:pl-5 space-y-5 sm:space-y-2">
+      {links.map((link, index) => (
+        <li
+          key={index}
+          className={classNames(
+            'flex flex-col sm:flex-row',
+            'items-center justify-center sm:justify-start',
+            'text-center sm:text-left',
+            'space-x-2',
+          )}
+        >
+          {link}
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
+export default function SayThanks() {
+  const pageTitle = 'Say Thanks';
+  const underlinedLinkClassName =
+    'py-px underline font-bold decoration-yellow-400 hover:text-slate-700';
+  return (
+    <Layout>
+      <NextSeo
+        title={pageTitle}
+        description="Ways to show appreciation for any content that has helped you."
+      />
+      <Container>
+        <div className="-mt-8 pb-20 max-w-3xl mx-auto">
+          <h1 className="text-5xl md:text-6xl text-center">Ways To Show Your Appreciation</h1>
+          <div className="md:px-6 space-y-10 mt-5 text-lg">
+            <p>
+              All of my content is made during my free time outside of my full-time job. Knowing
+              that the content is appreciated helps motivate me to continue making it. If my content
+              has helped you in any way, please consider helping me out.
+            </p>
+            <LinkSection
+              title="Help me grow my audience"
+              links={[
+                <>
+                  <FontAwesomeIcon icon={faUserPlus} fixedWidth className="pl-px -pr-px" />
+                  <span>
+                    <b>Follow me</b> on social media:{' '}
+                    <ExternalLink className={underlinedLinkClassName} href={GITHUB_PROFILE}>
+                      GitHub
+                    </ExternalLink>
+                    ,{' '}
+                    <ExternalLink className={underlinedLinkClassName} href={LINKEDIN_PROFILE}>
+                      LinkedIn
+                    </ExternalLink>
+                    ,{' '}
+                    <ExternalLink className={underlinedLinkClassName} href={TWITTER_PROFILE}>
+                      Twitter
+                    </ExternalLink>
+                    .
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faShare} fixedWidth />
+                  <span>
+                    <b>Share my content</b> with your friends, family, and colleagues.
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faEnvelopeOpenText} fixedWidth />
+                  <span>
+                    <Link className={underlinedLinkClassName} href="/newsletter">
+                      Sign up for my newsletter
+                    </Link>
+                    .
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faPen} fixedWidth />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://amzn.to/3u6v21u"
+                    >
+                      Write an Amazon review
+                    </ExternalLink>{' '}
+                    for one of my{' '}
+                    <Link className={underlinedLinkClassName} href="/books">
+                      books
+                    </Link>
+                    .
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faPodcast} fixedWidth />
+                  <span>
+                    <Link className={underlinedLinkClassName} href="/contact">
+                      Invite me
+                    </Link>{' '}
+                    to be a guest on your podcast or speak at your{' '}
+                    <Link className={underlinedLinkClassName} href="/events">
+                      event
+                    </Link>
+                    .
+                  </span>
+                </>,
+              ]}
+            />
+            <SectionSeparator className="my-10 sm:hidden" />
+            <LinkSection
+              title="Use my referral links"
+              links={[
+                <>
+                  <FontAwesomeIcon icon={faPaintBrush} fixedWidth />
+                  <span>
+                    Make free AI art with{' '}
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://creator.nightcafe.studio/?ru=2MN1aDPMECSkEmpzKUuMHvvxqlY2"
+                    >
+                      NightCafe Studio
+                    </ExternalLink>
+                    .
+                  </span>
+                </>,
+              ]}
+            />
+            <SectionSeparator className="my-10 sm:hidden" />
+            <LinkSection
+              title="Make a purchase"
+              links={[
+                <>
+                  <FontAwesomeIcon icon={faBook} fixedWidth />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://amzn.to/3u6v21u"
+                    >
+                      Buy my book
+                    </ExternalLink>
+                    .
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faCoffee} fixedWidth />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://www.buymeacoffee.com/stefanie.molin"
+                    >
+                      Buy me a coffee
+                    </ExternalLink>
+                    .
+                  </span>
+                </>,
+              ]}
+            />
+          </div>
+          <SectionSeparator className="my-10 sm:hidden" />
+          <div className="text-2xl md:text-5xl md:mt-20 flex flex-col items-center justify-center text-center">
+            <h2 className="mb-2 sm:mb-4">Thank you for your support!</h2>
+            <FontAwesomeIcon icon={faHeart} beat className="text-slate-500" />
+          </div>
+        </div>
+      </Container>
+    </Layout>
+  );
+}

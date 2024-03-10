@@ -32,7 +32,7 @@ const PAGE_CONFIGS = [
     changefreq: 'monthly',
   },
   {
-    regex: /^\/(about|contact)$/,
+    regex: /^\/(about|contact|say-thanks)$/,
     priority: PRIORITIES.aboutPages,
     changefreq: 'yearly',
   },
