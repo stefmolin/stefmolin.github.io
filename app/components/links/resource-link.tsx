@@ -14,6 +14,18 @@ export default function ResourceLink({
   linkClass,
   resourceLink,
 }: ResourceLinkProps) {
+  if (
+    typeof resourceLink !== 'string' &&
+    resourceLink.contentClass === 'talk' &&
+    !resourceLink.slug.startsWith('/coming-soon')
+  ) {
+    return (
+      <ExternalLink className={className} href={resourceLink.slug}>
+        {children}
+      </ExternalLink>
+    );
+  }
+
   if (linkClass === 'internal' || typeof resourceLink !== 'string') {
     let href: LinkProps['href'];
     if (typeof resourceLink === 'string') href = resourceLink;
