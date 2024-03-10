@@ -11,6 +11,7 @@ import { DateTime } from 'luxon';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import seedrandom from 'seedrandom';
+import { useEffect, useState } from 'react';
 import Announcement from '../components/cards/announcement';
 import FollowButtons from '../components/follow';
 import ResourceLink from '../components/links/resource-link';
@@ -88,8 +89,8 @@ export default function Home({
   articles: PostType[];
   latestBlogPost: PostType;
 }) {
-  const articleOfTheDay =
-    articles[Math.floor(seedrandom(DateTime.now().startOf('day'))() * articles.length)];
+  const [articleOfTheDay, setArticleOfTheDay] = useState(0);
+
   const nextSessions = getNextSessions(LIVE_PRESENTATIONS);
   const subsectionHeaderClassName = 'text-2xl sm:text-3xl md:text-5xl';
   const inviteMeToSpeakCTA = (
@@ -116,6 +117,12 @@ export default function Home({
         <SubscribeToNewsletterForm />
       </div>
     </Announcement>
+  );
+
+  useEffect(
+    () =>
+      setArticleOfTheDay(Math.floor(seedrandom(DateTime.now().startOf('day'))() * articles.length)),
+    [articles],
   );
   return (
     <Layout seoPageTitle="Stefanie Molin's website">
@@ -251,7 +258,7 @@ export default function Home({
             <FeaturedPost
               feedType="article"
               icon={faNewspaper}
-              post={articleOfTheDay}
+              post={articles[articleOfTheDay]}
               title="Article of the Day"
               titleClassName={subsectionHeaderClassName}
             />
