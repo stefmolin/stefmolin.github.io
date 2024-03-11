@@ -1,10 +1,10 @@
-import _ from 'lodash';
-import fs from 'fs';
-import { join } from 'path';
-import matter from 'gray-matter';
-import readingDuration from 'reading-duration';
 import { Feed as RssFeed } from 'feed';
+import fs from 'fs';
+import matter from 'gray-matter';
+import _ from 'lodash';
 import { DateTime } from 'luxon';
+import { join } from 'path';
+import readingDuration from 'reading-duration';
 import { COPYRIGHT_STATEMENT, HOME_OG_IMAGE, HOME_URL } from '../data/constants';
 
 type Items = {
@@ -130,7 +130,7 @@ export const generateRssFeed = async (feedType: string, feedTitle: string, posts
     description: 'Stay up to date with my latest posts.',
     id: `${HOME_URL}/${feedType}`,
     link: `${HOME_URL}/${feedType}`,
-    copyright: COPYRIGHT_STATEMENT,
+    copyright: COPYRIGHT_STATEMENT.replace('YEAR', DateTime.now().year.toString()),
     language: 'en',
     image: HOME_OG_IMAGE.src,
     favicon: `${HOME_URL}/favicon/favicon.ico`,

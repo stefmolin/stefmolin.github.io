@@ -17,7 +17,7 @@ export const COVER_IMAGE_PENDING: SEOImage = {
 };
 export const TWITTER_HANDLE = '@StefanieMolin';
 export const TWITTER_PROFILE = `https://twitter.com/${TWITTER_HANDLE.replace('@', '')}`;
-export const COPYRIGHT_STATEMENT = `Copyright 2019-${DateTime.now().year}, Stefanie Molin`;
+export const COPYRIGHT_STATEMENT = 'Copyright 2019-YEAR, Stefanie Molin';
 export const GITHUB_PROFILE = 'https://github.com/stefmolin';
 export const GITHUB_API = 'https://api.github.com/repos/stefmolin/';
 export const LINKEDIN_PROFILE = 'https://linkedin.com/in/stefanie-molin';

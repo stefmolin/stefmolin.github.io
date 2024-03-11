@@ -10,6 +10,7 @@ import {
   faRssSquare,
   faSitemap,
 } from '@fortawesome/free-solid-svg-icons';
+import { useEffect, useState } from 'react';
 import Avatar from '../avatar';
 import SubscribeToNewsletterForm from '../subscribe-to-newsletter';
 import FollowButtons from '../follow';
@@ -93,6 +94,8 @@ const FooterLinks = ({ className }: { className?: string }) => {
 
 const Footer = () => {
   const underlinedLinkClassName = 'text-slate-500 hover:text-slate-800 underline';
+  const [year, setYear] = useState<number>();
+  useEffect(() => setYear(DateTime.now().year));
   return (
     <footer className="bg-neutral-50 border-t border-neutral-200 mx-auto px-10">
       <div className="xl:max-w-screen-xl mx-auto">
@@ -152,7 +155,7 @@ const Footer = () => {
             <span>
               <span className="text-nowrap">
                 <span className="hidden sm:inline-flex pr-1">Copyright</span>&#169; 2019&ndash;
-                {DateTime.now().year} Stefanie Molin.
+                {year !== 0 ? year : ''} Stefanie Molin.
               </span>{' '}
               <span className="text-nowrap">All rights reserved.</span>
             </span>
