@@ -31,7 +31,9 @@ export default function PhotoGallery({
 }: PhotoGalleryProps) {
   const photoGalleryRef = useRef<null | HTMLDivElement>(null);
 
-  const photosPerPage = 12;
+  // the row constraint (2) on the photo gallery means it is possible to show an empty page if only
+  // 1 photo is left for that page. this is a temporary fix
+  const photosPerPage = photos.length % 2 === 0 ? 12 : 11;
   const [offset, setOffset] = useState(0);
 
   const [clickedPhotoIndex, setClickedPhotoIndex] = useState(-1);
