@@ -172,7 +172,7 @@ export default function Home({
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {nextSessions.map((session) => {
                       const eventDate = DateTime.fromISO(session.date);
-                      const relativeEventDate = eventDate.toRelative({ unit: ['days', 'hours'] });
+                      // const relativeEventDate = eventDate.toRelative({ unit: ['days', 'hours'] });
                       return (
                         <div
                           key={`${session.date}-${session.presentation.title}`}
@@ -207,7 +207,7 @@ export default function Home({
                                 />
                                 {DateTime.fromISO(session.date).toLocaleString()}
                               </div>
-                              <div>({relativeEventDate})</div>
+                              {/* <div>({relativeEventDate})</div> */}
                             </div>
                           </h3>
                           <div className="flex flex-col-reverse sm:flex-row md:flex-col-reverse lg:flex-row items-center justify-between w-full">
