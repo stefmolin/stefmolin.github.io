@@ -138,7 +138,13 @@ export default function AboutMe() {
                 <AboutMeSection icon="food">
                   <p>
                     I <span className="line-through">like</span> love a good <b>espresso</b>{' '}
-                    (particularly, black, in a flat white, or in an espresso martini). My{' '}
+                    (particularly, black, in a{' '}
+                    {externalLink(
+                      'https://doodles.google/doodle/celebrating-the-flat-white/',
+                      'flat white',
+                      'underline text-slate-500 hover:text-black font-normal',
+                    )}
+                    , or in an espresso martini). My{' '}
                     {externalLink(
                       AMAZON_LINKS.NESPRESSO_MACHINE,
                       'Nespresso machine',
