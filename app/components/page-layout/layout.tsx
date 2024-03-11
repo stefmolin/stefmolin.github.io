@@ -3,7 +3,7 @@ import Script from 'next/script';
 import { useState } from 'react';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { NextSeo } from 'next-seo';
-import { HOME_OG_IMAGE, HOME_URL } from '../../data/constants';
+import { HOME_OG_IMAGE } from '../../data/constants';
 import { usePageURL } from '../../lib/hooks/page-url';
 import { getSeoImageLink } from '../../lib/seo';
 import Footer from './footer';
