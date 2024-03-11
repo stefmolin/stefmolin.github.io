@@ -136,6 +136,30 @@ export default function SayThanks() {
               title="Use my referral links"
               links={[
                 <>
+                  <FontAwesomeIcon icon={faEnvelopeOpenText} fixedWidth className="sm:pr-px" />
+                  <span>
+                    My{' '}
+                    <Link className={underlinedLinkClassName} href="/newsletter">
+                      newsletter
+                    </Link>{' '}
+                    is powered by{' '}
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://convertkit.com?lmref=yvTxbA"
+                    >
+                      ConvertKit
+                    </ExternalLink>
+                    . They also offer a{' '}
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://app.convertkit.com/users/signup?plan=free-limited&lmref=yvTxbA"
+                    >
+                      free plan
+                    </ExternalLink>{' '}
+                    if you are just getting started.
+                  </span>
+                </>,
+                <>
                   <FontAwesomeIcon icon={faPaintBrush} fixedWidth />
                   <span>
                     Make free AI art with{' '}
