@@ -89,7 +89,7 @@ export default function Home({
   articles: PostType[];
   latestBlogPost: PostType;
 }) {
-  const [articleOfTheDay, setArticleOfTheDay] = useState(0);
+  const [articleOfTheDay, setArticleOfTheDay] = useState(-1);
 
   const nextSessions = getNextSessions(LIVE_PRESENTATIONS);
   const subsectionHeaderClassName = 'text-2xl sm:text-3xl md:text-5xl';
@@ -172,7 +172,6 @@ export default function Home({
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {nextSessions.map((session) => {
                       const eventDate = DateTime.fromISO(session.date);
-                      // const relativeEventDate = eventDate.toRelative({ unit: ['days', 'hours'] });
                       return (
                         <div
                           key={`${session.date}-${session.presentation.title}`}
@@ -197,7 +196,7 @@ export default function Home({
                               {session.presentation.title}
                             </h2>
                           </ResourceLink>
-                          <h3 className="text-lg sm:text-xl text-center">
+                          <div className="text-lg sm:text-xl text-center">
                             <div className="flex flex-col sm:flex-row items-center justify-center space-x-1">
                               <div>
                                 <FontAwesomeIcon
@@ -205,11 +204,13 @@ export default function Home({
                                   icon={faCalendarCheck}
                                   fixedWidth
                                 />
-                                {DateTime.fromISO(session.date).toLocaleString()}
+                                {eventDate.toLocaleString()}
                               </div>
-                              {/* <div>({relativeEventDate})</div> */}
+                              {articleOfTheDay >= 0 && (
+                                <div>({eventDate.toRelative({ unit: ['days', 'hours'] })})</div>
+                              )}
                             </div>
-                          </h3>
+                          </div>
                           <div className="flex flex-col-reverse sm:flex-row md:flex-col-reverse lg:flex-row items-center justify-between w-full">
                             <div className="flex flex-col sm:flex-row items-center justify-center space-x-1 text-center">
                               <div>
@@ -258,7 +259,7 @@ export default function Home({
             <FeaturedPost
               feedType="article"
               icon={faNewspaper}
-              post={articles[articleOfTheDay]}
+              post={articles[Math.max(0, articleOfTheDay)]}
               title="Article of the Day"
               titleClassName={subsectionHeaderClassName}
             />
