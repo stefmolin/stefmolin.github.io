@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import type RelatedContentLink from '../../interfaces/related-content';
+import ResourceLink from '../links/resource-link';
 
 interface RelatedContentCardProps {
   relatedContent: RelatedContentLink;
@@ -9,7 +9,11 @@ export default function RelatedContentCard({ relatedContent }: RelatedContentCar
   const { contentClass, image, link, title } = relatedContent;
   return (
     <div className="flex flex-row items-center justify-center hover:scale-110">
-      <Link href={link} className="text-slate-500 hover:text-slate-800 cursor-pointer">
+      <ResourceLink
+        resourceLink={{ contentClass, slug: link }}
+        className="text-slate-500 hover:text-slate-800 cursor-pointer"
+        linkClass="internal"
+      >
         <div className="flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-200 w-48 h-48 items-center">
           <div className="flex items-center">
             <img
@@ -22,7 +26,7 @@ export default function RelatedContentCard({ relatedContent }: RelatedContentCar
             <h3 className="text-center px-2 line-clamp-2">{title}</h3>
           </div>
         </div>
-      </Link>
+      </ResourceLink>
     </div>
   );
 }
