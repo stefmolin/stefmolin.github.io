@@ -213,7 +213,7 @@ export default function AboutMe() {
             </div>
 
             <RelatedContentSection
-              carouselClassName="-mx-4"
+              carouselClassName="-mx-4 pt-2"
               relatedContent={relatedContent}
               title="Suggested Links"
               titleClassName="text-2xl sm:text-3xl text-center my-5"
