@@ -47,7 +47,7 @@ const FeaturedPost = ({
   title,
   titleClassName,
 }: {
-  feedType: 'article' | 'blog';
+  feedType: 'articles' | 'blog';
   icon: IconDefinition;
   post: PostType;
   title: string;
@@ -257,7 +257,7 @@ export default function Home({
               {newsletterCTA}
             </div>
             <FeaturedPost
-              feedType="article"
+              feedType="articles"
               icon={faNewspaper}
               post={articles[Math.max(0, articleOfTheDay)]}
               title="Article of the Day"
