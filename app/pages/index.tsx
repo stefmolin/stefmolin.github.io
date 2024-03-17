@@ -124,9 +124,10 @@ export default function Home({
       setArticleOfTheDay(Math.floor(seedrandom(DateTime.now().startOf('day'))() * articles.length)),
     [articles],
   );
+  const pageDescription = "Stefanie Molin's website";
   return (
-    <Layout seoPageTitle="Stefanie Molin's website">
-      <NextSeo title="Stefanie Molin" titleTemplate="%s" />
+    <Layout seoPageTitle={pageDescription}>
+      <NextSeo title="Stefanie Molin" titleTemplate="%s" description={pageDescription} />
       <Container>
         <div className="-mt-6 mb-20 max-w-5xl mx-auto">
           <EvenlySpacedSections className="my-10">
