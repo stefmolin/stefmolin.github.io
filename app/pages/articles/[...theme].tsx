@@ -5,7 +5,9 @@ import { getPostThemePaths, getPostThemeProps } from '../../lib/post-themes';
 
 const DISPLAY_NAMES = {
   'data-science': 'Data Science',
+  devx: 'DevX',
   'open-source': 'Open Source',
+  'pre-commit': 'Pre-Commit',
 };
 
 export default function ArticleTheme(props: FeedType) {
