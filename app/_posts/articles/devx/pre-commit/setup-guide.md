@@ -252,7 +252,7 @@ def my_function(a):
 
 When we try to commit our changes, the pre-commit hooks run. The first time will take longer since `pre-commit` is creating a virtual environment to run the hooks in. This virtual environment will be reused until you add/remove a hook or change its `rev` value, at which point it will be rebuilt:
 
-```shell[class="command-line"][data-prompt="$"][data-output="3-6"]
+```shell[class="command-line"][data-prompt="$"][data-output="3-10"]
 git add src/example/utils.py
 git commit -m "Add utils.py"
 [INFO] Initializing environment for [...]github.com/astral-sh/ruff-pre-commit.
