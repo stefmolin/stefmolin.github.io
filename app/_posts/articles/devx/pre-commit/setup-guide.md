@@ -256,7 +256,11 @@ When we try to commit our changes, the pre-commit hooks run. The first time will
 git add src/example/utils.py
 git commit -m "Add utils.py"
 [INFO] Initializing environment for [...]github.com/astral-sh/ruff-pre-commit.
+[INFO] Initializing environment for [...]github.com/numpy/numpydoc.
 [INFO] Installing environment for [...]github.com/astral-sh/ruff-pre-commit.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for [...]github.com/numpy/numpydoc.
 [INFO] Once installed this environment will be reused.
 [INFO] This may take a few minutes...
 ```
