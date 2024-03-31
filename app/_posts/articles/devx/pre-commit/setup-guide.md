@@ -6,12 +6,12 @@ date: "2024-03-29T20:55:00.000Z"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python"]
 ogImage:
-  url: "https://images.unsplash.com/photo-1614728263952-84ea256f9679"
+  url: "/assets/articles/devx/pre-commit/cover.jpg"
   width: 6097
   height: 3510
 ---
 
-![The Space Shuttle Challenger launching from Complex 39](https://images.unsplash.com/photo-1614728263952-84ea256f9679)
+![The Space Shuttle Challenger launching from Complex 39](/assets/articles/devx/pre-commit/cover.jpg)
 
 <figcaption>
 

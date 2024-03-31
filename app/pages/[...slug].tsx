@@ -78,8 +78,7 @@ export default function Post({ post, suggestedPosts }: Props) {
                     url: getSeoImageLink(
                       ogImageURL,
                       'New York',
-                      post.title,
-                      ` | ${post.type === 'blog' ? 'blog post' : 'article'} by Stefanie Molin`,
+                      `${post.title} | ${post.type === 'blog' ? "Stefanie Molin's blog" : 'article by Stefanie Molin'}`,
                     ),
                     alt:
                       post.ogImage.caption ?? `Cover image for "${post.title}" by Stefanie Molin.`,
