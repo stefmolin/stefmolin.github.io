@@ -4,10 +4,10 @@ excerpt: "People have repeatedly told me that I should start a blog just to shar
 date: "2023-11-08T00:57:00.000Z"
 modified: "2024-03-09T00:22:00.000Z"
 author: Stefanie Molin
-tags: ["reflection"]
-assets: "/assets/blog/hello-world"
+tags: ["updates"]
+assets: "/assets/blog/hello-world" # TODO: turn the footnote logic into a class name and add to the markdown styles
 ogImage:
-  url: "/post-assets/cover.jpg"
+  url: "/post-assets/cover.jpg" # TODO: should be able to AUTOMATICALLY use the blog cover image as a fallback for posts that don't actually have images (and the cover image should be the theme cover if there is a theme)
   width: 1200
   height: 881
 ---
