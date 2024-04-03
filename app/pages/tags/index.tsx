@@ -7,7 +7,10 @@ import { getAllPosts } from '../../lib/posts';
 export default function Index({ tagCounts }: Pick<TagListingProps, 'tagCounts'>) {
   return (
     <Layout seoPageTitle="Search posts by Stefanie Molin">
-      <NextSeo title="Post Search" />
+      <NextSeo
+        title="Post Search"
+        description="Search all articles and blog posts written by Stefanie Molin using clickable tags."
+      />
       <Container>
         <h1 className="text-2xl sm:text-3xl">Search posts by tag</h1>
         <TagListing

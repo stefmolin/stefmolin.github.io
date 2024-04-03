@@ -98,7 +98,13 @@ export default function AboutMe() {
 
   return (
     <Layout seoPageTitle="About Me">
-      <NextSeo title={pageTitle} description="About Stefanie Molin." />
+      <NextSeo
+        title={pageTitle}
+        description={
+          'Stefanie Molin is a full-stack software engineer and content creator, passionate about ' +
+          'helping people of all levels improve their computer science and data science skills.'
+        }
+      />
       <Container>
         <div className="-mt-10 mb-20 max-w-5xl mx-auto bg-white">
           <div className="sm:mx-5 lg:mx-10">

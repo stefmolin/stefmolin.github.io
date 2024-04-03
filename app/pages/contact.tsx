@@ -15,7 +15,13 @@ export default function ContactMe() {
       }}
       seoPageTitle={pageTitle}
     >
-      <NextSeo title={pageTitle} description="Contact Stefanie Molin." />
+      <NextSeo
+        title={pageTitle}
+        description={
+          'Want to invite Stefanie Molin to speak at your event or be a guest on your podcast? ' +
+          'This page provides contact information for doing so.'
+        }
+      />
       <Container className="px-4 sm:px-10">
         <div className="-mt-8 sm:mt-4 max-w-3xl mx-auto p-10 bg-white rounded-lg shadow-lg">
           <div className="flex flex-col items-center mb-2 space-y-4">

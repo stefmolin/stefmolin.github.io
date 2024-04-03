@@ -11,7 +11,9 @@ export default function Index() {
   return (
     <PresentationListing
       contentClass={contentClass}
-      description="A listing of workshops created by Stefanie Molin."
+      description={
+        'A complete listing of workshops created by Stefanie Molin with links to all materials.'
+      }
       generatePreview={({ workshop }: (typeof WORKSHOP_PAGES)[0]) => (
         <PresentationPreview
           key={workshop.title}

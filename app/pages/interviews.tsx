@@ -57,7 +57,9 @@ export default function Interviews() {
       <Container>
         <NextSeo
           title={pageTitle}
-          description="A listing of interviews with Stefanie Molin."
+          description={
+            'A listing of written interviews and podcasts featuring Stefanie Molin on a variety of topics.'
+          }
           openGraph={{
             images: [
               {

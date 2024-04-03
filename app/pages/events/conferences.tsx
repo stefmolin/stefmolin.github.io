@@ -37,7 +37,10 @@ export default function Conferences() {
       <Container>
         <NextSeo
           title={pageTitle}
-          description="Conferences Stefanie Molin has presented at."
+          description={
+            'Conferences Stefanie Molin has presented at with maps, statistics, photos, and links ' +
+            'to all materials.'
+          }
           openGraph={{
             images: [
               {

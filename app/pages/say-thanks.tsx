@@ -53,7 +53,9 @@ export default function SayThanks() {
     <Layout seoPageTitle="Want to let me know that you appreciate my content?">
       <NextSeo
         title="Say Thanks"
-        description="Ways to show appreciation for any content that has helped you."
+        description={
+          "Has Stefanie Molin's content been helpful to you? Here are some ways to let her know."
+        }
       />
       <Container>
         <div className="-mt-8 pb-20 max-w-3xl mx-auto">

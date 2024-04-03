@@ -6,7 +6,10 @@ export default function NewsletterThankYouPage() {
     <EmbeddedPage
       pageTitle="Thank You!"
       src={`${NEWSLETTER_URL}/thank-you`}
-      description="Thank you for signing up!"
+      description={
+        "Thank you for signing up for Stefanie Molin's newsletter. You will be notified via " +
+        'email of new posts, updates, and events.'
+      }
     />
   );
 }

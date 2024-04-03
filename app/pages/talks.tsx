@@ -9,7 +9,9 @@ export default function Talks() {
   return (
     <PresentationListing
       contentClass={contentClass}
-      description="A listing of conference talks developed by Stefanie Molin."
+      description={
+        'A complete listing of conference talks developed by Stefanie Molin with links to all materials.'
+      }
       generatePreview={({ talk, seeAlso }: TalkCard) => (
         <PresentationPreview
           key={talk.title}

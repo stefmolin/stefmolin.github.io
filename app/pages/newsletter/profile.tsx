@@ -6,7 +6,10 @@ export default function NewsletterProfilePage() {
     <EmbeddedPage
       pageTitle="Newsletter Profile"
       src={`${NEWSLETTER_URL}/profile`}
-      description="More about Stefanie Molin's newsletter."
+      description={
+        "More information about Stefanie Molin's newsletter. Subscribers will be notified via " +
+        'email of new posts, updates, and events.'
+      }
     />
   );
 }

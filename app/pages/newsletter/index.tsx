@@ -6,7 +6,7 @@ export default function NewsletterSignUpPage() {
     <EmbeddedPage
       pageTitle="Newsletter"
       src={NEWSLETTER_URL}
-      description="Sign up for Stefanie Molin's newsletter."
+      description="Sign up for Stefanie Molin's newsletter to be notified of new posts, updates, and events."
     />
   );
 }

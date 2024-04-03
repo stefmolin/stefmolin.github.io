@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import dedent from 'dedent';
 import { NextSeo } from 'next-seo';
 import Container from '../../components/sections/container';
 import Layout from '../../components/page-layout/layout';
@@ -29,7 +30,9 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
       <Container>
         <NextSeo
           title={workshop.title}
-          description={workshop.subtitle}
+          description={dedent`${workshop.description[0]}`
+            .replaceAll('\n', ' ')
+            .replaceAll('&ndash;', '-')}
           openGraph={{
             images: [
               {

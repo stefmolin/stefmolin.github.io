@@ -32,7 +32,7 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
       <Container>
         <NextSeo
           title={bookTitle}
-          description="A book by Stefanie Molin."
+          description={book.description.split('\n\n')[0].replaceAll('\n', ' ')}
           openGraph={{
             type: 'book',
             book: {

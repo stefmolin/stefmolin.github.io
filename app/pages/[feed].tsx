@@ -3,8 +3,18 @@ import type FeedType from '../interfaces/feed';
 import { getFeed } from '../lib/posts';
 
 const feeds = {
-  articles: { title: 'Articles', description: 'Articles by Stefanie Molin.' },
-  blog: { title: 'Blog', description: "Stefanie Molin's blog." },
+  articles: {
+    title: 'Articles',
+    description:
+      'Read articles written by Stefanie Molin on computer science, data science, and more for ' +
+      'learners of all levels. Also available as an RSS feed.',
+  },
+  blog: {
+    title: 'Blog',
+    description:
+      "Read Stefanie Molin's personal blog for updates on new projects, travel stories, and more. " +
+      'Also available as an RSS feed.',
+  },
 };
 
 type Params = {

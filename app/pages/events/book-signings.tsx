@@ -26,7 +26,6 @@ const relatedContent = [
 export default function BookSignings() {
   const seoImage = CONTENT_LINKS.BOOK_SIGNINGS.image;
   const pageTitle = 'Book Signings';
-  const pageDescription = "Stefanie Molin's book signing events.";
   const signings = LIVE_PRESENTATIONS.filter((x) => x.presentation.contentClass === 'book signing');
   const pastSignings = signings.filter(({ date }) => date < DateTime.now().toISODate()).length;
 
@@ -56,7 +55,7 @@ export default function BookSignings() {
       <Container>
         <NextSeo
           title={pageTitle}
-          description={pageDescription}
+          description="Stefanie Molin's book signing events with maps, photos, and fun facts."
           openGraph={{
             images: [
               {
@@ -64,7 +63,7 @@ export default function BookSignings() {
                   getImageLink(seoImage.src),
                   'Boston',
                   'Book Signings',
-                  pageDescription,
+                  "Stefanie Molin's book signing events.",
                 ),
                 alt: "Line from Stefanie Molin's first book signing.",
               },

@@ -34,7 +34,10 @@ export default function Index() {
       <Container>
         <NextSeo
           title={pageTitle}
-          description="Conferences, book signings, and other events with Stefanie Molin."
+          description={
+            'Conferences, book signings, and other events with Stefanie Molin. Event maps, ' +
+            'statistics, and photos.'
+          }
           openGraph={{
             images: [
               {

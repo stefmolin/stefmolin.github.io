@@ -62,7 +62,7 @@ export default function Post({ post, suggestedPosts }: Props) {
           <>
             <NextSeo
               title={post.title}
-              description={post.subtitle || post.title}
+              description={post.excerpt}
               canonical={post.canonical}
               openGraph={{
                 type: 'article',
@@ -186,6 +186,7 @@ export async function getStaticProps({ params }: Params) {
     'canonical',
     'modified',
     'featured',
+    'excerpt',
   ];
   const post = getPostBySlug(params.slug, fields);
   const content = await markdownToHtml(post.content || '');
