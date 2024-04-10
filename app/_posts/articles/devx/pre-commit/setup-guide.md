@@ -9,6 +9,8 @@ ogImage:
   url: "/assets/articles/devx/pre-commit/cover.jpg"
   width: 6097
   height: 3510
+featured:
+  - "[PyCoder's Weekly Issue #624](https://pycoders.com/issues/624)"
 ---
 
 ![The Space Shuttle Challenger launching from Complex 39](/assets/articles/devx/pre-commit/cover.jpg)
