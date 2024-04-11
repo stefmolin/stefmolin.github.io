@@ -82,6 +82,8 @@ export default function Post({ post, suggestedPosts }: Props) {
                     ),
                     alt:
                       post.ogImage.caption ?? `Cover image for "${post.title}" by Stefanie Molin.`,
+                    width: post.ogImage.width,
+                    height: post.ogImage.height,
                   },
                 ],
               }}
