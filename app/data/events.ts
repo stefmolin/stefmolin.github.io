@@ -71,6 +71,11 @@ export const PRESENTATIONS: Record<string, Presentation> = {
     title: 'Getting Started with Open Source Contributions',
     link: '/talks/#getting-started-with-open-source-contributions',
   },
+  PRE_COMMIT_WORKSHOP: {
+    contentClass: 'workshop',
+    title: '(Pre-)Commit to Better Code',
+    link: '/coming-soonish/',
+  },
 };
 
 export const LIVE_PRESENTATIONS: LivePresentation[] = [
@@ -378,5 +383,16 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     },
     presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
     date: '2024-05-24',
+  },
+  {
+    event: {
+      name: 'EuroPython',
+      location: LOCATIONS.PRAGUE,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PRE_COMMIT_WORKSHOP,
+    date: '2024-07-09',
   },
 ];
