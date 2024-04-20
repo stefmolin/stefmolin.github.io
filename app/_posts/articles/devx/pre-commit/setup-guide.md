@@ -3,6 +3,7 @@ title: "How to Set Up Pre-Commit Hooks"
 subtitle: "A step-by-step guide to installing and configuring pre-commit hooks on your project."
 excerpt: "Looking to streamline your local development? In this article, I provide a step-by-step guide to installing and configuring pre-commit hooks on your project. You will also a learn a little bit about how git hooks work."
 date: "2024-03-29T20:55:00.000Z"
+modified: "2024-04-20T23:39:00.000Z"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python"]
 ogImage:
@@ -21,7 +22,7 @@ Photo by [NASA](https://unsplash.com/@nasa) on [Unsplash](https://unsplash.com/)
 
 </figcaption>
 
-Maintaining code quality can be challenging no matter the size of your project or the number of contributors. You need to agree on a set of standards for the code base, and then you have to enforce them consistently. This is a challenge for humans: we make mistakes, forget things, and have differences in opinion. Computers, however, can help both the developer and the reviewer efficiently enforce many of these standards:
+Maintaining code quality can be challenging no matter the size of your project or the number of contributors. You need to agree on a set of standards for the codebase, and then you have to enforce them consistently. This is a challenge for humans: we make mistakes, forget things, and have differences in opinion. Computers, however, can help both the developer and the reviewer efficiently enforce many of these standards:
 
 - **Pre-commit hooks** give the developer near-instant feedback on the code locally.
 - **Continuous integration (CI)** tools give the reviewer feedback on the code without having to pull it down locally. Evaluation of the code with a CI tool is often more thorough (*e.g.*, running tests, confirming that documentation can be built, *etc.*), and therefore, takes much longer.
@@ -317,7 +318,7 @@ A successful commit that passes all pre-commit hooks configured in the [accompan
 
 </figcaption>
 
-Note that you will always need to stage and commit any changes that the hooks make for you &ndash; this gives you final say on what makes it into your code base.
+Note that you will always need to stage and commit any changes that the hooks make for you &ndash; this gives you final say on what makes it into your codebase.
 
 ## Usage tips
 

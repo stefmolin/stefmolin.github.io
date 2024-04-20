@@ -3,7 +3,7 @@ title: "5 Ways to Get Started in Open Source"
 subtitle: "Ideas for finding and making your first of many open source contributions."
 excerpt: "Everyone can and should get involved in open source. Not sure how to find something to work on? Here are 5 strategies that I have used to get started."
 date: "2023-08-29T15:08:47.161Z"
-modified: "2024-01-15T22:30:00.000Z"
+modified: "2024-04-20T23:39:00.000Z"
 author: Stefanie Molin
 tags: ["open source", "open source contribution", "open source software"]
 assets: "/assets/articles/open-source/5-ways-to-get-started-in-open-source"
@@ -42,11 +42,11 @@ Make a list / take an inventory of the projects you frequently use now or have u
 
 - *Is the project still active? Has it been a long time since the project was last updated? Are people still using it?*<br/>You will have better luck contributing to something that is actively maintained.
 
-- *How big is the code base?*<br/>If the code base is large and you are new to the project, it might be difficult to get a foothold.
+- *How big is the codebase?*<br/>If the codebase is large and you are new to the project, it might be difficult to get a foothold.
 
 - *Is this project built on top of another project that you are familiar with?*<br/>You may not know the higher-level project too much, but your knowledge of the underlying API will help.
 
-- *Where is the project repository hosted? Is it public?*<br/>You will need to find the code base in order to contribute to it.
+- *Where is the project repository hosted? Is it public?*<br/>You will need to find the codebase in order to contribute to it.
 
 ## Find a way to contribute that fits you
 
@@ -102,13 +102,13 @@ Once you have identified an open issue to work on, be sure to follow some common
 - Comment on the issue that you will take it (or in the case of the meta-issue, comment about the specific part you will take).
 - Feel free to ask clarifying questions at any point.
 
-I used this strategy for my first contribution to Seaborn. While procrastinating studying for an exam, I browsed through the open issues for a few minutes and [found an issue](https://github.com/mwaskom/seaborn/issues/2249) from the creator of the library that I immediately knew how to implement. I hacked something together quickly to get some feedback on (and to make sure it was still of interest). After some tweaks, I filed [my PR](https://github.com/mwaskom/seaborn/pull/2620) to add the `refline()` method to the `JointGrid` and `FacetGrid` classes, which adds vertical and reference lines to all plots in the grid. It's important to note that I looked into Seaborn because I knew it was an active library with a smaller code base than something like Matplotlib or NumPy, and it is built on top of Matplotlib, which I was familiar with. The issue I selected mentioned by name some functionality in Matplotlib, meaning it was just a matter of looking through the Seaborn code base to determine how to wire it up.
+I used this strategy for my first contribution to Seaborn. While procrastinating studying for an exam, I browsed through the open issues for a few minutes and [found an issue](https://github.com/mwaskom/seaborn/issues/2249) from the creator of the library that I immediately knew how to implement. I hacked something together quickly to get some feedback on (and to make sure it was still of interest). After some tweaks, I filed [my PR](https://github.com/mwaskom/seaborn/pull/2620) to add the `refline()` method to the `JointGrid` and `FacetGrid` classes, which adds vertical and reference lines to all plots in the grid. It's important to note that I looked into Seaborn because I knew it was an active library with a smaller codebase than something like Matplotlib or NumPy, and it is built on top of Matplotlib, which I was familiar with. The issue I selected mentioned by name some functionality in Matplotlib, meaning it was just a matter of looking through the Seaborn codebase to determine how to wire it up.
 
 ### 4. Identify and fix a bug
 As a user of the software and/or reader of the documentation, finding something to contribute often happens serendipitously. Is there a typo or omission in the documentation? Does the software not work as expected? If you encounter a bug, here are some tips:
 
 - Make sure that there isn't already an issue for it. If there is and no one has claimed it, you should consider it. If there isn't already an issue, submit one and be sure to mention that you can fix it if they agree that it is a bug (don't forget it might be a change in behavior that is expected as the software evolves).
-- Working on a bug fix will likely require some more knowledge of the code base, so feel free to ask for help from the maintainers (this can also apply for other parts of the PR requirements, like adding tests or release notes).
+- Working on a bug fix will likely require some more knowledge of the codebase, so feel free to ask for help from the maintainers (this can also apply for other parts of the PR requirements, like adding tests or release notes).
 - Never spend time working on something until you hear back from the maintainers about whether they are interested in making the change. Sometimes a proposed change may already be in progress or is not in scope.
 
 ![filing a bug report](/post-assets/bug-report.png)
@@ -119,7 +119,7 @@ Screenshot of the [Bug Report issue template for the pandas GitHub repository](h
 
 </figcaption>
 
-Many of my contributions to the pandas library were fixes to bugs I stumbled across. I noticed the first one when creating horizontal bar plots: the arguments for setting the *x*- and *y*-axis labels were not being properly interpreted. More specifically, the `xlabel` value would end up labeling the *y*-axis when specified, and the `ylabel` value would label the *y*-axis as well, but only when the `xlabel` wasn't present. This meant there was no way to label both plot axes. This was clearly a bug, so I created an [issue](https://github.com/pandas-dev/pandas/issues/45144). I was curious as to why that was happening and poked around the code base to find the issue. Once I found it, I coded up a fix that wouldn't break other plotting functionality, added tests and the required documentation, and [opened the PR](https://github.com/pandas-dev/pandas/pull/45145).
+Many of my contributions to the pandas library were fixes to bugs I stumbled across. I noticed the first one when creating horizontal bar plots: the arguments for setting the *x*- and *y*-axis labels were not being properly interpreted. More specifically, the `xlabel` value would end up labeling the *y*-axis when specified, and the `ylabel` value would label the *y*-axis as well, but only when the `xlabel` wasn't present. This meant there was no way to label both plot axes. This was clearly a bug, so I created an [issue](https://github.com/pandas-dev/pandas/issues/45144). I was curious as to why that was happening and poked around the codebase to find the issue. Once I found it, I coded up a fix that wouldn't break other plotting functionality, added tests and the required documentation, and [opened the PR](https://github.com/pandas-dev/pandas/pull/45145).
 
 ### 5. Propose and implement a new feature
 For software you use frequently, you will be hyper-aware of the pain-points you deal with as a user. Is there something that can be done to address them? Or is there something missing? If you have an idea for a missing functionality, see if the maintainers are interested in incorporating it. Never spend time working on something until you hear back from the maintainers as to whether they are interested in making the change, as the proposed feature or change may already be in progress, or is not in scope.
