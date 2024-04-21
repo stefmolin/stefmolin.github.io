@@ -42,7 +42,7 @@ export default function ContactMe() {
               >
                 LinkedIn
               </ExternalLink>
-              .
+              . Alternatively, you can shoot me a message at <em>contact[at]stefaniemolin.com</em>.
             </p>
           </div>
           <FollowButtons

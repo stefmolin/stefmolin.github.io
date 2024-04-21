@@ -4,6 +4,7 @@ import Layout from '../components/page-layout/layout';
 import ExternalLink from '../components/links/external-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+  faAward,
   faBook,
   faCoffee,
   faEnvelopeOpenText,
@@ -131,6 +132,49 @@ export default function SayThanks() {
                     .
                   </span>
                 </>,
+                <>
+                  <FontAwesomeIcon icon={faAward} fixedWidth className="sm:px-1" />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://www.python.org/psf/fellows/"
+                    >
+                      Nominate me
+                    </ExternalLink>{' '}
+                    to be recognized as a Fellow of the Python Software Foundation. Please use this
+                    address: <em>psf[at]stefaniemolin.com</em>.
+                  </span>
+                </>,
+              ]}
+            />
+            <SectionSeparator className="my-10 sm:hidden" />
+            <LinkSection
+              title="Make a purchase"
+              links={[
+                <>
+                  <FontAwesomeIcon icon={faBook} fixedWidth />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href={AMAZON_LINKS.PANDAS_BOOK_2}
+                    >
+                      Buy my book
+                    </ExternalLink>
+                    .
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faCoffee} fixedWidth />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://www.buymeacoffee.com/stefanie.molin"
+                    >
+                      Buy me a coffee
+                    </ExternalLink>
+                    .
+                  </span>
+                </>,
               ]}
             />
             <SectionSeparator className="my-10 sm:hidden" />
@@ -185,36 +229,6 @@ export default function SayThanks() {
                       Google Fi Wireless
                     </ExternalLink>
                     . We both get a $20 credit when you sign up with code <b>7K4887</b>.
-                  </span>
-                </>,
-              ]}
-            />
-            <SectionSeparator className="my-10 sm:hidden" />
-            <LinkSection
-              title="Make a purchase"
-              links={[
-                <>
-                  <FontAwesomeIcon icon={faBook} fixedWidth />
-                  <span>
-                    <ExternalLink
-                      className={underlinedLinkClassName}
-                      href={AMAZON_LINKS.PANDAS_BOOK_2}
-                    >
-                      Buy my book
-                    </ExternalLink>
-                    .
-                  </span>
-                </>,
-                <>
-                  <FontAwesomeIcon icon={faCoffee} fixedWidth />
-                  <span>
-                    <ExternalLink
-                      className={underlinedLinkClassName}
-                      href="https://www.buymeacoffee.com/stefanie.molin"
-                    >
-                      Buy me a coffee
-                    </ExternalLink>
-                    .
                   </span>
                 </>,
               ]}
