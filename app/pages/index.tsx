@@ -90,7 +90,6 @@ export default function Home({
   latestBlogPost: PostType;
 }) {
   const [articleOfTheDay, setArticleOfTheDay] = useState(-1);
-  const [currentDate, setCurrentDate] = useState<DateTime>(DateTime.fromSeconds(0));
 
   const nextSessions = getNextSessions(LIVE_PRESENTATIONS);
   const subsectionHeaderClassName = 'text-2xl sm:text-3xl md:text-5xl';
@@ -122,7 +121,6 @@ export default function Home({
 
   useEffect(() => {
     setArticleOfTheDay(Math.floor(seedrandom(DateTime.now().startOf('day'))() * articles.length));
-    setCurrentDate(DateTime.now().startOf('day'));
   }, [articles]);
 
   return (
@@ -216,16 +214,7 @@ export default function Home({
                                 {eventDate.toLocaleString()}
                               </div>
                               {articleOfTheDay >= 0 && (
-                                <div>
-                                  (
-                                  {currentDate.equals(eventDate)
-                                    ? 'today'
-                                    : eventDate.toRelative({
-                                        unit: ['days', 'hours'],
-                                        base: currentDate,
-                                      })}
-                                  )
-                                </div>
+                                <div>({eventDate.toRelativeCalendar({ unit: 'days' })})</div>
                               )}
                             </div>
                           </div>
