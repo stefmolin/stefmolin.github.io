@@ -26,6 +26,7 @@ export const MAP_PIN = '📍';
 
 export const FLAGS = {
   Canada: '🇨🇦',
+  Colombia: '🇨🇴',
   Czechia: '🇨🇿',
   Ireland: '🇮🇪',
   Italy: '🇮🇹',

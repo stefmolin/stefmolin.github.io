@@ -386,6 +386,28 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
   },
   {
     event: {
+      name: 'PyCon Colombia',
+      location: LOCATIONS.MEDELLIN,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.DATA_MORPH,
+    date: '2024-06-08',
+  },
+  {
+    event: {
+      name: 'PyCon Colombia',
+      location: LOCATIONS.MEDELLIN,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
+    date: '2024-06-09',
+  },
+  {
+    event: {
       name: 'EuroPython',
       location: LOCATIONS.PRAGUE,
       virtual: false,
