@@ -22,7 +22,7 @@ const TALK_CARDS: TalkCard[] = [
         development, and explore the limitations of this approach.`,
       ],
       slidesLink: '/data-morph-talk/',
-      duration: '45 minutes',
+      duration: '30 minutes',
     },
     seeAlso: {
       title: 'Data Morph: Moving Beyond the Datasaurus Dozen',
