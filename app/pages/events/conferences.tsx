@@ -56,8 +56,9 @@ export default function Conferences() {
           pageTitle={pageTitle}
           presentations={presentations}
           images={CONFERENCE_IMAGES}
-          mapIntroText={`To date, I have presented ${presentationsGivenAlready} times at conferences around
-          the world. Click a ${MAP_PIN} on the map for more information.`}
+          mapIntroText={`To date, I have presented ${presentationsGivenAlready} times at conferences
+          around the world. Click a ${MAP_PIN} on the map for more information on previous and
+          upcoming presentations.`}
           relatedContent={relatedContent}
           showStats
           statsProps={{ includeYearsActive: true }}

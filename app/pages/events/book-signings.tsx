@@ -75,7 +75,7 @@ export default function BookSignings() {
           presentations={signings}
           images={BOOK_SIGNING_IMAGES}
           mapIntroText={`To date, I have done ${pastSignings} book signings at conferences around
-          the world. Click a ${MAP_PIN} on the map for more information.`}
+          the world. Click a ${MAP_PIN} on the map for more information on previous and upcoming book signings.`}
           relatedContent={relatedContent}
           funFacts={FUN_FACTS}
           header={

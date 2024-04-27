@@ -53,7 +53,7 @@ export default function Index() {
           pageTitle={pageTitle}
           presentations={LIVE_PRESENTATIONS}
           images={EVENT_IMAGES}
-          mapIntroText={`Click a ${MAP_PIN} on the map to see the events I have participated in
+          mapIntroText={`Click a ${MAP_PIN} on the map to see previous and upcoming events
           around the world.`}
           relatedContent={relatedContent}
           showStats
