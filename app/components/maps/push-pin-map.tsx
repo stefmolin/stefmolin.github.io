@@ -40,7 +40,7 @@ export default function PushPinMap({
   maxPinSize = 25,
   pinColor = '#FF5533',
   projection = 'geoMercator',
-  projectionCenter = [-20, 35],
+  projectionCenter = [5, 35],
   projectionScale = 130,
   geography = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json', // TODO: include the geographies file in this repo to avoid the issues those examples had?
   onPinClick,
