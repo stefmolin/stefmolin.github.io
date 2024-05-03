@@ -70,10 +70,16 @@ export function getPostBySlug(slug: string[], fields: string[] = [], category: s
 }
 
 export function getPostsByTag(tag: string, fields: string[] = []) {
-  const posts = getAllPosts(fields);
+  const posts = getAllPosts(fields).filter((post) => post.tags.includes(tag));
+
+  if (tag === 'Python') {
+    // create feed for Python posts (for aggregators)
+    generateRssFeed(tag, `${tag} articles`, posts, true);
+  }
+
   return {
     props: {
-      allPosts: posts.filter((post) => post.tags.includes(tag)),
+      allPosts: posts,
       kind: 'tag',
       title: tag,
       description: `Search results for posts tagged '${tag}' across stefaniemolin.com.`,
@@ -122,14 +128,21 @@ export const getFeed = (postType: string, feedTitle: string, feedDescription: st
   };
 };
 
-export const generateRssFeed = async (feedType: string, feedTitle: string, posts: Items[]) => {
+export const generateRssFeed = async (
+  feedType: string,
+  feedTitle: string,
+  posts: Items[],
+  isTag: boolean = false,
+) => {
   if (feedType.includes('/')) return;
+
+  const link = `${HOME_URL}/${isTag ? 'tags/' : ''}${feedType}`;
 
   const rssFeed = new RssFeed({
     title: `Stefanie Molin's ${feedTitle}`,
     description: 'Stay up to date with my latest posts.',
-    id: `${HOME_URL}/${feedType}`,
-    link: `${HOME_URL}/${feedType}`,
+    id: link,
+    link: link,
     copyright: COPYRIGHT_STATEMENT.replace('YEAR', DateTime.now().year.toString()),
     language: 'en',
     image: HOME_OG_IMAGE.src,
