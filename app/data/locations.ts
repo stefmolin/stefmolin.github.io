@@ -71,5 +71,10 @@ const LOCATIONS: Record<string, MapLocation> = {
     city: 'Medellín',
     country: 'Colombia',
   },
+  TAIPEI: {
+    coordinates: [121.597366, 25.105497],
+    city: 'Taipei',
+    country: 'Taiwan',
+  },
 };
 export default LOCATIONS;

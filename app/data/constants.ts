@@ -32,6 +32,7 @@ export const FLAGS = {
   Italy: '🇮🇹',
   Portugal: '🇵🇹',
   Switzerland: '🇨🇭',
+  Taiwan: '🇹🇼',
   'United Arab Emirates': '🇦🇪',
   'United Kingdom': '🇬🇧',
   'United States of America': '🇺🇸',
