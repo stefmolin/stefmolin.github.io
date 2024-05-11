@@ -118,7 +118,11 @@ const Footer = () => {
               <Link href="/articles" className={underlinedLinkClassName}>
                 articles
               </Link>
-              , as well as contributed to various{' '}
+              , presented at{' '}
+              <Link href="/events/conferences" className={underlinedLinkClassName}>
+                conferences around the world
+              </Link>
+              , and contributed to various{' '}
               <ExternalLink
                 className={underlinedLinkClassName}
                 href="https://github.com/search?q=is%3Apr+author%3Astefmolin+-user%3Astefmolin++is%3Amerged&type=pullrequests&state=closed&s=created&o=desc"
