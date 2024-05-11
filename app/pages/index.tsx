@@ -165,7 +165,7 @@ export default function Home({
               </p>
               <RelatedContentSection relatedContent={relatedContent} title={null} />
             </div>
-            {nextSessions.length > 0 && (
+            {nextSessions.length ? (
               <PageSection
                 title={
                   <>
@@ -177,7 +177,7 @@ export default function Home({
               >
                 <div className="flex w-full place-content-around mt-2">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    {nextSessions.map((session) => {
+                    {nextSessions.slice(0, 4).map((session) => {
                       const eventDate = DateTime.fromISO(session.date);
                       return (
                         <div
@@ -258,7 +258,7 @@ export default function Home({
                   </small>
                 </div>
               </PageSection>
-            )}
+            ) : null}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-12 sm:mx-4">
               {inviteMeToSpeakCTA}
               {newsletterCTA}
