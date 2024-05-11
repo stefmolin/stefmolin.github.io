@@ -7,6 +7,7 @@ import { HEADSHOT, LINKEDIN_PROFILE } from '../data/constants';
 
 export default function ContactMe() {
   const pageTitle = 'Contact Me';
+  const linkClassName = 'py-px font-bold underline decoration-yellow-400 hover:text-slate-700';
   return (
     <Layout
       className="bg-cover bg-fixed bg-center pb-20"
@@ -36,13 +37,10 @@ export default function ContactMe() {
               <span className="font-bold">guest on your podcast</span>, or simply{' '}
               <span className="font-bold">share your thoughts on my content</span>, I would love to
               hear from you. The best way to reach me is via{' '}
-              <ExternalLink
-                href={LINKEDIN_PROFILE}
-                className="py-px font-bold underline decoration-yellow-400 hover:text-slate-700"
-              >
-                LinkedIn
+              <ExternalLink href="mailto:contact@stefaniemolin.com" className={linkClassName}>
+                email
               </ExternalLink>
-              . Alternatively, you can shoot me a message at <em>contact[at]stefaniemolin.com</em>.
+              .
             </p>
           </div>
           <FollowButtons

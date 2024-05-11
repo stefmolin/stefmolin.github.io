@@ -141,8 +141,8 @@ export default function SayThanks() {
                     >
                       Nominate me
                     </ExternalLink>{' '}
-                    to be recognized as a Fellow of the Python Software Foundation. Please use this
-                    address: <em>psf[at]stefaniemolin.com</em>.
+                    to be recognized as a Fellow of the Python Software Foundation. Please use{' '}
+                    <em>psf@stefaniemolin.com</em> as the email address.
                   </span>
                 </>,
               ]}
