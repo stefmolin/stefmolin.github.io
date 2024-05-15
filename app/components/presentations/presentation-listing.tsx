@@ -7,6 +7,7 @@ import type SEOImage from '../../interfaces/seo-image';
 import { type TalkCard } from '../../interfaces/talk';
 import { type WorkshopPage } from '../../interfaces/workshop';
 import { getSeoImageLink } from '../../lib/seo';
+import EventMap from '../events/event-map';
 
 interface PresentationListingProps {
   contentClass: 'talk' | 'workshop';
@@ -29,7 +30,8 @@ export default function PresentationListing({
   seoImage,
   seoImageAltTextFallback,
 }: PresentationListingProps) {
-  const pastSessions = getLivePresentations({ contentClass })
+  const allSessions = getLivePresentations({ contentClass });
+  const pastSessions = allSessions
     .sort((a, b) => (a.date > b.date ? -1 : 1))
     .map(({ presentation }) => presentation.title);
   return (
@@ -68,6 +70,12 @@ export default function PresentationListing({
               })
               .map(generatePreview)}
           </div>
+          <EventMap
+            titleClassName="hidden"
+            introText=""
+            liveEvents={allSessions}
+            excludeTypeColumn
+          />
         </div>
       </Container>
     </Layout>

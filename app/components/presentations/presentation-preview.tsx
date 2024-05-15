@@ -1,9 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMicrophoneLines } from '@fortawesome/free-solid-svg-icons';
 import { type Presentation } from '../../interfaces/event';
 import { type SeeAlso } from '../../interfaces/related-content';
 import type Talk from '../../interfaces/talk';
-import { getLivePresentations } from '../../lib/events';
 import RepoStats from '../repo-stats';
 import PreviewSection from '../sections/preview-section';
 import ResourceLink from '../links/resource-link';
@@ -24,11 +21,6 @@ export default function PresentationPreview({
   seeAlso?: SeeAlso;
   repo?: string;
 }) {
-  const pastSessions = getLivePresentations({
-    contentClass: contentClass,
-    title: title,
-  });
-
   return (
     <PreviewSection
       bottomLeft={
@@ -54,17 +46,7 @@ export default function PresentationPreview({
       id={title}
       linkClass={contentClass === 'talk' ? 'external' : 'internal'}
       resourceLink={{ contentClass, slug }}
-      subtitle={
-        subtitle ?? (
-          <h3 className="text-sm sm:text-base text-slate-600">
-            <FontAwesomeIcon icon={faMicrophoneLines} fixedWidth className="pr-1" />
-            {pastSessions
-              .sort((a, b) => (a.date > b.date ? -1 : 1))
-              .map(({ date, event }) => `${event.name} ${date.slice(0, 4)}`)
-              .join(', ')}
-          </h3>
-        )
-      }
+      subtitle={subtitle}
       title={<h2 className="text-xl sm:text-2xl hover:underline">{title}</h2>}
     />
   );
