@@ -419,7 +419,18 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
   },
   {
     event: {
-      name: 'PyCon Taiwan',
+      name: 'PyCon Estonia',
+      location: LOCATIONS.TALLINN,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.DATA_MORPH,
+    date: '2024-09-05',
+  },
+  {
+    event: {
+      name: 'PyCon TW',
       location: LOCATIONS.TAIPEI,
       virtual: false,
       eventClass: 'conference',

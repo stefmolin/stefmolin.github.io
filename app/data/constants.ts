@@ -28,6 +28,7 @@ export const FLAGS = {
   Canada: '🇨🇦',
   Colombia: '🇨🇴',
   Czechia: '🇨🇿',
+  Estonia: '🇪🇪',
   Ireland: '🇮🇪',
   Italy: '🇮🇹',
   Portugal: '🇵🇹',
