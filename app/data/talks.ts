@@ -1,5 +1,5 @@
 import { type TalkCard } from '../interfaces/talk';
-import { COVER_IMAGE_PENDING } from './constants';
+import { HOME_URL } from './constants';
 import CONTENT_LINKS, { SEE_ALSO_LINKS } from './content-links';
 import { PRESENTATIONS } from './events';
 
@@ -33,7 +33,12 @@ const TALK_CARDS: TalkCard[] = [
   {
     talk: {
       title: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE.title,
-      coverImage: COVER_IMAGE_PENDING,
+      coverImage: {
+        src: `${HOME_URL}/getting-started-with-open-source-talk/images/cover.jpeg`,
+        width: 1200,
+        height: 800,
+        alt: 'A guide to getting started with open source contributions.',
+      },
       description: [
         `The open source community is all about giving back and learning from one another. No matter
         how small, every contribution is valuable. And everyone can contribute something with a

@@ -1,4 +1,3 @@
-import { DateTime } from 'luxon';
 import type SEOImage from '../interfaces/seo-image';
 
 export const HEADSHOT = '/assets/portrait.jpeg';
