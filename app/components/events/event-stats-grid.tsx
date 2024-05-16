@@ -10,7 +10,7 @@ import {
   getContentClassCounts,
   getConferenceCounts,
 } from '../../lib/events';
-import { useCompletedSessions, useNextSessions } from '../../lib/hooks/events';
+import { useCompletedSessions, useNextSessions } from '../../lib/hooks/date-filtered-sessions';
 import StatsGrid, { type StatsGridProps } from '../cards/stats-grid';
 
 export interface EventStatsGridProps {
