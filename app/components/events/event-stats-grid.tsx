@@ -9,9 +9,8 @@ import {
   getCountryCounts,
   getContentClassCounts,
   getConferenceCounts,
-  getCompletedSessions,
-  getNextSessions,
 } from '../../lib/events';
+import { useCompletedSessions, useNextSessions } from '../../lib/hooks/events';
 import StatsGrid, { type StatsGridProps } from '../cards/stats-grid';
 
 export interface EventStatsGridProps {
@@ -37,9 +36,9 @@ export default function EventStatsGrid({
     events: '/events/',
   };
 
-  const completedSessions = getCompletedSessions(sessions);
+  const nextSession = useNextSessions(sessions)[0];
+  const completedSessions = useCompletedSessions(sessions);
   const latestSession = completedSessions.slice(-1)[0];
-  const nextSession = getNextSessions(sessions)[0];
 
   const yearCounts = getYearCounts(completedSessions);
   const yearsActive = { title: 'years active', value: Object.keys(yearCounts).length };

@@ -91,7 +91,7 @@ export default function Home({
 }) {
   const [articleOfTheDay, setArticleOfTheDay] = useState(-1);
 
-  const nextSessions = getNextSessions(LIVE_PRESENTATIONS);
+  const nextSessions = useNextSessions(LIVE_PRESENTATIONS);
   const subsectionHeaderClassName = 'text-2xl sm:text-3xl md:text-5xl';
   const inviteMeToSpeakCTA = (
     <Announcement>

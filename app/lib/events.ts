@@ -1,4 +1,3 @@
-import { DateTime } from 'luxon';
 import { LIVE_PRESENTATIONS } from '../data/events';
 import LOCATIONS from '../data/locations';
 import {
@@ -81,16 +80,4 @@ export function getConferenceCounts(liveSessions: LivePresentation[]): Record<st
     }),
     {},
   );
-}
-
-export function getCompletedSessions(liveSessions: LivePresentation[]) {
-  return liveSessions.filter(({ date }) => date < DateTime.now().toISODate());
-}
-
-export function getLatestSession(liveSessions: LivePresentation[]) {
-  return getCompletedSessions(liveSessions).slice(-1)[0];
-}
-
-export function getNextSessions(liveSessions: LivePresentation[]) {
-  return liveSessions.filter(({ date }) => date >= DateTime.now().toISODate());
 }
