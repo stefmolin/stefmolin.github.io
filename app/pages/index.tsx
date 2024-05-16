@@ -26,7 +26,7 @@ import { FLAGS, HEADSHOT } from '../data/constants';
 import CONTENT_LINKS from '../data/content-links';
 import { LIVE_PRESENTATIONS } from '../data/events';
 import type PostType from '../interfaces/post';
-import { getNextSessions } from '../lib/events';
+import { useNextSessions } from '../lib/hooks/date-filtered-sessions';
 import { getAllPosts } from '../lib/posts';
 
 const relatedContent = [
