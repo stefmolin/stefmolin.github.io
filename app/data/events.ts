@@ -393,7 +393,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
       link: undefined,
     },
     presentation: PRESENTATIONS.DATA_MORPH,
-    date: '2024-06-08',
+    date: '2024-06-07',
   },
   {
     event: {
