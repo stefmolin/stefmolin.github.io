@@ -48,7 +48,7 @@ const TALK_CARDS: TalkCard[] = [
         open source projects. I also share some guidance on selecting projects to contribute to and
         how to set yourself up for success. Get ready to start your open source journey!`,
       ],
-      slidesLink: '/coming-soonish/?slides=Getting-Started-with-Open-Source-Contributions',
+      slidesLink: '/getting-started-with-open-source-talk/',
       duration: '30 minutes',
     },
     seeAlso: SEE_ALSO_LINKS.GET_STARTED_IN_OPEN_SOURCE_ARTICLE,

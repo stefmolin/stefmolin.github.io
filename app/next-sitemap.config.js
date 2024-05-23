@@ -129,6 +129,12 @@ module.exports = {
       priority: PRIORITIES.slidesAndProjects,
       lastmod: now,
     },
+    {
+      loc: '/getting-started-with-open-source-talk/',
+      changefreq: 'yearly',
+      priority: PRIORITIES.slidesAndProjects,
+      lastmod: now,
+    },
   ],
   exclude: ['/coming-soonish'],
 };
