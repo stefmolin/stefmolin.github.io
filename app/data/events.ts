@@ -419,6 +419,17 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
   },
   {
     event: {
+      name: 'Kiwi PyCon',
+      location: LOCATIONS.WELLINGTON,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.DATA_MORPH,
+    date: '2024-08-24',
+  },
+  {
+    event: {
       name: 'PyCon Estonia',
       location: LOCATIONS.TALLINN,
       virtual: false,
