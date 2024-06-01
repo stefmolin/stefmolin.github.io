@@ -390,7 +390,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
       location: LOCATIONS.MEDELLIN,
       virtual: false,
       eventClass: 'conference',
-      link: undefined,
+      link: 'https://2024.pycon.co/en/talks/19',
     },
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2024-06-07',
@@ -401,7 +401,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
       location: LOCATIONS.MEDELLIN,
       virtual: false,
       eventClass: 'conference',
-      link: undefined,
+      link: 'https://2024.pycon.co/en/talks/31',
     },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2024-06-09',
@@ -438,6 +438,15 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     },
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2024-09-05',
+  },
+  {
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC Europe'],
+      virtual: true,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.DATA_MORPH,
+    date: '2024-09-06',
   },
   {
     event: {
