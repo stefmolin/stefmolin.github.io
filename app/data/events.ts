@@ -430,6 +430,28 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
   },
   {
     event: {
+      name: 'PyCon Poland',
+      location: LOCATIONS.GLIWICE,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PANDAS_WORKSHOP,
+    date: '2024-08-29',
+  },
+  {
+    event: {
+      name: 'PyCon Poland',
+      location: LOCATIONS.GLIWICE,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.DATA_MORPH,
+    date: '2024-08-30',
+  },
+  {
+    event: {
       name: 'PyCon Estonia',
       location: LOCATIONS.TALLINN,
       virtual: false,
