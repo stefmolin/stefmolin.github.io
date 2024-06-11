@@ -1,3 +1,4 @@
+import { isBrowser, browserName } from 'react-device-detect';
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from 'react-simple-maps';
 import { MAP_PIN } from '../../data/constants';
 import type MapLocation from '../../interfaces/map-location';
@@ -47,13 +48,14 @@ export default function PushPinMap({
   className,
 }: PushPinMapProps) {
   const minZoom = 1;
-  const maxZoom = 8;
+  const maxZoom = browserName === 'Safari' && isBrowser ? 1 : 8;
   const [zoomLevel, updateZoomLevel] = useState<number>(minZoom);
   const minPinSize = Math.max(2, Math.ceil(maxPinSize / maxZoom));
 
   const [minPinStickSize, maxPinStickSize] = [3, 16];
 
   const scalePin = (zoomLevel, zoomedOutValue, zoomedInValue) => {
+    if (minZoom === maxZoom) return maxPinSize;
     const b = (zoomedInValue - zoomedOutValue) / (maxZoom - minZoom);
     const a = zoomedInValue - b * maxZoom;
     return a + b * zoomLevel;
@@ -71,7 +73,11 @@ export default function PushPinMap({
         stroke={mapOutlineColor}
         strokeWidth={0.5}
       >
-        <ZoomableGroup onMoveEnd={({ zoom }) => updateZoomLevel(zoom)}>
+        <ZoomableGroup
+          minZoom={minZoom}
+          maxZoom={maxZoom}
+          onMoveEnd={({ zoom }) => updateZoomLevel(zoom)}
+        >
           <Geographies geography={geography}>
             {({ geographies }) =>
               geographies.map((geo) => (
