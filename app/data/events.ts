@@ -473,7 +473,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
   {
     event: {
       name: 'PyCon TW',
-      location: LOCATIONS.TAIPEI,
+      location: LOCATIONS.KAOSHIUNG,
       virtual: false,
       eventClass: 'conference',
       link: undefined,

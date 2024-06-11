@@ -76,6 +76,11 @@ const LOCATIONS: Record<string, MapLocation> = {
     city: 'Taipei',
     country: 'Taiwan',
   },
+  KAOSHIUNG: {
+    coordinates: [120.26667, 22.633333],
+    city: 'Kaohsiung City',
+    country: 'Taiwan',
+  },
   TALLINN: {
     coordinates: [24.753574, 59.436962],
     city: 'Tallinn',

@@ -105,16 +105,18 @@ export default function PushPinMap({
               coordinates={location.coordinates}
             >
               {usePinEmoji ? (
-                <text
-                  textAnchor="middle"
-                  style={{
-                    cursor: 'pointer',
-                    fontSize: scalePin(zoomLevel, maxPinSize, minPinSize),
-                  }}
-                  onClick={onPinClick != null ? () => onPinClick(location) : undefined}
-                >
-                  {MAP_PIN}
-                </text>
+                <g fill="none">
+                  <text
+                    textAnchor="middle"
+                    style={{
+                      cursor: 'pointer',
+                      fontSize: scalePin(zoomLevel, maxPinSize, minPinSize),
+                    }}
+                    onClick={onPinClick != null ? () => onPinClick(location) : undefined}
+                  >
+                    {MAP_PIN}
+                  </text>
+                </g>
               ) : (
                 <g
                   fill="none"
