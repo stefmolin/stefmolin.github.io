@@ -23,7 +23,7 @@ function HeaderDropdown({
       </div>
       <div
         className={classNames({
-          'fixed hidden group-hover:flex flex-col': !inOverlay,
+          'absolute hidden group-hover:flex flex-col': !inOverlay,
           'bg-neutral-50 border-x border-b': !inOverlay,
           'z-50 rounded shadow-sm': !inOverlay,
           'py-2 px-4 -translate-x-4': !inOverlay,
