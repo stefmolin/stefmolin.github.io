@@ -415,7 +415,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
       link: 'https://ep2024.europython.eu/sessions#pre-commit-to-better-code',
     },
     presentation: PRESENTATIONS.PRE_COMMIT_WORKSHOP,
-    date: '2024-07-09',
+    date: '2024-07-08',
   },
   {
     event: {
