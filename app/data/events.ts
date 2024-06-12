@@ -423,7 +423,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
       location: LOCATIONS.WELLINGTON,
       virtual: false,
       eventClass: 'conference',
-      link: undefined,
+      link: 'https://talks.kiwipycon.nz/kiwi-pycon-2024/talk/V9BQW9/',
     },
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2024-08-24',
