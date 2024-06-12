@@ -147,6 +147,15 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
         text: 'Thanks again for the comprehensive material and input/examples to explore!',
         author: 'PyCon IT 2023 attendee',
       },
+      {
+        text: 'Me gustó mucho &ndash; estuvo muy chévere!',
+        author: 'PyCon Colombia 2024 attendee',
+      },
+      {
+        text: `I liked how you used [functional programming] to create a partial function that
+        updates a graph for every frame. [...] Thanks for making your slides open.`,
+        author: 'PyCon Colombia 2024 attendee',
+      },
     ],
     relatedContent: [
       CONTENT_LINKS.PANDAS_WORKSHOP,
