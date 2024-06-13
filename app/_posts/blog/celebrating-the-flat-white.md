@@ -4,7 +4,7 @@ excerpt: "I was thrilled to see that today's Google Doodle was \"Celebrating the
 date: "2024-03-11T23:58:00.000Z"
 modified: "2024-03-12T00:21:00.000Z"
 author: Stefanie Molin
-tags: ["reflection", "coffee"]
+tags: ["about me", "coffee"]
 ogImage:
   url: "https://www.google.com/logos/doodles/2024/celebrating-the-flat-white-6753651837110463-2xa.gif"
   width: 1000
