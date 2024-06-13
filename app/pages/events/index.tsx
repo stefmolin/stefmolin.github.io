@@ -20,7 +20,7 @@ const relatedContent = [
   CONTENT_LINKS.WORKSHOPS,
   CONTENT_LINKS.BOOKS,
   CONTENT_LINKS.TALKS,
-  CONTENT_LINKS.BLOG,
+  CONTENT_LINKS.TRAVEL_BLOG,
 ];
 
 // TODO: incorporate the non-conference, non-signing events?

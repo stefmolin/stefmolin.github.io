@@ -5,6 +5,7 @@ import { getPostThemePaths, getPostThemeProps } from '../../lib/post-themes';
 
 const DISPLAY_NAMES = {
   'confessions-of-a-professor': 'Confessions of a Professor',
+  travel: 'Travel Blog',
   updates: 'Updates',
 };
 

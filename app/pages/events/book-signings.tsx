@@ -18,7 +18,7 @@ const relatedContent = [
   CONTENT_LINKS.INTERVIEWS,
   CONTENT_LINKS.BOOKS,
   CONTENT_LINKS.CONFERENCES,
-  CONTENT_LINKS.BLOG,
+  CONTENT_LINKS.TRAVEL_BLOG,
 ];
 
 // TODO: revisit the card color(s) once color palette is finalized
