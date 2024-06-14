@@ -3,7 +3,7 @@ title: "How to Set Up Pre-Commit Hooks"
 subtitle: "A step-by-step guide to installing and configuring pre-commit hooks on your project."
 excerpt: "Looking to streamline your local development? In this article, I provide a step-by-step guide to installing and configuring pre-commit hooks on your project. You will also a learn a little bit about how git hooks work."
 date: "2024-03-29T20:55:00.000Z"
-modified: "2024-04-20T23:39:00.000Z"
+modified: "2024-06-14T01:35:00.000Z"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python"]
 ogImage:
@@ -190,7 +190,9 @@ In many cases, we will want to customize the configuration of our pre-commit hoo
 - Specify a list of command line arguments to call a given hook with in our `.pre-commit-config.yaml` file (see the `args` section under `ruff`), or
 - Maintain our configuration in a separate file like `pyproject.toml`.
 
-The decision of which to use goes beyond the hooks themselves: some of the tools we are using are also helpful additions to code editors/IDEs; some may be used directly on the command line, which we may choose to incorporate into our CI workflow. In order to have consistent configuration across our CI workflow, pre-commit hooks, and in-editor checks/extensions, we must use a configuration file instead of `args`.
+Note that while `pre-commit` passes the command line arguments specified in `args` when calling the hook, it does use any configuration specified elsewhere. It is the responsibility of the tool to read the configuration file and use its contents.
+
+The decision of whether to use `args` or a configuration file goes beyond the hooks themselves: some of the tools we are using are also helpful additions to code editors/IDEs; some may be used directly on the command line, which we may choose to incorporate into our CI workflow. In order to have consistent configuration across our CI workflow, pre-commit hooks, and in-editor checks/extensions, we must use a configuration file instead of `args`.
 
 Let’s go ahead and add the following to our `pyproject.toml` file. This will configure the `ruff`, `ruff-format`, and `numpydoc-validation` hooks. You will need to consult the documentation for each tool to figure out which configuration files are supported and which settings you want:
 
