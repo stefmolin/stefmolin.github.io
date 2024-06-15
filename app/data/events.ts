@@ -362,6 +362,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     event: {
       ...SAME_LOCATION_EVENTS['ODSC East'],
       virtual: false,
+      link: '/blog/travel/2024/odsc-east/',
     },
     presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
     date: '2024-04-24',
@@ -370,7 +371,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     event: {
       ...SAME_LOCATION_EVENTS['ODSC East'],
       virtual: false,
-      link: 'https://odsc.com/speakers/data-morph-a-cautionary-tale-of-summary-statistics/',
+      link: '/blog/travel/2024/odsc-east/',
     },
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2024-04-25',
@@ -379,7 +380,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     event: {
       ...SAME_LOCATION_EVENTS['PyCon IT'],
       virtual: false,
-      link: 'https://2024.pycon.it/en/event/getting-started-with-open-source-contributions',
+      link: '/blog/travel/2024/pycon-italia/',
     },
     presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
     date: '2024-05-24',
@@ -390,7 +391,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
       location: LOCATIONS.MEDELLIN,
       virtual: false,
       eventClass: 'conference',
-      link: 'https://2024.pycon.co/en/talks/19',
+      link: '/blog/travel/2024/pycon-colombia/',
     },
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2024-06-07',
@@ -401,7 +402,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
       location: LOCATIONS.MEDELLIN,
       virtual: false,
       eventClass: 'conference',
-      link: 'https://2024.pycon.co/en/talks/31',
+      link: '/blog/travel/2024/pycon-colombia/',
     },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2024-06-09',

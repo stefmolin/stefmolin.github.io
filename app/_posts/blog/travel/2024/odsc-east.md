@@ -26,7 +26,7 @@ Source: [ODSC](https://twitter.com/StefanieMolin/status/1782379071403389231)
 
 </figcaption>
 
-The next day I had a [book signing](/events/book-signings/) for [*Hands-On Data Analysis with Pandas (2nd Edition)*](/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/) in the expo hall. It never ceases to amaze me how many people turn out to meet me, regardless of how long the line is.<sup>1,2</sup> The books always run out well before the line finishes, but I always stay around to chat with everyone, and sign other items, if they wish (thankfully, no body parts 😂). Some people ask to take pictures with me as well.
+During the conference, I also had a [book signing](/events/book-signings/) for [*Hands-On Data Analysis with Pandas (2nd Edition)*](/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/) in the expo hall. It never ceases to amaze me how many people turn out to meet me, regardless of how long the line is.<sup>1,2</sup> The books always run out well before the line finishes, but I always stay around to chat with everyone, and sign other items, if they wish (thankfully, no body parts 😂). Some people ask to take pictures with me as well.
 
 I find the conversations with each individual to be quite interesting. Some people come to share where they are on their data science journey and what they are hoping to learn in the near future, and then ask me for some advice. Others are interested in my journey and ask questions about my background and experiences.
 
