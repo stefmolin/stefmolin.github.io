@@ -73,7 +73,7 @@ export default function PresentationListing({
           <EventMap
             titleClassName="hidden"
             introText=""
-            liveEvents={allSessions}
+            liveEvents={[...allSessions].reverse()}
             excludeTypeColumn
           />
         </div>
