@@ -46,8 +46,9 @@
   /* inline code */
   @apply text-orange-600;
   @apply bg-slate-100;
-  @apply px-2;
+  @apply px-1;
   @apply py-0.5;
+  @apply rounded;
 }
 
 .markdown a {
