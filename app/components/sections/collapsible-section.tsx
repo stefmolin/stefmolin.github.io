@@ -1,19 +1,22 @@
 import { faChevronRight, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames';
 import Collapsible from 'react-collapsible';
 
 const CollapsibleSection = ({
   prompt,
   contents,
   children,
+  className = 'items-start',
   open = false,
 }: {
   prompt: string;
   open?: boolean;
   contents?: string;
   children?: React.ReactNode;
+  className?: string;
 }) => (
-  <div className="flex flex-col items-center space-y-1">
+  <div className={classNames('flex flex-col space-y-1', className)}>
     <Collapsible
       open={open}
       trigger={

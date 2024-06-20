@@ -29,7 +29,7 @@ export default function EventStatsSection({
         includeYearsActive={includeYearsActive}
       />
       {includeYearsActive && width && width > 1024 && (
-        <CollapsibleSection prompt="Yearly breakdown">
+        <CollapsibleSection prompt="Yearly breakdown" className="items-center">
           <EventStatsGrid
             sessions={sessions}
             yearlyCountsOnly
