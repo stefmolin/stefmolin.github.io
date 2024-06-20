@@ -32,6 +32,16 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     },
     title: 'How to Pivot and Plot Data with Pandas',
   },
+  HOW_TO_SETUP_PRE_COMMIT_HOOKS_ARTICLE: {
+    link: '/articles/devx/pre-commit/setup-guide/',
+    contentClass: 'article',
+    image: {
+      src: '/assets/articles/devx/pre-commit/cover.jpg',
+      width: 1200,
+      height: 691,
+    },
+    title: 'How to Set Up Pre-Commit Hooks',
+  },
   DATA_MORPH_ARTICLE: {
     link: '/articles/data-science/introducing-data-morph/',
     contentClass: 'article',
