@@ -482,4 +482,13 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2024-09-22',
   },
+  {
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC West'],
+      virtual: true,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.DATA_MORPH,
+    date: '2024-10-29',
+  },
 ];
