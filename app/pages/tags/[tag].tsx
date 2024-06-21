@@ -24,17 +24,20 @@ export const getStaticProps = async ({ params }: Params) => {
     'ogImage',
     'type',
     'excerpt',
+    'preview',
   ];
   const { props } = getPostsByTag(params.tag, fields);
-  props.allPosts = props.allPosts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  props.allPosts = props.allPosts
+    .filter((post) => !post.preview)
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return { props };
 };
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['tags']);
+  const posts = getAllPosts(['tags', 'preview']);
   const tags = new Set<string>();
 
-  posts.forEach((post) => post.tags.map((tag) => tags.add(tag)));
+  posts.filter((post) => !post.preview).forEach((post) => post.tags.map((tag) => tags.add(tag)));
 
   return {
     paths: Array.from(tags).map((tag) => ({ params: { tag } })),

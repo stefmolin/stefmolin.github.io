@@ -23,11 +23,13 @@ export default function Index({ tagCounts }: Pick<TagListingProps, 'tagCounts'>)
 }
 
 export const getStaticProps = async () => {
-  const posts = getAllPosts(['tags']);
-  const counts = posts.reduce((count, post) => {
-    post.tags.map((tag) => (count[tag] = 1 + (count[tag] || 0)));
-    return count;
-  }, {});
+  const posts = getAllPosts(['tags', 'preview']);
+  const counts = posts
+    .filter((post) => !post.preview)
+    .reduce((count, post) => {
+      post.tags.map((tag) => (count[tag] = 1 + (count[tag] || 0)));
+      return count;
+    }, {});
   return {
     props: { tagCounts: Object.entries(counts).map(([tag, value]) => ({ text: tag, value })) },
   };

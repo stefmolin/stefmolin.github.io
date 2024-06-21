@@ -70,7 +70,9 @@ export function getPostBySlug(slug: string[], fields: string[] = [], category: s
 }
 
 export function getPostsByTag(tag: string, fields: string[] = []) {
-  const posts = getAllPosts(fields).filter((post) => post.tags.includes(tag));
+  const posts = getAllPosts([...fields, 'preview']).filter(
+    (post) => post.tags.includes(tag) && !post.preview,
+  );
 
   if (tag === 'Python') {
     // create feed for Python posts (for aggregators)
@@ -112,9 +114,20 @@ export function getAllPosts(fields: string[] = [], type: string = '') {
 
 export const getFeed = (postType: string, feedTitle: string, feedDescription: string) => {
   const allPosts = getAllPosts(
-    ['title', 'subtitle', 'date', 'slug', 'author', 'ogImage', 'excerpt', 'tags', 'duration'],
+    [
+      'title',
+      'subtitle',
+      'date',
+      'slug',
+      'author',
+      'ogImage',
+      'excerpt',
+      'tags',
+      'duration',
+      'preview',
+    ],
     postType,
-  );
+  ).filter((post) => !post.preview);
 
   generateRssFeed(postType, feedTitle, allPosts);
 

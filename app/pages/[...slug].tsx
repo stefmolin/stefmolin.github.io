@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import ErrorPage from 'next/error';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
@@ -35,8 +36,12 @@ export default function Post({ post, suggestedPosts }: Props) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
-
   const { width } = useWindowSize();
+  const searchParams = useSearchParams();
+
+  if (post.preview) {
+    if (searchParams.get('preview') !== 'true') return <ErrorPage statusCode={404} />;
+  }
 
   const ogImageURL = getImageLink(post.ogImage.url);
 
@@ -189,12 +194,13 @@ export async function getStaticProps({ params }: Params) {
     'modified',
     'featured',
     'excerpt',
+    'preview',
   ];
   const post = getPostBySlug(params.slug, fields);
   const content = await markdownToHtml(post.content || '');
 
   let suggestedPosts = getAllPosts([...fields, 'excerpt'], post.type).filter(
-    (x) => x.slug.join() != post.slug.join(),
+    (x) => x.slug.join() != post.slug.join() && !x.preview,
   );
   if (suggestedPosts.length > 0) {
     suggestedPosts.forEach((otherPost) => {

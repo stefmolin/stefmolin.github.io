@@ -15,10 +15,11 @@ interface PostType {
   tags: string[];
   duration: string;
   type: string;
+  theme: string | null;
   canonical?: string;
   modified?: string;
   featured?: string[];
-  theme: string | null;
+  preview?: boolean;
 }
 
 export default PostType;

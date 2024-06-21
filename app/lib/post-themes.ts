@@ -19,15 +19,18 @@ export const getPostThemeProps = async ({ params }: Params) => {
     'type',
     'excerpt',
     'theme',
+    'preview',
   ];
   const { props } = getPostsByTheme(params.theme, fields);
-  props.allPosts = props.allPosts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  props.allPosts = props.allPosts
+    .filter((post) => !post.preview)
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return { props };
 };
 
 export const getPostThemePaths = (category: 'articles' | 'blog') => async () => {
-  const posts = getAllPosts(['theme', 'type']).filter(
-    (x) => x.theme && x.theme.length && x.type === category,
+  const posts = getAllPosts(['theme', 'type', 'preview']).filter(
+    (x) => x.theme && x.theme.length && x.type === category && !x.preview,
   );
   const themes = new Set<string>();
 
