@@ -22,6 +22,16 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     }, // TODO: change to just the image name and then use the link to find it (i.e. prepend "/assets")
     title: 'Python Data Visualization Workshop',
   },
+  PRE_COMMIT_WORKSHOP: {
+    link: '/workshops/pre-commit-workshop',
+    contentClass: 'workshop',
+    image: {
+      src: '/assets/coming-soon.png', // TODO
+      width: 1075,
+      height: 647,
+    },
+    title: 'Pre-Commit Hooks Workshop',
+  },
   PIVOT_AND_PLOT_WITH_PANDAS_ARTICLE: {
     link: '/articles/data-science/how-to-pivot-and-plot-data-with-pandas',
     contentClass: 'article',

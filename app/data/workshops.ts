@@ -10,7 +10,6 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       subtitle:
         'An introductory training designed to provide initial hands-on experience with the pandas library.',
       repo: 'pandas-workshop',
-      slidesLink: '/pandas-workshop/',
       coverImage: CONTENT_LINKS.PANDAS_WORKSHOP.image,
       description: [
         `Working with data can be challenging: it often doesn't come in the best format for analysis,
@@ -85,7 +84,6 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       subtitle:
         'A workshop on creating static, animated, and interactive data visualizations in Python.',
       repo: 'python-data-viz-workshop',
-      slidesLink: '/python-data-viz-workshop/', // TODO: rework this to automatically be `/${repo}/`?
       coverImage: CONTENT_LINKS.DATA_VIZ_WORKSHOP.image,
       description: [
         `The human brain excels at finding patterns in visual representations, which is why data
@@ -163,6 +161,52 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       CONTENT_LINKS.PANDAS_BOOK,
       CONTENT_LINKS.PIVOT_AND_PLOT_WITH_PANDAS_ARTICLE,
       CONTENT_LINKS.DATA_VIZ_ARTICLES,
+      CONTENT_LINKS.EVENTS,
+      CONTENT_LINKS.INTERVIEWS,
+      CONTENT_LINKS.TRAVEL_BLOG,
+    ],
+  },
+  {
+    workshop: {
+      title: PRESENTATIONS.PRE_COMMIT_WORKSHOP.title,
+      subtitle: 'A workshop on building and using pre-commit hooks to help maintain code quality.',
+      repo: 'pre-commit-workshop',
+      coverImage: {
+        src: '/assets/coming-soon.png', // TODO
+        width: 1075,
+        height: 647,
+      },
+      description: [
+        `Maintaining code quality can be challenging, no matter the size of your project or number of
+        contributors. Different team members may have different opinions on code styling and
+        preferences for code structure, while solo contributors might find themselves spending a
+        considerable amount of time making sure the code conforms to accepted conventions. However,
+        manually inspecting and fixing issues in files is both tedious and error-prone. As such,
+        computers are much more suited to this task than humans. Pre-commit hooks are a great way to
+        have a computer handle this for you.`,
+        `Pre-commit hooks are code checks that run whenever you attempt to commit your changes with
+        Git. They can detect and, in some cases, automatically correct code-quality issues
+        *before* they make it to your codebase. In this tutorial, you will learn how to install and
+        configure pre-commit hooks for your repository to ensure that only code that passes your
+        checks makes it into your codebase. We will also explore how to build custom pre-commit
+        hooks for novel use cases.`,
+      ],
+      duration: '2-3 hours',
+      outline: {
+        'Section 1: Setting Up Pre-Commit Hooks': `After laying the foundation with an overview of
+        Git hooks, we will discuss the use cases for hooks at the pre-commit stage (called pre-commit
+        hooks), as well as a high-level explanation of how to set them up without any external tools.
+        We will then introduce the \`pre-commit\` tool and disambiguate it from pre-commit hooks, before
+        commencing a detailed walkthrough of the pre-commit hooks setup process when using \`pre-commit\`.`,
+        'Section 2: Creating a Pre-Commit Hook': `While there are a lot of pre-made hooks in existence,
+        sometimes they aren't sufficient for the task at hand. In this section, we will walk
+        step-by-step through the process of creating and distributing a custom hook. After wiring
+        everything up, we will discuss best practices for sharing, documenting, testing, and maintaining
+        the codebase.`,
+      },
+    },
+    relatedContent: [
+      CONTENT_LINKS.HOW_TO_SETUP_PRE_COMMIT_HOOKS_ARTICLE,
       CONTENT_LINKS.EVENTS,
       CONTENT_LINKS.INTERVIEWS,
       CONTENT_LINKS.TRAVEL_BLOG,

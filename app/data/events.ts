@@ -74,7 +74,7 @@ export const PRESENTATIONS: Record<string, Presentation> = {
   PRE_COMMIT_WORKSHOP: {
     contentClass: 'workshop',
     title: '(Pre-)Commit to Better Code',
-    link: '/coming-soonish/',
+    link: CONTENT_LINKS.PRE_COMMIT_WORKSHOP.link,
   },
 };
 

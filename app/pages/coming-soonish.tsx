@@ -20,7 +20,7 @@ const relatedContent = [
 
 export default function ComingSoonish() {
   const searchParams = useSearchParams();
-  const slides = searchParams.get('slides')?.replaceAll('-', ' ');
+  const slides = searchParams.get('slides');
   const pageTitle = 'Coming Soon';
 
   return (
