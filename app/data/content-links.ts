@@ -46,7 +46,7 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     link: '/articles/devx/pre-commit/setup-guide/',
     contentClass: 'article',
     image: {
-      src: '/assets/articles/devx/pre-commit/cover.jpg',
+      src: '/assets/articles/devx/pre-commit/setup-guide/cover.jpg',
       width: 1200,
       height: 691,
     },
