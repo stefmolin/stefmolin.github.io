@@ -4,12 +4,12 @@ import { type AnnotatedLocation } from './map-location';
 export type ConferenceLocation = AnnotatedLocation<string[]>;
 
 export interface Event {
-  // TODO: add a type (conference, meetup, etc.)
   name: string;
   location: MapLocation;
   virtual: boolean;
-  eventClass: 'conference' | 'meetup';
+  eventClass: 'conference' | 'meetup' | 'podcast';
 }
+
 export interface Presentation {
   contentClass: 'book signing' | 'talk' | 'workshop';
   title: string;
@@ -18,6 +18,13 @@ export interface Presentation {
 export interface LivePresentation {
   presentation: Presentation;
   event: Event & { link?: string };
+  date: string;
+}
+export interface LivePodcast {
+  presentation: Omit<Presentation, 'contentClass'> & {
+    contentClass: 'podcast';
+  };
+  event: Omit<Event, 'location'> & { location?: MapLocation };
   date: string;
 }
 export type ConferencePresentation = AnnotatedLocation<LivePresentation[]>;

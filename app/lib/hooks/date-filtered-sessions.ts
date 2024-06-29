@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 import { DateTime } from 'luxon';
-import { type LivePresentation } from '../../interfaces/event';
+import { type LivePresentation, type LivePodcast } from '../../interfaces/event';
 
-export const useFilteredSessions = (liveSessions: LivePresentation[], past: boolean) => {
+export const useFilteredSessions = (
+  liveSessions: (LivePresentation | LivePodcast)[],
+  past: boolean,
+) => {
   const [filteredSessions, setFilteredSessions] = useState(liveSessions);
 
   useEffect(() => {
@@ -17,14 +20,14 @@ export const useFilteredSessions = (liveSessions: LivePresentation[], past: bool
   return filteredSessions;
 };
 
-export const useCompletedSessions = (liveSessions: LivePresentation[]) => {
+export const useCompletedSessions = (liveSessions: (LivePresentation | LivePodcast)[]) => {
   return useFilteredSessions(liveSessions, true);
 };
 
-export const useLatestSession = (liveSessions: LivePresentation[]) => {
+export const useLatestSession = (liveSessions: (LivePresentation | LivePodcast)[]) => {
   return useCompletedSessions(liveSessions).slice(-1)[0];
 };
 
-export const useNextSessions = (liveSessions: LivePresentation[]) => {
+export const useNextSessions = (liveSessions: (LivePresentation | LivePodcast)[]) => {
   return useFilteredSessions(liveSessions, false);
 };

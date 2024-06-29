@@ -24,7 +24,8 @@ import PageSection from '../components/sections/page-section';
 import SubscribeToNewsletterForm from '../components/subscribe-to-newsletter';
 import { FLAGS, HEADSHOT } from '../data/constants';
 import CONTENT_LINKS from '../data/content-links';
-import { LIVE_PRESENTATIONS } from '../data/events';
+import { LIVE_EVENTS } from '../data/events';
+import { type LivePresentation } from '../interfaces/event';
 import type PostType from '../interfaces/post';
 import { useNextSessions } from '../lib/hooks/date-filtered-sessions';
 import { getAllPosts } from '../lib/posts';
@@ -89,9 +90,9 @@ export default function Home({
   articles: PostType[];
   latestBlogPost: PostType;
 }) {
-  const [articleOfTheDay, setArticleOfTheDay] = useState(-1);
+  const [articleOfTheDay, setArticleOfTheDay] = useState<number | null>(null);
 
-  const nextSessions = useNextSessions(LIVE_PRESENTATIONS);
+  const nextSessions = useNextSessions(LIVE_EVENTS);
   const subsectionHeaderClassName = 'text-2xl sm:text-3xl md:text-5xl';
   const inviteMeToSpeakCTA = (
     <Announcement>
@@ -213,7 +214,7 @@ export default function Home({
                                 />
                                 {eventDate.toLocaleString()}
                               </div>
-                              {articleOfTheDay >= 0 && (
+                              {articleOfTheDay != null && (
                                 <div>({eventDate.toRelativeCalendar({ unit: 'days' })})</div>
                               )}
                             </div>
@@ -222,11 +223,17 @@ export default function Home({
                             <div className="flex flex-col sm:flex-row items-center justify-center space-x-1 text-center">
                               <div>
                                 <span className="pr-1">
-                                  {FLAGS[session.event.location.country]}
+                                  {session.presentation.contentClass === 'podcast'
+                                    ? '🌎'
+                                    : FLAGS[(session as LivePresentation).event.location.country]}
                                 </span>{' '}
                                 {session.event.name}
                               </div>
-                              <div className="hidden sm:flex">({session.event.location.city})</div>
+                              {session.presentation.contentClass !== 'podcast' && (
+                                <div className="hidden sm:flex">
+                                  ({(session as LivePresentation).event.location.city})
+                                </div>
+                              )}
                             </div>
                             <p>
                               <FontAwesomeIcon
@@ -263,13 +270,15 @@ export default function Home({
               {inviteMeToSpeakCTA}
               {newsletterCTA}
             </div>
-            <FeaturedPost
-              feedType="articles"
-              icon={faNewspaper}
-              post={articles[Math.max(0, articleOfTheDay)]}
-              title="Article of the Day"
-              titleClassName={subsectionHeaderClassName}
-            />
+            {articleOfTheDay != null && (
+              <FeaturedPost
+                feedType="articles"
+                icon={faNewspaper}
+                post={articles[Math.max(0, articleOfTheDay)]}
+                title="Article of the Day"
+                titleClassName={subsectionHeaderClassName}
+              />
+            )}
             <FeaturedPost
               feedType="blog"
               icon={faRss}

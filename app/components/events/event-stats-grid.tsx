@@ -36,8 +36,8 @@ export default function EventStatsGrid({
     events: '/events/',
   };
 
-  const nextSession = useNextSessions(sessions)[0];
-  const completedSessions = useCompletedSessions(sessions);
+  const nextSession = useNextSessions(sessions)[0] as (typeof sessions)[0];
+  const completedSessions = useCompletedSessions(sessions) as typeof sessions;
   const latestSession = completedSessions.slice(-1)[0];
 
   const yearCounts = getYearCounts(completedSessions);

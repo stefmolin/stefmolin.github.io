@@ -1,4 +1,9 @@
-import { type Event, type LivePresentation, type Presentation } from '../interfaces/event';
+import {
+  type Event,
+  type LivePodcast,
+  type LivePresentation,
+  type Presentation,
+} from '../interfaces/event';
 import CONTENT_LINKS from './content-links';
 import LOCATIONS from './locations';
 
@@ -78,7 +83,7 @@ export const PRESENTATIONS: Record<string, Presentation> = {
   },
 };
 
-export const LIVE_PRESENTATIONS: LivePresentation[] = [
+export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   {
     event: {
       ...SAME_LOCATION_EVENTS['ODSC Europe'],
@@ -473,6 +478,19 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
   },
   {
     event: {
+      name: 'Talk Python',
+      eventClass: 'podcast',
+      virtual: true,
+    },
+    presentation: {
+      contentClass: 'podcast',
+      title: 'Pre-Commit Hooks for Python Devs',
+      link: 'https://talkpython.fm/stream/live',
+    },
+    date: '2024-09-12',
+  }, // TODO: after recording, this should be removed from here and added to the interviews page instead
+  {
+    event: {
       name: 'PyCon Taiwan',
       location: LOCATIONS.KAOSHIUNG,
       virtual: false,
@@ -492,3 +510,7 @@ export const LIVE_PRESENTATIONS: LivePresentation[] = [
     date: '2024-10-29',
   },
 ];
+
+export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(
+  (x) => x.presentation.contentClass !== 'podcast',
+) as LivePresentation[];
