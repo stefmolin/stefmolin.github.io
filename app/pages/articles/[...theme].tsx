@@ -5,7 +5,7 @@ import { getPostThemePaths, getPostThemeProps } from '../../lib/post-themes';
 
 const DISPLAY_NAMES = {
   'data-science': 'Data Science',
-  devx: 'DevX',
+  devx: 'DevX/DevOps',
   'open-source': 'Open Source',
   'pre-commit': 'Pre-Commit',
 };
