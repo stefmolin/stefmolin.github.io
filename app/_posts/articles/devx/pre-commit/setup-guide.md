@@ -7,7 +7,7 @@ modified: "2024-06-14T01:35:00.000Z"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python"]
 ogImage:
-  url: "/assets/articles/devx/pre-commit/cover.jpg"
+  url: "/assets/articles/devx/pre-commit/setup-guide/cover.jpg"
   width: 6097
   height: 3510
 featured:
@@ -15,7 +15,7 @@ featured:
   - "[Python Bytes Episode #379](https://pythonbytes.fm/episodes/show/379/constable-on-the-debugging-case)"
 ---
 
-![The Space Shuttle Challenger launching from Complex 39](/assets/articles/devx/pre-commit/cover.jpg)
+![The Space Shuttle Challenger launching from Complex 39](/assets/articles/devx/pre-commit/setup-guide/cover.jpg)
 
 <figcaption>
 
