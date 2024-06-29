@@ -15,11 +15,12 @@ export default function WorkshopMap({ workshop }: { workshop: Workshop }) {
   return (
     <PageSection
       id="workshop-map"
-      title="Past sessions"
+      title="Live sessions"
       titleClassName="text-2xl sm:text-3xl md:text-4xl mb-5 text-center sm:text-left"
     >
       <p className="md:text-lg">
-        Click a {MAP_PIN} on the map to see the conferences I have presented this workshop at.
+        Click a {MAP_PIN} on the map to see the conferences I have presented or will present this
+        workshop at.
       </p>
       <InteractiveMap
         locations={locationToEvents}

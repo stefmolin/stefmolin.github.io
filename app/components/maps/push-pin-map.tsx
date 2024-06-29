@@ -48,7 +48,7 @@ export default function PushPinMap({
   className,
 }: PushPinMapProps) {
   const minZoom = 1;
-  const maxZoom = browserName === 'Safari' && isBrowser ? 1 : 8;
+  const maxZoom = browserName === 'Safari' && isBrowser ? 1 : 4;
   const [zoomLevel, updateZoomLevel] = useState<number>(minZoom);
   const minPinSize = Math.max(2, Math.ceil(maxPinSize / maxZoom));
 
