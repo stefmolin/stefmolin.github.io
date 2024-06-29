@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import seedrandom from 'seedrandom';
 import { useEffect, useState } from 'react';
+import { findIndex, maxBy } from 'lodash';
 import Announcement from '../components/cards/announcement';
 import FollowButtons from '../components/follow';
 import ResourceLink from '../components/links/resource-link';
@@ -29,6 +30,8 @@ import { type LivePresentation } from '../interfaces/event';
 import type PostType from '../interfaces/post';
 import { useNextSessions } from '../lib/hooks/date-filtered-sessions';
 import { getAllPosts } from '../lib/posts';
+
+const NEW_ARTICLE_FEATURED_DAYS = 14;
 
 const relatedContent = [
   CONTENT_LINKS.EVENTS,
@@ -121,7 +124,14 @@ export default function Home({
   );
 
   useEffect(() => {
-    setArticleOfTheDay(Math.floor(seedrandom(DateTime.now().startOf('day'))() * articles.length));
+    const mostRecent = maxBy(articles, 'date');
+    const mostRecentIndex = findIndex(articles, mostRecent);
+    setArticleOfTheDay(
+      mostRecent &&
+        DateTime.fromISO(mostRecent.date).diffNow().as('days') > NEW_ARTICLE_FEATURED_DAYS
+        ? Math.floor(seedrandom(DateTime.now().startOf('day'))() * articles.length)
+        : mostRecentIndex,
+    );
   }, [articles]);
 
   return (
