@@ -2,6 +2,7 @@ import CoverImage from './cover-image';
 import Link from 'next/link';
 import PostTags from './post-tags';
 import TimeToRead from '../datetime/duration-indicator';
+import MarkdownSection from '../sections/markdown-section';
 
 type Props = {
   title: string;
@@ -50,8 +51,6 @@ const PostPreview = ({
     </div>
   );
 
-  const postExcerpt = <p className="md:text-lg leading-relaxed mb-4 line-clamp-5">{excerpt}</p>;
-
   const linkedTags = <PostTags tags={tags} className="flex flex-row text-sm md:text-base" />;
 
   return (
@@ -63,7 +62,9 @@ const PostPreview = ({
       <div className="flex flex-col md:flex-row items-center justify-end">
         {image}
         <div className="flex flex-col w-full h-full lg:w-2/3 justify-between">
-          {postExcerpt}
+          <MarkdownSection className="md:text-lg leading-relaxed mb-4 line-clamp-5">
+            {excerpt}
+          </MarkdownSection>
           {linkedTags}
         </div>
       </div>
