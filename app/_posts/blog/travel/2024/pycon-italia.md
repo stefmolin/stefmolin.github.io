@@ -12,11 +12,11 @@ ogImage:
   height: 1311
 ---
 
-![PyCon Italia 2024 banner](https://media.licdn.com/dms/image/D4E10AQGrAXrVtmM1nw/image-shrink_1280/0/1700553617354?e=1718935200&v=beta&t=u43EL8GMDI2UXHuW7Q4TDsZw3VgZcbbWwOYc9agaF4Y)
+![PyCon Italia 2024 banner](https://pbs.twimg.com/media/F_cWE0GWQAAG_IS?format=jpg&name=medium)
 
 <figcaption>
 
-Source: [PyCon Italia](https://www.linkedin.com/posts/pycon-italia_we-are-excited-to-announce-that-pycon-italia-activity-7132638946018127873-LdQT)
+Source: [PyCon Italia](https://twitter.com/pyconit/status/1726873258123784352)
 
 </figcaption>
 
