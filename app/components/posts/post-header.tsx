@@ -7,6 +7,7 @@ import Featured from './featured';
 import type PostType from '../../interfaces/post';
 import FancyDivider from '../dividers/fancy-divider';
 import SectionSeparator from '../dividers/section-separator';
+import MentionStats from '../mention-stats';
 
 const PostHeader = ({
   post,
@@ -21,6 +22,7 @@ const PostHeader = ({
         <div className="flex flex-col md:flex-row md:space-x-3 md:items-center justify-start">
           <PostPublicationDate date={date} relative />
           <TimeToRead duration={duration} />
+          <MentionStats className="" />
           {featured && <Featured contentClass="Article" features={featured} />}
         </div>
       </div>
