@@ -33,6 +33,12 @@ const config: DefaultSeoProps = {
       content: 'technology, blog, articles, workshops, books, Python, data science',
     },
   ],
+  additionalLinkTags: [
+    {
+      href: 'https://github.com/stefmolin',
+      rel: 'me',
+    },
+  ],
 };
 
 export default config;
