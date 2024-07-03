@@ -38,6 +38,10 @@ const config: DefaultSeoProps = {
       href: 'https://github.com/stefmolin',
       rel: 'me',
     },
+    {
+      href: 'https://webmention.io/stefaniemolin.com/webmention',
+      rel: 'webmention',
+    },
   ],
 };
 
