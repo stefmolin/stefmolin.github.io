@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { type SizeProp } from '@fortawesome/fontawesome-svg-core';
-import { faEnvelopeOpenText, faHandHoldingDollar, faRss } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelopeOpenText, faHandHoldingHeart, faRss } from '@fortawesome/free-solid-svg-icons';
 import {
   IconDefinition,
   faGithub,
@@ -15,7 +15,7 @@ import ResourceLink from './links/resource-link';
 export interface FollowButtonsProps {
   className?: string;
   dividerClassName?: string;
-  feed?: 'article' | 'blog';
+  feed?: 'articles' | 'blog';
   size?: SizeProp;
   withDivider?: boolean;
   withoutNewsletter?: boolean;
@@ -50,7 +50,7 @@ const FollowButtons = ({
       {makeLink(TWITTER_PROFILE, faXTwitter)}
       {!withoutNewsletter && makeLink('/newsletter', faEnvelopeOpenText, false)}
       {feed && makeLink(`/feeds/${feed}-rss.xml`, faRss)}
-      {withSupport && makeLink('https://www.buymeacoffee.com/stefanie.molin', faHandHoldingDollar)}
+      {withSupport && makeLink('/say-thanks', faHandHoldingHeart, false)}
     </div>
   );
 

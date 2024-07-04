@@ -1,8 +1,4 @@
-import { NextSeo } from 'next-seo';
-import Container from '../components/sections/container';
-import Layout from '../components/page-layout/layout';
-import ExternalLink from '../components/links/external-link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import {
   faAward,
   faBook,
@@ -16,10 +12,15 @@ import {
   faShare,
   faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
-import Link from 'next/link';
-import { AMAZON_LINKS, GITHUB_PROFILE, LINKEDIN_PROFILE, TWITTER_PROFILE } from '../data/constants';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
+import { NextSeo } from 'next-seo';
+import Link from 'next/link';
 import SectionSeparator from '../components/dividers/section-separator';
+import ExternalLink from '../components/links/external-link';
+import Layout from '../components/page-layout/layout';
+import Container from '../components/sections/container';
+import { AMAZON_LINKS, GITHUB_PROFILE, LINKEDIN_PROFILE, TWITTER_PROFILE } from '../data/constants';
 
 interface LinkSectionProps {
   title: string;
@@ -152,13 +153,13 @@ export default function SayThanks() {
               title="Make a purchase"
               links={[
                 <>
-                  <FontAwesomeIcon icon={faBook} fixedWidth />
+                  <FontAwesomeIcon icon={faGithub} fixedWidth />
                   <span>
                     <ExternalLink
                       className={underlinedLinkClassName}
-                      href={AMAZON_LINKS.PANDAS_BOOK_2}
+                      href="https://github.com/sponsors/stefmolin"
                     >
-                      Buy my book
+                      Sponsor me on GitHub
                     </ExternalLink>
                     .
                   </span>
@@ -171,6 +172,18 @@ export default function SayThanks() {
                       href="https://www.buymeacoffee.com/stefanie.molin"
                     >
                       Buy me a coffee
+                    </ExternalLink>
+                    .
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faBook} fixedWidth />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href={AMAZON_LINKS.PANDAS_BOOK_2}
+                    >
+                      Buy my book
                     </ExternalLink>
                     .
                   </span>

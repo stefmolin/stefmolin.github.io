@@ -135,6 +135,7 @@ export default function Post({ post, suggestedPosts }: Props) {
                     className="text-lg sm:text-2xl md:text-3xl mx-2 sm:mx-3"
                     feed={post.slug[0] as FollowButtonsProps['feed']}
                     withDivider
+                    withSupport={post.slug[0] === 'articles' && !post.preview}
                   />
                 </div>
                 <Giscus
