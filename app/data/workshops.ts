@@ -171,11 +171,7 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       title: PRESENTATIONS.PRE_COMMIT_WORKSHOP.title,
       subtitle: 'A workshop on building and using pre-commit hooks to help maintain code quality.',
       repo: 'pre-commit-workshop',
-      coverImage: {
-        src: '/assets/coming-soon.png', // TODO
-        width: 1075,
-        height: 647,
-      },
+      coverImage: CONTENT_LINKS.PRE_COMMIT_WORKSHOP.image,
       description: [
         `Maintaining code quality can be challenging, no matter the size of your project or number of
         contributors. Different team members may have different opinions on code styling and

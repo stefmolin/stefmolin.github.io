@@ -26,9 +26,9 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     link: '/workshops/pre-commit-workshop',
     contentClass: 'workshop',
     image: {
-      src: '/assets/coming-soon.png', // TODO
-      width: 1075,
-      height: 647,
+      src: '/pre-commit-workshop/images/cover.jpg',
+      width: 1344,
+      height: 768,
     },
     title: 'Pre-Commit Hooks Workshop',
   },

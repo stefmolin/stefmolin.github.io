@@ -46,7 +46,7 @@ export default function PreviewSection({
               <img
                 src={typeof coverImage === 'string' ? coverImage : coverImage.src}
                 alt={coverImageAltText}
-                className="md:float-left md:mr-5 mb-2 mx-auto max-w-40 sm:max-w-64 object-cover"
+                className="md:float-left md:mr-5 mb-2 mt-1.5 mx-auto max-w-40 sm:max-w-64 object-cover"
               />
             </ResourceLink>
           )}
