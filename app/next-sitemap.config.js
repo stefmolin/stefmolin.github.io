@@ -142,5 +142,5 @@ module.exports = {
       lastmod: now,
     },
   ],
-  exclude: ['/coming-soonish'],
+  exclude: ['/coming-soonish', '/feedback'],
 };

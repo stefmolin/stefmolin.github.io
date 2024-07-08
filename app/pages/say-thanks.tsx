@@ -1,4 +1,5 @@
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faComment } from '@fortawesome/free-regular-svg-icons';
 import {
   faAward,
   faBook,
@@ -105,6 +106,28 @@ export default function SayThanks() {
                   </span>
                 </>,
                 <>
+                  <FontAwesomeIcon icon={faPodcast} fixedWidth />
+                  <span>
+                    <Link className={underlinedLinkClassName} href="/contact">
+                      Invite me
+                    </Link>{' '}
+                    to be a guest on your podcast or speak at your{' '}
+                    <Link className={underlinedLinkClassName} href="/events">
+                      event
+                    </Link>
+                    .
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faComment} fixedWidth />
+                  <span>
+                    <Link className={underlinedLinkClassName} href="/feedback">
+                      Provide your feedback
+                    </Link>{' '}
+                    on a talk or workshop.
+                  </span>
+                </>,
+                <>
                   <FontAwesomeIcon icon={faPen} fixedWidth />
                   <span>
                     <ExternalLink
@@ -116,19 +139,6 @@ export default function SayThanks() {
                     for one of my{' '}
                     <Link className={underlinedLinkClassName} href="/books">
                       books
-                    </Link>
-                    .
-                  </span>
-                </>,
-                <>
-                  <FontAwesomeIcon icon={faPodcast} fixedWidth />
-                  <span>
-                    <Link className={underlinedLinkClassName} href="/contact">
-                      Invite me
-                    </Link>{' '}
-                    to be a guest on your podcast or speak at your{' '}
-                    <Link className={underlinedLinkClassName} href="/events">
-                      event
                     </Link>
                     .
                   </span>
