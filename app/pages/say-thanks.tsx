@@ -1,4 +1,4 @@
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faPython } from '@fortawesome/free-brands-svg-icons';
 import { faComment } from '@fortawesome/free-regular-svg-icons';
 import {
   faAward,
@@ -143,8 +143,26 @@ export default function SayThanks() {
                     .
                   </span>
                 </>,
+              ]}
+            />
+            <SectionSeparator className="my-10 sm:hidden" />
+            <LinkSection
+              title="Nominate me for recognition"
+              links={[
                 <>
-                  <FontAwesomeIcon icon={faAward} fixedWidth className="sm:px-1" />
+                  <FontAwesomeIcon icon={faGithub} fixedWidth />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://stars.github.com/nominate/"
+                    >
+                      Nominate me (@stefmolin)
+                    </ExternalLink>{' '}
+                    as a GitHub Star.
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faPython} fixedWidth className="sm:px-1" />
                   <span>
                     <ExternalLink
                       className={underlinedLinkClassName}
