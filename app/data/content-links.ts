@@ -1,5 +1,6 @@
 import type RelatedContentLink from '../interfaces/related-content';
 import { type SeeAlso } from '../interfaces/related-content';
+import { HOME_URL } from './constants';
 
 const CONTENT_LINKS: Record<string, RelatedContentLink> = {
   PANDAS_WORKSHOP: {
@@ -26,7 +27,7 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     link: '/workshops/pre-commit-workshop',
     contentClass: 'workshop',
     image: {
-      src: '/pre-commit-workshop/images/cover.jpg',
+      src: `${HOME_URL}/pre-commit-workshop/images/cover.jpg`,
       width: 1344,
       height: 768,
     },
