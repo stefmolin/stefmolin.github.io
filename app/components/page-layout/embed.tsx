@@ -7,10 +7,12 @@ export default function EmbeddedPage({
   description,
   pageTitle,
   src,
+  noindex,
 }: {
   description: string;
   pageTitle: string;
   src: string;
+  noindex?: boolean;
 }) {
   return (
     <Layout isIFrame seoPageTitle={`${pageTitle} | Stefanie Molin`}>
@@ -25,6 +27,7 @@ export default function EmbeddedPage({
             },
           ],
         }}
+        noindex={noindex}
       />
       <iframe src={src} className="h-screen w-screen" referrerPolicy="same-origin" />
     </Layout>

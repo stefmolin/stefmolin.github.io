@@ -31,7 +31,7 @@ export default function ComingSoonish() {
       }}
       seoPageTitle={pageTitle}
     >
-      <NextSeo title={pageTitle} />
+      <NextSeo title={pageTitle} noindex />
       <Container className="px-4 sm:px-10">
         <div className="-mt-8 sm:mt-4 max-w-5xl mx-auto p-6 sm:p-10 bg-white rounded-lg">
           <h1 className="text-2xl sm:text-3xl md:text-4xl text-center mb-2">Coming Soon(ish)</h1>

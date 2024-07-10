@@ -6,6 +6,7 @@ export default function Feedback() {
       src="https://tally.so/r/w8edyP"
       pageTitle="Live Session Feedback Form"
       description="Feedback form for all of Stefanie Molin's live sessions."
+      noindex
     />
   );
 }
