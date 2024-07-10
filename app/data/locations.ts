@@ -96,5 +96,10 @@ const LOCATIONS: Record<string, MapLocation> = {
     city: 'Gliwice',
     country: 'Poland',
   },
+  TOKYO: {
+    coordinates: [139.839478, 35.652832],
+    city: 'Tokyo',
+    country: 'Japan',
+  },
 };
 export default LOCATIONS;
