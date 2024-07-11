@@ -26,5 +26,6 @@ export interface LivePodcast {
   };
   event: Omit<Event, 'location'> & { location?: MapLocation };
   date: string;
+  time: string;
 }
 export type ConferencePresentation = AnnotatedLocation<LivePresentation[]>;
