@@ -1,5 +1,5 @@
 export default interface MapLocation {
-  coordinates: number[];
+  coordinates: [number, number];
   city: string;
   country: string;
 }
