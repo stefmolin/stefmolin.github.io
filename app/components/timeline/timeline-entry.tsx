@@ -105,11 +105,11 @@ const TimelineEntry = (props: TimelineEntryProps) => {
       <TimelinePoint icon={icon} className={pointClassName} />
       <TimelineContent sx={{ py: '30px', m: 'auto' }}>
         <p>
-          <span className="text-base sm:text-lg lg:text-xl">{title}</span>
+          <span className="text-base sm:text-lg md:text-xl">{title}</span>
           {description ? (
             <>
               <br />
-              <span className="text-sm sm:text-base">{description}</span>
+              <span className="italic text-sm md:text-base">{description}</span>
             </>
           ) : null}
         </p>
