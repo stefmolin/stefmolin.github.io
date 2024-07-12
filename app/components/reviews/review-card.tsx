@@ -102,7 +102,9 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
             })}
           >
             {rating ? (
-              _.range(rating).map(() => <FontAwesomeIcon icon={faStar} size="xs" fixedWidth />)
+              _.range(rating).map((star) => (
+                <FontAwesomeIcon key={star} icon={faStar} size="xs" fixedWidth />
+              ))
             ) : (
               <FontAwesomeIcon icon={faTrophy} size="xs" fixedWidth />
             )}
