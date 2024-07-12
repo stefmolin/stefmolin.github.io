@@ -10,7 +10,9 @@ const TimelineLabel = (props: TimelineLabelProps) => {
   const { label, className = 'text-3xl' } = props;
   return (
     <TimelineContent sx={{ py: '20px', px: 2, m: 'auto' }}>
-      <h2 className={classNames('text-center', className)}>{label}</h2>
+      <div id={label}>
+        <h2 className={classNames('text-center', className)}>{label}</h2>
+      </div>
     </TimelineContent>
   );
 };
