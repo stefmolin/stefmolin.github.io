@@ -43,60 +43,73 @@ export interface TimelineEntryProps {
 const TimelineEntry = (props: TimelineEntryProps) => {
   const { date, time, where, eventType, title, description, link, flip } = props;
 
+  const iconSpanClassName = 'hidden md:inline';
+
   const [icon, pointClassName] = TIMELINE_EVENT_ICONS[eventType];
 
   const flipIndexFirst = flip ? 1 : 0;
   const flipIndexSecond = Math.abs(flipIndexFirst - 1);
 
   const assembleLine = (lineInfo: (string | JSX.Element)[]) => (
-    <p>
+    <p className="text-xs sm:text-sm md:text-base">
       {lineInfo[flipIndexFirst]} {lineInfo[flipIndexSecond]}
     </p>
   );
 
   return (
     <TimelineItem>
-      <TimelineOppositeContent
-        sx={{ m: 'auto 0' }}
-        align="right"
-        variant="body2"
-        className="text-gray-500"
-      >
+      <TimelineOppositeContent sx={{ m: 'auto 0' }} align="right" className="text-gray-500">
         <div>
           {assembleLine([
-            <FontAwesomeIcon icon={faCalendarDay} fixedWidth />,
-            DateTime.fromISO(date).toFormat('LLLL d (EEE)'),
+            <span className={iconSpanClassName}>
+              <FontAwesomeIcon icon={faCalendarDay} fixedWidth />
+            </span>,
+            DateTime.fromISO(date).toFormat('LLL d (EEE)'),
           ])}
           {time &&
             assembleLine([
-              <FontAwesomeIcon icon={faClock} fixedWidth />,
+              <span className={iconSpanClassName}>
+                <FontAwesomeIcon icon={faClock} fixedWidth />
+              </span>,
               DateTime.fromISO(`${date}T${time}`).toFormat('h:mm a ZZZZ'),
             ])}
-          {where && assembleLine([<FontAwesomeIcon icon={faMapPin} fixedWidth />, where])}
+          {where &&
+            assembleLine([
+              <span className={iconSpanClassName}>
+                <FontAwesomeIcon icon={faMapPin} fixedWidth />
+              </span>,
+              where,
+            ])}
           {link &&
             assembleLine([
-              <FontAwesomeIcon
-                icon={
-                  typeof link.resourceLink === 'string' && link.resourceLink.includes('github.com')
-                    ? faGithub
-                    : faExternalLink
-                }
-                fixedWidth
-              />,
-              <ResourceLink className="hover:underline" {...link}>
+              <span className={iconSpanClassName}>
+                <FontAwesomeIcon
+                  icon={
+                    typeof link.resourceLink === 'string' &&
+                    link.resourceLink.includes('github.com')
+                      ? faGithub
+                      : faExternalLink
+                  }
+                  fixedWidth
+                />
+              </span>,
+              <ResourceLink
+                className="underline md:no-underline md:hover:underline hover:text-slate-500"
+                {...link}
+              >
                 {link.text}
               </ResourceLink>,
             ])}
         </div>
       </TimelineOppositeContent>
       <TimelinePoint icon={icon} className={pointClassName} />
-      <TimelineContent sx={{ py: '30px', px: 2, m: 'auto' }}>
+      <TimelineContent sx={{ py: '30px', m: 'auto' }}>
         <p>
-          <span className="text-xl">{title}</span>
+          <span className="text-base sm:text-lg lg:text-xl">{title}</span>
           {description ? (
             <>
               <br />
-              <span className="text-base">{description}</span>
+              <span className="text-sm sm:text-base">{description}</span>
             </>
           ) : null}
         </p>

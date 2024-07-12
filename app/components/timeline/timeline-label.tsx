@@ -7,7 +7,7 @@ export interface TimelineLabelProps {
 }
 
 const TimelineLabel = (props: TimelineLabelProps) => {
-  const { label, className = 'text-3xl' } = props;
+  const { label, className = 'text-2xl md:text-3xl' } = props;
   return (
     <TimelineContent sx={{ py: '20px', px: 2, m: 'auto' }}>
       <div id={label}>

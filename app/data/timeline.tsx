@@ -4,6 +4,12 @@ import { LIVE_EVENTS } from './events';
 import INTERVIEWS from './interviews';
 import { GITHUB_PROFILE } from './constants';
 
+const COUNTRY_SHORTHAND = {
+  'United Arab Emirates': 'UAE',
+  'United Kingdom': 'UK',
+  'United States of America': 'USA',
+};
+
 const TIMELINE_ITEMS: TimelineEntryProps[] = [
   {
     date: '2024-06-14',
@@ -235,7 +241,9 @@ const TIMELINE_EVENTS: TimelineEntryProps[] = LIVE_EVENTS.map((entry) => {
   return {
     date,
     time: entry['time'],
-    where: event.location ? `${event.location.city}, ${event.location.country}` : undefined,
+    where: event.location
+      ? `${event.location.city}, ${COUNTRY_SHORTHAND[event.location.country] ?? event.location.country}`
+      : undefined,
     eventType,
     title: (
       <Link className="hover:underline" href={presentation.link}>
