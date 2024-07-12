@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { type TimelineEntryProps } from '../components/timeline/timeline-entry';
+import { GITHUB_PROFILE } from './constants';
 import { LIVE_EVENTS } from './events';
 import INTERVIEWS from './interviews';
-import { GITHUB_PROFILE } from './constants';
 
 const COUNTRY_SHORTHAND = {
   'United Arab Emirates': 'UAE',
@@ -29,9 +29,12 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
     eventType: 'volunteer',
     title: 'Joined PyCon Portugal 2024 program committee',
     link: {
-      linkClass: 'external',
-      resourceLink: 'https://2024.pycon.pt/',
-      text: 'View event',
+      linkClass: 'internal',
+      resourceLink: {
+        contentClass: 'blog',
+        slug: '/blog/updates/2024/conference-program-committee/',
+      },
+      text: 'Read blog post',
     },
   },
   {
