@@ -17,11 +17,12 @@ const VerticalTimeline = ({
   footerLabels,
   headerLabels,
   ascending = false,
-  position = 'alternate',
+  position = 'alternate-reverse',
 }: VerticalTimelineProps) => {
   const shouldFlip = ['alternate', 'alternate-reverse'].includes(position);
 
   const flipCheck = (index: number) => {
+    if (position === 'right') return true;
     if (!shouldFlip) return false;
     const isEven = index % 2 === 0;
     return position === 'alternate' ? isEven : !isEven;
