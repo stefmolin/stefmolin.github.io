@@ -31,12 +31,12 @@ export default function ResourceLink({
     if (typeof resourceLink === 'string') href = resourceLink;
     else if (
       resourceLink.slug.startsWith('/') &&
-      !['article', 'post'].includes(resourceLink.contentClass)
+      !['article', 'blog', 'post'].includes(resourceLink.contentClass)
     )
       href = resourceLink.slug;
     else {
       const { contentClass, slug } = resourceLink;
-      if (['article', 'post'].includes(resourceLink.contentClass)) {
+      if (['article', 'blog', 'post'].includes(contentClass)) {
         const pathParts = slug.split('/');
         href = {
           pathname: '/[...slug]',

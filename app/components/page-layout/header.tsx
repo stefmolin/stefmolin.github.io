@@ -76,6 +76,7 @@ function NavigationLinks({
         {makeLink('Blog', '/blog')}
         {makeLink('Contact', '/contact')}
         {makeLink('Interviews', '/interviews')}
+        {makeLink('Timeline', '/timeline')}
       </HeaderDropdown>
       {separator}
       {makeLink('Events', '/events', 'delay-300', transition)}

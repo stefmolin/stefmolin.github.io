@@ -22,6 +22,8 @@ const relatedContent = [
   CONTENT_LINKS.BOOK_SIGNINGS,
   CONTENT_LINKS.TALKS,
   CONTENT_LINKS.TRAVEL_BLOG,
+  CONTENT_LINKS.TIMELINE,
+  CONTENT_LINKS.UPCOMING_EVENTS,
 ];
 
 export default function Conferences() {

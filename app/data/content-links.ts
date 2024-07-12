@@ -193,6 +193,26 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     },
     title: 'Conferences',
   },
+  TIMELINE: {
+    link: '/timeline/',
+    contentClass: 'page',
+    image: {
+      src: 'https://images.unsplash.com/photo-1476820865390-c52aeebb9891?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdyb3d0aHxlbnwwfHwwfHx8MA%3D%3D',
+      width: 800,
+      height: 534,
+    },
+    title: 'Timeline',
+  },
+  UPCOMING_EVENTS: {
+    link: '/events/upcoming/',
+    contentClass: 'page',
+    image: {
+      src: 'https://images.unsplash.com/photo-1499591934245-40b55745b905?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdyb3d0aHxlbnwwfHwwfHx8MA%3D%3D',
+      width: 800,
+      height: 532,
+    },
+    title: 'Upcoming Events',
+  },
 };
 export default CONTENT_LINKS;
 

@@ -21,6 +21,8 @@ const relatedContent = [
   CONTENT_LINKS.BOOKS,
   CONTENT_LINKS.TALKS,
   CONTENT_LINKS.TRAVEL_BLOG,
+  CONTENT_LINKS.TIMELINE,
+  CONTENT_LINKS.UPCOMING_EVENTS,
 ];
 
 // TODO: incorporate the non-conference, non-signing events?
@@ -53,8 +55,16 @@ export default function Index() {
           pageTitle={pageTitle}
           presentations={LIVE_PRESENTATIONS}
           images={EVENT_IMAGES}
-          mapIntroText={`Click a ${MAP_PIN} on the map to see previous and upcoming events
-          around the world.`}
+          mapIntroText={
+            <>
+              Click a {MAP_PIN} on the map to see previous and upcoming events around the world. To
+              view this chronologically, check out{' '}
+              <Link href={CONTENT_LINKS.TIMELINE.link} className="underline hover:text-slate-500">
+                my timeline
+              </Link>
+              .
+            </>
+          }
           relatedContent={relatedContent}
           showStats
           header={

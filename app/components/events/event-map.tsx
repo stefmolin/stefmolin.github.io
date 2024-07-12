@@ -16,7 +16,7 @@ export default function EventMap({
   excludeTypeColumn = false,
 }: {
   liveEvents: LivePresentation[];
-  introText: string;
+  introText: string | React.ReactNode;
   titleClassName?: string;
   excludeTypeColumn?: boolean;
 }) {

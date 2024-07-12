@@ -14,7 +14,7 @@ interface EventPageProps {
   pageTitle: string;
   presentations: LivePresentation[];
   images: Photo[];
-  mapIntroText: string;
+  mapIntroText: string | React.ReactNode;
   relatedContent: RelatedContentLink[];
   header?: React.ReactNode;
   footer?: React.ReactNode;

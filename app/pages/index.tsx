@@ -42,7 +42,10 @@ const relatedContent = [
   CONTENT_LINKS.BOOKS,
   CONTENT_LINKS.TALKS,
   CONTENT_LINKS.BLOG,
+  CONTENT_LINKS.TIMELINE,
 ];
+
+const linkClassName = 'text-slate-600 underline hover:text-black';
 
 const FeaturedPost = ({
   feedType,
@@ -72,11 +75,11 @@ const FeaturedPost = ({
       <div className="text-center">
         <small>
           *Be sure to check out the{' '}
-          <Link href={`/${feedType}`} className="text-slate-600 underline hover:text-black">
+          <Link href={`/${feedType}`} className={linkClassName}>
             {feedType} feed
           </Link>{' '}
           or{' '}
-          <Link href="/tags" className="text-slate-600 underline hover:text-black">
+          <Link href="/tags" className={linkClassName}>
             search posts by tag
           </Link>{' '}
           for more.
@@ -267,9 +270,9 @@ export default function Home({
                 </div>
                 <div className="text-center">
                   <small>
-                    *A complete listing of past and upcoming sessions can be found on the{' '}
-                    <Link href="/events" className="text-slate-600 underline hover:text-black">
-                      events page
+                    *A complete list can be found on the{' '}
+                    <Link href={CONTENT_LINKS.UPCOMING_EVENTS.link} className={linkClassName}>
+                      upcoming sessions page
                     </Link>
                     .
                   </small>
