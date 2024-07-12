@@ -12,6 +12,19 @@ const COUNTRY_SHORTHAND = {
 
 const TIMELINE_ITEMS: TimelineEntryProps[] = [
   {
+    date: '2024-07-13',
+    eventType: 'code',
+    where: 'Prague, Czechia',
+    title: 'Data Morph sprint at EuroPython 2024',
+    description:
+      'After participating in several sprints around the world, I figured I would try my hand at running one.',
+    link: {
+      linkClass: 'external',
+      resourceLink: 'https://ep2024.europython.eu/sprints#data-morph',
+      text: 'View event',
+    },
+  },
+  {
     date: '2024-06-14',
     eventType: 'volunteer',
     title: 'Joined PyCon Portugal 2024 program committee',
