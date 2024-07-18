@@ -201,6 +201,32 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
         the codebase.`,
       },
     },
+    reviews: [
+      {
+        text: `Stefanie has a gift for teaching. She explain very well the benefits of the tool. She
+        did not leave anyone behind, answered the basic questions from rookie programmers like me but
+        also went deep into more complex areas.`,
+        author: 'Mauricio',
+      },
+      {
+        text: `This has been the most useful workshop for me[...] It may be the most useful thing I
+        learn at the conference. This is going to really help me with my project.`,
+        author: 'EuroPython 2024 attendee',
+      },
+      {
+        text: `You could tell [Stefanie] knew what [she was] talking about and how to explain it.
+        The slides are great &ndash; easy to follow even after coming in late.`,
+        author: 'EuroPython 2024 attendee',
+      },
+      {
+        text: `This was great. Now I just have to figure out how we can use it [at work].`,
+        author: 'EuroPython 2024 attendee',
+      },
+      {
+        text: 'I was able to get something working by the end and now I know how to [build my own hook].',
+        author: 'EuroPython 2024 attendee',
+      },
+    ],
     relatedContent: [
       CONTENT_LINKS.HOW_TO_SETUP_PRE_COMMIT_HOOKS_ARTICLE,
       CONTENT_LINKS.EVENTS,
