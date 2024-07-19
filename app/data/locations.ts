@@ -101,5 +101,10 @@ const LOCATIONS: Record<string, MapLocation> = {
     city: 'Tokyo',
     country: 'Japan',
   },
+  BRAGA: {
+    coordinates: [-8.426507, 41.545448],
+    city: 'Braga',
+    country: 'Portugal',
+  },
 };
 export default LOCATIONS;

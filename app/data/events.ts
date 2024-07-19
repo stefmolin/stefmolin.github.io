@@ -189,7 +189,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   },
   {
     event: {
-      name: 'PyCon PT',
+      name: 'PyCon Portugal',
       location: LOCATIONS.PORTO,
       virtual: false,
       eventClass: 'conference',
@@ -298,7 +298,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   },
   {
     event: {
-      name: 'PyCon PT',
+      name: 'PyCon Portugal',
       location: LOCATIONS.COIMBRA,
       virtual: false,
       eventClass: 'conference',
@@ -511,6 +511,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     },
     presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
     date: '2024-09-28',
+  },
+  {
+    event: {
+      name: 'PyCon Portugal',
+      location: LOCATIONS.BRAGA,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PANDAS_WORKSHOP,
+    date: '2024-10-19',
   },
   {
     event: {
