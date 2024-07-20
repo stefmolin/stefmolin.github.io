@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   IconDefinition,
   faBook,
+  faMapLocationDot,
   faMicrophoneLines,
   faRss,
 } from '@fortawesome/free-solid-svg-icons';
@@ -99,6 +100,9 @@ export default function Home({
   const [articleOfTheDay, setArticleOfTheDay] = useState<number | null>(null);
 
   const nextSessions = useNextSessions(LIVE_EVENTS);
+  const pastSessions = useCompletedSessions(LIVE_EVENTS).toReversed();
+  const showcasedSessions = nextSessions.length ? nextSessions : pastSessions;
+  const multipleSessionsShowcased = showcasedSessions.length > 1;
   const subsectionHeaderClassName = 'text-2xl sm:text-3xl md:text-5xl';
   const inviteMeToSpeakCTA = (
     <Announcement>
@@ -179,19 +183,30 @@ export default function Home({
               </p>
               <RelatedContentSection relatedContent={relatedContent} title={null} />
             </div>
-            {nextSessions.length ? (
+            {showcasedSessions.length ? (
               <PageSection
                 title={
-                  <>
-                    <FontAwesomeIcon icon={faBell} fixedWidth shake />
-                    Upcoming Live Sessions*
-                  </>
+                  nextSessions.length ? (
+                    <>
+                      <FontAwesomeIcon icon={faBell} fixedWidth shake />
+                      Upcoming Live Session{`${multipleSessionsShowcased ? 's' : ''}`}*
+                    </>
+                  ) : (
+                    <>
+                      <FontAwesomeIcon icon={faMapLocationDot} fixedWidth className="pr-2" />
+                      Past Live Sessions*
+                    </>
+                  )
                 }
                 titleClassName={classNames('text-center', subsectionHeaderClassName)}
               >
                 <div className="flex w-full place-content-around mt-2">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    {nextSessions.slice(0, 4).map((session) => {
+                  <div
+                    className={classNames('grid grid-cols-1 gap-2', {
+                      'md:grid-cols-2': multipleSessionsShowcased,
+                    })}
+                  >
+                    {showcasedSessions.slice(0, 4).map((session) => {
                       const eventDate = DateTime.fromISO(session.date);
                       return (
                         <div
@@ -271,9 +286,15 @@ export default function Home({
                 <div className="text-center">
                   <small>
                     *A complete list can be found on the{' '}
-                    <Link href={CONTENT_LINKS.UPCOMING_EVENTS.link} className={linkClassName}>
-                      upcoming sessions page
-                    </Link>
+                    {nextSessions.length > 4 ? (
+                      <Link href={CONTENT_LINKS.UPCOMING_EVENTS.link} className={linkClassName}>
+                        upcoming sessions page
+                      </Link>
+                    ) : (
+                      <Link href={CONTENT_LINKS.EVENTS.link} className={linkClassName}>
+                        events page
+                      </Link>
+                    )}
                     .
                   </small>
                 </div>
