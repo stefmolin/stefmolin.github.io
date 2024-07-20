@@ -10,6 +10,9 @@ const COUNTRY_SHORTHAND = {
   'United States of America': 'USA',
 };
 
+// NOTE: any new translations will eventually show up here:
+// https://search.worldcat.org/search?q=au%3D%22Molin%2C+Stefanie%22
+
 const TIMELINE_ITEMS: TimelineEntryProps[] = [
   {
     date: '2024-07-13',
@@ -105,7 +108,7 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
     },
   },
   {
-    date: '2023-06-01',
+    date: '2023-06-01', // https://baike.baidu.com/item/Pandas%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/63660283?fr=aladdin
     eventType: 'book',
     title: <>Hands-On Data Analysis with Pandas &ndash; Chinese Edition</>,
     description: 'The Simplified Chinese edition is published.',
@@ -139,7 +142,7 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
     title: "Earned Master's degree in Computer Science",
   },
   {
-    date: '2022-11-01',
+    date: '2022-11-30', // http://www.acornpub.co.kr/book/data-analysis-pandas
     eventType: 'book',
     title: <>Hands-On Data Analysis with Pandas &ndash; Korean Edition</>,
     description: 'The Korean edition is published.',
