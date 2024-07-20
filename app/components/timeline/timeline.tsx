@@ -83,16 +83,14 @@ const VerticalTimeline = ({
       <TimelineLabel key={labelProps.label} {...labelProps} />
     ));
 
-  return processedItems.length || useIfEmpty == null ? (
-    <>
-      <Timeline position={position}>
-        {headerLabels && processLabels(headerLabels)}
-        {processedItems}
-        {footerLabels && processLabels(footerLabels)}
-      </Timeline>
-    </>
+  return processedItems.length === 0 && useIfEmpty != null ? (
+    <>{useIfEmpty}</>
   ) : (
-    useIfEmpty
+    <Timeline position={position}>
+      {headerLabels && processLabels(headerLabels)}
+      {processedItems}
+      {footerLabels && processLabels(footerLabels)}
+    </Timeline>
   );
 };
 export default VerticalTimeline;
