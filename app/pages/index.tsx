@@ -100,9 +100,12 @@ export default function Home({
   const [articleOfTheDay, setArticleOfTheDay] = useState<number | null>(null);
 
   const nextSessions = useNextSessions(LIVE_EVENTS);
-  const pastSessions = useCompletedSessions(LIVE_EVENTS).toReversed();
+  const pastSessions = useCompletedSessions(LIVE_EVENTS);
+  pastSessions.reverse();
+
   const showcasedSessions = nextSessions.length ? nextSessions : pastSessions;
   const multipleSessionsShowcased = showcasedSessions.length > 1;
+
   const subsectionHeaderClassName = 'text-2xl sm:text-3xl md:text-5xl';
   const inviteMeToSpeakCTA = (
     <Announcement>
