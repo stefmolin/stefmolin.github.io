@@ -10,12 +10,14 @@ export interface VerticalTimelineProps {
   footerLabels?: OuterLabel;
   headerLabels?: OuterLabel;
   position?: TimelineProps['position'];
+  useIfEmpty?: React.ReactNode;
 }
 
 const VerticalTimeline = ({
   timelineItems,
   footerLabels,
   headerLabels,
+  useIfEmpty,
   ascending = false,
   position = 'alternate-reverse',
 }: VerticalTimelineProps) => {
@@ -57,7 +59,7 @@ const VerticalTimeline = ({
       <TimelineLabel key={labelProps.label} {...labelProps} />
     ));
 
-  return (
+  return processedItems.length || useIfEmpty == null ? (
     <>
       <Timeline position={position}>
         {headerLabels && processLabels(headerLabels)}
@@ -65,6 +67,8 @@ const VerticalTimeline = ({
         {footerLabels && processLabels(footerLabels)}
       </Timeline>
     </>
+  ) : (
+    useIfEmpty
   );
 };
 export default VerticalTimeline;

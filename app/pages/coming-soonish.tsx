@@ -22,6 +22,7 @@ export default function ComingSoonish() {
   const searchParams = useSearchParams();
   const slides = searchParams.get('slides');
   const pageTitle = 'Coming Soon';
+  const linkClassName = 'py-px font-bold underline decoration-yellow-400 hover:text-slate-700';
 
   return (
     <Layout
@@ -61,10 +62,7 @@ export default function ComingSoonish() {
               'resource you requested is'
             )}{' '}
             not completed yet. Check back soon, or better yet,{' '}
-            <Link
-              href="/newsletter"
-              className="py-px font-bold underline decoration-yellow-400 hover:text-slate-700"
-            >
+            <Link href="/newsletter" className={linkClassName}>
               sign up for my newsletter
             </Link>
             .
@@ -79,7 +77,7 @@ export default function ComingSoonish() {
                 And as Camila Cabello once said, "
                 <ExternalLink
                   href="https://www.youtube.com/watch?v=KDFWEPYwDpU"
-                  className="py-px underline font-bold decoration-yellow-400 hover:text-slate-700"
+                  className={linkClassName}
                 >
                   Don't Go Yet!
                 </ExternalLink>
