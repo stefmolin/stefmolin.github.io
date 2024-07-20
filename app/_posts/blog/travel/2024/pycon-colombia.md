@@ -6,16 +6,16 @@ date: "2024-06-11T03:55:00.000Z"
 author: Stefanie Molin
 tags: ["conferences", "reflection"]
 ogImage:
-  url: "https://media.licdn.com/dms/image/D5622AQFIAXIS6b6VeQ/feedshare-shrink_2048_1536/0/1717796167086?e=1721260800&v=beta&t=mTcqIOh7ZyhS2HSg6rmLcJPAHOt5VyT3heK7crW-IDY"
+  url: "https://pbs.twimg.com/media/GPgLSXNXIAAbTku?format=jpg&name=large"
   width: 1344
   height: 768
 ---
 
-![speaker card for my talk at PyCon Colombia](https://media.licdn.com/dms/image/D4E22AQFZP6_BmYRDyg/feedshare-shrink_2048_1536/0/1716571231388?e=1721260800&v=beta&t=3l_0Vr3BIpqUjw9M-90RfVSm1R6Z_-weHRDI5JFp_eA)
+![speaker card for my talk at PyCon Colombia](https://pbs.twimg.com/media/GOXCgBvWUAAU2ns?format=jpg&name=large)
 
 <figcaption>
 
-Source: [PyCon Colombia](https://www.linkedin.com/posts/pycon-colombia_pyconcolombia2024-pyconcolombia-programacion-activity-7199821586202341377-WCri)
+Source: [PyCon Colombia](https://twitter.com/pyconcolombia/status/1794053884719112698)
 
 </figcaption>
 
@@ -29,21 +29,21 @@ I decided to review my slides in the room so I could also get a feel for the sta
 
 The "room" was actually an auditorium, which looked like it was ready for a TED talk. It was by far the largest audience I've addressed and the first time I've presented on the same stage as the keynotes.<sup>1</sup> I had a fantastic experience with an engaged crowd. Pictures (really good ones too!) of me presenting made it to the official PyCon Colombia social posts for that afternoon 😍, and one attendee listed my talk as [one of the top talks](https://www.linkedin.com/posts/matiasrebolledodezerega_pycon-pyconcolombia2024-activity-7206064883895820289-8dRY) of the conference.
 
-![presenting on the big stage](https://media.licdn.com/dms/image/D5622AQFIAXIS6b6VeQ/feedshare-shrink_2048_1536/0/1717796167086?e=1721260800&v=beta&t=mTcqIOh7ZyhS2HSg6rmLcJPAHOt5VyT3heK7crW-IDY)
+![presenting on the big stage](https://pbs.twimg.com/media/GPgLSXNXIAAbTku?format=jpg&name=large)
 
 <figcaption>
 
-Source: [PyCon Colombia](https://www.linkedin.com/posts/stefanie-molin_pycon-pyconcolombia2024-pyconcolombia-activity-7204997292657897473-JhKm/)
+Source: [PyCon Colombia](https://twitter.com/pyconcolombia/status/1799200478024311235)
 
 </figcaption>
 
 After this talk, I wasn't done with my speaker duties. I was also running my [Beyond the Basics: Data Visualization in Python](/workshops/python-data-viz-workshop/) workshop on the third day of the conference in the 8:00 am slot 🙈. In four years of presenting at conferences, this was the second time I was presenting multiple topics at a single event (PyCon MEA 2023 in Dubai was the first time I did this).
 
-![speaker card for my workshop](https://media.licdn.com/dms/image/D4E22AQEs2PogpH7JOg/feedshare-shrink_800/0/1717331501673?e=1721260800&v=beta&t=U-brGj8VP7C401L1YSTCWWAhN3TRf16yPiklnn8ys8U)
+![speaker card for my workshop](https://pbs.twimg.com/media/GPEZspqXIAALmRK?format=jpg&name=large)
 
 <figcaption>
 
-Source: [PyCon Colombia](https://www.linkedin.com/posts/pycon-colombia_pyconcolombia2024-pyconcolombia-programacion-activity-7203010392191549440-Hm9o/)
+Source: [PyCon Colombia](https://twitter.com/pyconcolombia/status/1797245983841034423)
 
 </figcaption>
 
@@ -53,11 +53,11 @@ Short on sleep the morning of my workshop (due to the speaker's dinner the night
 
 The rest of the day was a bit of a sleep-deprived blur, but I do remember Lorena Barba's keynote in which she shared how she used [Jupyter AI](https://jupyter-ai.readthedocs.io/en/latest/) to create lesson plans for university courses; a giant cake (with dulce de leche between layers 😋) called the PyCake, which went very well with the Colombian coffee<sup>2</sup> that was always available; and Sebastián Ramírez's<sup>3</sup> inspiring keynote,<sup>4</sup> which he delivered in Spanish (at top speed until someone asked him to slow down 😂) despite the others being in English.<sup>5</sup>
 
-![the PyCake](https://media.licdn.com/dms/image/D4E22AQFCJUgSOFW28A/feedshare-shrink_2048_1536/0/1717967960530?e=1721260800&v=beta&t=N0bdNR_Q42XPzfWZ81tt44dZy_xdOJaTVPCUK53pnAo)
+![the PyCake](https://pbs.twimg.com/media/GPqUxZgWcAA8cWg?format=jpg&name=large)
 
 <figcaption>
 
-Source: [PyCon Colombia](https://www.linkedin.com/posts/pycon-colombia_pycon-pyconcolombia2024-pycon2024-activity-7205679944817934339-hMo4)
+Source: [PyCon Colombia](https://twitter.com/pyconcolombia/status/1799914606929776740)
 
 </figcaption>
 

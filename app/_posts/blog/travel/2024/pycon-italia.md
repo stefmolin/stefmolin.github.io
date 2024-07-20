@@ -24,7 +24,7 @@ PyCon Italia holds a special place in my heart. Back in 2022, PyCon Italia was t
 
 Since I had never given that talk before, I had been a little concerned with my timings in the days leading up to the event. I was trying to figure out the right balance of personal stories and guidance for my 30-minute slot, and I had dry runs anywhere from 20 minutes to 40 minutes, which I needed to tighten up.
 
-Thankfully, the extra practice paid off, and the talk was a huge success! [One attendee said on LinkedIn](https://www.linkedin.com/posts/johnnybreen_great-talk-by-stefanie-molin-on-getting-activity-7200012413226680323-i-PJ), "It was the best talk I've attended in a long time 😎 Practical and insightful." A member of the scikit-learn team was also in the audience and praised the talk on [LinkedIn](https://www.linkedin.com/posts/dr-maren-westermann-0b8575144_great-talk-by-stefanie-molin-on-getting-activity-7199728964666359808-Su3T).
+Thankfully, the extra practice paid off, and the talk was a huge success! [One attendee said on LinkedIn](https://www.linkedin.com/posts/johnnybreen_great-talk-by-stefanie-molin-on-getting-activity-7200012413226680323-i-PJ), "It was the best talk I've attended in a long time 😎 Practical and insightful." A member of the scikit-learn team was also in the audience and praised the talk on [LinkedIn](https://www.linkedin.com/posts/dr-maren-westermann-0b8575144_great-talk-by-stefanie-molin-on-getting-activity-7199728964666359808-Su3T). Watch the recording [here](https://youtu.be/AV-JVXDPXBk).
 
 ---
 
