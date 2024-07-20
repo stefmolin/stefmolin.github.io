@@ -56,7 +56,7 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
     date: '2024-03-10',
     eventType: 'code',
     title: 'Website redesign goes live',
-    description: 'Rebuilt from scratch using React and TypeScript',
+    description: 'Rebuilt from scratch using Next.js (React) and TypeScript',
   },
   {
     date: '2024-01-17',

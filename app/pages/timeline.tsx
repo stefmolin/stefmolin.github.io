@@ -40,6 +40,7 @@ export default function MyTimeline() {
       timelineProps={{
         timelineItems: TIMELINE_ITEMS,
         footerLabels: [{ label: '...' }, { label: 'A star is born ✨' }],
+        showTimeSections: 'year',
       }}
     />
   );

@@ -35,6 +35,7 @@ export default function UpcomingEventsTimeline() {
         timelineItems: TIMELINE_ITEMS,
         ascending: true,
         footerLabels: [{ label: 'More to come ✨' }],
+        showTimeSections: 'month',
         useIfEmpty: (
           <div
             className={classNames(
