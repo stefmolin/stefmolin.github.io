@@ -29,7 +29,7 @@ import CONTENT_LINKS from '../data/content-links';
 import { LIVE_EVENTS } from '../data/events';
 import { type LivePresentation } from '../interfaces/event';
 import type PostType from '../interfaces/post';
-import { useNextSessions } from '../lib/hooks/date-filtered-sessions';
+import { useCompletedSessions, useNextSessions } from '../lib/hooks/date-filtered-sessions';
 import { getAllPosts } from '../lib/posts';
 
 const NEW_ARTICLE_FEATURED_DAYS = 14;
