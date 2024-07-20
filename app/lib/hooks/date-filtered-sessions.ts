@@ -17,7 +17,7 @@ export const useFilteredSessions = (
     );
   }, []);
 
-  return filteredSessions;
+  return [...filteredSessions];
 };
 
 export const useCompletedSessions = (liveSessions: (LivePresentation | LivePodcast)[]) => {
