@@ -2,9 +2,9 @@
 title: "To Be, or Not to Be Professor Molin"
 excerpt: "The semester I spent as an adjunct professor was an eye-opening experience. If you want to find out why, you will have to read this blog post. No spoilers here. 🤫"
 date: "2023-12-16T20:58:00.000Z"
-modified: "2024-03-09T00:44:00.000Z"
+modified: "2024-07-20T19:02:00.000Z"
 author: Stefanie Molin
-tags: ["professor tales", "reflection"]
+tags: ["reflection"]
 assets: "/assets/blog/confessions-of-a-professor"
 ogImage:
   url: "/post-assets/theme.jpg"
@@ -29,7 +29,3 @@ Despite all of this, I don't regret this experience at all. It was something I n
 So, will I ever be Professor Molin again?
 
 Highly unlikely.
-
----
-
-Curious about what happens in today's university classroom? I'll be sharing some of the wildest tales from my experiences this semester (anonymized of course) in the "[Confessions of a Professor](/blog/confessions-of-a-professor/)" section of my blog. My motto throughout the experience was, "I laugh, so I don't cry." I hope your laughter at my anecdotes is joyous, and if it isn't, you must also have been a professor at some point 😉 Obviously, I will only be sharing the part of my opinion that can be related without being distasteful. Stay tuned.
