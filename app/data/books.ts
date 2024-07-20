@@ -419,6 +419,13 @@ export const BOOK_PAGES: BookPage[] = [
         rating: 5,
       },
       {
+        author: 'Vinicius Lima (via LinkedIn)',
+        text: `The first edition is amazing! Can't wait for the second! Congrats for the excellent
+        work! 👏🏻👏🏻👏🏻`,
+        source:
+          'https://www.linkedin.com/feed/update/urn:li:activity:6992863239860580352?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6992863239860580352%2C6993016623263567872%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286993016623263567872%2Curn%3Ali%3Aactivity%3A6992863239860580352%29',
+      },
+      {
         author: 'Chanin Nantasenamat (via Towards Data Science)',
         text: `The book covers the entire span of the data science process from data wrangling with
         Pandas to data visualization with Matplotlib and Seaborn as well as model building with
