@@ -59,7 +59,13 @@ Maintainers put a tremendous amount of work into these events to help people con
 
 This is also a great opportunity to learn about how the maintainers do their own development. What kind of tools do they use and for what? Use this opportunity to explore the project and pick their brains. These skills will be transferable across projects. For example, at the EuroPython 2022 sprints with some Scikit-Learn maintainers, while working on [the meta-issue they suggested for new contributors](https://github.com/scikit-learn/scikit-learn/issues/21350), I encountered a confusing issue. As I worked with a maintainer to debug it, I also learned about the Python project, [`pre-commit`](https://pre-commit.com/), which makes it easy to enable git pre-commit hooks to run checks on your code at commit time. One of these checks would have fixed the issue I was having. I brought all of this knowledge back to my team at work and implemented a `pre-commit` setup for our projects.
 
-{TWEET_ID="1549492692228489216"}
+![Scikit-learn sprint at EuroPython 2022](https://pbs.twimg.com/media/FXyBv2_UsAEoEPB?format=jpg&name=medium)
+
+<figcaption>
+
+Source: <a href="https://twitter.com/StefanieMolin/status/1549492692228489216" target="_blank" rel="noopener noreferrer">François Goupil on Twitter</a>
+
+</figcaption>
 
 In addition to using pre-commit for personal and work projects, I've also brought this tool to other open source projects, such as [Yellowbrick](https://github.com/DistrictDataLabs/yellowbrick/pull/1269), [Seaborn](https://github.com/mwaskom/seaborn/pull/2963), [Memray](https://github.com/bloomberg/memray/pull/356), and [PyStack](https://github.com/bloomberg/pystack/pull/64). With each implementation, things were done slightly differently to fit the needs of the project, which gave me even more of an opportunity to learn more about what is possible with pre-commit. Always be on the lookout for ways to apply the tools you are familiar with to other projects.
 
