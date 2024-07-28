@@ -12,7 +12,6 @@ ogImage:
   caption: "Data Morph transforms a panda to a star, while preserving summary statistics."
   width: 774
   height: 379
-canonical: "https://levelup.gitconnected.com/data-morph-moving-beyond-the-datasaurus-dozen-156927b20f8c"
 featured:
   - "[PyCoder's Weekly Issue #572](https://pycoders.com/issues/572) (via mention of the [stefmolin/data-morph](https://github.com/stefmolin/data-morph) repository)"
 ---
@@ -141,5 +140,3 @@ Data Morph also provides [documentation](https://stefaniemolin.com/data-morph/st
 The next time you find yourself explaining or teaching summary statistics, I invite you to use Data Morph to create a fun, custom animation to emphasize the importance of visualizing the data. Ask students or attendees to come up with their own animations. Seeing numerous examples that start with familiar shapes (*e.g.*, your school logo, mascot, *etc.*) will keep this important concept top of mind. If you end up using Data Morph with a custom dataset and/or for teaching purposes, I'd love to hear about it — tag me in your posts on [LinkedIn](https://www.linkedin.com/in/stefanie-molin/) or [Twitter](https://twitter.com/StefanieMolin).
 
 Happy morphing!
-
-<small><em>Originally posted on April 20, 2023 at [Medium](https://levelup.gitconnected.com/data-morph-moving-beyond-the-datasaurus-dozen-156927b20f8c).</em></small>
