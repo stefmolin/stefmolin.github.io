@@ -11,7 +11,6 @@ ogImage:
   url: "/post-assets/journey-ahead.jpg"
   width: 2160
   height: 1440
-canonical: "https://levelup.gitconnected.com/5-ways-to-get-started-in-open-source-4aac430828e9"
 featured:
   - "[The Real Python Podcast Episode #190 (all)](https://realpython.com/podcasts/rpp/190/)"
   - "[The Real Python Podcast Episode #173 (at 26:31)](https://realpython.com/podcasts/rpp/173/)"
@@ -160,5 +159,3 @@ Once you have identified something to work on, set yourself up for success:
 ---
 
 This article presented five ways to get started in open source — be sure to try them all. Remember that no contribution is too small. When you do make your first contribution, I'd love to hear about it and which strategy you used: share your achievement(s) in the comments below and/or on social media, tagging me on [LinkedIn](https://www.linkedin.com/in/stefanie-molin/) or [Twitter](https://twitter.com/StefanieMolin). Don't stop there though; this is your first contribution of many.
-
-<small><em>Originally posted on August 29, 2023 at [Medium](https://medium.com/gitconnected/5-ways-to-get-started-in-open-source-4aac430828e9).</em></small>
