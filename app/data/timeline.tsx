@@ -22,9 +22,12 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
     description:
       'After participating in several sprints around the world, I figured I would try my hand at running one.',
     link: {
-      linkClass: 'external',
-      resourceLink: 'https://ep2024.europython.eu/sprints#data-morph',
-      text: 'View event',
+      linkClass: 'internal',
+      resourceLink: {
+        contentClass: 'blog',
+        slug: '/blog/travel/2024/europython/',
+      },
+      text: 'Read blog post',
     },
   },
   {

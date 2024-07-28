@@ -418,7 +418,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       location: LOCATIONS.PRAGUE,
       virtual: false,
       eventClass: 'conference',
-      link: 'https://ep2024.europython.eu/sessions#pre-commit-to-better-code',
+      link: '/blog/travel/2024/europython/',
     },
     presentation: PRESENTATIONS.PRE_COMMIT_WORKSHOP,
     date: '2024-07-08',

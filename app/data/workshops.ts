@@ -203,9 +203,9 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
     },
     reviews: [
       {
-        text: `Stefanie has a gift for teaching. She explain very well the benefits of the tool. She
-        did not leave anyone behind, answered the basic questions from rookie programmers like me but
-        also went deep into more complex areas.`,
+        text: `Stefanie has a gift for teaching. She explain[ed] very well the benefits of the tool.
+        She did not leave anyone behind, answered the basic questions from rookie programmers like
+        me but also went deep into more complex areas.`,
         author: 'Mauricio',
       },
       {
