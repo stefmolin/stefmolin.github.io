@@ -49,7 +49,7 @@ const SocialShareButtons = ({
     <>
       <div className={buttonStyle}>
         <EmailShareButton url={encodedURL} subject={emailSubject} body={emailBody}>
-          <EmailIcon {...iconProps} />
+          <EmailIcon {...iconProps} bgStyle={{ fill: 'teal' }} />
         </EmailShareButton>
       </div>
       <div className={buttonStyle}>
