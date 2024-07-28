@@ -1,6 +1,7 @@
 import type SEOImage from '../interfaces/seo-image';
 
 export const HEADSHOT = '/assets/portrait.jpeg';
+export const HEADSHOT_THUMBNAIL = '/assets/portrait-thumbnail.jpeg';
 export const HOME_URL = 'https://stefaniemolin.com';
 export const NEWSLETTER_URL = 'https://newsletter.stefaniemolin.com';
 export const HOME_OG_IMAGE: SEOImage = {

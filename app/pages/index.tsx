@@ -24,7 +24,7 @@ import Container from '../components/sections/container';
 import EvenlySpacedSections from '../components/sections/evenly-spaced-sections';
 import PageSection from '../components/sections/page-section';
 import SubscribeToNewsletterForm from '../components/subscribe-to-newsletter';
-import { FLAGS, HEADSHOT } from '../data/constants';
+import { FLAGS, HEADSHOT_THUMBNAIL } from '../data/constants';
 import CONTENT_LINKS from '../data/content-links';
 import { LIVE_EVENTS } from '../data/events';
 import { type LivePresentation } from '../interfaces/event';
@@ -167,7 +167,7 @@ export default function Home({
               <div className="flex flex-col items-center justify-center">
                 <Link href="/about">
                   <img
-                    src={HEADSHOT}
+                    src={HEADSHOT_THUMBNAIL}
                     className="w-48 h-48 rounded-full object-cover"
                     alt="Picture of Stefanie Molin."
                   />

@@ -17,7 +17,7 @@ import FollowButtons from '../follow';
 import { type LinkWithIcon } from '../../interfaces/link';
 import ExternalLink from '../links/external-link';
 import ResourceLink from '../links/resource-link';
-import { HEADSHOT } from '../../data/constants';
+import { HEADSHOT_THUMBNAIL } from '../../data/constants';
 
 const SitemapLinks = ({ className }: { className?: string }) => {
   const siteLinks = [
@@ -102,7 +102,7 @@ const Footer = () => {
         <div className="mt-5 flex flex-col lg:flex-row items-start lg:justify-between lg:px-4">
           <div className="text-left lg:pr-10 lg:w-2/3 xl:mr-20">
             <div className="flex flex-row items-center justify-center lg:justify-start">
-              <Avatar name="Stefanie Molin" picture={HEADSHOT} />
+              <Avatar name="Stefanie Molin" picture={HEADSHOT_THUMBNAIL} />
             </div>
             <p className="pt-5">
               Thank you for visiting my website! I am passionate about teaching data science and

@@ -3,7 +3,7 @@ import FollowButtons from '../components/follow';
 import ExternalLink from '../components/links/external-link';
 import Layout from '../components/page-layout/layout';
 import Container from '../components/sections/container';
-import { HEADSHOT, LINKEDIN_PROFILE } from '../data/constants';
+import { HEADSHOT } from '../data/constants';
 
 export default function ContactMe() {
   const pageTitle = 'Contact Me';
