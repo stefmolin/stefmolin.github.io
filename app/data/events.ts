@@ -485,10 +485,10 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     presentation: {
       contentClass: 'podcast',
       title: 'Pre-Commit Hooks for Python Devs',
-      link: 'https://talkpython.fm/stream/live',
+      link: 'https://www.youtube.com/watch?v=EzlzX1OL92w',
     },
     date: '2024-09-12',
-    time: '16:15:00-04:00',
+    time: '16:20:00-04:00',
   }, // TODO: after recording, this should be removed from here and added to the interviews page instead
   {
     event: {
