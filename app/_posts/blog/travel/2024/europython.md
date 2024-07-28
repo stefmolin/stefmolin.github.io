@@ -30,7 +30,7 @@ Normally, after a redeye, I force myself to stay awake to adjust, but I was in n
 
 ---
 
-![EuroPython 2024 banner](https://pbs.twimg.com/card_img/1814370841510985728/m7dTMn2b?format=png&name=medium)
+![EuroPython 2024 banner](https://raw.githubusercontent.com/stefmolin/pre-commit-workshop/europython24/ep24banner.png)
 
 <figcaption>
 
