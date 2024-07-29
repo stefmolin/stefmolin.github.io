@@ -96,7 +96,7 @@ This experience gave even more respect for the maintainers that organize sprints
 
 Eight hours of constant context switching with the Data Morph sprint was so exhausting that I had to take a mental health day on Sunday. I slept in and then went to tour the Prague Jewish Quarter<sup>4</sup> before grabbing an early dinner at another Michelin Guide restaurant: [Cafe Imperial](https://guide.michelin.com/us/en/prague/prague/restaurant/cafe-imperial).
 
-After dinner, I went over to the Prague Orloj (astronomical clock) and joined the final tour of the day inside City Hall (unplanned), which I found fascinating. During the tour, I learned what was different about the Old Town Square from the first time I went to Prague in 2015 (I had the feeling that something was very different when I went in 2023, but couldn't put my finger on it): the monument in the bottom right of the photo below (called [the Marian Column](https://en.wikipedia.org/wiki/Marian_column_(Prague))) wasn't there &ndash; it was re-erected in 2020 after being torn down in 1918.
+After dinner, I went over to the Prague Orloj (astronomical clock) and joined the final tour of the day inside City Hall (unplanned), which I found fascinating. During the tour, I learned what was different about the Old Town Square from the first time I went to Prague in 2016 (I had the feeling that something was very different when I went in 2023, but couldn't put my finger on it): the monument in the bottom right of the photo below (called [the Marian Column](https://en.wikipedia.org/wiki/Marian_column_(Prague))) wasn't there &ndash; it was re-erected in 2020 after being torn down in 1918.
 
 ![Old Town Square as seen from City Hall](/post-assets/old-town-square.jpg)
 
