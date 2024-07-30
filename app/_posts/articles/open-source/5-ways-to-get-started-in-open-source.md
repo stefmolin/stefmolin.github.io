@@ -3,7 +3,7 @@ title: "5 Ways to Get Started in Open Source"
 subtitle: "Ideas for finding and making your first of many open source contributions."
 excerpt: "Everyone can and should get involved in open source. Not sure how to find something to work on? Here are 5 strategies that I have used to get started."
 date: "2023-08-29T15:08:47.161Z"
-modified: "2024-04-20T23:39:00.000Z"
+modified: "2024-07-30T22:34:00.000Z"
 author: Stefanie Molin
 tags: ["open source", "open source contribution", "open source software"]
 assets: "/assets/articles/open-source/5-ways-to-get-started-in-open-source"
@@ -92,6 +92,8 @@ Most open source projects have many open issues that can be picked up by anyone 
 - When sifting through large quantities of issues, it might be helpful to look further into only those with fewer comments, as this may indicate no one has picked it up yet. Don't take the age of the issue to be a factor — if it's open, it may still be of interest. If it's an older issue, leave a comment to check that the maintainers are indeed still interested in having it picked up. You don't want to waste your time on something that is no longer on the table.
 - Look for meta-issues, which capture a change that the maintainers want to make across multiple areas of the library. There will often be examples or detailed guidance of what needs to be done and links to parts that others have already completed for reference ([the Scikit-Learn team does a great job with this](https://github.com/scikit-learn/scikit-learn/issues/23462)).
 - Make sure to read through the entire issue along with any comments, and also check for pull requests (PRs) that address what you are interested in before picking something to work on.
+
+Be sure to check out my [Tips for Navigating an Issue Tracker on GitHub](/articles/open-source/navigating-an-issue-tracker/) article for more.
 
 ![browsing open issues for in the scikit-learn repository](/post-assets/open-issues.png)
 
