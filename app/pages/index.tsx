@@ -137,10 +137,10 @@ export default function Home({
     const mostRecent = maxBy(articles, 'date');
     const mostRecentIndex = findIndex(articles, mostRecent);
     setArticleOfTheDay(
-      mostRecent &&
+      mostRecent != null &&
         DateTime.fromISO(mostRecent.date).diffNow().as('days') <= NEW_ARTICLE_FEATURED_DAYS
-        ? Math.floor(seedrandom(DateTime.now().startOf('day'))() * articles.length)
-        : mostRecentIndex,
+        ? mostRecentIndex
+        : Math.floor(seedrandom(DateTime.now().startOf('day'))() * articles.length),
     );
   }, [articles]);
 
