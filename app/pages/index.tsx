@@ -100,8 +100,11 @@ export default function Home({
   const [articleOfTheDay, setArticleOfTheDay] = useState<number | null>(null);
 
   const nextSessions = useNextSessions(LIVE_EVENTS);
-  const pastSessions = useCompletedSessions(LIVE_EVENTS);
-  pastSessions.reverse();
+
+  // make sure slow loads show latest sessions instead of first ones (nextSessions will have all sessions)
+  if (nextSessions && articleOfTheDay == null) nextSessions.reverse();
+
+  const pastSessions = useCompletedSessions(LIVE_EVENTS).reverse();
 
   const showcasedSessions = nextSessions.length ? nextSessions : pastSessions;
   const multipleSessionsShowcased = showcasedSessions.length > 1;
