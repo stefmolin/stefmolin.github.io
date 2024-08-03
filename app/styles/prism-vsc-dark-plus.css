@@ -282,6 +282,14 @@ pre[class*='language-'] > code[class*='language-'] {
 }
 
 /*********************************************************
+* Diff highlighting
+*/
+
+pre[class*='language-diff-'].diff-highlight > code {
+  padding-bottom: 0px; /* Fixes extra padding when the diff is highlighted. */
+}
+
+/*********************************************************
 /* Copy code button
 */
 pre[class*='language-'] header {
