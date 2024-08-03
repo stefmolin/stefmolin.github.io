@@ -10,6 +10,7 @@ export const labelCodeBlock: unified.Plugin<[], hast.Root> = () => {
   return (tree, file) => {
     visit(tree, 'element', (node, index, parent) => {
       if (node.tagName !== 'pre') return;
+      if (parent == null) return;
 
       let offset: number = 1;
       index = index ?? 0;
@@ -48,7 +49,7 @@ export const labelCodeBlock: unified.Plugin<[], hast.Root> = () => {
               },
             ],
           };
-          node.children.splice(index, 0, languageNode);
+          parent.children.splice(index, 0, languageNode);
           offset++;
         }
       }

@@ -38,13 +38,9 @@ code[class*='language-'] *::selection {
 
 pre[class*='language-'] {
   background: #1e1e1e;
-}
-
-pre[class*='language-'] > code[class*='language-'] {
-  padding: 1em;
   margin: 0.5em 0;
+  padding: 1em;
   width: 100%;
-  display: block;
   overflow: auto;
 }
 
@@ -285,36 +281,37 @@ pre[class*='language-'] > code[class*='language-'] {
 * Diff highlighting
 */
 
-pre[class*='language-diff-'].diff-highlight > code {
+pre[class*='language-diff-'].diff-highlight {
   padding-bottom: 0px; /* Fixes extra padding when the diff is highlighted. */
 }
 
 /*********************************************************
 /* Copy code button
 */
-pre[class*='language-'] header {
-  color: white;
-  float: right;
+div.remark-highlight > header {
   height: 0;
+  float: right;
+  color: white;
+  position: relative;
+  z-index: 2;
 }
 
-pre[class*='language-'] header h5 {
+div.remark-highlight > header h5 {
   position: absolute;
   top: 10px;
   left: 15px;
   color: white;
 }
 
-pre[class*='language-'] button.copy-code-button {
-  position: relative;
+div.remark-highlight > header > button.copy-code-button {
   border: 1px solid white;
   border-radius: 5px;
-  padding: 2px 5px;
-  margin: 5px;
-  z-index: 2;
+  padding: 0 7px;
+  margin: 0.6em;
+  font-size: 0.75rem;
 }
 
-pre[class*='language-']:not(:hover) button.copy-code-button {
+div.remark-highlight:not(:hover) button.copy-code-button {
   visibility: hidden;
 }
 
