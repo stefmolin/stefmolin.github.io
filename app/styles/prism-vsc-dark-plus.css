@@ -306,9 +306,10 @@ div.remark-highlight > header h5 {
 div.remark-highlight > header > button.copy-code-button {
   border: 1px solid white;
   border-radius: 5px;
-  padding: 0 7px;
-  margin: 0.6em;
-  font-size: 0.75rem;
+  padding: 2px 5px;
+  margin: 12px;
+  font-size: 12px;
+  line-height: 15px;
 }
 
 div.remark-highlight:not(:hover) button.copy-code-button {
@@ -323,4 +324,7 @@ incorrectly formatted as they become `display: table`.
 
 .token.table.class-name {
   display: unset;
+}
+pre.line-numbers > code {
+  padding-top: 1.5px;
 }
