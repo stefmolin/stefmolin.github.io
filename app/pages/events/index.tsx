@@ -25,8 +25,6 @@ const relatedContent = [
   CONTENT_LINKS.UPCOMING_EVENTS,
 ];
 
-// TODO: incorporate the non-conference, non-signing events?
-
 export default function Index() {
   const seoImage = CONTENT_LINKS.EVENTS.image;
   const pageTitle = 'Events';

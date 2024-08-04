@@ -21,7 +21,7 @@ const PostBody = ({ content, children }: Props) => {
       <div
         key={index}
         className={markdownStyles['markdown']}
-        dangerouslySetInnerHTML={{ __html: content }} // TODO: can this be done differently?
+        dangerouslySetInnerHTML={{ __html: content }}
         suppressHydrationWarning
       />
     );

@@ -15,9 +15,6 @@ import WorkshopHeader from '../../components/workshops/workshop-header';
 import WorkshopSummary from '../../components/workshops/workshop-summary';
 import { getSeoImageLink } from '../../lib/seo';
 
-// TODO: link to setup instructions and prereqs
-// TODO: read descriptions from READMEs in GitHub for consistency? this will hardly be updated so it can wait
-
 export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
   const { workshop, reviews, relatedContent } = WORKSHOP_PAGE_MAPPING[workshopKey];
   const workshopCoverImage = workshop.coverImage;

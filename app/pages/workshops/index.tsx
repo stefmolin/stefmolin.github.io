@@ -3,9 +3,6 @@ import PresentationPreview from '../../components/presentations/presentation-pre
 import CONTENT_LINKS from '../../data/content-links';
 import WORKSHOP_PAGES from '../../data/workshops';
 
-// TODO: highlight the workshops when clicking on a pin for a spot they were presented at
-// in which case I can include a custom version of the map component in components/workshops/ which embeds the label logic
-
 export default function Index() {
   const contentClass = 'workshop';
   return (

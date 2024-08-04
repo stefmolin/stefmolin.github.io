@@ -50,7 +50,6 @@ export default function PreviewSection({
               />
             </ResourceLink>
           )}
-          {/* TODO: should I float right here since the image is less important? also make it smaller*/}
           <div className="md:-mt-7 sm:-mb-4 line-clamp-6 sm:line-clamp-none">
             {description.map((paragraph, index) => (
               <MarkdownSection key={index}>{paragraph}</MarkdownSection>
