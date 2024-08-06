@@ -9,6 +9,8 @@ ogImage:
   url: "/post-assets/cover.jpg"
   width: 1344
   height: 768
+featured:
+  - "[PyCoder's Weekly Issue #641](https://pycoders.com/issues/641)"
 ---
 
 ![woman panning for gold](/post-assets/cover.jpg)
