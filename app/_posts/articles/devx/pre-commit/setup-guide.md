@@ -351,6 +351,8 @@ Since we have to specify versions for each hook repository in our configuration 
 
 There will be cases (at least in the beginning) where a hook changes something or presents you with an issue that you don’t agree with (it’s a feature, not a bug, right?). Fight the urge to accept the change without thinking, and resist the temptation to immediately ignore it with `git commit --no-verify`. Instead, carefully consider whether you should update the hook’s configuration, switch to a different hook, or reevaluate your views on the finding all together.
 
+*Be sure to bookmark my [`pre-commit` troubleshooting guide](/articles/devx/pre-commit/troubleshooting-guide) &ndash; it explains the cause of common errors and guides you in fixing them.*
+
 ---
 
 This article walked you through the process of installing and configuring pre-commit hooks to help maintain a high level of code quality for projects of any size. Take some time to explore the other hooks that can be used with `pre-commit` using the search tips on their documentation [here](https://pre-commit.com/hooks.html) and customize your setup. If the checks you want don’t exist yet, consider making your own hook (planned follow-up article). Now would also be a great time to update your CI workflow (or create one) to run the same checks on your PRs.
