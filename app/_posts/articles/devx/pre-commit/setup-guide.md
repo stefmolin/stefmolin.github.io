@@ -34,9 +34,9 @@ Both tools have their place and provide valuable feedback to the developer. In t
 
 ## What are pre-commit hooks?
 
-Pre-commit hooks are code checks that run as part of the “pre-commit” stage of the `git commit` process. If any of these checks fail, `git` aborts the commit, at which point you can address the cause(s) of the failure and then retry the commit.
+Pre-commit hooks are code checks that run as part of the "pre-commit" stage of the `git commit` process. If any of these checks fail, Git aborts the commit, at which point you can address the cause(s) of the failure and then retry the commit.
 
-If you aren’t familiar with `git`, take a moment to [learn more](https://docs.github.com/en/get-started/using-git/about-git) about it before continuing with this article.
+If you aren’t familiar with Git, take a moment to [learn more](https://docs.github.com/en/get-started/using-git/about-git) about it before continuing with this article.
 
 ## Setting up and installing pre-commit hooks
 
@@ -144,13 +144,13 @@ Minimal `.pre-commit-config.yaml` file adapted from [stefmolin/data-morph](https
 
 ---
 
-Now that we have our `.pre-commit-config.yaml` file, we need to use `pre-commit` to install the hooks on the `git` side. Run this at the root of the repository:
+Now that we have our `.pre-commit-config.yaml` file, we need to use `pre-commit` to install the hooks on the Git side. Run this at the root of the repository:
 
 ```shell[class="command-line"][data-prompt="$"]
 pre-commit install
 ```
 
-Now that we have our `.pre-commit-config.yaml` file, we need to instruct `git` to use our hooks. Every `git` repository supports hooks at a [variety of stages in the `git` process](https://git-scm.com/docs/githooks#_hooks). Hooks can be written in any language available on your the machine, and they must be placed in the `.git/hooks` directory to be triggered — `pre-commit install` does this for us. The executable that will run our pre-commit-stage hooks has been installed as `.git/hooks/pre-commit`:
+Now that we have our `.pre-commit-config.yaml` file, we need to instruct Git to use our hooks. Every Git repository supports hooks at a [variety of stages in the Git process](https://git-scm.com/docs/githooks#_hooks). Hooks can be written in any language available on your the machine, and they must be placed in the `.git/hooks` directory to be triggered — `pre-commit install` does this for us. The executable that will run our pre-commit-stage hooks has been installed as `.git/hooks/pre-commit`:
 
 ```treeview
 pre-commit-example/
@@ -181,7 +181,7 @@ Abbreviated view of the files in the repository at this point.
 
 </figcaption>
 
-All `git` repositories come with some hook examples in `.sample` files (like the `.git/hooks/pre-push.sample` file shown above). Most of the time the pre-commit stage is what we want for checking code quality, but `pre-commit` does support other stages. If you want to use a hook not supported by `pre-commit`, create an executable file and save it at `.git/hooks/<hook-name>`. Consult the `pre-commit` documentation for more information on [supported hooks](https://pre-commit.com/#supported-git-hooks) and [configuring hooks to run at different stages](https://pre-commit.com/#config-stages).
+All Git repositories come with some hook examples in `.sample` files (like the `.git/hooks/pre-push.sample` file shown above). Most of the time the pre-commit stage is what we want for checking code quality, but `pre-commit` does support other stages. If you want to use a hook not supported by `pre-commit`, create an executable file and save it at `.git/hooks/<hook-name>`. Consult the `pre-commit` documentation for more information on [supported hooks](https://pre-commit.com/#supported-git-hooks) and [configuring hooks to run at different stages](https://pre-commit.com/#config-stages).
 
 ## Configuring pre-commit hooks
 
@@ -246,7 +246,7 @@ There’s also another big advantage to using a configuration file: tools may ex
 
 ## Using pre-commit hooks
 
-Once we have installed and configured our selected pre-commit hooks, we can use our `git` workflow as usual. To test out our setup here, add this new file to your repository. I will save it as `src/example/utils.py`, but you can name it whatever you like:
+Once we have installed and configured our selected pre-commit hooks, we can use our Git workflow as usual. To test out our setup here, add this new file to your repository. I will save it as `src/example/utils.py`, but you can name it whatever you like:
 
 ```python
 import re
@@ -271,7 +271,7 @@ git commit -m "Add utils.py"
 [INFO] This may take a few minutes...
 ```
 
-Some of the hooks fail, which causes `git` to abort the commit. The output tells us what we need to fix. Note that the first two checks were skipped because they don’t run on Python files:
+Some of the hooks fail, which causes Git to abort the commit. The output tells us what we need to fix. Note that the first two checks were skipped because they don’t run on Python files:
 
 ![Violations triggered using the accompanying GitHub repository (https://github.com/stefmolin/pre-commit-example) as of November 21, 2023 at 2:11 PM EST. Screenshot taken by Stefanie Molin.](https://raw.githubusercontent.com/stefmolin/pre-commit-example/main/images/violations.png)
 
