@@ -137,13 +137,15 @@ export default function Home({
   );
 
   useEffect(() => {
-    const mostRecent = maxBy(articles, 'date');
+    const now = DateTime.now();
+    const publishedArticles = articles.filter((x) => !x.preview && DateTime.fromISO(x.date) <= now);
+    const mostRecent = maxBy(publishedArticles, 'date');
     const mostRecentIndex = findIndex(articles, mostRecent);
     setArticleOfTheDay(
       mostRecent != null &&
         DateTime.fromISO(mostRecent.date).diffNow().as('days') <= NEW_ARTICLE_FEATURED_DAYS
         ? mostRecentIndex
-        : Math.floor(seedrandom(DateTime.now().startOf('day'))() * articles.length),
+        : Math.floor(seedrandom(now.startOf('day'))() * articles.length),
     );
   }, [articles]);
 
