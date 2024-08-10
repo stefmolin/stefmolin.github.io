@@ -4,7 +4,7 @@ import { NEWSLETTER_URL } from '../../data/constants';
 export default function NewsletterThankYouPage() {
   return (
     <EmbeddedPage
-      pageTitle="Thank You!"
+      pageTitle="Newsletter Sign-up Successful!"
       src={`${NEWSLETTER_URL}/thank-you`}
       description={
         "Thank you for signing up for Stefanie Molin's newsletter. You will be notified via " +
