@@ -267,7 +267,11 @@ export default function Home({
                               </div>
                               {session.presentation.contentClass !== 'podcast' && (
                                 <div className="hidden sm:flex">
-                                  ({(session as LivePresentation).event.location.city})
+                                  (
+                                  {(session as LivePresentation).event.virtual
+                                    ? 'virtual'
+                                    : (session as LivePresentation).event.location.city}
+                                  )
                                 </div>
                               )}
                             </div>
