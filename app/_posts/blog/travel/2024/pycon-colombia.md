@@ -51,7 +51,7 @@ Short on sleep the morning of my workshop (due to the speaker's dinner the night
 
 ---
 
-The rest of the day was a bit of a sleep-deprived blur, but I do remember Lorena Barba's keynote in which she shared how she used [Jupyter AI](https://jupyter-ai.readthedocs.io/en/latest/) to create lesson plans for university courses; a giant cake (with dulce de leche between layers 😋) called the PyCake, which went very well with the Colombian coffee<sup>2</sup> that was always available; and Sebastián Ramírez's<sup>3</sup> inspiring keynote,<sup>4</sup> which he delivered in Spanish (at top speed until someone asked him to slow down 😂) despite the others being in English.<sup>5</sup>
+The rest of the day was a bit of a sleep-deprived blur, but I do remember Lorena Barba's keynote in which she shared how she used [Jupyter AI](https://jupyter-ai.readthedocs.io/en/latest/) to create lesson plans for university courses; a giant cake (with dulce de leche between layers 😋) called the PyCake, which went very well with the Colombian coffee<sup>2</sup> that was always available; and Sebastián Ramírez's<sup>3</sup> [inspiring keynote](https://www.youtube.com/watch?v=Ms4HxaJRKEg),<sup>4</sup> which he delivered in Spanish (at top speed until someone asked him to slow down 😂) despite the others being in English.<sup>5</sup>
 
 ![the PyCake](https://pbs.twimg.com/media/GPqUxZgWcAA8cWg?format=jpg&name=large)
 
