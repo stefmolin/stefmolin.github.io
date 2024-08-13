@@ -532,6 +532,28 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2024-10-29',
   },
+  {
+    event: {
+      name: 'PyCon France',
+      location: LOCATIONS.STRASBOURG,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
+    date: '2024-11-02',
+  },
+  {
+    event: {
+      name: 'PyCon France',
+      location: LOCATIONS.STRASBOURG,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PANDAS_WORKSHOP,
+    date: '2024-11-03',
+  },
 ];
 
 export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(
