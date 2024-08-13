@@ -526,7 +526,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   {
     event: {
       ...SAME_LOCATION_EVENTS['ODSC West'],
-      virtual: true,
+      virtual: false,
       link: undefined,
     },
     presentation: PRESENTATIONS.DATA_MORPH,
