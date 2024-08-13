@@ -183,6 +183,8 @@ Abbreviated view of the files in the repository at this point.
 
 All Git repositories come with some hook examples in `.sample` files (like the `.git/hooks/pre-push.sample` file shown above). Most of the time the pre-commit stage is what we want for checking code quality, but `pre-commit` does support other stages. If you want to use a hook not supported by `pre-commit`, create an executable file and save it at `.git/hooks/<hook-name>`. Consult the `pre-commit` documentation for more information on [supported hooks](https://pre-commit.com/#supported-git-hooks) and [configuring hooks to run at different stages](https://pre-commit.com/#config-stages).
 
+*Curious how `pre-commit` works? Be sure to check out my [behind the scenes article](/articles/devx/pre-commit/behind-the-scenes).*
+
 ## Configuring pre-commit hooks
 
 In many cases, we will want to customize the configuration of our pre-commit hooks to select the appropriate settings for our project. In some cases, this may be necessary to ensure that the hooks play nice with each other (*i.e.*, order shouldn’t matter and hooks shouldn’t undo each other’s changes). We have two options:

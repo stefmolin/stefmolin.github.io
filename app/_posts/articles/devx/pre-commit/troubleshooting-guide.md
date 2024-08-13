@@ -51,7 +51,7 @@ If you haven't installed `pre-commit` at all, then I suggest you start from my [
 
 ## <a name="pre-commit-not-found-did-you-forget-to-activate-your-virtualenv"></a>\`pre-commit\` not found. did you forget to activate your virtualenv?
 
-If you are seeing this error, it means that at some point you successfully installed pre-commit hooks in your repository, and `pre-commit` is registered with Git's hooks system, but the script registered with Git is not able to run `pre-commit` as a Python module (with `-m`) and also cannot find the `pre-commit` executable.
+If you are seeing this error, it means that at some point you successfully installed pre-commit hooks in your repository, and `pre-commit` is registered with Git's hooks system, but [the script registered with Git](/articles/devx/pre-commit/behind-the-scenes/) is not able to run `pre-commit` as a Python module (with `-m`) and also cannot find the `pre-commit` executable.
 
 ### The fix
 
