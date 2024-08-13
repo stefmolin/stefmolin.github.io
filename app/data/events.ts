@@ -458,10 +458,8 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   },
   {
     event: {
-      name: 'PyCon Estonia',
-      location: LOCATIONS.TALLINN,
-      virtual: false,
-      eventClass: 'conference',
+      ...SAME_LOCATION_EVENTS['ODSC Europe'],
+      virtual: true,
       link: undefined,
     },
     presentation: PRESENTATIONS.DATA_MORPH,
@@ -469,8 +467,10 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   },
   {
     event: {
-      ...SAME_LOCATION_EVENTS['ODSC Europe'],
-      virtual: true,
+      name: 'PyCon Estonia',
+      location: LOCATIONS.TALLINN,
+      virtual: false,
+      eventClass: 'conference',
       link: undefined,
     },
     presentation: PRESENTATIONS.DATA_MORPH,
