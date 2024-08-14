@@ -442,7 +442,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       eventClass: 'conference',
       link: undefined,
     },
-    presentation: PRESENTATIONS.PANDAS_WORKSHOP,
+    presentation: PRESENTATIONS.DATA_MORPH,
     date: '2024-08-29',
   },
   {
@@ -453,7 +453,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       eventClass: 'conference',
       link: undefined,
     },
-    presentation: PRESENTATIONS.DATA_MORPH,
+    presentation: PRESENTATIONS.PANDAS_WORKSHOP,
     date: '2024-08-30',
   },
   {
