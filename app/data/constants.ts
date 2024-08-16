@@ -25,6 +25,7 @@ export const LINKEDIN_PROFILE = 'https://linkedin.com/in/stefanie-molin';
 export const MAP_PIN = '📍';
 
 export const FLAGS = {
+  Australia: '🇦🇺',
   Canada: '🇨🇦',
   Colombia: '🇨🇴',
   Czechia: '🇨🇿',
