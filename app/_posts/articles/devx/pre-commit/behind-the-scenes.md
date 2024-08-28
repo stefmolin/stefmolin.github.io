@@ -8,6 +8,8 @@ ogImage:
   url: "https://images.unsplash.com/photo-1583607327197-af9fbdd111d9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   width: 1200
   height: 800
+featured:
+  - "[PyCoder's Weekly Issue #644](https://pycoders.com/issues/644)"
 ---
 
 ![Mission control stations from the Apollo moon program at Cape Canaveral, FL, USA.](https://images.unsplash.com/photo-1583607327197-af9fbdd111d9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
