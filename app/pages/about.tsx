@@ -9,12 +9,12 @@ import {
   faRss,
 } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
-import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import FancyDivider from '../components/dividers/fancy-divider';
 import SectionSeparator from '../components/dividers/section-separator';
 import FollowButtons from '../components/follow';
 import ExternalLink from '../components/links/external-link';
+import ResourceLink, { type ResourceLinkProps } from '../components/links/resource-link';
 import Layout from '../components/page-layout/layout';
 import RelatedContentSection from '../components/related-content/related-content';
 import Container from '../components/sections/container';
@@ -87,10 +87,18 @@ const AboutMeSection = ({
 
 export default function AboutMe() {
   const pageTitle = 'About Me';
-  const internalLink = (href: string, text: string) => (
-    <Link href={href} className="font-bold underline text-slate-500 hover:text-black">
+  const internalLink = (
+    href: ResourceLinkProps['resourceLink'],
+    text: string,
+    className?: string,
+  ) => (
+    <ResourceLink
+      linkClass="internal"
+      resourceLink={href}
+      className={classNames('font-bold underline text-slate-500 hover:text-black', className)}
+    >
       {text}
-    </Link>
+    </ResourceLink>
   );
   const externalLink = (href: string, text: string, className?: string) => (
     <ExternalLink href={href} className={classNames('font-bold hover:underline', className)}>
@@ -147,10 +155,10 @@ export default function AboutMe() {
                   <p>
                     I <span className="line-through">like</span> love a good <b>espresso</b>{' '}
                     (particularly, black, in a{' '}
-                    {externalLink(
-                      'https://doodles.google/doodle/celebrating-the-flat-white/',
+                    {internalLink(
+                      { contentClass: 'blog', slug: '/blog/celebrating-the-flat-white/' },
                       'flat white',
-                      'underline text-slate-500 hover:text-black font-normal',
+                      'font-normal',
                     )}
                     , or in an espresso martini). My{' '}
                     {externalLink(
