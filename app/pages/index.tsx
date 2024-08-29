@@ -143,7 +143,7 @@ export default function Home({
     const mostRecentIndex = findIndex(articles, mostRecent);
     setArticleOfTheDay(
       mostRecent != null &&
-        DateTime.fromISO(mostRecent.date).diffNow().as('days') <= NEW_ARTICLE_FEATURED_DAYS
+        now.diff(DateTime.fromISO(mostRecent.date)).as('days') <= NEW_ARTICLE_FEATURED_DAYS
         ? mostRecentIndex
         : Math.floor(seedrandom(now.startOf('day'))() * articles.length),
     );
