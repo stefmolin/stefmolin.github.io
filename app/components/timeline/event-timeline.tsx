@@ -28,7 +28,7 @@ export default function EventTimeline({
   const { timelineItems } = timelineProps;
   const [today, setToday] = useState<DateTime | null>(null);
 
-  useEffect(() => setToday(DateTime.now()), []);
+  useEffect(() => setToday(DateTime.now().startOf('day')), []);
 
   return (
     <Layout>
