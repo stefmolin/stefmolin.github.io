@@ -185,16 +185,16 @@ export default function AboutMe() {
                   <>
                     <p>
                       I completed my undergraduate degree at <b>Columbia University</b> (
-                      <b>BS in Operations Research</b>). After graduation, I joined the workforce,
-                      but I still hadn't found my passion. Data science and computer science began
-                      to interest me more and more &ndash; particularly their intersection.
-                      Concurrently, I completed my <b>MBA</b> with <b>Quantic School of Business</b>
-                      .
+                      <b>Bachelor's of Science in Operations Research</b>). After graduation, I
+                      joined the workforce, but I still hadn't found my passion. Data science and
+                      computer science began to interest me more and more &ndash; particularly their
+                      intersection. Concurrently, I completed my <b>MBA</b> with{' '}
+                      <b>Quantic School of Business</b>.
                     </p>
                     <p>
                       Later on, I was recruited for a role as a software engineer with a heavy data
-                      focus. While in this role, I earned my <b>MS in Computer Science</b> from{' '}
-                      <b>Georgia Tech</b>.
+                      focus. While in this role, I earned my{' '}
+                      <b>Master's of Science in Computer Science</b> from <b>Georgia Tech</b>.
                     </p>
                     <p>
                       I currently work as a <b>full-stack software engineer</b> and couldn't be
