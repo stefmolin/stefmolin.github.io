@@ -10,7 +10,7 @@ import {
   faExternalLink,
   faGraduationCap,
   faHandHoldingHeart,
-  faMapPin,
+  faLocationDot,
   faMicrophoneLines,
   faPersonChalkboard,
   IconDefinition,
@@ -76,7 +76,7 @@ const TimelineEntry = (props: TimelineEntryProps) => {
           {where &&
             assembleLine([
               <span className={iconSpanClassName}>
-                <FontAwesomeIcon icon={faMapPin} fixedWidth />
+                <FontAwesomeIcon icon={faLocationDot} fixedWidth />
               </span>,
               where,
             ])}
