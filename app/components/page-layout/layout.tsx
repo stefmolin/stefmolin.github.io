@@ -26,13 +26,15 @@ const Layout = ({
   styleProps,
 }: Props) => {
   const [showMenuOverlay, setShowMenuOverlay] = useState(false);
+  const pageURL = usePageURL();
 
   return (
     <>
       <Meta />
       <NextSeo
+        canonical={pageURL}
         openGraph={{
-          url: usePageURL(),
+          url: pageURL,
           images: [
             {
               url: getSeoImageLink(HOME_OG_IMAGE.src, 'New York', seoPageTitle),
