@@ -13,6 +13,7 @@ import {
   faLocationDot,
   faMicrophoneLines,
   faPersonChalkboard,
+  faStar,
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -21,6 +22,7 @@ import ResourceLink, { type ResourceLinkProps } from '../links/resource-link';
 import TimelinePoint from './timeline-point';
 
 const TIMELINE_EVENT_ICONS: Record<string, [IconDefinition, string]> = {
+  award: [faStar, 'bg-yellow-400 border-yellow-400 text-slate-600'],
   book: [faBook, 'bg-violet-300 border-violet-300 text-gray-700'],
   code: [faCode, 'bg-slate-700 border-slate-700 text-white'],
   education: [faGraduationCap, 'bg-emerald-300 border-emerald-300 text-gray-700'],
