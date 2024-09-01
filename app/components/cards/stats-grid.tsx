@@ -53,9 +53,7 @@ export default function StatsGrid({
         >
           {link != null && usePathname() !== link ? (
             <Link
-              href={{
-                pathname: link,
-              }}
+              href={{ pathname: link }}
               className={classNames('hover:scale-110', linkClassName)}
             >
               {stat}

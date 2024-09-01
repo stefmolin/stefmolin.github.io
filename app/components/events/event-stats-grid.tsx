@@ -69,7 +69,7 @@ export default function EventStatsGrid({
       },
       { title: 'cities visited', value: Object.keys(getCityCounts(completedSessions)).length },
       {
-        title: 'conferences',
+        title: 'conference series',
         value: Object.keys(getConferenceCounts(completedSessions)).length,
         link: linkMapping.conferences,
       },
