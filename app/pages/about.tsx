@@ -146,8 +146,8 @@ export default function AboutMe() {
                   <p>
                     I am an <b>avid traveler</b> based in the <b>New York City</b> metropolitan
                     area. I prefer to travel internationally to explore the world, and I have
-                    traveled to 41 countries so far. My most recent trip was to <b>New Zealand</b>.
-                    I speak <b>English</b> and <b>Spanish</b> fluently, with some{' '}
+                    traveled to 42 countries so far. My most recent trip was to <b>Poland</b>. I
+                    speak <b>English</b> and <b>Spanish</b> fluently, with some{' '}
                     <b>survival French</b>. I would like to learn <b>Italian</b>.
                   </p>
                 </AboutMeSection>
