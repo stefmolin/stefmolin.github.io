@@ -3,6 +3,7 @@ title: "How to Create a Pre-Commit Hook"
 subtitle: "A step-by-step guide to developing your own pre-commit hook."
 excerpt: "Pre-commit hooks are a great way to help maintain code quality. However, some of your code quality standards may be specific to your project, and therefore, not covered by existing code linting and formatting tools. In this article, I will show you how to incorporate custom checks into your `pre-commit` setup."
 date: "2024-09-04T14:55:00.000Z"
+modified: "2024-09-04T19:26:00.000Z"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python"]
 ogImage:
@@ -90,7 +91,7 @@ from typing import Sequence
 
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        prog='validate-filename'
+        prog='validate-filename',
     )
     parser.add_argument(
         'filenames',
@@ -156,7 +157,7 @@ scripts.validate-filename = "filename_validation.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/stefmolin/filename-validation"
-Documentation = "https://stefaniemolin.com/filename-validation"
+Documentation = "https://github.com/stefmolin/filename-validation"
 
 [tool.setuptools.packages.find]
 where = ["src"]
