@@ -328,3 +328,8 @@ incorrectly formatted as they become `display: table`.
 pre.line-numbers > code {
   padding-top: 1.5px;
 }
+
+/* Change builtin token color so it doesn't match strings */
+.token.builtin {
+  color: #dcdcaa;
+}

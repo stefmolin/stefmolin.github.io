@@ -136,7 +136,7 @@ This means that `pre-commit` was unable to find a `.pre-commit-hooks.yaml` file 
 
 ### The fix
 
-If you are trying to create your own hook, make sure you have committed a `.pre-commit-hooks.yaml` file to the repository.
+If you are trying to create your own hook, make sure you have committed a `.pre-commit-hooks.yaml` file to the repository, and be sure to check out my [How to Create a Pre-Commit Hook](/articles/devx/pre-commit/hook-creation-guide/) article for a complete walkthrough of the process.
 
 If you are using a hook from someone else, make sure the repository actually supports usage with `pre-commit`: if the `.pre-commit-hooks.yaml` file does not exist in the top-level of the repository, they do not support it.
 
