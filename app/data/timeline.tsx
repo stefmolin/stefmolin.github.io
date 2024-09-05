@@ -260,12 +260,19 @@ const TIMELINE_EVENTS: TimelineEntryProps[] = LIVE_EVENTS.map((entry) => {
     else linkText = 'More information';
   }
 
+  const getLocation = (event: (typeof entry)['event']) => {
+    if (event.location) {
+      const country = COUNTRY_SHORTHAND[event.location.country] ?? event.location.country;
+      const location = `${event.location.city}, ${country}`;
+      return event.virtual ? `${location} (virtual)` : location;
+    }
+    return undefined;
+  };
+
   return {
     date,
     time: entry['time'],
-    where: event.location
-      ? `${event.location.city}, ${COUNTRY_SHORTHAND[event.location.country] ?? event.location.country}`
-      : undefined,
+    where: getLocation(event),
     eventType,
     title: (
       <Link className="hover:underline" href={presentation.link}>
