@@ -43,15 +43,15 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     },
     title: 'How to Pivot and Plot Data with Pandas',
   },
-  HOW_TO_SETUP_PRE_COMMIT_HOOKS_ARTICLE: {
-    link: '/articles/devx/pre-commit/setup-guide/',
-    contentClass: 'article',
+  PRE_COMMIT_ARTICLES: {
+    link: '/articles/devx/pre-commit/',
+    contentClass: 'page',
     image: {
       src: '/assets/articles/devx/pre-commit/setup-guide/cover.jpg',
       width: 1200,
       height: 691,
     },
-    title: 'How to Set Up Pre-Commit Hooks',
+    title: 'Pre-Commit Articles',
   },
   DATA_MORPH_ARTICLE: {
     link: '/articles/data-science/introducing-data-morph/',
@@ -165,7 +165,7 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     link: '/blog/',
     contentClass: 'page',
     image: { src: '/assets/blog/thumbnail.jpg', width: 400, height: 311 },
-    title: 'Blog',
+    title: 'Journal',
   },
   TRAVEL_BLOG: {
     link: '/blog/travel/',
