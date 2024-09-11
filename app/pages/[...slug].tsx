@@ -1,4 +1,6 @@
 import classNames from 'classnames';
+import intersection from 'lodash/intersection';
+import union from 'lodash/union';
 import ErrorPage from 'next/error';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
@@ -206,7 +208,8 @@ export async function getStaticProps({ params }: Params) {
   if (suggestedPosts.length > 0) {
     suggestedPosts.forEach((otherPost) => {
       const tags: string[] = otherPost.tags;
-      otherPost.similarity = tags.filter((tag) => post.tags.includes(tag)).length;
+      // Jaccard index
+      otherPost.similarity = intersection(tags, post.tags).length / union(tags, post.tags).length;
     });
 
     suggestedPosts = suggestedPosts
