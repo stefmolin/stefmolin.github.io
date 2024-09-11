@@ -478,20 +478,6 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   },
   {
     event: {
-      name: 'Talk Python',
-      eventClass: 'podcast',
-      virtual: true,
-    },
-    presentation: {
-      contentClass: 'podcast',
-      title: 'Pre-Commit Hooks for Python Devs',
-      link: 'https://www.youtube.com/watch?v=EzlzX1OL92w',
-    },
-    date: '2024-09-12',
-    time: '16:20:00-04:00',
-  }, // TODO: after recording, this should be removed from here and added to the interviews page instead
-  {
-    event: {
       name: 'PyCon Taiwan',
       location: LOCATIONS.KAOSHIUNG,
       virtual: false,
@@ -511,6 +497,20 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     },
     presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
     date: '2024-09-28',
+  },
+  {
+    event: {
+      name: 'Talk Python',
+      eventClass: 'podcast',
+      virtual: true,
+    },
+    presentation: {
+      contentClass: 'podcast',
+      title: 'Pre-Commit Hooks for Python Devs',
+      link: 'https://www.youtube.com/watch?v=EzlzX1OL92w',
+    },
+    date: '2024-10-10',
+    time: '14:20:00-04:00',
   },
   {
     event: {
