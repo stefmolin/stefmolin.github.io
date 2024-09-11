@@ -61,6 +61,11 @@ export const PRESENTATIONS: Record<string, Presentation> = {
     title: 'Data Morph: A Cautionary Tale of Summary Statistics',
     link: '/talks/#data-morph-a-cautionary-tale-of-summary-statistics',
   },
+  DATA_MORPH_SPRINT: {
+    contentClass: 'sprint',
+    title: 'Data Morph Development Sprint',
+    link: 'https://stefaniemolin.com/data-morph/',
+  },
   BOOK_SIGNING_PANDAS_1: {
     contentClass: 'book signing',
     title: CONTENT_LINKS.PANDAS_BOOK_1.title,
@@ -486,6 +491,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     },
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2024-09-21',
+  },
+  {
+    event: {
+      name: 'PyCon Taiwan',
+      location: LOCATIONS.KAOSHIUNG,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.DATA_MORPH_SPRINT,
+    date: '2024-09-23',
   },
   {
     event: {

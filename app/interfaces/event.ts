@@ -9,9 +9,8 @@ export interface Event {
   virtual: boolean;
   eventClass: 'conference' | 'meetup' | 'podcast';
 }
-
 export interface Presentation {
-  contentClass: 'book signing' | 'talk' | 'workshop';
+  contentClass: 'book signing' | 'talk' | 'workshop' | 'sprint' | 'podcast';
   title: string;
   link: string;
 }
@@ -21,11 +20,10 @@ export interface LivePresentation {
   date: string;
 }
 export interface LivePodcast {
-  presentation: Omit<Presentation, 'contentClass'> & {
-    contentClass: 'podcast';
-  };
+  presentation: Presentation;
   event: Omit<Event, 'location'> & { location?: MapLocation };
   date: string;
   time: string;
 }
+
 export type ConferencePresentation = AnnotatedLocation<LivePresentation[]>;

@@ -23,7 +23,9 @@ export default function EventMap({
   const { width } = useWindowSize();
   const xsScreen = width && width < 464;
   const noDateColumn = width && width < 350;
-  const locationToEvents = getConferenceEventMapAnnotations(liveEvents);
+  const locationToEvents = getConferenceEventMapAnnotations(
+    liveEvents.filter((x) => x.presentation.contentClass !== 'sprint'),
+  );
   const linkClassName = 'text-slate-900 hover:underline hover:text-slate-600';
   const tableHeaderClassName = 'border-b border-slate-600 px-2 text-base';
   const tableClassName = 'border-b px-2 text-base';

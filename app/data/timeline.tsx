@@ -228,6 +228,7 @@ const TIMELINE_EVENTS: TimelineEntryProps[] = LIVE_EVENTS.map((entry) => {
   let eventType: TimelineEntryProps['eventType'];
   if (event.eventClass === 'podcast') eventType = 'interview';
   else if (presentation.contentClass === 'book signing') eventType = 'book';
+  else if (presentation.contentClass === 'sprint') eventType = 'code';
   else eventType = 'presentation';
 
   let eventName = event.name;

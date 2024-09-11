@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   IconDefinition,
   faBook,
+  faCodePullRequest,
   faMapLocationDot,
   faMicrophoneLines,
   faRss,
@@ -28,7 +29,7 @@ import SubscribeToNewsletterForm from '../components/subscribe-to-newsletter';
 import { FLAGS, HEADSHOT_THUMBNAIL } from '../data/constants';
 import CONTENT_LINKS from '../data/content-links';
 import { LIVE_EVENTS } from '../data/events';
-import { type LivePresentation } from '../interfaces/event';
+import { type Presentation, type LivePresentation } from '../interfaces/event';
 import type PostType from '../interfaces/post';
 import { useCompletedSessions, useNextSessions } from '../lib/hooks/date-filtered-sessions';
 import { getAllPosts } from '../lib/posts';
@@ -48,6 +49,14 @@ const relatedContent = [
 ];
 
 const linkClassName = 'text-slate-600 underline hover:text-black';
+
+const upcomingSessionIcons: Record<Presentation['contentClass'], IconDefinition> = {
+  'book signing': faBook,
+  podcast: faMicrophoneLines,
+  sprint: faCodePullRequest,
+  talk: faMicrophoneLines,
+  workshop: faMicrophoneLines,
+};
 
 const FeaturedPost = ({
   feedType,
@@ -278,11 +287,7 @@ export default function Home({
                             </div>
                             <p>
                               <FontAwesomeIcon
-                                icon={
-                                  session.presentation.contentClass === 'book signing'
-                                    ? faBook
-                                    : faMicrophoneLines
-                                }
+                                icon={upcomingSessionIcons[session.presentation.contentClass]}
                                 fixedWidth
                               />{' '}
                               {session.presentation.contentClass}
