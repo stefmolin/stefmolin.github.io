@@ -1,5 +1,7 @@
 import classNames from 'classnames';
-import _ from 'lodash';
+import mean from 'lodash/mean';
+import range from 'lodash/range';
+import round from 'lodash/round';
 import { DateTime } from 'luxon';
 import { FLAGS } from '../../data/constants';
 import { type LivePresentation } from '../../interfaces/event';
@@ -47,11 +49,11 @@ export default function EventStatsGrid({
   if (yearlyCountsOnly) {
     if (includeYearsActive) stats.push(yearsActive);
     stats.push(
-      ..._.range(DateTime.now().year, 2020).map((year) => ({
+      ...range(DateTime.now().year, 2020).map((year) => ({
         title: `presentations in ${year}`,
         value: yearCounts[year],
       })),
-      { title: 'yearly average', value: _.round(_.mean(Object.values(yearCounts)), 1) },
+      { title: 'yearly average', value: round(mean(Object.values(yearCounts)), 1) },
     );
   } else {
     stats.push(

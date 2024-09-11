@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import range from 'lodash/range';
 import { getAllPosts, getPostsByTheme } from './posts';
 
 interface Params {
@@ -37,7 +37,7 @@ export const getPostThemePaths = (category: 'articles' | 'blog') => async () => 
   posts.forEach((post) => {
     if (post.theme) {
       const levels = post.theme.split('/');
-      _.range(1, levels.length + 1).map((level) => themes.add(levels.slice(0, level).join('/')));
+      range(1, levels.length + 1).map((level) => themes.add(levels.slice(0, level).join('/')));
     }
   });
 

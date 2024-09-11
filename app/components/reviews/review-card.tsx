@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
-import _ from 'lodash';
+import range from 'lodash/range';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faQuoteLeft,
@@ -102,7 +102,7 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
             })}
           >
             {rating ? (
-              _.range(rating).map((star) => (
+              range(rating).map((star) => (
                 <FontAwesomeIcon key={star} icon={faStar} size="xs" fixedWidth />
               ))
             ) : (

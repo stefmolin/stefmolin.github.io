@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import _ from 'lodash';
 import { DateTime } from 'luxon';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';

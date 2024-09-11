@@ -1,7 +1,7 @@
 import { Feed as RssFeed } from 'feed';
 import fs from 'fs';
 import matter from 'gray-matter';
-import _ from 'lodash';
+import isEqual from 'lodash/isEqual';
 import { DateTime } from 'luxon';
 import { join } from 'path';
 import readingDuration from 'reading-duration';
@@ -94,7 +94,7 @@ export function getPostsByTheme(theme: string[], fields: string[] = []) {
   return {
     props: {
       allPosts: posts.filter((post) =>
-        _.isEqual(post.theme?.split('/').slice(0, theme.length), theme),
+        isEqual(post.theme?.split('/').slice(0, theme.length), theme),
       ),
       kind: 'theme',
       title: theme,

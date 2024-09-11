@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import _ from 'lodash';
+import shuffle from 'lodash/shuffle';
 import PhotoAlbum, { type Photo } from 'react-photo-album';
 import Lightbox from 'yet-another-react-lightbox';
 import Captions from 'yet-another-react-lightbox/plugins/captions';
@@ -39,7 +39,7 @@ export default function PhotoGallery({
   const [clickedPhotoIndex, setClickedPhotoIndex] = useState(-1);
 
   const [photoArray, setPhotoArray] = useState(
-    (shufflePhotos ? _.shuffle(photos) : photos).map((photo) => ({
+    (shufflePhotos ? shuffle(photos) : photos).map((photo) => ({
       ...photo,
       description: photo.alt,
     })),

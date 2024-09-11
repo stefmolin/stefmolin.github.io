@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import Feed from '../../components/feeds/feed';
 import FeedType from '../../interfaces/feed';
 import { getPostThemePaths, getPostThemeProps } from '../../lib/post-themes';
