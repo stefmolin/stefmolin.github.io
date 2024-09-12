@@ -1,8 +1,9 @@
 ---
 title: "ODSC East 2024 🇺🇸"
 subtitle: "Highlights from my book signing and talk at this year's event in Boston."
-excerpt: "Back in 2021, ODSC invited me to present a workshop on pandas virtually at their Europe event. This was my first conference presentation ever, and despite it being virtually, I was terrified. Thankfully, I made it through and eventually developed a passion for it, overcoming my fear. At this event, I delivered a talk and had a book signing."
+excerpt: "Back in 2021, ODSC invited me to present a workshop on pandas virtually at their Europe event. This was my first conference presentation ever, and despite presenting virtually, I was terrified. Thankfully, I made it through and eventually developed a passion for it, overcoming my fear. At this event, I delivered a talk and had a book signing."
 date: "2024-04-26T23:00:00.000Z"
+modified: "2024-09-12T00:45:00.000Z"
 author: Stefanie Molin
 tags: ["conferences", "reflection"]
 ogImage:
