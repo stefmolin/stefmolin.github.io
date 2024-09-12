@@ -1,7 +1,7 @@
 ---
 title: "ODSC East 2024 🇺🇸"
 subtitle: "Highlights from my book signing and talk at this year's event in Boston."
-excerpt: "Back in 2021, ODSC invited me to present a workshop on pandas virtually at their Europe. This was my first conference presentation ever, and despite it being virtually, I was terrified. Thankfully, I made it through and eventually developed a passion for it, overcoming my fear. At this event, I delivered a talk and had a book signing."
+excerpt: "Back in 2021, ODSC invited me to present a workshop on pandas virtually at their Europe event. This was my first conference presentation ever, and despite it being virtually, I was terrified. Thankfully, I made it through and eventually developed a passion for it, overcoming my fear. At this event, I delivered a talk and had a book signing."
 date: "2024-04-26T23:00:00.000Z"
 author: Stefanie Molin
 tags: ["conferences", "reflection"]
@@ -11,7 +11,7 @@ ogImage:
   height: 900
 ---
 
-Back in 2021, [ODSC (Open Data Science Conference)](https://odsc.com/) invited me to present [a workshop on pandas](/workshops/pandas-workshop/) virtually at their Europe. This was my first conference presentation ever, and, despite presenting virtually, I was [terrified](/events/conferences/#origin-story). Thankfully, I made it through and eventually developed a passion for it, overcoming my fear.
+Back in 2021, [ODSC (Open Data Science Conference)](https://odsc.com/) invited me to present [a workshop on pandas](/workshops/pandas-workshop/) virtually at their Europe event. This was my first conference presentation ever, and, despite presenting virtually, I was [terrified](/events/conferences/#origin-story). Thankfully, I made it through and eventually developed a passion for it, overcoming my fear.
 
 Ever since that first event, I have maintained a strong relationship with the ODSC team and frequently participate in their events in Boston (East), London (Europe), and San Francisco (West). After a long stretch of doing [workshops](/workshops/) at these events, I tried out giving a [talk](/talks/) for the first time in November 2023. I opted to do the same for this event. I talked about my [Data Morph](/data-morph/) project, which is an educational tool for illustrating the importance of visualizing your data (instead of just relying on summary statistics). The [slides](/data-morph-talk/) have lots of fun visuals from [Data Morph](/data-morph/), so it is was a crowd-pleaser 😀
 
