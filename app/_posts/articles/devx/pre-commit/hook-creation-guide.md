@@ -3,13 +3,15 @@ title: "How to Create a Pre-Commit Hook"
 subtitle: "A step-by-step guide to developing your own pre-commit hook."
 excerpt: "Pre-commit hooks are a great way to help maintain code quality. However, some of your code quality standards may be specific to your project, and therefore, not covered by existing code linting and formatting tools. In this article, I will show you how to incorporate custom checks into your `pre-commit` setup."
 date: "2024-09-04T14:55:00.000Z"
-modified: "2024-09-04T19:26:00.000Z"
+modified: "2024-09-12T00:44:00.000Z"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python"]
 ogImage:
   url: "https://images.unsplash.com/photo-1614727187346-ec3a009092b0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   width: 1200
   height: 793
+featured:
+  - "[PyCoder's Weekly Issue #645](https://pycoders.com/issues/645)"
 ---
 
 ![NASA astronaut performs extravehicular activity](https://images.unsplash.com/photo-1614727187346-ec3a009092b0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
