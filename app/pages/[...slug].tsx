@@ -154,6 +154,7 @@ export default function Post({ post, suggestedPosts }: Props) {
                   theme="light"
                   lang="en"
                   loading="lazy"
+                  term={post.title} // forces a re-render so the comments are correct
                 />
                 <div className="absolute flex space-x-2 justify-center content-center z-40 sticky bottom-0 bg-white pt-4 pb-2 lg:hidden -mx-px">
                   <SocialShareButtons
