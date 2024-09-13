@@ -1,9 +1,9 @@
 ---
-title: "How to Create a Pre-Commit Hook"
+title: "Pre-Commit Hook Creation Guide"
 subtitle: "A step-by-step guide to developing your own pre-commit hook."
 excerpt: "Pre-commit hooks are a great way to help maintain code quality. However, some of your code quality standards may be specific to your project, and therefore, not covered by existing code linting and formatting tools. In this article, I will show you how to incorporate custom checks into your `pre-commit` setup."
 date: "2024-09-04T14:55:00.000Z"
-modified: "2024-09-12T00:47:00.000Z"
+modified: "2024-09-13T23:38:00.000Z"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python"]
 ogImage:
@@ -208,7 +208,7 @@ Let's break down the contents of this file:
 - `language`: the language the hook is written in, which lets `pre-commit` know how to install the repository
 - `types`: (optional) specify the types of files to run this hook on &ndash; note that all of the descriptors much match for a file to trigger the hook (use `types_or` if you are specifying non-overlapping types)
 
-*If you would like to learn more about how `pre-commit` uses this file, check out my [How Pre-Commit Works](/articles/devx/pre-commit/behind-the-scenes/) article.*
+*If you would like to learn more about how `pre-commit` uses this file, check out my [A Behind the Scenes Look at How Pre-Commit Works](/articles/devx/pre-commit/behind-the-scenes/) article.*
 
 ---
 

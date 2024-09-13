@@ -3,7 +3,7 @@ title: "How to Set Up Pre-Commit Hooks"
 subtitle: "A step-by-step guide to installing and configuring pre-commit hooks on your project."
 excerpt: "Looking to streamline your local development? In this article, I provide a step-by-step guide to installing and configuring pre-commit hooks on your project. You will also a learn a little bit about how git hooks work."
 date: "2024-03-29T20:55:00.000Z"
-modified: "2024-09-04T14:55:00.000Z"
+modified: "2024-09-13T23:38:00.000Z"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python"]
 ogImage:
@@ -358,6 +358,6 @@ There will be cases (at least in the beginning) where a hook changes something o
 
 ---
 
-This article walked you through the process of installing and configuring pre-commit hooks to help maintain a high level of code quality for projects of any size. Take some time to explore the other hooks that can be used with `pre-commit` using the search tips on their documentation [here](https://pre-commit.com/hooks.html) and customize your setup. If the checks you want don’t exist yet, consider making your own hook (check out my [How to Create a Pre-Commit Hook](/articles/devx/pre-commit/hook-creation-guide/) article). Now would also be a great time to update your CI workflow (or create one) to run the same checks on your PRs.
+This article walked you through the process of installing and configuring pre-commit hooks to help maintain a high level of code quality for projects of any size. Take some time to explore the other hooks that can be used with `pre-commit` using the search tips on their documentation [here](https://pre-commit.com/hooks.html) and customize your setup. If the checks you want don’t exist yet, consider making your own hook (check out my [Pre-Commit Hook Creation Guide](/articles/devx/pre-commit/hook-creation-guide/)). Now would also be a great time to update your CI workflow (or create one) to run the same checks on your PRs.
 
 Let me know in the comments below or on social media ([LinkedIn](https://www.linkedin.com/in/stefanie-molin/) or [X](https://twitter.com/StefanieMolin)) what you end up doing with all the time you save by using pre-commit hooks – happy coding! 😊

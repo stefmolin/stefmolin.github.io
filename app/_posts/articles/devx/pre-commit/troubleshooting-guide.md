@@ -3,7 +3,7 @@ title: "Common Pre-Commit Errors and How to Solve Them"
 subtitle: "A troubleshooting guide for pre-commit hooks."
 excerpt: "Having issues with your `pre-commit` setup? In this troubleshooting guide, I've collected the most common errors `pre-commit` users face and provided explanations and guidance for fixing them."
 date: "2024-08-06T12:00:00.000Z"
-modified: "2024-09-04T14:55:00.000Z"
+modified: "2024-09-13T23:38:00.000Z"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python", "troubleshooting"]
 ogImage:
@@ -137,7 +137,7 @@ This means that `pre-commit` was unable to find a `.pre-commit-hooks.yaml` file 
 
 ### The fix
 
-If you are trying to create your own hook, make sure you have committed a `.pre-commit-hooks.yaml` file to the repository, and be sure to check out my [How to Create a Pre-Commit Hook](/articles/devx/pre-commit/hook-creation-guide/) article for a complete walkthrough of the process.
+If you are trying to create your own hook, make sure you have committed a `.pre-commit-hooks.yaml` file to the repository, and be sure to check out my [Pre-Commit Hook Creation Guide](/articles/devx/pre-commit/hook-creation-guide/) for a complete walkthrough of the process.
 
 If you are using a hook from someone else, make sure the repository actually supports usage with `pre-commit`: if the `.pre-commit-hooks.yaml` file does not exist in the top-level of the repository, they do not support it.
 
