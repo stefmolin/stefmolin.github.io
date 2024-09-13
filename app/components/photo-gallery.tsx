@@ -1,11 +1,12 @@
 import { useRef, useState } from 'react';
 import shuffle from 'lodash/shuffle';
-import PhotoAlbum, { type Photo } from 'react-photo-album';
+import RowsPhotoAlbum, { type Photo } from 'react-photo-album';
 import Lightbox from 'yet-another-react-lightbox';
 import Captions from 'yet-another-react-lightbox/plugins/captions';
 import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
 import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
+import 'react-photo-album/rows.css';
 import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/captions.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
@@ -56,7 +57,7 @@ export default function PhotoGallery({
       <p className={classNames('mb-5', promptClassName)}>
         Click on a photo to learn more about it.
       </p>
-      <PhotoAlbum
+      <RowsPhotoAlbum
         layout="rows"
         photos={photoArray.slice(offset, offset + photosPerPage)}
         padding={padding}

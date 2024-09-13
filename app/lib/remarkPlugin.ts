@@ -28,6 +28,7 @@ export const labelCodeBlock: unified.Plugin<[], hast.Root> = () => {
           const languageNode: hast.Element = {
             type: 'element',
             tagName: 'header',
+            properties: {},
             children: [
               {
                 type: 'element',
