@@ -181,6 +181,22 @@ export const generateRssFeed = async (
 
   posts.forEach((post) => {
     const url = `${HOME_URL}/${post.slug.join('/')}`;
+    const imageUrl = localImageRegex.exec(post.ogImage.url)
+      ? post.ogImage.url.replace(localImageRegex, HOME_URL)
+      : post.ogImage.url.replace(/[<>&'"]/g, function (character) {
+          switch (character) {
+            case '<':
+              return '&lt;';
+            case '>':
+              return '&gt;';
+            case '&':
+              return '&amp;';
+            case "'":
+              return '&apos;';
+            case '"':
+              return '&quot;';
+          }
+        });
     rssFeed.addItem({
       title: post.title,
       id: url,
@@ -190,7 +206,7 @@ export const generateRssFeed = async (
       category: post.slug.length > 1 ? post.slug[1] : null,
       image: localImageRegex.exec(post.ogImage.url)
         ? post.ogImage.url.replace(localImageRegex, HOME_URL)
-        : post.ogImage.url,
+        : imageUrl,
     });
   });
 
