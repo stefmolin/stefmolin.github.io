@@ -556,7 +556,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       eventClass: 'conference',
       link: undefined,
     },
-    presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
+    presentation: PRESENTATIONS.PANDAS_WORKSHOP,
     date: '2024-11-02',
   },
   {
@@ -567,7 +567,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       eventClass: 'conference',
       link: undefined,
     },
-    presentation: PRESENTATIONS.PANDAS_WORKSHOP,
+    presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
     date: '2024-11-03',
   },
   {

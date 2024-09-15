@@ -45,6 +45,10 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
     },
     reviews: [
       {
+        text: 'By far one of the best workshops at the conference.',
+        author: 'PyCon Poland 2024 attendee',
+      },
+      {
         text: `In the first tutorial days of #EuroSciPy2023, @StefanieMolin
         gave an outstanding introduction to data analysis using pandas.`,
         author: 'EuroSciPy (@EuroSciPy)',
