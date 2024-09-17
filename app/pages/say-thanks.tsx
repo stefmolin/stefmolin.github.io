@@ -5,6 +5,7 @@ import {
   faBook,
   faCoffee,
   faEnvelopeOpenText,
+  faHandHoldingHeart,
   faHeart,
   faMobileScreen,
   faPaintBrush,
@@ -188,6 +189,18 @@ export default function SayThanks() {
                       href="https://github.com/sponsors/stefmolin"
                     >
                       Sponsor me on GitHub
+                    </ExternalLink>
+                    .
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faHandHoldingHeart} fixedWidth />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://ko-fi.com/stefaniemolin"
+                    >
+                      Support me on Ko-Fi
                     </ExternalLink>
                     .
                   </span>
