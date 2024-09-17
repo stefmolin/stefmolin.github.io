@@ -200,7 +200,7 @@ export default function SayThanks() {
                       className={underlinedLinkClassName}
                       href="https://ko-fi.com/stefaniemolin"
                     >
-                      Support me on Ko-Fi
+                      Support me on Ko-fi
                     </ExternalLink>
                     .
                   </span>
