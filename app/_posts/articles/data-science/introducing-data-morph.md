@@ -50,7 +50,7 @@ Each of these datasets is very different visually; however, they all share the s
 
 </figcaption>
 
-In 2017, researchers at Autodesk built upon the idea of Anscombe's Quartet to develop the [**Datasaurus Dozen**](https://damassets.autodesk.net/content/dam/autodesk/research/publications-assets/pdf/same-stats-different-graphs.pdf): they turned a set of points shaped like a dinosaur (Alberto Cairo's [Datasaurus](http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html)) into 12 distinct shapes using [**simulated annealing**](https://machinelearningmastery.com/simulated-annealing-from-scratch-in-python/), which is a technique for finding global optima, in the **Same Stats, Different Graphs** project:
+In 2017, researchers at Autodesk built upon the idea of Anscombe's Quartet to develop the [**Datasaurus Dozen**](https://damassets.autodesk.net/content/dam/autodesk/research/publications-assets/pdf/same-stats-different-graphs.pdf): they turned a set of points shaped like a dinosaur (Alberto Cairo's [Datasaurus](https://web.archive.org/web/20240620205540/http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html)) into 12 distinct shapes using [**simulated annealing**](https://machinelearningmastery.com/simulated-annealing-from-scratch-in-python/), which is a technique for finding global optima, in the **Same Stats, Different Graphs** project:
 
 ![Datasaurus Dozen](/post-assets/datasaurus-dozen.png)
 
