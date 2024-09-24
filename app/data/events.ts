@@ -579,7 +579,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       link: undefined,
     },
     presentation: PRESENTATIONS.DATA_MORPH,
-    date: '2024-11-23',
+    date: '2024-11-22',
   },
 ];
 
