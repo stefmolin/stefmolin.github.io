@@ -12,13 +12,13 @@ ogImage:
   height: 881
 ---
 
-People have repeatedly told me that I should start a blog just to share some of my travel stories. After years of laughing that off, I've decided to do it. It won't just be a blog about my travels, but rather a piece of me:<sup>1</sup> the person behind the [books](/books), [articles](/articles), and [workshops](/workshops).
+People have repeatedly told me that I should start a blog just to share some of my travel stories. After years of laughing that off, I've decided to do it. It won't just be a blog about my travels, but rather a piece of me:<sup>1</sup> the person behind the [books](/books/), [articles](/articles/), and [workshops](/workshops/).
 
 So, why now? Well, it took me a while to figure out my voice online. What do I share besides my educational content? Am I all business? Can I share topics other than what interests my target audience?
 
 I've done interviews in the past that allow people to learn more about me. From the feedback, I've realized that people *do* want to learn more about the person behind the content. Until very recently, though, I had a very different relationship with writing and wasn't looking for another commitment. However, I've started writing about some emotionally-charged things in my life and have found it very cathartic.<sup>2</sup> I enjoy a good laugh, so expect there to be a touch of humor in almost everything I share.
 
-To this end, I am distinguishing [articles](/articles) (educational content) from [blog posts](/blog) (informal glimpses into my life). I hope you walk away from my website with knowledge and/or a good laugh.
+To this end, I am distinguishing [articles](/articles/) (educational content) from [blog posts](/blog/) (informal glimpses into my life). I hope you walk away from my website with knowledge and/or a good laugh.
 
 Stay tuned.
 

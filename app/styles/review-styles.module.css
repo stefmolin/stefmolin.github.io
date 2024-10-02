@@ -9,5 +9,4 @@
   @apply text-slate-500;
   @apply hover:text-slate-400;
   @apply underline;
-  @apply sm:text-xl;
 }

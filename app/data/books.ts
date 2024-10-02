@@ -252,7 +252,7 @@ export const BOOK_PAGES: BookPage[] = [
         The book covers all basic data manipulation topics such as EDA (exploratory data analysis),
         statistics fundamentals, dealing with data points, applying some machine learning algorithms,
         and visualizing your data. The author of this book, Stefanie, also sometimes offers
-        [training](/workshops) to people who want to be guided and supported through the information.
+        [training](/workshops/) to people who want to be guided and supported through the information.
         The end of the book gets into some advanced topics, and addresses Git and GitHub as well.`,
         source:
           'https://towardsdatascience.com/5-books-to-help-you-master-the-pandas-library-acb5c305159b',

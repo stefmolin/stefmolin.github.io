@@ -20,9 +20,9 @@ I have mapped out the chapters at a high level, and I absolutely love that I hav
 
 For this book, I'm targeting 10 chapters and around 200 pages.<sup>1</sup> I've been applying what I learned from James Clear's MasterClass,<sup>2</sup> and I aim to write a minimum of 500 words a day (again, on any part of the book I wish). I also limit my writing sessions to two hours a day, which prevents the book-writing process from taking over my life (a luxury I did not have with my past book-writing experiences).
 
-My vision for this book is constantly evolving and concretizing. More than once, I have found myself cutting content from the outline that I was positive would be in the book just a few days prior. While these topics won't make it into the book, I plan to write [articles](/articles) for each of them. The first of which was [published on Friday](/articles/devx/pre-commit/setup-guide/).
+My vision for this book is constantly evolving and concretizing. More than once, I have found myself cutting content from the outline that I was positive would be in the book just a few days prior. While these topics won't make it into the book, I plan to write [articles](/articles/) for each of them. The first of which was [published on Friday](/articles/devx/pre-commit/setup-guide/).
 
-As I'm embarking on this journey without deadlines, I don't know when I will publish. However, I *am* confident that I will finish. Borrowing some fortune cookie wisdom, I will say that "it will be published sometime in the future." Be sure to [subscribe to my newsletter](/newsletter) for more updates on the new book, including any articles that come out of the creative process.
+As I'm embarking on this journey without deadlines, I don't know when I will publish. However, I *am* confident that I will finish. Borrowing some fortune cookie wisdom, I will say that "it will be published sometime in the future." Be sure to [subscribe to my newsletter](/newsletter/) for more updates on the new book, including any articles that come out of the creative process.
 
 Happy Easter! 🐣
 

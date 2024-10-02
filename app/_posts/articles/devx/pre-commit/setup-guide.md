@@ -184,7 +184,7 @@ Abbreviated view of the files in the repository at this point.
 
 All Git repositories come with some hook examples in `.sample` files (like the `.git/hooks/pre-push.sample` file shown above). Most of the time the pre-commit stage is what we want for checking code quality, but `pre-commit` does support other stages. If you want to use a hook not supported by `pre-commit`, create an executable file and save it at `.git/hooks/<hook-name>`. Consult the `pre-commit` documentation for more information on [supported hooks](https://pre-commit.com/#supported-git-hooks) and [configuring hooks to run at different stages](https://pre-commit.com/#config-stages).
 
-*Curious how `pre-commit` works? Be sure to check out my [behind the scenes article](/articles/devx/pre-commit/behind-the-scenes).*
+*Curious how `pre-commit` works? Be sure to check out my [behind the scenes article](/articles/devx/pre-commit/behind-the-scenes/).*
 
 ## Configuring pre-commit hooks
 
@@ -354,7 +354,7 @@ Since we have to specify versions for each hook repository in our configuration 
 
 There will be cases (at least in the beginning) where a hook changes something or presents you with an issue that you don’t agree with (it’s a feature, not a bug, right?). Fight the urge to accept the change without thinking, and resist the temptation to immediately ignore it with `git commit --no-verify`. Instead, carefully consider whether you should update the hook’s configuration, switch to a different hook, or reevaluate your views on the finding all together.
 
-*Be sure to bookmark my [`pre-commit` troubleshooting guide](/articles/devx/pre-commit/troubleshooting-guide) &ndash; it explains the cause of common errors and guides you in fixing them.*
+*Be sure to bookmark my [`pre-commit` troubleshooting guide](/articles/devx/pre-commit/troubleshooting-guide/) &ndash; it explains the cause of common errors and guides you in fixing them.*
 
 ---
 
