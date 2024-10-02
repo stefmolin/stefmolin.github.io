@@ -581,6 +581,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2024-11-22',
   },
+  {
+    event: {
+      name: 'PyCon Australia',
+      location: LOCATIONS.MELBOURNE,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.DATA_MORPH_SPRINT,
+    date: '2024-11-25',
+  },
 ];
 
 export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(
