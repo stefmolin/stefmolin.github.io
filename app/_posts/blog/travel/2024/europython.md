@@ -3,6 +3,7 @@ title: "EuroPython 2024 🇨🇿"
 subtitle: "Highlights from presenting and organizing a development sprint at this year's event in Prague."
 excerpt: "EuroPython 2024 was a conference of firsts for me: my first time presenting my new workshop on pre-commit hooks and my first time organizing a development sprint. During my time there, I was also feeling very creative and built out some new pages for my website. In this post, I share my experiences during this week."
 date: "2024-07-28T19:18:00.000Z"
+modified: "2024-10-02T18:12:00.000Z"
 author: Stefanie Molin
 tags: ["conferences", "reflection", "updates"]
 assets: "/assets/blog/travel/2024/europython"
@@ -64,11 +65,11 @@ Upon leaving the venue, a speaker I hadn't met said, "hey, pre-commit girl," to 
 
 The main conference ran Wednesday through Friday. While there were several talks that I really enjoyed, if I could only pick three, I would recommend watching these when the recordings come out:
 
-1. [The Art of the Pull Request &ndash; Ben Lomax](https://ep2024.europython.eu/session/the-art-of-the-pull-request)
-2. [Why communication is the best skill you can develop as a programmer &ndash; Miriam Forner](https://ep2024.europython.eu/session/why-communication-is-the-best-skill-you-can-develop-as-a-programmer)
-3. [Lessons learned from maintaining open-source Python projects &ndash; Bernat Gabor](https://ep2024.europython.eu/session/lessons-learned-from-maintaining-open-source-python-projects)
+1. [Why communication is the best skill you can develop as a programmer &ndash; Miriam Forner](https://youtu.be/-Gjb4vpD_oM)
+2. [Lessons learned from maintaining open-source Python projects &ndash; Bernat Gabor](https://youtu.be/4qmuZQYxdrU)
+3. [The Art of the Pull Request &ndash; Ben Lomax](https://youtu.be/2upWetU_vUc)
 
-Bonus: [the first lightning talk on Wednesday](https://ep2024.europython.eu/session/lightning-talks-wednesday) about the history of Czech wines
+Bonus: [Jacob Hallén's lightning talk](https://www.youtube.com/watch?v=CgbpaoikjLs&list=PL8uoeex94UhE1CbtkDK4hevp2lBif57Nq&index=11&t=271s) about the history of Czech wines
 
 During the conference days, I was also able to meet up with a fellow member of the [PyCon Portugal program committee](/blog/updates/2024/conference-program-committee/) in person and walk a curious friend through the basics of how I built my website.
 
