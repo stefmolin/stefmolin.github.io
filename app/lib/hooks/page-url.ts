@@ -3,5 +3,6 @@ import { HOME_URL } from '../../data/constants';
 
 export const usePageURL = () => {
   const router = useRouter();
-  return `${HOME_URL}${router.asPath}`;
+  const path = router.asPath.split('?')[0];
+  return `${HOME_URL}${path}`;
 };
