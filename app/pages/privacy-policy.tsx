@@ -138,8 +138,8 @@ export default function Index() {
             <li>
               <span>
                 Email address (via{' '}
-                <a href="https://convertkit.com/privacy" {...linkProps}>
-                  ConvertKit
+                <a href="https://kit.com/privacy" {...linkProps}>
+                  Kit
                 </a>
                 )
               </span>

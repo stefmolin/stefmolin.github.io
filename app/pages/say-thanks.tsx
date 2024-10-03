@@ -245,14 +245,14 @@ export default function SayThanks() {
                     is powered by{' '}
                     <ExternalLink
                       className={underlinedLinkClassName}
-                      href="https://convertkit.com?lmref=yvTxbA"
+                      href="https://kit.com/?lmref=yvTxbA"
                     >
-                      ConvertKit
+                      Kit
                     </ExternalLink>
                     . They also offer a{' '}
                     <ExternalLink
                       className={underlinedLinkClassName}
-                      href="https://app.convertkit.com/users/signup?plan=free-limited&lmref=yvTxbA"
+                      href="https://app.kit.com/users/signup?plan=free-limited&lmref=yvTxbA"
                     >
                       free plan
                     </ExternalLink>{' '}

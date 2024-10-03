@@ -18,7 +18,7 @@ const SubscribeToNewsletterForm = ({
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
 
-  const FORM_URL = 'https://app.convertkit.com/forms/6101302/subscriptions'; // dark form template
+  const FORM_URL = 'https://app.kit.com/forms/6101302/subscriptions'; // dark form template
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
