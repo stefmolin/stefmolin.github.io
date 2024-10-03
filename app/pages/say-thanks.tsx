@@ -163,7 +163,7 @@ export default function SayThanks() {
                   </span>
                 </>,
                 <>
-                  <FontAwesomeIcon icon={faPython} fixedWidth className="sm:px-1" />
+                  <FontAwesomeIcon icon={faPython} fixedWidth className="sm:px-0.5 sm:mx-px" />
                   <span>
                     <ExternalLink
                       className={underlinedLinkClassName}
