@@ -255,6 +255,32 @@ export const CONFERENCE_IMAGES: Photo[] = [
     height: 4618,
     alt: 'Presenting my "Beyond the Basics: Data Visualization in Python" workshop at PyCon US in Salt Lake City on April 19, 2023.',
   },
+  {
+    // https://www.flickr.com/photos/europython/53938837365/in/album-72177720319693973/
+    src: 'https://live.staticflickr.com/65535/53938837365_709afe771a_k_d.jpg',
+    width: 2048,
+    height: 1363,
+    alt: 'Explaining pre-commit hooks during my (Pre-)Commit to Better Code workshop at EuroPython on July 8, 2024 in Prague.',
+  },
+  {
+    src: 'https://pbs.twimg.com/media/GPgLSXNXIAAbTku?format=jpg&name=medium',
+    width: 800,
+    height: 634,
+    alt: 'Presenting "Data Morph: A Cautionary Tale of Summary Statistics" at PyCon Colombia on June 7, 2024 in Medellín.',
+  },
+  {
+    // https://www.flickr.com/photos/157943386@N08/53773231892/in/photostream/
+    src: 'https://live.staticflickr.com/65535/53773231892_21464b74ea_k_d.jpg',
+    width: 2048,
+    height: 1363,
+    alt: 'The room is packed for my "Getting Started with Open Source Contributions" talk at PyCon Italia on May 24, 2024 in Florence.',
+  },
+  {
+    src: '/assets/events/conferences/pycon-estonia-2024.jpg',
+    width: 2000,
+    height: 1334,
+    alt: 'Presenting "Data Morph: A Cautionary Tale of Summary Statistics" at PyCon Estonia on September 6, 2024 in Tallinn.',
+  },
 ];
 
 export const BOOK_SIGNING_IMAGES: Photo[] = [
