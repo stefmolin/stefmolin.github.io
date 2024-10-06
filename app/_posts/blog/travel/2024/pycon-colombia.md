@@ -4,7 +4,7 @@ subtitle: "Highlights from presenting at this year's event in Medellín."
 excerpt: "My first time presenting in South America was a resounding success. In addition to giving a talk in the largest room I've presented in to date, I also delivered a workshop in one of the classrooms at the EAFIT university in Medellín – all a part of PyCon Colombia 2024."
 date: "2024-06-11T03:55:00.000Z"
 author: Stefanie Molin
-tags: ["conferences", "reflection"]
+tags: ["conferences", "reflection", "travel"]
 ogImage:
   url: "https://pbs.twimg.com/media/GPgLSXNXIAAbTku?format=jpg&name=large"
   width: 1344

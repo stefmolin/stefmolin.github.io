@@ -5,7 +5,7 @@ excerpt: "EuroPython 2024 was a conference of firsts for me: my first time prese
 date: "2024-07-28T19:18:00.000Z"
 modified: "2024-10-02T18:12:00.000Z"
 author: Stefanie Molin
-tags: ["conferences", "reflection", "updates"]
+tags: ["conferences", "reflection", "travel", "updates"]
 assets: "/assets/blog/travel/2024/europython"
 ogImage:
   url: "/post-assets/old-town-square.jpg"

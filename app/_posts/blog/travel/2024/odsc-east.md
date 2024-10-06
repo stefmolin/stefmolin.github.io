@@ -5,7 +5,7 @@ excerpt: "Back in 2021, ODSC invited me to present a workshop on pandas virtuall
 date: "2024-04-26T23:00:00.000Z"
 modified: "2024-09-12T00:45:00.000Z"
 author: Stefanie Molin
-tags: ["conferences", "reflection"]
+tags: ["conferences", "reflection", "travel"]
 ogImage:
   url: "https://pbs.twimg.com/media/GMBAVDhW0AA-Lmd?format=jpg&name=medium"
   width: 900
