@@ -48,6 +48,9 @@ const Layout = ({
         {!showMenuOverlay && <main>{children}</main>}
       </div>
       {!isIFrame && !showMenuOverlay && <Footer />}
+      {pageURL.includes('/articles') && ( // for code blocks
+        <Script src="https://kit.fontawesome.com/0dd30c21ea.js" crossOrigin="anonymous" />
+      )}
       <Script src="/copy-code.js" />
       <GoogleAnalytics gaId="G-25389D1SR4" />
     </>
