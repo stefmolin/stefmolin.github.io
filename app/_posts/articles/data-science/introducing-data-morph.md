@@ -5,7 +5,7 @@ excerpt: "This article introduces Data Morph, a new open source Python package t
 date: "2023-04-20T22:03:47.508Z"
 modified: "2024-02-27T23:42:00.000Z"
 author: Stefanie Molin
-tags: ["data science", "Python", "open source software", "data visualization"]
+tags: ["data science", "Python", "open source software", "data visualization", "projects"]
 assets: "/assets/articles/data-science/introducing-data-morph"
 ogImage:
   url: "/post-assets/panda-to-star.gif"

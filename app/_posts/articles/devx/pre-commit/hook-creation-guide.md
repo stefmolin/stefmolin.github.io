@@ -3,7 +3,7 @@ title: "Pre-Commit Hook Creation Guide"
 subtitle: "A step-by-step guide to developing your own pre-commit hook."
 excerpt: "Pre-commit hooks are a great way to help maintain code quality. However, some of your code quality standards may be specific to your project, and therefore, not covered by existing code linting and formatting tools. In this article, I will show you how to incorporate custom checks into your `pre-commit` setup."
 date: "2024-09-04T14:55:00.000Z"
-modified: "2024-09-13T23:38:00.000Z"
+modified: "2024-10-09T13:00:00.000Z"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python"]
 ogImage:
@@ -25,7 +25,7 @@ Photo by [NASA](https://unsplash.com/@nasa) on [Unsplash](https://unsplash.com/)
 
 Pre-commit hooks are a great way to help maintain code quality. However, while certain code quality measures are based on generally-accepted standards like [PEP&nbsp;8](https://peps.python.org/pep-0008/) for Python code, others may be specific to your project, and therefore, not covered by existing code linting and formatting tools. By creating your own hook, you can incorporate your project-specific checks into your `pre-commit` setup.
 
-In this article, I will walk you through my recipe for creating pre-commit hooks. This is the recipe I teach in my [pre-commit workshop](/workshops/pre-commit-workshop/), and it is based on my experience building two publicly-available hooks: [`numpydoc-validation`](https://numpydoc.readthedocs.io/en/latest/validation.html#docstring-validation-using-pre-commit-hook) (which checks that docstrings follow [the numpydoc style guide](https://numpydoc.readthedocs.io/en/latest/format.html)) and [`exif-stripper`](https://github.com/stefmolin/exif-stripper) (which strips out any EXIF metadata from images added to version control).
+In this article, I will walk you through my recipe for creating pre-commit hooks. This is the recipe I teach in my [pre-commit workshop](/workshops/pre-commit-workshop/), and it is based on my experience building two publicly-available hooks: [`numpydoc-validation`](https://numpydoc.readthedocs.io/en/latest/validation.html#docstring-validation-using-pre-commit-hook) (which checks that docstrings follow [the numpydoc style guide](https://numpydoc.readthedocs.io/en/latest/format.html)) and [`exif-stripper`](https://github.com/stefmolin/exif-stripper) (which strips out any [EXIF metadata](/articles/devx/pre-commit/exif-stripper/) from images added to version control).
 
 *If you aren't familiar with `pre-commit`, take a moment to read through my article on [setting up pre-commit hooks](/articles/devx/pre-commit/setup-guide/) before proceeding.*
 
