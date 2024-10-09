@@ -26,7 +26,6 @@ import { useWindowSize } from '../lib/hooks/window-size';
 import { getImageLink } from '../lib/images';
 import markdownToHtml from '../lib/markdownToHtml';
 import { getAllPosts, getPostBySlug } from '../lib/posts';
-import { getSeoImageLink } from '../lib/seo';
 
 type Props = {
   post: PostType;
@@ -82,11 +81,7 @@ export default function Post({ post, suggestedPosts }: Props) {
                 },
                 images: [
                   {
-                    url: getSeoImageLink(
-                      ogImageURL,
-                      'New York',
-                      `${post.title} | ${post.type === 'blog' ? "Stefanie Molin's blog" : 'article by Stefanie Molin'}`,
-                    ),
+                    url: ogImageURL,
                     alt:
                       post.ogImage.caption ?? `Cover image for "${post.title}" by Stefanie Molin.`,
                     width: post.ogImage.width,

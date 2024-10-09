@@ -17,7 +17,7 @@ const config: DefaultSeoProps = {
   twitter: {
     handle: TWITTER_HANDLE,
     site: TWITTER_HANDLE,
-    cardType: 'summary_large_image',
+    cardType: 'summary',
   },
   additionalMetaTags: [
     {
