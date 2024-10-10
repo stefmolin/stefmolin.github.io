@@ -6,9 +6,9 @@ date: "2024-10-09T13:00:00.000Z"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python", "projects", "open source software"]
 ogImage:
-  url: "https://github.com/stefmolin/exif-stripper/raw/main/logo.svg"
-  width: 1200
-  height: 800
+  url: "https://github.com/stefmolin/exif-stripper/raw/main/logo.png"
+  width: 269
+  height: 176
 ---
 
 ![Stefanie Molin presenting at PyCon Estonia](/assets/events/conferences/pycon-estonia-2024.jpg)
