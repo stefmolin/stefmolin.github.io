@@ -543,6 +543,14 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     event: {
       ...SAME_LOCATION_EVENTS['ODSC West'],
       virtual: false,
+    },
+    presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
+    date: '2024-10-29',
+  },
+  {
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC West'],
+      virtual: false,
       link: undefined,
     },
     presentation: PRESENTATIONS.DATA_MORPH,
