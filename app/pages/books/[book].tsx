@@ -15,7 +15,6 @@ import { HOME_URL } from '../../data/constants';
 import { generateBookCoverAltText, generateBookPageTitle } from '../../lib/books';
 import { useWindowSize } from '../../lib/hooks/window-size';
 import { getImageLink } from '../../lib/images';
-import { getSeoImageLink } from '../../lib/seo';
 
 export default function BookPage({ bookKey }: { bookKey: string }) {
   const { book, reviews, relatedContent, faqs } = BOOK_PAGE_MAPPING[bookKey];
@@ -43,11 +42,9 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
             },
             images: [
               {
-                url: getSeoImageLink(
-                  getImageLink(bookCoverImage.src),
-                  'New York',
-                  `${bookTitle} by Stefanie Molin`,
-                ),
+                url: getImageLink(bookCoverImage.src),
+                width: bookCoverImage.width,
+                height: bookCoverImage.height,
                 alt: imageAltText,
               },
             ],

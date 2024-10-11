@@ -107,7 +107,7 @@ export default function AboutMe() {
   );
 
   return (
-    <Layout seoPageTitle="About Me">
+    <Layout>
       <NextSeo
         title={pageTitle}
         description={

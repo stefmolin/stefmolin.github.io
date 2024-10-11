@@ -30,7 +30,6 @@ export default function ComingSoonish() {
       styleProps={{
         backgroundImage: 'url(/assets/under-construction.jpg)',
       }}
-      seoPageTitle={pageTitle}
     >
       <NextSeo title={pageTitle} noindex />
       <Container className="px-4 sm:px-10">

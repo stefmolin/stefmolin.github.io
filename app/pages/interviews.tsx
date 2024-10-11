@@ -17,7 +17,6 @@ import CONTENT_LINKS from '../data/content-links';
 import ExternalLink from '../components/links/external-link';
 import PreviewCard from '../components/cards/preview-card';
 import ResourceLink from '../components/links/resource-link';
-import { getSeoImageLink } from '../lib/seo';
 
 export default function Interviews() {
   const pageTitle = 'Interviews';
@@ -63,11 +62,9 @@ export default function Interviews() {
           openGraph={{
             images: [
               {
-                url: getSeoImageLink(
-                  getImageLink(seoImage.src),
-                  'Chicago',
-                  'Interviews with Stefanie Molin',
-                ),
+                url: getImageLink(seoImage.src),
+                width: seoImage.width,
+                height: seoImage.height,
                 alt: 'Photo of Stefanie Molin taken by Alex Guevara (@agnyphoto on Instagram) after her first book came out.',
               },
             ],

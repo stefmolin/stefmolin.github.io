@@ -6,7 +6,6 @@ import Container from '../sections/container';
 import type SEOImage from '../../interfaces/seo-image';
 import { type TalkCard } from '../../interfaces/talk';
 import { type WorkshopPage } from '../../interfaces/workshop';
-import { getSeoImageLink } from '../../lib/seo';
 import EventMap from '../events/event-map';
 
 interface PresentationListingProps {
@@ -43,11 +42,7 @@ export default function PresentationListing({
           openGraph={{
             images: [
               {
-                url: getSeoImageLink(
-                  getImageLink(seoImage.src),
-                  'New York',
-                  `${pageTitle === 'Talks' ? 'Conference ' : ''}${pageTitle} by Stefanie Molin`,
-                ),
+                url: getImageLink(seoImage.src),
                 width: seoImage.width,
                 height: seoImage.height,
                 alt: seoImage.alt ?? seoImageAltTextFallback ?? pageTitle,

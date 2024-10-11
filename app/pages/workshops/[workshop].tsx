@@ -13,7 +13,6 @@ import WorkshopOutline from '../../components/workshops/workshop-outline';
 import WorkshopMap from '../../components/workshops/workshop-map';
 import WorkshopHeader from '../../components/workshops/workshop-header';
 import WorkshopSummary from '../../components/workshops/workshop-summary';
-import { getSeoImageLink } from '../../lib/seo';
 
 export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
   const { workshop, reviews, relatedContent } = WORKSHOP_PAGE_MAPPING[workshopKey];
@@ -33,11 +32,7 @@ export default function WorkshopPage({ workshopKey }: { workshopKey: string }) {
           openGraph={{
             images: [
               {
-                url: getSeoImageLink(
-                  getImageLink(workshopCoverImage.src),
-                  'New York',
-                  workshop.title,
-                ),
+                url: getImageLink(workshopCoverImage.src),
                 width: workshopCoverImage.width,
                 height: workshopCoverImage.height,
                 alt: workshop.title,

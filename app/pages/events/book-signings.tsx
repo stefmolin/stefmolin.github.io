@@ -12,7 +12,6 @@ import CONTENT_LINKS from '../../data/content-links';
 import { LIVE_PRESENTATIONS } from '../../data/events';
 import { BOOK_SIGNING_IMAGES } from '../../data/photo-gallery';
 import { getImageLink } from '../../lib/images';
-import { getSeoImageLink } from '../../lib/seo';
 
 const relatedContent = [
   CONTENT_LINKS.INTERVIEWS,
@@ -61,12 +60,9 @@ export default function BookSignings() {
           openGraph={{
             images: [
               {
-                url: getSeoImageLink(
-                  getImageLink(seoImage.src),
-                  'Boston',
-                  'Book Signings',
-                  "Stefanie Molin's book signing events.",
-                ),
+                url: getImageLink(seoImage.src),
+                width: seoImage.width,
+                height: seoImage.height,
                 alt: "Line from Stefanie Molin's first book signing.",
               },
             ],

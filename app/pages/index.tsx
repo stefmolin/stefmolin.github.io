@@ -160,7 +160,7 @@ export default function Home({
   }, [articles]);
 
   return (
-    <Layout seoPageTitle="Stefanie Molin's website">
+    <Layout>
       <NextSeo
         title="Stefanie Molin"
         titleTemplate="%s"

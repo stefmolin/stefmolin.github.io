@@ -14,7 +14,6 @@ export default function ContactMe() {
       styleProps={{
         backgroundImage: 'url(/assets/events/conferences/conference-badges.jpg)',
       }}
-      seoPageTitle={pageTitle}
     >
       <NextSeo
         title={pageTitle}

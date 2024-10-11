@@ -54,7 +54,7 @@ export default function SayThanks() {
   const underlinedLinkClassName =
     'py-px underline font-bold decoration-yellow-400 hover:text-slate-700';
   return (
-    <Layout seoPageTitle="Want to let me know that you appreciate my content?">
+    <Layout>
       <NextSeo
         title="Say Thanks"
         description={

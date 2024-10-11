@@ -7,6 +7,7 @@ author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python", "projects", "open source software"]
 ogImage:
   url: "https://github.com/stefmolin/exif-stripper/raw/main/logo.png"
+  caption: "exif-stripper logo"
   width: 269
   height: 176
 ---

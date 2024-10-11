@@ -21,9 +21,7 @@ const Feed = ({
   const pageTitle = subtitle ?? title;
   return (
     <>
-      <Layout
-        seoPageTitle={`${pageTitle}${subtitle == null && pageTitle !== 'Articles' ? ' posts' : ''} by Stefanie Molin`}
-      >
+      <Layout>
         <NextSeo title={pageTitle} description={description} />
         <Container>
           <div ref={feedRef} className="-mt-4 max-w-5xl -mx-4 sm:mx-auto mb-32">
