@@ -45,9 +45,22 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
     },
     reviews: [
       {
+        text: dedent`I had the pleasure of attending this workshop at PyCon Portugal, and it was an
+        excellent presentation! The hands-on approach and clear explanations made it easy to follow,
+        even for those new to data analysis. Highly recommended to anyone looking to get started
+        with Pandas! 👏`,
+        author: 'João Sousa (via LinkedIn)',
+        source:
+          'https://www.linkedin.com/feed/update/urn:li:activity:7249380559787802624?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7249380559787802624%2C7253478263811923969%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287253478263811923969%2Curn%3Ali%3Aactivity%3A7249380559787802624%29',
+      }, // PyCon Portugal 2024
+      {
+        text: 'Perfect balance between theory and practice.',
+        author: 'PyCon Portugal 2024 attendee',
+      }, // PyCon Portugal 2024
+      {
         text: 'By far one of the best workshops at the conference.',
         author: 'PyCon Poland 2024 attendee',
-      },
+      }, // PyCon PL 2024
       {
         text: `In the first tutorial days of #EuroSciPy2023, @StefanieMolin
         gave an outstanding introduction to data analysis using pandas.`,
