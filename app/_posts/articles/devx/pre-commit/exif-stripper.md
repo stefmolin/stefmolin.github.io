@@ -3,6 +3,7 @@ title: "Mind Your Image Metadata"
 subtitle: "A brief introduction to image metadata and how to remove it with exif-stripper."
 excerpt: "Most devices record a variety of metadata when generating images. While some of that information *may* be innocuous, you could end up exposing the GPS coordinates to your home if you aren't careful. In this article, I provide a brief introduction to image metadata, and then show you how to remove it with `exif-stripper`."
 date: "2024-10-09T13:00:00.000Z"
+modified: "2024-10-22T12:19:00.000Z"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python", "projects", "open source software"]
 ogImage:
@@ -10,6 +11,8 @@ ogImage:
   caption: "exif-stripper logo"
   width: 269
   height: 176
+featured:
+  - "[Python Bytes #406](https://pythonbytes.fm/episodes/show/406/whats-on-django-tv-tonight)"
 ---
 
 ![Stefanie Molin presenting at PyCon Estonia](/assets/events/conferences/pycon-estonia-2024.jpg)
@@ -67,7 +70,7 @@ For example, imagine you take a headshot from the comfort of your home and put i
 
 ---
 
-I created [exif-stripper](https://github.com/stefmolin/exif-stripper) to make it easy to protect myself. It can be used as a [pre-commit hook](/articles/devx/pre-commit/setup-guide/), command line utility, or Python package. For my website, I use it as a pre-commit hook, so I can add images without having to think about it. Just add the following to your `.pre-commit-config.yaml` file:
+I created [exif-stripper](https://github.com/stefmolin/exif-stripper) to make it easy to protect myself. It can be used as a [pre-commit hook](/articles/devx/pre-commit/setup-guide/), command line utility, or Python package. For my website, I use it as a pre-commit hook, so I can add images without having to remember to process them beforehand. Just add the following to your `.pre-commit-config.yaml` file:
 
 ```yaml
 - repo: https://github.com/stefmolin/exif-stripper
