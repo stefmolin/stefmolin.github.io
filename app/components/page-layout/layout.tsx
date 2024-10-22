@@ -47,6 +47,12 @@ const Layout = ({ children, className, isIFrame = false, styleProps }: Props) =>
       )}
       <Script src="/copy-code.js" />
       <GoogleAnalytics gaId="G-25389D1SR4" />
+      {/* Cloudflare Web Analytics */}
+      <Script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "86be61058a924ea48c7d4188b3965830"}'
+      />
     </>
   );
 };
