@@ -3,7 +3,7 @@ title: "Mind Your Image Metadata"
 subtitle: "A brief introduction to image metadata and how to remove it with exif-stripper."
 excerpt: "Most devices record a variety of metadata when generating images. While some of that information *may* be innocuous, you could end up exposing the GPS coordinates to your home if you aren't careful. In this article, I provide a brief introduction to image metadata, and then show you how to remove it with `exif-stripper`."
 date: "2024-10-09T13:00:00.000Z"
-modified: "2024-10-22T12:19:00.000Z"
+modified: "2024-10-22T22:05:00.000Z"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python", "projects", "open source software"]
 ogImage:
@@ -13,6 +13,7 @@ ogImage:
   height: 176
 featured:
   - "[Python Bytes #406](https://pythonbytes.fm/episodes/show/406/whats-on-django-tv-tonight)"
+  - "[PyCoder's Weekly Issue #652](https://pycoders.com/issues/652)"
 ---
 
 ![Stefanie Molin presenting at PyCon Estonia](/assets/events/conferences/pycon-estonia-2024.jpg)

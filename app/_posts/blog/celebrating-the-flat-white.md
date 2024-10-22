@@ -2,7 +2,7 @@
 title: "Celebrating the Flat White"
 excerpt: "I was thrilled to see that today's Google Doodle was \"Celebrating the Flat White\" – my morning coffee drink of choice. Curious, what makes it my favorite? You'll have to read this post to find out."
 date: "2024-03-11T23:58:00.000Z"
-modified: "2024-03-12T00:21:00.000Z"
+modified: "2024-10-22T17:51:00.000Z"
 author: Stefanie Molin
 tags: ["about me", "coffee"]
 ogImage:
@@ -33,6 +33,5 @@ Have you ever tried a flat white? What is your coffee drink of choice?
 1. I prefer a straight shot of espresso in the afternoon.
 2. It's rare to find a coffee shop that serves a [espresso macchiato](https://en.wikipedia.org/wiki/Caff%C3%A8_macchiato) by default.
 3. As an Amazon Associate, I earn from qualifying purchases at no cost to you.
-4. I'm still trying to figure out the latte art part.
 
 </small>
