@@ -27,7 +27,7 @@ Source: [ODSC](https://twitter.com/StefanieMolin/status/1782379071403389231)
 
 </figcaption>
 
-During the conference, I also had a [book signing](/events/book-signings/) for [*Hands-On Data Analysis with Pandas (2nd Edition)*](/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/) in the expo hall. It never ceases to amaze me how many people turn out to meet me, regardless of how long the line is.<sup>1,2</sup> The books always run out well before the line finishes, but I always stay around to chat with everyone, and sign other items, if they wish (thankfully, no body parts 😂). Some people ask to take pictures with me as well.
+During the conference, I also had a [book signing](/events/book-signings/) for [*Hands-On Data Analysis with Pandas (2nd Edition)*](/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/) in the expo hall. It never ceases to amaze me how many people turn out to meet me, regardless of how long the line is.<sup><a id="footnote-1" href="#footnotes">1</a>,<a id="footnote-2" href="#footnotes">2</a></sup> The books always run out well before the line finishes, but I always stay around to chat with everyone, and sign other items, if they wish (thankfully, no body parts 😂). Some people ask to take pictures with me as well.
 
 I find the conversations with each individual to be quite interesting. Some people come to share where they are on their data science journey and what they are hoping to learn in the near future, and then ask me for some advice. Others are interested in my journey and ask questions about my background and experiences.
 
@@ -46,7 +46,7 @@ Massive line to meet me at the book signing 😀 Source: [ODSC](https://twitter.
 
 While each [book signing](/events/book-signings/) is different, I do get a lot of the same questions (so much so that I actually made an [FAQ](/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/#faq) 😂). Every once in a while, however, I will get a novel one. Here are my favorites from this session:
 
-- "How did you get here?" &ndash; "By plane," I joked 😂 I think the spirit of the question was more about how I got to be where I am today, so, subsequently, I shared my background.<sup>3</sup>
+- "How did you get here?" &ndash; "By plane," I joked 😂 I think the spirit of the question was more about how I got to be where I am today, so, subsequently, I shared my background.<sup id="footnote-3"><a href="#footnotes">3</a></sup>
 - "Do you ever experience imposter syndrome?" &ndash; I told them that I do, which they found surprising. I also shared the saying that the only people that don't experience imposter syndrome *are* the imposters.
 
 A few of the people in line for my book signing this time also mentioned that they loved seeing a woman making a name for herself in the space. It's heartwarming to think that I'm a role model now.
@@ -68,11 +68,11 @@ As far as food goes, the [bouillabaisse](https://familystylefood.com/julia-child
 Until next time Boston!
 
 
-<small class="leading-snug">
+<small class="leading-snug" id="footnotes">
 <hr class="w-1/2" />
 
-1. We also mention that there is a limited number of books, and it doesn't seem deter people.
-2. While more and more people tell me they have read or are reading my book, I have yet to have someone bring their copy of the book to the event. Although, I guess I can't blame them for not wanting to lug that around &ndash; at [788 pages](/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/), it is heavy!
-3. Sometimes, I am asked "why are you here?" Without waxing philosophical, my response is usually that I was presenting at the conference.
+1. We also mention that there is a limited number of books, and it doesn't seem deter people. <a href="#footnote-1">↩</a>
+2. While more and more people tell me they have read or are reading my book, I have yet to have someone bring their copy of the book to the event. Although, I guess I can't blame them for not wanting to lug that around &ndash; at [788 pages](/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/), it is heavy! <a href="#footnote-2">↩</a>
+3. Sometimes, I am asked "why are you here?" Without waxing philosophical, my response is usually that I was presenting at the conference. <a href="#footnote-3">↩</a>
 
 </small>

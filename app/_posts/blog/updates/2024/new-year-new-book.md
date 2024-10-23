@@ -18,7 +18,7 @@ I'm approaching the writing process differently this time. I don't want to stres
 
 I have mapped out the chapters at a high level, and I absolutely love that I have all the flexibility to work on whichever chapter I please on any given day. I began with chapter 7, then did chapter 6, and now I'm working on chapter 8, with some outlining for chapter 3. This flexibility has allowed me to get into a flow that I have *never* experienced before, and as a consequence, I'm progressing much faster.
 
-For this book, I'm targeting 10 chapters and around 200 pages.<sup>1</sup> I've been applying what I learned from James Clear's MasterClass,<sup>2</sup> and I aim to write a minimum of 500 words a day (again, on any part of the book I wish). I also limit my writing sessions to two hours a day, which prevents the book-writing process from taking over my life (a luxury I did not have with my past book-writing experiences).
+For this book, I'm targeting 10 chapters and around 200 pages.<sup id="footnote-1"><a href="#footnotes">1</a></sup> I've been applying what I learned from James Clear's MasterClass,<sup id="footnote-2"><a href="#footnotes">2</a></sup> and I aim to write a minimum of 250 words a day (again, on any part of the book I wish). I also limit my writing sessions to one hour a day, which prevents the book-writing process from taking over my life (a luxury I did not have with my past book-writing experiences).
 
 My vision for this book is constantly evolving and concretizing. More than once, I have found myself cutting content from the outline that I was positive would be in the book just a few days prior. While these topics won't make it into the book, I plan to write [articles](/articles/) for each of them. The first of which was [published on Friday](/articles/devx/pre-commit/setup-guide/).
 
@@ -26,10 +26,10 @@ As I'm embarking on this journey without deadlines, I don't know when I will pub
 
 Happy Easter! 🐣
 
-<small class="leading-snug">
+<small class="leading-snug" id="footnotes">
 <hr class="w-1/2" />
 
-1. Subject to change.
-2. James Clear is the author of the bestselling book, *[Atomic Habits](https://amzn.to/3TZ2aBd)*, (paid link).His course *Small Habits that Make a Big Impact on Your Life* is available on [MasterClass](https://www.masterclass.com/classes/small-habits-that-make-a-big-impact-on-your-life).
+1. Subject to change. <a href="#footnote-1">↩</a>
+2. James Clear is the author of the bestselling book, *[Atomic Habits](https://amzn.to/3TZ2aBd)*, (paid link). His course *Small Habits that Make a Big Impact on Your Life* is available on [MasterClass](https://www.masterclass.com/classes/small-habits-that-make-a-big-impact-on-your-life). <a href="#footnote-2">↩</a>
 
 </small>

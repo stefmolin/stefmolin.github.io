@@ -27,7 +27,7 @@ When it was finally time to board the short flight to Prague, I was dismayed to 
 
 I barely held my water down on the ride from the airport to the hotel. When I checked in, they informed me that it was the same room as last time... I will never know if they meant the same type of room (as in the upgrade), or if it was the exact same room from the food poisoning episode. Six or so hours later than planned, I made it to the solitude of my hotel room. They had a plate of chocolate covered strawberries to greet me, but I still couldn't even think of eating.
 
-Normally, after a redeye, I force myself to stay awake to adjust, but I was in no condition to do anything, so I took a nap. When I awoke, my headache was mostly gone, and I was finally hungry. I ordered some room service and tried the chocolate covered strawberries (delicious and in-season 😋), while watching some Netflix. Thankfully, I wasn't presenting the next day, and I took it easy on Sunday.<sup>1</sup>
+Normally, after a redeye, I force myself to stay awake to adjust, but I was in no condition to do anything, so I took a nap. When I awoke, my headache was mostly gone, and I was finally hungry. I ordered some room service and tried the chocolate covered strawberries (delicious and in-season 😋), while watching some Netflix. Thankfully, I wasn't presenting the next day, and I took it easy on Sunday.<sup id="footnote-1"><a href="#footnotes">1</a></sup>
 
 ---
 
@@ -87,7 +87,7 @@ The Data Morph sprint at EuroPython 2024. Source: <a href="https://twitter.com/S
 
 </figcaption>
 
-As sprints are just a microcosm for the open source world at large, I had people sending me PRs for things I didn't want, misinterpreting the task (instead of clarifying), and asking me if they could work on *their* ideas for *my* project. This is something that you really don't understand unless you maintain something: someone may have a great idea for something, but a maintainer may still say no because they don't want to maintain that or it doesn't fit with their roadmap, *etc*. In a situation like this, I had to tell people "no" &ndash; even though I was trying to help them make a contribution (the first ever for a few of them).<sup>2</sup> At the end of the day, it is *my* project, and I am the one that has to maintain whatever I let them add.<sup>3</sup>
+As sprints are just a microcosm for the open source world at large, I had people sending me PRs for things I didn't want, misinterpreting the task (instead of clarifying), and asking me if they could work on *their* ideas for *my* project. This is something that you really don't understand unless you maintain something: someone may have a great idea for something, but a maintainer may still say no because they don't want to maintain that or it doesn't fit with their roadmap, *etc*. In a situation like this, I had to tell people "no" &ndash; even though I was trying to help them make a contribution (the first ever for a few of them).<sup id="footnote-2"><a href="#footnotes">2</a></sup> At the end of the day, it is *my* project, and I am the one that has to maintain whatever I let them add.<sup id="footnote-3"><a href="#footnotes">3</a></sup>
 
 During the event, I was only able to review a few PRs, mainly because I was constantly getting asked questions from all angles and then going off to help people or pair them up, if I could. I managed to tackle one thing on my list that no one showed interest in before the craziness truly began. By the end of the day Saturday, I was able to merge five PRs from participants, with another four pending (plus a few more that came in the following days). People clearly had a good time because they stayed in the room the whole day, and while it was a taxing day for me, I would definitely do it again &ndash; just not on Sunday (having five times the number of people I could support drop by took its toll).
 
@@ -95,7 +95,7 @@ This experience gave even more respect for the maintainers that organize sprints
 
 ---
 
-Eight hours of constant context switching with the Data Morph sprint was so exhausting that I had to take a mental health day on Sunday. I slept in and then went to tour the Prague Jewish Quarter<sup>4</sup> before grabbing an early dinner at another Michelin Guide restaurant: [Cafe Imperial](https://guide.michelin.com/us/en/prague/prague/restaurant/cafe-imperial).
+Eight hours of constant context switching with the Data Morph sprint was so exhausting that I had to take a mental health day on Sunday. I slept in and then went to tour the Prague Jewish Quarter<sup id="footnote-4"><a href="#footnotes">4</a></sup> before grabbing an early dinner at another Michelin Guide restaurant: [Cafe Imperial](https://guide.michelin.com/us/en/prague/prague/restaurant/cafe-imperial).
 
 After dinner, I went over to the Prague Orloj (astronomical clock) and joined the final tour of the day inside City Hall (unplanned), which I found fascinating. During the tour, I learned what was different about the Old Town Square from the first time I went to Prague in 2016 (I had the feeling that something was very different when I went in 2023, but couldn't put my finger on it): the monument in the bottom right of the photo below (called [the Marian Column](https://en.wikipedia.org/wiki/Marian_column_(Prague))) wasn't there &ndash; it was re-erected in 2020 after being torn down in 1918.
 
@@ -109,12 +109,12 @@ Prague's Old Town Square as seen from City Hall. Source: Stefanie Molin.
 
 Early the next morning I made my way back home, and I successfully completed my quest to not get food poisoning 🙌 &ndash; all three goals achieved!
 
-<small class="leading-snug">
+<small class="leading-snug" id="footnotes">
 <hr class="w-1/2" />
 
-1. Since the food poisoning episode the night before a 3-hour workshop starting at 9 AM, I eat very light the night before a presentation to minimize the impact if it happens. I ended up doing this almost every day in Prague, as I found my stomach a little unsettled in general.
-2. I had to close a PR that someone put a lot of effort into because I didn't want to include that change.
-3. Having lunch with some of the conference organizers helped me build my resolve.
-4. When I was trying to buy my admission ticket, the woman attending me refused to believe I wasn't a student because I look young. Not only did she **insist** on giving me the student discount, but she was also asked me for the secrets to looking so young 😂
+1. Since the food poisoning episode the night before a 3-hour workshop starting at 9 AM, I eat very light the night before a presentation to minimize the impact if it happens. I ended up doing this almost every day in Prague, as I found my stomach a little unsettled in general. <a href="#footnote-1">↩</a>
+2. I had to close a PR that someone put a lot of effort into because I didn't want to include that change. <a href="#footnote-2">↩</a>
+3. Having lunch with some of the conference organizers helped me build my resolve. <a href="#footnote-3">↩</a>
+4. When I was trying to buy my admission ticket, the woman attending me refused to believe I wasn't a student because I look young. Not only did she **insist** on giving me the student discount, but she was also asked me for the secrets to looking so young 😂 <a href="#footnote-4">↩</a>
 
 </small>

@@ -28,9 +28,9 @@ Thankfully, the extra practice paid off, and the talk was a huge success! [One a
 
 ---
 
-Just after lunch (which included food trucks<sup>1</sup> this year!) on the day of my talk, there was a book signing event, and it wasn't mine, so I figured I would check it out 😂 Author [Luciano Ramalho](https://www.linkedin.com/in/lucianoramalho/) was giving out copies of his book [*Fluent Python*](https://amzn.to/3KH0rfq),<sup>2</sup> which to my surprise was at least 100 pages longer than [my 788-page pandas book](/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/). The book signing event itself was different as well: instead of giving out books to people as they came on the line, there was a small Python application randomly deciding if that person would get the book or not. I thought this was a fantastic idea, since it effectively makes the books last longer, and I plan to implement something like this for [my book signings](/events/book-signings/) going forward. Luck was on my side, and I did win a copy.
+Just after lunch (which included food trucks<sup id="footnote-1"><a href="#footnotes">1</a></sup> this year!) on the day of my talk, there was a book signing event, and it wasn't mine, so I figured I would check it out 😂 Author [Luciano Ramalho](https://www.linkedin.com/in/lucianoramalho/) was giving out copies of his book [*Fluent Python*](https://amzn.to/3KH0rfq),<sup id="footnote-2"><a href="#footnotes">2</a></sup> which to my surprise was at least 100 pages longer than [my 788-page pandas book](/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/). The book signing event itself was different as well: instead of giving out books to people as they came on the line, there was a small Python application randomly deciding if that person would get the book or not. I thought this was a fantastic idea, since it effectively makes the books last longer, and I plan to implement something like this for [my book signings](/events/book-signings/) going forward. Luck was on my side, and I did win a copy.
 
-Afterward, I competed in a typing contest using a split keyboard. Scores were based on speed and accuracy, and while I am a touch-typer, I am also a perfectionist, so I found myself trying to fix the issues and then hitting even more wrong keys in the process 😂 &ndash; it was a mess.<sup>3</sup>
+Afterward, I competed in a typing contest using a split keyboard. Scores were based on speed and accuracy, and while I am a touch-typer, I am also a perfectionist, so I found myself trying to fix the issues and then hitting even more wrong keys in the process 😂 &ndash; it was a mess.<sup id="footnote-3"><a href="#footnotes">3</a></sup>
 
 I also made sure to take advantage of [the hallway track](https://en.wiktionary.org/wiki/hallway_track). I caught up with some friends that I've met at past conferences both in Italy and abroad; met some people in person whom I've previously only interacted with online; and made new friends.
 
@@ -58,16 +58,16 @@ Italian singer [Aiello](https://en.wikipedia.org/wiki/Aiello_(singer)) performin
 
 ---
 
-As it was a holiday weekend back home, I decided to visit a new city in Italy after the conference ended. I had chosen Bologna months prior, and, as luck would have it, PyCon Italia will be there next year 😂 The train to Bologna was delayed for an hour, but, other than that, things went smoothly.<sup>4</sup> I spent a leisurely day people-watching and savoring Bolognese cuisine before catching the train back to Florence in the evening.
+As it was a holiday weekend back home, I decided to visit a new city in Italy after the conference ended. I had chosen Bologna months prior, and, as luck would have it, PyCon Italia will be there next year 😂 The train to Bologna was delayed for an hour, but, other than that, things went smoothly.<sup id="footnote-4"><a href="#footnotes">4</a></sup> I spent a leisurely day people-watching and savoring Bolognese cuisine before catching the train back to Florence in the evening.
 
 Arrivederci Italia!
 
-<small class="leading-snug">
+<small class="leading-snug" id="footnotes">
 <hr class="w-1/2" />
 
-1. Perhaps one of the biggest surprises was the popularity of the vegan food truck.
-2. As an Amazon Associate, I earn from qualifying purchases at no cost to you.
-3. In case it wasn't obvious, I did not win.
-4. I cannot say the same for my air travel back home. I ended up having to spend the night in the Zurich airport on my way back home after my flight was cancelled due to bad weather on both ends. This was followed by an early flight to Brussels before finally making it home.
+1. Perhaps one of the biggest surprises was the popularity of the vegan food truck. <a href="#footnote-1">↩</a>
+2. As an Amazon Associate, I earn from qualifying purchases at no cost to you. <a href="#footnote-2">↩</a>
+3. In case it wasn't obvious, I did not win. <a href="#footnote-3">↩</a>
+4. I cannot say the same for my air travel back home. I ended up having to spend the night in the Zurich airport on my way back home after my flight was cancelled due to bad weather on both ends. This was followed by an early flight to Brussels before finally making it home. <a href="#footnote-4">↩</a>
 
 </small>
