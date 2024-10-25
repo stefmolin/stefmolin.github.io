@@ -81,12 +81,12 @@ Note that the `repos` key is structured as a list in YAML even though we have on
 To include additional hooks from a different repository, we simply add another `repo` section to the `repos` list, minding the indentation. Below, we add the pre-commit hooks provided by the popular `ruff` tool (written in Rust and [known for its speed](https://docs.astral.sh/ruff/)) to lint our code and format it. Note that we are providing command line arguments to the `ruff` hook via the `args` key to customize its behavior when run as a pre-commit hook:
 
 ```yaml
- - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.1.5
-    hooks:
-      - id: ruff
-        args: [--fix, --exit-non-zero-on-fix, --show-fixes]
-      - id: ruff-format
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.1.5
+  hooks:
+    - id: ruff
+      args: [--fix, --exit-non-zero-on-fix, --show-fixes]
+    - id: ruff-format
 ```
 
 <figcaption>
@@ -98,11 +98,11 @@ Example setup for the `ruff` and `ruff-format` pre-commit hooks.
 Let’s also add [validation for our docstrings](https://numpydoc.readthedocs.io/en/latest/validation.html). In this snippet, we enable the `numpydoc-validation` hook to ensure that our docstrings conform to the numpydoc standard. There are other docstring formats, but since I wrote this hook, I’ll feature it here 😊 For this section, we use the `exclude` key to instruct `pre-commit` not to run this hook on any files in the `tests/` or `docs/` directories:
 
 ```yaml
- - repo: https://github.com/numpy/numpydoc
-    rev: v1.6.0
-    hooks:
-      - id: numpydoc-validation
-        exclude: (tests|docs)/.*
+- repo: https://github.com/numpy/numpydoc
+  rev: v1.6.0
+  hooks:
+    - id: numpydoc-validation
+      exclude: (tests|docs)/.*
 ```
 
 <figcaption>
