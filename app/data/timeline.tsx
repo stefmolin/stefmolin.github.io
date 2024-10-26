@@ -290,11 +290,12 @@ const TIMELINE_EVENTS: TimelineEntryProps[] = LIVE_EVENTS.map((entry) => {
 });
 
 const TIMELINE_INTERVIEWS: TimelineEntryProps[] = INTERVIEWS.map((interview) => {
-  const { date, format, host, link, title } = interview;
+  const { date, format, host, link, time, title } = interview;
   return {
     date,
     eventType: 'interview',
     title,
+    time,
     description: host,
     link: {
       linkClass: 'external',

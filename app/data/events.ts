@@ -527,20 +527,6 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   },
   {
     event: {
-      name: 'Talk Python',
-      eventClass: 'podcast',
-      virtual: true,
-    },
-    presentation: {
-      contentClass: 'podcast',
-      title: 'Pre-Commit Hooks for Python Devs',
-      link: 'https://www.youtube.com/watch?v=EzlzX1OL92w',
-    },
-    date: '2024-10-24',
-    time: '15:20:00-04:00',
-  },
-  {
-    event: {
       ...SAME_LOCATION_EVENTS['ODSC West'],
       virtual: false,
     },

@@ -9,6 +9,26 @@ const toSeeAlso = (contentLink: RelatedContentLink) => {
 
 const INTERVIEWS: Interview[] = [
   {
+    title: 'Episode 482: Pre-Commit Hooks for Python Devs',
+    link: 'https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs',
+    coverImage:
+      'https://cdn-podcast.talkpython.fm/episodes/youtube_image/EzlzX1OL92w/pre-commit-hooks-for-python-devs.jpg?v=1',
+    format: 'podcast',
+    host: 'Talk Python To Me',
+    date: '2024-10-24',
+    time: '15:20:00-04:00',
+    description: {
+      text: `Do you struggle to make sure your code is always correct before you check it in? What
+      about your team members' code? That one person who never wants to run the linter? Tired of
+      dealing with tons of conflicts and spurious git changes? You need git pre-commit hooks. We're
+      lucky to have Stefanie Molin on this episode who has done a bunch of writing and teaching of
+      git hooks.`,
+      source: 'episode summary',
+    },
+    duration: '1h 10m',
+    seeAlso: [toSeeAlso(CONTENT_LINKS.PRE_COMMIT_ARTICLES)],
+  },
+  {
     title: 'Episode 190: Great Starting Points for Contributing to Open Source',
     link: 'https://realpython.com/podcasts/rpp/190/',
     coverImage:

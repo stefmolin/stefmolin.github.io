@@ -7,6 +7,7 @@ interface Interview {
   format: 'article' | 'podcast';
   host: string;
   date: string;
+  time?: string;
   description: {
     text: string;
     source?: string;
