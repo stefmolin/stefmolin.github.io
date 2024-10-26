@@ -6,6 +6,7 @@ import {
   faPodcast,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useRef, useState } from 'react';
 import Container from '../components/sections/container';
 import Layout from '../components/page-layout/layout';
 import { getImageLink } from '../lib/images';
@@ -17,8 +18,12 @@ import CONTENT_LINKS from '../data/content-links';
 import ExternalLink from '../components/links/external-link';
 import PreviewCard from '../components/cards/preview-card';
 import ResourceLink from '../components/links/resource-link';
+import Pagination from '../components/pagination';
 
 export default function Interviews() {
+  const interviewRef = useRef<null | HTMLDivElement>(null);
+  const interviewsPerPage = 3;
+  const [offset, setOffset] = useState(0);
   const pageTitle = 'Interviews';
   const seoImage = CONTENT_LINKS.INTERVIEWS.image;
 
@@ -72,8 +77,8 @@ export default function Interviews() {
         />
         <div className="-mt-8 mb-20 max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-6xl text-center">{pageTitle}</h1>
-          <div className="space-y-10 -mx-10 sm:-mx-5 lg:mx-auto">
-            {INTERVIEWS.map(
+          <div ref={interviewRef} className="space-y-10 -mx-10 sm:-mx-5 lg:mx-auto mb-5">
+            {INTERVIEWS.slice(offset, offset + interviewsPerPage).map(
               ({ link, coverImage, format, host, date, title, description, duration, seeAlso }) => (
                 <PreviewCard
                   id={title}
@@ -153,6 +158,12 @@ export default function Interviews() {
               ),
             )}
           </div>
+          <Pagination
+            itemsPerPage={interviewsPerPage}
+            scrollRef={interviewRef}
+            setOffset={setOffset}
+            totalItems={INTERVIEWS.length}
+          />
         </div>
       </Container>
     </Layout>
