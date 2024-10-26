@@ -21,7 +21,7 @@ export default function InteractiveMap({
   pushPinMapClassName,
   pushPinInfoClassName,
 }: InteractiveMapProps) {
-  const [selectedMapPin, setSelectedMapPin] = useState<MapLocation>();
+  const [selectedMapPin, setSelectedMapPin] = useState<MapLocation | undefined>();
   return (
     <div className={classNames('overscroll-contain', containerClassName)}>
       <PushPinMap
@@ -29,7 +29,6 @@ export default function InteractiveMap({
         locations={locations}
         highlightedCountries={highlightedCountries}
         onPinClick={setSelectedMapPin}
-        usePinEmoji
       />
       <PushPinInfo selectedMapPin={selectedMapPin} className={pushPinInfoClassName}>
         {getDisplayInfo(selectedMapPin)}

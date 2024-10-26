@@ -8,7 +8,6 @@ import anchorLink, { linkClassName } from '../../components/events/event-anchor-
 import EventPage from '../../components/events/event-page';
 import Layout from '../../components/page-layout/layout';
 import Container from '../../components/sections/container';
-import { MAP_PIN } from '../../data/constants';
 import CONTENT_LINKS from '../../data/content-links';
 import { LIVE_PRESENTATIONS } from '../../data/events';
 import { EVENT_IMAGES } from '../../data/photo-gallery';
@@ -55,7 +54,7 @@ export default function Index() {
           images={EVENT_IMAGES}
           mapIntroText={
             <>
-              Click a {MAP_PIN} on the map to see previous and upcoming events around the world. To
+              Click a location on the map to see previous and upcoming events around the world. To
               view this chronologically, check out{' '}
               <Link href={CONTENT_LINKS.TIMELINE.link} className="underline hover:text-slate-500">
                 my timeline

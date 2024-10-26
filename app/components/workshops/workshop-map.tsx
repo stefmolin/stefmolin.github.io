@@ -1,4 +1,3 @@
-import { MAP_PIN } from '../../data/constants';
 import { type ConferencePresentation } from '../../interfaces/event';
 import type Workshop from '../../interfaces/workshop';
 import { getLivePresentations, getConferenceEventMapAnnotations } from '../../lib/events';
@@ -24,7 +23,7 @@ export default function WorkshopMap({ workshop }: { workshop: Workshop }) {
       titleClassName="text-2xl sm:text-3xl md:text-4xl mb-5 text-center sm:text-left"
     >
       <p className="md:text-lg">
-        {countText} Click a {MAP_PIN} on the map to see the conference(s) I have presented or will
+        {countText} Click a location on the map to see the conference(s) I have presented or will
         present this workshop at.
       </p>
       <InteractiveMap

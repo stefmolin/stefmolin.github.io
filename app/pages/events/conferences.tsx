@@ -9,7 +9,6 @@ import anchorLink, { linkClassName } from '../../components/events/event-anchor-
 import EventPage, { sectionTitleClassName } from '../../components/events/event-page';
 import Layout from '../../components/page-layout/layout';
 import Container from '../../components/sections/container';
-import { MAP_PIN } from '../../data/constants';
 import CONTENT_LINKS from '../../data/content-links';
 import { LIVE_PRESENTATIONS } from '../../data/events';
 import { CONFERENCE_IMAGES } from '../../data/photo-gallery';
@@ -59,7 +58,7 @@ export default function Conferences() {
           presentations={presentations}
           images={CONFERENCE_IMAGES}
           mapIntroText={`To date, I have presented ${presentationsGivenAlready} times at conferences
-          around the world. Click a ${MAP_PIN} on the map for more information on previous and
+          around the world. Click a location on the map for more information on previous and
           upcoming presentations.`}
           relatedContent={relatedContent}
           showStats

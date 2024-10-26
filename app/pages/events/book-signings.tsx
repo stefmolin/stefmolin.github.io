@@ -7,7 +7,6 @@ import EventPage from '../../components/events/event-page';
 import ExternalLink from '../../components/links/external-link';
 import Layout from '../../components/page-layout/layout';
 import Container from '../../components/sections/container';
-import { MAP_PIN } from '../../data/constants';
 import CONTENT_LINKS from '../../data/content-links';
 import { LIVE_PRESENTATIONS } from '../../data/events';
 import { BOOK_SIGNING_IMAGES } from '../../data/photo-gallery';
@@ -73,7 +72,7 @@ export default function BookSignings() {
           presentations={signings}
           images={BOOK_SIGNING_IMAGES}
           mapIntroText={`To date, I have done ${pastSignings} book signings at conferences around
-          the world. Click a ${MAP_PIN} on the map for more information on previous and upcoming book signings.`}
+          the world. Click a location on the map for more information on previous and upcoming book signings.`}
           relatedContent={relatedContent}
           funFacts={FUN_FACTS}
           header={
