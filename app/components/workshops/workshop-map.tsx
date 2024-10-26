@@ -2,16 +2,21 @@ import { MAP_PIN } from '../../data/constants';
 import { type ConferencePresentation } from '../../interfaces/event';
 import type Workshop from '../../interfaces/workshop';
 import { getLivePresentations, getConferenceEventMapAnnotations } from '../../lib/events';
+import { useCompletedSessions } from '../../lib/hooks/date-filtered-sessions';
 import InteractiveMap from '../maps/interactive-map';
 import PushPinClickPrompt from '../maps/push-pin-click-prompt';
 import PageSection from '../sections/page-section';
 
 export default function WorkshopMap({ workshop }: { workshop: Workshop }) {
-  const pastSessions = getLivePresentations({
+  const allSessions = getLivePresentations({
     contentClass: 'workshop',
     title: workshop.title,
   });
-  const locationToEvents = getConferenceEventMapAnnotations(pastSessions);
+  const locationToEvents = getConferenceEventMapAnnotations(allSessions);
+  const pastSessions = useCompletedSessions(allSessions).length;
+  const countText = pastSessions
+    ? `I have presented this workshop ${pastSessions === 1 ? 'once' : `${pastSessions} times at conferences around the world`}.`
+    : 'This is a new workshop, and I have yet to present it.';
   return (
     <PageSection
       id="workshop-map"
@@ -19,8 +24,8 @@ export default function WorkshopMap({ workshop }: { workshop: Workshop }) {
       titleClassName="text-2xl sm:text-3xl md:text-4xl mb-5 text-center sm:text-left"
     >
       <p className="md:text-lg">
-        Click a {MAP_PIN} on the map to see the conferences I have presented or will present this
-        workshop at.
+        {countText} Click a {MAP_PIN} on the map to see the conference(s) I have presented or will
+        present this workshop at.
       </p>
       <InteractiveMap
         locations={locationToEvents}
