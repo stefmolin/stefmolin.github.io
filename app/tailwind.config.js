@@ -38,6 +38,11 @@ module.exports = {
         height: 'height',
         spacing: 'margin, padding',
       },
+      scale: {
+        25: '0.25',
+        175: '1.75',
+        200: '2',
+      },
     },
   },
   plugins: [],
