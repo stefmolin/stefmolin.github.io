@@ -128,9 +128,9 @@ export default function PushPinMap({
                 }
                 onMouseEnter={() => setHover(location)}
                 onMouseLeave={() => setHover(null)}
-                className={classNames('cursor-pointer hover:opacity-100', `hover:${focusedScale}`, {
-                  [unfocusedScale]: clicked !== location,
-                  [focusedScale]: clicked === location,
+                className={classNames('cursor-pointer hover:opacity-100', {
+                  [unfocusedScale]: clicked !== location && hover !== location,
+                  [focusedScale]: clicked === location || hover === location,
                   'opacity-100': hover == null && clicked === location,
                   'opacity-85': hover == null && clicked == null,
                   'opacity-50': hover == null && clicked != null && clicked !== location,
