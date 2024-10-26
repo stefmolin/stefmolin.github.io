@@ -13,6 +13,7 @@ ogImage:
 featured:
   - "[PyCoder's Weekly Issue #646](https://pycoders.com/issues/646)"
   - "[The Real Python Podcast Episode #220](https://realpython.com/podcasts/rpp/220/)"
+  - "[Talk Python to Me Episode #482](https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs)"
 ---
 
 ![NASA astronaut performs extravehicular activity](https://images.unsplash.com/photo-1614727187346-ec3a009092b0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)

@@ -12,8 +12,9 @@ ogImage:
   width: 269
   height: 176
 featured:
-  - "[Python Bytes #406](https://pythonbytes.fm/episodes/show/406/whats-on-django-tv-tonight)"
+  - "[Python Bytes Episode #406](https://pythonbytes.fm/episodes/show/406/whats-on-django-tv-tonight)"
   - "[PyCoder's Weekly Issue #652](https://pycoders.com/issues/652)"
+  - "[Talk Python to Me Episode #482](https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs)"
 ---
 
 ![Stefanie Molin presenting at PyCon Estonia](/assets/events/conferences/pycon-estonia-2024.jpg)

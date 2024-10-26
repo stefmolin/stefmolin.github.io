@@ -12,6 +12,7 @@ ogImage:
 featured:
   - "[PyCoder's Weekly Issue #644](https://pycoders.com/issues/644)"
   - "[The Real Python Podcast Episode #220](https://realpython.com/podcasts/rpp/220/)"
+  - "[Talk Python to Me Episode #482](https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs)"
 ---
 
 ![Mission control stations from the Apollo moon program at Cape Canaveral, FL, USA.](https://images.unsplash.com/photo-1583607327197-af9fbdd111d9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)

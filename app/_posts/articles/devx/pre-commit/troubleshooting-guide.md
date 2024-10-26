@@ -10,6 +10,8 @@ ogImage:
   url: "/assets/articles/troubleshooting-guide.png"
   width: 1696
   height: 956
+featured:
+  - "[Talk Python to Me Episode #482](https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs)"
 ---
 
 Having issues with your `pre-commit` setup? In this troubleshooting guide, I've collected the most common errors `pre-commit` users face and provided explanations and guidance for fixing them. If you are new to `pre-commit` or would like a refresher, I would recommend you start with my [How to Set Up Pre-Commit Hooks](/articles/devx/pre-commit/setup-guide/) article.

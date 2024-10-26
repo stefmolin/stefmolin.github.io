@@ -14,6 +14,7 @@ featured:
   - "[PyCoder's Weekly Issue #624](https://pycoders.com/issues/624)"
   - "[Python Bytes Episode #379](https://pythonbytes.fm/episodes/show/379/constable-on-the-debugging-case)"
   - "[The Real Python Podcast Episode #220](https://realpython.com/podcasts/rpp/220/)"
+  - "[Talk Python to Me Episode #482](https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs)"
 ---
 
 ![The Space Shuttle Challenger launching from Complex 39](/assets/articles/devx/pre-commit/setup-guide/cover.jpg)
