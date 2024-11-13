@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import intersection from 'lodash/intersection';
 import union from 'lodash/union';
+import { DateTime } from 'luxon';
 import ErrorPage from 'next/error';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
@@ -203,9 +204,17 @@ export async function getStaticProps({ params }: Params) {
   );
   if (suggestedPosts.length > 0) {
     suggestedPosts.forEach((otherPost) => {
-      const tags: string[] = otherPost.tags;
-      // Jaccard index
-      otherPost.similarity = intersection(tags, post.tags).length / union(tags, post.tags).length;
+      if (post.type === 'blog') {
+        // blog posts closer in time are are similar
+        const dateDiff = Math.abs(
+          DateTime.fromISO(post.date).diff(DateTime.fromISO(otherPost.date)).as('seconds'),
+        );
+        otherPost.similarity = dateDiff ? 1 / dateDiff : Infinity;
+      } else {
+        const tags: string[] = otherPost.tags;
+        // use the Jaccard index for article similarity
+        otherPost.similarity = intersection(tags, post.tags).length / union(tags, post.tags).length;
+      }
     });
 
     suggestedPosts = suggestedPosts
