@@ -76,7 +76,7 @@ I created [exif-stripper](https://github.com/stefmolin/exif-stripper) to make it
 
 ```yaml
 - repo: https://github.com/stefmolin/exif-stripper
-  rev: 0.4.0
+  rev: 0.6.1
   hooks:
     - id: strip-exif
 ```
@@ -85,11 +85,11 @@ When used as a pre-commit hook, `exif-stripper` blocks any commits that have ima
 
 ```shell[class="command-line"][data-prompt="$"][data-output="2-6"]
 pre-commit run --files pycon-estonia-2024.jpg
-strip-exif................................................Failed
+strip EXIF metadata.......................................Failed
 - hook id: strip-exif
 - exit code: 1
 
-Stripped metadata from pycon-estonia-2024.jpg
+Stripped EXIF metadata from pycon-estonia-2024.jpg
 ```
 
 When I run `exiftool` on the image afterward, only the following general information remains:
