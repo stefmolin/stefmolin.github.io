@@ -3,7 +3,7 @@ title: "How to Set Up Pre-Commit Hooks"
 subtitle: "A step-by-step guide to installing and configuring pre-commit hooks on your project."
 excerpt: "Looking to streamline your local development? In this article, I provide a step-by-step guide to installing and configuring pre-commit hooks on your project. You will also a learn a little bit about how git hooks work."
 date: "2024-03-29T20:55:00.000Z"
-modified: "2024-09-13T23:38:00.000Z"
+modified: "2024-11-13T18:43:00.000Z"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python"]
 ogImage:
@@ -204,7 +204,6 @@ Let’s go ahead and add the following to our `pyproject.toml` file. This will c
 [tool.ruff]
 line-length = 88
 select = [
-    "C",  # mccabe rules
     "F",  # pyflakes rules
     "E",  # pycodestyle error rules
     "W",  # pycodestyle warning rules
@@ -212,7 +211,6 @@ select = [
     "I",  # isort rules
 ]
 ignore = [
-    "C901",  # max-complexity-10
     "E501",  # line-too-long
 ]
 

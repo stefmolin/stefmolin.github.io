@@ -4,6 +4,7 @@ import {
   faAward,
   faBook,
   faCoffee,
+  faEnvelope,
   faEnvelopeOpenText,
   faHandHoldingHeart,
   faHeart,
@@ -236,6 +237,33 @@ export default function SayThanks() {
               title="Use my referral links"
               links={[
                 <>
+                  <FontAwesomeIcon icon={faEnvelope} fixedWidth className="sm:pr-1" />
+                  <span>
+                    I use Fastmail as my email provider. It's easy to configure and focuses on
+                    privacy. Get 10% off your first year when you{' '}
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://join.fastmail.com/1073c189"
+                    >
+                      sign up for Fastmail with my referral link
+                    </ExternalLink>
+                    .
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faMobileScreen} fixedWidth className="sm:px-1" />
+                  <span>
+                    Having reliable cell service when I travel is a must. I use{' '}
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://g.co/fi/r/7K4887"
+                    >
+                      Google Fi Wireless
+                    </ExternalLink>
+                    . We both get a $20 credit when you sign up with code <b>7K4887</b>.
+                  </span>
+                </>,
+                <>
                   <FontAwesomeIcon icon={faEnvelopeOpenText} fixedWidth className="sm:pr-px" />
                   <span>
                     My{' '}
@@ -270,19 +298,6 @@ export default function SayThanks() {
                       NightCafe Studio
                     </ExternalLink>
                     . All AI-generated art on my website was made with NightCafe.
-                  </span>
-                </>,
-                <>
-                  <FontAwesomeIcon icon={faMobileScreen} fixedWidth className="sm:px-1" />
-                  <span>
-                    Having reliable cell service when I travel is a must. I use{' '}
-                    <ExternalLink
-                      className={underlinedLinkClassName}
-                      href="https://g.co/fi/r/7K4887"
-                    >
-                      Google Fi Wireless
-                    </ExternalLink>
-                    . We both get a $20 credit when you sign up with code <b>7K4887</b>.
                   </span>
                 </>,
               ]}
