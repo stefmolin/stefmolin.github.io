@@ -4,11 +4,17 @@ import { type SizeProp } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelopeOpenText, faHandHoldingHeart, faRss } from '@fortawesome/free-solid-svg-icons';
 import {
   IconDefinition,
+  faBluesky,
   faGithub,
   faLinkedin,
   faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import { GITHUB_PROFILE, LINKEDIN_PROFILE, TWITTER_PROFILE } from '../data/constants';
+import {
+  BLUESKY_PROFILE,
+  GITHUB_PROFILE,
+  LINKEDIN_PROFILE,
+  TWITTER_PROFILE,
+} from '../data/constants';
 import FancyDivider from './dividers/fancy-divider';
 import ResourceLink from './links/resource-link';
 
@@ -47,6 +53,7 @@ const FollowButtons = ({
     >
       {makeLink(GITHUB_PROFILE, faGithub)}
       {makeLink(LINKEDIN_PROFILE, faLinkedin)}
+      {makeLink(BLUESKY_PROFILE, faBluesky)}
       {makeLink(TWITTER_PROFILE, faXTwitter)}
       {!withoutNewsletter && makeLink('/newsletter', faEnvelopeOpenText, false)}
       {feed && makeLink(`/feeds/${feed}-rss.xml`, faRss)}

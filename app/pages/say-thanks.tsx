@@ -23,7 +23,13 @@ import SectionSeparator from '../components/dividers/section-separator';
 import ExternalLink from '../components/links/external-link';
 import Layout from '../components/page-layout/layout';
 import Container from '../components/sections/container';
-import { AMAZON_LINKS, GITHUB_PROFILE, LINKEDIN_PROFILE, TWITTER_PROFILE } from '../data/constants';
+import {
+  AMAZON_LINKS,
+  BLUESKY_PROFILE,
+  GITHUB_PROFILE,
+  LINKEDIN_PROFILE,
+  TWITTER_PROFILE,
+} from '../data/constants';
 
 interface LinkSectionProps {
   title: string;
@@ -78,6 +84,10 @@ export default function SayThanks() {
                   <FontAwesomeIcon icon={faUserPlus} fixedWidth className="sm:pl-px sm:-pr-px" />
                   <span>
                     <b>Follow me</b> on social media:{' '}
+                    <ExternalLink className={underlinedLinkClassName} href={BLUESKY_PROFILE}>
+                      Bluesky
+                    </ExternalLink>
+                    ,{' '}
                     <ExternalLink className={underlinedLinkClassName} href={GITHUB_PROFILE}>
                       GitHub
                     </ExternalLink>
@@ -87,7 +97,7 @@ export default function SayThanks() {
                     </ExternalLink>
                     ,{' '}
                     <ExternalLink className={underlinedLinkClassName} href={TWITTER_PROFILE}>
-                      Twitter
+                      X/Twitter
                     </ExternalLink>
                     .
                   </span>
