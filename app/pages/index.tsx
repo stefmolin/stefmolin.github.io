@@ -41,7 +41,8 @@ const relatedContent = [
   CONTENT_LINKS.ARTICLES,
   CONTENT_LINKS.WORKSHOPS,
   CONTENT_LINKS.INTERVIEWS,
-  CONTENT_LINKS.DATA_MORPH_ARTICLE,
+  CONTENT_LINKS.DATA_MORPH_ARTICLE, // TODO: replace with a link to the projects page (when created)
+  CONTENT_LINKS.EXIF_STRIPPER_ARTICLE, // TODO: replace with a link to the projects page (when created)
   CONTENT_LINKS.BOOKS,
   CONTENT_LINKS.TALKS,
   CONTENT_LINKS.BLOG,

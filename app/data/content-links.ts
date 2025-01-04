@@ -61,7 +61,17 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
       width: 774,
       height: 379,
     },
-    title: 'Introducing Data Morph',
+    title: '[Project] Data Morph',
+  },
+  EXIF_STRIPPER_ARTICLE: {
+    link: '/articles/devx/pre-commit/exif-stripper/',
+    contentClass: 'article',
+    image: {
+      src: 'https://github.com/stefmolin/exif-stripper/raw/main/logo.png',
+      width: 269,
+      height: 176,
+    },
+    title: '[Project] exif-stripper',
   },
   DATA_SCIENCE_ARTICLES: {
     link: '/tags/data%20science/',
