@@ -23,11 +23,6 @@ const SAME_LOCATION_EVENTS: Record<string, Pick<Event, 'name' | 'location' | 'ev
     location: LOCATIONS.SF,
     eventClass: 'conference',
   },
-  'PyCon IT': {
-    name: 'PyCon IT',
-    location: LOCATIONS.FLORENCE,
-    eventClass: 'conference',
-  },
   'PyCon MEA': {
     name: 'PyCon MEA',
     location: LOCATIONS.DUBAI,
@@ -36,6 +31,16 @@ const SAME_LOCATION_EVENTS: Record<string, Pick<Event, 'name' | 'location' | 'ev
   'PyCon UK': {
     name: 'PyCon UK',
     location: LOCATIONS.CARDIFF,
+    eventClass: 'conference',
+  },
+  'PyCon Estonia': {
+    name: 'PyCon Estonia',
+    location: LOCATIONS.TALLINN,
+    eventClass: 'conference',
+  },
+  'PyCon Lithuania': {
+    name: 'PyCon Lithuania',
+    location: LOCATIONS.VILNIUS,
     eventClass: 'conference',
   },
   TMLS: {
@@ -147,7 +152,9 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   },
   {
     event: {
-      ...SAME_LOCATION_EVENTS['PyCon IT'],
+      name: 'PyCon Italia',
+      location: LOCATIONS.FLORENCE,
+      eventClass: 'conference',
       virtual: false,
       link: 'https://pycon.it/en/talk/beyond-the-basics-data-visualization-in-python?day=2022-06-03',
     },
@@ -265,7 +272,9 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   },
   {
     event: {
-      ...SAME_LOCATION_EVENTS['PyCon IT'],
+      name: 'PyCon Italia',
+      location: LOCATIONS.FLORENCE,
+      eventClass: 'conference',
       virtual: false,
       link: 'https://pycon.it/en/event/beyond-the-basics-data-visualization-in-python-2',
     },
@@ -388,7 +397,9 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   },
   {
     event: {
-      ...SAME_LOCATION_EVENTS['PyCon IT'],
+      name: 'PyCon Italia',
+      location: LOCATIONS.FLORENCE,
+      eventClass: 'conference',
       virtual: false,
       link: '/blog/travel/2024/pycon-italia/',
     },
@@ -472,10 +483,8 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   },
   {
     event: {
-      name: 'PyCon Estonia',
-      location: LOCATIONS.TALLINN,
+      ...SAME_LOCATION_EVENTS['PyCon Estonia'],
       virtual: false,
-      eventClass: 'conference',
       link: undefined,
     },
     presentation: PRESENTATIONS.DATA_MORPH,
@@ -588,14 +597,16 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   },
   {
     event: {
-      name: 'PyCon Australia',
-      location: LOCATIONS.MELBOURNE,
+      ...SAME_LOCATION_EVENTS['PyCon Lithuania'],
       virtual: false,
-      eventClass: 'conference',
-      link: undefined,
+      link: 'https://pycon.lt/',
     },
-    presentation: PRESENTATIONS.DATA_MORPH_SPRINT,
-    date: '2024-11-25',
+    presentation: {
+      contentClass: 'keynote',
+      title: 'Keynote: Title TBD',
+      link: '/coming-soonish',
+    },
+    date: '2025-04-24',
   },
 ];
 

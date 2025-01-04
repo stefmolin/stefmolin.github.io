@@ -34,10 +34,14 @@ export function getConferenceEventMapAnnotations(liveSessions: LivePresentation[
 export function getContentClassCounts(liveSessions: LivePresentation[]): {
   [key in Presentation['contentClass']]?: number;
 } {
+  // count keynotes as talks for now
+  const keynoteToTalk = (x: Presentation['contentClass']) => (x === 'keynote' ? 'talk' : x);
+
   return liveSessions.reduce(
     (accum, session) => ({
       ...accum,
-      [session.presentation.contentClass]: (accum[session.presentation.contentClass] || 0) + 1,
+      [keynoteToTalk(session.presentation.contentClass)]:
+        (accum[keynoteToTalk(session.presentation.contentClass)] || 0) + 1,
     }),
     {},
   );

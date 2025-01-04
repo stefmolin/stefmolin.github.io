@@ -10,7 +10,7 @@ export interface Event {
   eventClass: 'conference' | 'meetup' | 'podcast';
 }
 export interface Presentation {
-  contentClass: 'book signing' | 'talk' | 'workshop' | 'sprint' | 'podcast';
+  contentClass: 'book signing' | 'keynote' | 'podcast' | 'sprint' | 'talk' | 'workshop';
   title: string;
   link: string;
 }

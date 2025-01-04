@@ -116,5 +116,10 @@ const LOCATIONS: Record<string, MapLocation> = {
     city: 'Melbourne',
     country: 'Australia',
   },
+  VILNIUS: {
+    coordinates: [25.2797, 54.6872],
+    city: 'Vilnius',
+    country: 'Lithuania',
+  },
 };
 export default LOCATIONS;

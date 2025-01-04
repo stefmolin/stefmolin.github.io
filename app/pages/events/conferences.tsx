@@ -28,7 +28,7 @@ export default function Conferences() {
   const seoImage = CONTENT_LINKS.CONFERENCES.image;
   const pageTitle = 'Conferences';
   const presentations = LIVE_PRESENTATIONS.filter((x) =>
-    ['talk', 'workshop'].includes(x.presentation.contentClass),
+    ['keynote', 'talk', 'workshop'].includes(x.presentation.contentClass),
   );
   const presentationsGivenAlready = presentations.filter(
     ({ date }) => date < DateTime.now().toISODate(),

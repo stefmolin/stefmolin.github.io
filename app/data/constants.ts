@@ -32,6 +32,7 @@ export const FLAGS = {
   Ireland: '🇮🇪',
   Italy: '🇮🇹',
   Japan: '🇯🇵',
+  Lithuania: '🇱🇹',
   'New Zealand': '🇳🇿',
   Poland: '🇵🇱',
   Portugal: '🇵🇹',
