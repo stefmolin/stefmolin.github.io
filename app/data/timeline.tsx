@@ -15,6 +15,18 @@ const COUNTRY_SHORTHAND = {
 
 const TIMELINE_ITEMS: TimelineEntryProps[] = [
   {
+    date: '2024-11-21',
+    eventType: 'interview',
+    title: 'ODSC West 2024 Minisodes: Part 2',
+    description: "ODSC's Ai X Podcast",
+    link: {
+      linkClass: 'external',
+      resourceLink:
+        'https://castbox.fm/episode/ODSC-West-2024-Minisodes%3A-Part-2-id5754266-id756453327',
+      text: 'Listen to podcast',
+    },
+  },
+  {
     date: '2024-07-13',
     eventType: 'code',
     where: 'Prague, Czechia',
