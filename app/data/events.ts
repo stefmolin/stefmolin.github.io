@@ -609,6 +609,35 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     },
     date: '2025-04-24',
   },
+  {
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC East'],
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
+    date: '2025-05-13',
+  },
+  {
+    event: {
+      ...SAME_LOCATION_EVENTS['ODSC East'],
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
+    date: '2025-05-13',
+  },
+  {
+    event: {
+      name: 'PyCon US',
+      location: LOCATIONS.PITTSBURGH,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PRE_COMMIT_WORKSHOP,
+    date: '2025-05-15',
+  },
 ];
 
 export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(
