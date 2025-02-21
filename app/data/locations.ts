@@ -11,6 +11,11 @@ const LOCATIONS: Record<string, MapLocation> = {
     city: 'San Francisco',
     country: 'United States of America',
   },
+  BOLOGNA: {
+    coordinates: [11.327591, 44.498955],
+    city: 'Bologna',
+    country: 'Italy',
+  },
   FLORENCE: {
     coordinates: [11.27223424142312, 43.766157019133345],
     city: 'Florence',

@@ -638,6 +638,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     presentation: PRESENTATIONS.PRE_COMMIT_WORKSHOP,
     date: '2025-05-15',
   },
+  {
+    event: {
+      name: 'PyCon Italia',
+      location: LOCATIONS.BOLOGNA,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.DATA_MORPH,
+    date: '2025-05-30',
+  },
 ];
 
 export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(
