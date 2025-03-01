@@ -30,9 +30,10 @@ export default function EventMap({
   const tableHeaderClassName = 'border-b border-slate-600 px-2 text-base';
   const tableClassName = 'border-b px-2 text-base';
   const contentClassLinks = {
-    workshop: CONTENT_LINKS.WORKSHOPS.link,
     'book signing': CONTENT_LINKS.BOOK_SIGNINGS.link,
+    keynote: CONTENT_LINKS.TALKS.link,
     talk: CONTENT_LINKS.TALKS.link,
+    workshop: CONTENT_LINKS.WORKSHOPS.link,
   };
   return (
     <PageSection
