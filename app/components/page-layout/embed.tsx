@@ -15,7 +15,11 @@ export default function EmbeddedPage({
   return (
     <Layout isIFrame>
       <NextSeo title={pageTitle} description={description} noindex={noindex} />
-      <iframe src={src} className="h-screen w-screen" referrerPolicy="same-origin" />
+      <iframe
+        src={src}
+        className="h-screen w-screen"
+        referrerPolicy="strict-origin-when-cross-origin"
+      />
     </Layout>
   );
 }

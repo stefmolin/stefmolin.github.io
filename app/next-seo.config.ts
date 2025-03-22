@@ -26,7 +26,7 @@ const config: DefaultSeoProps = {
     },
     {
       name: 'referrer',
-      content: 'origin',
+      content: 'strict-origin-when-cross-origin',
     },
     {
       name: 'keywords',
