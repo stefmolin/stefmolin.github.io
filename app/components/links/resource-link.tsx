@@ -51,7 +51,11 @@ export default function ResourceLink({
     }
 
     return (
-      <Link className={className} href={href}>
+      <Link
+        className={className}
+        href={href}
+        rel={href === '/privacy-policy' ? 'privacy-policy' : undefined}
+      >
         {children}
       </Link>
     );
