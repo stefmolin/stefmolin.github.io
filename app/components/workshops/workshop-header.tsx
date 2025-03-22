@@ -1,7 +1,9 @@
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import type Workshop from '../../interfaces/workshop';
+import { HOME_URL } from '../../data/constants';
 import DurationIndicator from '../datetime/duration-indicator';
+import type Workshop from '../../interfaces/workshop';
+import ResourceLink from '../links/resource-link';
 import RepoStats from '../repo-stats';
 
 export default function WorkshopHeader({ workshop }: { workshop: Workshop }) {
@@ -17,9 +19,13 @@ export default function WorkshopHeader({ workshop }: { workshop: Workshop }) {
           {!isPreview && (
             <span>
               <FontAwesomeIcon icon={faFileAlt} className="pr-1" fixedWidth />
-              <a href={`/${workshop.repo}/`} className="hover:underline text-slate-600">
+              <ResourceLink
+                className="hover:underline text-slate-600"
+                linkClass="external"
+                resourceLink={`${HOME_URL}/${workshop.repo}/`}
+              >
                 slides
-              </a>
+              </ResourceLink>
             </span>
           )}
           <DurationIndicator duration={workshop.duration} />
