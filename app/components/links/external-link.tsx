@@ -6,7 +6,7 @@ interface ExternalLinkProps {
 
 export default function ExternalLink({ href, children, className }: ExternalLinkProps) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+    <a href={href} target="_blank" rel="external noopener noreferrer" className={className}>
       {children}
     </a>
   );

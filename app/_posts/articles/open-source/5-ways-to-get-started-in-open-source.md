@@ -62,7 +62,7 @@ This is also a great opportunity to learn about how the maintainers do their own
 
 <figcaption>
 
-Source: <a href="https://twitter.com/StefanieMolin/status/1549492692228489216" target="_blank" rel="noopener noreferrer">François Goupil on Twitter</a>
+Source: <a href="https://twitter.com/StefanieMolin/status/1549492692228489216" target="_blank" rel="external noopener noreferrer">François Goupil on Twitter</a>
 
 </figcaption>
 

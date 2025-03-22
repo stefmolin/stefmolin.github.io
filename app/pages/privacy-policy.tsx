@@ -4,7 +4,7 @@ import Layout from '../components/page-layout/layout';
 import privacyStyles from '../styles/privacy-styles.module.css';
 
 const linkProps = {
-  rel: 'nofollow noopener noreferrer',
+  rel: 'external nofollow noopener noreferrer',
   target: '_blank',
 };
 

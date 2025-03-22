@@ -38,7 +38,7 @@ I got over the jet lag five days later, which was roughly when Timeshifter promi
 
 <figcaption>
 
-Source: <a href="https://twitter.com/TechAtBloomberg/status/1827118630686826583" target="_blank" rel="noopener noreferrer">@TechAtBloomberg via Twitter</a>
+Source: <a href="https://twitter.com/TechAtBloomberg/status/1827118630686826583" target="_blank" rel="external noopener noreferrer">@TechAtBloomberg via Twitter</a>
 
 </figcaption>
 
@@ -99,7 +99,7 @@ Once in Poland, it was a short train ride to my destination. Upon arrival, my bo
 
 <figcaption>
 
-Source: <a href="https://pl.pycon.org/2024/en/" target="_blank" rel="noopener noreferrer">PyCon Poland</a>
+Source: <a href="https://pl.pycon.org/2024/en/" target="_blank" rel="external noopener noreferrer">PyCon Poland</a>
 
 </figcaption>
 
@@ -149,7 +149,7 @@ Both ODSC Europe and PyCon Estonia were running September 5th and 6th, so I woul
 
 <figcaption>
 
-Source: <a href="https://twitter.com/TechAtBloomberg/status/1831633374441599137" target="_blank" rel="noopener noreferrer">@TechAtBloomberg via Twitter</a>
+Source: <a href="https://twitter.com/TechAtBloomberg/status/1831633374441599137" target="_blank" rel="external noopener noreferrer">@TechAtBloomberg via Twitter</a>
 
 </figcaption>
 
@@ -163,7 +163,7 @@ I woke up the next morning in a panic: I had been waiting in bed for the alarm t
 
 <figcaption>
 
-Source: <a href="https://twitter.com/PyConEstonia/status/1831973220129685958" target="_blank" rel="noopener noreferrer">@PyConEstonia via Twitter</a>
+Source: <a href="https://twitter.com/PyConEstonia/status/1831973220129685958" target="_blank" rel="external noopener noreferrer">@PyConEstonia via Twitter</a>
 
 </figcaption>
 

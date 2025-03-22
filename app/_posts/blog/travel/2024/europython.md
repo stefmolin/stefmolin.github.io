@@ -83,7 +83,7 @@ Late on Friday night, I came up with several things that could be worked on for 
 
 <figcaption>
 
-The Data Morph sprint at EuroPython 2024. Source: <a href="https://twitter.com/StefanieMolin/status/1816772196578242827" target="_blank" rel="noopener noreferrer">Stefanie Molin via Twitter</a>.
+The Data Morph sprint at EuroPython 2024. Source: <a href="https://twitter.com/StefanieMolin/status/1816772196578242827" target="_blank" rel="external noopener noreferrer">Stefanie Molin via Twitter</a>.
 
 </figcaption>
 
