@@ -37,6 +37,22 @@ const config: DefaultSeoProps = {
     {
       href: 'https://github.com/stefmolin',
       rel: 'me',
+      keyOverride: 'GitHub',
+    },
+    {
+      href: 'https://linkedin.com/in/stefanie-molin/',
+      rel: 'me',
+      keyOverride: 'LinkedIn',
+    },
+    {
+      href: 'https://x.com/StefanieMolin',
+      rel: 'me',
+      keyOverride: 'X',
+    },
+    {
+      href: 'https://bsky.app/profile/stefaniemolin.com',
+      rel: 'me',
+      keyOverride: 'BlueSky',
     },
     {
       href: 'https://webmention.io/stefaniemolin.com/webmention',
