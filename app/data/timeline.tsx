@@ -15,6 +15,28 @@ const COUNTRY_SHORTHAND = {
 
 const TIMELINE_ITEMS: TimelineEntryProps[] = [
   {
+    date: '2025-04-02',
+    eventType: 'code',
+    title: 'First release of Docstringify',
+    description:
+      'Flag missing docstrings and, optionally, generate them from signatures and type annotations.',
+    link: {
+      linkClass: 'external',
+      resourceLink: `${GITHUB_PROFILE}/docstringify`,
+      text: 'View repository',
+    },
+  },
+  {
+    date: '2025-02-17',
+    eventType: 'code',
+    title: 'Data Morph v0.3.0 release',
+    link: {
+      linkClass: 'external',
+      resourceLink: `${GITHUB_PROFILE}/data-morph`,
+      text: 'View repository',
+    },
+  },
+  {
     date: '2024-11-21',
     eventType: 'interview',
     title: 'ODSC West 2024 Minisodes: Part 2',
