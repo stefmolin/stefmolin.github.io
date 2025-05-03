@@ -21,7 +21,7 @@ const TALK_CARDS: TalkCard[] = [
         multiple decimal points. I will showcase how it works, discuss the challenges faced during
         development, and explore the limitations of this approach.`,
       ],
-      slidesLink: '/data-morph-talk/',
+      slidesLink: `${HOME_URL}/data-morph-talk/`,
       duration: '30 minutes',
     },
     seeAlso: {
@@ -48,7 +48,7 @@ const TALK_CARDS: TalkCard[] = [
         open source projects. I also share some guidance on selecting projects to contribute to and
         how to set yourself up for success. Get ready to start your open source journey!`,
       ],
-      slidesLink: '/getting-started-with-open-source-talk/',
+      slidesLink: `${HOME_URL}/getting-started-with-open-source-talk/`,
       duration: '30 minutes',
     },
     seeAlso: SEE_ALSO_LINKS.GET_STARTED_IN_OPEN_SOURCE_ARTICLE,
