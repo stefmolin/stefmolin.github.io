@@ -16,17 +16,7 @@ const PostListing = ({ posts, title }: Props) => {
       ) : null}
       <div className="grid grid-cols-1">
         {posts.map((post) => (
-          <PostPreview
-            key={post.slug.join('/')}
-            title={post.title}
-            subtitle={post.subtitle}
-            coverImage={post.ogImage.url}
-            coverImageCaption={post.ogImage.caption}
-            tags={post.tags}
-            duration={post.duration}
-            slug={post.slug}
-            excerpt={post.excerpt}
-          />
+          <PostPreview key={post.slug.join('/')} {...post} />
         ))}
       </div>
     </section>
