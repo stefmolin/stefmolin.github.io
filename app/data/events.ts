@@ -597,6 +597,28 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2025-05-30',
   },
+  {
+    event: {
+      name: 'SciPy',
+      location: LOCATIONS.TACOMA,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PRE_COMMIT_WORKSHOP,
+    date: '2025-07-07',
+  },
+  {
+    event: {
+      name: 'SciPy',
+      location: LOCATIONS.TACOMA,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PANDAS_WORKSHOP,
+    date: '2025-07-08',
+  },
 ];
 
 export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(

@@ -104,6 +104,7 @@ export const TALKS: Record<string, Presentation> = Object.entries(TALK_CARD_MAPP
       contentClass: talkCard.talk.contentClass,
       title: talkCard.talk.title,
       link: talkCard.talk.link,
+      subclass: talkCard.talk.subclass,
     },
   }),
   {},

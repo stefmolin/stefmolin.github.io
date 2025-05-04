@@ -131,5 +131,10 @@ const LOCATIONS: Record<string, MapLocation> = {
     city: 'Pittsburgh',
     country: 'United States of America',
   },
+  TACOMA: {
+    coordinates: [-122.442, 47.2551],
+    city: 'Tacoma',
+    country: 'United States of America',
+  },
 };
 export default LOCATIONS;
