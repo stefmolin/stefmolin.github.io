@@ -19,9 +19,7 @@ export default function Talks() {
           title={talk.title}
           coverImage={talk.coverImage}
           description={talk.description}
-          duration={
-            talk.subclass === 'keynote' ? `${talk.duration} (${talk.subclass})` : talk.duration
-          }
+          duration={talk.subclass != null ? `${talk.duration} (${talk.subclass})` : talk.duration}
           seeAlso={seeAlso}
         />
       )}
