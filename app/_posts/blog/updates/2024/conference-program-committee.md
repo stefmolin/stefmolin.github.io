@@ -1,7 +1,7 @@
 ---
 title: "Joining the PyCon Portugal Program Committee"
 excerpt: "Over the past few years, I have had the privilege to present at many conferences around the world. However, I had never been involved with the organization of one. I was approached to help the PyCon Portugal team review proposals for this year's event, and I jumped at the opportunity to help an event that I've been fortunate to present at since its inception."
-date: "2024-06-29T18:22:00.000Z"
+date: "2024-06-29T14:22:00.000-04:00"
 author: Stefanie Molin
 tags: ["conferences", "updates"]
 ogImage:

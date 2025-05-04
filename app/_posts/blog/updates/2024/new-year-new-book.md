@@ -1,7 +1,7 @@
 ---
 title: "New Year, New Book?"
 excerpt: "Last Easter, I shared Data Morph with the world. This year, I am continuing the tradition of a big unveiling on Easter. Learn more about my latest project in this blog post."
-date: "2024-03-31T21:00:00.000Z"
+date: "2024-03-31T17:00:00.000-04:00"
 author: Stefanie Molin
 tags: ["updates", "books"]
 ogImage:

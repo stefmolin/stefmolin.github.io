@@ -2,7 +2,7 @@
 title: "PyCon Portugal 2024 🇵🇹"
 subtitle: "Highlights from presenting and volunteering at this year's event in Braga."
 excerpt: "The third edition of PyCon Portugal was in Braga – a new Portuguese city for me. Not only was I presenting, but for the first time ever, I was one of the volunteers that helped organize the conference."
-date: "2024-10-20T12:00:00.000Z"
+date: "2024-10-20T08:00:00.000-04:00"
 author: Stefanie Molin
 tags: ["conferences", "reflection", "travel"]
 assets: "/assets/blog/travel/2024/pycon-portugal"

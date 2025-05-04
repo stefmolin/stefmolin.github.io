@@ -2,8 +2,8 @@
 title: "Pre-Commit Hook Creation Guide"
 subtitle: "A step-by-step guide to developing your own pre-commit hook."
 excerpt: "Pre-commit hooks are a great way to help maintain code quality. However, some of your code quality standards may be specific to your project, and therefore, not covered by existing code linting and formatting tools. In this article, I will show you how to incorporate custom checks into your `pre-commit` setup."
-date: "2024-09-04T14:55:00.000Z"
-modified: "2024-10-09T13:00:00.000Z"
+date: "2024-09-04T10:55:00.000-04:00"
+modified: "2024-10-09T09:00:00.000-04:00"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python"]
 ogImage:

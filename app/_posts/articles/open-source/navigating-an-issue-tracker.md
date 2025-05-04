@@ -1,7 +1,7 @@
 ---
 title: "Tips for Navigating an Issue Tracker on GitHub"
 excerpt: "Scouring an open source project's issues can lead to an open source contribution, but there is often an overwhelming amount of issues to sift through. In this article, I share my tips for navigating an open source project's issue tracker to find something to work on."
-date: "2024-07-30T22:34:00.000Z"
+date: "2024-07-30T18:34:00.000-04:00"
 author: Stefanie Molin
 tags: ["open source", "open source contribution", "open source software"]
 assets: "/assets/articles/open-source/navigating-an-issue-tracker"

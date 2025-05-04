@@ -2,7 +2,7 @@
 title: "The Transatlantic Tour"
 subtitle: "Highlights from my penultimate trip of 2024."
 excerpt: "For my penultimate trip of 2024, I presented at conferences on both sides of the pond. First, I flew cross-country to San Francisco for a couple of days at ODSC West. From there, I headed to Strasbourg for my first PyCon France. Finally, I spent a week in London attending a training before heading home."
-date: "2024-11-12T01:26:00.000Z"
+date: "2024-11-11T20:26:00.000-05:00"
 author: Stefanie Molin
 tags: ["conferences", "reflection", "travel"]
 assets: "/assets/blog/travel/2024/transatlantic-tour"

@@ -1,8 +1,8 @@
 ---
 title: "To Be, or Not to Be Professor Molin"
 excerpt: "The semester I spent as an adjunct professor was an eye-opening experience. If you want to find out why, you will have to read this blog post. No spoilers here. 🤫"
-date: "2023-12-16T20:58:00.000Z"
-modified: "2024-07-20T19:02:00.000Z"
+date: "2023-12-16T15:58:00.000-05:00"
+modified: "2024-07-20T15:02:00.000-04:00"
 author: Stefanie Molin
 tags: ["reflection"]
 assets: "/assets/blog/confessions-of-a-professor"

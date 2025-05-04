@@ -2,8 +2,8 @@
 title: "5 Ways to Get Started in Open Source"
 subtitle: "Ideas for finding and making your first of many open source contributions."
 excerpt: "Everyone can and should get involved in open source. Not sure how to find something to work on? Here are 5 strategies that I have used to get started."
-date: "2023-08-29T15:08:47.161Z"
-modified: "2024-07-30T22:34:00.000Z"
+date: "2023-08-29T11:08:47.161-04:00"
+modified: "2024-07-30T18:34:00.000-04:00"
 author: Stefanie Molin
 tags: ["open source", "open source contribution", "open source software"]
 assets: "/assets/articles/open-source/5-ways-to-get-started-in-open-source"

@@ -2,7 +2,7 @@
 title: "The Asia Tour"
 subtitle: "Highlights from presenting at this year's PyCon Taiwan and PyCon Japan."
 excerpt: "The Asia leg of my 2024 conference tour consisted of a talk and sprint at PyCon Taiwan in Kaohsiung City along with a talk at PyCon Japan in Tokyo."
-date: "2024-10-01T00:00:00.000Z"
+date: "2024-09-30T20:00:00.000-04:00"
 author: Stefanie Molin
 tags: ["conferences", "reflection", "travel"]
 assets: "/assets/blog/travel/2024/asia-tour"

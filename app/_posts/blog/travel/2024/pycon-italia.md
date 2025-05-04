@@ -2,7 +2,7 @@
 title: "PyCon Italia 2024 🇮🇹"
 subtitle: "Highlights from presenting at this year's event in Florence."
 excerpt: "PyCon Italia holds a special place in my heart. Back in 2022, PyCon Italia was the first international conference to accept one of my proposals. This May marked my third year presenting at the event, which was once again in Florence. However, there was a big difference this time: instead of presenting a workshop, I delivered a talk on getting started in open source."
-date: "2024-05-29T12:00:00.000Z"
+date: "2024-05-29T08:00:00.000-04:00"
 author: Stefanie Molin
 tags: ["conferences", "reflection", "travel"]
 assets: "/assets/blog/travel/2024/pycon-italia"

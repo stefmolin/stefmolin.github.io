@@ -2,8 +2,8 @@
 title: "How to Set Up Pre-Commit Hooks"
 subtitle: "A step-by-step guide to installing and configuring pre-commit hooks on your project."
 excerpt: "Looking to streamline your local development? In this article, I provide a step-by-step guide to installing and configuring pre-commit hooks on your project. You will also a learn a little bit about how git hooks work."
-date: "2024-03-29T20:55:00.000Z"
-modified: "2024-11-13T18:43:00.000Z"
+date: "2024-03-29T15:55:00.000-05:00"
+modified: "2024-11-13T13:43:00.000-05:00"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python"]
 ogImage:
