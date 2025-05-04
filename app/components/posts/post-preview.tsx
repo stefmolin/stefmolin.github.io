@@ -4,6 +4,7 @@ import DateFormatter from '../datetime/date-formatter';
 import TimeToRead from '../datetime/duration-indicator';
 import MarkdownSection from '../sections/markdown-section';
 import CoverImage from './cover-image';
+import PostTags from './post-tags';
 
 const PostPreview = ({ title, ogImage, excerpt, slug, duration, date, tags }: PostType) => {
   const postTitle = (
