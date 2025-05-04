@@ -1,30 +1,11 @@
-import CoverImage from './cover-image';
 import Link from 'next/link';
-import PostTags from './post-tags';
+import type PostType from '../../interfaces/post';
+import DateFormatter from '../datetime/date-formatter';
 import TimeToRead from '../datetime/duration-indicator';
 import MarkdownSection from '../sections/markdown-section';
+import CoverImage from './cover-image';
 
-type Props = {
-  title: string;
-  subtitle?: string;
-  coverImage: string;
-  excerpt: string;
-  slug: string[];
-  tags: string[];
-  duration: string;
-  coverImageCaption?: string;
-};
-
-const PostPreview = ({
-  title,
-  subtitle,
-  coverImage,
-  excerpt,
-  slug,
-  tags,
-  duration,
-  coverImageCaption,
-}: Props) => {
+const PostPreview = ({ title, ogImage, excerpt, slug, duration, date, tags }: PostType) => {
   const postTitle = (
     <h3 className="text-2xl md:text-3xl mb-3 leading-snug w-full text-center sm:text-left">
       <Link
@@ -47,7 +28,7 @@ const PostPreview = ({
 
   const image = (
     <div className="flex flex-row items-center justify-center w-full md:w-2/3 lg:w-1/3 md:mb-0 mb-4">
-      <CoverImage slug={slug} title={title} src={coverImage} caption={coverImageCaption} />
+      <CoverImage slug={slug} title={title} src={ogImage.url} caption={ogImage.caption} />
     </div>
   );
 
