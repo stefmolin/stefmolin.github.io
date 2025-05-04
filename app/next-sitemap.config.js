@@ -1,4 +1,9 @@
+const fs = require('fs');
+const { join } = require('path');
+
 const now = new Date().toISOString();
+
+let lastmod = now;
 
 const PRIORITIES = {
   aboutPages: 0.1,
@@ -73,6 +78,13 @@ module.exports = {
     let pageChangefreq;
     let pagePriority;
 
+    if (/^\/(articles|blog)\//.exec(path)) {
+      const fullPath = join(process.cwd(), '_posts', `${path}.md`);
+      try {
+        lastmod = fs.statSync(fullPath).mtime.toISOString();
+      } catch (e) {}
+    }
+
     for (const { regex, priority, changefreq } of PAGE_CONFIGS) {
       if (regex.exec(path)) {
         pagePriority = priority;
@@ -100,7 +112,7 @@ module.exports = {
       loc: path,
       changefreq: pageChangefreq == null ? config.changefreq : pageChangefreq,
       priority: pagePriority == null ? config.priority : pagePriority,
-      lastmod: now,
+      lastmod,
     };
   },
 
@@ -109,37 +121,37 @@ module.exports = {
       loc: '/data-morph',
       changefreq: 'yearly',
       priority: PRIORITIES.slidesAndProjects,
-      lastmod: now,
+      lastmod,
     },
     {
       loc: '/data-morph-talk',
       changefreq: 'yearly',
       priority: PRIORITIES.slidesAndProjects,
-      lastmod: now,
+      lastmod,
     },
     {
       loc: '/pandas-workshop',
       changefreq: 'yearly',
       priority: PRIORITIES.slidesAndProjects,
-      lastmod: now,
+      lastmod,
     },
     {
       loc: '/python-data-viz-workshop',
       changefreq: 'yearly',
       priority: PRIORITIES.slidesAndProjects,
-      lastmod: now,
+      lastmod,
     },
     {
       loc: '/getting-started-with-open-source-talk/',
       changefreq: 'yearly',
       priority: PRIORITIES.slidesAndProjects,
-      lastmod: now,
+      lastmod,
     },
     {
       loc: '/pre-commit-workshop/',
       changefreq: 'yearly',
       priority: PRIORITIES.slidesAndProjects,
-      lastmod: now,
+      lastmod,
     },
   ],
   exclude: ['/coming-soonish', '/feedback'],

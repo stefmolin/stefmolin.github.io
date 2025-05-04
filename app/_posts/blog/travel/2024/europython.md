@@ -3,7 +3,6 @@ title: "EuroPython 2024 🇨🇿"
 subtitle: "Highlights from presenting and organizing a development sprint at this year's event in Prague."
 excerpt: "EuroPython 2024 was a conference of firsts for me: my first time presenting my new workshop on pre-commit hooks and my first time organizing a development sprint. During my time there, I was also feeling very creative and built out some new pages for my website. In this post, I share my experiences during this week."
 date: "2024-07-28T15:18:00.00-04:00"
-modified: "2024-10-02T14:12:00.00-04:00"
 author: Stefanie Molin
 tags: ["conferences", "reflection", "travel", "updates"]
 assets: "/assets/blog/travel/2024/europython"

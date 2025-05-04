@@ -61,6 +61,9 @@ export function getPostBySlug(slug: string[], fields: string[] = [], category: s
         items[field] = parts.join('/');
       }
     }
+    if (field === 'modified') {
+      items[field] = fs.statSync(fullPath).mtime.toISOString();
+    }
 
     if (typeof data[field] !== 'undefined') {
       items[field] = data[field];

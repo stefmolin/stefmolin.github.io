@@ -3,7 +3,6 @@ title: "Mind Your Image Metadata"
 subtitle: "A brief introduction to image metadata and how to remove it with exif-stripper."
 excerpt: "Most devices record a variety of metadata when generating images. While some of that information *may* be innocuous, you could end up exposing the GPS coordinates to your home if you aren't careful. In this article, I provide a brief introduction to image metadata, and then show you how to remove it with `exif-stripper`."
 date: "2024-10-09T09:00:00.000-04:00"
-modified: "2024-11-13T08:55:00.000-05:00"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python", "projects", "open source software"]
 ogImage:

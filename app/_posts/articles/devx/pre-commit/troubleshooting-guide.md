@@ -3,7 +3,6 @@ title: "Common Pre-Commit Errors and How to Solve Them"
 subtitle: "A troubleshooting guide for pre-commit hooks."
 excerpt: "Having issues with your `pre-commit` setup? In this troubleshooting guide, I've collected the most common errors `pre-commit` users face and provided explanations and guidance for fixing them."
 date: "2024-08-06T08:00:00.000-04:00"
-modified: "2024-09-13T19:38:00.000-04:00"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python", "troubleshooting"]
 ogImage:

@@ -2,7 +2,6 @@
 title: "Hello World!"
 excerpt: "People have repeatedly told me that I should start a blog just to share some of my travel stories. After years of laughing that off, I've decided to do it. It won't just be a blog about my travels, but rather a piece of me: the person behind the books, articles, and workshops. So, why now? You'll have to read this blog post to find out."
 date: "2023-11-07T19:57:00.000-05:00"
-modified: "2024-03-08T19:22:00.000-05:00"
 author: Stefanie Molin
 tags: ["updates"]
 assets: "/assets/blog/hello-world"

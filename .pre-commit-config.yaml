@@ -19,9 +19,3 @@ repos:
       - id: prettier
         types_or: [css, html, javascript, jsx, ts, tsx]
         exclude: app/public/.+.html
-
-  - repo: https://github.com/stefmolin/modification-timekeeper
-    rev: 0.1.2
-    hooks:
-      - id: modification-timekeeper
-        args: [--field-name=modified, --after-key=date]

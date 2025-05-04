@@ -2,7 +2,6 @@
 title: "Around the World in 23 Days"
 excerpt: "Over the span of 23 days, I circumnavigated the globe, stepped foot on every hemisphere, and visited three new countries (bringing my total up to 43). I made this trip in order to present at three new conferences – Kiwi PyCon, PyCon Poland, and PyCon Estonia – which happened to be taking place over three consecutive weeks."
 date: "2024-09-09T18:00:00.000-04:00"
-modified: "2024-10-06T17:18:00.000-04:00"
 author: Stefanie Molin
 tags: ["conferences", "reflection", "travel", "updates"]
 assets: "/assets/blog/travel/2024/around-the-world"

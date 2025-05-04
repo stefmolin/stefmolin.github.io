@@ -2,7 +2,6 @@
 title: "Celebrating the Flat White"
 excerpt: "I was thrilled to see that today's Google Doodle was \"Celebrating the Flat White\" – my morning coffee drink of choice. Curious, what makes it my favorite? You'll have to read this post to find out."
 date: "2024-03-11T19:58:00.000-04:00"
-modified: "2024-10-22T13:51:00.000-04:00"
 author: Stefanie Molin
 tags: ["about me", "coffee"]
 ogImage:

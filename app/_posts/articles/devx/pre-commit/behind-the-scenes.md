@@ -2,7 +2,6 @@
 title: "A Behind-the-Scenes Look at How Pre-Commit Works"
 excerpt: "So, you've just set up pre-commit hooks on your repository using `pre-commit`, but do you know what actually happened when you ran `pre-commit install` or why you had to run it in the first place? How does `pre-commit` actually work with Git? In this article, I will take you behind the scenes of how your `pre-commit` setup works."
 date: "2024-08-13T09:51:00.000-04:00"
-modified: "2024-09-13T19:38:00.000-04:00"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python", "Git"]
 ogImage:

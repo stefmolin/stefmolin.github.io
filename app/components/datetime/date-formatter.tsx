@@ -18,7 +18,7 @@ const DateFormatter = ({ dateString, relative, format, long, children }: Props) 
     else if (typeof format === 'string') setDisplayDate(date.toFormat(format));
     else
       setDisplayDate(
-        date.toLocaleString(format ?? long ? DateTime.DATETIME_FULL : DateTime.DATE_FULL),
+        date.toLocaleString((format ?? long) ? DateTime.DATETIME_FULL : DateTime.DATE_FULL),
       );
   });
   return (

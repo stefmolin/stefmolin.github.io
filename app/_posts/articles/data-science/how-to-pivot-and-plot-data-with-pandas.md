@@ -3,7 +3,6 @@ title: "How to Pivot and Plot Data with Pandas"
 subtitle: "Analyzing 2019 airline market share."
 excerpt: "In this article, we will discuss how to create a pivot table of aggregated data in order to make a stacked bar visualization of the 2019 airline market share for the top 10 destination cities."
 date: "2021-05-27T13:11:12.000-04:00"
-modified: "2024-02-27T18:28:00.000-05:00"
 author: Stefanie Molin
 tags: ["data science", "Python", "pandas", "matplotlib", "data visualization"]
 assets: "/assets/articles/data-science/how-to-pivot-and-plot-data-with-pandas"
