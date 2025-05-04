@@ -21,7 +21,7 @@ repos:
         exclude: app/public/.+.html
 
   - repo: https://github.com/stefmolin/modification-timekeeper
-    rev: 0.1.1
+    rev: 0.1.2
     hooks:
       - id: modification-timekeeper
         args: [--field-name=modified, --after-key=date]
