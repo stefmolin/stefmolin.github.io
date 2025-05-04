@@ -16,7 +16,7 @@ export default function ResourceLink({
 }: ResourceLinkProps) {
   if (
     typeof resourceLink !== 'string' &&
-    resourceLink.contentClass === 'talk' &&
+    ['keynote', 'talk'].includes(resourceLink.contentClass) &&
     !resourceLink.slug.startsWith('/coming-soon')
   ) {
     return (

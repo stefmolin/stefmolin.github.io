@@ -53,7 +53,6 @@ const linkClassName = 'text-slate-600 underline hover:text-black';
 
 const upcomingSessionIcons: Record<Presentation['contentClass'], IconDefinition> = {
   'book signing': faBook,
-  keynote: faMicrophoneLines,
   podcast: faMicrophoneLines,
   sprint: faCodePullRequest,
   talk: faMicrophoneLines,
@@ -83,7 +82,7 @@ const FeaturedPost = ({
     titleClassName={classNames('text-center', titleClassName)}
   >
     <div className="grid grid-cols-1">
-      <PostPreview {...post} coverImage={post.ogImage.url} />
+      <PostPreview {...post} />
 
       <div className="text-center">
         <small>

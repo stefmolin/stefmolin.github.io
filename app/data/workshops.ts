@@ -1,16 +1,18 @@
 import dedent from 'dedent';
+import { type Presentation } from '../interfaces/event';
 import { type WorkshopPage } from '../interfaces/workshop';
 import CONTENT_LINKS from './content-links';
-import { PRESENTATIONS } from './events';
 
-const WORKSHOP_PAGES: WorkshopPage[] = [
-  {
+export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
+  PANDAS_WORKSHOP: {
     workshop: {
-      title: PRESENTATIONS.PANDAS_WORKSHOP.title,
+      contentClass: 'workshop',
+      title: 'Introduction to Data Analysis Using Pandas',
       subtitle:
         'An introductory training designed to provide initial hands-on experience with the pandas library.',
       repo: 'pandas-workshop',
       coverImage: CONTENT_LINKS.PANDAS_WORKSHOP.image,
+      link: CONTENT_LINKS.PANDAS_WORKSHOP.link,
       description: [
         `Working with data can be challenging: it often doesn't come in the best format for analysis,
       and understanding it well enough to extract insights requires both time and the skills to filter,
@@ -95,13 +97,15 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       CONTENT_LINKS.TRAVEL_BLOG,
     ],
   },
-  {
+  PYTHON_DATA_VIZ_WORKSHOP: {
     workshop: {
-      title: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP.title,
+      contentClass: 'workshop',
+      title: 'Beyond the Basics: Data Visualization in Python',
       subtitle:
         'A workshop on creating static, animated, and interactive data visualizations in Python.',
       repo: 'python-data-viz-workshop',
       coverImage: CONTENT_LINKS.DATA_VIZ_WORKSHOP.image,
+      link: CONTENT_LINKS.DATA_VIZ_WORKSHOP.link,
       description: [
         `The human brain excels at finding patterns in visual representations, which is why data
       visualizations are essential to any analysis. Done right, they bridge the gap between those
@@ -183,12 +187,14 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       CONTENT_LINKS.TRAVEL_BLOG,
     ],
   },
-  {
+  PRE_COMMIT_WORKSHOP: {
     workshop: {
-      title: PRESENTATIONS.PRE_COMMIT_WORKSHOP.title,
+      contentClass: 'workshop',
+      title: '(Pre-)Commit to Better Code',
       subtitle: 'A workshop on building and using pre-commit hooks to help maintain code quality.',
       repo: 'pre-commit-workshop',
       coverImage: CONTENT_LINKS.PRE_COMMIT_WORKSHOP.image,
+      link: CONTENT_LINKS.PRE_COMMIT_WORKSHOP.link,
       description: [
         `Maintaining code quality can be challenging, no matter the size of your project or number of
         contributors. Different team members may have different opinions on code styling and
@@ -251,8 +257,22 @@ const WORKSHOP_PAGES: WorkshopPage[] = [
       CONTENT_LINKS.TRAVEL_BLOG,
     ],
   },
-];
+};
+
+const WORKSHOP_PAGES: WorkshopPage[] = Object.values(WORKSHOP_MAPPING);
 export default WORKSHOP_PAGES;
+
+export const WORKSHOPS: Record<string, Presentation> = Object.entries(WORKSHOP_MAPPING).reduce(
+  (accum, [key, workshopPage]) => ({
+    ...accum,
+    [key]: {
+      contentClass: workshopPage.workshop.contentClass,
+      title: workshopPage.workshop.title,
+      link: workshopPage.workshop.link,
+    },
+  }),
+  {},
+);
 
 export const WORKSHOP_PAGE_MAPPING: Record<string, WorkshopPage> = WORKSHOP_PAGES.reduce(
   (accum, page) => ({ ...accum, [page.workshop.repo]: page }),

@@ -1,11 +1,6 @@
-import {
-  type Event,
-  type LivePodcast,
-  type LivePresentation,
-  type Presentation,
-} from '../interfaces/event';
-import CONTENT_LINKS from './content-links';
+import { type Event, type LivePodcast, type LivePresentation } from '../interfaces/event';
 import LOCATIONS from './locations';
+import { PRESENTATIONS } from './presentations';
 
 const SAME_LOCATION_EVENTS: Record<string, Pick<Event, 'name' | 'location' | 'eventClass'>> = {
   'ODSC East': {
@@ -47,49 +42,6 @@ const SAME_LOCATION_EVENTS: Record<string, Pick<Event, 'name' | 'location' | 'ev
     name: 'TMLS',
     location: LOCATIONS.TORONTO,
     eventClass: 'conference',
-  },
-};
-
-export const PRESENTATIONS: Record<string, Presentation> = {
-  PANDAS_WORKSHOP: {
-    contentClass: 'workshop',
-    title: 'Introduction to Data Analysis Using Pandas',
-    link: CONTENT_LINKS.PANDAS_WORKSHOP.link,
-  },
-  PYTHON_DATA_VIZ_WORKSHOP: {
-    contentClass: 'workshop',
-    title: 'Beyond the Basics: Data Visualization in Python',
-    link: CONTENT_LINKS.DATA_VIZ_WORKSHOP.link,
-  },
-  DATA_MORPH: {
-    contentClass: 'talk',
-    title: 'Data Morph: A Cautionary Tale of Summary Statistics',
-    link: '/talks/#data-morph-a-cautionary-tale-of-summary-statistics',
-  },
-  DATA_MORPH_SPRINT: {
-    contentClass: 'sprint',
-    title: 'Data Morph Development Sprint',
-    link: 'https://stefaniemolin.com/data-morph/',
-  },
-  BOOK_SIGNING_PANDAS_1: {
-    contentClass: 'book signing',
-    title: CONTENT_LINKS.PANDAS_BOOK_1.title,
-    link: CONTENT_LINKS.PANDAS_BOOK_1.link,
-  },
-  BOOK_SIGNING_PANDAS_2: {
-    contentClass: 'book signing',
-    title: CONTENT_LINKS.PANDAS_BOOK_2.title,
-    link: CONTENT_LINKS.PANDAS_BOOK_2.link,
-  },
-  GETTING_STARTED_IN_OPEN_SOURCE: {
-    contentClass: 'talk',
-    title: 'Getting Started with Open Source Contributions',
-    link: '/talks/#getting-started-with-open-source-contributions',
-  },
-  PRE_COMMIT_WORKSHOP: {
-    contentClass: 'workshop',
-    title: '(Pre-)Commit to Better Code',
-    link: CONTENT_LINKS.PRE_COMMIT_WORKSHOP.link,
   },
 };
 
@@ -600,13 +552,9 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     event: {
       ...SAME_LOCATION_EVENTS['PyCon Lithuania'],
       virtual: false,
-      link: 'https://pycon.lt/',
+      link: undefined,
     },
-    presentation: {
-      contentClass: 'keynote',
-      title: 'Keynote: Title TBD',
-      link: '/coming-soonish',
-    },
+    presentation: PRESENTATIONS.AST_KEYNOTE,
     date: '2025-04-24',
   },
   {

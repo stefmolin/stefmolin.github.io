@@ -5,10 +5,9 @@ import PresentationPreview from '../components/presentations/presentation-previe
 import { type TalkCard } from '../interfaces/talk';
 
 export default function Talks() {
-  const contentClass = 'talk';
   return (
     <PresentationListing
-      contentClass={contentClass}
+      contentClass="talk"
       description={
         'A complete listing of conference talks developed by Stefanie Molin with links to all materials.'
       }
@@ -16,12 +15,14 @@ export default function Talks() {
         <PresentationPreview
           key={talk.title}
           slug={talk.slidesLink}
+          contentClass={talk.contentClass}
           title={talk.title}
           coverImage={talk.coverImage}
           description={talk.description}
-          duration={talk.duration}
+          duration={
+            talk.subclass === 'keynote' ? `${talk.duration} (${talk.subclass})` : talk.duration
+          }
           seeAlso={seeAlso}
-          contentClass={contentClass}
         />
       )}
       pages={TALK_PAGES}

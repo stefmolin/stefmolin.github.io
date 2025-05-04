@@ -15,7 +15,7 @@ export default function PresentationPreview({
   contentClass,
   seeAlso,
   repo,
-}: Omit<Talk, 'slidesLink'> & {
+}: Omit<Talk, 'slidesLink' | 'contentClass' | 'link'> & {
   slug: string;
   contentClass: Presentation['contentClass'];
   seeAlso?: SeeAlso;
@@ -29,8 +29,12 @@ export default function PresentationPreview({
             See also:{' '}
             <ResourceLink
               className="text-slate-500 hover:underline"
-              linkClass="internal"
-              resourceLink={{ contentClass: seeAlso.contentClass, slug: seeAlso.slug }}
+              linkClass={seeAlso.slug.startsWith('/') ? 'internal' : 'external'}
+              resourceLink={
+                seeAlso.slug.startsWith('/')
+                  ? { contentClass: seeAlso.contentClass, slug: seeAlso.slug }
+                  : seeAlso.slug
+              }
             >
               {seeAlso.title}
             </ResourceLink>
@@ -44,7 +48,7 @@ export default function PresentationPreview({
       description={description}
       duration={duration}
       id={title}
-      linkClass={contentClass === 'talk' ? 'external' : 'internal'}
+      linkClass={contentClass !== 'workshop' ? 'external' : 'internal'}
       resourceLink={{ contentClass, slug }}
       subtitle={subtitle}
       title={<h2 className="text-xl sm:text-2xl hover:underline">{title}</h2>}

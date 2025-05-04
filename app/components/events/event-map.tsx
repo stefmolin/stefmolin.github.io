@@ -31,7 +31,6 @@ export default function EventMap({
   const tableClassName = 'border-b px-2 text-base';
   const contentClassLinks = {
     'book signing': CONTENT_LINKS.BOOK_SIGNINGS.link,
-    keynote: CONTENT_LINKS.TALKS.link,
     talk: CONTENT_LINKS.TALKS.link,
     workshop: CONTENT_LINKS.WORKSHOPS.link,
   };
@@ -93,7 +92,7 @@ export default function EventMap({
                               }}
                               className={linkClassName}
                             >
-                              {presentation.contentClass}
+                              {presentation.subclass ?? presentation.contentClass}
                             </Link>
                           </td>
                         )}
