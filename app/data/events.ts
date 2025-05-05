@@ -619,6 +619,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     presentation: PRESENTATIONS.PANDAS_WORKSHOP,
     date: '2025-07-08',
   },
+  {
+    event: {
+      name: 'PyCon Portugal',
+      location: LOCATIONS.CASCAIS,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PRE_COMMIT_WORKSHOP,
+    date: '2025-07-26',
+  },
 ];
 
 export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(

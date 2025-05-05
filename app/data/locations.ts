@@ -136,5 +136,10 @@ const LOCATIONS: Record<string, MapLocation> = {
     city: 'Tacoma',
     country: 'United States of America',
   },
+  CASCAIS: {
+    coordinates: [-9.4006, 38.7237],
+    city: 'Cascais',
+    country: 'Portugal',
+  },
 };
 export default LOCATIONS;
