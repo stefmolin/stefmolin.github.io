@@ -32,8 +32,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Restore timestamps
-        run: sudo apt install git-restore-mtime && git restore-mtime _posts
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -52,6 +50,8 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+      - name: Restore timestamps
+        run: sudo apt install git-restore-mtime && git restore-mtime _posts
       - name: Install dependencies
         run: npm ci
       - name: Build with Next.js
