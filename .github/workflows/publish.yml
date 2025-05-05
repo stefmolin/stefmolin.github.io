@@ -32,8 +32,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # need to fetch all commits for git restore-mtime
       - name: Restore timestamps
-        uses: chetan/git-restore-mtime-action@26fb42a93ac0f66e9c0c5ad3bd03079cb9ee5300  # v2.1
+        run: sudo apt-get install git-restore-mtime && git restore-mtime _posts
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
