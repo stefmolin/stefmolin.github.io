@@ -3,8 +3,6 @@ const { join } = require('path');
 
 const now = new Date().toISOString();
 
-let lastmod = now;
-
 const PRIORITIES = {
   aboutPages: 0.1,
   tagPages: 0.2,
@@ -77,6 +75,7 @@ module.exports = {
   transform: async (config, path) => {
     let pageChangefreq;
     let pagePriority;
+    let lastmod = now;
 
     if (/^\/(articles|blog)\//.exec(path)) {
       const fullPath = join(process.cwd(), '_posts', `${path}.md`);
@@ -121,37 +120,43 @@ module.exports = {
       loc: '/data-morph',
       changefreq: 'yearly',
       priority: PRIORITIES.slidesAndProjects,
-      lastmod,
+      lastmod: now,
     },
     {
       loc: '/data-morph-talk',
       changefreq: 'yearly',
       priority: PRIORITIES.slidesAndProjects,
-      lastmod,
+      lastmod: now,
     },
     {
       loc: '/pandas-workshop',
       changefreq: 'yearly',
       priority: PRIORITIES.slidesAndProjects,
-      lastmod,
+      lastmod: now,
     },
     {
       loc: '/python-data-viz-workshop',
       changefreq: 'yearly',
       priority: PRIORITIES.slidesAndProjects,
-      lastmod,
+      lastmod: now,
     },
     {
       loc: '/getting-started-with-open-source-talk/',
       changefreq: 'yearly',
       priority: PRIORITIES.slidesAndProjects,
-      lastmod,
+      lastmod: now,
     },
     {
       loc: '/pre-commit-workshop/',
       changefreq: 'yearly',
       priority: PRIORITIES.slidesAndProjects,
-      lastmod,
+      lastmod: now,
+    },
+    {
+      loc: '/build-your-own-simple-static-code-analyzer-talk/',
+      changefreq: 'yearly',
+      priority: PRIORITIES.slidesAndProjects,
+      lastmod: now,
     },
   ],
   exclude: ['/coming-soonish', '/feedback'],
