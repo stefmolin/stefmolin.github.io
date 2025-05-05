@@ -33,7 +33,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Restore timestamps
-        run: sudo apt install git-restore-mtime && git-restore-mtime
+        run: sudo apt install git-restore-mtime && git restore-mtime
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
