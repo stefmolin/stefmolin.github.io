@@ -125,17 +125,20 @@ export default function Interviews() {
                           <br />
                           <p className="text-sm sm:text-base">
                             See also:
-                            {seeAlso.map(({ title, slug, contentClass }) => {
+                            {seeAlso.map(({ title, slug, contentClass }, index) => {
                               const linkClassName = 'text-slate-500 pl-1';
                               return (
-                                <ResourceLink
-                                  key={title}
-                                  className={linkClassName}
-                                  linkClass="internal"
-                                  resourceLink={{ contentClass, slug }}
-                                >
-                                  {title}
-                                </ResourceLink>
+                                <>
+                                  <ResourceLink
+                                    key={title}
+                                    className={linkClassName}
+                                    linkClass="internal"
+                                    resourceLink={{ contentClass, slug }}
+                                  >
+                                    {title}
+                                  </ResourceLink>
+                                  {seeAlso.length > 1 && index !== seeAlso.length - 1 ? ', ' : ''}
+                                </>
                               );
                             })}
                           </p>

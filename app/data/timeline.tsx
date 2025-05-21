@@ -15,6 +15,30 @@ const COUNTRY_SHORTHAND = {
 
 const TIMELINE_ITEMS: TimelineEntryProps[] = [
   {
+    date: '2025-05-20',
+    eventType: 'code',
+    title: 'Docstringify 1.0.0 release',
+    description:
+      'Flag missing docstrings and, optionally, generate them from signatures and type annotations.',
+    link: {
+      linkClass: 'external',
+      resourceLink: `${GITHUB_PROFILE}/docstringify`,
+      text: 'View repository',
+    },
+  },
+  {
+    date: '2025-05-13',
+    eventType: 'award',
+    title: 'ODSC Speaker Impact Award',
+    description: "One of six speakers honored during ODSC's 10-year anniversary celebration.",
+    link: {
+      linkClass: 'external',
+      resourceLink:
+        'https://opendatascience.com/celebrating-our-instructors-with-the-odsc-east-2025-speaker-impact-awards/',
+      text: 'View announcement',
+    },
+  },
+  {
     date: '2025-04-02',
     eventType: 'code',
     title: 'First release of Docstringify',

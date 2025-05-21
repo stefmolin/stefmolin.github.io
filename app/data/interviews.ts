@@ -1,6 +1,7 @@
 import Interview from '../interfaces/interview';
 import type RelatedContentLink from '../interfaces/related-content';
 import CONTENT_LINKS, { SEE_ALSO_LINKS } from './content-links';
+import { TALKS } from './talks';
 
 const toSeeAlso = (contentLink: RelatedContentLink) => {
   const { contentClass, link: slug, title } = contentLink;
@@ -8,6 +9,41 @@ const toSeeAlso = (contentLink: RelatedContentLink) => {
 };
 
 const INTERVIEWS: Interview[] = [
+  {
+    title: 'PyCon Lithuania Special - Stefanie Molin',
+    link: 'https://youtu.be/etV2lQxWqM0',
+    coverImage:
+      'https://media.licdn.com/dms/image/v2/D4D22AQEZnL40jwB2Qw/feedshare-shrink_800/B4DZaRgNM2GsAk-/0/1746197861998?e=1750896000&v=beta&t=D78le6iINWmJg1__Bp2sNXG51ZesJS7ZTItQw1Pb1ew',
+    format: 'podcast',
+    host: 'Uncle Data',
+    date: '2025-05-19',
+    description: {
+      text: `This discussion follows Stefanie Molin's evolution from programming novice to core
+      open-source developer. Stefanie shares her transition from R to Python and her approach to
+      creating accessible learning materials for workshops and presentations.
+
+      She offers practical insights into open-source development, emphasising how quality
+      documentation drives tool adoption and user engagement. The conversation addresses challenges
+      like balancing contribution time with other responsibilities and staying current with emerging
+      libraries.
+
+      Stefanie provides valuable advice for aspiring contributors, highlighting the importance of
+      communication skills and understanding user needs. Her reflections on her engineering journey
+      and upcoming projects offer a realistic look at the collaborative nature of open-source
+      development and the satisfaction that comes from community contribution.`,
+      source: 'episode summary',
+    },
+    duration: '54 m',
+    seeAlso: [
+      {
+        contentClass: 'page',
+        slug: TALKS.AST_KEYNOTE.link,
+        title: 'PyCon Lithuania Keynote',
+      },
+      toSeeAlso(CONTENT_LINKS.PRE_COMMIT_ARTICLES),
+      SEE_ALSO_LINKS.GET_STARTED_IN_OPEN_SOURCE_ARTICLE,
+    ],
+  },
   {
     title: 'Episode 482: Pre-Commit Hooks for Python Devs',
     link: 'https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs',
