@@ -12,7 +12,7 @@ ogImage:
   height: 1004
 ---
 
-## San Francisco, USA  🇺🇸
+## 📍 San Francisco, USA  🇺🇸
 
 After being home for just a week (during which time I was a guest on the [Talk Python to Me](https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs) live stream podcast), I was once again heading to the airport. My first stop was San Francisco to present my talk, [Data Morph: A Cautionary Tale of Summary Statistics](/talks/#data-morph-a-cautionary-tale-of-summary-statistics), and have a [book signing](/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/) at ODSC West. I arrived in San Francisco in the evening and went to bed right away &ndash; the stop after this would be Europe, so I figured it would be easier to stay closer to my home timezone than to try to adjust for just a couple of days.
 
@@ -32,7 +32,7 @@ A little while after the book signing wrapped up, I gave my talk. Afterward, a s
 
 During the night, I heard this really loud bang that woke me up. I turned on the lights, but didn't see anything. It wasn't until the morning when I went to the bathroom (thankfully, with the lights on) that I saw what had happened: the three-foot-high metal cover of the ventilation system had detached itself from the wall and fell into the glass sliding door for the bathroom. This also blocked the way to the bathroom and the exit of the hotel room. I put it back, but it fell once more ten minutes or so later. This made it fun to pack and eventually leave the room. Upon checkout, I reported it to the hotel (with pictures) and was given a bunch of points (I'll take it!).
 
-## Strasbourg, France 🇫🇷
+## 📍 Strasbourg, France 🇫🇷
 
 I worked for a few hours from my hotel room before heading to the airport for my first red-eye to Europe from a US city other than my home. At the Air France lounge, I had the best French 75 of my life &ndash; completely changed my mind about that drink. The food was also really good (much better than the business-class meal on the plane).
 
@@ -77,7 +77,7 @@ In the morning, I had my talk, [Getting Started with Open Source Contributions](
 Here's where my second error was with regards to the medicine. I figured I could get it after my morning talk, but it was Sunday, and everything was once again closed 😞 On the flip side, all of the museums were free on this day as it was the first Sunday of the month. I checked out the Alsatian Museum and the Historical Museum of the City of Strasbourg on the way back to the hotel as a way to warm up. I was also able to purchase some Alsatian wine to bring back, try a bretzel with herbs de provence on top, and get my token *crêpe* before heading to the train station. From Strasbourg, I took a train to Paris, and once there, I switched train stations to get the EuroStar to London.
 
 
-## London, United Kingdom 🇬🇧
+## 📍 London, United Kingdom 🇬🇧
 
 The EuroStar dinner was very good (and much better than I was expecting), and the champagne was a nice touch. Unfortunately, I had started coughing and got progressively worse throughout the journey. I was heading to London to attend a six-day, in-person cybersecurity training (these are very intense, even when you are in good health), and I began wondering if I would even be able to go in person.
 
