@@ -254,6 +254,21 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         author: 'PyCon US 2025 attendee',
       },
       {
+        text: 'Clear informative and with step by step slides',
+        author: 'PyCon US 2025 attendee',
+      },
+      {
+        text: `Well explained, good examples. Having local copy of the slides rather than relying on
+        the projector is a huge bonus. Appreciate the opportunity to think of a novel application
+        rather than just looking at examples.`,
+        author: 'PyCon US 2025 attendee',
+      },
+      {
+        text: `New concept for me and I found it useful. I liked the way [Stefanie was] helping us
+        to keep up with [her] and run the codes`,
+        author: 'Bobby',
+      }, // PyCon US 2025
+      {
         text: `This was great. Now I just have to figure out how we can use it [at work].`,
         author: 'EuroPython 2024 attendee',
       },
@@ -268,21 +283,6 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
       {
         text: 'Amazing teacher!',
         author: 'Phebe',
-      }, // PyCon US 2025
-      {
-        text: 'Clear informative and with step by step slides',
-        author: 'PyCon US 2025 attendee',
-      },
-      {
-        text: `Well explained, good examples. Having local copy of the slides rather than relying on
-        the projector is a huge bonus. Appreciate the opportunity to think of a novel application
-        rather than just looking at examples.`,
-        author: 'PyCon US 2025 attendee',
-      },
-      {
-        text: `New concept for me and I found it useful. I liked the way [Stefanie was] helping us
-        to keep up with [her] and run the codes`,
-        author: 'Bobby',
       }, // PyCon US 2025
     ],
     relatedContent: [
