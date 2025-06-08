@@ -242,6 +242,18 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         author: 'EuroPython 2024 attendee',
       },
       {
+        text: `Just wanted to say a big thank you for the workshop! It was super practical and full
+        of helpful takeaways. I especially enjoyed learning about the different options for
+        pre-commit with Python and how to create a customized one. I'm definitely planning to add it
+        to my workflow!`,
+        author: 'PyCon US 2025 attendee',
+      },
+      {
+        text: `Great explanation of pre[-]commit hooks and how to create your own. Really enjoyed
+        how hands-on everything was.`,
+        author: 'PyCon US 2025 attendee',
+      },
+      {
         text: `This was great. Now I just have to figure out how we can use it [at work].`,
         author: 'EuroPython 2024 attendee',
       },
@@ -249,6 +261,29 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         text: 'I was able to get something working by the end and now I know how to [build my own hook].',
         author: 'EuroPython 2024 attendee',
       },
+      {
+        text: 'Great, learnt a ton, good topic',
+        author: 'Marc',
+      }, // PyCon US 2025
+      {
+        text: 'Amazing teacher!',
+        author: 'Phebe',
+      }, // PyCon US 2025
+      {
+        text: 'Clear informative and with step by step slides',
+        author: 'PyCon US 2025 attendee',
+      },
+      {
+        text: `Well explained, good examples. Having local copy of the slides rather than relying on
+        the projector is a huge bonus. Appreciate the opportunity to think of a novel application
+        rather than just looking at examples.`,
+        author: 'PyCon US 2025 attendee',
+      },
+      {
+        text: `New concept for me and I found it useful. I liked the way [Stefanie was] helping us
+        to keep up with [her] and run the codes`,
+        author: 'Bobby',
+      }, // PyCon US 2025
     ],
     relatedContent: [
       CONTENT_LINKS.PRE_COMMIT_ARTICLES,
