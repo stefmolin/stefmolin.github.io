@@ -30,7 +30,7 @@ export default function PresentationListing({
   seoImageAltTextFallback,
 }: PresentationListingProps) {
   const allSessions = getLivePresentations({ contentClass });
-  const pastSessions = allSessions
+  const presentations = allSessions
     .sort((a, b) => (a.date > b.date ? -1 : 1))
     .map(({ presentation }) => presentation.title);
   return (
@@ -59,8 +59,8 @@ export default function PresentationListing({
                 const presentationA = a[contentClass];
                 const presentationB = b[contentClass];
                 return (
-                  pastSessions.indexOf(presentationA.title) -
-                  pastSessions.indexOf(presentationB.title)
+                  presentations.indexOf(presentationA.title) -
+                  presentations.indexOf(presentationB.title)
                 );
               })
               .map(generatePreview)}
