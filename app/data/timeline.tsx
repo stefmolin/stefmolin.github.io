@@ -39,6 +39,11 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
     },
   },
   {
+    date: '2025-04-16',
+    eventType: 'volunteer',
+    title: 'Joined PyCon Portugal 2025 program committee',
+  },
+  {
     date: '2025-04-02',
     eventType: 'code',
     title: 'First release of Docstringify',
@@ -49,6 +54,11 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
       resourceLink: `${GITHUB_PROFILE}/docstringify`,
       text: 'View repository',
     },
+  },
+  {
+    date: '2025-03-28',
+    eventType: 'volunteer',
+    title: 'Became a proposal reviewer for EuroSciPy 2025',
   },
   {
     date: '2025-02-17',
@@ -338,7 +348,7 @@ const TIMELINE_EVENTS: TimelineEntryProps[] = LIVE_EVENTS.map((entry) => {
         {presentation.title}
       </Link>
     ),
-    description: `${eventName} ${presentation.contentClass}`,
+    description: `${eventName} ${presentation.subclass ?? presentation.contentClass}`,
     link: {
       linkClass: event.eventClass === 'podcast' ? 'external' : 'internal',
       resourceLink,
