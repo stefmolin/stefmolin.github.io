@@ -33,7 +33,7 @@ export default function Conferences() {
     ['keynote', 'talk', 'workshop'].includes(x.presentation.contentClass),
   );
   const presentationsGivenAlready = useCompletedSessions(presentations).length;
-  const futureSessions = useNextSessions(presentations) as typeof presentations;
+  const futureSessions = useNextSessions(presentations, true) as typeof presentations;
   const upcomingEventsText = getEventsPerCountry(futureSessions, true);
   // TODO: both the book-signings page and this have similar logic for the text -- can it be combined into the <EventPage> component?
   const upcomingText = futureSessions.length

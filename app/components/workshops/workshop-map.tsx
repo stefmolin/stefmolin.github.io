@@ -14,7 +14,7 @@ export default function WorkshopMap({ workshop }: { workshop: Workshop }) {
   });
   const locationToEvents = getConferenceEventMapAnnotations(allSessions);
   const pastSessions = useCompletedSessions(allSessions).length;
-  const futureSessions = useNextSessions(allSessions);
+  const futureSessions = useNextSessions(allSessions, true);
   const countText = pastSessions
     ? `I have presented this workshop ${pastSessions === 1 ? 'once' : `${pastSessions} times at conferences around the world`}.`
     : 'This is a new workshop, and I have yet to present it.';

@@ -29,7 +29,7 @@ export default function BookSignings() {
   const pageTitle = 'Book Signings';
   const signings = LIVE_PRESENTATIONS.filter((x) => x.presentation.contentClass === 'book signing');
   const pastSignings = useCompletedSessions(signings).length;
-  const futureSessions = useNextSessions(signings) as typeof signings;
+  const futureSessions = useNextSessions(signings, true) as typeof signings;
   const upcomingEventsText = getEventsPerCountry(futureSessions, true);
   const upcomingText = futureSessions.length
     ? ` There ${futureSessions.length === 1 ? 'is' : 'are'} ${futureSessions.length} upcoming ` +
