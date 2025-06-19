@@ -630,6 +630,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     presentation: PRESENTATIONS.PRE_COMMIT_WORKSHOP,
     date: '2025-07-26',
   },
+  {
+    event: {
+      name: 'EuroSciPy',
+      location: LOCATIONS.KRAKOW,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
+    date: '2025-08-19',
+  },
 ];
 
 export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(
