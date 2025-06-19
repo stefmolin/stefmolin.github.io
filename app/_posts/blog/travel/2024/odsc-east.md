@@ -67,8 +67,8 @@ As far as food goes, the [bouillabaisse](https://familystylefood.com/julia-child
 Until next time Boston!
 
 
-<small class="leading-snug" id="footnotes">
-<hr class="w-1/2" />
+<small id="footnotes">
+<hr />
 
 1. We also mention that there is a limited number of books, and it doesn't seem deter people. <a href="#footnote-1">↩</a>
 2. While more and more people tell me they have read or are reading my book, I have yet to have someone bring their copy of the book to the event. Although, I guess I can't blame them for not wanting to lug that around &ndash; at [788 pages](/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/), it is heavy! <a href="#footnote-2">↩</a>

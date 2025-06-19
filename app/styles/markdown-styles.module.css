@@ -85,3 +85,11 @@
   /* the amount of margin to leave at the top with scrolling with anchor links */
   @apply scroll-mt-20;
 }
+
+/* Styling for the post footnotes section */
+.markdown small[id='footnotes'] {
+  @apply leading-snug;
+}
+.markdown small[id='footnotes'] > hr {
+  @apply w-1/2 !important;
+}

@@ -73,8 +73,8 @@ One of the first things that came out of that suitcase pocket was a rusty screw,
 
 While it was raining in the morning, my flight was on schedule, and I made it home without issue. Another successful [conference](/events/conferences/) in the books!
 
-<small class="leading-snug" id="footnotes">
-<hr class="w-1/2" />
+<small id="footnotes">
+<hr />
 
 1. Every last one of these items was the same color &ndash; many use egg yolks because the whites were used by the nuns in the old days for laundry and the realized they could mix the yolks with sugar to make a variety of different foods. <a href="#footnote-1">↩</a>
 2. During this time, Nicholas Tollervey asked me if I would be interested in getting my workshop set up with PyScript. This has been on my list since I was in the audience for original PyScript release announcement at PyCon US 2022, but I have never gotten around to this. Hopefully, we can make this happen soon. <a href="#footnote-2">↩</a>

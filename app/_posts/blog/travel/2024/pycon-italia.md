@@ -62,8 +62,8 @@ As it was a holiday weekend back home, I decided to visit a new city in Italy af
 
 Arrivederci Italia!
 
-<small class="leading-snug" id="footnotes">
-<hr class="w-1/2" />
+<small id="footnotes">
+<hr />
 
 1. Perhaps one of the biggest surprises was the popularity of the vegan food truck. <a href="#footnote-1">↩</a>
 2. As an Amazon Associate, I earn from qualifying purchases at no cost to you. <a href="#footnote-2">↩</a>

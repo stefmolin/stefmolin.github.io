@@ -26,8 +26,8 @@ As I'm embarking on this journey without deadlines, I don't know when I will pub
 
 Happy Easter! 🐣
 
-<small class="leading-snug" id="footnotes">
-<hr class="w-1/2" />
+<small id="footnotes">
+<hr />
 
 1. Subject to change. <a href="#footnote-1">↩</a>
 2. James Clear is the author of the bestselling book, *[Atomic Habits](https://amzn.to/3TZ2aBd)*, (paid link). His course *Small Habits that Make a Big Impact on Your Life* is available on [MasterClass](https://www.masterclass.com/classes/small-habits-that-make-a-big-impact-on-your-life). <a href="#footnote-2">↩</a>

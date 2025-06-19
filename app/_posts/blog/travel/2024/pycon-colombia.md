@@ -65,8 +65,8 @@ Source: [PyCon Colombia](https://twitter.com/pyconcolombia/status/17999146069297
 
 Overall, this was an incredibly well-organized event. All of the organizers and volunteers were extremely friendly and helpful. Bottled water was ready with each change of speaker. The venue, [EAFIT](https://www.eafit.edu.co/), was a beautiful campus filled with exotic greenery that made you forget you were in a city. The lunches gave me a taste of some local foods I didn't try on my previous trips to Colombia. Kudos to all involved!
 
-<small class="leading-snug" id="footnotes">
-<hr class="w-1/2" />
+<small id="footnotes">
+<hr />
 
 1. If you had put me on that stage a few years ago, I probably would have fainted from the terror. <a href="#footnote-1">↩</a>
 2. It wasn't [espresso](https://www.youtube.com/watch?v=eVli-tstM5E), but even drip coffee can be good if it is Colombian 😊. <a href="#footnote-2">↩</a>

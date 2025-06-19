@@ -106,8 +106,8 @@ Clockwise from top left: double-decker bus passing in front of Big Ben in the Ci
 The morning of my flight home was Remembrance Day, and while that made getting to the airport challenging, it was interesting to see in the streets. I was looking forward to getting home so I could finally rest and finish recovering from my cold.
 
 
-<small class="leading-snug" id="footnotes">
-<hr class="w-1/2" />
+<small id="footnotes">
+<hr />
 
 1. My first aid kit was also missing something I needed for my [PyCon Portugal trip](/blog/travel/2024/pycon-portugal/), so I made a note for the final trip of the year. <a href="#footnote-1">↩</a>
 2. Every location has slightly different menus (I've been to three so far); and all are delicious. I've even gone to two different locations on one day (unintentionally). <a href="#footnote-2">↩</a>

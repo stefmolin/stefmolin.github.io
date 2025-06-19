@@ -108,8 +108,8 @@ Prague's Old Town Square as seen from City Hall. Source: Stefanie Molin.
 
 Early the next morning I made my way back home, and I successfully completed my quest to not get food poisoning 🙌 &ndash; all three goals achieved!
 
-<small class="leading-snug" id="footnotes">
-<hr class="w-1/2" />
+<small id="footnotes">
+<hr />
 
 1. Since the food poisoning episode the night before a 3-hour workshop starting at 9 AM, I eat very light the night before a presentation to minimize the impact if it happens. I ended up doing this almost every day in Prague, as I found my stomach a little unsettled in general. <a href="#footnote-1">↩</a>
 2. I had to close a PR that someone put a lot of effort into because I didn't want to include that change. <a href="#footnote-2">↩</a>

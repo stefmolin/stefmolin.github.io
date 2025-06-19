@@ -100,8 +100,8 @@ No trip to Japan is complete without bringing back some sweets (emphasis on *som
 
 Now, for some much-deserved rest 😴
 
-<small class="leading-snug" id="footnotes">
-<hr class="w-1/2" />
+<small id="footnotes">
+<hr />
 
 1. The tuned mass damper applies physics to help the building withstand earthquakes. <a href="#footnote-1">↩</a>
 2. The food tour I had booked a few days before my flight was canceled while I was en route, but thankfully, I was able to find an alternative on such short notice. <a href="#footnote-2">↩</a>

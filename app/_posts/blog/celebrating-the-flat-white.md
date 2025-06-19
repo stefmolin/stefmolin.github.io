@@ -26,8 +26,8 @@ If you have never had a flat white and want to try it, make sure it is either on
 
 Have you ever tried a flat white? What is your coffee drink of choice?
 
-<small class="leading-snug" id="footnotes">
-<hr class="w-1/2" />
+<small id="footnotes">
+<hr />
 
 1. I prefer a straight shot of espresso in the afternoon. <a href="#footnote-1">↩</a>
 2. It's rare to find a coffee shop that serves a [espresso macchiato](https://en.wikipedia.org/wiki/Caff%C3%A8_macchiato) by default. <a href="#footnote-2">↩</a>

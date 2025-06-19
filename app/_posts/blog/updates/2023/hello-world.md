@@ -21,8 +21,8 @@ To this end, I am distinguishing [articles](/articles/) (educational content) fr
 
 Stay tuned.
 
-<small class="leading-snug" id="footnotes">
-<hr class="w-1/2" />
+<small id="footnotes">
+<hr />
 
 1. Yes, that was a [Britney](https://www.youtube.com/watch?v=u4FF6MpcsRw) reference. Or, was it an [Ashlee Simpson](https://www.youtube.com/watch?v=WJCsyLUCSXI) reference? 🤔 <a href="#footnote-1">↩</a>
 2. For obvious reasons, I won't be sharing anything too sensitive and will be anonymizing/changing details where appropriate. This blog will be "based on" my life. <a href="#footnote-2">↩</a>

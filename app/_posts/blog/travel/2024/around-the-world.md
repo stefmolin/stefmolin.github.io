@@ -190,8 +190,8 @@ After touching down in the US once more, I had completed my first circumnavigati
 
 This was probably my craziest itinerary to date, but I enjoyed it! Would I do this again? Absolutely, just give me some time to recover 😴
 
-<small class="leading-snug" id="footnotes">
-<hr class="w-1/2" />
+<small id="footnotes">
+<hr />
 
 1. Disclaimer: I have a free year of Timeshifter thanks to my United 1K status. <a href="#footnote-1">↩</a>
 2. I also taught a frequent business traveler about mattress pads &ndash; a travel hack I learned about years ago. Always read the fine print! <a href="#footnote-2">↩</a>
