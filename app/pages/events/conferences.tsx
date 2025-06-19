@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import { DateTime } from 'luxon';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,7 +11,10 @@ import Container from '../../components/sections/container';
 import CONTENT_LINKS from '../../data/content-links';
 import { LIVE_PRESENTATIONS } from '../../data/events';
 import { CONFERENCE_IMAGES } from '../../data/photo-gallery';
+import { getEventsPerCountry } from '../../lib/events';
+import { useCompletedSessions, useNextSessions } from '../../lib/hooks/date-filtered-sessions';
 import { getImageLink } from '../../lib/images';
+import { LivePresentation } from '../../interfaces/event';
 
 const relatedContent = [
   CONTENT_LINKS.WORKSHOPS,
@@ -30,9 +32,14 @@ export default function Conferences() {
   const presentations = LIVE_PRESENTATIONS.filter((x) =>
     ['keynote', 'talk', 'workshop'].includes(x.presentation.contentClass),
   );
-  const presentationsGivenAlready = presentations.filter(
-    ({ date }) => date < DateTime.now().toISODate(),
-  ).length;
+  const presentationsGivenAlready = useCompletedSessions(presentations).length;
+  const futureSessions = useNextSessions(presentations) as typeof presentations;
+  const upcomingEventsText = getEventsPerCountry(futureSessions, true);
+  // TODO: both the book-signings page and this have similar logic for the text -- can it be combined into the <EventPage> component?
+  const upcomingText = futureSessions.length
+    ? ` There ${futureSessions.length === 1 ? 'is' : 'are'} ${futureSessions.length} upcoming ` +
+      `session${futureSessions.length === 1 ? '' : 's'} currently scheduled: ${upcomingEventsText}.`
+    : '';
   return (
     <Layout>
       <Container>
@@ -58,8 +65,8 @@ export default function Conferences() {
           presentations={presentations}
           images={CONFERENCE_IMAGES}
           mapIntroText={`To date, I have presented ${presentationsGivenAlready} times at conferences
-          around the world. Click a location on the map for more information on previous and
-          upcoming presentations.`}
+          around the world.${upcomingText} Click a location on the map for more information on previous
+          and upcoming presentations.`}
           relatedContent={relatedContent}
           showStats
           statsProps={{ includeYearsActive: true }}

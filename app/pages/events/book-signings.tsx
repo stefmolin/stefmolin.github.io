@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
-import { DateTime } from 'luxon';
 import { type MysteryCardsProps } from '../../components/cards/mystery-cards';
 import anchorLink, { linkClassName } from '../../components/events/event-anchor-link';
 import EventPage from '../../components/events/event-page';
@@ -10,6 +9,8 @@ import Container from '../../components/sections/container';
 import CONTENT_LINKS from '../../data/content-links';
 import { LIVE_PRESENTATIONS } from '../../data/events';
 import { BOOK_SIGNING_IMAGES } from '../../data/photo-gallery';
+import { getEventsPerCountry } from '../../lib/events';
+import { useCompletedSessions, useNextSessions } from '../../lib/hooks/date-filtered-sessions';
 import { getImageLink } from '../../lib/images';
 
 const relatedContent = [
@@ -27,7 +28,13 @@ export default function BookSignings() {
   const seoImage = CONTENT_LINKS.BOOK_SIGNINGS.image;
   const pageTitle = 'Book Signings';
   const signings = LIVE_PRESENTATIONS.filter((x) => x.presentation.contentClass === 'book signing');
-  const pastSignings = signings.filter(({ date }) => date < DateTime.now().toISODate()).length;
+  const pastSignings = useCompletedSessions(signings).length;
+  const futureSessions = useNextSessions(signings) as typeof signings;
+  const upcomingEventsText = getEventsPerCountry(futureSessions, true);
+  const upcomingText = futureSessions.length
+    ? ` There ${futureSessions.length === 1 ? 'is' : 'are'} ${futureSessions.length} upcoming ` +
+      `book signing${futureSessions.length === 1 ? '' : 's'} currently scheduled: ${upcomingEventsText}.`
+    : '';
 
   const FUN_FACTS: MysteryCardsProps['cards'] = [
     <>
@@ -72,7 +79,8 @@ export default function BookSignings() {
           presentations={signings}
           images={BOOK_SIGNING_IMAGES}
           mapIntroText={`To date, I have done ${pastSignings} book signings at conferences around
-          the world. Click a location on the map for more information on previous and upcoming book signings.`}
+          the world.${upcomingText} Click a location on the map for more information on previous and
+          upcoming book signings.`}
           relatedContent={relatedContent}
           funFacts={FUN_FACTS}
           header={

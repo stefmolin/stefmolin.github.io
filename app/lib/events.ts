@@ -1,3 +1,4 @@
+import { DateTime } from 'luxon';
 import { LIVE_PRESENTATIONS } from '../data/events';
 import LOCATIONS from '../data/locations';
 import {
@@ -80,4 +81,30 @@ export function getConferenceCounts(liveSessions: LivePresentation[]): Record<st
     }),
     {},
   );
+}
+
+export function getEventsPerCountry(liveSessions: LivePresentation[], asString: true): string;
+export function getEventsPerCountry(
+  liveSessions: LivePresentation[],
+  asString: false,
+): Record<string, string[]>;
+export function getEventsPerCountry(
+  liveSessions: LivePresentation[],
+  asString: boolean,
+): Record<string, string[]> | string {
+  const counts: Record<string, string[]> = liveSessions.reduce((accum, { date, event }) => {
+    const eventLocation = event.virtual
+      ? 'virtual'
+      : event.location?.countryAlias || event.location?.country || 'TBA';
+    const info = `${event.name} on ${DateTime.fromISO(date).toLocaleString(DateTime.DATE_SHORT)}`;
+    return {
+      ...accum,
+      [eventLocation]: accum[eventLocation] ? [...accum[eventLocation], info] : [info],
+    };
+  }, {});
+  return asString
+    ? Object.entries(counts)
+        .map(([country, dates]) => `${country} (${dates.join(', ')})`)
+        .join(', ')
+    : counts;
 }
