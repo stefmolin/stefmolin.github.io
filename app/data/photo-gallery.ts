@@ -281,6 +281,24 @@ export const CONFERENCE_IMAGES: Photo[] = [
     height: 1334,
     alt: 'Presenting "Data Morph: A Cautionary Tale of Summary Statistics" at PyCon Estonia on September 6, 2024 in Tallinn.',
   },
+  {
+    src: '/assets/events/conferences/pycon-lt-2025-keynote-1.jpg',
+    width: 2048,
+    height: 1364,
+    alt: 'At PyCon Lithuania 2025, delivering my first keynote, "Build Your Own (Simple) Static Code Analyzer," on April 24, 2025 in Vilnius.',
+  },
+  {
+    src: '/assets/events/conferences/pycon-lt-2025-keynote-2.jpg',
+    width: 2048,
+    height: 1365,
+    alt: 'View of the audience at PyCon Lithuania 2025 during my first keynote, "Build Your Own (Simple) Static Code Analyzer," on April 24, 2025 in Vilnius.',
+  },
+  {
+    src: '/assets/events/conferences/odsc-speaker-impact-award.jpg',
+    width: 2200,
+    height: 1467,
+    alt: 'Receiving the ODSC Speaker Impact Award from Sheamus McGovern (the founder of ODSC) at ODSC East on May 13, 2025 in Boston.',
+  },
 ];
 
 export const BOOK_SIGNING_IMAGES: Photo[] = [

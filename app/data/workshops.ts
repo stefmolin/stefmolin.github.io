@@ -230,7 +230,7 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         She did not leave anyone behind, answered the basic questions from rookie programmers like
         me but also went deep into more complex areas.`,
         author: 'Mauricio',
-      },
+      }, // EuroPython 2024
       {
         text: `This has been the most useful workshop for me[...] It may be the most useful thing I
         learn at the conference. This is going to really help me with my project.`,
