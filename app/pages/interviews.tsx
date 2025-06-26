@@ -137,7 +137,7 @@ export default function Interviews() {
                                   >
                                     {title}
                                   </ResourceLink>
-                                  {seeAlso.length > 1 && index !== seeAlso.length - 1 ? ', ' : ''}
+                                  {seeAlso.length > 1 && index !== seeAlso.length - 1 ? ',' : ''}
                                 </>
                               );
                             })}

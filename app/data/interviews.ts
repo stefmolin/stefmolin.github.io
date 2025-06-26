@@ -12,8 +12,7 @@ const INTERVIEWS: Interview[] = [
   {
     title: 'PyCon Lithuania Special - Stefanie Molin',
     link: 'https://youtu.be/etV2lQxWqM0',
-    coverImage:
-      'https://media.licdn.com/dms/image/v2/D4D22AQEZnL40jwB2Qw/feedshare-shrink_800/B4DZaRgNM2GsAk-/0/1746197861998?e=1750896000&v=beta&t=D78le6iINWmJg1__Bp2sNXG51ZesJS7ZTItQw1Pb1ew',
+    coverImage: 'https://img.youtube.com/vi/etV2lQxWqM0/sddefault.jpg',
     format: 'podcast',
     host: 'Uncle Data',
     date: '2025-05-19',
