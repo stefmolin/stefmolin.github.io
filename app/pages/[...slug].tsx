@@ -202,20 +202,35 @@ export async function getStaticProps({ params }: Params) {
   let suggestedPosts = getAllPosts([...fields, 'excerpt'], post.type).filter(
     (x) => x.slug.join() != post.slug.join() && !x.preview,
   );
+
   if (suggestedPosts.length > 0) {
-    suggestedPosts.forEach((otherPost) => {
-      if (post.type === 'blog') {
-        // blog posts closer in time are are similar
-        const dateDiff = Math.abs(
-          DateTime.fromISO(post.date).diff(DateTime.fromISO(otherPost.date)).as('seconds'),
-        );
-        otherPost.similarity = dateDiff ? 1 / dateDiff : Infinity;
+    if (post.type === 'blog') {
+      const sortedSuggestions = suggestedPosts.sort((post1, post2) =>
+        post1.date > post2.date ? -1 : 1,
+      );
+      const before = sortedSuggestions.findLast((suggestion) => suggestion.date < post.date);
+      const after = sortedSuggestions.find((suggestion) => suggestion.date > post.date);
+      if (before && after) {
+        // if there is one before and one after show those as the most similar
+        before.similarity = Infinity;
+        after.similarity = Infinity;
       } else {
+        suggestedPosts.forEach((otherPost) => {
+          // blog posts closer in time are more similar
+          const dateDiff = Math.abs(
+            DateTime.fromISO(post.date).diff(DateTime.fromISO(otherPost.date)).as('seconds'),
+          );
+          otherPost.similarity = 1 / dateDiff;
+        });
+      }
+    } else {
+      // use tags for article similarity
+      suggestedPosts.forEach((otherPost) => {
         const tags: string[] = otherPost.tags;
         // use the Jaccard index for article similarity
         otherPost.similarity = intersection(tags, post.tags).length / union(tags, post.tags).length;
-      }
-    });
+      });
+    }
 
     suggestedPosts = suggestedPosts
       .sort((post1, post2) =>
@@ -226,10 +241,7 @@ export async function getStaticProps({ params }: Params) {
 
   return {
     props: {
-      post: {
-        ...post,
-        content,
-      },
+      post: { ...post, content },
       suggestedPosts,
     },
   };
