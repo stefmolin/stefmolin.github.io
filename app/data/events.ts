@@ -552,7 +552,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     event: {
       ...SAME_LOCATION_EVENTS['PyCon Lithuania'],
       virtual: false,
-      link: undefined,
+      link: '/blog/travel/2025/baltics/',
     },
     presentation: PRESENTATIONS.AST_KEYNOTE,
     date: '2025-04-24',
