@@ -184,5 +184,11 @@ const LOCATIONS: Record<string, MapLocation> = {
     country: 'Lithuania',
     countryCode: 'LT',
   },
+  BENGALURU: {
+    coordinates: [77.594566, 12.971599],
+    city: 'Bengaluru',
+    country: 'India',
+    countryCode: 'IN',
+  },
 };
 export default LOCATIONS;

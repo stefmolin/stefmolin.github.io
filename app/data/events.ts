@@ -641,6 +641,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2025-08-19',
   },
+  {
+    event: {
+      name: 'PyCon India',
+      location: LOCATIONS.BENGALURU,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.DATA_MORPH,
+    date: '2025-09-14',
+  },
 ];
 
 export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(
