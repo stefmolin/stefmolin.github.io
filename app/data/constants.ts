@@ -21,7 +21,8 @@ export const COPYRIGHT_STATEMENT = 'Copyright 2019-YEAR, Stefanie Molin';
 export const GITHUB_PROFILE = 'https://github.com/stefmolin';
 export const GITHUB_API = 'https://api.github.com/repos/stefmolin/';
 export const LINKEDIN_PROFILE = 'https://linkedin.com/in/stefanie-molin';
-export const BLUESKY_PROFILE = 'https://bsky.app/profile/stefaniemolin.com';
+export const BLUESKY_HANDLE = '@stefaniemolin.com';
+export const BLUESKY_PROFILE = `https://bsky.app/profile/${BLUESKY_HANDLE.replace('@', '')}`;
 
 export const FLAGS = {
   Australia: '🇦🇺',

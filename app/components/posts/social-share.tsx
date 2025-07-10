@@ -1,4 +1,6 @@
 import {
+  BlueskyIcon,
+  BlueskyShareButton,
   EmailIcon,
   EmailShareButton,
   FacebookIcon,
@@ -9,12 +11,12 @@ import {
   PinterestShareButton,
   RedditIcon,
   RedditShareButton,
-  TwitterIcon,
   TwitterShareButton,
   WhatsappIcon,
   WhatsappShareButton,
+  XIcon,
 } from 'react-share';
-import { HOME_URL, TWITTER_HANDLE } from '../../data/constants';
+import { BLUESKY_HANDLE, HOME_URL, TWITTER_HANDLE } from '../../data/constants';
 
 type Props = {
   iconSize?: number;
@@ -78,13 +80,21 @@ const SocialShareButtons = ({
         </RedditShareButton>
       </div>
       <div className={buttonStyle}>
+        <BlueskyShareButton
+          url={encodedURL}
+          title={`${postTitle} by ${BLUESKY_HANDLE} #${cleanedHashtags.join(' #')}`}
+        >
+          <BlueskyIcon {...iconProps} />
+        </BlueskyShareButton>
+      </div>
+      <div className={buttonStyle}>
         <TwitterShareButton
           url={encodedURL}
           title={`${postTitle} by ${TWITTER_HANDLE}`}
           hashtags={cleanedHashtags}
           related={[TWITTER_HANDLE]}
         >
-          <TwitterIcon {...iconProps} />
+          <XIcon {...iconProps} />
         </TwitterShareButton>
       </div>
       <div className={buttonStyle}>
