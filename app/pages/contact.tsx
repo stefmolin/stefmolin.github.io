@@ -26,7 +26,11 @@ export default function ContactMe() {
         <div className="-mt-8 sm:mt-4 max-w-3xl mx-auto p-10 bg-white rounded-lg shadow-lg">
           <div className="flex flex-col items-center mb-2 space-y-4">
             <h1 className="text-3xl sm:text-4xl">{pageTitle}</h1>
-            <img src={HEADSHOT} className="h-40 w-40 sm:h-48 sm:w-48 rounded-full" />
+            <img
+              src={HEADSHOT}
+              alt="Picture of Stefanie Molin."
+              className="h-40 w-40 sm:h-48 sm:w-48 rounded-full"
+            />
           </div>
 
           <div className="sm:text-lg md:text-xl py-2">
