@@ -627,6 +627,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       virtual: false,
       link: undefined,
     },
+    presentation: PRESENTATIONS.DATA_MORPH,
+    date: '2025-07-25',
+  },
+  {
+    event: {
+      name: 'PyCon Portugal',
+      location: LOCATIONS.CASCAIS,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
     presentation: PRESENTATIONS.PRE_COMMIT_WORKSHOP,
     date: '2025-07-26',
   },
@@ -639,7 +650,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       link: undefined,
     },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
-    date: '2025-08-19',
+    date: '2025-08-18',
   },
   {
     event: {
