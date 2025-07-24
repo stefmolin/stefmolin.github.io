@@ -21,5 +21,9 @@ updates:
     ignore: # only update minor or major version changes
       - dependency-name: "*"
         update-types: ["version-update:semver-patch"]
+    groups:
+      fontawesome:
+        patterns:
+          - "@fortawesome*"
     # Increase the minimum version for all npm dependencies (instead of expanding the range)
     versioning-strategy: increase
