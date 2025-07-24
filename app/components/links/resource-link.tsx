@@ -1,10 +1,11 @@
 import Link, { type LinkProps } from 'next/link';
-import ExternalLink from './external-link';
+import ExternalLink, { type ExternalLinkProps } from './external-link';
 
-export interface ResourceLinkProps {
-  children: React.ReactNode;
-  className?: string;
+export interface ResourceLinkProps extends Omit<ExternalLinkProps, 'href'> {
+  /** Whether this link is internal or external */
   linkClass: 'internal' | 'external';
+
+  /** The URL or information that can be used to construct it */
   resourceLink: string | { contentClass: string; slug: string };
 }
 
@@ -13,6 +14,8 @@ export default function ResourceLink({
   className,
   linkClass,
   resourceLink,
+  ariaLabel,
+  addTitle = false,
 }: ResourceLinkProps) {
   if (
     typeof resourceLink !== 'string' &&
@@ -20,7 +23,12 @@ export default function ResourceLink({
     !resourceLink.slug.startsWith('/coming-soon')
   ) {
     return (
-      <ExternalLink className={className} href={resourceLink.slug}>
+      <ExternalLink
+        className={className}
+        href={resourceLink.slug}
+        ariaLabel={ariaLabel}
+        addTitle={addTitle}
+      >
         {children}
       </ExternalLink>
     );
@@ -55,13 +63,20 @@ export default function ResourceLink({
         className={className}
         href={href}
         rel={href === '/privacy-policy' ? 'privacy-policy' : undefined}
+        aria-label={ariaLabel}
+        title={addTitle ? ariaLabel : undefined}
       >
         {children}
       </Link>
     );
   }
   return (
-    <ExternalLink className={className} href={resourceLink}>
+    <ExternalLink
+      className={className}
+      href={resourceLink}
+      ariaLabel={ariaLabel}
+      addTitle={addTitle}
+    >
       {children}
     </ExternalLink>
   );
