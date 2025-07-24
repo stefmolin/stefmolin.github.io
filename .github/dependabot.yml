@@ -24,6 +24,10 @@ updates:
     groups:
       fontawesome:
         patterns:
-          - "@fortawesome*"
+          - "@fortawesome/*"
+      material-ui:
+        patterns:
+          - "@emotion/*"
+          - "@mui/*"
     # Increase the minimum version for all npm dependencies (instead of expanding the range)
     versioning-strategy: increase
