@@ -264,6 +264,12 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         author: 'PyCon US 2025 attendee',
       },
       {
+        text: `I feel I really learned something valuable. It's an easy-to-follow, step-by-step
+        tutorial where I never felt overwhelmed by the sheer amount information I got on the topic!
+        Thank you very much for what you've taught me today!`,
+        author: 'PyCon PT 2025 attendee',
+      },
+      {
         text: `New concept for me and I found it useful. I liked the way [Stefanie was] helping us
         to keep up with [her] and run the codes`,
         author: 'Bobby',
@@ -284,6 +290,10 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         text: 'Amazing teacher!',
         author: 'Phebe',
       }, // PyCon US 2025
+      {
+        text: 'Amazing everything! This workshop was [my] favorite thing from the entire event ✨',
+        author: 'Juan',
+      }, // PyCon PT 2025
     ],
     relatedContent: [
       CONTENT_LINKS.PRE_COMMIT_ARTICLES,
