@@ -29,5 +29,16 @@ updates:
         patterns:
           - "@emotion/*"
           - "@mui/*"
+      next:
+        patterns:
+          - "@next/*"
+          - "next"
+      photo-gallery:
+        patterns:
+          - "react-photo-album"
+          - "yet-another-react-lightbox"
+      remark:
+        patterns:
+          - "remark*"
     # Increase the minimum version for all npm dependencies (instead of expanding the range)
     versioning-strategy: increase
