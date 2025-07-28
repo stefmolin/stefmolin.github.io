@@ -47,7 +47,7 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
     },
     reviews: [
       {
-        text: dedent`I had the pleasure of attending this workshop at PyCon Portugal, and it was an
+        text: `I had the pleasure of attending this workshop at PyCon Portugal, and it was an
         excellent presentation! The hands-on approach and clear explanations made it easy to follow,
         even for those new to data analysis. Highly recommended to anyone looking to get started
         with Pandas! 👏`,
