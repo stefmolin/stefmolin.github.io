@@ -10,8 +10,8 @@ export default function MarkdownSection({
   className?: string;
 }) {
   return (
-    <Markdown className={className ?? markdownStyles['markdown']} remarkPlugins={[remarkGfm]}>
-      {children}
-    </Markdown>
+    <div className={className ?? markdownStyles['markdown']}>
+      <Markdown remarkPlugins={[remarkGfm]}>{children}</Markdown>
+    </div>
   );
 }
