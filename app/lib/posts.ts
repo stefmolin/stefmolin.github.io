@@ -166,6 +166,7 @@ export const generateRssFeed = async (
     author: {
       name: 'Stefanie Molin',
       link: HOME_URL,
+      avatar: HOME_OG_IMAGE.src,
     },
     feedLinks: {
       atom: `${HOME_URL}/feeds/${feedType}-atom.xml`,

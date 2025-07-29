@@ -21,7 +21,7 @@
     "@next/third-parties": "^14.2.10",
     "classnames": "^2.5.1",
     "dedent": "^1.6.0",
-    "feed": "^4.2.2",
+    "feed": "^5.1.0",
     "gray-matter": "^4.0.3",
     "hamburger-react": "^2.5.1",
     "lodash": "^4.17.21",
