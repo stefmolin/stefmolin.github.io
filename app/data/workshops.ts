@@ -64,7 +64,7 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         author: 'PyCon Poland 2024 attendee',
       }, // PyCon PL 2024
       {
-        text: `In the first tutorial days of #EuroSciPy2023, @StefanieMolin
+        text: `In the first tutorial days of #EuroSciPy2023, [@StefanieMolin](https://x.com/StefanieMolin)
         gave an outstanding introduction to data analysis using pandas.`,
         author: 'EuroSciPy (@EuroSciPy)',
         source: 'https://x.com/EuroSciPy/status/1691349804595523584?s=20',
