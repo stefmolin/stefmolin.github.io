@@ -592,7 +592,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       location: LOCATIONS.BOLOGNA,
       eventClass: 'conference',
       virtual: false,
-      link: undefined,
+      link: '/blog/travel/2025/pycon-italia/',
     },
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2025-05-30',
