@@ -561,7 +561,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     event: {
       ...SAME_LOCATION_EVENTS['ODSC East'],
       virtual: false,
-      link: undefined,
+      link: '/blog/travel/2025/boston-pittsburgh/',
     },
     presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
     date: '2025-05-13',
@@ -570,7 +570,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     event: {
       ...SAME_LOCATION_EVENTS['ODSC East'],
       virtual: false,
-      link: undefined,
+      link: '/blog/travel/2025/boston-pittsburgh/',
     },
     presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
     date: '2025-05-13',
@@ -581,7 +581,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       location: LOCATIONS.PITTSBURGH,
       virtual: false,
       eventClass: 'conference',
-      link: undefined,
+      link: '/blog/travel/2025/boston-pittsburgh/',
     },
     presentation: PRESENTATIONS.PRE_COMMIT_WORKSHOP,
     date: '2025-05-15',
