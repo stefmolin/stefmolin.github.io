@@ -145,24 +145,32 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
     },
     reviews: [
       {
-        text: `@PyConPT was lovely: thanks to all. My highlight? @StefanieMolin's workshop on data
-        viz: it unlocked my understanding of Matplotlib's fundamentals. If you have the chance,
-        don't miss it!`,
+        text: `[@PyConPT](https://x.com/PyConPT) was lovely: thanks to all. My highlight?
+        [@StefanieMolin](https://x.com/StefanieMolin)'s workshop on data viz: it unlocked my
+        understanding of Matplotlib's fundamentals. If you have the chance, don't miss it!`,
         author: 'Tiago Montes (@setnomt)',
         source: 'https://x.com/setnomt/status/1700797943245078673?s=20',
       }, // PyCon PT 2023
       {
         text: `Learning a lot about data visualization beyond the basics at #odsc. Thx to
-        @StefanieMolin for this great workshop and the awesome examples.`,
+        [@StefanieMolin](https://x.com/StefanieMolin) for this great workshop and the awesome examples.`,
         author: 'mobileLarson (@mobileLarson)',
         source: 'https://x.com/mobileLarson/status/1537052051259146241?s=20',
       }, // ODSC Europe 2022
       {
-        text: `[H]uge thanks to @StefanieMolin for the great workshop on #dataviz w/ #pandas, #matplotlib,
-        #pyplot and #holoviz and for the very kind gift 😍 to better code!`,
+        text: `[H]uge thanks to [@StefanieMolin](https://x.com/StefanieMolin) for the great workshop
+        on #dataviz w/ #pandas, #matplotlib, #pyplot and #holoviz and for the very kind gift 😍 to
+        better code!`,
         author: 'Sho (@shoyip)',
         source: 'https://x.com/shoyip/status/1534060759516385281?s=20',
       }, // PyCon IT 2022
+      {
+        text: `Great tutorial on matplotlib today by
+        [@stefaniemolin.com](https://bsky.app/profile/did:plc:3yg2ptrzdcvj7gvnz53f7zyf) at
+        [@euroscipy.bsky.social](https://bsky.app/profile/did:plc:rh7wc5osipikrzthvwwynoyn) 2025.`,
+        author: 'Gert-Ludwig Ingold (@glingold.bsky.social)',
+        source: 'https://bsky.app/profile/glingold.bsky.social/post/3lwowrcsjr223',
+      }, // EuroSciPy 2025
       {
         text: 'Thanks again for the comprehensive material and input/examples to explore!',
         author: 'PyCon IT 2023 attendee',
@@ -175,6 +183,10 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         text: `I liked how you used [functional programming] to create a partial function that
         updates a graph for every frame. [...] Thanks for making your slides open.`,
         author: 'PyCon Colombia 2024 attendee',
+      },
+      {
+        text: `I've made contributions to matplotlib in the past, and I learned some things.`,
+        author: 'EuroSciPy 2025 attendee',
       },
     ],
     relatedContent: [
