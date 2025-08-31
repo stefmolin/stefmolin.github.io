@@ -24,7 +24,7 @@ export default function ContactMe() {
       />
       <Container className="px-4 sm:px-10">
         <div className="-mt-8 sm:mt-4 max-w-3xl mx-auto p-10 bg-white rounded-lg shadow-lg">
-          <div className="flex flex-col items-center mb-2 space-y-4">
+          <div className="flex flex-col items-center mb-2 gap-y-4">
             <h1 className="text-3xl sm:text-4xl">{pageTitle}</h1>
             <img
               src={HEADSHOT}

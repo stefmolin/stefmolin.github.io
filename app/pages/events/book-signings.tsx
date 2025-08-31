@@ -87,7 +87,7 @@ export default function BookSignings() {
             <div className="flex flex-col items-center mt-10 md:mt-0">
               <img
                 src="/assets/events/book-signings/first-book-signing.png"
-                className="hidden md:block w-48 h-48 rounded-full mx-auto -mb-24 z-10 object-cover"
+                className="hidden md:block w-48 h-48 rounded-full mx-auto mt-5 -mb-24 z-10 object-cover"
                 alt="Signing a book at my first book signing event."
               />
               <div className="sm:text-lg border-2 border-slate-100 rounded-lg px-4 lg:w-2/3 bg-slate-50 shadow-lg">

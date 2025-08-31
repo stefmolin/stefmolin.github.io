@@ -1,3 +1,5 @@
+@reference "./global.css";
+
 .tooltip-message a {
   @apply underline;
 }

@@ -31,7 +31,7 @@ export default function MysteryCards({ cards, color }: MysteryCardsProps) {
       <div
         className={classNames(
           'group flex items-center justify-center',
-          'shadow-sm hover:shadow-lg transition-shadow duration-200',
+          'shadow-xs hover:shadow-lg transition-shadow-sm duration-200',
           'w-60 h-60 md:w-72 md:h-72 rounded-lg mx-2',
           Array.isArray(color) ? color[index] : color,
         )}

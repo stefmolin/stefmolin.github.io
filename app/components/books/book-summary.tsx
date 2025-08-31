@@ -19,7 +19,7 @@ const BookSummarySection = ({ book }: BookSummaryProps) => {
       <div
         className={classNames(
           { 'float-left mr-5': !xsScreen },
-          'flex flex-col justify-center space-y-2 w-40 sm:w-48 md:w-64',
+          'flex flex-col justify-center gap-y-2 w-40 sm:w-48 md:w-64',
         )}
       >
         <BookCover book={book} />

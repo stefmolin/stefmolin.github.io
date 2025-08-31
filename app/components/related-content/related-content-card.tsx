@@ -14,7 +14,7 @@ export default function RelatedContentCard({ relatedContent }: RelatedContentCar
         className="text-slate-500 hover:text-slate-800 cursor-pointer"
         linkClass="internal"
       >
-        <div className="flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-200 w-48 h-48 items-center">
+        <div className="flex flex-col shadow-xs hover:shadow-lg transition-shadow-sm duration-200 w-48 h-48 items-center">
           <div className="flex items-center">
             <img
               src={image.src}

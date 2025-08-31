@@ -38,7 +38,7 @@ export default function StatsGrid({
     if (value == null || value === 0) return null;
     const stat = (
       <>
-        <h3 className="text-6xl sm:text-7xl text-center px-2 -my-4">{value}</h3>
+        <h3 className="text-6xl sm:text-7xl text-center px-2">{value}</h3>
         <h3 className="text-sm sm:text-base md:text-lg text-center px-2">{title}</h3>
       </>
     );
@@ -47,7 +47,7 @@ export default function StatsGrid({
         <div
           className={classNames(
             'flex flex-col justify-center items-center',
-            'shadow-sm hover:shadow-lg transition-shadow duration-200',
+            'shadow-xs hover:shadow-lg transition-shadow-sm duration-200',
             'w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-2 sm:mx-4',
           )}
         >

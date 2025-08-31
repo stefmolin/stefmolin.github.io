@@ -19,7 +19,7 @@ const PostHeader = ({
     <div className="lg:max-w-5xl mx-auto">
       <div className="space-y-4 md:space-y-6">
         <PostTitle title={`${title}${preview ? ' [Preview]' : ''}`} subtitle={subtitle} />
-        <div className="flex flex-col md:flex-row md:space-x-3 md:items-center justify-start">
+        <div className="flex flex-col md:flex-row md:gap-x-3 md:items-center justify-start">
           <PostPublicationDate date={date} relative />
           <TimeToRead duration={duration} />
           <MentionStats className="" />

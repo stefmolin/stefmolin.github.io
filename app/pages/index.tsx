@@ -123,7 +123,7 @@ export default function Home({
   const subsectionHeaderClassName = 'text-2xl sm:text-3xl md:text-5xl';
   const inviteMeToSpeakCTA = (
     <Announcement>
-      <div className="flex flex-col items-center justify-between space-y-4 pb-2 lg:pb-0">
+      <div className="flex flex-col items-center justify-between gap-y-4 pb-2 lg:pb-0">
         <h3 className="text-lg text-center sm:text-xl font-bold mt-2">
           Invite me to speak at your event
         </h3>
@@ -175,7 +175,7 @@ export default function Home({
         <div className="-mt-6 mb-20 max-w-5xl mx-auto">
           <EvenlySpacedSections className="my-10">
             <div className="text-center">
-              <h1 className="text-6xl sm:text-7xl mb-2">
+              <h1 className="text-6xl sm:text-7xl mb-5">
                 <Link className="hover:underline" href="/about">
                   Stefanie Molin
                 </Link>
@@ -232,9 +232,9 @@ export default function Home({
                           key={`${session.date}-${session.presentation.title}`}
                           className={classNames(
                             'h-auto lg:h-48 max-w-96',
-                            'flex flex-col items-center justify-between space-y-4',
+                            'flex flex-col items-center justify-between gap-y-4',
                             'bg-white border-2 border-slate-700',
-                            'shadow-sm rounded-lg',
+                            'shadow-xs rounded-lg',
                             'p-4 my-4 sm:m-4',
                           )}
                         >
@@ -252,7 +252,7 @@ export default function Home({
                             </h2>
                           </ResourceLink>
                           <div className="text-lg sm:text-xl text-center">
-                            <div className="flex flex-col sm:flex-row items-center justify-center space-x-1">
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-x-1">
                               <div>
                                 <FontAwesomeIcon
                                   className="pr-1"
@@ -267,7 +267,7 @@ export default function Home({
                             </div>
                           </div>
                           <div className="flex flex-col-reverse sm:flex-row md:flex-col-reverse lg:flex-row items-center justify-between w-full">
-                            <div className="flex flex-col sm:flex-row items-center justify-center space-x-1 text-center">
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-x-1 text-center">
                               <div>
                                 <span className="pr-1">
                                   {session.presentation.contentClass === 'podcast'

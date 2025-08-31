@@ -1,7 +1,6 @@
 import { faGithub, faPython } from '@fortawesome/free-brands-svg-icons';
 import { faComment } from '@fortawesome/free-regular-svg-icons';
 import {
-  faAward,
   faBook,
   faCoffee,
   faEnvelope,
@@ -47,7 +46,7 @@ const LinkSection = ({ links, title }: LinkSectionProps) => (
             'flex flex-col sm:flex-row w-full',
             'items-center justify-center sm:justify-start',
             'text-center sm:text-left',
-            'space-x-2',
+            'gap-x-2',
           )}
         >
           {link}

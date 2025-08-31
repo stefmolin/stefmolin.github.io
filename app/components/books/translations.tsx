@@ -22,11 +22,11 @@ const BookTranslationsSection = ({
       <div
         className={
           translationsClassName ??
-          'flex flex-row w-full items-center justify-evenly sm:justify-start sm:space-x-10 sm:pl-6 text-sm sm:text-base'
+          'flex flex-row w-full items-center justify-evenly sm:justify-start sm:gap-x-10 sm:pl-6 text-sm sm:text-base'
         }
       >
         {book.translations.map((translation) => (
-          <div key={translation.language} className="flex flex-col items-center space-y-1">
+          <div key={translation.language} className="flex flex-col items-center gap-y-1">
             <h3 className="text-lg text-left">{translation.language}</h3>
             <BookCover book={book} translation={translation} className="w-28 sm:w-40" />
             <BookPublicationDate

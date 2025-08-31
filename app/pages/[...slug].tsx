@@ -109,7 +109,7 @@ export default function Post({ post, suggestedPosts }: Props) {
                 <PostTags tags={post.tags} />
                 <div
                   className={classNames(
-                    'flex flex-row items-center justify-center space-x-2',
+                    'flex flex-row items-center justify-center gap-x-2',
                     'text-xl sm:text-3xl md:text-4xl',
                     'mt-5',
                     'opacity-10',
@@ -152,7 +152,7 @@ export default function Post({ post, suggestedPosts }: Props) {
                   loading="lazy"
                   term={post.title} // forces a re-render so the comments are correct
                 />
-                <div className="absolute flex space-x-2 justify-center content-center z-40 sticky bottom-0 bg-white pt-4 pb-2 lg:hidden -mx-px">
+                <div className="absolute flex gap-x-2 justify-center content-center z-40 sticky bottom-0 bg-white pt-4 pb-2 lg:hidden -mx-px">
                   <SocialShareButtons
                     {...socialButtonsProps}
                     iconSize={width == null || width < 350 ? 25 : 30}
