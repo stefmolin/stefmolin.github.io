@@ -18,7 +18,7 @@ export default function PreviewCard({
   return (
     <div
       id={id.replaceAll(':', '').replaceAll(' ', '-').toLowerCase()}
-      className="shadow-xs hover:shadow-lg transition-shadow-sm duration-200 p-6 lg:p-8 flex flex-col m-5"
+      className="shadow-xs hover:shadow-lg transition-shadow duration-200 p-6 lg:p-8 flex flex-col m-5"
     >
       <div className="flex flex-col justify-evenly gap-y-5">
         <div className="flex flex-col items-start">{header}</div>

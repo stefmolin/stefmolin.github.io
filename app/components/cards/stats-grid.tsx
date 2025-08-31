@@ -47,7 +47,7 @@ export default function StatsGrid({
         <div
           className={classNames(
             'flex flex-col justify-center items-center',
-            'shadow-xs hover:shadow-lg transition-shadow-sm duration-200',
+            'shadow-xs hover:shadow-lg transition-shadow duration-200',
             'w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-2 sm:mx-4',
           )}
         >
