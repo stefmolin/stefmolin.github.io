@@ -1,3 +1,4 @@
+import { DateTime } from 'luxon';
 import Link from 'next/link';
 import type PostType from '../../interfaces/post';
 import DateFormatter from '../datetime/date-formatter';
@@ -6,7 +7,17 @@ import MarkdownSection from '../sections/markdown-section';
 import CoverImage from './cover-image';
 import PostTags from './post-tags';
 
-const PostPreview = ({ title, ogImage, excerpt, slug, duration, date, tags }: PostType) => {
+const PostPreview = ({
+  title,
+  ogImage,
+  excerpt,
+  slug,
+  duration,
+  date,
+  modified,
+  tags,
+  type,
+}: PostType) => {
   const postTitle = (
     <h3 className="text-2xl md:text-3xl mb-3 leading-snug w-full text-center sm:text-left">
       <Link
@@ -33,8 +44,6 @@ const PostPreview = ({ title, ogImage, excerpt, slug, duration, date, tags }: Po
     </div>
   );
 
-  const linkedTags = <PostTags tags={tags} className="flex flex-row text-sm md:text-base" />;
-
   return (
     <div className="shadow-sm hover:shadow-lg transition-shadow duration-200 p-6 flex flex-col my-5 sm:m-5">
       <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-5">
@@ -47,7 +56,23 @@ const PostPreview = ({ title, ogImage, excerpt, slug, duration, date, tags }: Po
           <MarkdownSection className="md:text-lg leading-relaxed mb-4 line-clamp-5">
             {excerpt}
           </MarkdownSection>
-          {linkedTags}
+          {type === 'blog' ? (
+            <small>
+              <div className="flex flex-col items-center sm:flex-row">
+                <DateFormatter dateString={date}>Published </DateFormatter>
+                {modified &&
+                  DateTime.fromISO(modified).toLocal().startOf('day') >
+                    DateTime.fromISO(date).toLocal().startOf('day') && (
+                    <span>
+                      <span className="hidden sm:inline sm:px-1">·</span>
+                      <DateFormatter dateString={modified}>Last modified </DateFormatter>
+                    </span>
+                  )}
+              </div>
+            </small>
+          ) : (
+            <PostTags tags={tags} className="flex flex-row text-sm md:text-base" />
+          )}
         </div>
       </div>
     </div>

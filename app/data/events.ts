@@ -647,7 +647,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       location: LOCATIONS.KRAKOW,
       eventClass: 'conference',
       virtual: false,
-      link: undefined,
+      link: '/blog/travel/2025/euroscipy/',
     },
     presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
     date: '2025-08-18',

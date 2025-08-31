@@ -13,6 +13,7 @@ export const getPostThemeProps = async ({ params }: Params) => {
     'title',
     'subtitle',
     'date',
+    'modified',
     'slug',
     'duration',
     'ogImage',

@@ -121,6 +121,7 @@ export const getFeed = (postType: string, feedTitle: string, feedDescription: st
       'title',
       'subtitle',
       'date',
+      'modified',
       'slug',
       'author',
       'ogImage',
@@ -128,6 +129,7 @@ export const getFeed = (postType: string, feedTitle: string, feedDescription: st
       'tags',
       'duration',
       'preview',
+      'type',
     ],
     postType,
   ).filter((post) => !post.preview);
