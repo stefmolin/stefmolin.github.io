@@ -140,98 +140,92 @@ export default function AboutMe() {
               </p>
             </div>
 
-            <div className="space-y-5 mt-5">
-              <div className="space-y-10">
-                <AboutMeSection icon="travel" flip>
+            <div className="flex flex-col gap-y-10 mt-10">
+              <AboutMeSection icon="travel" flip>
+                <p>
+                  I am an <b>avid traveler</b> based in the <b>New York City</b> metropolitan area.
+                  I prefer to travel internationally to explore the world, and I have traveled to 48
+                  countries so far. My most recent trip was to <b>Portugal</b>. I speak{' '}
+                  <b>English</b> and <b>Spanish</b> fluently, with some <b>survival French</b>. I
+                  would like to learn <b>Italian</b>.
+                </p>
+              </AboutMeSection>
+              <AboutMeSection icon="food">
+                <p>
+                  I <span className="line-through">like</span> love a good <b>espresso</b>{' '}
+                  (particularly, black, in a{' '}
+                  {internalLink(
+                    { contentClass: 'blog', slug: '/blog/celebrating-the-flat-white/' },
+                    'flat white',
+                    'font-normal',
+                  )}
+                  , or in an espresso martini). My{' '}
+                  {externalLink(
+                    AMAZON_LINKS.NESPRESSO_MACHINE,
+                    'Nespresso machine',
+                    'underline text-slate-500 hover:text-black font-normal',
+                  )}{' '}
+                  is a workhorse. I have a <b>wine</b> collection (with a huge class imbalance
+                  favoring red). And as far as chocolate goes, I firmly believe that{' '}
+                  <b>dark chocolate</b> is far superior to milk and white. I've never been a fan of
+                  donuts or cared too much for bagels, and I can't stand the smell of bacon.
+                </p>
+              </AboutMeSection>
+              <AboutMeSection icon="leisure" flip>
+                <p>
+                  I enjoy <b>listening to a variety of musical genres</b> (in no particular order:
+                  disco, rock, 80s music, jazz, 90s/00s pop, classical, reggaeton, salsa), depending
+                  on my mood. I also enjoy <b>reading fiction</b> (it's another form of travel for
+                  me) &ndash; although, I don't have as much time for it as I would like.
+                </p>
+              </AboutMeSection>
+              <AboutMeSection icon="education">
+                <>
                   <p>
-                    I am an <b>avid traveler</b> based in the <b>New York City</b> metropolitan
-                    area. I prefer to travel internationally to explore the world, and I have
-                    traveled to 48 countries so far. My most recent trip was to <b>Portugal</b>. I
-                    speak <b>English</b> and <b>Spanish</b> fluently, with some{' '}
-                    <b>survival French</b>. I would like to learn <b>Italian</b>.
+                    I completed my undergraduate degree at <b>Columbia University</b> (
+                    <b>Bachelor's of Science in Operations Research</b>). After graduation, I joined
+                    the workforce, but I still hadn't found my passion. Data science and computer
+                    science began to interest me more and more &ndash; particularly their
+                    intersection. Concurrently, I completed my <b>MBA</b> with{' '}
+                    <b>Quantic School of Business</b>.
                   </p>
-                </AboutMeSection>
-                <AboutMeSection icon="food">
                   <p>
-                    I <span className="line-through">like</span> love a good <b>espresso</b>{' '}
-                    (particularly, black, in a{' '}
-                    {internalLink(
-                      { contentClass: 'blog', slug: '/blog/celebrating-the-flat-white/' },
-                      'flat white',
-                      'font-normal',
-                    )}
-                    , or in an espresso martini). My{' '}
-                    {externalLink(
-                      AMAZON_LINKS.NESPRESSO_MACHINE,
-                      'Nespresso machine',
-                      'underline text-slate-500 hover:text-black font-normal',
-                    )}{' '}
-                    is a workhorse. I have a <b>wine</b> collection (with a huge class imbalance
-                    favoring red). And as far as chocolate goes, I firmly believe that{' '}
-                    <b>dark chocolate</b> is far superior to milk and white. I've never been a fan
-                    of donuts or cared too much for bagels, and I can't stand the smell of bacon.
+                    Later on, I was recruited for a role as a software engineer with a heavy data
+                    focus. While in this role, I earned my{' '}
+                    <b>Master's of Science in Computer Science</b> from <b>Georgia Tech</b>.
                   </p>
-                </AboutMeSection>
-                <AboutMeSection icon="leisure" flip>
                   <p>
-                    I enjoy <b>listening to a variety of musical genres</b> (in no particular order:
-                    disco, rock, 80s music, jazz, 90s/00s pop, classical, reggaeton, salsa),
-                    depending on my mood. I also enjoy <b>reading fiction</b> (it's another form of
-                    travel for me) &ndash; although, I don't have as much time for it as I would
-                    like.
+                    I currently work as a <b>full-stack software engineer</b> and couldn't be
+                    happier &ndash; I have found my passion.
                   </p>
-                </AboutMeSection>
-                <AboutMeSection icon="education">
-                  <>
-                    <p>
-                      I completed my undergraduate degree at <b>Columbia University</b> (
-                      <b>Bachelor's of Science in Operations Research</b>). After graduation, I
-                      joined the workforce, but I still hadn't found my passion. Data science and
-                      computer science began to interest me more and more &ndash; particularly their
-                      intersection. Concurrently, I completed my <b>MBA</b> with{' '}
-                      <b>Quantic School of Business</b>.
-                    </p>
-                    <p>
-                      Later on, I was recruited for a role as a software engineer with a heavy data
-                      focus. While in this role, I earned my{' '}
-                      <b>Master's of Science in Computer Science</b> from <b>Georgia Tech</b>.
-                    </p>
-                    <p>
-                      I currently work as a <b>full-stack software engineer</b> and couldn't be
-                      happier &ndash; I have found my passion.
-                    </p>
-                  </>
-                </AboutMeSection>
-                <AboutMeSection icon="code" flip>
-                  <p>
-                    {externalLink('https://www.python.org/', 'Python')} is my programming language
-                    of choice. For front-end work, I use{' '}
-                    {externalLink('https://react.dev/', 'React')} (with{' '}
-                    {externalLink('https://www.typescriptlang.org/', 'TypeScript')}). This website
-                    is built with {externalLink('https://nextjs.org/', 'Next.js')} and{' '}
-                    {externalLink('https://tailwindcss.com/', 'Tailwind CSS')}. I write articles and
-                    blog posts in <b>Markdown</b>. I also use <b>Bash</b> and <b>SQL</b> on a
-                    somewhat-regular basis and dabble in{' '}
-                    {externalLink('https://d3js.org/', 'D3.js')} for interactive data
-                    visualizations.
-                  </p>
-                </AboutMeSection>
-                <AboutMeSection icon="speak">
-                  <p>
-                    If you would like to <b>invite me to speak at your event</b> or{' '}
-                    <b>be a guest on your podcast</b>, please{' '}
-                    {internalLink('/contact', 'reach out')}.
-                  </p>
-                </AboutMeSection>
-                <AboutMeSection icon="blog" flip>
-                  <p>
-                    You can {internalLink('/blog', 'check out my blog')} to learn more about me as a
-                    person. There, I'll be writing about things I'm working on, music I'm listening
-                    to, the adventures and misadventures that happen during my travels, and more.
-                  </p>
-                </AboutMeSection>
-                <SectionSeparator className="my-10" />
-              </div>
+                </>
+              </AboutMeSection>
+              <AboutMeSection icon="code" flip>
+                <p>
+                  {externalLink('https://www.python.org/', 'Python')} is my programming language of
+                  choice. For front-end work, I use {externalLink('https://react.dev/', 'React')}{' '}
+                  (with {externalLink('https://www.typescriptlang.org/', 'TypeScript')}). This
+                  website is built with {externalLink('https://nextjs.org/', 'Next.js')} and{' '}
+                  {externalLink('https://tailwindcss.com/', 'Tailwind CSS')}. I write articles and
+                  blog posts in <b>Markdown</b>. I also use <b>Bash</b> and <b>SQL</b> on a
+                  somewhat-regular basis and dabble in {externalLink('https://d3js.org/', 'D3.js')}{' '}
+                  for interactive data visualizations.
+                </p>
+              </AboutMeSection>
+              <AboutMeSection icon="speak">
+                <p>
+                  If you would like to <b>invite me to speak at your event</b> or{' '}
+                  <b>be a guest on your podcast</b>, please {internalLink('/contact', 'reach out')}.
+                </p>
+              </AboutMeSection>
+              <AboutMeSection icon="blog" flip>
+                <p>
+                  You can {internalLink('/blog', 'check out my blog')} to learn more about me as a
+                  person. There, I'll be writing about things I'm working on, music I'm listening
+                  to, the adventures and misadventures that happen during my travels, and more.
+                </p>
+              </AboutMeSection>
+              <SectionSeparator />
             </div>
 
             <RelatedContentSection
