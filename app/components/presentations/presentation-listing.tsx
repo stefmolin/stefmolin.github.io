@@ -53,7 +53,7 @@ export default function PresentationListing({
         <div className="-mt-6 mb-20 max-w-5xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl text-center">{pageTitle}</h1>
           <h2 className="text-lg md:text-xl py-2 text-center">{pageSubtitle}</h2>
-          <div className="grid grid-cols-1 sm:gap-y-10 pb-5 -mx-10 sm:-mx-5 lg:mx-auto">
+          <div className="grid grid-cols-1 pb-5 -mx-10 sm:-mx-5 lg:mx-auto">
             {pages
               .sort((a, b) => {
                 const presentationA = a[contentClass];
