@@ -49,6 +49,12 @@
   }
 }
 
+/*
+TODO: v4 changed so hover no longer picks up tap on mobile, which broke the header dropdowns (at a minimum)
+This line preserves the old behavior. Look into handling this on the react side instead.
+*/
+@custom-variant hover (&:hover);
+
 a {
   @apply cursor-pointer;
 }

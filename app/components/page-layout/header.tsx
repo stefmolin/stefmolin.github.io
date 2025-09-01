@@ -129,10 +129,10 @@ export default function Header({
             </Link>
           </h2>
           <NavigationLinks
-            className={classNames('flex opacity-0', {
-              'flex-row gap-x-2 text-lg invisible md:visible md:opacity-100 absolute -top-full -left-full md:relative md:top-auto md:left-auto':
+            className={classNames('flex opacity-0 absolute', {
+              'flex-row gap-x-2 text-lg invisible md:visible md:opacity-100 -top-full -left-full md:relative md:top-auto md:left-auto':
                 !isOpen,
-              'flex-col gap-y-2 text-3xl pl-2 opacity-100 transition-opacity transition-spacing transform translate-y-6 duration-1000 ease-in':
+              'mt-12 flex-col gap-y-2 text-3xl pl-2 opacity-100 transition-opacity transition-spacing transform translate-y-6 duration-1000 ease-in':
                 isOpen,
             })}
             inOverlay={isOpen}
