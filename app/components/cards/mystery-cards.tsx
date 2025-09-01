@@ -36,13 +36,9 @@ export default function MysteryCards({ cards, color }: MysteryCardsProps) {
           Array.isArray(color) ? color[index] : color,
         )}
       >
-        <FontAwesomeIcon
-          icon={faQuestion}
-          size="9x"
-          fixedWidth
-          className="group-hover:hidden"
-          fade
-        />
+        <div className="group-hover:hidden">
+          <FontAwesomeIcon icon={faQuestion} size="9x" fixedWidth fade />
+        </div>
         <p className="hidden group-hover:block px-4 sm:px-8 py-4 md:text-lg">{text}</p>
       </div>
     </div>
