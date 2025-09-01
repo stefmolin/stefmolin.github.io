@@ -172,7 +172,7 @@ export default function Home({
         }
       />
       <Container>
-        <div className="-mt-6 mb-20 max-w-5xl mx-auto">
+        <div className="-mt-4 mb-20 max-w-5xl mx-auto">
           <EvenlySpacedSections className="my-10">
             <div className="text-center">
               <h1 className="text-6xl sm:text-7xl mb-5">
