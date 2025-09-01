@@ -32,7 +32,7 @@ const INTERVIEWS: Interview[] = [
       development and the satisfaction that comes from community contribution.`,
       source: 'episode summary',
     },
-    duration: '54 m',
+    duration: '54 min',
     seeAlso: [
       {
         contentClass: 'page',
