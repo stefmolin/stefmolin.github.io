@@ -40,8 +40,8 @@ export default function EventPage({
   const subsectionTitleClassName = 'text-center md:text-left';
 
   return (
-    <div className="-mt-4 mb-20 max-w-5xl -mx-4 sm:mx-auto">
-      <h1 className="text-6xl md:text-7xl mb-2 text-center">{pageTitle}</h1>
+    <div className="-mt-2 mb-20 max-w-5xl -mx-4 sm:mx-auto">
+      <h1 className="text-6xl md:text-7xl mb-6 text-center">{pageTitle}</h1>
       <EvenlySpacedSections className="my-10">
         {header}
         <PhotoGallery

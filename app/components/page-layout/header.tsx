@@ -17,17 +17,17 @@ function HeaderDropdown({
   title: string;
 }) {
   return (
-    <div className={classNames('group relative border-neutral-200', className)}>
+    <div className={classNames('group relative', className)}>
       <div className="flex flex-row items-center cursor-pointer">
         {title} <FontAwesomeIcon icon={faChevronDown} fixedWidth size="xs" className="pl-px" />
       </div>
       <div
         className={classNames({
           'absolute hidden group-hover:flex flex-col': !inOverlay,
-          'bg-neutral-50 border-x border-b': !inOverlay,
-          'z-50 rounded shadow-sm': !inOverlay,
+          'bg-neutral-50 border-x border-b border-neutral-200': !inOverlay,
+          'z-50 rounded-sm shadow-xs': !inOverlay,
           'py-2 px-4 -translate-x-4': !inOverlay,
-          'flex-col py-2 px-4 hidden group-hover:flex space-y-2': inOverlay,
+          'flex-col py-2 px-4 hidden group-hover:flex gap-y-2': inOverlay,
         })}
       >
         {children}
@@ -107,7 +107,7 @@ export default function Header({
     >
       <div
         className={classNames(
-          'xl:max-w-screen-xl mx-auto py-2 text-2xl px-5 flex flex-row justify-between h-16',
+          'xl:max-w-(--breakpoint-xl) mx-auto py-2 text-2xl px-5 flex flex-row justify-between h-16',
           {
             'items-center': !isOpen,
           },
@@ -129,10 +129,10 @@ export default function Header({
             </Link>
           </h2>
           <NavigationLinks
-            className={classNames('flex opacity-0', {
-              'flex-row space-x-2 text-lg invisible md:visible md:opacity-100 absolute -top-full -left-full md:relative md:top-auto md:left-auto':
+            className={classNames('flex opacity-0 absolute', {
+              'flex-row gap-x-2 text-lg invisible md:visible md:opacity-100 -top-full -left-full md:relative md:top-auto md:left-auto':
                 !isOpen,
-              'flex-col space-y-2 text-3xl pl-2 opacity-100 transition-opacity transition-spacing transform translate-y-6 duration-1000 ease-in':
+              'mt-12 flex-col gap-y-2 text-3xl pl-2 opacity-100 transition-opacity transition-spacing transform translate-y-6 duration-1000 ease-in':
                 isOpen,
             })}
             inOverlay={isOpen}

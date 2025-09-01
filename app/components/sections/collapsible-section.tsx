@@ -16,7 +16,7 @@ const CollapsibleSection = ({
   children?: React.ReactNode;
   className?: string;
 }) => (
-  <div className={classNames('flex flex-col space-y-1', className)}>
+  <div className={classNames('flex flex-col gap-y-1', className)}>
     <Collapsible
       open={open}
       trigger={

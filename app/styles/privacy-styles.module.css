@@ -1,7 +1,9 @@
+@reference "./global.css";
+
 .privacy-policy {
   @apply flex;
   @apply flex-col;
-  @apply space-y-3;
+  @apply gap-y-3;
   @apply -mt-10;
   @apply mb-20;
   @apply max-w-4xl;

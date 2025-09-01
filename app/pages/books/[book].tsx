@@ -59,15 +59,15 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
           <div className="mt-7 flex flex-col-reverse lg:flex-row lg:items-center justify-between">
             <RepoStats
               repoName={book.repo}
-              className="flex flex-col md:flex-row items-center md:space-x-2 text-center"
+              className="flex flex-col md:flex-row items-center md:gap-x-2 text-center"
             />
 
             <div
               className={classNames(
                 'flex',
                 'items-center justify-center md:justify-start',
-                'space-x-2',
-                { 'flex-col space-x-0': width && width < 375 },
+                'gap-x-2',
+                { 'flex-col gap-x-0': width && width < 375 },
               )}
             >
               <PageCount pageCount={book.pageCount} />
@@ -76,7 +76,7 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
           </div>
           <SectionSeparator className="my-4" />
           <BookSummarySection book={book} />
-          <SectionSeparator className="mt-5 lg:mt-24 mb-10" />
+          <SectionSeparator className="mt-5 mb-10" />
           {reviews != null ? (
             <>
               <ReviewsSection

@@ -75,9 +75,9 @@ export default function Interviews() {
             ],
           }}
         />
-        <div className="-mt-8 mb-20 max-w-5xl mx-auto">
+        <div className="-mt-5 mb-20 max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-6xl text-center">{pageTitle}</h1>
-          <div ref={interviewRef} className="space-y-10 -mx-10 sm:-mx-5 lg:mx-auto mb-5">
+          <div ref={interviewRef} className="flex flex-col mt-3 -mx-10 sm:-mx-5 lg:mx-auto">
             {INTERVIEWS.slice(offset, offset + interviewsPerPage).map(
               ({ link, coverImage, format, host, date, title, description, duration, seeAlso }) => (
                 <PreviewCard

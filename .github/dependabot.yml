@@ -44,6 +44,11 @@ updates:
       remark:
         patterns:
           - "remark*"
+      tailwind:
+        patterns:
+          - "postcss"
+          - "@tailwindcss*"
+          - "tailwindcss*"
     # Increase the minimum version for all npm dependencies (instead of expanding the range)
     versioning-strategy: increase
     open-pull-requests-limit: 10

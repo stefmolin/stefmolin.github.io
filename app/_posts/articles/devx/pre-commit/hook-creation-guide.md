@@ -98,7 +98,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     parser.add_argument(
         'filenames',
-        nargs='*',
+        nargs='+',
         help='Filenames to process.',
     )
     parser.add_argument(

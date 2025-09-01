@@ -1,7 +1,6 @@
 import { faGithub, faPython } from '@fortawesome/free-brands-svg-icons';
 import { faComment } from '@fortawesome/free-regular-svg-icons';
 import {
-  faAward,
   faBook,
   faCoffee,
   faEnvelope,
@@ -47,7 +46,7 @@ const LinkSection = ({ links, title }: LinkSectionProps) => (
             'flex flex-col sm:flex-row w-full',
             'items-center justify-center sm:justify-start',
             'text-center sm:text-left',
-            'space-x-2',
+            'gap-x-2',
           )}
         >
           {link}
@@ -69,9 +68,9 @@ export default function SayThanks() {
         }
       />
       <Container>
-        <div className="-mt-8 pb-20 max-w-3xl mx-auto">
+        <div className="-mt-5 pb-20 max-w-3xl mx-auto">
           <h1 className="text-5xl md:text-6xl text-center">Ways To Show Your Appreciation</h1>
-          <div className="md:px-6 space-y-10 mt-5 text-lg">
+          <div className="md:px-6 space-y-10 mt-7 text-lg">
             <p>
               All of my content is made during my free time outside of my full-time job. Knowing
               that the content is appreciated helps motivate me to continue making it. If my content

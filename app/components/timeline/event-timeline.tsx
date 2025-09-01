@@ -32,7 +32,7 @@ export default function EventTimeline({
 
   return (
     <Layout>
-      <Container className="mb-10 px-1">
+      <Container className="-mt-1 mb-10 px-1">
         <NextSeo title={seoTitle} description={description} openGraph={openGraph} />
         <div className="max-w-5xl m-auto">
           {pageHeader}

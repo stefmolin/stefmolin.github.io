@@ -1,7 +1,9 @@
+@reference "./global.css";
+
 .review {
   @apply flex;
   @apply flex-col;
-  @apply space-y-3;
+  @apply gap-y-3;
   @apply md:text-lg;
 }
 

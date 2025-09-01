@@ -55,9 +55,7 @@ const FollowButtons = ({
     </ResourceLink>
   );
   const buttons = (
-    <div
-      className={classNames('space-x-1 sm:space-x-2 flex items-center justify-center', className)}
-    >
+    <div className={classNames('gap-x-1 sm:gap-x-2 flex items-center justify-center', className)}>
       {makeLink(GITHUB_PROFILE, faGithub, "Stefanie Molin's GitHub profile")}
       {makeLink(LINKEDIN_PROFILE, faLinkedin, "Stefanie Molin's LinkedIn profile")}
       {makeLink(BLUESKY_PROFILE, faBluesky, "Stefanie Molin's Bluesky profile")}

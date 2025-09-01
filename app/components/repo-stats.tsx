@@ -56,7 +56,7 @@ export default function RepoStats({
     <div
       className={
         className ??
-        'flex flex-col sm:flex-row items-center text-center sm:justify-center sm:space-x-2'
+        'flex flex-col sm:flex-row items-center text-center sm:justify-center sm:gap-x-2'
       }
     >
       {info === undefined ? null : (
