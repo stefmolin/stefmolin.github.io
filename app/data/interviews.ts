@@ -32,7 +32,7 @@ const INTERVIEWS: Interview[] = [
       development and the satisfaction that comes from community contribution.`,
       source: 'episode summary',
     },
-    duration: '54 m',
+    duration: '54 min',
     seeAlso: [
       {
         contentClass: 'page',
@@ -84,8 +84,7 @@ const INTERVIEWS: Interview[] = [
   {
     title: 'SDS 675: Pandas for Data Analysis and Visualization',
     link: 'https://www.superdatascience.com/podcast/pandas-for-data-analysis-and-visualization',
-    coverImage:
-      'https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/PT675-Main-Image.jpg',
+    coverImage: 'https://img.youtube.com/vi/wLwazwvOCv8/sddefault.jpg',
     format: 'podcast',
     host: 'Super Data Science Podcast',
     date: '2023-05-02',

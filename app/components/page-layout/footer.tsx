@@ -98,7 +98,7 @@ const Footer = () => {
   useEffect(() => setYear(DateTime.now().year));
   return (
     <footer className="bg-neutral-50 border-t border-neutral-200 mx-auto px-10">
-      <div className="xl:max-w-screen-xl mx-auto">
+      <div className="xl:max-w-(--breakpoint-xl) mx-auto">
         <div className="mt-5 flex flex-col lg:flex-row items-start lg:justify-between lg:px-4">
           <div className="text-left lg:pr-10 lg:w-2/3 xl:mr-20">
             <div className="flex flex-row items-center justify-center lg:justify-start">

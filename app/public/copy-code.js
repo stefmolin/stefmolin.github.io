@@ -1,5 +1,5 @@
 async function copyCodeBlock(elem) {
-  let code = elem.parentNode.parentNode.querySelector('code');
+  const code = elem.parentNode.parentNode.querySelector('code');
 
   await navigator.clipboard.writeText(code.innerText.trim());
 

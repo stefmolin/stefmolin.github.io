@@ -48,7 +48,7 @@ export default function Pagination({
       pageCount={Math.ceil(totalItems / itemsPerPage)}
       renderOnZeroPageCount={null}
       className={classNames(
-        'flex flex-row items-center justify-center space-x-1',
+        'flex flex-row items-center justify-center gap-x-1',
         'text-base md:text-xl font-bold text-slate-800 py-5 md:px-5',
       )}
       pageLinkClassName={classNames(numberClassName, 'hover:underline')}

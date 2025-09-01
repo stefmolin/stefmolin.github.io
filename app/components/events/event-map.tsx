@@ -28,7 +28,7 @@ export default function EventMap({
   );
   const linkClassName = 'text-slate-900 hover:underline hover:text-slate-600';
   const tableHeaderClassName = 'border-b border-slate-600 px-2 text-base';
-  const tableClassName = 'border-b px-2 text-base';
+  const tableClassName = 'border-b border-gray-200 px-2 text-base';
   const contentClassLinks = {
     'book signing': CONTENT_LINKS.BOOK_SIGNINGS.link,
     talk: CONTENT_LINKS.TALKS.link,

@@ -40,7 +40,9 @@ export default function Tooltip({
             className={classNames('z-50 h-2 w-4', tooltipArrowClassName)}
             style={{ clipPath: 'polygon(50% 0, 100% 100%, 0 100%)' }}
           ></div>
-          <div className={classNames('rounded p-2 border-2', backgroundClassName, borderClassName)}>
+          <div
+            className={classNames('rounded-sm p-2 border-2', backgroundClassName, borderClassName)}
+          >
             {message}
           </div>
         </div>

@@ -1,3 +1,5 @@
+@reference "./global.css";
+
 .markdown {
   @apply sm:text-lg leading-relaxed;
 }
@@ -91,5 +93,5 @@
   @apply leading-snug;
 }
 .markdown small[id='footnotes'] > hr {
-  @apply w-1/2 !important;
+  @apply w-1/2!;
 }

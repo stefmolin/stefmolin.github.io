@@ -45,8 +45,8 @@ const PostPreview = ({
   );
 
   return (
-    <div className="shadow-sm hover:shadow-lg transition-shadow duration-200 p-6 flex flex-col my-5 sm:m-5">
-      <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-5">
+    <div className="shadow-xs hover:shadow-lg transition-shadow duration-200 p-6 flex flex-col my-5 sm:m-5">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:gap-x-5">
         {postTitle}
         {readTime}
       </div>

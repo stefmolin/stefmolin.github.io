@@ -19,7 +19,7 @@ const BookSummarySection = ({ book }: BookSummaryProps) => {
       <div
         className={classNames(
           { 'float-left mr-5': !xsScreen },
-          'flex flex-col justify-center space-y-2 w-40 sm:w-48 md:w-64',
+          'flex flex-col justify-center gap-y-2 w-40 sm:w-48 md:w-64',
         )}
       >
         <BookCover book={book} />
@@ -37,10 +37,8 @@ const BookSummarySection = ({ book }: BookSummaryProps) => {
           *As an Amazon Associate, I earn from qualifying purchases at no cost to you.
         </small>
       </div>
-      <div className="space-y-4 min-h-48 md:min-h-64 lg:min-h-80">
-        <div className="space-y-2 sm:text-justify sm:text-pretty">
-          <MarkdownSection>{book.description}</MarkdownSection>
-        </div>
+      <div className="sm:text-justify sm:text-pretty">
+        <MarkdownSection>{book.description}</MarkdownSection>
       </div>
     </div>
   );

@@ -47,7 +47,7 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
         'flex flex-col items-start justify-center sm:justify-start',
         'px-6 py-4 sm:p-8',
         'mx-2 sm:mx-5 mt-4 mb-12',
-        'shadow-sm',
+        'shadow-xs',
         {
           'h-40': cardSize === 'xs',
           'h-64': cardSize === 'sm',

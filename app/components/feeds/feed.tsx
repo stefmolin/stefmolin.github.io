@@ -24,8 +24,8 @@ const Feed = ({
       <Layout>
         <NextSeo title={pageTitle} description={description} />
         <Container>
-          <div ref={feedRef} className="-mt-4 max-w-5xl -mx-4 sm:mx-auto mb-32">
-            <h1 className="text-6xl md:text-7xl mb-2 text-center">{title}</h1>
+          <div ref={feedRef} className="max-w-5xl -mx-4 sm:mx-auto mb-32">
+            <h1 className="text-6xl md:text-7xl mb-4 text-center">{title}</h1>
             {subtitle ? (
               <div className="text-center py-2">
                 <h2 className="text-lg md:text-xl">{subtitle}</h2>

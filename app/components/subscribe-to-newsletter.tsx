@@ -58,7 +58,7 @@ const SubscribeToNewsletterForm = ({
   };
 
   const inputStyle =
-    'form-input border border-gray-900 py-1 px-4 bg-white placeholder-gray-400 text-gray-500 appearance-none w-full block pl-14 focus:outline-none';
+    'form-input border border-gray-900 py-1 px-4 bg-white placeholder-gray-400 text-gray-500 appearance-none w-full block pl-14 focus:outline-hidden';
 
   return (
     <div className="flex flex-col my-2 grow text-center sm:w-[350px]">
@@ -117,7 +117,7 @@ const SubscribeToNewsletterForm = ({
               </fieldset>
             </div> */}
           <div className="flex flex-row items-center justify-center">
-            <div className="mt-5 lg:mt-2 grow flex flex-col space-y-2 justify-left ">
+            <div className="mt-5 lg:mt-2 grow flex flex-col gap-y-2 justify-left ">
               <label className="relative text-gray-400 focus-within:text-gray-600 block">
                 <div className="inline-flex items-center w-full">
                   <FontAwesomeIcon
