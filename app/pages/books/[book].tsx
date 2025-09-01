@@ -76,7 +76,7 @@ export default function BookPage({ bookKey }: { bookKey: string }) {
           </div>
           <SectionSeparator className="my-4" />
           <BookSummarySection book={book} />
-          <SectionSeparator className="mt-5 lg:mt-24 mb-10" />
+          <SectionSeparator className="mt-5 mb-10" />
           {reviews != null ? (
             <>
               <ReviewsSection
