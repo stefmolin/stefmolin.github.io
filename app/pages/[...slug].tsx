@@ -92,7 +92,7 @@ export default function Post({ post, suggestedPosts }: Props) {
               }}
             />
             <article
-              className={classNames('-mt-4 -mx-5 sm:mx-auto', {
+              className={classNames('-mt-5 -mx-5 sm:mx-auto', {
                 'mb-32': suggestedPosts.length === 0,
                 'mb-20': suggestedPosts.length > 0,
               })}
