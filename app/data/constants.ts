@@ -26,6 +26,7 @@ export const BLUESKY_PROFILE = `https://bsky.app/profile/${BLUESKY_HANDLE.replac
 
 export const FLAGS = {
   Australia: '🇦🇺',
+  Brazil: '🇧🇷',
   Canada: '🇨🇦',
   Colombia: '🇨🇴',
   Czechia: '🇨🇿',
@@ -39,6 +40,7 @@ export const FLAGS = {
   'New Zealand': '🇳🇿',
   Poland: '🇵🇱',
   Portugal: '🇵🇹',
+  Spain: '🇪🇸',
   Switzerland: '🇨🇭',
   Taiwan: '🇹🇼',
   'United Arab Emirates': '🇦🇪',

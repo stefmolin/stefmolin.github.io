@@ -663,6 +663,39 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2025-09-13',
   },
+  {
+    event: {
+      name: 'PyConES',
+      location: LOCATIONS.SEVILLE,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PRE_COMMIT_WORKSHOP,
+    date: '2025-10-17',
+  },
+  {
+    event: {
+      name: 'Python Brasil',
+      location: LOCATIONS.SAO_PAULO,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PYTHON_DATA_VIZ_WORKSHOP,
+    date: '2025-10-23',
+  },
+  {
+    event: {
+      name: 'Python Brasil',
+      location: LOCATIONS.SAO_PAULO,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.DATA_MORPH,
+    date: '2025-10-25',
+  },
 ];
 
 export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(

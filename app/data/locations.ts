@@ -190,5 +190,17 @@ const LOCATIONS: Record<string, MapLocation> = {
     country: 'India',
     countryCode: 'IN',
   },
+  SEVILLE: {
+    coordinates: [-5.994072, 37.392529],
+    city: 'Seville',
+    country: 'Spain',
+    countryCode: 'ES',
+  },
+  SAO_PAULO: {
+    coordinates: [-46.62529, -23.533773],
+    city: 'São Paulo',
+    country: 'Brazil',
+    countryCode: 'BR',
+  },
 };
 export default LOCATIONS;
