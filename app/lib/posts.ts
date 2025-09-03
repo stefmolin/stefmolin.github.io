@@ -1,8 +1,8 @@
 import { Feed as RssFeed } from 'feed';
 import fs from 'fs';
 import matter from 'gray-matter';
-import isEqual from 'lodash/isEqual';
 import intersection from 'lodash/intersection';
+import isEqual from 'lodash/isEqual';
 import union from 'lodash/union';
 import { DateTime } from 'luxon';
 import { join } from 'path';
