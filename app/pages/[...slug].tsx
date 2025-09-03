@@ -1,4 +1,5 @@
 import range from 'lodash/range';
+import startCase from 'lodash/startCase';
 import Feed from '../components/feeds/feed';
 import Post, { type PostProps } from '../components/posts/post';
 import type FeedType from '../interfaces/feed';
@@ -13,26 +14,22 @@ import {
 } from '../lib/posts';
 
 const DISPLAY_NAMES = {
-  'data-science': 'Data Science',
   devx: 'DevX/DevOps',
-  'open-source': 'Open Source',
   'pre-commit': 'Pre-Commit',
   travel: 'Travel Blog',
-  updates: 'Updates',
 };
 
 export default function Content(props: PostProps | FeedType) {
   if ('post' in props) return <Post {...props} />;
 
-  let { title, allPosts } = props;
-  if (allPosts[0].type === 'blog') {
+  let { title, allPosts, kind } = props;
+  if (kind === 'theme' && allPosts.every((post) => post.type === 'blog')) {
     let [theme, year] = title;
-    theme = DISPLAY_NAMES[theme] || theme.replaceAll('-', ' ');
-    if (year) title = `${theme} (${year})`;
-    else title = theme;
+    theme = DISPLAY_NAMES[theme] || startCase(theme);
+    title = year ? `${theme} (${year})` : theme;
   } else if (Array.isArray(title)) {
     title = title[title.length - 1];
-    title = `${DISPLAY_NAMES[title] ?? title.replaceAll('-', ' ')} Articles`;
+    title = `${DISPLAY_NAMES[title] ?? startCase(title)} Articles`;
   }
 
   return <Feed {...props} title={title} />;
@@ -76,6 +73,7 @@ export async function getStaticProps({
       },
     };
   } catch {
+    // there was no post at that slug, so it has to be a theme
     return getPostsByTheme(params.slug.slice(1));
   }
 }
@@ -83,7 +81,7 @@ export async function getStaticProps({
 export async function getStaticPaths() {
   const slugs = new Set<string>();
 
-  getAllPosts(['slug']).forEach((post) => {
+  getAllPosts(['slug'], '', true).forEach((post) => {
     range(1, post.slug.length + 1).map((level) => slugs.add(post.slug.slice(0, level).join('/')));
   });
 

@@ -91,9 +91,7 @@ export function getPostBySlug(slug: string[], fields: string[] = [], category: s
 }
 
 export function getPostsByTag(tag: string, fields: string[] = []) {
-  const posts = getAllPosts([...fields, 'preview']).filter(
-    (post) => post.tags.includes(tag) && !post.preview,
-  );
+  const posts = getAllPosts(fields).filter((post) => post.tags.includes(tag));
 
   if (tag === 'Python') {
     // create feed for Python posts (for aggregators)
@@ -122,7 +120,6 @@ export function getPostsByTheme(theme: string[]) {
     'type',
     'excerpt',
     'theme',
-    'preview',
   ]);
   return {
     props: {
@@ -136,12 +133,15 @@ export function getPostsByTheme(theme: string[]) {
   };
 }
 
-export function getAllPosts(fields: string[] = [], type: string = '') {
+export function getAllPosts(
+  fields: string[] = [],
+  type: string = '',
+  includePreview: boolean = false,
+) {
   const slugs = getPostSlugs(type);
   const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields, type))
-    // remove previews
-    .filter((post) => !post.preview)
+    .map((slug) => getPostBySlug(slug, [...fields, 'preview'], type))
+    .filter((post) => includePreview || !post.preview)
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
@@ -149,18 +149,7 @@ export function getAllPosts(fields: string[] = [], type: string = '') {
 
 export const getFeed = (postType: string) => {
   const allPosts = getAllPosts(
-    [
-      'title',
-      'subtitle',
-      'date',
-      'slug',
-      'author',
-      'ogImage',
-      'excerpt',
-      'tags',
-      'duration',
-      'preview',
-    ],
+    ['title', 'subtitle', 'date', 'slug', 'author', 'ogImage', 'excerpt', 'tags', 'duration'],
     postType,
   );
 
@@ -258,9 +247,7 @@ export const generateRssFeed = async (
 };
 
 export const getSuggestedPosts = (post: PostType, fields: string[]) => {
-  let suggestedPosts = getAllPosts(fields, post.type).filter(
-    (x) => !isEqual(x.slug, post.slug) && !x.preview,
-  );
+  let suggestedPosts = getAllPosts(fields, post.type).filter((x) => !isEqual(x.slug, post.slug));
 
   if (suggestedPosts.length > 0) {
     if (post.type === 'blog') {

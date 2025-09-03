@@ -348,33 +348,11 @@ export default function Home({
 
 export const getStaticProps = async () => {
   const articles = getAllPosts(
-    [
-      'title',
-      'subtitle',
-      'date',
-      'slug',
-      'author',
-      'ogImage',
-      'excerpt',
-      'tags',
-      'duration',
-      'preview',
-    ],
+    ['title', 'subtitle', 'date', 'slug', 'author', 'ogImage', 'excerpt', 'tags', 'duration'],
     'articles',
   ).filter((post) => !post.preview);
   const latestBlogPost = getAllPosts(
-    [
-      'title',
-      'subtitle',
-      'date',
-      'slug',
-      'author',
-      'ogImage',
-      'excerpt',
-      'tags',
-      'duration',
-      'preview',
-    ],
+    ['title', 'subtitle', 'date', 'slug', 'author', 'ogImage', 'excerpt', 'tags', 'duration'],
     'blog',
   )
     .filter((post) => !post.preview)
