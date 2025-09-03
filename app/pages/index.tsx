@@ -347,37 +347,18 @@ export default function Home({
 }
 
 export const getStaticProps = async () => {
-  const articles = getAllPosts(
-    [
-      'title',
-      'subtitle',
-      'date',
-      'slug',
-      'author',
-      'ogImage',
-      'excerpt',
-      'tags',
-      'duration',
-      'preview',
-    ],
-    'articles',
-  ).filter((post) => !post.preview);
-  const latestBlogPost = getAllPosts(
-    [
-      'title',
-      'subtitle',
-      'date',
-      'slug',
-      'author',
-      'ogImage',
-      'excerpt',
-      'tags',
-      'duration',
-      'preview',
-    ],
-    'blog',
-  )
-    .filter((post) => !post.preview)
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))[0];
+  const fields = [
+    'title',
+    'subtitle',
+    'date',
+    'slug',
+    'author',
+    'ogImage',
+    'excerpt',
+    'tags',
+    'duration',
+  ];
+  const articles = getAllPosts(fields, 'articles');
+  const latestBlogPost = getAllPosts(fields, 'blog')[0];
   return { props: { articles, latestBlogPost } };
 };
