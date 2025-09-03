@@ -6,8 +6,7 @@ import Feed from '../components/feeds/feed';
 import Post, { type PostProps } from '../components/posts/post';
 import type FeedType from '../interfaces/feed';
 import markdownToHtml from '../lib/markdownToHtml';
-import { getAllPosts, getFeed, getPostBySlug } from '../lib/posts';
-import { getPostThemeProps } from '../lib/post-themes'; // TODO: maybe this is the only function to keep and it can move to posts?
+import { getAllPosts, getFeed, getPostBySlug, getPostsByTheme } from '../lib/posts';
 
 const DISPLAY_NAMES = {
   'data-science': 'Data Science',
@@ -135,7 +134,24 @@ export async function getStaticProps({ params }: Params) {
       },
     };
   } catch {
-    return getPostThemeProps({ params: { theme: params.slug.slice(1) } });
+    const fields = [
+      'tags',
+      'title',
+      'subtitle',
+      'date',
+      'slug',
+      'duration',
+      'ogImage',
+      'type',
+      'excerpt',
+      'theme',
+      'preview',
+    ];
+    const { props } = getPostsByTheme(params.slug.slice(1), fields);
+    props.allPosts = props.allPosts
+      .filter((post) => !post.preview)
+      .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    return { props };
   }
 }
 
