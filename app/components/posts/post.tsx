@@ -27,15 +27,11 @@ export type PostProps = {
 };
 
 const Post = ({ post, suggestedPosts }: PostProps) => {
-  if (!post?.slug) {
-    return <ErrorPage statusCode={404} />;
-  }
   const { width } = useWindowSize();
   const searchParams = useSearchParams();
 
-  if (post.preview) {
-    if (searchParams.get('preview') !== 'true') return <ErrorPage statusCode={404} />;
-  }
+  if (!post?.slug || (post.preview && searchParams.get('preview') !== 'true'))
+    return <ErrorPage statusCode={404} />;
 
   const ogImageURL = getImageLink(post.ogImage.url);
 
