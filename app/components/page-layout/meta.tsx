@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { HOME_URL } from '../../data/constants';
 
 const getFeedLinks = () => {
-  const links: ReactElement[] = [];
+  const links: ReactElement<any>[] = [];
   ['articles', 'blog'].forEach((feedType) => {
     links.push(
       ...['Atom', 'JSON', 'RSS'].map((tech) => {

@@ -71,7 +71,7 @@ const VerticalTimeline = ({
       }
       processedItems.push(
         <TimelineEntry
-          key={`entry-${item.title}-${item.description}`}
+          key={`entry-${item.date}-${item.title}-${item.description}`}
           {...item}
           flip={flipCheck(index)}
         />,

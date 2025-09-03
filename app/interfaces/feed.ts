@@ -4,6 +4,7 @@ interface FeedType {
   allPosts: PostType[];
   description: string;
   title: string;
+  subtitle?: string;
   kind: string;
 }
 
