@@ -37,7 +37,7 @@ jobs:
       - name: Restore post modification timestamps
         uses: chetan/git-restore-mtime-action@cbf8161ddb4e9b162409104954fb540e8a38c1da  # v2.1.1
         with:
-          working-directory: '_posts'
+          working-directory: ./app/_posts
       - name: Setup Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4.4.0
         with:
