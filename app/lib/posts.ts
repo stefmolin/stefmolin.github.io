@@ -1,11 +1,14 @@
 import { Feed as RssFeed } from 'feed';
 import fs from 'fs';
 import matter from 'gray-matter';
+import intersection from 'lodash/intersection';
 import isEqual from 'lodash/isEqual';
+import union from 'lodash/union';
 import { DateTime } from 'luxon';
 import { join } from 'path';
 import readingDuration from 'reading-duration';
 import { COPYRIGHT_STATEMENT, HOME_OG_IMAGE, HOME_URL } from '../data/constants';
+import PostType from '../interfaces/post';
 
 type Items = {
   [key: string]: any;
@@ -13,12 +16,27 @@ type Items = {
 
 const postsDirectory = join(process.cwd(), '_posts');
 
+const FEEDS = {
+  articles: {
+    title: 'Articles',
+    description:
+      'Read articles written by Stefanie Molin on computer science, data science, and more for ' +
+      'learners of all levels. Also available as an RSS feed.',
+  },
+  blog: {
+    title: 'Blog',
+    description:
+      "Read Stefanie Molin's personal blog for updates on new projects, travel stories, and more. " +
+      'Also available as an RSS feed.',
+  },
+};
+
 export function getPostSlugs(category: string = '') {
   return fs
     .readdirSync(join(postsDirectory, category), { recursive: true })
     .map((x) => x.toString())
-    .filter((file) => file.endsWith('.md'))
-    .map((x) => x.split('/'));
+    .filter((file: string) => file.endsWith('.md'))
+    .map((x: string) => x.split('/'));
 }
 
 export function getPostBySlug(slug: string[], fields: string[] = [], category: string = '') {
@@ -73,9 +91,7 @@ export function getPostBySlug(slug: string[], fields: string[] = [], category: s
 }
 
 export function getPostsByTag(tag: string, fields: string[] = []) {
-  const posts = getAllPosts([...fields, 'preview']).filter(
-    (post) => post.tags.includes(tag) && !post.preview,
-  );
+  const posts = getAllPosts(fields).filter((post) => post.tags.includes(tag));
 
   if (tag === 'Python') {
     // create feed for Python posts (for aggregators)
@@ -92,8 +108,19 @@ export function getPostsByTag(tag: string, fields: string[] = []) {
   };
 }
 
-export function getPostsByTheme(theme: string[], fields: string[] = []) {
-  const posts = getAllPosts(fields);
+export function getPostsByTheme(theme: string[]) {
+  const posts = getAllPosts([
+    'tags',
+    'title',
+    'subtitle',
+    'date',
+    'slug',
+    'duration',
+    'ogImage',
+    'type',
+    'excerpt',
+    'theme',
+  ]);
   return {
     props: {
       allPosts: posts.filter((post) =>
@@ -106,16 +133,21 @@ export function getPostsByTheme(theme: string[], fields: string[] = []) {
   };
 }
 
-export function getAllPosts(fields: string[] = [], type: string = '') {
+export function getAllPosts(
+  fields: string[] = [],
+  type: string = '',
+  includePreview: boolean = false,
+) {
   const slugs = getPostSlugs(type);
   const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields, type))
+    .map((slug) => getPostBySlug(slug, [...fields, 'preview', 'type'], type))
+    .filter((post) => includePreview || !post.preview)
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
 
-export const getFeed = (postType: string, feedTitle: string, feedDescription: string) => {
+export const getFeed = (postType: string) => {
   const allPosts = getAllPosts(
     [
       'title',
@@ -128,12 +160,11 @@ export const getFeed = (postType: string, feedTitle: string, feedDescription: st
       'excerpt',
       'tags',
       'duration',
-      'preview',
-      'type',
     ],
     postType,
-  ).filter((post) => !post.preview);
+  );
 
+  const { title: feedTitle, description: feedDescription } = FEEDS[postType];
   generateRssFeed(postType, feedTitle, allPosts);
 
   return {
@@ -224,4 +255,37 @@ export const generateRssFeed = async (
   fs.writeFileSync(`${dir}/${feedType}-rss.xml`, rssFeed.rss2());
   fs.writeFileSync(`${dir}/${feedType}-atom.xml`, rssFeed.atom1());
   fs.writeFileSync(`${dir}/${feedType}.json`, rssFeed.json1());
+};
+
+export const getSuggestedPosts = (post: PostType, fields: string[]) => {
+  let suggestedPosts = getAllPosts(fields, post.type).filter((x) => !isEqual(x.slug, post.slug));
+
+  if (suggestedPosts.length > 0) {
+    if (post.type === 'blog') {
+      const before = suggestedPosts.find((suggestion) => suggestion.date < post.date);
+      const after = suggestedPosts.findLast((suggestion) => suggestion.date > post.date);
+      if (before && after) {
+        // if there is one before and one after show those as the most similar
+        return [after, before];
+      } else if (before && !after) {
+        // this is the latest post; show the ones just before it
+        return suggestedPosts.slice(0, 2);
+      }
+      // this is the first post; show the ones just after it
+      return suggestedPosts.slice(-2);
+    }
+
+    // use tags for article similarity
+    suggestedPosts.forEach((otherPost) => {
+      const tags: string[] = otherPost.tags;
+      // use the Jaccard index for article similarity
+      otherPost.similarity = intersection(tags, post.tags).length / union(tags, post.tags).length;
+    });
+
+    return suggestedPosts
+      .sort((post1, post2) =>
+        post1.similarity > post2.similarity || post1.date > post2.date ? -1 : 1,
+      )
+      .slice(0, 2); // show top x results (second number)
+  }
 };

@@ -358,12 +358,8 @@ export const getStaticProps = async () => {
     'excerpt',
     'tags',
     'duration',
-    'preview',
-    'type',
   ];
-  const articles = getAllPosts(fields, 'articles').filter((post) => !post.preview);
-  const latestBlogPost = getAllPosts(fields, 'blog')
-    .filter((post) => !post.preview)
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))[0];
+  const articles = getAllPosts(fields, 'articles');
+  const latestBlogPost = getAllPosts(fields, 'blog')[0];
   return { props: { articles, latestBlogPost } };
 };
