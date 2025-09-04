@@ -38,13 +38,7 @@ export default function ComingSoonish() {
           <div className="sm:text-lg md:text-xl py-2">
             <Tooltip
               message={
-                <FontAwesomeIcon
-                  icon={faHeart}
-                  className="px-5 text-red-500"
-                  size="5x"
-                  fixedWidth
-                  beatFade
-                />
+                <FontAwesomeIcon icon={faHeart} className="px-5 text-red-500" size="5x" beatFade />
               }
               backgroundClassName="bg-red-100 rounded-lg"
               borderClassName="border-red-100 rounded-lg"

@@ -56,7 +56,6 @@ const AboutMeSection = ({
     <FontAwesomeIcon
       icon={ICON_MAPPING[icon]}
       className="text-6xl lg:text-7xl group-hover:text-slate-400"
-      fixedWidth
     />
   );
   return (

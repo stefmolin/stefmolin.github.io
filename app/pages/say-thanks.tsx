@@ -80,7 +80,7 @@ export default function SayThanks() {
               title="Help me grow my audience"
               links={[
                 <>
-                  <FontAwesomeIcon icon={faUserPlus} fixedWidth className="sm:pl-px sm:-pr-px" />
+                  <FontAwesomeIcon icon={faUserPlus} className="sm:pl-px sm:-pr-px" />
                   <span>
                     <b>Follow me</b> on social media:{' '}
                     <ExternalLink className={underlinedLinkClassName} href={BLUESKY_PROFILE}>
@@ -102,13 +102,13 @@ export default function SayThanks() {
                   </span>
                 </>,
                 <>
-                  <FontAwesomeIcon icon={faShare} fixedWidth />
+                  <FontAwesomeIcon icon={faShare} />
                   <span>
                     <b>Share my content</b> with your friends, family, and colleagues.
                   </span>
                 </>,
                 <>
-                  <FontAwesomeIcon icon={faEnvelopeOpenText} fixedWidth />
+                  <FontAwesomeIcon icon={faEnvelopeOpenText} />
                   <span>
                     <Link className={underlinedLinkClassName} href="/newsletter">
                       Sign up for my newsletter
@@ -117,7 +117,7 @@ export default function SayThanks() {
                   </span>
                 </>,
                 <>
-                  <FontAwesomeIcon icon={faPodcast} fixedWidth />
+                  <FontAwesomeIcon icon={faPodcast} />
                   <span>
                     <Link className={underlinedLinkClassName} href="/contact">
                       Invite me
@@ -130,7 +130,7 @@ export default function SayThanks() {
                   </span>
                 </>,
                 <>
-                  <FontAwesomeIcon icon={faComment} fixedWidth />
+                  <FontAwesomeIcon icon={faComment} />
                   <span>
                     <Link className={underlinedLinkClassName} href="/feedback">
                       Provide your feedback
@@ -139,7 +139,7 @@ export default function SayThanks() {
                   </span>
                 </>,
                 <>
-                  <FontAwesomeIcon icon={faPen} fixedWidth />
+                  <FontAwesomeIcon icon={faPen} />
                   <span>
                     <ExternalLink
                       className={underlinedLinkClassName}
@@ -161,7 +161,7 @@ export default function SayThanks() {
               title="Nominate me for recognition"
               links={[
                 <>
-                  <FontAwesomeIcon icon={faGithub} fixedWidth />
+                  <FontAwesomeIcon icon={faGithub} />
                   <span>
                     <ExternalLink
                       className={underlinedLinkClassName}
@@ -173,7 +173,7 @@ export default function SayThanks() {
                   </span>
                 </>,
                 <>
-                  <FontAwesomeIcon icon={faPython} fixedWidth className="sm:px-0.5 sm:mx-px" />
+                  <FontAwesomeIcon icon={faPython} className="sm:px-0.5 sm:mx-px" />
                   <span>
                     <ExternalLink
                       className={underlinedLinkClassName}
@@ -192,7 +192,7 @@ export default function SayThanks() {
               title="Make a purchase"
               links={[
                 <>
-                  <FontAwesomeIcon icon={faGithub} fixedWidth />
+                  <FontAwesomeIcon icon={faGithub} />
                   <span>
                     <ExternalLink
                       className={underlinedLinkClassName}
@@ -204,7 +204,7 @@ export default function SayThanks() {
                   </span>
                 </>,
                 <>
-                  <FontAwesomeIcon icon={faHandHoldingHeart} fixedWidth />
+                  <FontAwesomeIcon icon={faHandHoldingHeart} />
                   <span>
                     <ExternalLink
                       className={underlinedLinkClassName}
@@ -216,7 +216,7 @@ export default function SayThanks() {
                   </span>
                 </>,
                 <>
-                  <FontAwesomeIcon icon={faCoffee} fixedWidth />
+                  <FontAwesomeIcon icon={faCoffee} />
                   <span>
                     <ExternalLink
                       className={underlinedLinkClassName}
@@ -228,7 +228,7 @@ export default function SayThanks() {
                   </span>
                 </>,
                 <>
-                  <FontAwesomeIcon icon={faBook} fixedWidth />
+                  <FontAwesomeIcon icon={faBook} />
                   <span>
                     <ExternalLink
                       className={underlinedLinkClassName}
@@ -246,7 +246,7 @@ export default function SayThanks() {
               title="Use my referral links"
               links={[
                 <>
-                  <FontAwesomeIcon icon={faEnvelope} fixedWidth className="sm:pr-1" />
+                  <FontAwesomeIcon icon={faEnvelope} className="sm:pr-1" />
                   <span>
                     I use Fastmail as my email provider. It's easy to configure and focuses on
                     privacy. Get 10% off your first year when you{' '}
@@ -260,7 +260,7 @@ export default function SayThanks() {
                   </span>
                 </>,
                 <>
-                  <FontAwesomeIcon icon={faMobileScreen} fixedWidth className="sm:px-1" />
+                  <FontAwesomeIcon icon={faMobileScreen} className="sm:px-1" />
                   <span>
                     Having reliable cell service when I travel is a must. I use{' '}
                     <ExternalLink
@@ -273,7 +273,7 @@ export default function SayThanks() {
                   </span>
                 </>,
                 <>
-                  <FontAwesomeIcon icon={faEnvelopeOpenText} fixedWidth className="sm:pr-px" />
+                  <FontAwesomeIcon icon={faEnvelopeOpenText} className="sm:pr-px" />
                   <span>
                     My{' '}
                     <Link className={underlinedLinkClassName} href="/newsletter">
@@ -297,7 +297,7 @@ export default function SayThanks() {
                   </span>
                 </>,
                 <>
-                  <FontAwesomeIcon icon={faPaintBrush} fixedWidth />
+                  <FontAwesomeIcon icon={faPaintBrush} />
                   <span>
                     Make free AI art with{' '}
                     <ExternalLink

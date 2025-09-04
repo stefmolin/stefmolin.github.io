@@ -8,7 +8,7 @@ export interface DurationIndicatorProps {
 const DurationIndicator = ({ duration }: DurationIndicatorProps) => {
   return (
     <div className="flex flex-row items-center gap-x-1">
-      <FontAwesomeIcon icon={faClock} fixedWidth />
+      <FontAwesomeIcon icon={faClock} />
       <span>{duration}</span>
     </div>
   );

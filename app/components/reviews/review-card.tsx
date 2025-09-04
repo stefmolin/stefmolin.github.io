@@ -58,7 +58,7 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
     >
       <div className="w-full flex flex-row">
         <div className="hidden sm:flex">
-          <FontAwesomeIcon icon={faQuoteLeft} fixedWidth className={iconClassName} />
+          <FontAwesomeIcon icon={faQuoteLeft} className={iconClassName} />
         </div>
         <div className={classNames(className, 'sm:pl-4')}>
           <div
@@ -87,11 +87,10 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
             icon={atBottom ? faCaretUp : faCaretDown}
             size="sm"
             bounce
-            fixedWidth
           />
         </div>
         <div className="grow hidden sm:flex justify-end">
-          <FontAwesomeIcon icon={faQuoteRight} fixedWidth className={iconClassName} />
+          <FontAwesomeIcon icon={faQuoteRight} className={iconClassName} />
         </div>
       </div>
       <div className="w-full flex flex-col items-center justify-center text-pretty text-center -mt-2">
@@ -102,11 +101,9 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
             })}
           >
             {rating ? (
-              range(rating).map((star) => (
-                <FontAwesomeIcon key={star} icon={faStar} size="xs" fixedWidth />
-              ))
+              range(rating).map((star) => <FontAwesomeIcon key={star} icon={faStar} size="xs" />)
             ) : (
-              <FontAwesomeIcon icon={faTrophy} size="xs" fixedWidth />
+              <FontAwesomeIcon icon={faTrophy} size="xs" />
             )}
           </div>
         </FancyDivider>

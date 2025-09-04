@@ -27,7 +27,7 @@ const BookSummarySection = ({ book }: BookSummaryProps) => {
           <button className="px-2 py-1 bg-orange-400 hover:bg-orange-500 grow">
             <ExternalLink href={book.amazonLink} className="text-sm sm:text-base font-bold">
               <div className="flex flex-row items-center justify-center">
-                <FontAwesomeIcon icon={faAmazon} className="pr-1" size="sm" fixedWidth />
+                <FontAwesomeIcon icon={faAmazon} className="pr-1" size="sm" />
                 Buy on Amazon*
               </div>
             </ExternalLink>

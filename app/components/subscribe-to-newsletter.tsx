@@ -120,12 +120,7 @@ const SubscribeToNewsletterForm = ({
             <div className="mt-5 lg:mt-2 grow flex flex-col gap-y-2 justify-left ">
               <label className="relative text-gray-400 focus-within:text-gray-600 block">
                 <div className="inline-flex items-center w-full">
-                  <FontAwesomeIcon
-                    icon={faUser}
-                    className="absolute ml-4 my-auto"
-                    size="xl"
-                    fixedWidth
-                  />
+                  <FontAwesomeIcon icon={faUser} className="absolute ml-4 my-auto" size="xl" />
                   <input
                     aria-label="First name"
                     name="fields[first_name]"
@@ -154,7 +149,6 @@ const SubscribeToNewsletterForm = ({
                       icon={faEnvelope}
                       className="absolute ml-4 my-auto"
                       size="xl"
-                      fixedWidth
                     />
 
                     <input

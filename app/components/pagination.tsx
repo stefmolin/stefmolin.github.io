@@ -29,17 +29,17 @@ export default function Pagination({
     <ReactPaginate
       breakLabel={
         <>
-          <FontAwesomeIcon icon={faEllipsis} fixedWidth />
+          <FontAwesomeIcon icon={faEllipsis} />
         </>
       }
       previousLabel={
         <>
-          <FontAwesomeIcon icon={faCaretLeft} fixedWidth />
+          <FontAwesomeIcon icon={faCaretLeft} />
         </>
       }
       nextLabel={
         <>
-          <FontAwesomeIcon icon={faCaretRight} fixedWidth />
+          <FontAwesomeIcon icon={faCaretRight} />
         </>
       }
       onPageChange={onPageChange}

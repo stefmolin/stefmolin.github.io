@@ -10,8 +10,8 @@ type Props = {
 
 const PostTags = ({ tags, className }: Props) => {
   return (
-    <div className={classNames('flex flex-row items-center flex-wrap mt-2', className)}>
-      <FontAwesomeIcon icon={tags.length > 1 ? faTags : faTag} className="pr-1" fixedWidth />
+    <div className={classNames('flex flex-row items-center flex-wrap', className)}>
+      <FontAwesomeIcon icon={tags.length > 1 ? faTags : faTag} className="pr-1" />
       {tags.map((tag, index) => (
         <p key={tag}>
           <Link

@@ -11,7 +11,6 @@ const TimelinePoint = (props: { className: string; icon: IconDefinition }) => {
       <TimelineConnector />
       <FontAwesomeIcon
         icon={icon}
-        fixedWidth
         className={classNames('px-1 py-1.5 border-2 rounded-full my-2', className)}
       />
       <TimelineConnector />

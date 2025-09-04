@@ -19,7 +19,7 @@ function HeaderDropdown({
   return (
     <div className={classNames('group relative', className)}>
       <div className="flex flex-row items-center cursor-pointer">
-        {title} <FontAwesomeIcon icon={faChevronDown} fixedWidth size="xs" className="pl-px" />
+        {title} <FontAwesomeIcon icon={faChevronDown} size="xs" className="pl-px" />
       </div>
       <div
         className={classNames({

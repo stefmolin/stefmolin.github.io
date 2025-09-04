@@ -18,7 +18,7 @@ export default function WorkshopHeader({ workshop }: { workshop: Workshop }) {
         <div className="flex flex-row items-center justify-center gap-x-2">
           {!isPreview && (
             <span>
-              <FontAwesomeIcon icon={faFileAlt} className="pr-1" fixedWidth />
+              <FontAwesomeIcon icon={faFileAlt} className="pr-1" />
               <ResourceLink
                 className="hover:underline text-slate-600"
                 linkClass="external"

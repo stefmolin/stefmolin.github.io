@@ -7,13 +7,11 @@ export default function PushPinClickPrompt() {
       <FontAwesomeIcon
         icon={faInfo}
         size="lg"
-        fixedWidth
         className="border-2 border-black rounded-full py-0.5 mr-2"
         bounce
       />{' '}
       <p className="text-lg">
-        Click a <FontAwesomeIcon icon={faLocationDot} fixedWidth /> on the map to see more
-        information.
+        Click a <FontAwesomeIcon icon={faLocationDot} /> on the map to see more information.
       </p>
     </div>
   );

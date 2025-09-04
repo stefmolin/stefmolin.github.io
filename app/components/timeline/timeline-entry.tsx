@@ -65,21 +65,21 @@ const TimelineEntry = (props: TimelineEntryProps) => {
         <div>
           {assembleLine([
             <span className={iconSpanClassName}>
-              <FontAwesomeIcon icon={faCalendarDay} fixedWidth />
+              <FontAwesomeIcon icon={faCalendarDay} />
             </span>,
             DateTime.fromISO(date).toFormat('LLL d (EEE)'),
           ])}
           {time &&
             assembleLine([
               <span className={iconSpanClassName}>
-                <FontAwesomeIcon icon={faClock} fixedWidth />
+                <FontAwesomeIcon icon={faClock} />
               </span>,
               DateTime.fromISO(`${date}T${time}`).toFormat('h:mm a ZZZZ'),
             ])}
           {where &&
             assembleLine([
               <span className={iconSpanClassName}>
-                <FontAwesomeIcon icon={faLocationDot} fixedWidth />
+                <FontAwesomeIcon icon={faLocationDot} />
               </span>,
               where,
             ])}
@@ -93,7 +93,6 @@ const TimelineEntry = (props: TimelineEntryProps) => {
                       ? faGithub
                       : faExternalLink
                   }
-                  fixedWidth
                 />
               </span>,
               <ResourceLink

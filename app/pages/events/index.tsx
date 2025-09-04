@@ -67,7 +67,7 @@ export default function Index() {
           header={
             <div className="flex flex-col items-center">
               <FancyDivider className="w-1/2 mx-auto pb-5">
-                <FontAwesomeIcon icon={faLightbulb} className="px-5" fixedWidth />
+                <FontAwesomeIcon icon={faLightbulb} className="px-5" />
               </FancyDivider>
               <p className="md:text-justify text-lg lg:text-xl px-2 md:px-10">
                 <b>Knowledge sharing is a passion of mine</b>. On this page you will find{' '}

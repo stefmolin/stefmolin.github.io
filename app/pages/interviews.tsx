@@ -92,7 +92,6 @@ export default function Interviews() {
                             <FontAwesomeIcon
                               icon={faArrowUpRightFromSquare}
                               size="sm"
-                              fixedWidth
                               className="pl-2"
                             />
                           </h3>
@@ -102,7 +101,6 @@ export default function Interviews() {
                         <h4 className="text-slate-600">
                           <FontAwesomeIcon
                             icon={format === 'podcast' ? faPodcast : faNewspaper}
-                            fixedWidth
                             className="pr-1"
                           />
                           {host}

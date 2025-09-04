@@ -7,7 +7,7 @@ import {
   faMicrophoneLines,
   faRss,
 } from '@fortawesome/free-solid-svg-icons';
-import { faBell, faCalendarCheck, faNewspaper } from '@fortawesome/free-regular-svg-icons';
+import { faBell, faCalendar, faNewspaper } from '@fortawesome/free-regular-svg-icons';
 import classNames from 'classnames';
 import { DateTime } from 'luxon';
 import Link from 'next/link';
@@ -75,7 +75,7 @@ const FeaturedPost = ({
   <PageSection
     title={
       <>
-        <FontAwesomeIcon icon={icon} fixedWidth className="pr-1" />
+        <FontAwesomeIcon icon={icon} className="pr-1" />
         {title}*
       </>
     }
@@ -127,7 +127,7 @@ export default function Home({
         <h3 className="text-lg text-center sm:text-xl font-bold mt-2">
           Invite me to speak at your event
         </h3>
-        <FontAwesomeIcon icon={faMicrophoneLines} fixedWidth size="2x" />
+        <FontAwesomeIcon icon={faMicrophoneLines} size="2x" />
         <p>
           If you would like to invite me to speak at your event or be a guest on your podcast,
           please{' '}
@@ -207,12 +207,12 @@ export default function Home({
                 title={
                   nextSessions.length ? (
                     <>
-                      <FontAwesomeIcon icon={faBell} fixedWidth shake />
+                      <FontAwesomeIcon icon={faBell} shake />
                       Upcoming Live Session{`${multipleSessionsShowcased ? 's' : ''}`}*
                     </>
                   ) : (
                     <>
-                      <FontAwesomeIcon icon={faMapLocationDot} fixedWidth className="pr-2" />
+                      <FontAwesomeIcon icon={faMapLocationDot} className="pr-2" />
                       Past Live Sessions*
                     </>
                   )
@@ -254,11 +254,7 @@ export default function Home({
                           <div className="text-lg sm:text-xl text-center">
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-x-1">
                               <div>
-                                <FontAwesomeIcon
-                                  className="pr-1"
-                                  icon={faCalendarCheck}
-                                  fixedWidth
-                                />
+                                <FontAwesomeIcon className="pr-1" icon={faCalendar} />
                                 {eventDate.toLocaleString()}
                               </div>
                               {articleOfTheDay != null && (
@@ -289,7 +285,6 @@ export default function Home({
                             <p>
                               <FontAwesomeIcon
                                 icon={upcomingSessionIcons[session.presentation.contentClass]}
-                                fixedWidth
                               />{' '}
                               {session.presentation.contentClass}
                               <span className="pl-1 inline-flex sm:hidden md:inline-flex lg:hidden">

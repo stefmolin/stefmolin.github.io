@@ -21,7 +21,7 @@ export default function Featured({ contentClass, features, title = 'Featured' }:
   const details = (
     <div className="py-1 px-2">
       <h1 className="text-lg text-blue-400 text-center text-nowrap">
-        <FontAwesomeIcon icon={faAward} fixedWidth /> {title} {contentClass}
+        <FontAwesomeIcon icon={faAward} /> {title} {contentClass}
       </h1>
       <MarkdownSection className="text-slate-500">{message}</MarkdownSection>
     </div>
@@ -35,7 +35,7 @@ export default function Featured({ contentClass, features, title = 'Featured' }:
       positionClassName="left-full sm:left-1/2"
     >
       <div className="text-blue-400 cursor-default">
-        <FontAwesomeIcon icon={faAward} fixedWidth /> {title}
+        <FontAwesomeIcon icon={faAward} /> {title}
       </div>
     </Tooltip>
   );

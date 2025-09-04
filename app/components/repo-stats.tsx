@@ -33,7 +33,7 @@ export default function RepoStats({
 
   const repoLink = (
     <span>
-      <FontAwesomeIcon icon={faGithub} className="pr-1" fixedWidth />
+      <FontAwesomeIcon icon={faGithub} className="pr-1" />
       <ExternalLink
         href={`${GITHUB_PROFILE}/${repoName}`}
         className="hover:underline text-slate-600"
@@ -45,9 +45,9 @@ export default function RepoStats({
 
   const stats = info ? (
     <span>
-      <FontAwesomeIcon icon={faStar} className="pr-1" size="sm" fixedWidth />
+      <FontAwesomeIcon icon={faStar} className="pr-1" size="sm" />
       {numeral(info.stargazers).format('0[.]0a')}
-      <FontAwesomeIcon icon={faCodeFork} className="pl-2 pr-1" size="sm" fixedWidth />
+      <FontAwesomeIcon icon={faCodeFork} className="pl-2 pr-1" size="sm" />
       {numeral(info.forks).format('0[.]0a')}
     </span>
   ) : null;

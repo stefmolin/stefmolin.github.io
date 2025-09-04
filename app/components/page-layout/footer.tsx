@@ -81,7 +81,7 @@ const FooterLinks = ({ className }: { className?: string }) => {
       className="hover:text-slate-600 px-1"
     >
       <span className="text-nowrap">
-        <FontAwesomeIcon icon={icon} fixedWidth /> {text}
+        <FontAwesomeIcon icon={icon} /> {text}
       </span>
     </ResourceLink>
   );

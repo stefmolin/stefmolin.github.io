@@ -11,9 +11,7 @@ const BookPublicationDate = ({ publicationDate, format }: BookPublicationDatePro
   <DateFormatter
     dateString={publicationDate}
     format={format}
-    children={[
-      <FontAwesomeIcon icon={faCalendar} className="pr-1" fixedWidth key={publicationDate} />,
-    ]}
+    children={[<FontAwesomeIcon icon={faCalendar} className="pr-1" key={publicationDate} />]}
   />
 );
 export default BookPublicationDate;

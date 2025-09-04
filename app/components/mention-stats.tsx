@@ -34,7 +34,7 @@ export default function MentionStats({ className }: { className?: string }) {
         className="hover:underline"
       >
         <span>
-          <FontAwesomeIcon icon={faHeart} className="pr-1" fixedWidth />
+          <FontAwesomeIcon icon={faHeart} className="pr-1" />
           {numeral(mentions.count).format('0,0')} mentions
         </span>
       </ExternalLink>

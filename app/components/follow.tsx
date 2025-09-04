@@ -51,7 +51,7 @@ const FollowButtons = ({
       ariaLabel={ariaLabel}
       addTitle
     >
-      <FontAwesomeIcon icon={icon} size={size} fixedWidth />
+      <FontAwesomeIcon icon={icon} size={size} />
     </ResourceLink>
   );
   const buttons = (

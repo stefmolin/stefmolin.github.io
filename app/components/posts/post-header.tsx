@@ -29,9 +29,9 @@ const PostHeader = ({
       {preview ? (
         <FancyDivider className="mt-5">
           <div className="rounded border-2 border-black text-nowrap px-2 py-1 mx-2">
-            <FontAwesomeIcon icon={faWarning} className="pr-1" key={date} fixedWidth />{' '}
+            <FontAwesomeIcon icon={faWarning} className="pr-1" key={date} />{' '}
             <span>You are currently previewing a new post. This is a rough draft.</span>
-            <FontAwesomeIcon icon={faWarning} className="pl-1" key={date} fixedWidth />{' '}
+            <FontAwesomeIcon icon={faWarning} className="pl-1" key={date} />{' '}
           </div>
         </FancyDivider>
       ) : (
