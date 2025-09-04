@@ -46,8 +46,8 @@ const PostPreview = ({ title, ogImage, excerpt, slug, duration, date, tags, type
             {excerpt}
           </MarkdownSection>
           <small>
-            <div className="flex flex-col items-center justify-between sm:flex-row">
-              <PostTags tags={tags} />
+            <div className="flex flex-col-reverse items-center justify-between sm:flex-row">
+              <PostTags tags={tags} className="justify-center sm:justify-start" />
               {type === 'blog' && <PostPublicationDate date={date} relative />}
             </div>
           </small>

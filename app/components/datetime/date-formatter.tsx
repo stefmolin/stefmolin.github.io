@@ -22,7 +22,7 @@ const DateFormatter = ({ dateString, relative, format, long, children }: Props) 
       );
   });
   return (
-    <time dateTime={dateString}>
+    <time dateTime={dateString} className="whitespace-nowrap">
       {children}
       {displayDate}
     </time>
