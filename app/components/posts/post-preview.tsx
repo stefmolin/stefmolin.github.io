@@ -1,23 +1,12 @@
-import { DateTime } from 'luxon';
 import Link from 'next/link';
 import type PostType from '../../interfaces/post';
-import DateFormatter from '../datetime/date-formatter';
 import TimeToRead from '../datetime/duration-indicator';
 import MarkdownSection from '../sections/markdown-section';
 import CoverImage from './cover-image';
+import PostPublicationDate from '../datetime/publication-date';
 import PostTags from './post-tags';
 
-const PostPreview = ({
-  title,
-  ogImage,
-  excerpt,
-  slug,
-  duration,
-  date,
-  modified,
-  tags,
-  type,
-}: PostType) => {
+const PostPreview = ({ title, ogImage, excerpt, slug, duration, date, tags, type }: PostType) => {
   const postTitle = (
     <h3 className="text-2xl md:text-3xl mb-3 leading-snug w-full text-center sm:text-left">
       <Link
@@ -56,23 +45,12 @@ const PostPreview = ({
           <MarkdownSection className="md:text-lg leading-relaxed mb-4 line-clamp-5">
             {excerpt}
           </MarkdownSection>
-          {type === 'blog' ? (
-            <small>
-              <div className="flex flex-col items-center sm:flex-row">
-                <DateFormatter dateString={date}>Published </DateFormatter>
-                {modified &&
-                  DateTime.fromISO(modified).toLocal().startOf('day') >
-                    DateTime.fromISO(date).toLocal().startOf('day') && (
-                    <span>
-                      <span className="hidden sm:inline sm:px-1">·</span>
-                      <DateFormatter dateString={modified}>Last modified </DateFormatter>
-                    </span>
-                  )}
-              </div>
-            </small>
-          ) : (
-            <PostTags tags={tags} className="flex flex-row text-sm md:text-base" />
-          )}
+          <small>
+            <div className="flex flex-col items-center justify-between sm:flex-row">
+              <PostTags tags={tags} />
+              {type === 'blog' && <PostPublicationDate date={date} relative />}
+            </div>
+          </small>
         </div>
       </div>
     </div>
