@@ -3,6 +3,7 @@ title: "Becoming a Core Developer"
 subtitle: "My journey from numpydoc user to maintainer."
 excerpt: "Throughout your open source journey, you have no doubt been interacting with the core development team of the projects to which you have been contributing. Have you ever wondered how people become core developers of a project? In this post, I share my journey to becoming a core developer of numpydoc."
 date: "2025-10-06T08:00:00.000-05:00"
+preview: true
 author: Stefanie Molin
 tags: ["open source", "open source contribution", "open source software", "pre-commit hooks", "Python"]
 assets: "/assets/articles/open-source/becoming-a-core-developer"
