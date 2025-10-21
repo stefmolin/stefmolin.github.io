@@ -3,12 +3,12 @@ import classNames from 'classnames';
 import range from 'lodash/range';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+  faCaretDown,
+  faCaretUp,
   faQuoteLeft,
   faQuoteRight,
-  faCaretDown,
   faStar,
   faTrophy,
-  faCaretUp,
 } from '@fortawesome/free-solid-svg-icons';
 import FancyDivider from '../dividers/fancy-divider';
 import reviewStyles from '../../styles/review-styles.module.css';
@@ -37,7 +37,7 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
     else setShowMore(reviewTextRef.current.offsetHeight < reviewTextRef.current.scrollHeight);
   }, [showMore]);
 
-  const { author, rating, source, text } = review;
+  const { author, location, rating, source, text } = review;
 
   const iconClassName = 'text-lg md:text-xl';
 
@@ -113,8 +113,9 @@ export default function ReviewCard({ review, cardSize, className }: ReviewCardPr
               {author}
             </ExternalLink>
           ) : (
-            author
+            author ?? `${location} attendee`
           )}
+          {author && location && <span> at {location}</span>}
         </div>
       </div>
     </div>

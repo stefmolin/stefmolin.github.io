@@ -54,29 +54,31 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         author: 'João Sousa (via LinkedIn)',
         source:
           'https://www.linkedin.com/feed/update/urn:li:activity:7249380559787802624?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7249380559787802624%2C7253478263811923969%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287253478263811923969%2Curn%3Ali%3Aactivity%3A7249380559787802624%29',
-      }, // PyCon Portugal 2024
+        location: 'PyCon PT 2024',
+      },
       {
         text: 'Perfect balance between theory and practice.',
-        author: 'PyCon Portugal 2024 attendee',
-      }, // PyCon Portugal 2024
+        location: 'PyCon PT 2024',
+        rating: 5,
+      },
       {
         text: 'By far one of the best workshops at the conference.',
-        author: 'PyCon Poland 2024 attendee',
-      }, // PyCon PL 2024
+        location: 'PyCon PL 2024',
+      },
       {
         text: `In the first tutorial days of #EuroSciPy2023, [@StefanieMolin](https://x.com/StefanieMolin)
         gave an outstanding introduction to data analysis using pandas.`,
         author: 'EuroSciPy (@EuroSciPy)',
         source: 'https://x.com/EuroSciPy/status/1691349804595523584?s=20',
-      }, // EuroSciPy 2023
+      },
       {
         text: 'Thank you so much for your great workshop on Pandas in Cardiff!',
-        author: 'PyCon UK 2022 attendee',
-      }, // PyCon UK 2022
+        location: 'PyCon UK 2022',
+      },
       {
         text: 'Thank you again for my favorite workshop so far at ODSC West.',
-        author: 'ODSC West 2021 attendee',
-      }, // ODSC West 2021
+        location: 'ODSC West 2021',
+      },
       {
         text: dedent`10 Best pandas Courses to Take in 2024 (#8)
 
@@ -150,43 +152,47 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         understanding of Matplotlib's fundamentals. If you have the chance, don't miss it!`,
         author: 'Tiago Montes (@setnomt)',
         source: 'https://x.com/setnomt/status/1700797943245078673?s=20',
-      }, // PyCon PT 2023
+        location: 'PyCon PT 2023',
+      },
       {
         text: `Learning a lot about data visualization beyond the basics at #odsc. Thx to
         [@StefanieMolin](https://x.com/StefanieMolin) for this great workshop and the awesome examples.`,
         author: 'mobileLarson (@mobileLarson)',
         source: 'https://x.com/mobileLarson/status/1537052051259146241?s=20',
-      }, // ODSC Europe 2022
+        location: 'ODSC Europe 2022',
+      },
       {
         text: `[H]uge thanks to [@StefanieMolin](https://x.com/StefanieMolin) for the great workshop
         on #dataviz w/ #pandas, #matplotlib, #pyplot and #holoviz and for the very kind gift 😍 to
         better code!`,
         author: 'Sho (@shoyip)',
         source: 'https://x.com/shoyip/status/1534060759516385281?s=20',
-      }, // PyCon IT 2022
+        location: 'PyCon IT 2022',
+      },
       {
         text: `Great tutorial on matplotlib today by
         [@stefaniemolin.com](https://bsky.app/profile/did:plc:3yg2ptrzdcvj7gvnz53f7zyf) at
         [@euroscipy.bsky.social](https://bsky.app/profile/did:plc:rh7wc5osipikrzthvwwynoyn) 2025.`,
         author: 'Gert-Ludwig Ingold (@glingold.bsky.social)',
         source: 'https://bsky.app/profile/glingold.bsky.social/post/3lwowrcsjr223',
-      }, // EuroSciPy 2025
+        location: 'EuroSciPy 2025',
+      },
       {
         text: 'Thanks again for the comprehensive material and input/examples to explore!',
-        author: 'PyCon IT 2023 attendee',
+        location: 'PyCon IT 2023',
       },
       {
         text: 'Me gustó mucho &ndash; estuvo muy chévere!',
-        author: 'PyCon Colombia 2024 attendee',
+        location: 'PyCon Colombia 2024',
       },
       {
         text: `I liked how you used [functional programming] to create a partial function that
         updates a graph for every frame. [...] Thanks for making your slides open.`,
-        author: 'PyCon Colombia 2024 attendee',
+        location: 'PyCon Colombia 2024',
       },
       {
         text: `I've made contributions to matplotlib in the past, and I learned some things.`,
-        author: 'EuroSciPy 2025 attendee',
+        location: 'EuroSciPy 2025',
       },
     ],
     relatedContent: [
@@ -242,70 +248,91 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         She did not leave anyone behind, answered the basic questions from rookie programmers like
         me but also went deep into more complex areas.`,
         author: 'Mauricio',
-      }, // EuroPython 2024
+        location: 'EuroPython 2024',
+        rating: 5,
+      },
       {
         text: `This has been the most useful workshop for me[...] It may be the most useful thing I
         learn at the conference. This is going to really help me with my project.`,
-        author: 'EuroPython 2024 attendee',
+        location: 'EuroPython 2024',
       },
       {
         text: `You could tell [Stefanie] knew what [she was] talking about and how to explain it.
         The slides are great &ndash; easy to follow even after coming in late.`,
-        author: 'EuroPython 2024 attendee',
+        location: 'EuroPython 2024',
       },
       {
         text: `Just wanted to say a big thank you for the workshop! It was super practical and full
         of helpful takeaways. I especially enjoyed learning about the different options for
         pre-commit with Python and how to create a customized one. I'm definitely planning to add it
         to my workflow!`,
-        author: 'PyCon US 2025 attendee',
+        location: 'PyCon US 2025',
+        rating: 5,
       },
       {
         text: `Great explanation of pre[-]commit hooks and how to create your own. Really enjoyed
         how hands-on everything was.`,
-        author: 'PyCon US 2025 attendee',
+        location: 'PyCon US 2025',
+        rating: 5,
       },
       {
         text: 'Clear informative and with step by step slides',
-        author: 'PyCon US 2025 attendee',
+        location: 'PyCon US 2025',
+        rating: 5,
       },
       {
         text: `Well explained, good examples. Having local copy of the slides rather than relying on
         the projector is a huge bonus. Appreciate the opportunity to think of a novel application
         rather than just looking at examples.`,
-        author: 'PyCon US 2025 attendee',
+        location: 'PyCon US 2025',
+        rating: 5,
       },
       {
         text: `I feel I really learned something valuable. It's an easy-to-follow, step-by-step
         tutorial where I never felt overwhelmed by the sheer amount information I got on the topic!
         Thank you very much for what you've taught me today!`,
-        author: 'PyCon PT 2025 attendee',
+        location: 'PyCon PT 2025',
+        rating: 5,
       },
       {
         text: `New concept for me and I found it useful. I liked the way [Stefanie was] helping us
         to keep up with [her] and run the codes`,
         author: 'Bobby',
-      }, // PyCon US 2025
+        location: 'PyCon US 2025',
+        rating: 5,
+      },
       {
         text: `This was great. Now I just have to figure out how we can use it [at work].`,
-        author: 'EuroPython 2024 attendee',
+        location: 'EuroPython 2024',
       },
       {
         text: 'I was able to get something working by the end and now I know how to [build my own hook].',
-        author: 'EuroPython 2024 attendee',
+        location: 'EuroPython 2024',
+      },
+      {
+        text: 'Amazing everything! This workshop was [my] favorite thing from the entire event ✨',
+        author: 'Juan',
+        location: 'PyCon PT 2025',
+        rating: 5,
       },
       {
         text: 'Great, learnt a ton, good topic',
         author: 'Marc',
-      }, // PyCon US 2025
+        location: 'PyCon US 2025',
+        rating: 5,
+      },
       {
         text: 'Amazing teacher!',
         author: 'Phebe',
-      }, // PyCon US 2025
+        location: 'PyCon US 2025',
+        rating: 5,
+      },
       {
-        text: 'Amazing everything! This workshop was [my] favorite thing from the entire event ✨',
+        text: 'I loved the workshop and how [Stefanie] actually did overall. [...] this was made for all levels.',
         author: 'Juan',
-      }, // PyCon PT 2025
+        location: 'PyConES 2025',
+        rating: 5,
+      },
     ],
     relatedContent: [
       CONTENT_LINKS.PRE_COMMIT_ARTICLES,
