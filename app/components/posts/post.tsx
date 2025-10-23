@@ -89,7 +89,7 @@ const Post = ({ post, suggestedPosts }: PostProps) => {
             </div>
           </div>
           <PostBody content={post.content}>
-            <PostTags tags={post.tags} />
+            <PostTags tags={post.tags} asLinks />
             <div
               className={classNames(
                 'flex flex-row items-center justify-center gap-x-2',
