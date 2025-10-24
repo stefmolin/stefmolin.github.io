@@ -162,6 +162,12 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         location: 'ODSC Europe 2022',
       },
       {
+        text: 'So well structured and planned. I learned new things. Well done 👏🏼👏🏼',
+        author: 'Patrícia',
+        location: 'Python Brasil 2025',
+        rating: 5,
+      },
+      {
         text: `[H]uge thanks to [@StefanieMolin](https://x.com/StefanieMolin) for the great workshop
         on #dataviz w/ #pandas, #matplotlib, #pyplot and #holoviz and for the very kind gift 😍 to
         better code!`,
@@ -182,10 +188,6 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         location: 'PyCon IT 2023',
       },
       {
-        text: 'Me gustó mucho &ndash; estuvo muy chévere!',
-        location: 'PyCon Colombia 2024',
-      },
-      {
         text: `I liked how you used [functional programming] to create a partial function that
         updates a graph for every frame. [...] Thanks for making your slides open.`,
         location: 'PyCon Colombia 2024',
@@ -193,6 +195,14 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
       {
         text: `I've made contributions to matplotlib in the past, and I learned some things.`,
         location: 'EuroSciPy 2025',
+      },
+      {
+        text: 'Thank you. It was amazing!',
+        location: 'Python Brasil 2025',
+      },
+      {
+        text: 'Me gustó mucho &ndash; estuvo muy chévere!',
+        location: 'PyCon Colombia 2024',
       },
     ],
     relatedContent: [
