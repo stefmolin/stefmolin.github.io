@@ -67,7 +67,7 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     link: '/articles/devx/pre-commit/exif-stripper/',
     contentClass: 'article',
     image: {
-      src: 'https://github.com/stefmolin/exif-stripper/raw/main/logo.png',
+      src: 'https://stefaniemolin.com/exif-stripper/logo.png',
       width: 269,
       height: 176,
     },

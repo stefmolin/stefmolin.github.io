@@ -6,7 +6,7 @@ date: "2024-10-09T09:00:00.000-04:00"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python", "projects", "open source software"]
 ogImage:
-  url: "https://github.com/stefmolin/exif-stripper/raw/main/logo.png"
+  url: "https://stefaniemolin.com/exif-stripper/logo.png"
   caption: "exif-stripper logo"
   width: 269
   height: 176
