@@ -5,8 +5,9 @@ excerpt: "Looking to streamline your local development? In this article, I provi
 date: "2024-03-29T15:55:00.000-05:00"
 author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python"]
+assets: "/assets/articles/devx/pre-commit/setup-guide"
 ogImage:
-  url: "/assets/articles/devx/pre-commit/setup-guide/cover.jpg"
+  url: "/post-assets/setup-guide/cover.jpg"
   width: 6097
   height: 3510
 featured:
@@ -274,7 +275,7 @@ git commit -m "Add utils.py"
 
 Some of the hooks fail, which causes Git to abort the commit. The output tells us what we need to fix. Note that the first two checks were skipped because they don’t run on Python files:
 
-![Violations triggered using the accompanying GitHub repository (https://github.com/stefmolin/pre-commit-example) as of November 21, 2023 at 2:11 PM EST. Screenshot taken by Stefanie Molin.](https://raw.githubusercontent.com/stefmolin/pre-commit-example/main/images/violations.png)
+![Violations triggered using the accompanying GitHub repository (https://github.com/stefmolin/pre-commit-example) as of November 21, 2023 at 2:11 PM EST. Screenshot taken by Stefanie Molin.](/post-assets/violations.png)
 
 <figcaption>
 
@@ -314,7 +315,7 @@ def my_function(a):
 
 Stage these new changes, and try to commit again. Since we addressed all the findings, our commit is successful this time:
 
-![commit passing the checks](https://raw.githubusercontent.com/stefmolin/pre-commit-example/main/images/passed.png)
+![commit passing the checks](/post-assets/passed.png)
 
 <figcaption>
 
