@@ -30,14 +30,6 @@ Normally, after a redeye, I force myself to stay awake to adjust, but I was in n
 
 ---
 
-![EuroPython 2024 banner](https://raw.githubusercontent.com/stefmolin/pre-commit-workshop/europython24/ep24banner.png)
-
-<figcaption>
-
-Source: [EuroPython](https://twitter.com/europython/status/1806741870401212557)
-
-</figcaption>
-
 I presented my new workshop, "[(Pre-)Commit to Better Code](/workshops/pre-commit-workshop/)," on Monday afternoon. The last time I presented a brand new workshop anywhere was in 2021, and it was on data science, so I was curious to see how people would respond to something different. This workshop is also very different from my previous ones in that I have live demos, and there is roughly a 50/50 split between slides and exercises.
 
 In the first half of the workshop, I taught attendees how to set up pre-commit hooks on their own projects, and, in the second half, I taught them how to make their own hooks. Initially, I had planned to spend a little more time on the second section, but, to my surprise, I had so many questions from people new to pre-commit hooks during the first section, that I was actually behind time, eating into the second section.
