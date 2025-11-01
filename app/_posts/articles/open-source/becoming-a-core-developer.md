@@ -2,8 +2,7 @@
 title: "Becoming a Core Developer"
 subtitle: "My journey from numpydoc user to maintainer."
 excerpt: "Throughout your open source journey, you have no doubt been interacting with the core development team of the projects to which you have been contributing. Have you ever wondered how people become core developers of a project? In this post, I share my journey to becoming a core developer of numpydoc."
-date: "2025-10-06T08:00:00.000-05:00"
-preview: true
+date: "2025-11-01T20:00:00.000-04:00"
 author: Stefanie Molin
 tags: ["open source", "open source contribution", "open source software", "pre-commit hooks", "Python"]
 assets: "/assets/articles/open-source/becoming-a-core-developer"
@@ -57,17 +56,17 @@ def distance(self, x: Number, y: Number) -> float:
 
 <figcaption>
 
-Example of a docstring following the numpydoc style, ignoring rules ES01, EX01, SA01, and SS06. Excerpt taken from [stefmolin/data-morph](https://github.com/stefmolin/data-morph/blob/main/src/data_morph/shapes/bases/point_collection.py) on February 15, 2025 at 12:39 PM EST.
+Example of a docstring following the numpydoc style, ignoring rules ES01, EX01, SA01, and SS06. Excerpt taken from [stefmolin/data-morph](https://github.com/stefmolin/data-morph/blob/main/src/data_morph/shapes/bases/point_collection.py) on November 1, 2025 at 3:00 PM EDT.
 
 </figcaption>
 
-As we made our changes, we would run a [script](https://github.com/scikit-learn/scikit-learn/blob/5aece174103f3b1238c2ed8ac6cc246977c42520/sklearn/tests/test_docstrings.py) to test whether we had addressed all the docstring issues that numpydoc validated. This script was written by the Scikit-Learn team to analyze the entire package at once, as, back then, numpydoc only worked on one entity at a time. Towards the end of the sprint, one of the maintainers there told me about the `pre-commit` tool, which, when installed (see my [How to Set Up Pre-Commit Hooks](/articles/devx/pre-commit/setup-guide/) article) in the Scikit-Learn repository on my machine, would run a series of checks selected by the Scikit-Learn team on the code. I began to wonder why the numpydoc validation wasn't being performed as a pre-commit check.
+As we made our changes, we would run a [script](https://github.com/scikit-learn/scikit-learn/blob/5aece174103f3b1238c2ed8ac6cc246977c42520/sklearn/tests/test_docstrings.py) to test whether we had addressed all the docstring issues that numpydoc validated. This script was written by the Scikit-Learn team to analyze the entire package at once, as, back then, numpydoc only worked on one docstring per invocation. Towards the end of the sprint, one of the maintainers there told me about the `pre-commit` tool, which, when installed (see my [How to Set Up Pre-Commit Hooks](/articles/devx/pre-commit/setup-guide/) article) in the Scikit-Learn repository on my machine, would run a series of checks selected by the Scikit-Learn team on the code. I began to wonder why the numpydoc validation wasn't being performed as a pre-commit check.
 
 ## Building a pre-commit hook for numpydoc
 
 When I got back home, I researched `pre-commit`, and, at work, I built a numpydoc validation pre-commit check. It wasn't until I began working on one of my personal projects, [Data Morph](https://stefaniemolin.com/data-morph), that I needed the numpydoc validation pre-commit check outside of work, so I got permission from my employer to open source it.
 
-[I approached the numpydoc team](https://github.com/numpy/numpydoc/issues/450) to see if they were interested and indeed they were. However, when I tried to port the code, I realized that what I built was actually unusable for most use cases because of how numpydoc worked: in order to inspect the code, numpydoc needed to import it, but since `pre-commit` creates a separate environment for running the checks, the code would also need to be installed in this environment (see my [A Behind-the-Scenes Look at How Pre-Commit Works](/articles/devx/pre-commit/behind-the-scenes/) article). Pre-commit checks need to be fast, and this would make it way too slow. At this point, I realized this wouldn't be that easy, and that, perhaps, this was the reason the hook didn't exist already.
+[I approached the numpydoc team](https://github.com/numpy/numpydoc/issues/450) to see if they were interested and indeed they were. However, when I tried to port the code, I realized that what I built was actually unusable for most use cases because of how numpydoc worked: in order to inspect the code, numpydoc needed to import it, but since `pre-commit` creates a separate environment for running the checks, the code would also need to be installed in this environment (see my [A Behind-the-Scenes Look at How Pre-Commit Works](/articles/devx/pre-commit/behind-the-scenes/) article for more information). Pre-commit checks need to be fast, and this would make it way too slow. At this point, I realized this wouldn't be that easy, and that, perhaps, this was the reason the hook didn't exist already.
 
 ### Creating numpydoc's static code analysis functionality
 
@@ -77,7 +76,7 @@ I had no clue how to perform static code analysis at the time, yet alone in Pyth
 
 The `ast` module provides tools to work with **Abstract Syntax Trees** (ASTs) in Python. An AST represents a program (Python in this case) using a tree structure in which the nodes are components of the language's grammar, for example, `if` statements and class/function definitions. By simply reading the contents of a file, the `ast` module can parse *syntactically-valid* source code into an AST, which can then be traversed to perform static code analysis.
 
-Without going into the gory details here, I spent the weekend creating an alternative to the existing `Validator` class: the `AstValidator` class. When running numpydoc as a static code analyzer, the new `AstValidator` class replaces the existing `Validator` class; otherwise, the `Validator` class is used, which ensures existing workflows are unaffected. The `AstValidator` overrides the `Validator` class's logic to use AST-compatible logic, which eliminates the need to import the Python code. For example, instead of inspecting the Python object, we check what kind of AST node we have:
+Without going into the gory details here, I spent the weekend creating an alternative to the existing `Validator` class: the `AstValidator` class. When running numpydoc as a static code analyzer, the new `AstValidator` class replaces the existing `Validator` class, overriding the `Validator` class to use AST-compatible logic, which eliminates the need to import the Python code being analyzed. For example, instead of inspecting the Python object, we check what kind of AST node we have:
 
 ```diff-python
   @property
@@ -92,7 +91,7 @@ The logic marked as removed is how the `Validator` implements this check; the lo
 
 </figcaption>
 
-The `AstValidator` class works on individual nodes in the AST, but how do we get the AST node in the first place? Python's `ast` module includes the `ast.parse()` function, which parses source code as a string into an AST (assuming the source code contains valid Python code). The AST returned is rooted at an `ast.Module` node. In order to inspect everything in that module, we must traverse the tree starting at the root and validate each of the nodes that should have docstrings as we encounter them. To do so, I created the `DocstringVisitor` class, which is a subclass of `ast.NodeVisitor`. The `visit()` method defines what we do when we visit each node. Here, we only do something if the node represents a module, class, or function:
+For the `AstValidator` class to do its job, it must be initialized with an individual node in the AST to check. The Python `ast` module includes the `ast.parse()` function, which parses source code as a string into an AST. The result is an AST rooted at an `ast.Module` node. In order to inspect everything in that module, we must traverse the tree starting at the root and validate each of the nodes that should have docstrings, as we encounter them. The `ast` module provides the `ast.NodeVisitor` class to perform this transversal, so I created the `DocstringVisitor` class as a subclass of `ast.NodeVisitor` and overrode the `visit()` method, which is called on each node, to perform the check only if the node represents a module, class, or function:
 
 ```python
 def visit(self, node: ast.AST) -> None:
@@ -138,7 +137,7 @@ Please consult the [documentation](https://numpydoc.readthedocs.io/en/latest/val
 
 ### Bells and whistles
 
-While the hook was definitely useable at this point, it was missing some functionality that users of these tools come to expect like configuration options in `pyproject.toml` and inline comments to ignore checks on specific lines.
+While the hook was definitely useable at this point, it was missing some functionality that users of these tools have come to expect like configuration options in `pyproject.toml` and inline comments to ignore checks on specific lines. Working on these types of usability improvements may not seem as glamorous as adding new features to a project, however, they strongly communicate your passion for the project and your interest in improving it, which are things core developers look for.
 
 #### Configuration options
 
@@ -159,27 +158,26 @@ exclude = [ # don't report on checks for these
   '\.__str__$',
 ]
 override_SS05 = [ # allow docstrings to start with these words
-  '^Process ',
-  '^Assess ',
-  '^Access ',
+  '^Unambiguous ',
 ]
 ```
 
 <figcaption>
 
-Example `numpydoc-validation` hook configuration in `pyproject.toml`. Excerpt taken from [stefmolin/data-morph](https://github.com/stefmolin/data-morph/blob/main/pyproject.toml) on February 15, 2025 at 12:39 PM EST.
+Example `numpydoc-validation` hook configuration in `pyproject.toml`. Excerpt taken from [stefmolin/data-morph](https://github.com/stefmolin/data-morph/blob/main/pyproject.toml) on November 1, 2025 at 3:07 PM EDT.
 
 </figcaption>
 
 To implement this, I used the `tomllib` module in the standard library (introduced in Python 3.11), which made quick work of finding the dedicated numpydoc section. However, I also wanted to automatically detect the `pyproject.toml` file for the user instead of requiring them to pass the path to it because it is a standard name and typically in a standard location (the root of the repository). This wasn't as straightforward, so I once again researched how other tools do this and adapted the logic that `black` had.
 
+I've had several PRs merged in different projects that boiled down to knowledge-sharing just like this change. It's a great way to make a difference, and in some cases, there's an opportunity to be proactive and suggest such changes in the first place, which will definitely make an impression on the core developers.
 
 #### Ignoring checks with inline comments
 
-The checks defined in the `pyproject.toml` configuration apply to the project globally. For flexibility, I wanted to make it possible to turn off checks on a per-docstring basis using inline comments. For example, the following bypasses the checks for parameter (PR01) and return value (RT01) documentation in a single function docstring:
+The checks defined in the `pyproject.toml` configuration apply to the project globally. For flexibility and to bring the user experience closer to that of other popular tools like `black` and `flake8`, I wanted to make it possible to turn off checks on a per-docstring basis using inline comments. For example, the following bypasses the checks for parameter (PR01) and return value (RT01) documentation in a single function docstring:
 
 ```python
-def _ease(
+def _easing(
     frame: int, *, min_value: Number, max_value: Number
 ) -> Number:  # numpydoc ignore=PR01,RT01
     """Determine the next value with easing."""
@@ -190,17 +188,21 @@ def _ease(
 
 <figcaption>
 
-Example of using inline comments to have numpydoc ignore rules PR01 and RT01 for the `_ease()` function. Excerpt taken from [stefmolin/data-morph](https://github.com/stefmolin/data-morph/blob/main/src/data_morph/morpher.py) on February 15, 2025 at 3:39 PM EST.
+Example of using inline comments to have numpydoc ignore validation rules PR01 and RT01 for the `_easing()` function's docstring. Excerpt taken from [stefmolin/data-morph](https://github.com/stefmolin/data-morph/blob/main/src/data_morph/morpher.py) on November 1, 2025 at 3:10 PM EDT.
 
 </figcaption>
 
 This can't be done with the AST alone because, when the `ast` module parses source code to generate an AST, it discards some information that is irrelevant for that representation, such as formatting and comments. This means that inline comments like the example above are not present at all in the AST.
 
-To extract inline comments, we need to use a **parse tree** instead. A parse tree retains the full structure of the code, but it isn't as easy to work with or as efficient as the AST. The leaves of the parse tree are called **tokens** and can be extracted with the `tokenize` module from the standard library. Tokens have a type, one of which is `token.COMMENT`, so it's easy to isolate only those that are comments, and, from there, match comments prefixed with `numpydoc ignore` to their corresponding AST nodes using the line number, saving the validation checks that should be ignored.
+To extract inline comments, I needed to use a **parse tree** instead. A parse tree retains the full structure of the code, but it isn't as easy to work with or as efficient as the AST. The leaves of the parse tree are called **tokens** and can be extracted with the `tokenize` module from the standard library. Tokens have a type, one of which is `token.COMMENT`, so it's easy to isolate only those that are comments, and, from there, match comments prefixed with `numpydoc ignore` to their corresponding AST nodes using the line number, saving the validation checks that should be ignored.
+
+### The review
+
+With all of this in place, the PR to add the `numpydoc-validation` pre-commit hook was ready for review, which given the novelty of it, took a few months. During the review, I had agreed to help the core development team out in the future if something came up related to my feature as they were a little concerned about merging such a massive change without my support, since it was new to all of them. However, this didn't make me part of the team yet &ndash; in fact, it hadn't even been discussed.
 
 ## CLI improvements
 
-After the `numpydoc-validation` pre-commit hook was merged, I did some work to [streamline the numpydoc CLI](https://github.com/numpy/numpydoc/pull/476) and bring some of the functionality that only existed on the pre-commit hook side to other parts of the project. With these changes, we can now run `numpydoc lint` to run numpydoc validation on entire Python files using the AST logic:
+After the `numpydoc-validation` pre-commit hook was merged, I ended up sticking around to tackle some other improvements like [streamlining the numpydoc CLI](https://github.com/numpy/numpydoc/pull/476) and bringing some of the functionality that only existed on the pre-commit hook side to other parts of the project. With these changes, we can now run `numpydoc lint` to run numpydoc validation on entire Python files using the AST logic:
 
 ```shell[class="command-line"][data-prompt="$"][data-output="2-9"]
 numpydoc lint file_a.py file_b.py
@@ -213,11 +215,11 @@ numpydoc lint file_a.py file_b.py
 +-------------+----------------+-------+--------------------------------------+
 ```
 
-This solved one of the pain points I had when first trying to use numpydoc on a personal project: I wanted to be able to validate the docstrings of an entire module without needing to write a script or test suite to do so. Since I'm a user of the numpydoc, I'm passionate about making that experience better.
+This solved one of the pain points I had when first trying to use numpydoc on a personal project: I wanted to be able to validate the docstrings of an entire module without needing to write a script or test suite to do so. Since I'm a user of numpydoc, I'm passionate about making that experience better.
 
 ## Welcome to the team
 
-In April 2024, some time after the `numpydoc-validation` pre-commit hook and `numpydoc lint` CLI went live, I was invited to become a core contributor. One of my favorite things since joining has been seeing issues come in that show people have switched their projects over to the tools I built.
+In April 2024, several months after the `numpydoc-validation` pre-commit hook went live and just a couple of days after I opened the PR for the `numpydoc lint` CLI changes, I was invited to become a core developer. One of my favorite things since joining has been seeing issues come in that show people have switched their projects over to the tools I built.
 
 It's important to note that, while I wrote and am very familiar with the `AstValidator` and pre-commit hook implementation and am well-versed with the CLI, I am not very familiar with other areas like the Sphinx logic or the docscraping logic that predates my involvement. However, others in the team have deep understanding of these areas, and lean on me for my strengths. This is what makes a development team successful &ndash; we complement each other.
 
