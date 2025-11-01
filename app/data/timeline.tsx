@@ -15,6 +15,11 @@ const COUNTRY_SHORTHAND = {
 
 const TIMELINE_ITEMS: TimelineEntryProps[] = [
   {
+    date: '2025-10-28',
+    eventType: 'volunteer',
+    title: 'Became a speaker mentor for PyladiesCon 2025',
+  },
+  {
     date: '2025-05-20',
     eventType: 'code',
     title: 'Docstringify 1.0.0 release',
