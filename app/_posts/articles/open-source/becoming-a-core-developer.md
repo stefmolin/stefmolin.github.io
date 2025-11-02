@@ -2,10 +2,9 @@
 title: "Becoming a Core Developer"
 subtitle: "My journey from numpydoc user to maintainer."
 excerpt: "Throughout your open source journey, you have no doubt been interacting with the core development team of the projects to which you have been contributing. Have you ever wondered how people become core developers of a project? In this post, I share my journey to becoming a core developer of numpydoc."
-date: "2025-11-01T20:00:00.000-04:00"
+date: "2025-11-02T11:50:00.000-05:00"
 author: Stefanie Molin
 tags: ["open source", "open source contribution", "open source software", "pre-commit hooks", "Python"]
-assets: "/assets/articles/open-source/becoming-a-core-developer"
 ogImage:
   url: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   width: 1200
@@ -56,7 +55,7 @@ def distance(self, x: Number, y: Number) -> float:
 
 <figcaption>
 
-Example of a docstring following the numpydoc style, ignoring rules ES01, EX01, SA01, and SS06. Excerpt taken from [stefmolin/data-morph](https://github.com/stefmolin/data-morph/blob/main/src/data_morph/shapes/bases/point_collection.py) on November 1, 2025 at 3:00 PM EDT.
+Example of a docstring following the numpydoc style, ignoring rules ES01, EX01, SA01, and SS06. Excerpt taken from [stefmolin/data-morph](https://github.com/stefmolin/data-morph/blob/main/src/data_morph/shapes/bases/point_collection.py) on November 1, 2025.
 
 </figcaption>
 
@@ -164,7 +163,7 @@ override_SS05 = [ # allow docstrings to start with these words
 
 <figcaption>
 
-Example `numpydoc-validation` hook configuration in `pyproject.toml`. Excerpt taken from [stefmolin/data-morph](https://github.com/stefmolin/data-morph/blob/main/pyproject.toml) on November 1, 2025 at 3:07 PM EDT.
+Example `numpydoc-validation` hook configuration in `pyproject.toml`. Excerpt taken from [stefmolin/data-morph](https://github.com/stefmolin/data-morph/blob/main/pyproject.toml) on November 1, 2025.
 
 </figcaption>
 
@@ -188,7 +187,7 @@ def _easing(
 
 <figcaption>
 
-Example of using inline comments to have numpydoc ignore validation rules PR01 and RT01 for the `_easing()` function's docstring. Excerpt taken from [stefmolin/data-morph](https://github.com/stefmolin/data-morph/blob/main/src/data_morph/morpher.py) on November 1, 2025 at 3:10 PM EDT.
+Example of using inline comments to have numpydoc ignore validation rules PR01 and RT01 for the `_easing()` function's docstring. Excerpt taken from [stefmolin/data-morph](https://github.com/stefmolin/data-morph/blob/main/src/data_morph/morpher.py) on November 1, 2025.
 
 </figcaption>
 
