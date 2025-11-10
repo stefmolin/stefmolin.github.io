@@ -299,6 +299,42 @@ export const CONFERENCE_IMAGES: Photo[] = [
     height: 1467,
     alt: 'Receiving the ODSC Speaker Impact Award from Sheamus McGovern (the founder of ODSC) at ODSC East on May 13, 2025 in Boston.',
   },
+  {
+    src: '/assets/events/conferences/pycon-india-2025-1.jpg',
+    width: 2500,
+    height: 1850,
+    alt: 'Presenting "Data Morph: A Cautionary Tale of Summary Statistics" at PyCon India in Bengaluru on September 13, 2025',
+  },
+  {
+    src: '/assets/events/conferences/pycon-india-2025-2.jpg',
+    width: 2800,
+    height: 1867,
+    alt: 'Presenting "Data Morph: A Cautionary Tale of Summary Statistics" at PyCon India in Bengaluru on September 13, 2025',
+  },
+  {
+    src: '/assets/events/conferences/pycon-india-2025-3.jpg',
+    width: 2000,
+    height: 1337,
+    alt: 'Presenting "Data Morph: A Cautionary Tale of Summary Statistics" at PyCon India in Bengaluru on September 13, 2025',
+  },
+  {
+    src: '/assets/events/conferences/pycones-2025-1.jpg',
+    width: 5011,
+    height: 3193,
+    alt: 'Presenting "(Pre-)Commit to Better Code" at PyConES in Seville, Spain on October 17, 2025 (photo by Jaime Martínez)',
+  },
+  {
+    src: '/assets/events/conferences/pycones-2025-2.jpg',
+    width: 4899,
+    height: 3266,
+    alt: 'Presenting "(Pre-)Commit to Better Code" at PyConES in Seville, Spain on October 17, 2025 (photo by Jaime Martínez)',
+  },
+  {
+    src: '/assets/events/conferences/pycones-2025-3.jpg',
+    width: 3000,
+    height: 2000,
+    alt: 'Presenting "(Pre-)Commit to Better Code" at PyConES in Seville, Spain on October 17, 2025 (photo by Jaime Martínez)',
+  },
 ];
 
 export const BOOK_SIGNING_IMAGES: Photo[] = [
