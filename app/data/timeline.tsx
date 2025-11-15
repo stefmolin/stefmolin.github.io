@@ -17,7 +17,8 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
   {
     date: '2025-10-28',
     eventType: 'volunteer',
-    title: 'Became a speaker mentor for PyladiesCon 2025',
+    title: 'Joined the PyLadiesCon 2025 program committee',
+    description: 'Review and correct captioning for English and Spanish talks',
   },
   {
     date: '2025-05-20',
@@ -47,6 +48,7 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
     date: '2025-04-16',
     eventType: 'volunteer',
     title: 'Joined PyCon Portugal 2025 program committee',
+    description: 'Reviewed proposals and helped select the final schedule',
   },
   {
     date: '2025-04-02',
@@ -107,6 +109,8 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
     date: '2024-06-14',
     eventType: 'volunteer',
     title: 'Joined PyCon Portugal 2024 program committee',
+    description:
+      'Coordinated the proposal review and selection phase as team leader, in addition to reviewing proposals myself',
     link: {
       linkClass: 'internal',
       resourceLink: {
