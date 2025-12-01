@@ -74,6 +74,12 @@ const LOCATIONS: Record<string, MapLocation> = {
     country: 'Canada',
     countryCode: 'CA',
   },
+  VANCOUVER: {
+    coordinates: [-123.1207, 49.2827],
+    city: 'Vancouver',
+    country: 'Canada',
+    countryCode: 'CA',
+  },
   BRAGA: {
     coordinates: [-8.426507, 41.545448],
     city: 'Braga',

@@ -691,10 +691,21 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       location: LOCATIONS.SAO_PAULO,
       eventClass: 'conference',
       virtual: false,
-      link: undefined,
+      link: '/blog/travel/2025/spain-and-brazil/',
     },
     presentation: PRESENTATIONS.DATA_MORPH,
     date: '2025-10-25',
+  },
+  {
+    event: {
+      name: 'PyCascades',
+      location: LOCATIONS.VANCOUVER,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
+    date: '2026-03-22',
   },
 ];
 
