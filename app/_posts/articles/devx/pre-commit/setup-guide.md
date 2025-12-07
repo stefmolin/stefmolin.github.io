@@ -7,7 +7,7 @@ author: Stefanie Molin
 tags: ["DevX", "pre-commit hooks", "Python"]
 assets: "/assets/articles/devx/pre-commit/setup-guide"
 ogImage:
-  url: "/post-assets/setup-guide/cover.jpg"
+  url: "/post-assets/cover.jpg"
   width: 6097
   height: 3510
 featured:
@@ -17,7 +17,7 @@ featured:
   - "[Talk Python to Me Episode #482](https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs)"
 ---
 
-![The Space Shuttle Challenger launching from Complex 39](/assets/articles/devx/pre-commit/setup-guide/cover.jpg)
+![The Space Shuttle Challenger launching from Complex 39](/post-assets/cover.jpg)
 
 <figcaption>
 
