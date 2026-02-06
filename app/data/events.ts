@@ -705,7 +705,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       link: undefined,
     },
     presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
-    date: '2026-03-22',
+    date: '2026-03-21',
   },
 ];
 
