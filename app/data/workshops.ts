@@ -359,7 +359,7 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
       subtitle: '', // TODO
       repo: 'ast-workshop', //TODO
       coverImage: COVER_IMAGE_PENDING, // TODO
-      link: CONTENT_LINKS.PRE_COMMIT_WORKSHOP.link, // TODO: coming soon
+      link: '/coming-soonish?slides=Process, Analyze, and Transform Python Code with ASTs',
       description: [
         `You've likely used a tool like \`black\`, \`flake8\`, or \`ruff\` to lint or format your code,
         or a tool like \`sphinx\` to document it, but you probably do not know how they accomplish
