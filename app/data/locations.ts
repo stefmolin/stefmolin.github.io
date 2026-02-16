@@ -208,5 +208,11 @@ const LOCATIONS: Record<string, MapLocation> = {
     country: 'Brazil',
     countryCode: 'BR',
   },
+  DARMSTADT: {
+    coordinates: [8.6512, 49.8728],
+    city: 'Darmstadt',
+    country: 'Germany',
+    countryCode: 'DE',
+  },
 };
 export default LOCATIONS;

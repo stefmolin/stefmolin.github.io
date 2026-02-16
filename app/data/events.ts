@@ -707,6 +707,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
     date: '2026-03-21',
   },
+  {
+    event: {
+      name: 'PyCon DE & PyData',
+      location: LOCATIONS.DARMSTADT,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.AST_WORKSHOP,
+    date: '2026-04-16',
+  },
 ];
 
 export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(

@@ -244,9 +244,12 @@ export default function Home({
                             resourceLink={session.presentation.link}
                           >
                             <h2
-                              className={classNames('text-xl sm:text-2xl text-center', {
-                                italic: session.presentation.contentClass === 'book signing',
-                              })}
+                              className={classNames(
+                                'text-xl sm:text-2xl text-center line-clamp-2',
+                                {
+                                  italic: session.presentation.contentClass === 'book signing',
+                                },
+                              )}
                             >
                               {session.presentation.title}
                             </h2>
@@ -264,12 +267,12 @@ export default function Home({
                           </div>
                           <div className="flex flex-col-reverse sm:flex-row md:flex-col-reverse lg:flex-row items-center justify-between w-full">
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-x-1 text-center">
-                              <div>
+                              <div className="whitespace-nowrap">
                                 <span className="pr-1">
                                   {session.presentation.contentClass === 'podcast'
                                     ? '🌎'
                                     : FLAGS[(session as LivePresentation).event.location.country]}
-                                </span>{' '}
+                                </span>
                                 {session.event.name}
                               </div>
                               {session.presentation.contentClass !== 'podcast' && (
@@ -282,10 +285,12 @@ export default function Home({
                                 </div>
                               )}
                             </div>
-                            <p>
-                              <FontAwesomeIcon
-                                icon={upcomingSessionIcons[session.presentation.contentClass]}
-                              />{' '}
+                            <p className="whitespace-nowrap">
+                              <span className="pr-px">
+                                <FontAwesomeIcon
+                                  icon={upcomingSessionIcons[session.presentation.contentClass]}
+                                />
+                              </span>
                               {session.presentation.contentClass}
                               <span className="pl-1 inline-flex sm:hidden md:inline-flex lg:hidden">
                                 @
