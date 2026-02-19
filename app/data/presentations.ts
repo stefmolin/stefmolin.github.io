@@ -6,6 +6,10 @@ import { WORKSHOPS } from './workshops';
 export const PRESENTATIONS: Record<string, Presentation> = {
   ...TALKS,
   ...WORKSHOPS,
+  AST_TALK: {
+    ...TALKS.AST_KEYNOTE,
+    subclass: undefined, // override keynote version so this shows up as a talk instead
+  },
   BOOK_SIGNING_PANDAS_1: {
     contentClass: 'book signing',
     title: CONTENT_LINKS.PANDAS_BOOK_1.title,

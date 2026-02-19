@@ -40,14 +40,12 @@ const LOCATIONS: Record<string, MapLocation> = {
     coordinates: [11.327591, 44.498955],
     city: 'Bologna',
     country: 'Italy',
-    countryAlias: 'Italia',
     countryCode: 'IT',
   },
   FLORENCE: {
     coordinates: [11.27223424142312, 43.766157019133345],
     city: 'Florence',
     country: 'Italy',
-    countryAlias: 'Italia',
     countryCode: 'IT',
   },
   CARDIFF: {
@@ -152,7 +150,6 @@ const LOCATIONS: Record<string, MapLocation> = {
     city: 'Wellington',
     country: 'New Zealand',
     countryCode: 'NZ',
-    countryAlias: 'Kiwi',
   },
   MELBOURNE: {
     coordinates: [144.946457, -37.840935],

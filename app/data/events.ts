@@ -718,6 +718,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     presentation: PRESENTATIONS.AST_WORKSHOP,
     date: '2026-04-16',
   },
+  {
+    event: {
+      name: 'PyCon Italia',
+      location: LOCATIONS.BOLOGNA,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.AST_TALK,
+    date: '2026-05-30',
+  },
 ];
 
 export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(

@@ -1,3 +1,4 @@
+import cloneDeep from 'lodash/cloneDeep';
 import { type TalkCard } from '../interfaces/talk';
 import { type Presentation } from '../interfaces/event';
 import { HOME_URL } from './constants';
