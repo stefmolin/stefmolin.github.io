@@ -716,7 +716,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       link: undefined,
     },
     presentation: PRESENTATIONS.AST_WORKSHOP,
-    date: '2026-04-16',
+    date: '2026-04-15',
   },
   {
     event: {
