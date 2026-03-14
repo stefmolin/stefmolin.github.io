@@ -211,5 +211,11 @@ const LOCATIONS: Record<string, MapLocation> = {
     country: 'Germany',
     countryCode: 'DE',
   },
+  EISENSTADT: {
+    coordinates: [16.5252, 47.8405],
+    city: 'Eisenstadt',
+    country: 'Austria',
+    countryCode: 'AT',
+  },
 };
 export default LOCATIONS;

@@ -25,6 +25,7 @@ export const BLUESKY_HANDLE = '@stefaniemolin.com';
 export const BLUESKY_PROFILE = `https://bsky.app/profile/${BLUESKY_HANDLE.replace('@', '')}`;
 
 export const FLAGS = {
+  Austria: '🇦🇹',
   Australia: '🇦🇺',
   Brazil: '🇧🇷',
   Canada: '🇨🇦',

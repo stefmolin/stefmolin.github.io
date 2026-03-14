@@ -720,6 +720,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   },
   {
     event: {
+      name: 'PyCon Austria',
+      location: LOCATIONS.EISENSTADT,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PRE_COMMIT_WORKSHOP,
+    date: '2026-04-19',
+  },
+  {
+    event: {
       name: 'PyCon Italia',
       location: LOCATIONS.BOLOGNA,
       eventClass: 'conference',
