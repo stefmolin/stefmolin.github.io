@@ -740,6 +740,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     presentation: PRESENTATIONS.AST_TALK,
     date: '2026-05-30',
   },
+  {
+    event: {
+      name: 'EuroPython',
+      location: LOCATIONS.KRAKOW,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.AST_WORKSHOP,
+    date: '2026-07-14',
+  },
 ];
 
 export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(

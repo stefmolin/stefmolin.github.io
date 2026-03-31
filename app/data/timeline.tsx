@@ -15,10 +15,16 @@ const COUNTRY_SHORTHAND = {
 
 const TIMELINE_ITEMS: TimelineEntryProps[] = [
   {
+    date: '2026-03-18',
+    eventType: 'volunteer',
+    title: 'Joined SciPy 2026 program committee',
+    description: 'Reviewed talk and tutorial proposals',
+  },
+  {
     date: '2025-10-28',
     eventType: 'volunteer',
     title: 'Joined the PyLadiesCon 2025 program committee',
-    description: 'Review and correct captioning for English and Spanish talks',
+    description: 'Reviewed and corrected captioning for pre-recorded English and Spanish talks',
   },
   {
     date: '2025-05-20',
