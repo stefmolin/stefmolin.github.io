@@ -705,7 +705,51 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       link: undefined,
     },
     presentation: PRESENTATIONS.GETTING_STARTED_IN_OPEN_SOURCE,
-    date: '2026-03-22',
+    date: '2026-03-21',
+  },
+  {
+    event: {
+      name: 'PyCon DE & PyData',
+      location: LOCATIONS.DARMSTADT,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.AST_WORKSHOP,
+    date: '2026-04-15',
+  },
+  {
+    event: {
+      name: 'PyCon Austria',
+      location: LOCATIONS.EISENSTADT,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PRE_COMMIT_WORKSHOP,
+    date: '2026-04-19',
+  },
+  {
+    event: {
+      name: 'PyCon Italia',
+      location: LOCATIONS.BOLOGNA,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.AST_TALK,
+    date: '2026-05-30',
+  },
+  {
+    event: {
+      name: 'EuroPython',
+      location: LOCATIONS.KRAKOW,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.AST_WORKSHOP,
+    date: '2026-07-14',
   },
 ];
 

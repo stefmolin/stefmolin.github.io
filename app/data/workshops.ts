@@ -2,6 +2,7 @@ import dedent from 'dedent';
 import { type Presentation } from '../interfaces/event';
 import { type WorkshopPage } from '../interfaces/workshop';
 import CONTENT_LINKS from './content-links';
+import { COVER_IMAGE_PENDING } from './constants';
 
 export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
   PANDAS_WORKSHOP: {
@@ -346,6 +347,41 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
     ],
     relatedContent: [
       CONTENT_LINKS.PRE_COMMIT_ARTICLES,
+      CONTENT_LINKS.EVENTS,
+      CONTENT_LINKS.INTERVIEWS,
+      CONTENT_LINKS.TRAVEL_BLOG,
+    ],
+  },
+  AST_WORKSHOP: {
+    workshop: {
+      contentClass: 'workshop',
+      title: 'Process, Analyze, and Transform Python Code with ASTs',
+      subtitle: '', // TODO
+      repo: 'ast-workshop', //TODO
+      coverImage: COVER_IMAGE_PENDING, // TODO
+      link: '/coming-soonish?slides=Process, Analyze, and Transform Python Code with ASTs',
+      description: [
+        `You've likely used a tool like \`black\`, \`flake8\`, or \`ruff\` to lint or format your code,
+        or a tool like \`sphinx\` to document it, but you probably do not know how they accomplish
+        their tasks. These tools and many more use **Abstract Syntax Trees (ASTs)** to analyze and
+        extract information from Python code. An AST is a representation of your code's structure
+        that enables you to access and manipulate its different components, which is what makes it
+        possible to automate tasks like code migrations, linting, and docstring extraction.`,
+        `In this workshop, you'll learn how to use the Python standard library's \`ast\` module to
+        parse and analyze code. Using just the standard library, we will implement a couple of
+        common checks from scratch, which will give you an idea of how these tools work and help you
+        build the skills and confidence to use ASTs in your own projects.`,
+      ],
+      duration: '2-3 hours',
+      outline: {
+        'Coming soon': `Details will be added once they are finalized. In the meantime, you can check
+        out my keynote on ASTs, "[Build Your Own (Simple) Static Code Analyzer](/talks#build-your-own-(simple)-static-code-analyzer)".`,
+        // 'Section 1: TODO': `TODO`,
+        // 'Section 2: TODO': `TODO`,
+      },
+    },
+    relatedContent: [
+      CONTENT_LINKS.AST_KEYNOTE,
       CONTENT_LINKS.EVENTS,
       CONTENT_LINKS.INTERVIEWS,
       CONTENT_LINKS.TRAVEL_BLOG,

@@ -223,6 +223,16 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     },
     title: 'Upcoming Events',
   },
+  AST_KEYNOTE: {
+    link: '/talks#build-your-own-(simple)-static-code-analyzer',
+    contentClass: 'page',
+    image: {
+      src: 'https://stefaniemolin.com/build-your-own-simple-static-code-analyzer-talk/media/traversal-animation.gif',
+      width: 1368,
+      height: 1079,
+    },
+    title: 'Build Your Own (Simple) Static Code Analyzer',
+  },
 };
 export default CONTENT_LINKS;
 
