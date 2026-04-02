@@ -25,6 +25,11 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
     eventType: 'volunteer',
     title: 'Joined the PyLadiesCon 2025 program committee',
     description: 'Reviewed and corrected captioning for pre-recorded English and Spanish talks',
+    link: {
+      linkClass: 'external',
+      resourceLink: 'https://2025.conference.pyladies.com/en/volunteers/',
+      text: 'Visit website',
+    },
   },
   {
     date: '2025-05-20',
