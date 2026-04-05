@@ -89,6 +89,19 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         author: 'Elham (Class Central)',
         source: 'https://www.classcentral.com/report/best-pandas-courses/#anchor-8',
       },
+      {
+        text: dedent`Two chapters in, and here's what made it click:
+
+        → Real datasets — NYC taxi trips, flight records, meteorite landings. Not toy data.
+
+        → Progressive structure — it doesn't dump everything on you. Series first, then DataFrames,
+        then filtering.
+
+        → You practice as you learn — not "watch first, try later."`,
+        author: 'Devika Santhosh (via LinkedIn)',
+        source:
+          'https://www.linkedin.com/posts/devika-santhosh04_github-stefmolinpandas-workshop-an-introductory-activity-7441838881735430144-DWVa',
+      },
     ],
     relatedContent: [
       CONTENT_LINKS.DATA_VIZ_WORKSHOP,
