@@ -369,8 +369,8 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
     workshop: {
       contentClass: 'workshop',
       title: 'Process, Analyze, and Transform Python Code with ASTs',
-      subtitle: '', // TODO
-      repo: 'ast-workshop', //TODO
+      subtitle: 'A workshop on using abstract syntax trees (ASTs) in Python.',
+      repo: 'ast-workshop',
       coverImage: COVER_IMAGE_PENDING, // TODO
       link: '/coming-soonish?slides=Process, Analyze, and Transform Python Code with ASTs',
       description: [
@@ -387,10 +387,19 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
       ],
       duration: '2-3 hours',
       outline: {
-        'Coming soon': `Details will be added once they are finalized. In the meantime, you can check
-        out my keynote on ASTs, "[Build Your Own (Simple) Static Code Analyzer](/talks#build-your-own-(simple)-static-code-analyzer)".`,
-        // 'Section 1: TODO': `TODO`,
-        // 'Section 2: TODO': `TODO`,
+        'Section 1: Introduction to ASTs': `This section will introduce attendees to abstract syntax
+        trees (ASTs) and some of the ways they are used in the Python ecosystem. We will learn how
+        to parse source code into an AST, what that structure looks like, and understand the
+        situations in which we cannot generate an AST.`,
+        'Section 2: Working With ASTs': `Due to the structure of the AST, we must traverse it to
+        process, analyze, and transform it. In this section, we will learn how to perform the
+        traversal using \`ast.walk()\`, \`ast.NodeVisitor\`, and \`ast.NodeTransformer\` to conduct
+        some common linting tasks.`,
+        'Section 3: Building an Import Linter': `Tracking context during the AST traversal makes it
+        possible to use information about a node's ancestry (as well as its descendants) to make
+        decisions about how to process it. In this final section, we will build an import linter
+        capable of flagging unused imports, along with masked and missing names, by tracking context
+        (*e.g.*, scope, times accessed, *etc.*) during traversal.`,
       },
     },
     relatedContent: [
