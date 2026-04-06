@@ -391,7 +391,7 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         trees (ASTs) and some of the ways they are used in the Python ecosystem. We will learn how
         to parse source code into an AST, what that structure looks like, and understand the
         situations in which we cannot generate an AST.`,
-        'Section 2: Working With ASTs': `Due to the structure of the AST, we must traverse it to
+        'Section 2: Working with ASTs': `Due to the structure of the AST, we must traverse it to
         process, analyze, and transform it. In this section, we will learn how to perform the
         traversal using \`ast.walk()\`, \`ast.NodeVisitor\`, and \`ast.NodeTransformer\` to conduct
         some common linting tasks.`,
