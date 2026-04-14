@@ -87,9 +87,9 @@ export const TALK_CARD_MAPPING: Record<string, TalkCard> = {
       link: '/talks/#build-your-own-(simple)-static-code-analyzer',
     },
     seeAlso: {
-      title: 'Docstringify',
-      slug: 'https://pypi.org/project/docstringify/',
-      contentClass: 'page',
+      title: 'Process, Analyze, and Transform Python Code with ASTs',
+      slug: CONTENT_LINKS.AST_WORKSHOP.link,
+      contentClass: CONTENT_LINKS.AST_WORKSHOP.contentClass,
     },
   },
 };
