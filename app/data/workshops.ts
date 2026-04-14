@@ -371,8 +371,8 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
       title: 'Process, Analyze, and Transform Python Code with ASTs',
       subtitle: 'A workshop on using abstract syntax trees (ASTs) in Python.',
       repo: 'ast-workshop',
-      coverImage: COVER_IMAGE_PENDING, // TODO
-      link: '/coming-soonish?slides=Process, Analyze, and Transform Python Code with ASTs',
+      coverImage: CONTENT_LINKS.AST_WORKSHOP.image,
+      link: CONTENT_LINKS.AST_WORKSHOP.link,
       description: [
         `You've likely used a tool like \`black\`, \`flake8\`, or \`ruff\` to lint or format your code,
         or a tool like \`sphinx\` to document it, but you probably do not know how they accomplish
