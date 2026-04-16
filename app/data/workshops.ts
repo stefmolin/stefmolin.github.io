@@ -408,6 +408,25 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
       CONTENT_LINKS.INTERVIEWS,
       CONTENT_LINKS.TRAVEL_BLOG,
     ],
+    reviews: [
+      {
+        text: `Great insights into the ast-library. Makes it very easy to start with good
+        fundament[als] to build [your] own linter or any other code checker/transformer.`,
+        location: 'PyCon DE & PyData 2026',
+        rating: 5,
+      },
+      {
+        text: 'amazingly well prepared, ... [Stefanie] really know[s] [her] stuff, was inspiring',
+        author: 'Moritz',
+        location: 'PyCon DE & PyData 2026',
+      },
+      {
+        text: 'minimalistic slides, clear exercises',
+        author: 'Niklas',
+        location: 'PyCon DE & PyData 2026',
+        rating: 5,
+      },
+    ],
   },
 };
 
