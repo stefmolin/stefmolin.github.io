@@ -357,6 +357,13 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         location: 'PyConES 2025',
         rating: 5,
       },
+      {
+        text: `I was late, but really impressed with the materials and the approach to share the
+        information. It was really helpful, thank you!`,
+        author: 'Sergii',
+        location: 'PyCon Austria 2026',
+        rating: 5,
+      },
     ],
     relatedContent: [
       CONTENT_LINKS.PRE_COMMIT_ARTICLES,
