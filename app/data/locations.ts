@@ -36,6 +36,13 @@ const LOCATIONS: Record<string, MapLocation> = {
     countryAlias: 'USA',
     countryCode: 'US',
   },
+  LONG_BEACH: {
+    coordinates: [-118.1937, 33.7701],
+    city: 'Long Beach',
+    country: 'United States of America',
+    countryAlias: 'USA',
+    countryCode: 'US',
+  },
   BOLOGNA: {
     coordinates: [11.327591, 44.498955],
     city: 'Bologna',
