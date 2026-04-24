@@ -77,6 +77,91 @@ export default function SayThanks() {
               has helped you in any way, please consider helping me out.
             </p>
             <LinkSection
+              title="Show your support"
+              links={[
+                <>
+                  <FontAwesomeIcon icon={faGithub} />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://github.com/sponsors/stefmolin"
+                    >
+                      Sponsor me on GitHub
+                    </ExternalLink>
+                    .
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faHandHoldingHeart} />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://ko-fi.com/stefaniemolin"
+                    >
+                      Support me on Ko-fi
+                    </ExternalLink>
+                    .
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faCoffee} />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://www.buymeacoffee.com/stefanie.molin"
+                    >
+                      Buy me a coffee
+                    </ExternalLink>
+                    .
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faBook} />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href={AMAZON_LINKS.PANDAS_BOOK_2}
+                    >
+                      Buy my book
+                    </ExternalLink>
+                    .
+                  </span>
+                </>,
+              ]}
+            />
+            <SectionSeparator className="my-10 sm:hidden" />
+            <LinkSection
+              title="Nominate me for recognition"
+              links={[
+                <>
+                  <FontAwesomeIcon icon={faGithub} />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://stars.github.com/nominate/"
+                    >
+                      Nominate me (@stefmolin)
+                    </ExternalLink>{' '}
+                    as a GitHub Star.
+                  </span>
+                </>,
+                <>
+                  <FontAwesomeIcon icon={faPython} className="sm:px-0.5 sm:mx-px" />
+                  <span>
+                    <ExternalLink
+                      className={underlinedLinkClassName}
+                      href="https://www.python.org/psf/fellows/"
+                    >
+                      Nominate me
+                    </ExternalLink>{' '}
+                    to be recognized as a Fellow of the Python Software Foundation. Please use{' '}
+                    <em>psf@stefaniemolin.com</em> as the email address.
+                  </span>
+                </>,
+              ]}
+            />
+            <SectionSeparator className="my-10 sm:hidden" />
+            <LinkSection
               title="Help me grow my audience"
               links={[
                 <>
@@ -151,91 +236,6 @@ export default function SayThanks() {
                     <Link className={underlinedLinkClassName} href="/books">
                       books
                     </Link>
-                    .
-                  </span>
-                </>,
-              ]}
-            />
-            <SectionSeparator className="my-10 sm:hidden" />
-            <LinkSection
-              title="Nominate me for recognition"
-              links={[
-                <>
-                  <FontAwesomeIcon icon={faGithub} />
-                  <span>
-                    <ExternalLink
-                      className={underlinedLinkClassName}
-                      href="https://stars.github.com/nominate/"
-                    >
-                      Nominate me (@stefmolin)
-                    </ExternalLink>{' '}
-                    as a GitHub Star.
-                  </span>
-                </>,
-                <>
-                  <FontAwesomeIcon icon={faPython} className="sm:px-0.5 sm:mx-px" />
-                  <span>
-                    <ExternalLink
-                      className={underlinedLinkClassName}
-                      href="https://www.python.org/psf/fellows/"
-                    >
-                      Nominate me
-                    </ExternalLink>{' '}
-                    to be recognized as a Fellow of the Python Software Foundation. Please use{' '}
-                    <em>psf@stefaniemolin.com</em> as the email address.
-                  </span>
-                </>,
-              ]}
-            />
-            <SectionSeparator className="my-10 sm:hidden" />
-            <LinkSection
-              title="Make a purchase"
-              links={[
-                <>
-                  <FontAwesomeIcon icon={faGithub} />
-                  <span>
-                    <ExternalLink
-                      className={underlinedLinkClassName}
-                      href="https://github.com/sponsors/stefmolin"
-                    >
-                      Sponsor me on GitHub
-                    </ExternalLink>
-                    .
-                  </span>
-                </>,
-                <>
-                  <FontAwesomeIcon icon={faHandHoldingHeart} />
-                  <span>
-                    <ExternalLink
-                      className={underlinedLinkClassName}
-                      href="https://ko-fi.com/stefaniemolin"
-                    >
-                      Support me on Ko-fi
-                    </ExternalLink>
-                    .
-                  </span>
-                </>,
-                <>
-                  <FontAwesomeIcon icon={faCoffee} />
-                  <span>
-                    <ExternalLink
-                      className={underlinedLinkClassName}
-                      href="https://www.buymeacoffee.com/stefanie.molin"
-                    >
-                      Buy me a coffee
-                    </ExternalLink>
-                    .
-                  </span>
-                </>,
-                <>
-                  <FontAwesomeIcon icon={faBook} />
-                  <span>
-                    <ExternalLink
-                      className={underlinedLinkClassName}
-                      href={AMAZON_LINKS.PANDAS_BOOK_2}
-                    >
-                      Buy my book
-                    </ExternalLink>
                     .
                   </span>
                 </>,

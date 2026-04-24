@@ -33,6 +33,16 @@ const CONTENT_LINKS: Record<string, RelatedContentLink> = {
     },
     title: 'Pre-Commit Hooks Workshop',
   },
+  AST_WORKSHOP: {
+    link: '/workshops/ast-workshop',
+    contentClass: 'workshop',
+    image: {
+      src: 'https://stefaniemolin.com/ast-workshop/media/animation-try-except-nested-full.gif',
+      width: 1576,
+      height: 1299,
+    },
+    title: 'Abstract Syntax Tree (AST) Workshop',
+  },
   PIVOT_AND_PLOT_WITH_PANDAS_ARTICLE: {
     link: '/articles/data-science/how-to-pivot-and-plot-data-with-pandas',
     contentClass: 'article',

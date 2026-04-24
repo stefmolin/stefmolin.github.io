@@ -731,6 +731,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   },
   {
     event: {
+      name: 'PyCon US',
+      location: LOCATIONS.LONG_BEACH,
+      virtual: false,
+      eventClass: 'conference',
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.BOOK_SIGNING_PANDAS_2,
+    date: '2026-05-15',
+  },
+  {
+    event: {
       name: 'PyCon Italia',
       location: LOCATIONS.BOLOGNA,
       eventClass: 'conference',

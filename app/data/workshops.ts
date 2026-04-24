@@ -89,6 +89,19 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         author: 'Elham (Class Central)',
         source: 'https://www.classcentral.com/report/best-pandas-courses/#anchor-8',
       },
+      {
+        text: dedent`Two chapters in, and here's what made it click:
+
+        → Real datasets — NYC taxi trips, flight records, meteorite landings. Not toy data.
+
+        → Progressive structure — it doesn't dump everything on you. Series first, then DataFrames,
+        then filtering.
+
+        → You practice as you learn — not "watch first, try later."`,
+        author: 'Devika Santhosh (via LinkedIn)',
+        source:
+          'https://www.linkedin.com/posts/devika-santhosh04_github-stefmolinpandas-workshop-an-introductory-activity-7441838881735430144-DWVa',
+      },
     ],
     relatedContent: [
       CONTENT_LINKS.DATA_VIZ_WORKSHOP,
@@ -344,6 +357,13 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         location: 'PyConES 2025',
         rating: 5,
       },
+      {
+        text: `I was late, but really impressed with the materials and the approach to share the
+        information. It was really helpful, thank you!`,
+        author: 'Sergii',
+        location: 'PyCon Austria 2026',
+        rating: 5,
+      },
     ],
     relatedContent: [
       CONTENT_LINKS.PRE_COMMIT_ARTICLES,
@@ -356,10 +376,10 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
     workshop: {
       contentClass: 'workshop',
       title: 'Process, Analyze, and Transform Python Code with ASTs',
-      subtitle: '', // TODO
-      repo: 'ast-workshop', //TODO
-      coverImage: COVER_IMAGE_PENDING, // TODO
-      link: '/coming-soonish?slides=Process, Analyze, and Transform Python Code with ASTs',
+      subtitle: 'A workshop on using abstract syntax trees (ASTs) in Python.',
+      repo: 'ast-workshop',
+      coverImage: CONTENT_LINKS.AST_WORKSHOP.image,
+      link: CONTENT_LINKS.AST_WORKSHOP.link,
       description: [
         `You've likely used a tool like \`black\`, \`flake8\`, or \`ruff\` to lint or format your code,
         or a tool like \`sphinx\` to document it, but you probably do not know how they accomplish
@@ -374,10 +394,19 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
       ],
       duration: '2-3 hours',
       outline: {
-        'Coming soon': `Details will be added once they are finalized. In the meantime, you can check
-        out my keynote on ASTs, "[Build Your Own (Simple) Static Code Analyzer](/talks#build-your-own-(simple)-static-code-analyzer)".`,
-        // 'Section 1: TODO': `TODO`,
-        // 'Section 2: TODO': `TODO`,
+        'Section 1: Introduction to ASTs': `This section will introduce attendees to abstract syntax
+        trees (ASTs) and some of the ways they are used in the Python ecosystem. We will learn how
+        to parse source code into an AST, what that structure looks like, and understand the
+        situations in which we cannot generate an AST.`,
+        'Section 2: Working with ASTs': `Due to the structure of the AST, we must traverse it to
+        process, analyze, and transform it. In this section, we will learn how to perform the
+        traversal using \`ast.walk()\`, \`ast.NodeVisitor\`, and \`ast.NodeTransformer\` to conduct
+        some common linting tasks.`,
+        'Section 3: Building an Import Linter': `Tracking context during the AST traversal makes it
+        possible to use information about a node's ancestry (as well as its descendants) to make
+        decisions about how to process it. In this final section, we will build an import linter
+        capable of flagging unused imports, along with masked and missing names, by tracking context
+        (*e.g.*, scope, times accessed, *etc.*) during traversal.`,
       },
     },
     relatedContent: [
@@ -385,6 +414,25 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
       CONTENT_LINKS.EVENTS,
       CONTENT_LINKS.INTERVIEWS,
       CONTENT_LINKS.TRAVEL_BLOG,
+    ],
+    reviews: [
+      {
+        text: `Great insights into the ast-library. Makes it very easy to start with good
+        fundament[als] to build [your] own linter or any other code checker/transformer.`,
+        location: 'PyCon DE & PyData 2026',
+        rating: 5,
+      },
+      {
+        text: 'amazingly well prepared, ... [Stefanie] really know[s] [her] stuff, was inspiring',
+        author: 'Moritz',
+        location: 'PyCon DE & PyData 2026',
+      },
+      {
+        text: 'minimalistic slides, clear exercises',
+        author: 'Niklas',
+        location: 'PyCon DE & PyData 2026',
+        rating: 5,
+      },
     ],
   },
 };
