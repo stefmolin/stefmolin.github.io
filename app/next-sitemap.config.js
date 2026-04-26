@@ -158,6 +158,12 @@ module.exports = {
       priority: PRIORITIES.slidesAndProjects,
       lastmod: now,
     },
+    {
+      loc: '/ast-workshop/',
+      changefreq: 'yearly',
+      priority: PRIORITIES.slidesAndProjects,
+      lastmod: now,
+    },
   ],
   exclude: ['/coming-soonish', '/feedback'],
 };
