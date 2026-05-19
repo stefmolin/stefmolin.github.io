@@ -15,6 +15,12 @@ const COUNTRY_SHORTHAND = {
 
 const TIMELINE_ITEMS: TimelineEntryProps[] = [
   {
+    date: '2026-05-13',
+    eventType: 'volunteer',
+    title: 'On-site volunteering at PyCon US 2026',
+    description: 'Green room support and PSF booth work throughout the conference',
+  },
+  {
     date: '2026-05-10',
     eventType: 'volunteer',
     title: 'Joined PyCon Portugal 2026 program committee',
