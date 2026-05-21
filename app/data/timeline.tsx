@@ -3,6 +3,7 @@ import { type TimelineEntryProps } from '../components/timeline/timeline-entry';
 import { GITHUB_PROFILE } from './constants';
 import { LIVE_EVENTS } from './events';
 import INTERVIEWS from './interviews';
+import VOLUNTEER_EXPERIENCES from './volunteer';
 
 const COUNTRY_SHORTHAND = {
   'United Arab Emirates': 'UAE',
@@ -15,32 +16,13 @@ const COUNTRY_SHORTHAND = {
 
 const TIMELINE_ITEMS: TimelineEntryProps[] = [
   {
-    date: '2026-05-13',
-    eventType: 'volunteer',
-    title: 'On-site volunteering at PyCon US 2026',
-    description: 'Green room support and PSF booth work throughout the conference',
-  },
-  {
-    date: '2026-05-10',
-    eventType: 'volunteer',
-    title: 'Joined PyCon Portugal 2026 program committee',
-    description: 'Reviewed talk and tutorial proposals',
-  },
-  {
-    date: '2026-03-18',
-    eventType: 'volunteer',
-    title: 'Joined SciPy 2026 program committee',
-    description: 'Reviewed talk and tutorial proposals',
-  },
-  {
-    date: '2025-10-28',
-    eventType: 'volunteer',
-    title: 'Joined the PyLadiesCon 2025 program committee',
-    description: 'Reviewed and corrected captioning for pre-recorded English and Spanish talks',
+    date: '2026-05-18',
+    eventType: 'code',
+    title: 'First contribution to CPython merged',
     link: {
       linkClass: 'external',
-      resourceLink: 'https://2025.conference.pyladies.com/en/volunteers/',
-      text: 'Visit website',
+      resourceLink: 'https://github.com/python/cpython',
+      text: 'View repository',
     },
   },
   {
@@ -68,12 +50,6 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
     },
   },
   {
-    date: '2025-04-16',
-    eventType: 'volunteer',
-    title: 'Joined PyCon Portugal 2025 program committee',
-    description: 'Reviewed proposals and helped select the final schedule',
-  },
-  {
     date: '2025-04-02',
     eventType: 'code',
     title: 'First release of Docstringify',
@@ -84,11 +60,6 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
       resourceLink: `${GITHUB_PROFILE}/docstringify`,
       text: 'View repository',
     },
-  },
-  {
-    date: '2025-03-28',
-    eventType: 'volunteer',
-    title: 'Became a proposal reviewer for EuroSciPy 2025',
   },
   {
     date: '2025-02-17',
@@ -124,21 +95,6 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
       resourceLink: {
         contentClass: 'blog',
         slug: '/blog/travel/2024/europython/',
-      },
-      text: 'Read blog post',
-    },
-  },
-  {
-    date: '2024-06-14',
-    eventType: 'volunteer',
-    title: 'Joined PyCon Portugal 2024 program committee',
-    description:
-      'Coordinated the proposal review and selection phase as team leader, in addition to reviewing proposals myself',
-    link: {
-      linkClass: 'internal',
-      resourceLink: {
-        contentClass: 'blog',
-        slug: '/blog/updates/2024/conference-program-committee/',
       },
       text: 'Read blog post',
     },
@@ -200,7 +156,7 @@ const TIMELINE_ITEMS: TimelineEntryProps[] = [
     ),
     description: (
       <>
-        The pre-commit hook I developed is officially merged into the <code>numpydoc</code>{' '}
+        The pre-commit hook I developed was officially merged into the <code>numpydoc</code>{' '}
         codebase.
       </>
     ),
@@ -405,6 +361,13 @@ const TIMELINE_INTERVIEWS: TimelineEntryProps[] = INTERVIEWS.map((interview) => 
   };
 });
 
-TIMELINE_ITEMS.push(...TIMELINE_EVENTS, ...TIMELINE_INTERVIEWS);
+const TIMELINE_VOLUNTEER_EXPERIENCES: TimelineEntryProps[] = VOLUNTEER_EXPERIENCES.map(
+  (volunteerExperience) => ({
+    eventType: 'volunteer',
+    ...volunteerExperience,
+  }),
+);
+
+TIMELINE_ITEMS.push(...TIMELINE_EVENTS, ...TIMELINE_INTERVIEWS, ...TIMELINE_VOLUNTEER_EXPERIENCES);
 
 export default TIMELINE_ITEMS;

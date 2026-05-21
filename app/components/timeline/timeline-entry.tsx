@@ -11,6 +11,7 @@ import {
   faExternalLink,
   faGraduationCap,
   faHandHoldingHeart,
+  faHourglassEnd,
   faLocationDot,
   faMicrophoneLines,
   faPersonChalkboard,
@@ -33,18 +34,36 @@ const TIMELINE_EVENT_ICONS: Record<string, [IconDefinition, string]> = {
 };
 
 export interface TimelineEntryProps {
+  /* Date (ISO) of the entry (start if it lasts more than a day) */
   date: string;
+
+  /* The type of event (used to determine the icon) */
   eventType: keyof typeof TIMELINE_EVENT_ICONS;
-  title: string | JSX.Element;
-  description?: string | JSX.Element;
+
+  /* Number of hours dedicated to this item */
+  duration?: number;
+
+  /* The title for the timeline entry */
+  title: string | JSX.Element; // TODO: rather than JSX option here, use Markdown? (depends on input data)
+
+  /* Optional description for the entry */
+  description?: string | JSX.Element; // TODO: rather than JSX option here, use Markdown? (depends on input data)
+
+  /* Whether to flip the entry to the other side of the timeline */
   flip?: boolean;
+
+  /* Optional link to include in the timeline entry */
   link?: Omit<ResourceLinkProps, 'children'> & { text: string };
-  time?: string;
+
+  /* The time of the entry (if applicable) */
+  time?: string; // TODO: can this be a datetime string in ISO format (will need to refactor other uses of the datetime of the event to ignore the time parts)
+
+  /* Where the timeline entry took place (if applicable) */
   where?: string;
 }
 
 const TimelineEntry = (props: TimelineEntryProps) => {
-  const { date, time, where, eventType, title, description, link, flip } = props;
+  const { date, time, where, eventType, title, description, link, flip, duration } = props;
 
   const iconSpanClassName = 'hidden md:inline';
 
@@ -82,6 +101,15 @@ const TimelineEntry = (props: TimelineEntryProps) => {
                 <FontAwesomeIcon icon={faLocationDot} />
               </span>,
               where,
+            ])}
+          {eventType === 'volunteer' &&
+            duration != null &&
+            duration > 0 &&
+            assembleLine([
+              <span className={iconSpanClassName}>
+                <FontAwesomeIcon icon={faHourglassEnd} />
+              </span>,
+              `${duration} hours`,
             ])}
           {link &&
             assembleLine([

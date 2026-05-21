@@ -1,0 +1,62 @@
+import type VolunteerExperience from '../interfaces/volunteer';
+
+const VOLUNTEER_EXPERIENCES: VolunteerExperience[] = [
+  {
+    date: '2026-05-13',
+    title: 'On-site volunteering at PyCon US 2026',
+    description: 'Green room support and PSF booth work throughout the conference',
+    where: 'Long Beach, USA',
+    duration: 8,
+  },
+  {
+    date: '2026-05-10',
+    title: 'Joined PyCon Portugal 2026 program committee',
+    description: 'Reviewed talk and tutorial proposals',
+    duration: 4,
+  },
+  {
+    date: '2026-03-18',
+    title: 'Joined SciPy 2026 program committee',
+    description: 'Reviewed talk and tutorial proposals',
+    duration: 2,
+  },
+  {
+    date: '2025-10-28',
+    title: 'Joined the PyLadiesCon 2025 program committee',
+    description: 'Reviewed and corrected captioning for pre-recorded English and Spanish talks',
+    link: {
+      linkClass: 'external',
+      resourceLink: 'https://2025.conference.pyladies.com/en/volunteers/',
+      text: 'Visit website',
+    },
+    duration: 20,
+  },
+  {
+    date: '2025-04-16',
+    title: 'Joined PyCon Portugal 2025 program committee',
+    description: 'Reviewed proposals and helped select the final schedule',
+    duration: 3,
+  },
+  {
+    date: '2025-03-28',
+    title: 'Became a proposal reviewer for EuroSciPy 2025',
+    duration: 2,
+  },
+  {
+    date: '2024-06-14',
+    title: 'Joined PyCon Portugal 2024 program committee',
+    description:
+      'Coordinated the proposal review and selection phase as team leader, in addition to reviewing proposals myself',
+    link: {
+      linkClass: 'internal',
+      resourceLink: {
+        contentClass: 'blog',
+        slug: '/blog/updates/2024/conference-program-committee/',
+      },
+      text: 'Read blog post',
+    },
+    duration: 10,
+  },
+];
+
+export default VOLUNTEER_EXPERIENCES;
