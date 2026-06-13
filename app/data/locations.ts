@@ -85,6 +85,12 @@ const LOCATIONS: Record<string, MapLocation> = {
     country: 'Canada',
     countryCode: 'CA',
   },
+  AVEIRO: {
+    coordinates: [-8.64554, 40.64427],
+    city: 'Aveiro',
+    country: 'Portugal',
+    countryCode: 'PT',
+  },
   BRAGA: {
     coordinates: [-8.426507, 41.545448],
     city: 'Braga',

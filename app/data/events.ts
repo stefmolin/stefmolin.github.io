@@ -762,6 +762,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     presentation: PRESENTATIONS.AST_WORKSHOP,
     date: '2026-07-14',
   },
+  {
+    event: {
+      name: 'PyCon Portugal',
+      location: LOCATIONS.AVEIRO,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.AST_WORKSHOP,
+    date: '2026-09-05',
+  },
 ];
 
 export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(

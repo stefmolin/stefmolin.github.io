@@ -2,6 +2,12 @@ import type VolunteerExperience from '../interfaces/volunteer';
 
 const VOLUNTEER_EXPERIENCES: VolunteerExperience[] = [
   {
+    date: '2026-06-06',
+    title: 'Joined PyConES 2026 program committee',
+    description: 'Reviewed talk and workshop proposals in English and Spanish',
+    duration: 2,
+  },
+  {
     date: '2026-05-18',
     title: 'Joined PyCon Greece 2026 program committee',
     description: 'Reviewed talk and workshop proposals',
@@ -17,8 +23,8 @@ const VOLUNTEER_EXPERIENCES: VolunteerExperience[] = [
   {
     date: '2026-05-10',
     title: 'Joined PyCon Portugal 2026 program committee',
-    description: 'Reviewed talk and tutorial proposals',
-    duration: 4,
+    description: 'Reviewed talk and workshop proposals',
+    duration: 6,
   },
   {
     date: '2026-03-18',
