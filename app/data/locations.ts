@@ -206,6 +206,12 @@ const LOCATIONS: Record<string, MapLocation> = {
     country: 'India',
     countryCode: 'IN',
   },
+  BARCELONA: {
+    coordinates: [2.154007, 41.390205],
+    city: 'Barcelona',
+    country: 'Spain',
+    countryCode: 'ES',
+  },
   SEVILLE: {
     coordinates: [-5.994072, 37.392529],
     city: 'Seville',

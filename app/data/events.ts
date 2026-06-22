@@ -773,6 +773,17 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
     presentation: PRESENTATIONS.AST_WORKSHOP,
     date: '2026-09-05',
   },
+  {
+    event: {
+      name: 'PyConES',
+      location: LOCATIONS.BARCELONA,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.AST_WORKSHOP,
+    date: '2026-11-06',
+  },
 ];
 
 export const LIVE_PRESENTATIONS = LIVE_EVENTS.filter(
