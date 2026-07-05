@@ -11,7 +11,7 @@ export default function ContactMe() {
   return (
     <Layout
       className="bg-cover bg-fixed bg-center pb-20"
-      styleProps={{
+      style={{
         backgroundImage: 'url(/assets/events/conferences/conference-badges.jpg)',
       }}
     >

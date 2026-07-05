@@ -12,11 +12,11 @@ import Meta from './meta';
 type Props = {
   children: React.ReactNode;
   className?: string;
-  styleProps?: CSSProperties;
+  style?: CSSProperties;
   isIFrame?: boolean;
 };
 
-const Layout = ({ children, className, isIFrame = false, styleProps }: Props) => {
+const Layout = ({ children, className, isIFrame = false, style }: Props) => {
   const [showMenuOverlay, setShowMenuOverlay] = useState(false);
   const pageURL = usePageURL();
 
@@ -37,7 +37,7 @@ const Layout = ({ children, className, isIFrame = false, styleProps }: Props) =>
           ],
         }}
       />
-      <div className={classNames('min-h-screen', className)} style={styleProps}>
+      <div className={classNames('min-h-screen', className)} style={style}>
         {!isIFrame && <Header isOpen={showMenuOverlay} setIsOpen={setShowMenuOverlay} />}
         {!showMenuOverlay && <main>{children}</main>}
       </div>

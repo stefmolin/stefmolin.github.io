@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import { NextSeo } from 'next-seo';
 import Layout from '../../components/page-layout/layout';
 
@@ -6,11 +7,13 @@ export default function EmbeddedPage({
   pageTitle,
   src,
   noindex,
+  style,
 }: {
   description: string;
   pageTitle: string;
   src: string;
   noindex?: boolean;
+  style?: CSSProperties;
 }) {
   return (
     <Layout isIFrame>
@@ -19,6 +22,7 @@ export default function EmbeddedPage({
         src={src}
         className="h-screen w-screen"
         referrerPolicy="strict-origin-when-cross-origin"
+        style={style}
       />
     </Layout>
   );

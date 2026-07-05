@@ -27,7 +27,7 @@ export default function ComingSoonish() {
   return (
     <Layout
       className="bg-contain bg-scroll pb-20"
-      styleProps={{
+      style={{
         backgroundImage: 'url(/assets/under-construction.jpg)',
       }}
     >
