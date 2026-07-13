@@ -236,5 +236,11 @@ const LOCATIONS: Record<string, MapLocation> = {
     country: 'Austria',
     countryCode: 'AT',
   },
+  ATHENS: {
+    coordinates: [23.727539, 37.98381],
+    city: 'Athens',
+    country: 'Greece',
+    countryCode: 'GR',
+  },
 };
 export default LOCATIONS;

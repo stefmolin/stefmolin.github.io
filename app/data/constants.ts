@@ -34,6 +34,7 @@ export const FLAGS = {
   Estonia: '🇪🇪',
   France: '🇫🇷',
   Germany: '🇩🇪',
+  Greece: '🇬🇷',
   India: '🇮🇳',
   Ireland: '🇮🇪',
   Italy: '🇮🇹',

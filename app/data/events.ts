@@ -775,6 +775,28 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
   },
   {
     event: {
+      name: 'PyCon Greece',
+      location: LOCATIONS.ATHENS,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.DATA_MORPH,
+    date: '2026-10-13',
+  },
+  {
+    event: {
+      name: 'PyCon Greece',
+      location: LOCATIONS.ATHENS,
+      eventClass: 'conference',
+      virtual: false,
+      link: undefined,
+    },
+    presentation: PRESENTATIONS.PANDAS_WORKSHOP,
+    date: '2026-10-13',
+  },
+  {
+    event: {
       name: 'PyConES',
       location: LOCATIONS.BARCELONA,
       eventClass: 'conference',
