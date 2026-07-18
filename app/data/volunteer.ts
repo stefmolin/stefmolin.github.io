@@ -2,6 +2,13 @@ import type VolunteerExperience from '../interfaces/volunteer';
 
 const VOLUNTEER_EXPERIENCES: VolunteerExperience[] = [
   {
+    date: '2026-07-15',
+    title: 'On-site volunteering at EuroPython 2026',
+    description: 'Room manager work throughout the conference',
+    where: 'Kraków, Poland',
+    duration: 3,
+  },
+  {
     date: '2026-06-06',
     title: 'Joined PyConES 2026 program committee',
     description: 'Reviewed talk and workshop proposals in English and Spanish',
