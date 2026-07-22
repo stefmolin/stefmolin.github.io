@@ -3,45 +3,45 @@ import type VolunteerExperience from '../interfaces/volunteer';
 const VOLUNTEER_EXPERIENCES: VolunteerExperience[] = [
   {
     date: '2026-07-15',
-    title: 'On-site volunteering at EuroPython 2026',
+    title: 'On-site volunteer at EuroPython 2026',
     description: 'Room manager work throughout the conference',
     where: 'Kraków, Poland',
     duration: 3,
   },
   {
     date: '2026-06-06',
-    title: 'Joined PyConES 2026 program committee',
+    title: 'Proposal reviewer for PyConES 2026',
     description: 'Reviewed talk and workshop proposals in English and Spanish',
     duration: 2,
   },
   {
     date: '2026-05-18',
-    title: 'Joined PyCon Greece 2026 program committee',
+    title: 'Proposal reviewer for PyCon Greece 2026',
     description: 'Reviewed talk and workshop proposals',
     duration: 2,
   },
   {
     date: '2026-05-13',
-    title: 'On-site volunteering at PyCon US 2026',
+    title: 'On-site volunteer at PyCon US 2026',
     description: 'Green room support and PSF booth work throughout the conference',
     where: 'Long Beach, USA',
     duration: 8,
   },
   {
     date: '2026-05-10',
-    title: 'Joined PyCon Portugal 2026 program committee',
-    description: 'Reviewed talk and workshop proposals',
+    title: 'PyCon Portugal 2026 program committee',
+    description: 'Reviewed proposals and helped select the final schedule',
     duration: 6,
   },
   {
     date: '2026-03-18',
-    title: 'Joined SciPy 2026 program committee',
+    title: 'Proposal reviewer for SciPy 2026',
     description: 'Reviewed talk and tutorial proposals',
     duration: 2,
   },
   {
     date: '2025-10-28',
-    title: 'Joined the PyLadiesCon 2025 program committee',
+    title: 'PyLadiesCon 2025 program committee',
     description: 'Reviewed and corrected captioning for pre-recorded English and Spanish talks',
     link: {
       linkClass: 'external',
@@ -52,18 +52,19 @@ const VOLUNTEER_EXPERIENCES: VolunteerExperience[] = [
   },
   {
     date: '2025-04-16',
-    title: 'Joined PyCon Portugal 2025 program committee',
+    title: 'PyCon Portugal 2025 program committee',
     description: 'Reviewed proposals and helped select the final schedule',
     duration: 3,
   },
   {
     date: '2025-03-28',
-    title: 'Became a proposal reviewer for EuroSciPy 2025',
+    title: 'Proposal reviewer for EuroSciPy 2025',
+    description: 'Reviewed talk and tutorial proposals',
     duration: 2,
   },
   {
     date: '2024-06-14',
-    title: 'Joined PyCon Portugal 2024 program committee',
+    title: 'PyCon Portugal 2024 program committee',
     description:
       'Coordinated the proposal review and selection phase as team leader, in addition to reviewing proposals myself',
     link: {
