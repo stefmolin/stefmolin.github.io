@@ -781,8 +781,8 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       virtual: false,
       link: undefined,
     },
-    presentation: PRESENTATIONS.DATA_MORPH,
-    date: '2026-10-13',
+    presentation: PRESENTATIONS.PANDAS_WORKSHOP,
+    date: '2026-10-12',
   },
   {
     event: {
@@ -792,7 +792,7 @@ export const LIVE_EVENTS: (LivePresentation | LivePodcast)[] = [
       virtual: false,
       link: undefined,
     },
-    presentation: PRESENTATIONS.PANDAS_WORKSHOP,
+    presentation: PRESENTATIONS.DATA_MORPH,
     date: '2026-10-13',
   },
   {
