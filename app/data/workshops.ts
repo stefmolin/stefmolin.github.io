@@ -434,6 +434,12 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
         rating: 5,
       },
       {
+        text: 'It was really easy to follow',
+        author: 'Ferran',
+        location: 'EuroPython 2026',
+        rating: 5,
+      },
+      {
         text: 'Very clear presentation and fun exercises!',
         location: 'PyCon Portugal 2026',
         rating: 5,
