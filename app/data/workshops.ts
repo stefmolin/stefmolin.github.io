@@ -2,7 +2,6 @@ import dedent from 'dedent';
 import { type Presentation } from '../interfaces/event';
 import { type WorkshopPage } from '../interfaces/workshop';
 import CONTENT_LINKS from './content-links';
-import { COVER_IMAGE_PENDING } from './constants';
 
 export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
   PANDAS_WORKSHOP: {
@@ -41,9 +40,6 @@ export const WORKSHOP_MAPPING: Record<string, WorkshopPage> = {
       representations of the data; so in this section, we will learn how to visualize data using
       pandas along with the Matplotlib and Seaborn libraries for additional features. We will create
       a variety of visualizations that will help us better understand our data.`,
-        'Section 4: Hands-On Data Analysis Lab': `We will practice all that you've learned in a hands-on
-      lab. This section features a set of analysis tasks that provide opportunities to apply the
-      material from the previous sections.`,
       },
     },
     reviews: [
