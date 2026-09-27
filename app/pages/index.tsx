@@ -332,13 +332,13 @@ export default function Home({
                 titleClassName={subsectionHeaderClassName}
               />
             )}
-            <FeaturedPost
+            {/* <FeaturedPost
               feedType="blog"
               icon={faRss}
               post={latestBlogPost}
               title="Latest Blog Post"
               titleClassName={subsectionHeaderClassName}
-            />
+            /> */}
           </EvenlySpacedSections>
         </div>
       </Container>
