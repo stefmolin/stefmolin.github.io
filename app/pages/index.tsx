@@ -251,7 +251,9 @@ export default function Home({
                                 },
                               )}
                             >
-                              {session.presentation.title}
+                              <span title={session.presentation.title}>
+                                {session.presentation.title}
+                              </span>
                             </h2>
                           </ResourceLink>
                           <div className="text-lg sm:text-xl text-center">
