@@ -7,16 +7,16 @@ Markdown files are turned into new blog posts or articles on the website. This i
 The non-post parts of the website were designed and built from scratch.
 
 ## Comments
+
 Comments are powered by [giscus](https://giscus.app/) via the [provided React component](https://github.com/giscus/giscus-component).
 
 ## Styles
+
 Styling and responsiveness is handled by [Tailwind CSS](https://tailwindcss.com).
 
 ## Icons and Buttons
-Icons are from [Font Awesome](https://fontawesome.com/v6/docs/web/use-with/react/add-icons), except the social share buttons, which come from [`react-share`](https://www.npmjs.com/package/react-share).
 
-## Tweet Embeds
-Tweet embeds are done with [`react-tweet`](https://vercel.com/blog/introducing-react-tweet).
+Icons are from [Font Awesome](https://fontawesome.com/v6/docs/web/use-with/react/add-icons), except the social share buttons, which come from [`react-share`](https://www.npmjs.com/package/react-share).
 
 ## Images
 

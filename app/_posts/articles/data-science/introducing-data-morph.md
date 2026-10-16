@@ -66,7 +66,7 @@ To generate the Datasaurus Dozen, the algorithm repeatedly selects a point from 
 
 In comparison to Anscombe's Quartet, there is more of a shock factor watching the Datasaurus transform into a set of slanted lines, while preserving summary statistics. I believe that this shock factor is more effective when it comes to explaining why data visualization is essential — just take a look at the reactions to this [LinkedIn post](https://www.linkedin.com/posts/stefanie-molin_datascience-python-statistics-activity-7050814610899099648-kTra/).
 
-I wanted to employ this shock factor in my [pandas workshop](/workshops/pandas-workshop/) to motivate the section on data visualization. Coming after the section on data wrangling, it's crucial to emphasize the importance of data visualization at this point because coding up visualizations can be more complicated. People are often tempted to take the shortcut and just use summary statistics to describe the data. However, using the dinosaur for the animation felt off brand for the workshop, which features panda imagery throughout — I needed to make a dataset shaped like a panda. I provide some tips on how to move from an idea to an input dataset [here](https://stefaniemolin.com/data-morph/stable/custom_datasets.html).
+I wanted to employ this shock factor in my [pandas workshop](/workshops/pandas-workshop/) to motivate the section on data visualization. Coming after the section on data wrangling, it's crucial to emphasize the importance of data visualization at this point because coding up visualizations can be more complicated. People are often tempted to take the shortcut and just use summary statistics to describe the data. However, using the dinosaur for the animation felt off brand for the workshop, which features panda imagery throughout — I needed to make a dataset shaped like a panda. I provide some tips on how to move from an idea to an input dataset [here](https://stefaniemolin.com/data-morph/stable/tutorials/custom-datasets.html).
 
 ![panda dataset](/post-assets/panda-dataset.png)
 
@@ -125,7 +125,7 @@ data-morph --start-shape panda --target-shape star
 
 Arbitrary/custom starting shapes can be provided via CSV files. See the [Custom Datasets tutorial](https://stefaniemolin.com/data-morph/stable/tutorials/custom-datasets.html) in the documentation for tips on making your own. The [documentation](https://stefaniemolin.com/data-morph/stable/index.html) covers both CLI and Python interpreter usage.
 
-Data Morph also provides a test suite, modular code, and a flexible class hierarchy for [adding new target shapes](https://stefaniemolin.com/data-morph/stable/tutorials/shape-creation.html). More information on the core improvements can be found in the release notes [here](https://stefaniemolin.com/data-morph/stable/release_notes.html#april-1-2023).
+Data Morph also provides a test suite, modular code, and a flexible class hierarchy for [adding new target shapes](https://stefaniemolin.com/data-morph/stable/tutorials/shape-creation.html). More information on the core improvements can be found in the release notes [here](https://stefaniemolin.com/data-morph/stable/release-notes.html#april-1-2023).
 
 ---
 
