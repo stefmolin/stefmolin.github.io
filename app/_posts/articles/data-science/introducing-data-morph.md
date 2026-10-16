@@ -1,19 +1,19 @@
 ---
-title: "Data Morph: Moving Beyond the Datasaurus Dozen"
+title: 'Data Morph: Moving Beyond the Datasaurus Dozen'
 subtitle: "A reminder of why you can't rely solely on summary statistics."
-excerpt: "This article introduces Data Morph, a new open source Python package that can be used to morph an input dataset of 2D points into select shapes, while preserving the summary statistics to a given number of decimal points through simulated annealing."
-date: "2023-04-20T18:03:47.508-04:00"
+excerpt: 'This article introduces Data Morph, a new open source Python package that can be used to morph an input dataset of 2D points into select shapes, while preserving the summary statistics to a given number of decimal points through simulated annealing.'
+date: '2023-04-20T18:03:47.508-04:00'
 author: Stefanie Molin
-tags: ["data science", "Python", "open source software", "data visualization", "projects"]
-assets: "/assets/articles/data-science/introducing-data-morph"
+tags: ['data science', 'Python', 'open source software', 'data visualization', 'projects']
+assets: '/assets/articles/data-science/introducing-data-morph'
 ogImage:
-  url: "/post-assets/panda-to-star.gif"
-  caption: "Data Morph transforms a panda to a star, while preserving summary statistics."
+  url: '/post-assets/panda-to-star.gif'
+  caption: 'Data Morph transforms a panda to a star, while preserving summary statistics.'
   width: 774
   height: 379
 featured:
   - "[PyCoder's Weekly Issue #572](https://pycoders.com/issues/572) (via mention of the [stefmolin/data-morph](https://github.com/stefmolin/data-morph) repository)"
-  - "[Talk Python to Me Episode #482](https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs)"
+  - '[Talk Python to Me Episode #482](https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs)'
 ---
 
 This article introduces [Data Morph](https://github.com/stefmolin/data-morph), a new open source Python package that can be used to morph an input dataset of 2D points into select shapes, while preserving the summary statistics to a given number of decimal points through simulated annealing. Data Morph extends research from Autodesk to create the [Datasaurus Dozen](https://damassets.autodesk.net/content/dam/autodesk/research/publications-assets/pdf/same-stats-different-graphs.pdf), and is intended to be used as a teaching tool for illustrating why you can't rely solely on summary statistics.
@@ -28,7 +28,7 @@ Let's play a game. I'm thinking of a distribution with the following summary sta
 - Y standard deviation = 15.53
 - Pearson correlation coefficient = 0.04
 
-The mean is a measure of centrality, the standard deviation is a measure of spread from the center, and the correlation quantifies how the *x* and *y* variables move together, so it is tempting to think that this is enough to describe the data. However, these summary statistics are insufficient: there are multiple possible datasets for a given set of summary statistics. Here's a scatter plot of the data I was summarizing — did you guess right?
+The mean is a measure of centrality, the standard deviation is a measure of spread from the center, and the correlation quantifies how the _x_ and _y_ variables move together, so it is tempting to think that this is enough to describe the data. However, these summary statistics are insufficient: there are multiple possible datasets for a given set of summary statistics. Here's a scatter plot of the data I was summarizing — did you guess right?
 
 ![one possible dataset that matches the summary statistics above](/post-assets/music-dataset.png)
 
@@ -60,7 +60,7 @@ The Datasaurus Dozen datasets. (This visual was created by Stefanie Molin using 
 
 </figcaption>
 
-To generate the Datasaurus Dozen, the algorithm repeatedly selects a point from the dataset at random and tries to move it to a new position by perturbing it a small, random amount. In order for the new position to be considered, it must only change the summary statistics by a small enough amount such that the old and new values are still equivalent to two decimal places. If the change in position reduces the distance to the target shape, the algorithm moves that point to the new position. However, if it increases the distance to the target shape, the algorithm will only move the point to the new position with some probability, *p*, which decreases over time. During earlier iterations, the algorithm is more likely to accept new positions that take it farther from target shape; as the iterations pass, this likelihood decreases. This process helps to avoid getting stuck in local optima and allows for more variance in the shapes that can be created since more of the space can be explored.
+To generate the Datasaurus Dozen, the algorithm repeatedly selects a point from the dataset at random and tries to move it to a new position by perturbing it a small, random amount. In order for the new position to be considered, it must only change the summary statistics by a small enough amount such that the old and new values are still equivalent to two decimal places. If the change in position reduces the distance to the target shape, the algorithm moves that point to the new position. However, if it increases the distance to the target shape, the algorithm will only move the point to the new position with some probability, _p_, which decreases over time. During earlier iterations, the algorithm is more likely to accept new positions that take it farther from target shape; as the iterations pass, this likelihood decreases. This process helps to avoid getting stuck in local optima and allows for more variance in the shapes that can be created since more of the space can be explored.
 
 ---
 
@@ -76,11 +76,11 @@ A new starting dataset shaped like a panda.
 
 </figcaption>
 
-I quickly realized that custom, impactful visual aids would not only benefit my workshop, but also those learning and teaching data analysis. So in 2023, I explored how [the code from the Autodesk researchers](https://github.com/jmatejka/same-stats-different-graphs) could be generalized to an arbitrary dataset, *i.e.*, instead of the Datasaurus or the panda. This led me to create [**Data Morph**](https://stefaniemolin.com/data-morph/stable/index.html), an open source Python package that can be used to morph an input dataset of 2D points into select shapes, while preserving the summary statistics to a given number of decimal points using the same technique of simulated annealing.
+I quickly realized that custom, impactful visual aids would not only benefit my workshop, but also those learning and teaching data analysis. So in 2023, I explored how [the code from the Autodesk researchers](https://github.com/jmatejka/same-stats-different-graphs) could be generalized to an arbitrary dataset, _i.e._, instead of the Datasaurus or the panda. This led me to create [**Data Morph**](https://stefaniemolin.com/data-morph/stable/index.html), an open source Python package that can be used to morph an input dataset of 2D points into select shapes, while preserving the summary statistics to a given number of decimal points using the same technique of simulated annealing.
 
 ---
 
-There was significant refactoring required to generalize the Same Stats, Different Graphs code so it would work for a different input. All of the logic for the target shapes (think the center and radius for a circle, endpoints for a line, *etc.*) was hardcoded in the code, and was, therefore, specific to the datasets included with the Autodesk team's code. The positioning and attributes of the target shapes need to be calculated from the starting dataset, with some shapes being much simpler to encode than others. For example, to morph into the circle shape, the center of the circle can be at the mean of the *x* and *y* values; the radius can be a multiple of the standard deviation (*x* or *y*, pick one):
+There was significant refactoring required to generalize the Same Stats, Different Graphs code so it would work for a different input. All of the logic for the target shapes (think the center and radius for a circle, endpoints for a line, _etc._) was hardcoded in the code, and was, therefore, specific to the datasets included with the Autodesk team's code. The positioning and attributes of the target shapes need to be calculated from the starting dataset, with some shapes being much simpler to encode than others. For example, to morph into the circle shape, the center of the circle can be at the mean of the _x_ and _y_ values; the radius can be a multiple of the standard deviation (_x_ or _y_, pick one):
 
 ![target shape calculation by Data Morph](/post-assets/shape-calculation.png)
 
@@ -90,7 +90,7 @@ The target shape Data Morph calculates when trying to morph the panda shown prev
 
 </figcaption>
 
-Data Morph provides a hierarchy of shape classes to allow for creating composite shapes (*e.g.*, the circle shape is used to create a bullseye shape, which comprises two concentric circles) and centralizing the distance calculation for streamlined code. However, for some shapes, using information from the data doesn't quite work: points sometimes need to move outside the bounds of the starting dataset. To handle this logic, Data Morph includes some automatic boundary calculations that shapes and plotting functionality plug into:
+Data Morph provides a hierarchy of shape classes to allow for creating composite shapes (_e.g._, the circle shape is used to create a bullseye shape, which comprises two concentric circles) and centralizing the distance calculation for streamlined code. However, for some shapes, using information from the data doesn't quite work: points sometimes need to move outside the bounds of the starting dataset. To handle this logic, Data Morph includes some automatic boundary calculations that shapes and plotting functionality plug into:
 
 ![bounds calculated by Data Morph](/post-assets/bounds-calculation.png)
 
@@ -123,20 +123,12 @@ pip install data-morph-ai
 data-morph --start-shape panda --target-shape star
 ```
 
-Arbitrary/custom starting shapes can be provided via CSV files, such as this one (see the documentation [here](https://stefaniemolin.com/data-morph/stable/custom_datasets.html) for tips on making your own):
+Arbitrary/custom starting shapes can be provided via CSV files. See the [Custom Datasets tutorial](https://stefaniemolin.com/data-morph/stable/tutorials/custom-datasets.html) in the documentation for tips on making your own. The [documentation](https://stefaniemolin.com/data-morph/stable/index.html) covers both CLI and Python interpreter usage.
 
-{TWEET_ID="1645046652971933696"}
-
-<figcaption>
-
-An example created using a CSV file.
-
-</figcaption>
-
-Data Morph also provides [documentation](https://stefaniemolin.com/data-morph/stable/index.html) for both CLI and Python interpreter usage, a test suite, modular code, and a flexible class hierarchy for adding new target shapes. More information on the core improvements can be found in the release notes [here](https://stefaniemolin.com/data-morph/stable/release_notes.html#april-1-2023).
+Data Morph also provides a test suite, modular code, and a flexible class hierarchy for [adding new target shapes](https://stefaniemolin.com/data-morph/stable/tutorials/shape-creation.html). More information on the core improvements can be found in the release notes [here](https://stefaniemolin.com/data-morph/stable/release_notes.html#april-1-2023).
 
 ---
 
-The next time you find yourself explaining or teaching summary statistics, I invite you to use Data Morph to create a fun, custom animation to emphasize the importance of visualizing the data. Ask students or attendees to come up with their own animations. Seeing numerous examples that start with familiar shapes (*e.g.*, your school logo, mascot, *etc.*) will keep this important concept top of mind. If you end up using Data Morph with a custom dataset and/or for teaching purposes, I'd love to hear about it — tag me in your posts on [LinkedIn](https://www.linkedin.com/in/stefanie-molin/) or [Twitter](https://twitter.com/StefanieMolin).
+The next time you find yourself explaining or teaching summary statistics, I invite you to use Data Morph to create a fun, custom animation to emphasize the importance of visualizing the data. Ask students or attendees to come up with their own animations. Seeing numerous examples that start with familiar shapes (_e.g._, your school logo, mascot, _etc._) will keep this important concept top of mind. If you end up using Data Morph with a custom dataset and/or for teaching purposes, I'd love to hear about it — tag me in your posts on [LinkedIn](https://www.linkedin.com/in/stefanie-molin/) or [Twitter](https://twitter.com/StefanieMolin).
 
 Happy morphing!
